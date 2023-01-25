@@ -2,6 +2,7 @@ outputDirectory: /tmp/newscatcherapi-sdks-out
 specPath: api.yaml
 generators:
   java:
+    disabled: true
     version: 1.0.0
     groupId: com.konfigthis.newscatcherapi
     artifactId: newscatcherapi-java-sdk
@@ -18,6 +19,7 @@ generators:
       userId: konfig-dev
       repoId: newscatcher-sdks/tree/main/python
   typescript:
+    disabled: true
     version: 1.0.0
     npmName: newscatcherapi-typescript-sdk
     outputDirectory: typescript
@@ -25,6 +27,7 @@ generators:
       userId: konfig-dev
       repoId: newscatcher-sdks/tree/main/typescript
   csharp:
+    disabled: true
     version: 1.0.0
     packageName: Newscatcherapi.Net
     outputDirectory: csharp
@@ -33,6 +36,7 @@ generators:
       userId: konfig-dev
       repoId: newscatcher-sdks/tree/main/csharp
   go:
+    disabled: true
     version: 1.0.0
     packageName: newscatcherapi
     outputDirectory: go
