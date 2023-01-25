@@ -29,6 +29,9 @@ from newscatcherapi_client.model.search import Search
 from newscatcherapi_client.model.search_in import SearchIn
 from newscatcherapi_client.model.sort_by import SortBy
 from newscatcherapi_client.model.topic import Topic
+from newscatcherapi_client.model.rank import Rank
+from newscatcherapi_client.model.page_size import PageSize
+from newscatcherapi_client.model.page import Page
 
 
 class SearchApi(object):
