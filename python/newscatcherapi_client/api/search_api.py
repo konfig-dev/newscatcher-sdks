@@ -24,14 +24,14 @@ from newscatcherapi_client.model_utils import (  # noqa: F401
 )
 from newscatcherapi_client.model.error_response import ErrorResponse
 from newscatcherapi_client.model.model200_response import Model200Response
+from newscatcherapi_client.model.page import Page
+from newscatcherapi_client.model.page_size import PageSize
 from newscatcherapi_client.model.publish_date_precision import PublishDatePrecision
+from newscatcherapi_client.model.rank import Rank
 from newscatcherapi_client.model.search import Search
 from newscatcherapi_client.model.search_in import SearchIn
 from newscatcherapi_client.model.sort_by import SortBy
 from newscatcherapi_client.model.topic import Topic
-from newscatcherapi_client.model.rank import Rank
-from newscatcherapi_client.model.page_size import PageSize
-from newscatcherapi_client.model.page import Page
 
 
 class SearchApi(object):

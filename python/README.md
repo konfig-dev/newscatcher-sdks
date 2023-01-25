@@ -59,6 +59,8 @@ from newscatcherapi_client.api import latest_headlines_api
 from newscatcherapi_client.model.error_response import ErrorResponse
 from newscatcherapi_client.model.latest_headlines import LatestHeadlines
 from newscatcherapi_client.model.model200_response_latest import Model200ResponseLatest
+from newscatcherapi_client.model.page import Page
+from newscatcherapi_client.model.page_size import PageSize
 from newscatcherapi_client.model.topic import Topic
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
