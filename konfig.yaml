@@ -1,0 +1,41 @@
+outputDirectory: /tmp/newscatcherapi-sdks-out
+specPath: api.yaml
+generators:
+  java:
+    version: 1.0.0
+    groupId: com.konfigthis.newscatcherapi
+    artifactId: newscatcherapi-java-sdk
+    outputDirectory: java
+    git:
+      userId: konfig-dev
+      repoId: newscatcher-sdks/tree/main/java
+  python:
+    version: 1.0.0
+    packageName: newscatcherapi_client
+    projectName: newscatcherapi-python-sdk
+    outputDirectory: python
+    git:
+      userId: konfig-dev
+      repoId: newscatcher-sdks/tree/main/python
+  typescript:
+    version: 1.0.0
+    npmName: newscatcherapi-typescript-sdk
+    outputDirectory: typescript
+    git:
+      userId: konfig-dev
+      repoId: newscatcher-sdks/tree/main/typescript
+  csharp:
+    version: 1.0.0
+    packageName: Newscatcherapi.Net
+    outputDirectory: csharp
+    logoPath: logo.png
+    git:
+      userId: konfig-dev
+      repoId: newscatcher-sdks/tree/main/csharp
+  go:
+    version: 1.0.0
+    packageName: Newscatcherapi
+    outputDirectory: go
+    git:
+      userId: konfig-dev
+      repoId: newscatcher-sdks/go

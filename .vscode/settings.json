@@ -1,0 +1,11 @@
+{
+  "spectral.enable": true,
+  "files.associations": {
+    ".konfigignore": "ignore"
+  },
+  "python.testing.pytestArgs": [
+    "python"
+  ],
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestEnabled": true
+}
