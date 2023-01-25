@@ -5,7 +5,7 @@ info:
     NewsCatcher is a data-as-a-service startup that has one main goal:
     to build the largest database of structured news articles published online.
     In other words, we're like Google for the news part of the web, which you can access as a source of data.
-
+    
     Some useful links:
     - [How NewsCatcher Works](https://docs.newscatcherapi.com/knowledge-base/how-newscatcher-works)
     - [GitHub for the Python SDK](https://github.com/NewscatcherAPI/newscatcherapi-sdk-python)
@@ -16,7 +16,7 @@ externalDocs:
   description: Find out more about NewsCatcher
   url: https://docs.newscatcherapi.com/
 servers:
-  - url: https://api.newscatcherapi.com/v2
+- url: https://api.newscatcherapi.com/v2
 tags:
   - name: search
     description: Search for specific news articles
@@ -24,7 +24,7 @@ tags:
       description: Find out more about searching news articles
       url: https://docs.newscatcherapi.com/api-docs/endpoints/search-news
   - name: latest_headlines
-    description: Get lastest news articles
+    description: Get lastest news articles 
     externalDocs:
       description: Find out more about getting the latest news articles
       url: https://docs.newscatcherapi.com/api-docs/endpoints/latest-headlines
@@ -37,7 +37,7 @@ paths:
   /search:
     get:
       tags:
-        - search
+       - search
       summary: Search for specific news articles
       description: Main endpoint that allows you to find news article by keyword, date, language, country, etc.
       operationId: Search_get
@@ -101,7 +101,7 @@ paths:
         - api_key: []
     post:
       tags:
-        - search
+       - search
       summary: Search for specific news articles
       description: Main endpoint that allows you to find news article by keyword, date, language, country, etc.
       operationId: Search_post
@@ -109,7 +109,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/Search"
+              $ref: '#/components/schemas/Search'
       responses:
         "200":
           description: "OK"
@@ -152,7 +152,7 @@ paths:
   /latest_headlines:
     get:
       tags:
-        - latest_headlines
+       - latest_headlines
       summary: Get Latest News Articles
       description: Get the latest headlines given any topic, country, or language.
       operationId: Latest_headlines_get
@@ -208,7 +208,7 @@ paths:
         - api_key: []
     post:
       tags:
-        - latest_headlines
+       - latest_headlines
       summary: Get Latest News Articles
       description: Get the latest headlines given any topic, country, or language.
       operationId: Latest_headlines_post
@@ -216,7 +216,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/latestHeadlines"
+              $ref: '#/components/schemas/latestHeadlines'
       responses:
         "200":
           description: "OK"
@@ -259,7 +259,7 @@ paths:
   /sources:
     get:
       tags:
-        - sources
+      - sources
       summary: Get top news sources supported by NewsCatcher.
       description: Returns a list of the top 100 supported news websites. Overall, we support over 60,000 websites. Using this endpoint, you may find the top 100 for your specific language, country, topic combination.
       operationId: Sources_get
@@ -308,7 +308,7 @@ paths:
         - api_key: []
     post:
       tags:
-        - sources
+      - sources
       summary: Get top news sources supported by NewsCatcher.
       description: Returns a list of the top 100 supported news websites. Overall, we support over 60,000 websites. Using this endpoint, you may find the top 100 for your specific language, country, topic combination.
       operationId: Sources_post
@@ -316,7 +316,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/Sources"
+              $ref: '#/components/schemas/SourcesQuery'
       responses:
         "200":
           description: "OK"
@@ -385,64 +385,7 @@ components:
       required: false
       schema:
         type: string
-        enum:
-          [
-            "af",
-            "ar",
-            "bg",
-            "bn",
-            "ca",
-            "cn",
-            "cs",
-            "cy",
-            "da",
-            "de",
-            "el",
-            "en",
-            "es",
-            "et",
-            "fa",
-            "fi",
-            "fr",
-            "gu",
-            "he",
-            "hi",
-            "hr",
-            "hu",
-            "id",
-            "it",
-            "ja",
-            "kn",
-            "ko",
-            "lt",
-            "lv",
-            "mk",
-            "ml",
-            "mr",
-            "ne",
-            "nl",
-            "no",
-            "pa",
-            "pl",
-            "pt",
-            "ro",
-            "ru",
-            "sk",
-            "sl",
-            "so",
-            "sq",
-            "sv",
-            "sw",
-            "ta",
-            "te",
-            "th",
-            "tl",
-            "tr",
-            "tw",
-            "uk",
-            "ur",
-            "vi",
-          ]
+        enum: ["af", "ar", "bg", "bn", "ca", "cn", "cs", "cy", "da", "de", "el", "en", "es", "et", "fa", "fi", "fr", "gu", "he", "hi", "hr", "hu", "id", "it", "ja", "kn", "ko", "lt", "lv", "mk", "ml", "mr", "ne", "nl", "no", "pa", "pl", "pt", "ro", "ru", "sk", "sl", "so", "sq", "sv", "sw", "ta", "te", "th", "tl", "tr", "tw", "uk", "ur", "vi"]
         example: "en"
     not_lang:
       description: |
@@ -452,64 +395,7 @@ components:
       required: false
       schema:
         type: string
-        enum:
-          [
-            "af",
-            "ar",
-            "bg",
-            "bn",
-            "ca",
-            "cn",
-            "cs",
-            "cy",
-            "da",
-            "de",
-            "el",
-            "en",
-            "es",
-            "et",
-            "fa",
-            "fi",
-            "fr",
-            "gu",
-            "he",
-            "hi",
-            "hr",
-            "hu",
-            "id",
-            "it",
-            "ja",
-            "kn",
-            "ko",
-            "lt",
-            "lv",
-            "mk",
-            "ml",
-            "mr",
-            "ne",
-            "nl",
-            "no",
-            "pa",
-            "pl",
-            "pt",
-            "ro",
-            "ru",
-            "sk",
-            "sl",
-            "so",
-            "sq",
-            "sv",
-            "sw",
-            "ta",
-            "te",
-            "th",
-            "tl",
-            "tr",
-            "tw",
-            "uk",
-            "ur",
-            "vi",
-          ]
+        enum: ["af", "ar", "bg", "bn", "ca", "cn", "cs", "cy", "da", "de", "el", "en", "es", "et", "fa", "fi", "fr", "gu", "he", "hi", "hr", "hu", "id", "it", "ja", "kn", "ko", "lt", "lv", "mk", "ml", "mr", "ne", "nl", "no", "pa", "pl", "pt", "ro", "ru", "sk", "sl", "so", "sq", "sv", "sw", "ta", "te", "th", "tl", "tr", "tw", "uk", "ur", "vi"]
     published_date_precision:
       description: |
         There are 3 types of date precision we define:
@@ -670,131 +556,17 @@ components:
       properties:
         q:
           type: string
-          description: Keyword/keywords you're searching for. This is the most important part of your query. Please, refer to the **Advanced Query Parameter** section of the docs for more examples and explanations.
+          description:  Keyword/keywords you're searching for. This is the most important part of your query. Please, refer to the **Advanced Query Parameter** section of the docs for more examples and explanations.
           example: '"Elon Musk"'
         lang:
           type: string
-          description: The language you want to search in.
-          enum:
-            [
-              "af",
-              "ar",
-              "bg",
-              "bn",
-              "ca",
-              "cn",
-              "cs",
-              "cy",
-              "da",
-              "de",
-              "el",
-              "en",
-              "es",
-              "et",
-              "fa",
-              "fi",
-              "fr",
-              "gu",
-              "he",
-              "hi",
-              "hr",
-              "hu",
-              "id",
-              "it",
-              "ja",
-              "kn",
-              "ko",
-              "lt",
-              "lv",
-              "mk",
-              "ml",
-              "mr",
-              "ne",
-              "nl",
-              "no",
-              "pa",
-              "pl",
-              "pt",
-              "ro",
-              "ru",
-              "sk",
-              "sl",
-              "so",
-              "sq",
-              "sv",
-              "sw",
-              "ta",
-              "te",
-              "th",
-              "tl",
-              "tr",
-              "tw",
-              "uk",
-              "ur",
-              "vi",
-            ]
+          description: The language you want to search in. 
+          enum: ["af", "ar", "bg", "bn", "ca", "cn", "cs", "cy", "da", "de", "el", "en", "es", "et", "fa", "fi", "fr", "gu", "he", "hi", "hr", "hu", "id", "it", "ja", "kn", "ko", "lt", "lv", "mk", "ml", "mr", "ne", "nl", "no", "pa", "pl", "pt", "ro", "ru", "sk", "sl", "so", "sq", "sv", "sw", "ta", "te", "th", "tl", "tr", "tw", "uk", "ur", "vi"]
           example: "en"
         not_lang:
           type: string
-          description: Inverse to the lang parameter.
-          enum:
-            [
-              "af",
-              "ar",
-              "bg",
-              "bn",
-              "ca",
-              "cn",
-              "cs",
-              "cy",
-              "da",
-              "de",
-              "el",
-              "en",
-              "es",
-              "et",
-              "fa",
-              "fi",
-              "fr",
-              "gu",
-              "he",
-              "hi",
-              "hr",
-              "hu",
-              "id",
-              "it",
-              "ja",
-              "kn",
-              "ko",
-              "lt",
-              "lv",
-              "mk",
-              "ml",
-              "mr",
-              "ne",
-              "nl",
-              "no",
-              "pa",
-              "pl",
-              "pt",
-              "ro",
-              "ru",
-              "sk",
-              "sl",
-              "so",
-              "sq",
-              "sv",
-              "sw",
-              "ta",
-              "te",
-              "th",
-              "tl",
-              "tr",
-              "tw",
-              "uk",
-              "ur",
-              "vi",
-            ]
+          description: Inverse to the lang parameter. 
+          enum: ["af", "ar", "bg", "bn", "ca", "cn", "cs", "cy", "da", "de", "el", "en", "es", "et", "fa", "fi", "fr", "gu", "he", "hi", "hr", "hu", "id", "it", "ja", "kn", "ko", "lt", "lv", "mk", "ml", "mr", "ne", "nl", "no", "pa", "pl", "pt", "ro", "ru", "sk", "sl", "so", "sq", "sv", "sw", "ta", "te", "th", "tl", "tr", "tw", "uk", "ur", "vi"]
         published_date_precision:
           type: string
           description: Precision of the publication date.
@@ -819,24 +591,7 @@ components:
           type: string
         topic:
           type: string
-          enum:
-            [
-              "news",
-              "sport",
-              "tech",
-              "world",
-              "finance",
-              "politics",
-              "business",
-              "economics",
-              "entertainment",
-              "beauty",
-              "travel",
-              "music",
-              "food",
-              "science",
-              "gaming",
-            ]
+          enum: ["news", "sport", "tech", "world", "finance", "politics", "business", "economics", "entertainment", "beauty", "travel", "music", "food", "science", "gaming"]
           example: "business"
         sources:
           type: string
@@ -859,94 +614,20 @@ components:
           type: integer
           minimum: 1
           example: 1
-    Sources:
+    SourcesQuery:
       type: object
       properties:
         lang:
           type: string
-          description: The language you want to search in.
-          enum:
-            [
-              "af",
-              "ar",
-              "bg",
-              "bn",
-              "ca",
-              "cn",
-              "cs",
-              "cy",
-              "da",
-              "de",
-              "el",
-              "en",
-              "es",
-              "et",
-              "fa",
-              "fi",
-              "fr",
-              "gu",
-              "he",
-              "hi",
-              "hr",
-              "hu",
-              "id",
-              "it",
-              "ja",
-              "kn",
-              "ko",
-              "lt",
-              "lv",
-              "mk",
-              "ml",
-              "mr",
-              "ne",
-              "nl",
-              "no",
-              "pa",
-              "pl",
-              "pt",
-              "ro",
-              "ru",
-              "sk",
-              "sl",
-              "so",
-              "sq",
-              "sv",
-              "sw",
-              "ta",
-              "te",
-              "th",
-              "tl",
-              "tr",
-              "tw",
-              "uk",
-              "ur",
-              "vi",
-            ]
+          description: The language you want to search in. 
+          enum: ["af", "ar", "bg", "bn", "ca", "cn", "cs", "cy", "da", "de", "el", "en", "es", "et", "fa", "fi", "fr", "gu", "he", "hi", "hr", "hu", "id", "it", "ja", "kn", "ko", "lt", "lv", "mk", "ml", "mr", "ne", "nl", "no", "pa", "pl", "pt", "ro", "ru", "sk", "sl", "so", "sq", "sv", "sw", "ta", "te", "th", "tl", "tr", "tw", "uk", "ur", "vi"]
           example: "en"
         countries:
           type: string
           example: "US,CA"
         topic:
           type: string
-          enum:
-            [
-              "news",
-              "sport",
-              "tech",
-              "world",
-              "finance",
-              "politics",
-              "business",
-              "economics",
-              "entertainment",
-              "beauty",
-              "travel",
-              "music",
-              "food",
-              "science",
-              "gaming",
-            ]
+          enum: ["news", "sport", "tech", "world", "finance", "politics", "business", "economics", "entertainment", "beauty", "travel", "music", "food", "science", "gaming"]
           example: "business"
     latestHeadlines:
       type: object
@@ -956,65 +637,8 @@ components:
           example: "24h"
         lang:
           type: string
-          description: The language you want to search in.
-          enum:
-            [
-              "af",
-              "ar",
-              "bg",
-              "bn",
-              "ca",
-              "cn",
-              "cs",
-              "cy",
-              "da",
-              "de",
-              "el",
-              "en",
-              "es",
-              "et",
-              "fa",
-              "fi",
-              "fr",
-              "gu",
-              "he",
-              "hi",
-              "hr",
-              "hu",
-              "id",
-              "it",
-              "ja",
-              "kn",
-              "ko",
-              "lt",
-              "lv",
-              "mk",
-              "ml",
-              "mr",
-              "ne",
-              "nl",
-              "no",
-              "pa",
-              "pl",
-              "pt",
-              "ro",
-              "ru",
-              "sk",
-              "sl",
-              "so",
-              "sq",
-              "sv",
-              "sw",
-              "ta",
-              "te",
-              "th",
-              "tl",
-              "tr",
-              "tw",
-              "uk",
-              "ur",
-              "vi",
-            ]
+          description: The language you want to search in. 
+          enum: ["af", "ar", "bg", "bn", "ca", "cn", "cs", "cy", "da", "de", "el", "en", "es", "et", "fa", "fi", "fr", "gu", "he", "hi", "hr", "hu", "id", "it", "ja", "kn", "ko", "lt", "lv", "mk", "ml", "mr", "ne", "nl", "no", "pa", "pl", "pt", "ro", "ru", "sk", "sl", "so", "sq", "sv", "sw", "ta", "te", "th", "tl", "tr", "tw", "uk", "ur", "vi"]
           example: "en"
         countries:
           type: string
@@ -1023,24 +647,7 @@ components:
           type: string
         topic:
           type: string
-          enum:
-            [
-              "news",
-              "sport",
-              "tech",
-              "world",
-              "finance",
-              "politics",
-              "business",
-              "economics",
-              "entertainment",
-              "beauty",
-              "travel",
-              "music",
-              "food",
-              "science",
-              "gaming",
-            ]
+          enum: ["news", "sport", "tech", "world", "finance", "politics", "business", "economics", "entertainment", "beauty", "travel", "music", "food", "science", "gaming"]
           example: "business"
         sources:
           type: string
@@ -1063,70 +670,13 @@ components:
           type: integer
           minimum: 1
           example: 1
-
+        
     q:
       type: string
-      example: '"Elon Musk"'
+      example: "\"Elon Musk\""
     lang:
       type: string
-      enum:
-        [
-          "af",
-          "ar",
-          "bg",
-          "bn",
-          "ca",
-          "cn",
-          "cs",
-          "cy",
-          "da",
-          "de",
-          "el",
-          "en",
-          "es",
-          "et",
-          "fa",
-          "fi",
-          "fr",
-          "gu",
-          "he",
-          "hi",
-          "hr",
-          "hu",
-          "id",
-          "it",
-          "ja",
-          "kn",
-          "ko",
-          "lt",
-          "lv",
-          "mk",
-          "ml",
-          "mr",
-          "ne",
-          "nl",
-          "no",
-          "pa",
-          "pl",
-          "pt",
-          "ro",
-          "ru",
-          "sk",
-          "sl",
-          "so",
-          "sq",
-          "sv",
-          "sw",
-          "ta",
-          "te",
-          "th",
-          "tl",
-          "tr",
-          "tw",
-          "uk",
-          "ur",
-          "vi",
-        ]
+      enum: ["af", "ar", "bg", "bn", "ca", "cn", "cs", "cy", "da", "de", "el", "en", "es", "et", "fa", "fi", "fr", "gu", "he", "hi", "hr", "hu", "id", "it", "ja", "kn", "ko", "lt", "lv", "mk", "ml", "mr", "ne", "nl", "no", "pa", "pl", "pt", "ro", "ru", "sk", "sl", "so", "sq", "sv", "sw", "ta", "te", "th", "tl", "tr", "tw", "uk", "ur", "vi"]
       example: "en"
     publish_date_precision:
       type: string
@@ -1144,24 +694,7 @@ components:
       example: "US,CA"
     topic:
       type: string
-      enum:
-        [
-          "news",
-          "sport",
-          "tech",
-          "world",
-          "finance",
-          "politics",
-          "business",
-          "economics",
-          "entertainment",
-          "beauty",
-          "travel",
-          "music",
-          "food",
-          "science",
-          "gaming",
-        ]
+      enum: ["news", "sport", "tech", "world", "finance", "politics", "business", "economics", "entertainment", "beauty", "travel", "music", "food", "science", "gaming"]
       example: "business"
     sources:
       type: string
@@ -1366,7 +899,7 @@ components:
         message:
           type: string
   securitySchemes:
-    api_key:
-      type: apiKey
-      name: x-api-key
-      in: header
+      api_key:
+        type: apiKey
+        name: x-api-key
+        in: header
