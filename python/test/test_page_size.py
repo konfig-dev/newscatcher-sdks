@@ -14,6 +14,7 @@ import unittest
 
 import newscatcherapi_client
 from newscatcherapi_client.model.page_size import PageSize
+from newscatcherapi_client.exceptions import ApiValueError
 
 
 class TestPageSize(unittest.TestCase):
@@ -27,9 +28,12 @@ class TestPageSize(unittest.TestCase):
 
     def testPageSize(self):
         """Test PageSize"""
-        # FIXME: construct object with mandatory attributes with example values
-        # model = PageSize()  # noqa: E501
-        pass
+        model = PageSize(1) 
+        assert model.value is 1, "Value is not correct"
+        model = PageSize(100)  # noqa: E501
+        assert model.value is 100, "Value is not correct"
+        self.assertRaises(ApiValueError, lambda: PageSize(-1))
+        self.assertRaises(ApiValueError, lambda: PageSize(101))
 
 
 if __name__ == '__main__':
