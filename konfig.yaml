@@ -1,5 +1,7 @@
 outputDirectory: /tmp/newscatcherapi-sdks-out
 specPath: api.yaml
+requiredEnvironmentVariables:
+  - NEWSCATCHER_API_KEY
 generators:
   java:
     disabled: true
