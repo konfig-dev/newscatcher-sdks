@@ -36,6 +36,8 @@ class TestLatestHeadlinesApi(unittest.TestCase):
         """
         response = self.api.get(lang="en")
         assert response is not None, "Received null response"
+        response = self.api.get(not_sources="nytimes.com,theguardian.com", page=1, page_size=50)
+        assert response is not None, "Received null response"
 
     def test_post(self):
         """Test case for headlines_post
