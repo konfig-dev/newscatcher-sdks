@@ -35,7 +35,7 @@ from pprint import pprint
 # satisfies your auth use case.
 
 # Configure API key authorization: api_key
-configuration.api_key['api_key'] = 'YOUR_API_KEY'
+configuration = newscatcherapi_client.Configuration(api_key={'api_key': 'YOUR_API_KEY'})
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api_key'] = 'Bearer'
@@ -133,7 +133,7 @@ from pprint import pprint
 # satisfies your auth use case.
 
 # Configure API key authorization: api_key
-configuration.api_key['api_key'] = 'YOUR_API_KEY'
+configuration = newscatcherapi_client.Configuration(api_key={'api_key': 'YOUR_API_KEY'})
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api_key'] = 'Bearer'
