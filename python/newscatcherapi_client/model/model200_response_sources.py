@@ -90,8 +90,8 @@ class Model200ResponseSources(ModelNormal):
         """
         lazy_import()
         return {
-            'message': (List,),  # noqa: E501
-            'sources': (str,),  # noqa: E501
+            'message': (str,),  # noqa: E501
+            'sources': (List,),  # noqa: E501
             'user_input': (SourcesUserInput,),  # noqa: E501
         }
 
@@ -147,8 +147,8 @@ class Model200ResponseSources(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            message (List): [optional]  # noqa: E501
-            sources (str): [optional]  # noqa: E501
+            message (str): [optional]  # noqa: E501
+            sources (List): [optional]  # noqa: E501
             user_input (SourcesUserInput): [optional]  # noqa: E501
         """
 
@@ -235,8 +235,8 @@ class Model200ResponseSources(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            message (List): [optional]  # noqa: E501
-            sources (str): [optional]  # noqa: E501
+            message (str): [optional]  # noqa: E501
+            sources (List): [optional]  # noqa: E501
             user_input (SourcesUserInput): [optional]  # noqa: E501
         """
 
