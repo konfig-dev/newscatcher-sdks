@@ -1,1 +1,3 @@
 test/test_search_api.py
+test/test_sources_api.py
+test/test_latest_headlines_api.py

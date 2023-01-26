@@ -854,6 +854,7 @@ components:
           $ref: "#/components/schemas/list"
         topic:
           type: string
+          nullable: true
     200_response:
       type: object
       properties:
@@ -892,9 +893,9 @@ components:
       type: object
       properties:
         message:
-          $ref: "#/components/schemas/list"
-        sources:
           type: string
+        sources:
+          $ref: "#/components/schemas/list"
         user_input:
           $ref: "#/components/schemas/sources_user_input"
     error_response:

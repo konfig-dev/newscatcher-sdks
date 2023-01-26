@@ -11,15 +11,20 @@
 
 import unittest
 
-import newscatcherapi_client
+import os
 from newscatcherapi_client.api.sources_api import SourcesApi  # noqa: E501
+from newscatcherapi_client.configuration import Configuration
+from newscatcherapi_client.model.sources_query import SourcesQuery
+from newscatcherapi_client.api_client import ApiClient
 
 
 class TestSourcesApi(unittest.TestCase):
     """SourcesApi unit test stubs"""
 
     def setUp(self):
-        self.api = SourcesApi()  # noqa: E501
+        configuration = Configuration(api_key={'api_key': os.environ["NEWSCATCHER_API_KEY"]})
+        api_client = ApiClient(configuration)
+        self.api = SourcesApi(api_client)  # noqa: E501
 
     def tearDown(self):
         pass
@@ -29,14 +34,16 @@ class TestSourcesApi(unittest.TestCase):
 
         Get top news sources supported by NewsCatcher.  # noqa: E501
         """
-        pass
+        response = self.api.get(lang="en")
+        assert response is not None, "Received null response"
 
     def test_post(self):
         """Test case for post
 
         Get top news sources supported by NewsCatcher.  # noqa: E501
         """
-        pass
+        response = self.api.post(sources_query=SourcesQuery(lang="en"))
+        assert response is not None, "Received null response"
 
 
 if __name__ == '__main__':

@@ -34,7 +34,8 @@ class TestSearchApi(unittest.TestCase):
 
         Search for specific news articles  # noqa: E501
         """
-        pass
+        response = self.api.get(q="Apple", _from="three months ago")
+        assert response is not None, "Received null response"
 
     def test_post(self):
         """Test case for post
