@@ -155,7 +155,7 @@ paths:
        - latest_headlines
       summary: Get Latest News Articles
       description: Get the latest headlines given any topic, country, or language.
-      operationId: Latest_headlines_get
+      operationId: LatestHeadlines_get
       parameters:
         - $ref: "#/components/parameters/lang"
         - $ref: "#/components/parameters/not_lang"
@@ -211,7 +211,7 @@ paths:
        - latest_headlines
       summary: Get Latest News Articles
       description: Get the latest headlines given any topic, country, or language.
-      operationId: Latest_headlines_post
+      operationId: LatestHeadlines_post
       requestBody:
         content:
           application/json:
@@ -778,6 +778,7 @@ components:
             nullable: true
           _score:
             type: number
+            nullable: true
           _id:
             type: string
     search_user_input:
@@ -845,6 +846,7 @@ components:
           $ref: "#/components/schemas/list"
         topic:
           type: string
+          nullable: true
     sources_user_input:
       type: object
       properties:

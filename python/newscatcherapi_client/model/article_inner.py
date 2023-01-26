@@ -98,7 +98,7 @@ class ArticleInner(ModelNormal):
             'authors': (str,),  # noqa: E501
             'is_opinion': (bool,),  # noqa: E501
             'twitter_account': (str, none_type,),  # noqa: E501
-            'score': (float,),  # noqa: E501
+            'score': (float, none_type,),  # noqa: E501
             'id': (str,),  # noqa: E501
         }
 
@@ -185,7 +185,7 @@ class ArticleInner(ModelNormal):
             authors (str): [optional]  # noqa: E501
             is_opinion (bool): [optional]  # noqa: E501
             twitter_account (str, none_type): [optional]  # noqa: E501
-            score (float): [optional]  # noqa: E501
+            score (float, none_type): [optional]  # noqa: E501
             id (str): [optional]  # noqa: E501
         """
 
@@ -288,7 +288,7 @@ class ArticleInner(ModelNormal):
             authors (str): [optional]  # noqa: E501
             is_opinion (bool): [optional]  # noqa: E501
             twitter_account (str, none_type): [optional]  # noqa: E501
-            score (float): [optional]  # noqa: E501
+            score (float, none_type): [optional]  # noqa: E501
             id (str): [optional]  # noqa: E501
         """
 

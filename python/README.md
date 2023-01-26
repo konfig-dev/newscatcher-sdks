@@ -91,10 +91,10 @@ with newscatcherapi_client.ApiClient(configuration) as api_client:
 
     try:
         # Get Latest News Articles
-        api_response = api_instance.headlines_get(lang=lang, not_lang=not_lang, countries=countries, not_countries=not_countries, topic=topic, sources=sources, not_sources=not_sources, ranked_only=ranked_only, page_size=page_size, page=page)
+        api_response = api_instance.get(lang=lang, not_lang=not_lang, countries=countries, not_countries=not_countries, topic=topic, sources=sources, not_sources=not_sources, ranked_only=ranked_only, page_size=page_size, page=page)
         pprint(api_response)
     except newscatcherapi_client.ApiException as e:
-        print("Exception when calling LatestHeadlinesApi->headlines_get: %s\n" % e)
+        print("Exception when calling LatestHeadlinesApi->get: %s\n" % e)
 ```
 
 ## Documentation for API Endpoints
@@ -103,8 +103,8 @@ All URIs are relative to *https://api.newscatcherapi.com/v2*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*LatestHeadlinesApi* | [**headlines_get**](docs/LatestHeadlinesApi.md#headlines_get) | **GET** /latest_headlines | Get Latest News Articles
-*LatestHeadlinesApi* | [**headlines_post**](docs/LatestHeadlinesApi.md#headlines_post) | **POST** /latest_headlines | Get Latest News Articles
+*LatestHeadlinesApi* | [**get**](docs/LatestHeadlinesApi.md#get) | **GET** /latest_headlines | Get Latest News Articles
+*LatestHeadlinesApi* | [**post**](docs/LatestHeadlinesApi.md#post) | **POST** /latest_headlines | Get Latest News Articles
 *SearchApi* | [**get**](docs/SearchApi.md#get) | **GET** /search | Search for specific news articles
 *SearchApi* | [**post**](docs/SearchApi.md#post) | **POST** /search | Search for specific news articles
 *SourcesApi* | [**get**](docs/SourcesApi.md#get) | **GET** /sources | Get top news sources supported by NewsCatcher.

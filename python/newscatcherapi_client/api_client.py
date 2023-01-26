@@ -803,10 +803,10 @@ class Endpoint(object):
         Example:
 
         api_instance = LatestHeadlinesApi()
-        api_instance.headlines_get  # this is an instance of the class Endpoint
-        api_instance.headlines_get()  # this invokes api_instance.headlines_get.__call__()
+        api_instance.get  # this is an instance of the class Endpoint
+        api_instance.get()  # this invokes api_instance.get.__call__()
         which then invokes the callable functions stored in that endpoint at
-        api_instance.headlines_get.callable or self.callable in this class
+        api_instance.get.callable or self.callable in this class
 
         """
         return self.callable(self, *args, **kwargs)

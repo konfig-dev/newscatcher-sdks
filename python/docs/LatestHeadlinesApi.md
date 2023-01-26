@@ -4,12 +4,12 @@ All URIs are relative to *https://api.newscatcherapi.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**headlines_get**](LatestHeadlinesApi.md#headlines_get) | **GET** /latest_headlines | Get Latest News Articles
-[**headlines_post**](LatestHeadlinesApi.md#headlines_post) | **POST** /latest_headlines | Get Latest News Articles
+[**get**](LatestHeadlinesApi.md#get) | **GET** /latest_headlines | Get Latest News Articles
+[**post**](LatestHeadlinesApi.md#post) | **POST** /latest_headlines | Get Latest News Articles
 
 
-# **headlines_get**
-> Model200ResponseLatest headlines_get()
+# **get**
+> Model200ResponseLatest get()
 
 Get Latest News Articles
 
@@ -59,10 +59,10 @@ with newscatcherapi_client.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # Get Latest News Articles
-        api_response = api_instance.headlines_get(lang=lang, not_lang=not_lang, countries=countries, not_countries=not_countries, topic=topic, sources=sources, not_sources=not_sources, ranked_only=ranked_only, page_size=page_size, page=page)
+        api_response = api_instance.get(lang=lang, not_lang=not_lang, countries=countries, not_countries=not_countries, topic=topic, sources=sources, not_sources=not_sources, ranked_only=ranked_only, page_size=page_size, page=page)
         pprint(api_response)
     except newscatcherapi_client.ApiException as e:
-        print("Exception when calling LatestHeadlinesApi->headlines_get: %s\n" % e)
+        print("Exception when calling LatestHeadlinesApi->get: %s\n" % e)
 ```
 
 
@@ -108,8 +108,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **headlines_post**
-> Model200ResponseLatest headlines_post()
+# **post**
+> Model200ResponseLatest post()
 
 Get Latest News Articles
 
@@ -160,10 +160,10 @@ with newscatcherapi_client.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # Get Latest News Articles
-        api_response = api_instance.headlines_post(latest_headlines=latest_headlines)
+        api_response = api_instance.post(latest_headlines=latest_headlines)
         pprint(api_response)
     except newscatcherapi_client.ApiException as e:
-        print("Exception when calling LatestHeadlinesApi->headlines_post: %s\n" % e)
+        print("Exception when calling LatestHeadlinesApi->post: %s\n" % e)
 ```
 
 

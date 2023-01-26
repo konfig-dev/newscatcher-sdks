@@ -41,14 +41,14 @@ class LatestHeadlinesApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
-        self.headlines_get_endpoint = _Endpoint(
+        self.get_endpoint = _Endpoint(
             settings={
                 'response_type': (Model200ResponseLatest,),
                 'auth': [
                     'api_key'
                 ],
                 'endpoint_path': '/latest_headlines',
-                'operation_id': 'headlines_get',
+                'operation_id': 'get',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -264,14 +264,14 @@ class LatestHeadlinesApi(object):
             },
             api_client=api_client
         )
-        self.headlines_post_endpoint = _Endpoint(
+        self.post_endpoint = _Endpoint(
             settings={
                 'response_type': (Model200ResponseLatest,),
                 'auth': [
                     'api_key'
                 ],
                 'endpoint_path': '/latest_headlines',
-                'operation_id': 'headlines_post',
+                'operation_id': 'post',
                 'http_method': 'POST',
                 'servers': None,
             },
@@ -315,7 +315,7 @@ class LatestHeadlinesApi(object):
             api_client=api_client
         )
 
-    def headlines_get(
+    def get(
         self,
         **kwargs
     ):
@@ -325,7 +325,7 @@ class LatestHeadlinesApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.headlines_get(async_req=True)
+        >>> thread = api.get(async_req=True)
         >>> result = thread.get()
 
 
@@ -401,9 +401,9 @@ class LatestHeadlinesApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        return self.headlines_get_endpoint.call_with_http_info(**kwargs)
+        return self.get_endpoint.call_with_http_info(**kwargs)
 
-    def headlines_post(
+    def post(
         self,
         **kwargs
     ):
@@ -413,7 +413,7 @@ class LatestHeadlinesApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.headlines_post(async_req=True)
+        >>> thread = api.post(async_req=True)
         >>> result = thread.get()
 
 
@@ -480,5 +480,5 @@ class LatestHeadlinesApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        return self.headlines_post_endpoint.call_with_http_info(**kwargs)
+        return self.post_endpoint.call_with_http_info(**kwargs)
 

@@ -11,32 +11,39 @@
 
 import unittest
 
-import newscatcherapi_client
+import os
 from newscatcherapi_client.api.latest_headlines_api import LatestHeadlinesApi  # noqa: E501
+from newscatcherapi_client.configuration import Configuration
+from newscatcherapi_client.api_client import ApiClient
+from newscatcherapi_client.model.latest_headlines import LatestHeadlines
 
 
 class TestLatestHeadlinesApi(unittest.TestCase):
     """LatestHeadlinesApi unit test stubs"""
 
     def setUp(self):
-        self.api = LatestHeadlinesApi()  # noqa: E501
+        configuration = Configuration(api_key={'api_key': os.environ["NEWSCATCHER_API_KEY"]})
+        api_client = ApiClient(configuration)
+        self.api = LatestHeadlinesApi(api_client)  # noqa: E501
 
     def tearDown(self):
         pass
 
-    def test_headlines_get(self):
+    def test_get(self):
         """Test case for headlines_get
 
         Get Latest News Articles  # noqa: E501
         """
-        pass
+        response = self.api.get(lang="en")
+        assert response is not None, "Received null response"
 
-    def test_headlines_post(self):
+    def test_post(self):
         """Test case for headlines_post
 
         Get Latest News Articles  # noqa: E501
         """
-        pass
+        response = self.api.post(latest_headlines=LatestHeadlines(lang="en"))
+        assert response is not None, "Received null response"
 
 
 if __name__ == '__main__':

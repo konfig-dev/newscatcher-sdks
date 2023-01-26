@@ -96,7 +96,7 @@ class LatestHeadlinesUserInput(ModelNormal):
             'size': (int,),  # noqa: E501
             'sources': (List,),  # noqa: E501
             'not_sources': (List,),  # noqa: E501
-            'topic': (str,),  # noqa: E501
+            'topic': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -165,7 +165,7 @@ class LatestHeadlinesUserInput(ModelNormal):
             size (int): [optional]  # noqa: E501
             sources (List): [optional]  # noqa: E501
             not_sources (List): [optional]  # noqa: E501
-            topic (str): [optional]  # noqa: E501
+            topic (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -259,7 +259,7 @@ class LatestHeadlinesUserInput(ModelNormal):
             size (int): [optional]  # noqa: E501
             sources (List): [optional]  # noqa: E501
             not_sources (List): [optional]  # noqa: E501
-            topic (str): [optional]  # noqa: E501
+            topic (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
