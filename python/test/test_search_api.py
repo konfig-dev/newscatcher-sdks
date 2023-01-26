@@ -41,7 +41,7 @@ class TestSearchApi(unittest.TestCase):
 
         Search for specific news articles  # noqa: E501
         """
-        response = self.api.post(search=Search(q='apple', _from='three mongths ago'))
+        response = self.api.post(search=Search(q='Apple', _from='three months ago'))
         assert response is not None, "Received null response"
 
 
