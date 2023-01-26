@@ -13,8 +13,6 @@ import sys
 import unittest
 
 import newscatcherapi_client
-from newscatcherapi_client.model.list import List
-globals()['List'] = List
 from newscatcherapi_client.model.article_inner import ArticleInner
 
 

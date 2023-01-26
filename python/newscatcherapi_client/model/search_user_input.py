@@ -95,17 +95,17 @@ class SearchUserInput(ModelNormal):
             'countries': (List,),  # noqa: E501
             'not_countries': (List,),  # noqa: E501
             '_from': (str,),  # noqa: E501
-            'to': (str,),  # noqa: E501
+            'to': (str, none_type,),  # noqa: E501
             'ranked_only': (str,),  # noqa: E501
-            'from_rank': (int,),  # noqa: E501
-            'to_rank': (int,),  # noqa: E501
+            'from_rank': (int, none_type,),  # noqa: E501
+            'to_rank': (int, none_type,),  # noqa: E501
             'sort_by': (str,),  # noqa: E501
             'page': (int,),  # noqa: E501
             'size': (int,),  # noqa: E501
             'sources': (List,),  # noqa: E501
             'not_sources': (List,),  # noqa: E501
-            'topic': (str,),  # noqa: E501
-            'published_date_precision': (str,),  # noqa: E501
+            'topic': (str, none_type,),  # noqa: E501
+            'published_date_precision': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -182,17 +182,17 @@ class SearchUserInput(ModelNormal):
             countries (List): [optional]  # noqa: E501
             not_countries (List): [optional]  # noqa: E501
             _from (str): [optional]  # noqa: E501
-            to (str): [optional]  # noqa: E501
+            to (str, none_type): [optional]  # noqa: E501
             ranked_only (str): [optional]  # noqa: E501
-            from_rank (int): [optional]  # noqa: E501
-            to_rank (int): [optional]  # noqa: E501
+            from_rank (int, none_type): [optional]  # noqa: E501
+            to_rank (int, none_type): [optional]  # noqa: E501
             sort_by (str): [optional]  # noqa: E501
             page (int): [optional]  # noqa: E501
             size (int): [optional]  # noqa: E501
             sources (List): [optional]  # noqa: E501
             not_sources (List): [optional]  # noqa: E501
-            topic (str): [optional]  # noqa: E501
-            published_date_precision (str): [optional]  # noqa: E501
+            topic (str, none_type): [optional]  # noqa: E501
+            published_date_precision (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -285,17 +285,17 @@ class SearchUserInput(ModelNormal):
             countries (List): [optional]  # noqa: E501
             not_countries (List): [optional]  # noqa: E501
             _from (str): [optional]  # noqa: E501
-            to (str): [optional]  # noqa: E501
+            to (str, none_type): [optional]  # noqa: E501
             ranked_only (str): [optional]  # noqa: E501
-            from_rank (int): [optional]  # noqa: E501
-            to_rank (int): [optional]  # noqa: E501
+            from_rank (int, none_type): [optional]  # noqa: E501
+            to_rank (int, none_type): [optional]  # noqa: E501
             sort_by (str): [optional]  # noqa: E501
             page (int): [optional]  # noqa: E501
             size (int): [optional]  # noqa: E501
             sources (List): [optional]  # noqa: E501
             not_sources (List): [optional]  # noqa: E501
-            topic (str): [optional]  # noqa: E501
-            published_date_precision (str): [optional]  # noqa: E501
+            topic (str, none_type): [optional]  # noqa: E501
+            published_date_precision (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
