@@ -1,0 +1,2331 @@
+openapi: 3.0.3
+info:
+  contact:
+    email: team@newscatcherapi.com
+  description: |
+    NewsCatcher is a data-as-a-service startup that has one main goal:
+    to build the largest database of structured news articles published online.
+    In other words, we're like Google for the news part of the web, which you can access as a source of data.
+
+    Some useful links:
+    - [How NewsCatcher Works](https://docs.newscatcherapi.com/knowledge-base/how-newscatcher-works)
+    - [GitHub for the Python SDK](https://github.com/NewscatcherAPI/newscatcherapi-sdk-python)
+  title: NewsCatcher News API V2
+  version: 1.0.1
+externalDocs:
+  description: Find out more about NewsCatcher
+  url: https://docs.newscatcherapi.com/
+servers:
+- url: https://api.newscatcherapi.com/v2
+tags:
+- description: Search for specific news articles
+  externalDocs:
+    description: Find out more about searching news articles
+    url: https://docs.newscatcherapi.com/api-docs/endpoints/search-news
+  name: search
+- description: Get lastest news articles
+  externalDocs:
+    description: Find out more about getting the latest news articles
+    url: https://docs.newscatcherapi.com/api-docs/endpoints/latest-headlines
+  name: latest_headlines
+- description: Get the list of top news sources supported by NewsCatcher.
+  externalDocs:
+    description: Find out more about getting a list of sources
+    url: https://docs.newscatcherapi.com/api-docs/endpoints/sources
+  name: sources
+paths:
+  /search:
+    get:
+      description: "Main endpoint that allows you to find news article by keyword,\
+        \ date, language, country, etc."
+      operationId: Search_get
+      parameters:
+      - description: |
+          Keyword/keywords you're searching for. This is the most important part of your query.
+          Please, refer to the **Advanced Query Parameter** section below of the docs for more examples and explanations
+        explode: true
+        in: query
+        name: q
+        required: true
+        schema:
+          example: '"Elon Musk"'
+          type: string
+        style: form
+      - description: |
+          Specifies the languages of the search. For example: `en`.
+          The only accepted format is [ISO 639-1 — 2](https://en.wikipedia.org/wiki/ISO_639-1) letter code.
+        explode: true
+        in: query
+        name: lang
+        required: false
+        schema:
+          enum:
+          - af
+          - ar
+          - bg
+          - bn
+          - ca
+          - cn
+          - cs
+          - cy
+          - da
+          - de
+          - el
+          - en
+          - es
+          - et
+          - fa
+          - fi
+          - fr
+          - gu
+          - he
+          - hi
+          - hr
+          - hu
+          - id
+          - it
+          - ja
+          - kn
+          - ko
+          - lt
+          - lv
+          - mk
+          - ml
+          - mr
+          - ne
+          - nl
+          - "false"
+          - pa
+          - pl
+          - pt
+          - ro
+          - ru
+          - sk
+          - sl
+          - so
+          - sq
+          - sv
+          - sw
+          - ta
+          - te
+          - th
+          - tl
+          - tr
+          - tw
+          - uk
+          - ur
+          - vi
+          example: en
+          type: string
+        style: form
+      - description: |
+          Inverse to the `lang` parameter
+        explode: true
+        in: query
+        name: not_lang
+        required: false
+        schema:
+          enum:
+          - af
+          - ar
+          - bg
+          - bn
+          - ca
+          - cn
+          - cs
+          - cy
+          - da
+          - de
+          - el
+          - en
+          - es
+          - et
+          - fa
+          - fi
+          - fr
+          - gu
+          - he
+          - hi
+          - hr
+          - hu
+          - id
+          - it
+          - ja
+          - kn
+          - ko
+          - lt
+          - lv
+          - mk
+          - ml
+          - mr
+          - ne
+          - nl
+          - "false"
+          - pa
+          - pl
+          - pt
+          - ro
+          - ru
+          - sk
+          - sl
+          - so
+          - sq
+          - sv
+          - sw
+          - ta
+          - te
+          - th
+          - tl
+          - tr
+          - tw
+          - uk
+          - ur
+          - vi
+          type: string
+        style: form
+      - description: |
+          There are 3 types of date precision we define:
+          `full` — day and time of an article is correctly identified with the appropriate timezone
+          `timezone unknown` — day and time of an article is correctly identified without timezone
+          `date` — only the day is identified without an exact time
+        explode: true
+        in: query
+        name: published_date_precision
+        required: false
+        schema:
+          $ref: '#/components/schemas/publish_date_precision'
+        style: form
+      - description: |
+          `YYYY/mm/dd` From which point in time to start the search.
+          The default timezone is UTC.
+          Defaults to the past week.
+        explode: true
+        in: query
+        name: from
+        required: false
+        schema:
+          $ref: '#/components/schemas/date'
+        style: form
+      - description: |
+          `YYYY/mm/dd` Until which point in time to search for.
+          The default timezone is UTC.
+        explode: true
+        in: query
+        name: to
+        required: false
+        schema:
+          $ref: '#/components/schemas/date'
+        style: form
+      - description: |
+          By default, we search what you specified in the `q` parameter in both `title` and `summary` of the article.
+          However, you can limit this to either `title` or `summary`
+        explode: true
+        in: query
+        name: search_in
+        required: false
+        schema:
+          $ref: '#/components/schemas/search_in'
+        style: form
+      - description: |
+          Countries where the news publisher is located.
+          **Important**: This parameter is not responsible for the countries mentioned in the news article.
+          One or multiple countries can be used in the search.
+          The only acceptable format is [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
+          For example, `US,CA,MX` or just `US`
+        explode: true
+        in: query
+        name: countries
+        required: false
+        schema:
+          $ref: '#/components/schemas/countries'
+        style: form
+      - description: |
+          The inverse of the `countries` parameter.
+        explode: true
+        in: query
+        name: not_countries
+        required: false
+        schema:
+          $ref: '#/components/schemas/countries'
+        style: form
+      - description: |
+          Accepted values: `news`, `sport`, `tech`, `world`, `finance`, `politics`, `business`, `economics`, `entertainment`, `beauty`, `travel`, `music`, `food`, `science`, `gaming`
+          The topic to which you want to restrict the articles of your choice.
+          Not all news articles are assigned with a topic, therefore, we cannot guarantee that 100% of topics talking about technology will be assigned a tech label.
+        explode: true
+        in: query
+        name: topic
+        required: false
+        schema:
+          $ref: '#/components/schemas/topic'
+        style: form
+      - description: |
+          One or more news resources to filter your search. It should be the normal form of the URL,
+          For example: `nytimes.com,theguardian.com`
+        explode: true
+        in: query
+        name: sources
+        required: false
+        schema:
+          $ref: '#/components/schemas/sources'
+        style: form
+      - description: |
+          One or more sources to be excluded from the search.
+          Comma-separated list. For example: `nytimes.com,cnn.com,wsj.com`
+        explode: true
+        in: query
+        name: not_sources
+        required: false
+        schema:
+          $ref: '#/components/schemas/not_sources'
+        style: form
+      - description: |
+          Default: `True`
+          Limit the search only for the sources which are in the top 1 million online websites. Unranked sources are assigned a rank that equals `999999`
+        explode: true
+        in: query
+        name: ranked_only
+        required: false
+        schema:
+          $ref: '#/components/schemas/ranked_only'
+        style: form
+      - description: |
+          `[0:999999]` The lowest boundary of the rank of a news website to filter by.
+          Important: lower rank means that a source is more popular
+        explode: true
+        in: query
+        name: from_rank
+        required: false
+        schema:
+          $ref: '#/components/schemas/rank'
+        style: form
+      - description: |
+          `[0:999999]` The upper boundary of the rank of a news website to filter by.
+        explode: true
+        in: query
+        name: to_rank
+        required: false
+        schema:
+          $ref: '#/components/schemas/rank'
+        style: form
+      - description: |
+          `relevancy` (default value) — the most relevant results first
+          `date` — the most recently published results first
+          `rank` — the results from the highest-ranked sources first
+        explode: true
+        in: query
+        name: sort_by
+        required: false
+        schema:
+          $ref: '#/components/schemas/sort_by'
+        style: form
+      - description: |
+          `[1:100]` How many articles to return per page.
+        explode: true
+        in: query
+        name: page_size
+        required: false
+        schema:
+          $ref: '#/components/schemas/page_size'
+        style: form
+      - description: |
+          The number of the page. Use it to scroll through the results.
+          This parameter is used to paginate: scroll through results because one API response cannot return more than 100 articles.
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          $ref: '#/components/schemas/page'
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/200_response'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error_response'
+          description: API is not put in headers
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error_response'
+          description: API Key not found
+        "406":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error_response'
+          description: Wrong parameter has been used
+        "408":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error_response'
+          description: Request Timeout
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error_response'
+          description: Concurrency violated
+      security:
+      - api_key: []
+      summary: Search for specific news articles
+      tags:
+      - search
+      x-accepts: application/json
+    post:
+      description: "Main endpoint that allows you to find news article by keyword,\
+        \ date, language, country, etc."
+      operationId: Search_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Search'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/200_response'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error_response'
+          description: API is not put in headers
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error_response'
+          description: API Key not found
+        "406":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error_response'
+          description: Wrong parameter has been used
+        "408":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error_response'
+          description: Request Timeout
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error_response'
+          description: Concurrency violated
+      security:
+      - api_key: []
+      summary: Search for specific news articles
+      tags:
+      - search
+      x-content-type: application/json
+      x-accepts: application/json
+  /latest_headlines:
+    get:
+      description: "Get the latest headlines given any topic, country, or language."
+      operationId: LatestHeadlines_get
+      parameters:
+      - description: |
+          Specifies the languages of the search. For example: `en`.
+          The only accepted format is [ISO 639-1 — 2](https://en.wikipedia.org/wiki/ISO_639-1) letter code.
+        explode: true
+        in: query
+        name: lang
+        required: false
+        schema:
+          enum:
+          - af
+          - ar
+          - bg
+          - bn
+          - ca
+          - cn
+          - cs
+          - cy
+          - da
+          - de
+          - el
+          - en
+          - es
+          - et
+          - fa
+          - fi
+          - fr
+          - gu
+          - he
+          - hi
+          - hr
+          - hu
+          - id
+          - it
+          - ja
+          - kn
+          - ko
+          - lt
+          - lv
+          - mk
+          - ml
+          - mr
+          - ne
+          - nl
+          - "false"
+          - pa
+          - pl
+          - pt
+          - ro
+          - ru
+          - sk
+          - sl
+          - so
+          - sq
+          - sv
+          - sw
+          - ta
+          - te
+          - th
+          - tl
+          - tr
+          - tw
+          - uk
+          - ur
+          - vi
+          example: en
+          type: string
+        style: form
+      - description: |
+          Inverse to the `lang` parameter
+        explode: true
+        in: query
+        name: not_lang
+        required: false
+        schema:
+          enum:
+          - af
+          - ar
+          - bg
+          - bn
+          - ca
+          - cn
+          - cs
+          - cy
+          - da
+          - de
+          - el
+          - en
+          - es
+          - et
+          - fa
+          - fi
+          - fr
+          - gu
+          - he
+          - hi
+          - hr
+          - hu
+          - id
+          - it
+          - ja
+          - kn
+          - ko
+          - lt
+          - lv
+          - mk
+          - ml
+          - mr
+          - ne
+          - nl
+          - "false"
+          - pa
+          - pl
+          - pt
+          - ro
+          - ru
+          - sk
+          - sl
+          - so
+          - sq
+          - sv
+          - sw
+          - ta
+          - te
+          - th
+          - tl
+          - tr
+          - tw
+          - uk
+          - ur
+          - vi
+          type: string
+        style: form
+      - description: |
+          Countries where the news publisher is located.
+          **Important**: This parameter is not responsible for the countries mentioned in the news article.
+          One or multiple countries can be used in the search.
+          The only acceptable format is [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
+          For example, `US,CA,MX` or just `US`
+        explode: true
+        in: query
+        name: countries
+        required: false
+        schema:
+          $ref: '#/components/schemas/countries'
+        style: form
+      - description: |
+          The inverse of the `countries` parameter.
+        explode: true
+        in: query
+        name: not_countries
+        required: false
+        schema:
+          $ref: '#/components/schemas/countries'
+        style: form
+      - description: |
+          Accepted values: `news`, `sport`, `tech`, `world`, `finance`, `politics`, `business`, `economics`, `entertainment`, `beauty`, `travel`, `music`, `food`, `science`, `gaming`
+          The topic to which you want to restrict the articles of your choice.
+          Not all news articles are assigned with a topic, therefore, we cannot guarantee that 100% of topics talking about technology will be assigned a tech label.
+        explode: true
+        in: query
+        name: topic
+        required: false
+        schema:
+          $ref: '#/components/schemas/topic'
+        style: form
+      - description: |
+          One or more news resources to filter your search. It should be the normal form of the URL,
+          For example: `nytimes.com,theguardian.com`
+        explode: true
+        in: query
+        name: sources
+        required: false
+        schema:
+          $ref: '#/components/schemas/sources'
+        style: form
+      - description: |
+          One or more sources to be excluded from the search.
+          Comma-separated list. For example: `nytimes.com,cnn.com,wsj.com`
+        explode: true
+        in: query
+        name: not_sources
+        required: false
+        schema:
+          $ref: '#/components/schemas/not_sources'
+        style: form
+      - description: |
+          Default: `True`
+          Limit the search only for the sources which are in the top 1 million online websites. Unranked sources are assigned a rank that equals `999999`
+        explode: true
+        in: query
+        name: ranked_only
+        required: false
+        schema:
+          $ref: '#/components/schemas/ranked_only'
+        style: form
+      - description: |
+          `[1:100]` How many articles to return per page.
+        explode: true
+        in: query
+        name: page_size
+        required: false
+        schema:
+          $ref: '#/components/schemas/page_size'
+        style: form
+      - description: |
+          The number of the page. Use it to scroll through the results.
+          This parameter is used to paginate: scroll through results because one API response cannot return more than 100 articles.
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          $ref: '#/components/schemas/page'
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/200_response_latest'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error_response'
+          description: API is not put in headers
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error_response'
+          description: API Key not found
+        "406":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error_response'
+          description: Wrong parameter has been used
+        "408":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error_response'
+          description: Request Timeout
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error_response'
+          description: Concurrency violated
+      security:
+      - api_key: []
+      summary: Get Latest News Articles
+      tags:
+      - latest_headlines
+      x-accepts: application/json
+    post:
+      description: "Get the latest headlines given any topic, country, or language."
+      operationId: LatestHeadlines_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/latestHeadlines'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/200_response_latest'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error_response'
+          description: API is not put in headers
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error_response'
+          description: API Key not found
+        "406":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error_response'
+          description: Wrong parameter has been used
+        "408":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error_response'
+          description: Request Timeout
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error_response'
+          description: Concurrency violated
+      security:
+      - api_key: []
+      summary: Get Latest News Articles
+      tags:
+      - latest_headlines
+      x-content-type: application/json
+      x-accepts: application/json
+  /sources:
+    get:
+      description: "Returns a list of the top 100 supported news websites. Overall,\
+        \ we support over 60,000 websites. Using this endpoint, you may find the top\
+        \ 100 for your specific language, country, topic combination."
+      operationId: Sources_get
+      parameters:
+      - description: |
+          Specifies the languages of the search. For example: `en`.
+          The only accepted format is [ISO 639-1 — 2](https://en.wikipedia.org/wiki/ISO_639-1) letter code.
+        explode: true
+        in: query
+        name: lang
+        required: false
+        schema:
+          enum:
+          - af
+          - ar
+          - bg
+          - bn
+          - ca
+          - cn
+          - cs
+          - cy
+          - da
+          - de
+          - el
+          - en
+          - es
+          - et
+          - fa
+          - fi
+          - fr
+          - gu
+          - he
+          - hi
+          - hr
+          - hu
+          - id
+          - it
+          - ja
+          - kn
+          - ko
+          - lt
+          - lv
+          - mk
+          - ml
+          - mr
+          - ne
+          - nl
+          - "false"
+          - pa
+          - pl
+          - pt
+          - ro
+          - ru
+          - sk
+          - sl
+          - so
+          - sq
+          - sv
+          - sw
+          - ta
+          - te
+          - th
+          - tl
+          - tr
+          - tw
+          - uk
+          - ur
+          - vi
+          example: en
+          type: string
+        style: form
+      - description: |
+          Countries where the news publisher is located.
+          **Important**: This parameter is not responsible for the countries mentioned in the news article.
+          One or multiple countries can be used in the search.
+          The only acceptable format is [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
+          For example, `US,CA,MX` or just `US`
+        explode: true
+        in: query
+        name: countries
+        required: false
+        schema:
+          $ref: '#/components/schemas/countries'
+        style: form
+      - description: |
+          Accepted values: `news`, `sport`, `tech`, `world`, `finance`, `politics`, `business`, `economics`, `entertainment`, `beauty`, `travel`, `music`, `food`, `science`, `gaming`
+          The topic to which you want to restrict the articles of your choice.
+          Not all news articles are assigned with a topic, therefore, we cannot guarantee that 100% of topics talking about technology will be assigned a tech label.
+        explode: true
+        in: query
+        name: topic
+        required: false
+        schema:
+          $ref: '#/components/schemas/topic'
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/200_response_sources'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error_response'
+          description: API is not put in headers
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error_response'
+          description: API Key not found
+        "406":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error_response'
+          description: Wrong parameter has been used
+        "408":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error_response'
+          description: Request Timeout
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error_response'
+          description: Concurrency violated
+      security:
+      - api_key: []
+      summary: Get top news sources supported by NewsCatcher.
+      tags:
+      - sources
+      x-accepts: application/json
+    post:
+      description: "Returns a list of the top 100 supported news websites. Overall,\
+        \ we support over 60,000 websites. Using this endpoint, you may find the top\
+        \ 100 for your specific language, country, topic combination."
+      operationId: Sources_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SourcesQuery'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/200_response_sources'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error_response'
+          description: API is not put in headers
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error_response'
+          description: API Key not found
+        "406":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error_response'
+          description: Wrong parameter has been used
+        "408":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error_response'
+          description: Request Timeout
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error_response'
+          description: Concurrency violated
+      security:
+      - api_key: []
+      summary: Get top news sources supported by NewsCatcher.
+      tags:
+      - sources
+      x-content-type: application/json
+      x-accepts: application/json
+components:
+  parameters:
+    api_key:
+      description: |
+        Your unique authentication token
+      explode: false
+      in: header
+      name: x-api-key
+      required: true
+      schema:
+        type: string
+      style: simple
+    q:
+      description: |
+        Keyword/keywords you're searching for. This is the most important part of your query.
+        Please, refer to the **Advanced Query Parameter** section below of the docs for more examples and explanations
+      explode: true
+      in: query
+      name: q
+      required: true
+      schema:
+        example: '"Elon Musk"'
+        type: string
+      style: form
+    lang:
+      description: |
+        Specifies the languages of the search. For example: `en`.
+        The only accepted format is [ISO 639-1 — 2](https://en.wikipedia.org/wiki/ISO_639-1) letter code.
+      explode: true
+      in: query
+      name: lang
+      required: false
+      schema:
+        enum:
+        - af
+        - ar
+        - bg
+        - bn
+        - ca
+        - cn
+        - cs
+        - cy
+        - da
+        - de
+        - el
+        - en
+        - es
+        - et
+        - fa
+        - fi
+        - fr
+        - gu
+        - he
+        - hi
+        - hr
+        - hu
+        - id
+        - it
+        - ja
+        - kn
+        - ko
+        - lt
+        - lv
+        - mk
+        - ml
+        - mr
+        - ne
+        - nl
+        - "false"
+        - pa
+        - pl
+        - pt
+        - ro
+        - ru
+        - sk
+        - sl
+        - so
+        - sq
+        - sv
+        - sw
+        - ta
+        - te
+        - th
+        - tl
+        - tr
+        - tw
+        - uk
+        - ur
+        - vi
+        example: en
+        type: string
+      style: form
+    not_lang:
+      description: |
+        Inverse to the `lang` parameter
+      explode: true
+      in: query
+      name: not_lang
+      required: false
+      schema:
+        enum:
+        - af
+        - ar
+        - bg
+        - bn
+        - ca
+        - cn
+        - cs
+        - cy
+        - da
+        - de
+        - el
+        - en
+        - es
+        - et
+        - fa
+        - fi
+        - fr
+        - gu
+        - he
+        - hi
+        - hr
+        - hu
+        - id
+        - it
+        - ja
+        - kn
+        - ko
+        - lt
+        - lv
+        - mk
+        - ml
+        - mr
+        - ne
+        - nl
+        - "false"
+        - pa
+        - pl
+        - pt
+        - ro
+        - ru
+        - sk
+        - sl
+        - so
+        - sq
+        - sv
+        - sw
+        - ta
+        - te
+        - th
+        - tl
+        - tr
+        - tw
+        - uk
+        - ur
+        - vi
+        type: string
+      style: form
+    published_date_precision:
+      description: |
+        There are 3 types of date precision we define:
+        `full` — day and time of an article is correctly identified with the appropriate timezone
+        `timezone unknown` — day and time of an article is correctly identified without timezone
+        `date` — only the day is identified without an exact time
+      explode: true
+      in: query
+      name: published_date_precision
+      required: false
+      schema:
+        $ref: '#/components/schemas/publish_date_precision'
+      style: form
+    from:
+      description: |
+        `YYYY/mm/dd` From which point in time to start the search.
+        The default timezone is UTC.
+        Defaults to the past week.
+      explode: true
+      in: query
+      name: from
+      required: false
+      schema:
+        $ref: '#/components/schemas/date'
+      style: form
+    to:
+      description: |
+        `YYYY/mm/dd` Until which point in time to search for.
+        The default timezone is UTC.
+      explode: true
+      in: query
+      name: to
+      required: false
+      schema:
+        $ref: '#/components/schemas/date'
+      style: form
+    search_in:
+      description: |
+        By default, we search what you specified in the `q` parameter in both `title` and `summary` of the article.
+        However, you can limit this to either `title` or `summary`
+      explode: true
+      in: query
+      name: search_in
+      required: false
+      schema:
+        $ref: '#/components/schemas/search_in'
+      style: form
+    countries:
+      description: |
+        Countries where the news publisher is located.
+        **Important**: This parameter is not responsible for the countries mentioned in the news article.
+        One or multiple countries can be used in the search.
+        The only acceptable format is [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
+        For example, `US,CA,MX` or just `US`
+      explode: true
+      in: query
+      name: countries
+      required: false
+      schema:
+        $ref: '#/components/schemas/countries'
+      style: form
+    not_countries:
+      description: |
+        The inverse of the `countries` parameter.
+      explode: true
+      in: query
+      name: not_countries
+      required: false
+      schema:
+        $ref: '#/components/schemas/countries'
+      style: form
+    topic:
+      description: |
+        Accepted values: `news`, `sport`, `tech`, `world`, `finance`, `politics`, `business`, `economics`, `entertainment`, `beauty`, `travel`, `music`, `food`, `science`, `gaming`
+        The topic to which you want to restrict the articles of your choice.
+        Not all news articles are assigned with a topic, therefore, we cannot guarantee that 100% of topics talking about technology will be assigned a tech label.
+      explode: true
+      in: query
+      name: topic
+      required: false
+      schema:
+        $ref: '#/components/schemas/topic'
+      style: form
+    sources:
+      description: |
+        One or more news resources to filter your search. It should be the normal form of the URL,
+        For example: `nytimes.com,theguardian.com`
+      explode: true
+      in: query
+      name: sources
+      required: false
+      schema:
+        $ref: '#/components/schemas/sources'
+      style: form
+    not_sources:
+      description: |
+        One or more sources to be excluded from the search.
+        Comma-separated list. For example: `nytimes.com,cnn.com,wsj.com`
+      explode: true
+      in: query
+      name: not_sources
+      required: false
+      schema:
+        $ref: '#/components/schemas/not_sources'
+      style: form
+    ranked_only:
+      description: |
+        Default: `True`
+        Limit the search only for the sources which are in the top 1 million online websites. Unranked sources are assigned a rank that equals `999999`
+      explode: true
+      in: query
+      name: ranked_only
+      required: false
+      schema:
+        $ref: '#/components/schemas/ranked_only'
+      style: form
+    from_rank:
+      description: |
+        `[0:999999]` The lowest boundary of the rank of a news website to filter by.
+        Important: lower rank means that a source is more popular
+      explode: true
+      in: query
+      name: from_rank
+      required: false
+      schema:
+        $ref: '#/components/schemas/rank'
+      style: form
+    to_rank:
+      description: |
+        `[0:999999]` The upper boundary of the rank of a news website to filter by.
+      explode: true
+      in: query
+      name: to_rank
+      required: false
+      schema:
+        $ref: '#/components/schemas/rank'
+      style: form
+    sort_by:
+      description: |
+        `relevancy` (default value) — the most relevant results first
+        `date` — the most recently published results first
+        `rank` — the results from the highest-ranked sources first
+      explode: true
+      in: query
+      name: sort_by
+      required: false
+      schema:
+        $ref: '#/components/schemas/sort_by'
+      style: form
+    when:
+      description: |
+        The time period you want to get the latest headlines for.
+
+        Accepted forms:
+        - `7d` => Dailly Form (last 7 days time period),  `30d`  (last 30 days time period)
+        - `1h` => Hourly Form (last hour), `24h` (last 24 hours)
+
+        *Default*: The number of historic data available for your subscription plan
+      explode: true
+      in: query
+      name: when
+      required: false
+      schema:
+        $ref: '#/components/schemas/when'
+      style: form
+    page_size:
+      description: |
+        `[1:100]` How many articles to return per page.
+      explode: true
+      in: query
+      name: page_size
+      required: false
+      schema:
+        $ref: '#/components/schemas/page_size'
+      style: form
+    page:
+      description: |
+        The number of the page. Use it to scroll through the results.
+        This parameter is used to paginate: scroll through results because one API response cannot return more than 100 articles.
+      explode: true
+      in: query
+      name: page
+      required: false
+      schema:
+        $ref: '#/components/schemas/page'
+      style: form
+  schemas:
+    Search:
+      example:
+        search_in: title
+        sources: "nytimes.com,theguardian.com"
+        not_sources: not_sources
+        countries: "US,CA"
+        sort_by: rank
+        not_lang: af
+        q: '"Elon Musk"'
+        published_date_precision: full
+        topic: business
+        ranked_only: true
+        from: 2021/05/06
+        to: 2021/05/06
+        page: 1
+        lang: en
+        not_countries: not_countries
+        page_size: 100
+      properties:
+        q:
+          description: "Keyword/keywords you're searching for. This is the most important\
+            \ part of your query. Please, refer to the **Advanced Query Parameter**\
+            \ section of the docs for more examples and explanations."
+          example: '"Elon Musk"'
+          type: string
+        lang:
+          description: The language you want to search in.
+          enum:
+          - af
+          - ar
+          - bg
+          - bn
+          - ca
+          - cn
+          - cs
+          - cy
+          - da
+          - de
+          - el
+          - en
+          - es
+          - et
+          - fa
+          - fi
+          - fr
+          - gu
+          - he
+          - hi
+          - hr
+          - hu
+          - id
+          - it
+          - ja
+          - kn
+          - ko
+          - lt
+          - lv
+          - mk
+          - ml
+          - mr
+          - ne
+          - nl
+          - "false"
+          - pa
+          - pl
+          - pt
+          - ro
+          - ru
+          - sk
+          - sl
+          - so
+          - sq
+          - sv
+          - sw
+          - ta
+          - te
+          - th
+          - tl
+          - tr
+          - tw
+          - uk
+          - ur
+          - vi
+          example: en
+          type: string
+        not_lang:
+          description: Inverse to the lang parameter.
+          enum:
+          - af
+          - ar
+          - bg
+          - bn
+          - ca
+          - cn
+          - cs
+          - cy
+          - da
+          - de
+          - el
+          - en
+          - es
+          - et
+          - fa
+          - fi
+          - fr
+          - gu
+          - he
+          - hi
+          - hr
+          - hu
+          - id
+          - it
+          - ja
+          - kn
+          - ko
+          - lt
+          - lv
+          - mk
+          - ml
+          - mr
+          - ne
+          - nl
+          - "false"
+          - pa
+          - pl
+          - pt
+          - ro
+          - ru
+          - sk
+          - sl
+          - so
+          - sq
+          - sv
+          - sw
+          - ta
+          - te
+          - th
+          - tl
+          - tr
+          - tw
+          - uk
+          - ur
+          - vi
+          type: string
+        published_date_precision:
+          description: Precision of the publication date.
+          enum:
+          - full
+          - timezone unknown
+          - date
+          example: full
+          type: string
+        from:
+          description: YYYY/mm/dd From which point in time to start the search. The
+            default timezone is UTC.  Defaults to the past week.
+          example: 2021/05/06
+          type: string
+        to:
+          description: YYYY/mm/dd Until which point in time to search for. The default
+            timezone is UTC.
+          example: 2021/05/06
+          type: string
+        search_in:
+          enum:
+          - title
+          - summary
+          - title_summary
+          example: title
+          type: string
+        countries:
+          example: "US,CA"
+          type: string
+        not_countries:
+          type: string
+        topic:
+          enum:
+          - news
+          - sport
+          - tech
+          - world
+          - finance
+          - politics
+          - business
+          - economics
+          - entertainment
+          - beauty
+          - travel
+          - music
+          - food
+          - science
+          - gaming
+          example: business
+          type: string
+        sources:
+          example: "nytimes.com,theguardian.com"
+          type: string
+        not_sources:
+          type: string
+        ranked_only:
+          example: true
+          type: boolean
+        sort_by:
+          enum:
+          - relevancy
+          - date
+          - rank
+          example: rank
+          type: string
+        page_size:
+          example: 100
+          maximum: 100
+          minimum: 1
+          type: integer
+        page:
+          example: 1
+          minimum: 1
+          type: integer
+      type: object
+    SourcesQuery:
+      example:
+        topic: business
+        countries: "US,CA"
+        lang: en
+      properties:
+        lang:
+          description: The language you want to search in.
+          enum:
+          - af
+          - ar
+          - bg
+          - bn
+          - ca
+          - cn
+          - cs
+          - cy
+          - da
+          - de
+          - el
+          - en
+          - es
+          - et
+          - fa
+          - fi
+          - fr
+          - gu
+          - he
+          - hi
+          - hr
+          - hu
+          - id
+          - it
+          - ja
+          - kn
+          - ko
+          - lt
+          - lv
+          - mk
+          - ml
+          - mr
+          - ne
+          - nl
+          - "false"
+          - pa
+          - pl
+          - pt
+          - ro
+          - ru
+          - sk
+          - sl
+          - so
+          - sq
+          - sv
+          - sw
+          - ta
+          - te
+          - th
+          - tl
+          - tr
+          - tw
+          - uk
+          - ur
+          - vi
+          example: en
+          type: string
+        countries:
+          example: "US,CA"
+          type: string
+        topic:
+          enum:
+          - news
+          - sport
+          - tech
+          - world
+          - finance
+          - politics
+          - business
+          - economics
+          - entertainment
+          - beauty
+          - travel
+          - music
+          - food
+          - science
+          - gaming
+          example: business
+          type: string
+      type: object
+    latestHeadlines:
+      properties:
+        when:
+          example: 24h
+          type: string
+        lang:
+          description: The language you want to search in.
+          enum:
+          - af
+          - ar
+          - bg
+          - bn
+          - ca
+          - cn
+          - cs
+          - cy
+          - da
+          - de
+          - el
+          - en
+          - es
+          - et
+          - fa
+          - fi
+          - fr
+          - gu
+          - he
+          - hi
+          - hr
+          - hu
+          - id
+          - it
+          - ja
+          - kn
+          - ko
+          - lt
+          - lv
+          - mk
+          - ml
+          - mr
+          - ne
+          - nl
+          - "false"
+          - pa
+          - pl
+          - pt
+          - ro
+          - ru
+          - sk
+          - sl
+          - so
+          - sq
+          - sv
+          - sw
+          - ta
+          - te
+          - th
+          - tl
+          - tr
+          - tw
+          - uk
+          - ur
+          - vi
+          example: en
+          type: string
+        countries:
+          example: "US,CA"
+          type: string
+        not_countries:
+          type: string
+        topic:
+          enum:
+          - news
+          - sport
+          - tech
+          - world
+          - finance
+          - politics
+          - business
+          - economics
+          - entertainment
+          - beauty
+          - travel
+          - music
+          - food
+          - science
+          - gaming
+          example: business
+          type: string
+        sources:
+          example: "nytimes.com,theguardian.com"
+          type: string
+        not_sources:
+          type: string
+        ranked_only:
+          example: true
+          type: boolean
+        sort_by:
+          enum:
+          - relevancy
+          - date
+          - rank
+          example: rank
+          type: string
+        page_size:
+          example: 100
+          maximum: 100
+          minimum: 1
+          type: integer
+        page:
+          example: 1
+          minimum: 1
+          type: integer
+      type: object
+    q:
+      example: '"Elon Musk"'
+      type: string
+    lang:
+      enum:
+      - af
+      - ar
+      - bg
+      - bn
+      - ca
+      - cn
+      - cs
+      - cy
+      - da
+      - de
+      - el
+      - en
+      - es
+      - et
+      - fa
+      - fi
+      - fr
+      - gu
+      - he
+      - hi
+      - hr
+      - hu
+      - id
+      - it
+      - ja
+      - kn
+      - ko
+      - lt
+      - lv
+      - mk
+      - ml
+      - mr
+      - ne
+      - nl
+      - "false"
+      - pa
+      - pl
+      - pt
+      - ro
+      - ru
+      - sk
+      - sl
+      - so
+      - sq
+      - sv
+      - sw
+      - ta
+      - te
+      - th
+      - tl
+      - tr
+      - tw
+      - uk
+      - ur
+      - vi
+      example: en
+      type: string
+    publish_date_precision:
+      enum:
+      - full
+      - timezone unknown
+      - date
+      example: full
+      type: string
+    date:
+      example: 2021/05/06
+      type: string
+    search_in:
+      enum:
+      - title
+      - summary
+      - title_summary
+      example: title
+      type: string
+    countries:
+      example: "US,CA"
+      type: string
+    topic:
+      enum:
+      - news
+      - sport
+      - tech
+      - world
+      - finance
+      - politics
+      - business
+      - economics
+      - entertainment
+      - beauty
+      - travel
+      - music
+      - food
+      - science
+      - gaming
+      example: business
+      type: string
+    sources:
+      example: "nytimes.com,theguardian.com"
+      type: string
+    not_sources:
+      example: wsj.com
+      type: string
+    ranked_only:
+      example: true
+      type: boolean
+    rank:
+      example: 1000
+      maximum: 999999
+      minimum: 1
+      type: integer
+    sort_by:
+      enum:
+      - relevancy
+      - date
+      - rank
+      example: rank
+      type: string
+    when:
+      example: 24h
+      type: string
+    page_size:
+      example: 100
+      maximum: 100
+      minimum: 1
+      type: integer
+    page:
+      example: 1
+      minimum: 1
+      type: integer
+    success_status:
+      enum:
+      - ok
+      - No matches for your search.
+      example: ok
+      type: string
+    error_status:
+      enum:
+      - error
+      - No matches for your search.
+      example: error
+      type: string
+    list:
+      items:
+        type: string
+      nullable: true
+      type: array
+    article:
+      items:
+        $ref: '#/components/schemas/article_inner'
+      type: array
+    search_user_input:
+      example:
+        search_in:
+        - search_in
+        - search_in
+        sources:
+        - sources
+        - sources
+        not_sources:
+        - not_sources
+        - not_sources
+        countries:
+        - countries
+        - countries
+        sort_by: sort_by
+        not_lang:
+        - not_lang
+        - not_lang
+        from_rank: 7
+        q: q
+        size: 2
+        published_date_precision: published_date_precision
+        ranked_only: ranked_only
+        topic: topic
+        from: from
+        to: to
+        page: 3
+        lang:
+        - lang
+        - lang
+        to_rank: 9
+        not_countries:
+        - not_countries
+        - not_countries
+      properties:
+        q:
+          type: string
+        search_in:
+          items:
+            type: string
+          nullable: true
+          type: array
+        lang:
+          items:
+            type: string
+          nullable: true
+          type: array
+        not_lang:
+          items:
+            type: string
+          nullable: true
+          type: array
+        countries:
+          items:
+            type: string
+          nullable: true
+          type: array
+        not_countries:
+          items:
+            type: string
+          nullable: true
+          type: array
+        from:
+          type: string
+        to:
+          nullable: true
+          type: string
+        ranked_only:
+          type: string
+        from_rank:
+          nullable: true
+          type: integer
+        to_rank:
+          nullable: true
+          type: integer
+        sort_by:
+          type: string
+        page:
+          type: integer
+        size:
+          type: integer
+        sources:
+          items:
+            type: string
+          nullable: true
+          type: array
+        not_sources:
+          items:
+            type: string
+          nullable: true
+          type: array
+        topic:
+          nullable: true
+          type: string
+        published_date_precision:
+          nullable: true
+          type: string
+      type: object
+    latest_headlines_user_input:
+      example:
+        size: 2
+        sources:
+        - sources
+        - sources
+        not_sources:
+        - not_sources
+        - not_sources
+        topic: topic
+        countries:
+        - countries
+        - countries
+        page: 5
+        lang:
+        - lang
+        - lang
+        not_countries:
+        - not_countries
+        - not_countries
+        not_lang:
+        - not_lang
+        - not_lang
+      properties:
+        lang:
+          items:
+            type: string
+          nullable: true
+          type: array
+        not_lang:
+          items:
+            type: string
+          nullable: true
+          type: array
+        countries:
+          items:
+            type: string
+          nullable: true
+          type: array
+        not_countries:
+          items:
+            type: string
+          nullable: true
+          type: array
+        page:
+          type: integer
+        size:
+          type: integer
+        sources:
+          items:
+            type: string
+          nullable: true
+          type: array
+        not_sources:
+          items:
+            type: string
+          nullable: true
+          type: array
+        topic:
+          nullable: true
+          type: string
+      type: object
+    sources_user_input:
+      example:
+        topic: topic
+        countries:
+        - countries
+        - countries
+        lang:
+        - lang
+        - lang
+      properties:
+        lang:
+          items:
+            type: string
+          nullable: true
+          type: array
+        countries:
+          items:
+            type: string
+          nullable: true
+          type: array
+        topic:
+          nullable: true
+          type: string
+      type: object
+    "200_response":
+      example:
+        total_hits: 0
+        user_input:
+          search_in:
+          - search_in
+          - search_in
+          sources:
+          - sources
+          - sources
+          not_sources:
+          - not_sources
+          - not_sources
+          countries:
+          - countries
+          - countries
+          sort_by: sort_by
+          not_lang:
+          - not_lang
+          - not_lang
+          from_rank: 7
+          q: q
+          size: 2
+          published_date_precision: published_date_precision
+          ranked_only: ranked_only
+          topic: topic
+          from: from
+          to: to
+          page: 3
+          lang:
+          - lang
+          - lang
+          to_rank: 9
+          not_countries:
+          - not_countries
+          - not_countries
+        page: 6
+        total_pages: 1
+        articles:
+        - summary: summary
+          country: country
+          author: author
+          link: link
+          language: language
+          title: title
+          _score: 2.3021358869347655
+          clean_url: clean_url
+          published_date_precision: published_date_precision
+          rights: rights
+          is_opinion: true
+          rank: 5
+          topic: topic
+          twitter_account: twitter_account
+          _id: _id
+          excerpt: excerpt
+          published_date: published_date
+          authors: authors
+        - summary: summary
+          country: country
+          author: author
+          link: link
+          language: language
+          title: title
+          _score: 2.3021358869347655
+          clean_url: clean_url
+          published_date_precision: published_date_precision
+          rights: rights
+          is_opinion: true
+          rank: 5
+          topic: topic
+          twitter_account: twitter_account
+          _id: _id
+          excerpt: excerpt
+          published_date: published_date
+          authors: authors
+        status: ok
+        page_size: 5
+      properties:
+        status:
+          $ref: '#/components/schemas/success_status'
+        total_hits:
+          type: integer
+        page:
+          type: integer
+        total_pages:
+          type: integer
+        page_size:
+          type: integer
+        articles:
+          items:
+            $ref: '#/components/schemas/article_inner'
+          type: array
+        user_input:
+          $ref: '#/components/schemas/search_user_input'
+      type: object
+    "200_response_latest":
+      example:
+        total_hits: 0
+        user_input:
+          size: 2
+          sources:
+          - sources
+          - sources
+          not_sources:
+          - not_sources
+          - not_sources
+          topic: topic
+          countries:
+          - countries
+          - countries
+          page: 5
+          lang:
+          - lang
+          - lang
+          not_countries:
+          - not_countries
+          - not_countries
+          not_lang:
+          - not_lang
+          - not_lang
+        page: 6
+        total_pages: 1
+        articles:
+        - summary: summary
+          country: country
+          author: author
+          link: link
+          language: language
+          title: title
+          _score: 2.3021358869347655
+          clean_url: clean_url
+          published_date_precision: published_date_precision
+          rights: rights
+          is_opinion: true
+          rank: 5
+          topic: topic
+          twitter_account: twitter_account
+          _id: _id
+          excerpt: excerpt
+          published_date: published_date
+          authors: authors
+        - summary: summary
+          country: country
+          author: author
+          link: link
+          language: language
+          title: title
+          _score: 2.3021358869347655
+          clean_url: clean_url
+          published_date_precision: published_date_precision
+          rights: rights
+          is_opinion: true
+          rank: 5
+          topic: topic
+          twitter_account: twitter_account
+          _id: _id
+          excerpt: excerpt
+          published_date: published_date
+          authors: authors
+        status: ok
+        page_size: 5
+      properties:
+        status:
+          $ref: '#/components/schemas/success_status'
+        total_hits:
+          type: integer
+        page:
+          type: integer
+        total_pages:
+          type: integer
+        page_size:
+          type: integer
+        articles:
+          items:
+            $ref: '#/components/schemas/article_inner'
+          type: array
+        user_input:
+          $ref: '#/components/schemas/latest_headlines_user_input'
+      type: object
+    "200_response_sources":
+      example:
+        sources:
+        - sources
+        - sources
+        user_input:
+          topic: topic
+          countries:
+          - countries
+          - countries
+          lang:
+          - lang
+          - lang
+        message: message
+      properties:
+        message:
+          type: string
+        sources:
+          items:
+            type: string
+          nullable: true
+          type: array
+        user_input:
+          $ref: '#/components/schemas/sources_user_input'
+      type: object
+    error_response:
+      properties:
+        status:
+          $ref: '#/components/schemas/error_status'
+        error_code:
+          type: string
+        message:
+          type: string
+      type: object
+    article_inner:
+      example:
+        summary: summary
+        country: country
+        author: author
+        link: link
+        language: language
+        title: title
+        _score: 2.3021358869347655
+        clean_url: clean_url
+        published_date_precision: published_date_precision
+        rights: rights
+        is_opinion: true
+        rank: 5
+        topic: topic
+        twitter_account: twitter_account
+        _id: _id
+        excerpt: excerpt
+        published_date: published_date
+        authors: authors
+      properties:
+        title:
+          type: string
+        author:
+          type: string
+        published_date:
+          type: string
+        published_date_precision:
+          type: string
+        link:
+          type: string
+        clean_url:
+          type: string
+        excerpt:
+          nullable: true
+          type: string
+        summary:
+          type: string
+        rights:
+          type: string
+        rank:
+          type: integer
+        topic:
+          type: string
+        country:
+          type: string
+        language:
+          nullable: true
+          type: string
+        authors:
+          type: string
+        is_opinion:
+          type: boolean
+        twitter_account:
+          nullable: true
+          type: string
+        _score:
+          nullable: true
+          type: number
+        _id:
+          type: string
+      type: object
+  securitySchemes:
+    api_key:
+      in: header
+      name: x-api-key
+      type: apiKey
+

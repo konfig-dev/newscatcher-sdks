@@ -1,0 +1,3 @@
+src/test/java/com/konfigthis/newscatcherapi/client/api/LatestHeadlinesApiTest.java
+src/test/java/com/konfigthis/newscatcherapi/client/api/SearchApiTest.java
+src/test/java/com/konfigthis/newscatcherapi/client/api/SourcesApiTest.java

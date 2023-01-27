@@ -4,7 +4,6 @@ requiredEnvironmentVariables:
   - NEWSCATCHER_API_KEY
 generators:
   java:
-    disabled: true
     version: 1.0.0
     groupId: com.konfigthis.newscatcherapi
     artifactId: newscatcherapi-java-sdk
