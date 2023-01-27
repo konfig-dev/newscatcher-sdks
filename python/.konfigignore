@@ -1,4 +1,5 @@
 test/test_search_api.py
 test/test_sources_api.py
 test/test_latest_headlines_api.py
+test/test_getting_started.py
 test/test_page_size.py
