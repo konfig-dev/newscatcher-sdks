@@ -759,7 +759,6 @@ components:
             type: string
           excerpt:
             type: string
-            nullable: true
           summary:
             type: string
           rights:
