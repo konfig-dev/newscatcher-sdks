@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **published_date_precision** | **str** |  | [optional] 
 **link** | **str** |  | [optional] 
 **clean_url** | **str** |  | [optional] 
-**excerpt** | **str** |  | [optional] 
+**excerpt** | **str, none_type** |  | [optional] 
 **summary** | **str** |  | [optional] 
 **rights** | **str** |  | [optional] 
 **rank** | **int** |  | [optional] 

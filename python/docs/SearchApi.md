@@ -59,7 +59,7 @@ with newscatcherapi_client.ApiClient(configuration) as api_client:
     not_countries = "US,CA" # str | The inverse of the `countries` parameter.  (optional)
     topic = Topic("business") # Topic | Accepted values: `news`, `sport`, `tech`, `world`, `finance`, `politics`, `business`, `economics`, `entertainment`, `beauty`, `travel`, `music`, `food`, `science`, `gaming` The topic to which you want to restrict the articles of your choice. Not all news articles are assigned with a topic, therefore, we cannot guarantee that 100% of topics talking about technology will be assigned a tech label.  (optional)
     sources = "nytimes.com,theguardian.com" # str | One or more news resources to filter your search. It should be the normal form of the URL, For example: `nytimes.com,theguardian.com`  (optional)
-    not_sources = "nytimes.com,theguardian.com" # str | One or more sources to be excluded from the search. Comma-separated list. For example: `nytimes.com,cnn.com,wsj.com`  (optional)
+    not_sources = "wsj.com" # str | One or more sources to be excluded from the search. Comma-separated list. For example: `nytimes.com,cnn.com,wsj.com`  (optional)
     ranked_only = True # bool | Default: `True` Limit the search only for the sources which are in the top 1 million online websites. Unranked sources are assigned a rank that equals `999999`  (optional)
     from_rank = Rank(1000) # Rank | `[0:999999]` The lowest boundary of the rank of a news website to filter by. Important: lower rank means that a source is more popular  (optional)
     to_rank = Rank(1000) # Rank | `[0:999999]` The upper boundary of the rank of a news website to filter by.  (optional)

@@ -54,7 +54,7 @@ class SuccessStatus(ModelSimple):
     allowed_values = {
         ('value',): {
             'OK': "ok",
-            'ERROR': "error",
+            'NO_MATCHES_FOR_YOUR_SEARCH.': "No matches for your search.",
         },
     }
 
@@ -106,10 +106,10 @@ class SuccessStatus(ModelSimple):
         Note that value can be passed either in args or in kwargs, but not in both.
 
         Args:
-            args[0] (str):, must be one of ["ok", "error", ]  # noqa: E501
+            args[0] (str):, must be one of ["ok", "No matches for your search.", ]  # noqa: E501
 
         Keyword Args:
-            value (str):, must be one of ["ok", "error", ]  # noqa: E501
+            value (str):, must be one of ["ok", "No matches for your search.", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -200,10 +200,10 @@ class SuccessStatus(ModelSimple):
         Note that value can be passed either in args or in kwargs, but not in both.
 
         Args:
-            args[0] (str):, must be one of ["ok", "error", ]  # noqa: E501
+            args[0] (str):, must be one of ["ok", "No matches for your search.", ]  # noqa: E501
 
         Keyword Args:
-            value (str):, must be one of ["ok", "error", ]  # noqa: E501
+            value (str):, must be one of ["ok", "No matches for your search.", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
