@@ -88,7 +88,7 @@ class ArticleInner(ModelNormal):
             'published_date_precision': (str,),  # noqa: E501
             'link': (str,),  # noqa: E501
             'clean_url': (str,),  # noqa: E501
-            'excerpt': (str,),  # noqa: E501
+            'excerpt': (str, none_type,),  # noqa: E501
             'summary': (str,),  # noqa: E501
             'rights': (str,),  # noqa: E501
             'rank': (int,),  # noqa: E501
@@ -175,7 +175,7 @@ class ArticleInner(ModelNormal):
             published_date_precision (str): [optional]  # noqa: E501
             link (str): [optional]  # noqa: E501
             clean_url (str): [optional]  # noqa: E501
-            excerpt (str): [optional]  # noqa: E501
+            excerpt (str, none_type): [optional]  # noqa: E501
             summary (str): [optional]  # noqa: E501
             rights (str): [optional]  # noqa: E501
             rank (int): [optional]  # noqa: E501
@@ -278,7 +278,7 @@ class ArticleInner(ModelNormal):
             published_date_precision (str): [optional]  # noqa: E501
             link (str): [optional]  # noqa: E501
             clean_url (str): [optional]  # noqa: E501
-            excerpt (str): [optional]  # noqa: E501
+            excerpt (str, none_type): [optional]  # noqa: E501
             summary (str): [optional]  # noqa: E501
             rights (str): [optional]  # noqa: E501
             rank (int): [optional]  # noqa: E501
