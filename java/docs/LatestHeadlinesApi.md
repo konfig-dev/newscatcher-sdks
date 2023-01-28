@@ -23,7 +23,7 @@ import com.konfigthis.newscatcherapi.client.ApiClient;
 import com.konfigthis.newscatcherapi.client.ApiException;
 import com.konfigthis.newscatcherapi.client.Configuration;
 import com.konfigthis.newscatcherapi.client.auth.*;
-import com.konfigthis.newscatcherapi.client.models.*;
+import com.konfigthis.newscatcherapi.client.model.*;
 import com.konfigthis.newscatcherapi.client.api.LatestHeadlinesApi;
 
 public class Example {
@@ -115,7 +115,7 @@ import com.konfigthis.newscatcherapi.client.ApiClient;
 import com.konfigthis.newscatcherapi.client.ApiException;
 import com.konfigthis.newscatcherapi.client.Configuration;
 import com.konfigthis.newscatcherapi.client.auth.*;
-import com.konfigthis.newscatcherapi.client.models.*;
+import com.konfigthis.newscatcherapi.client.model.*;
 import com.konfigthis.newscatcherapi.client.api.LatestHeadlinesApi;
 
 public class Example {
