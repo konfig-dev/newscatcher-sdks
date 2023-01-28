@@ -9,40 +9,49 @@
  * Do not edit the class manually.
  */
 
-
 package com.konfigthis.newscatcherapi.client.api;
 
+import com.konfigthis.newscatcherapi.client.ApiClient;
 import com.konfigthis.newscatcherapi.client.ApiException;
-import com.konfigthis.newscatcherapi.client.model.ErrorResponse;
+import com.konfigthis.newscatcherapi.client.Configuration;
+import com.konfigthis.newscatcherapi.client.auth.ApiKeyAuth;
 import com.konfigthis.newscatcherapi.client.model.Model200Response;
 import com.konfigthis.newscatcherapi.client.model.PublishDatePrecision;
 import com.konfigthis.newscatcherapi.client.model.Search;
 import com.konfigthis.newscatcherapi.client.model.SearchIn;
 import com.konfigthis.newscatcherapi.client.model.SortBy;
 import com.konfigthis.newscatcherapi.client.model.Topic;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
 
 /**
  * API tests for SearchApi
  */
-@Disabled
 public class SearchApiTest {
 
-    private final SearchApi api = new SearchApi();
+    private static SearchApi api;
+
+    @BeforeClass
+    public static void beforeClass() {
+        ApiClient apiClient = Configuration.getDefaultApiClient();
+        ApiKeyAuth apiKey = (ApiKeyAuth) apiClient.getAuthentication("api_key");
+        apiKey.setApiKey(System.getenv("NEWSCATCHER_API_KEY"));
+        api = new SearchApi(apiClient);
+    }
 
     /**
      * Search for specific news articles
      *
-     * Main endpoint that allows you to find news article by keyword, date, language, country, etc.
+     * Main endpoint that allows you to find news article by keyword, date,
+     * language, country, etc.
      *
      * @throws ApiException if the Api call fails
      */
+    @Disabled
     @Test
     public void getTest() throws ApiException {
         String q = null;
@@ -63,22 +72,24 @@ public class SearchApiTest {
         SortBy sortBy = null;
         Integer pageSize = null;
         Integer page = null;
-        Model200Response response = api.get(q, lang, notLang, publishedDatePrecision, from, to, searchIn, countries, notCountries, topic, sources, notSources, rankedOnly, fromRank, toRank, sortBy, pageSize, page);
+        Model200Response response = api.get(q, lang, notLang, publishedDatePrecision, from, to, searchIn, countries,
+                notCountries, topic, sources, notSources, rankedOnly, fromRank, toRank, sortBy, pageSize, page);
         // TODO: test validations
     }
 
     /**
      * Search for specific news articles
      *
-     * Main endpoint that allows you to find news article by keyword, date, language, country, etc.
+     * Main endpoint that allows you to find news article by keyword, date,
+     * language, country, etc.
      *
      * @throws ApiException if the Api call fails
      */
     @Test
     public void postTest() throws ApiException {
-        Search search = null;
+        Search search = new Search().q("Apple").from("three months ago");
         Model200Response response = api.post(search);
-        // TODO: test validations
+        assertNotNull(response, "Response is null");
     }
 
 }
