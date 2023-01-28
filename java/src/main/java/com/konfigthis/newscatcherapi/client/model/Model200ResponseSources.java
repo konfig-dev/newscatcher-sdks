@@ -275,7 +275,7 @@ public class Model200ResponseSources {
         throw new IllegalArgumentException(String.format("Expected the field `message` to be a primitive type in the JSON string but got `%s`", jsonObj.get("message").toString()));
       }
       // ensure the optional json data is an array if present (nullable)
-      if (!jsonObj.get("not_lang").isJsonNull() && jsonObj.get("sources") != null && !jsonObj.get("sources").isJsonArray()) {
+      if (jsonObj.get("sources") != null && !jsonObj.get("sources").isJsonNull() && !jsonObj.get("sources").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `sources` to be an array in the JSON string or null but got `%s`", jsonObj.get("sources").toString()));
       }
       // validate the optional field `user_input`

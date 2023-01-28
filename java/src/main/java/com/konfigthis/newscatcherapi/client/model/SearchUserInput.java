@@ -772,23 +772,23 @@ public class SearchUserInput {
         throw new IllegalArgumentException(String.format("Expected the field `q` to be a primitive type in the JSON string but got `%s`", jsonObj.get("q").toString()));
       }
       // ensure the optional json data is an array if present (nullable)
-      if (!jsonObj.get("not_lang").isJsonNull() && jsonObj.get("search_in") != null && !jsonObj.get("search_in").isJsonArray()) {
+      if (jsonObj.get("search_in") != null && !jsonObj.get("search_in").isJsonNull() && !jsonObj.get("search_in").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `search_in` to be an array in the JSON string or null but got `%s`", jsonObj.get("search_in").toString()));
       }
       // ensure the optional json data is an array if present (nullable)
-      if (!jsonObj.get("not_lang").isJsonNull() && jsonObj.get("lang") != null && !jsonObj.get("lang").isJsonArray()) {
+      if (jsonObj.get("lang") != null && !jsonObj.get("lang").isJsonNull() && !jsonObj.get("lang").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `lang` to be an array in the JSON string or null but got `%s`", jsonObj.get("lang").toString()));
       }
       // ensure the optional json data is an array if present (nullable)
-      if (!jsonObj.get("not_lang").isJsonNull() && jsonObj.get("not_lang") != null && !jsonObj.get("not_lang").isJsonArray()) {
+      if (jsonObj.get("not_lang") != null && !jsonObj.get("not_lang").isJsonNull() && !jsonObj.get("not_lang").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `not_lang` to be an array in the JSON string or null but got `%s`", jsonObj.get("not_lang").toString()));
       }
       // ensure the optional json data is an array if present (nullable)
-      if (!jsonObj.get("not_lang").isJsonNull() && jsonObj.get("countries") != null && !jsonObj.get("countries").isJsonArray()) {
+      if (jsonObj.get("countries") != null && !jsonObj.get("countries").isJsonNull() && !jsonObj.get("countries").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `countries` to be an array in the JSON string or null but got `%s`", jsonObj.get("countries").toString()));
       }
       // ensure the optional json data is an array if present (nullable)
-      if (!jsonObj.get("not_lang").isJsonNull() && jsonObj.get("not_countries") != null && !jsonObj.get("not_countries").isJsonArray()) {
+      if (jsonObj.get("not_countries") != null && !jsonObj.get("not_countries").isJsonNull() && !jsonObj.get("not_countries").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `not_countries` to be an array in the JSON string or null but got `%s`", jsonObj.get("not_countries").toString()));
       }
       if ((jsonObj.get("from") != null && !jsonObj.get("from").isJsonNull()) && !jsonObj.get("from").isJsonPrimitive()) {
@@ -804,11 +804,11 @@ public class SearchUserInput {
         throw new IllegalArgumentException(String.format("Expected the field `sort_by` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sort_by").toString()));
       }
       // ensure the optional json data is an array if present (nullable)
-      if (!jsonObj.get("not_lang").isJsonNull() && jsonObj.get("sources") != null && !jsonObj.get("sources").isJsonArray()) {
+      if (jsonObj.get("sources") != null && !jsonObj.get("sources").isJsonNull() && !jsonObj.get("sources").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `sources` to be an array in the JSON string or null but got `%s`", jsonObj.get("sources").toString()));
       }
       // ensure the optional json data is an array if present (nullable)
-      if (!jsonObj.get("not_lang").isJsonNull() && jsonObj.get("not_sources") != null && !jsonObj.get("not_sources").isJsonArray()) {
+      if (jsonObj.get("not_sources") != null && !jsonObj.get("not_sources").isJsonNull() && !jsonObj.get("not_sources").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `not_sources` to be an array in the JSON string or null but got `%s`", jsonObj.get("not_sources").toString()));
       }
       if (!jsonObj.get("topic").isJsonNull() && (jsonObj.get("topic") != null && !jsonObj.get("topic").isJsonNull()) && !jsonObj.get("topic").isJsonPrimitive()) {
