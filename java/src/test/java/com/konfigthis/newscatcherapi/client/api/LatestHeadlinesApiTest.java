@@ -9,29 +9,37 @@
  * Do not edit the class manually.
  */
 
-
 package com.konfigthis.newscatcherapi.client.api;
 
+import com.konfigthis.newscatcherapi.client.ApiClient;
 import com.konfigthis.newscatcherapi.client.ApiException;
-import com.konfigthis.newscatcherapi.client.model.ErrorResponse;
+import com.konfigthis.newscatcherapi.client.Configuration;
+import com.konfigthis.newscatcherapi.client.auth.ApiKeyAuth;
 import com.konfigthis.newscatcherapi.client.model.LatestHeadlines;
 import com.konfigthis.newscatcherapi.client.model.Model200ResponseLatest;
 import com.konfigthis.newscatcherapi.client.model.Topic;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
+import com.konfigthis.newscatcherapi.client.model.LatestHeadlines.LangEnum;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 /**
  * API tests for LatestHeadlinesApi
  */
-@Disabled
 public class LatestHeadlinesApiTest {
 
-    private final LatestHeadlinesApi api = new LatestHeadlinesApi();
+    private static LatestHeadlinesApi api;
+
+    @BeforeClass
+    public static void beforeClass() {
+        ApiClient apiClient = Configuration.getDefaultApiClient();
+        ApiKeyAuth apiKey = (ApiKeyAuth) apiClient.getAuthentication("api_key");
+        apiKey.setApiKey(System.getenv("NEWSCATCHER_API_KEY"));
+        api = new LatestHeadlinesApi(apiClient);
+    }
 
     /**
      * Get Latest News Articles
@@ -40,6 +48,7 @@ public class LatestHeadlinesApiTest {
      *
      * @throws ApiException if the Api call fails
      */
+    @Disabled
     @Test
     public void getTest() throws ApiException {
         String lang = null;
@@ -52,7 +61,8 @@ public class LatestHeadlinesApiTest {
         Boolean rankedOnly = null;
         Integer pageSize = null;
         Integer page = null;
-        Model200ResponseLatest response = api.get(lang, notLang, countries, notCountries, topic, sources, notSources, rankedOnly, pageSize, page);
+        Model200ResponseLatest response = api.get(lang, notLang, countries, notCountries, topic, sources, notSources,
+                rankedOnly, pageSize, page);
         // TODO: test validations
     }
 
@@ -65,9 +75,9 @@ public class LatestHeadlinesApiTest {
      */
     @Test
     public void postTest() throws ApiException {
-        LatestHeadlines latestHeadlines = null;
+        LatestHeadlines latestHeadlines = new LatestHeadlines().lang(LangEnum.EN);
         Model200ResponseLatest response = api.post(latestHeadlines);
-        // TODO: test validations
+        assertNotNull(response, "Response is null");
     }
 
 }
