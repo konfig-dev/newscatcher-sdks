@@ -143,15 +143,14 @@ with newscatcherapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = latest_headlines_api.LatestHeadlinesApi(api_client)
     latest_headlines = LatestHeadlines(
-        when="24h",
+        when="12h",
         lang="en",
         countries="US,CA",
         not_countries="not_countries_example",
         topic="business",
         sources="nytimes.com,theguardian.com",
-        not_sources="not_sources_example",
+        not_sources="wsj.com",
         ranked_only=True,
-        sort_by="rank",
         page_size=100,
         page=1,
     ) # LatestHeadlines |  (optional)

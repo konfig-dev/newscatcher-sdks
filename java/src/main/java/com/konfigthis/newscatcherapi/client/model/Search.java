@@ -578,6 +578,14 @@ public class Search {
   @SerializedName(SERIALIZED_NAME_RANKED_ONLY)
   private Boolean rankedOnly;
 
+  public static final String SERIALIZED_NAME_FROM_RANK = "from_rank";
+  @SerializedName(SERIALIZED_NAME_FROM_RANK)
+  private Integer fromRank;
+
+  public static final String SERIALIZED_NAME_TO_RANK = "to_rank";
+  @SerializedName(SERIALIZED_NAME_TO_RANK)
+  private Integer toRank;
+
   /**
    * Gets or Sets sortBy
    */
@@ -941,6 +949,56 @@ public class Search {
   }
 
 
+  public Search fromRank(Integer fromRank) {
+    
+    this.fromRank = fromRank;
+    return this;
+  }
+
+   /**
+   * &#x60;[0:999999]&#x60; The lowest boundary of the rank of a news website to filter by. Important: lower rank means that a source is more popular 
+   * minimum: 0
+   * maximum: 999999
+   * @return fromRank
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "`[0:999999]` The lowest boundary of the rank of a news website to filter by. Important: lower rank means that a source is more popular ")
+
+  public Integer getFromRank() {
+    return fromRank;
+  }
+
+
+  public void setFromRank(Integer fromRank) {
+    this.fromRank = fromRank;
+  }
+
+
+  public Search toRank(Integer toRank) {
+    
+    this.toRank = toRank;
+    return this;
+  }
+
+   /**
+   * &#x60;[0:999999]&#x60; The upper boundary of the rank of a news website to filter by. 
+   * minimum: 0
+   * maximum: 999999
+   * @return toRank
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "`[0:999999]` The upper boundary of the rank of a news website to filter by. ")
+
+  public Integer getToRank() {
+    return toRank;
+  }
+
+
+  public void setToRank(Integer toRank) {
+    this.toRank = toRank;
+  }
+
+
   public Search sortBy(SortByEnum sortBy) {
     
     this.sortBy = sortBy;
@@ -1080,6 +1138,8 @@ public class Search {
         Objects.equals(this.sources, search.sources) &&
         Objects.equals(this.notSources, search.notSources) &&
         Objects.equals(this.rankedOnly, search.rankedOnly) &&
+        Objects.equals(this.fromRank, search.fromRank) &&
+        Objects.equals(this.toRank, search.toRank) &&
         Objects.equals(this.sortBy, search.sortBy) &&
         Objects.equals(this.pageSize, search.pageSize) &&
         Objects.equals(this.page, search.page)&&
@@ -1088,7 +1148,7 @@ public class Search {
 
   @Override
   public int hashCode() {
-    return Objects.hash(q, lang, notLang, publishedDatePrecision, from, to, searchIn, countries, notCountries, topic, sources, notSources, rankedOnly, sortBy, pageSize, page, additionalProperties);
+    return Objects.hash(q, lang, notLang, publishedDatePrecision, from, to, searchIn, countries, notCountries, topic, sources, notSources, rankedOnly, fromRank, toRank, sortBy, pageSize, page, additionalProperties);
   }
 
   @Override
@@ -1108,6 +1168,8 @@ public class Search {
     sb.append("    sources: ").append(toIndentedString(sources)).append("\n");
     sb.append("    notSources: ").append(toIndentedString(notSources)).append("\n");
     sb.append("    rankedOnly: ").append(toIndentedString(rankedOnly)).append("\n");
+    sb.append("    fromRank: ").append(toIndentedString(fromRank)).append("\n");
+    sb.append("    toRank: ").append(toIndentedString(toRank)).append("\n");
     sb.append("    sortBy: ").append(toIndentedString(sortBy)).append("\n");
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    page: ").append(toIndentedString(page)).append("\n");
@@ -1147,6 +1209,8 @@ public class Search {
     openapiFields.add("sources");
     openapiFields.add("not_sources");
     openapiFields.add("ranked_only");
+    openapiFields.add("from_rank");
+    openapiFields.add("to_rank");
     openapiFields.add("sort_by");
     openapiFields.add("page_size");
     openapiFields.add("page");

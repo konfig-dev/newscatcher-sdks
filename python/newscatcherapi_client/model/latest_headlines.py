@@ -130,11 +130,6 @@ class LatestHeadlines(ModelNormal):
             'SCIENCE': "science",
             'GAMING': "gaming",
         },
-        ('sort_by',): {
-            'RELEVANCY': "relevancy",
-            'DATE': "date",
-            'RANK': "rank",
-        },
     }
 
     validations = {
@@ -176,7 +171,6 @@ class LatestHeadlines(ModelNormal):
             'sources': (str,),  # noqa: E501
             'not_sources': (str,),  # noqa: E501
             'ranked_only': (bool,),  # noqa: E501
-            'sort_by': (str,),  # noqa: E501
             'page_size': (int,),  # noqa: E501
             'page': (int,),  # noqa: E501
         }
@@ -195,7 +189,6 @@ class LatestHeadlines(ModelNormal):
         'sources': 'sources',  # noqa: E501
         'not_sources': 'not_sources',  # noqa: E501
         'ranked_only': 'ranked_only',  # noqa: E501
-        'sort_by': 'sort_by',  # noqa: E501
         'page_size': 'page_size',  # noqa: E501
         'page': 'page',  # noqa: E501
     }
@@ -241,7 +234,7 @@ class LatestHeadlines(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            when (str): [optional]  # noqa: E501
+            when (str): The time period you want to get the headlines for. Accpeted format: - `7d` -> Daily form, last 7 days time period - `6h` -> Hourly form, last six hours . [optional]  # noqa: E501
             lang (str): The language you want to search in.. [optional]  # noqa: E501
             countries (str): [optional]  # noqa: E501
             not_countries (str): [optional]  # noqa: E501
@@ -249,7 +242,6 @@ class LatestHeadlines(ModelNormal):
             sources (str): [optional]  # noqa: E501
             not_sources (str): [optional]  # noqa: E501
             ranked_only (bool): [optional]  # noqa: E501
-            sort_by (str): [optional]  # noqa: E501
             page_size (int): [optional]  # noqa: E501
             page (int): [optional]  # noqa: E501
         """
@@ -337,7 +329,7 @@ class LatestHeadlines(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            when (str): [optional]  # noqa: E501
+            when (str): The time period you want to get the headlines for. Accpeted format: - `7d` -> Daily form, last 7 days time period - `6h` -> Hourly form, last six hours . [optional]  # noqa: E501
             lang (str): The language you want to search in.. [optional]  # noqa: E501
             countries (str): [optional]  # noqa: E501
             not_countries (str): [optional]  # noqa: E501
@@ -345,7 +337,6 @@ class LatestHeadlines(ModelNormal):
             sources (str): [optional]  # noqa: E501
             not_sources (str): [optional]  # noqa: E501
             ranked_only (bool): [optional]  # noqa: E501
-            sort_by (str): [optional]  # noqa: E501
             page_size (int): [optional]  # noqa: E501
             page (int): [optional]  # noqa: E501
         """

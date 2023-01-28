@@ -1296,6 +1296,7 @@ components:
         countries: "US,CA"
         sort_by: rank
         not_lang: af
+        from_rank: 80082
         q: '"Elon Musk"'
         published_date_precision: full
         topic: business
@@ -1304,6 +1305,7 @@ components:
         to: 2021/05/06
         page: 1
         lang: en
+        to_rank: 602745
         not_countries: not_countries
         page_size: 100
       properties:
@@ -1489,6 +1491,19 @@ components:
         ranked_only:
           example: true
           type: boolean
+        from_rank:
+          description: |
+            `[0:999999]` The lowest boundary of the rank of a news website to filter by.
+            Important: lower rank means that a source is more popular
+          maximum: 999999
+          minimum: 0
+          type: integer
+        to_rank:
+          description: |
+            `[0:999999]` The upper boundary of the rank of a news website to filter by.
+          maximum: 999999
+          minimum: 0
+          type: integer
         sort_by:
           enum:
           - relevancy
@@ -1598,7 +1613,12 @@ components:
     latestHeadlines:
       properties:
         when:
-          example: 24h
+          description: |
+            The time period you want to get the headlines for.
+            Accpeted format:
+            - `7d` -> Daily form, last 7 days time period
+            - `6h` -> Hourly form, last six hours
+          example: 12h
           type: string
         lang:
           description: The language you want to search in.
@@ -1688,17 +1708,11 @@ components:
           example: "nytimes.com,theguardian.com"
           type: string
         not_sources:
+          example: wsj.com
           type: string
         ranked_only:
           example: true
           type: boolean
-        sort_by:
-          enum:
-          - relevancy
-          - date
-          - rank
-          example: rank
-          type: string
         page_size:
           example: 100
           maximum: 100
