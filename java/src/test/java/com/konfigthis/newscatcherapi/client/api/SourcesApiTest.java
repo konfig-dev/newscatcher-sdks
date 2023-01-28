@@ -9,37 +9,48 @@
  * Do not edit the class manually.
  */
 
-
 package com.konfigthis.newscatcherapi.client.api;
 
+import com.konfigthis.newscatcherapi.client.ApiClient;
 import com.konfigthis.newscatcherapi.client.ApiException;
-import com.konfigthis.newscatcherapi.client.model.ErrorResponse;
+import com.konfigthis.newscatcherapi.client.Configuration;
+import com.konfigthis.newscatcherapi.client.auth.ApiKeyAuth;
 import com.konfigthis.newscatcherapi.client.model.Model200ResponseSources;
 import com.konfigthis.newscatcherapi.client.model.SourcesQuery;
 import com.konfigthis.newscatcherapi.client.model.Topic;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
+import com.konfigthis.newscatcherapi.client.model.SourcesQuery.LangEnum;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+import org.junit.BeforeClass;
+import org.junit.jupiter.api.Disabled;
+import org.junit.Test;
 
 /**
  * API tests for SourcesApi
  */
-@Disabled
 public class SourcesApiTest {
 
-    private final SourcesApi api = new SourcesApi();
+    private static SourcesApi api;
+
+    @BeforeClass
+    public static void beforeClass() {
+        ApiClient apiClient = Configuration.getDefaultApiClient();
+        ApiKeyAuth apiKey = (ApiKeyAuth) apiClient.getAuthentication("api_key");
+        apiKey.setApiKey(System.getenv("NEWSCATCHER_API_KEY"));
+        api = new SourcesApi(apiClient);
+    }
 
     /**
      * Get top news sources supported by NewsCatcher.
      *
-     * Returns a list of the top 100 supported news websites. Overall, we support over 60,000 websites. Using this endpoint, you may find the top 100 for your specific language, country, topic combination.
+     * Returns a list of the top 100 supported news websites. Overall, we support
+     * over 60,000 websites. Using this endpoint, you may find the top 100 for your
+     * specific language, country, topic combination.
      *
      * @throws ApiException if the Api call fails
      */
+    @Disabled
     @Test
     public void getTest() throws ApiException {
         String lang = null;
@@ -52,15 +63,17 @@ public class SourcesApiTest {
     /**
      * Get top news sources supported by NewsCatcher.
      *
-     * Returns a list of the top 100 supported news websites. Overall, we support over 60,000 websites. Using this endpoint, you may find the top 100 for your specific language, country, topic combination.
+     * Returns a list of the top 100 supported news websites. Overall, we support
+     * over 60,000 websites. Using this endpoint, you may find the top 100 for your
+     * specific language, country, topic combination.
      *
      * @throws ApiException if the Api call fails
      */
     @Test
     public void postTest() throws ApiException {
-        SourcesQuery sourcesQuery = null;
+        SourcesQuery sourcesQuery = new SourcesQuery().lang(LangEnum.EN);
         Model200ResponseSources response = api.post(sourcesQuery);
-        // TODO: test validations
+        assertNotNull(response, "Response is null");
     }
 
 }
