@@ -596,6 +596,50 @@ public class SearchUserInput {
     this.publishedDatePrecision = publishedDatePrecision;
   }
 
+  /**
+   * A container for additional, undeclared properties.
+   * This is a holder for any undeclared properties as specified with
+   * the 'additionalProperties' keyword in the OAS document.
+   */
+  private Map<String, Object> additionalProperties;
+
+  /**
+   * Set the additional (undeclared) property with the specified name and value.
+   * If the property does not already exist, create it otherwise replace it.
+   *
+   * @param key name of the property
+   * @param value value of the property
+   * @return the SearchUserInput instance itself
+   */
+  public SearchUserInput putAdditionalProperty(String key, Object value) {
+    if (this.additionalProperties == null) {
+        this.additionalProperties = new HashMap<String, Object>();
+    }
+    this.additionalProperties.put(key, value);
+    return this;
+  }
+
+  /**
+   * Return the additional (undeclared) property.
+   *
+   * @return a map of objects
+   */
+  public Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
+
+  /**
+   * Return the additional (undeclared) property with the specified name.
+   *
+   * @param key name of the property
+   * @return an object
+   */
+  public Object getAdditionalProperty(String key) {
+    if (this.additionalProperties == null) {
+        return null;
+    }
+    return this.additionalProperties.get(key);
+  }
 
 
   @Override
@@ -624,7 +668,8 @@ public class SearchUserInput {
         Objects.equals(this.sources, searchUserInput.sources) &&
         Objects.equals(this.notSources, searchUserInput.notSources) &&
         Objects.equals(this.topic, searchUserInput.topic) &&
-        Objects.equals(this.publishedDatePrecision, searchUserInput.publishedDatePrecision);
+        Objects.equals(this.publishedDatePrecision, searchUserInput.publishedDatePrecision)&&
+        Objects.equals(this.additionalProperties, searchUserInput.additionalProperties);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -633,7 +678,7 @@ public class SearchUserInput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(q, searchIn, lang, notLang, countries, notCountries, from, to, rankedOnly, fromRank, toRank, sortBy, page, size, sources, notSources, topic, publishedDatePrecision);
+    return Objects.hash(q, searchIn, lang, notLang, countries, notCountries, from, to, rankedOnly, fromRank, toRank, sortBy, page, size, sources, notSources, topic, publishedDatePrecision, additionalProperties);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -665,6 +710,7 @@ public class SearchUserInput {
     sb.append("    notSources: ").append(toIndentedString(notSources)).append("\n");
     sb.append("    topic: ").append(toIndentedString(topic)).append("\n");
     sb.append("    publishedDatePrecision: ").append(toIndentedString(publishedDatePrecision)).append("\n");
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -722,36 +768,28 @@ public class SearchUserInput {
           throw new IllegalArgumentException(String.format("The required field(s) %s in SearchUserInput is not found in the empty JSON string", SearchUserInput.openapiRequiredFields.toString()));
         }
       }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!SearchUserInput.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `SearchUserInput` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
       if ((jsonObj.get("q") != null && !jsonObj.get("q").isJsonNull()) && !jsonObj.get("q").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `q` to be a primitive type in the JSON string but got `%s`", jsonObj.get("q").toString()));
       }
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("search_in") != null && !jsonObj.get("search_in").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `search_in` to be an array in the JSON string but got `%s`", jsonObj.get("search_in").toString()));
+      // ensure the optional json data is an array if present (nullable)
+      if (!jsonObj.get("not_lang").isJsonNull() && jsonObj.get("search_in") != null && !jsonObj.get("search_in").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `search_in` to be an array in the JSON string or null but got `%s`", jsonObj.get("search_in").toString()));
       }
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("lang") != null && !jsonObj.get("lang").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `lang` to be an array in the JSON string but got `%s`", jsonObj.get("lang").toString()));
+      // ensure the optional json data is an array if present (nullable)
+      if (!jsonObj.get("not_lang").isJsonNull() && jsonObj.get("lang") != null && !jsonObj.get("lang").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `lang` to be an array in the JSON string or null but got `%s`", jsonObj.get("lang").toString()));
       }
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("not_lang") != null && !jsonObj.get("not_lang").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `not_lang` to be an array in the JSON string but got `%s`", jsonObj.get("not_lang").toString()));
+      // ensure the optional json data is an array if present (nullable)
+      if (!jsonObj.get("not_lang").isJsonNull() && jsonObj.get("not_lang") != null && !jsonObj.get("not_lang").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `not_lang` to be an array in the JSON string or null but got `%s`", jsonObj.get("not_lang").toString()));
       }
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("countries") != null && !jsonObj.get("countries").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `countries` to be an array in the JSON string but got `%s`", jsonObj.get("countries").toString()));
+      // ensure the optional json data is an array if present (nullable)
+      if (!jsonObj.get("not_lang").isJsonNull() && jsonObj.get("countries") != null && !jsonObj.get("countries").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `countries` to be an array in the JSON string or null but got `%s`", jsonObj.get("countries").toString()));
       }
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("not_countries") != null && !jsonObj.get("not_countries").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `not_countries` to be an array in the JSON string but got `%s`", jsonObj.get("not_countries").toString()));
+      // ensure the optional json data is an array if present (nullable)
+      if (!jsonObj.get("not_lang").isJsonNull() && jsonObj.get("not_countries") != null && !jsonObj.get("not_countries").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `not_countries` to be an array in the JSON string or null but got `%s`", jsonObj.get("not_countries").toString()));
       }
       if ((jsonObj.get("from") != null && !jsonObj.get("from").isJsonNull()) && !jsonObj.get("from").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `from` to be a primitive type in the JSON string but got `%s`", jsonObj.get("from").toString()));
@@ -765,13 +803,13 @@ public class SearchUserInput {
       if ((jsonObj.get("sort_by") != null && !jsonObj.get("sort_by").isJsonNull()) && !jsonObj.get("sort_by").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `sort_by` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sort_by").toString()));
       }
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("sources") != null && !jsonObj.get("sources").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `sources` to be an array in the JSON string but got `%s`", jsonObj.get("sources").toString()));
+      // ensure the optional json data is an array if present (nullable)
+      if (!jsonObj.get("not_lang").isJsonNull() && jsonObj.get("sources") != null && !jsonObj.get("sources").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `sources` to be an array in the JSON string or null but got `%s`", jsonObj.get("sources").toString()));
       }
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("not_sources") != null && !jsonObj.get("not_sources").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `not_sources` to be an array in the JSON string but got `%s`", jsonObj.get("not_sources").toString()));
+      // ensure the optional json data is an array if present (nullable)
+      if (!jsonObj.get("not_lang").isJsonNull() && jsonObj.get("not_sources") != null && !jsonObj.get("not_sources").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `not_sources` to be an array in the JSON string or null but got `%s`", jsonObj.get("not_sources").toString()));
       }
       if (!jsonObj.get("topic").isJsonNull() && (jsonObj.get("topic") != null && !jsonObj.get("topic").isJsonNull()) && !jsonObj.get("topic").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `topic` to be a primitive type in the JSON string but got `%s`", jsonObj.get("topic").toString()));
@@ -796,6 +834,23 @@ public class SearchUserInput {
            @Override
            public void write(JsonWriter out, SearchUserInput value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             obj.remove("additionalProperties");
+             // serialize additonal properties
+             if (value.getAdditionalProperties() != null) {
+               for (Map.Entry<String, Object> entry : value.getAdditionalProperties().entrySet()) {
+                 if (entry.getValue() instanceof String)
+                   obj.addProperty(entry.getKey(), (String) entry.getValue());
+                 else if (entry.getValue() instanceof Number)
+                   obj.addProperty(entry.getKey(), (Number) entry.getValue());
+                 else if (entry.getValue() instanceof Boolean)
+                   obj.addProperty(entry.getKey(), (Boolean) entry.getValue());
+                 else if (entry.getValue() instanceof Character)
+                   obj.addProperty(entry.getKey(), (Character) entry.getValue());
+                 else {
+                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                 }
+               }
+             }
              elementAdapter.write(out, obj);
            }
 
@@ -803,7 +858,27 @@ public class SearchUserInput {
            public SearchUserInput read(JsonReader in) throws IOException {
              JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
              validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
+             // store additional fields in the deserialized instance
+             SearchUserInput instance = thisAdapter.fromJsonTree(jsonObj);
+             for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
+               if (!openapiFields.contains(entry.getKey())) {
+                 if (entry.getValue().isJsonPrimitive()) { // primitive type
+                   if (entry.getValue().getAsJsonPrimitive().isString())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsString());
+                   else if (entry.getValue().getAsJsonPrimitive().isNumber())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsNumber());
+                   else if (entry.getValue().getAsJsonPrimitive().isBoolean())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
+                   else
+                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                 } else if (entry.getValue().isJsonArray()) {
+                     instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
+                 } else { // JSON object
+                     instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), HashMap.class));
+                 }
+               }
+             }
+             return instance;
            }
 
        }.nullSafe();
