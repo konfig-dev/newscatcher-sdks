@@ -307,59 +307,6 @@ public class LatestHeadlines {
   @SerializedName(SERIALIZED_NAME_RANKED_ONLY)
   private Boolean rankedOnly;
 
-  /**
-   * Gets or Sets sortBy
-   */
-  @JsonAdapter(SortByEnum.Adapter.class)
-  public enum SortByEnum {
-    RELEVANCY("relevancy"),
-    
-    DATE("date"),
-    
-    RANK("rank");
-
-    private String value;
-
-    SortByEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static SortByEnum fromValue(String value) {
-      for (SortByEnum b : SortByEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<SortByEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final SortByEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public SortByEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return SortByEnum.fromValue(value);
-      }
-    }
-  }
-
-  public static final String SERIALIZED_NAME_SORT_BY = "sort_by";
-  @SerializedName(SERIALIZED_NAME_SORT_BY)
-  private SortByEnum sortBy;
-
   public static final String SERIALIZED_NAME_PAGE_SIZE = "page_size";
   @SerializedName(SERIALIZED_NAME_PAGE_SIZE)
   private Integer pageSize;
@@ -378,11 +325,11 @@ public class LatestHeadlines {
   }
 
    /**
-   * Get when
+   * The time period you want to get the headlines for. Accpeted format: - &#x60;7d&#x60; -&gt; Daily form, last 7 days time period - &#x60;6h&#x60; -&gt; Hourly form, last six hours 
    * @return when
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "24h", value = "")
+  @ApiModelProperty(example = "12h", value = "The time period you want to get the headlines for. Accpeted format: - `7d` -> Daily form, last 7 days time period - `6h` -> Hourly form, last six hours ")
 
   public String getWhen() {
     return when;
@@ -520,7 +467,7 @@ public class LatestHeadlines {
    * @return notSources
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(example = "wsj.com", value = "")
 
   public String getNotSources() {
     return notSources;
@@ -552,29 +499,6 @@ public class LatestHeadlines {
 
   public void setRankedOnly(Boolean rankedOnly) {
     this.rankedOnly = rankedOnly;
-  }
-
-
-  public LatestHeadlines sortBy(SortByEnum sortBy) {
-    
-    this.sortBy = sortBy;
-    return this;
-  }
-
-   /**
-   * Get sortBy
-   * @return sortBy
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "rank", value = "")
-
-  public SortByEnum getSortBy() {
-    return sortBy;
-  }
-
-
-  public void setSortBy(SortByEnum sortBy) {
-    this.sortBy = sortBy;
   }
 
 
@@ -689,7 +613,6 @@ public class LatestHeadlines {
         Objects.equals(this.sources, latestHeadlines.sources) &&
         Objects.equals(this.notSources, latestHeadlines.notSources) &&
         Objects.equals(this.rankedOnly, latestHeadlines.rankedOnly) &&
-        Objects.equals(this.sortBy, latestHeadlines.sortBy) &&
         Objects.equals(this.pageSize, latestHeadlines.pageSize) &&
         Objects.equals(this.page, latestHeadlines.page)&&
         Objects.equals(this.additionalProperties, latestHeadlines.additionalProperties);
@@ -697,7 +620,7 @@ public class LatestHeadlines {
 
   @Override
   public int hashCode() {
-    return Objects.hash(when, lang, countries, notCountries, topic, sources, notSources, rankedOnly, sortBy, pageSize, page, additionalProperties);
+    return Objects.hash(when, lang, countries, notCountries, topic, sources, notSources, rankedOnly, pageSize, page, additionalProperties);
   }
 
   @Override
@@ -712,7 +635,6 @@ public class LatestHeadlines {
     sb.append("    sources: ").append(toIndentedString(sources)).append("\n");
     sb.append("    notSources: ").append(toIndentedString(notSources)).append("\n");
     sb.append("    rankedOnly: ").append(toIndentedString(rankedOnly)).append("\n");
-    sb.append("    sortBy: ").append(toIndentedString(sortBy)).append("\n");
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    page: ").append(toIndentedString(page)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
@@ -746,7 +668,6 @@ public class LatestHeadlines {
     openapiFields.add("sources");
     openapiFields.add("not_sources");
     openapiFields.add("ranked_only");
-    openapiFields.add("sort_by");
     openapiFields.add("page_size");
     openapiFields.add("page");
 
@@ -786,9 +707,6 @@ public class LatestHeadlines {
       }
       if ((jsonObj.get("not_sources") != null && !jsonObj.get("not_sources").isJsonNull()) && !jsonObj.get("not_sources").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `not_sources` to be a primitive type in the JSON string but got `%s`", jsonObj.get("not_sources").toString()));
-      }
-      if ((jsonObj.get("sort_by") != null && !jsonObj.get("sort_by").isJsonNull()) && !jsonObj.get("sort_by").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `sort_by` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sort_by").toString()));
       }
   }
 

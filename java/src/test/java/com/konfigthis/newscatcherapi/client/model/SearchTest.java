@@ -143,6 +143,22 @@ public class SearchTest {
     }
 
     /**
+     * Test the property 'fromRank'
+     */
+    @Test
+    public void fromRankTest() {
+        // TODO: test fromRank
+    }
+
+    /**
+     * Test the property 'toRank'
+     */
+    @Test
+    public void toRankTest() {
+        // TODO: test toRank
+    }
+
+    /**
      * Test the property 'sortBy'
      */
     @Test

@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**when** | **String** |  |  [optional] |
+|**when** | **String** | The time period you want to get the headlines for. Accpeted format: - &#x60;7d&#x60; -&gt; Daily form, last 7 days time period - &#x60;6h&#x60; -&gt; Hourly form, last six hours  |  [optional] |
 |**lang** | [**LangEnum**](#LangEnum) | The language you want to search in. |  [optional] |
 |**countries** | **String** |  |  [optional] |
 |**notCountries** | **String** |  |  [optional] |
@@ -15,7 +15,6 @@
 |**sources** | **String** |  |  [optional] |
 |**notSources** | **String** |  |  [optional] |
 |**rankedOnly** | **Boolean** |  |  [optional] |
-|**sortBy** | [**SortByEnum**](#SortByEnum) |  |  [optional] |
 |**pageSize** | **Integer** |  |  [optional] |
 |**page** | **Integer** |  |  [optional] |
 
@@ -102,16 +101,6 @@
 | FOOD | &quot;food&quot; |
 | SCIENCE | &quot;science&quot; |
 | GAMING | &quot;gaming&quot; |
-
-
-
-## Enum: SortByEnum
-
-| Name | Value |
-|---- | -----|
-| RELEVANCY | &quot;relevancy&quot; |
-| DATE | &quot;date&quot; |
-| RANK | &quot;rank&quot; |
 
 
 

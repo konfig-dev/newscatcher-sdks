@@ -20,6 +20,8 @@
 |**sources** | **String** |  |  [optional] |
 |**notSources** | **String** |  |  [optional] |
 |**rankedOnly** | **Boolean** |  |  [optional] |
+|**fromRank** | **Integer** | &#x60;[0:999999]&#x60; The lowest boundary of the rank of a news website to filter by. Important: lower rank means that a source is more popular  |  [optional] |
+|**toRank** | **Integer** | &#x60;[0:999999]&#x60; The upper boundary of the rank of a news website to filter by.  |  [optional] |
 |**sortBy** | [**SortByEnum**](#SortByEnum) |  |  [optional] |
 |**pageSize** | **Integer** |  |  [optional] |
 |**page** | **Integer** |  |  [optional] |

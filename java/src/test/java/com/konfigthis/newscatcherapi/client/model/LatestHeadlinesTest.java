@@ -103,14 +103,6 @@ public class LatestHeadlinesTest {
     }
 
     /**
-     * Test the property 'sortBy'
-     */
-    @Test
-    public void sortByTest() {
-        // TODO: test sortBy
-    }
-
-    /**
      * Test the property 'pageSize'
      */
     @Test

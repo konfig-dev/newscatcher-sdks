@@ -17,6 +17,8 @@ Name | Type | Description | Notes
 **sources** | **str** |  | [optional] 
 **not_sources** | **str** |  | [optional] 
 **ranked_only** | **bool** |  | [optional] 
+**from_rank** | **int** | &#x60;[0:999999]&#x60; The lowest boundary of the rank of a news website to filter by. Important: lower rank means that a source is more popular  | [optional] 
+**to_rank** | **int** | &#x60;[0:999999]&#x60; The upper boundary of the rank of a news website to filter by.  | [optional] 
 **sort_by** | **str** |  | [optional] 
 **page_size** | **int** |  | [optional] 
 **page** | **int** |  | [optional] 

@@ -205,6 +205,14 @@ class Search(ModelNormal):
     }
 
     validations = {
+        ('from_rank',): {
+            'inclusive_maximum': 999999,
+            'inclusive_minimum': 0,
+        },
+        ('to_rank',): {
+            'inclusive_maximum': 999999,
+            'inclusive_minimum': 0,
+        },
         ('page_size',): {
             'inclusive_maximum': 100,
             'inclusive_minimum': 1,
@@ -248,6 +256,8 @@ class Search(ModelNormal):
             'sources': (str,),  # noqa: E501
             'not_sources': (str,),  # noqa: E501
             'ranked_only': (bool,),  # noqa: E501
+            'from_rank': (int,),  # noqa: E501
+            'to_rank': (int,),  # noqa: E501
             'sort_by': (str,),  # noqa: E501
             'page_size': (int,),  # noqa: E501
             'page': (int,),  # noqa: E501
@@ -272,6 +282,8 @@ class Search(ModelNormal):
         'sources': 'sources',  # noqa: E501
         'not_sources': 'not_sources',  # noqa: E501
         'ranked_only': 'ranked_only',  # noqa: E501
+        'from_rank': 'from_rank',  # noqa: E501
+        'to_rank': 'to_rank',  # noqa: E501
         'sort_by': 'sort_by',  # noqa: E501
         'page_size': 'page_size',  # noqa: E501
         'page': 'page',  # noqa: E501
@@ -331,6 +343,8 @@ class Search(ModelNormal):
             sources (str): [optional]  # noqa: E501
             not_sources (str): [optional]  # noqa: E501
             ranked_only (bool): [optional]  # noqa: E501
+            from_rank (int): `[0:999999]` The lowest boundary of the rank of a news website to filter by. Important: lower rank means that a source is more popular . [optional]  # noqa: E501
+            to_rank (int): `[0:999999]` The upper boundary of the rank of a news website to filter by. . [optional]  # noqa: E501
             sort_by (str): [optional]  # noqa: E501
             page_size (int): [optional]  # noqa: E501
             page (int): [optional]  # noqa: E501
@@ -432,6 +446,8 @@ class Search(ModelNormal):
             sources (str): [optional]  # noqa: E501
             not_sources (str): [optional]  # noqa: E501
             ranked_only (bool): [optional]  # noqa: E501
+            from_rank (int): `[0:999999]` The lowest boundary of the rank of a news website to filter by. Important: lower rank means that a source is more popular . [optional]  # noqa: E501
+            to_rank (int): `[0:999999]` The upper boundary of the rank of a news website to filter by. . [optional]  # noqa: E501
             sort_by (str): [optional]  # noqa: E501
             page_size (int): [optional]  # noqa: E501
             page (int): [optional]  # noqa: E501

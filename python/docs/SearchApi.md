@@ -184,6 +184,8 @@ with newscatcherapi_client.ApiClient(configuration) as api_client:
         sources="nytimes.com,theguardian.com",
         not_sources="not_sources_example",
         ranked_only=True,
+        from_rank=0,
+        to_rank=0,
         sort_by="rank",
         page_size=100,
         page=1,
