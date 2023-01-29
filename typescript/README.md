@@ -39,6 +39,9 @@ npm install newscatcherapi-typescript-sdk@1.0.0 --save
 
 import { Configuration, LatestHeadlinesApi, Model200ResponseLatest, Topic, ErrorResponse } from "newscatcherapi-typescript-sdk";
 
+const apiKey = process.env.API_KEY;
+const config = new Configuration({ apiKey });
+
 const api = new LatestHeadlinesApi(config);
 
 const lang: 'af' | 'ar' | 'bg' | 'bn' | 'ca' | 'cn' | 'cs' | 'cy' | 'da' | 'de' | 'el' | 'en' | 'es' | 'et' | 'fa' | 'fi' | 'fr' | 'gu' | 'he' | 'hi' | 'hr' | 'hu' | 'id' | 'it' | 'ja' | 'kn' | 'ko' | 'lt' | 'lv' | 'mk' | 'ml' | 'mr' | 'ne' | 'nl' | 'false' | 'pa' | 'pl' | 'pt' | 'ro' | 'ru' | 'sk' | 'sl' | 'so' | 'sq' | 'sv' | 'sw' | 'ta' | 'te' | 'th' | 'tl' | 'tr' | 'tw' | 'uk' | 'ur' | 'vi' = "en";
