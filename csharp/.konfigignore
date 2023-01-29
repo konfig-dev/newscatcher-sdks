@@ -1,0 +1,3 @@
+src/Newscatcherapi.Net.Test/Api/LatestHeadlinesApiTests.cs
+src/Newscatcherapi.Net.Test/Api/SearchApiTests.cs
+src/Newscatcherapi.Net.Test/Api/SourcesApiTests.cs
