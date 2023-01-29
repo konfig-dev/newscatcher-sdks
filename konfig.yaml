@@ -20,7 +20,7 @@ generators:
       userId: konfig-dev
       repoId: newscatcher-sdks/tree/main/python
   typescript:
-    version: 1.0.0
+    version: 1.1.0
     npmName: newscatcherapi-typescript-sdk
     outputDirectory: typescript
     git:
