@@ -27,7 +27,6 @@ generators:
       userId: konfig-dev
       repoId: newscatcher-sdks/tree/main/typescript
   csharp:
-    disabled: true
     version: 1.0.0
     packageName: Newscatcherapi.Net
     outputDirectory: csharp
