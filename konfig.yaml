@@ -20,7 +20,6 @@ generators:
       userId: konfig-dev
       repoId: newscatcher-sdks/tree/main/python
   typescript:
-    disabled: true
     version: 1.0.0
     npmName: newscatcherapi-typescript-sdk
     outputDirectory: typescript
