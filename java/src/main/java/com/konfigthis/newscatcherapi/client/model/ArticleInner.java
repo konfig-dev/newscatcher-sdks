@@ -735,7 +735,7 @@ public class ArticleInner {
       if ((jsonObj.get("summary") != null && !jsonObj.get("summary").isJsonNull()) && !jsonObj.get("summary").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `summary` to be a primitive type in the JSON string but got `%s`", jsonObj.get("summary").toString()));
       }
-      if ((jsonObj.get("rights") != null && !jsonObj.get("rights").isJsonNull()) && !jsonObj.get("rights").isJsonPrimitive()) {
+      if (!jsonObj.get("rights").isJsonNull() && (jsonObj.get("rights") != null && !jsonObj.get("rights").isJsonNull()) && !jsonObj.get("rights").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `rights` to be a primitive type in the JSON string but got `%s`", jsonObj.get("rights").toString()));
       }
       if ((jsonObj.get("topic") != null && !jsonObj.get("topic").isJsonNull()) && !jsonObj.get("topic").isJsonPrimitive()) {

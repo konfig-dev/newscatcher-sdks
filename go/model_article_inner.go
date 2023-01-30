@@ -25,7 +25,7 @@ type ArticleInner struct {
 	CleanUrl *string `json:"clean_url,omitempty"`
 	Excerpt NullableString `json:"excerpt,omitempty"`
 	Summary *string `json:"summary,omitempty"`
-	Rights *string `json:"rights,omitempty"`
+	Rights NullableString `json:"rights,omitempty"`
 	Rank *int32 `json:"rank,omitempty"`
 	Topic *string `json:"topic,omitempty"`
 	Country *string `json:"country,omitempty"`
@@ -320,36 +320,46 @@ func (o *ArticleInner) SetSummary(v string) {
 	o.Summary = &v
 }
 
-// GetRights returns the Rights field value if set, zero value otherwise.
+// GetRights returns the Rights field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ArticleInner) GetRights() string {
-	if o == nil || isNil(o.Rights) {
+	if o == nil || isNil(o.Rights.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Rights
+	return *o.Rights.Get()
 }
 
 // GetRightsOk returns a tuple with the Rights field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ArticleInner) GetRightsOk() (*string, bool) {
-	if o == nil || isNil(o.Rights) {
+	if o == nil {
     return nil, false
 	}
-	return o.Rights, true
+	return o.Rights.Get(), o.Rights.IsSet()
 }
 
 // HasRights returns a boolean if a field has been set.
 func (o *ArticleInner) HasRights() bool {
-	if o != nil && !isNil(o.Rights) {
+	if o != nil && o.Rights.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRights gets a reference to the given string and assigns it to the Rights field.
+// SetRights gets a reference to the given NullableString and assigns it to the Rights field.
 func (o *ArticleInner) SetRights(v string) {
-	o.Rights = &v
+	o.Rights.Set(&v)
+}
+// SetRightsNil sets the value for Rights to be an explicit nil
+func (o *ArticleInner) SetRightsNil() {
+	o.Rights.Set(nil)
+}
+
+// UnsetRights ensures that no value is present for Rights, not even an explicit nil
+func (o *ArticleInner) UnsetRights() {
+	o.Rights.Unset()
 }
 
 // GetRank returns the Rank field value if set, zero value otherwise.
@@ -696,8 +706,8 @@ func (o ArticleInner) MarshalJSON() ([]byte, error) {
 	if !isNil(o.Summary) {
 		toSerialize["summary"] = o.Summary
 	}
-	if !isNil(o.Rights) {
-		toSerialize["rights"] = o.Rights
+	if o.Rights.IsSet() {
+		toSerialize["rights"] = o.Rights.Get()
 	}
 	if !isNil(o.Rank) {
 		toSerialize["rank"] = o.Rank

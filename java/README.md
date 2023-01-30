@@ -46,7 +46,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.konfigthis.newscatcherapi</groupId>
   <artifactId>newscatcherapi-java-sdk</artifactId>
-  <version>1.1.0</version>
+  <version>2.0.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -62,7 +62,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "com.konfigthis.newscatcherapi:newscatcherapi-java-sdk:1.1.0"
+     implementation "com.konfigthis.newscatcherapi:newscatcherapi-java-sdk:2.0.0"
   }
 ```
 
@@ -76,7 +76,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/newscatcherapi-java-sdk-1.1.0.jar`
+* `target/newscatcherapi-java-sdk-2.0.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started

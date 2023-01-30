@@ -80,7 +80,7 @@ export interface ArticleInner {
      * @type {string}
      * @memberof ArticleInner
      */
-    'rights'?: string;
+    'rights'?: string | null;
     /**
      * 
      * @type {number}

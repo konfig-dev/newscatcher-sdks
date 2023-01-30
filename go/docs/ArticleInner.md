@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **CleanUrl** | Pointer to **string** |  | [optional] 
 **Excerpt** | Pointer to **NullableString** |  | [optional] 
 **Summary** | Pointer to **string** |  | [optional] 
-**Rights** | Pointer to **string** |  | [optional] 
+**Rights** | Pointer to **NullableString** |  | [optional] 
 **Rank** | Pointer to **int32** |  | [optional] 
 **Topic** | Pointer to **string** |  | [optional] 
 **Country** | Pointer to **string** |  | [optional] 
@@ -277,6 +277,16 @@ SetRights sets Rights field to given value.
 
 HasRights returns a boolean if a field has been set.
 
+### SetRightsNil
+
+`func (o *ArticleInner) SetRightsNil(b bool)`
+
+ SetRightsNil sets the value for Rights to be an explicit nil
+
+### UnsetRights
+`func (o *ArticleInner) UnsetRights()`
+
+UnsetRights ensures that no value is present for Rights, not even an explicit nil
 ### GetRank
 
 `func (o *ArticleInner) GetRank() int32`

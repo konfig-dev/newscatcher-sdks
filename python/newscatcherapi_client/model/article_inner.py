@@ -90,7 +90,7 @@ class ArticleInner(ModelNormal):
             'clean_url': (str,),  # noqa: E501
             'excerpt': (str, none_type,),  # noqa: E501
             'summary': (str,),  # noqa: E501
-            'rights': (str,),  # noqa: E501
+            'rights': (str, none_type,),  # noqa: E501
             'rank': (int,),  # noqa: E501
             'topic': (str,),  # noqa: E501
             'country': (str,),  # noqa: E501
@@ -177,7 +177,7 @@ class ArticleInner(ModelNormal):
             clean_url (str): [optional]  # noqa: E501
             excerpt (str, none_type): [optional]  # noqa: E501
             summary (str): [optional]  # noqa: E501
-            rights (str): [optional]  # noqa: E501
+            rights (str, none_type): [optional]  # noqa: E501
             rank (int): [optional]  # noqa: E501
             topic (str): [optional]  # noqa: E501
             country (str): [optional]  # noqa: E501
@@ -280,7 +280,7 @@ class ArticleInner(ModelNormal):
             clean_url (str): [optional]  # noqa: E501
             excerpt (str, none_type): [optional]  # noqa: E501
             summary (str): [optional]  # noqa: E501
-            rights (str): [optional]  # noqa: E501
+            rights (str, none_type): [optional]  # noqa: E501
             rank (int): [optional]  # noqa: E501
             topic (str): [optional]  # noqa: E501
             country (str): [optional]  # noqa: E501

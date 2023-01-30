@@ -126,7 +126,7 @@ namespace Newscatcherapi.Net.Model
         /// <summary>
         /// Gets or Sets Rights
         /// </summary>
-        [DataMember(Name = "rights", EmitDefaultValue = false)]
+        [DataMember(Name = "rights", EmitDefaultValue = true)]
         public string Rights { get; set; }
 
         /// <summary>
