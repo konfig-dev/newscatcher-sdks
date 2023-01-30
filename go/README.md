@@ -129,7 +129,7 @@ Class | Method | HTTP request | Description
 - **API key parameter name**: x-api-key
 - **Location**: HTTP header
 
-Note, each API key must be added to a map of `map[string]APIKey` where the key is: x-api-key and passed in as the auth context for each request.
+Note, each API key must be added to a map of `map[string]APIKey` where the key is: "api_key" and passed in as the auth context for each request.
 
 
 ## Documentation for Utility Methods
