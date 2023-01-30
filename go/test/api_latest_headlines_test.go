@@ -10,39 +10,46 @@ Testing LatestHeadlinesApiService
 package newscatcherapi
 
 import (
-    "github.com/stretchr/testify/assert"
-    "github.com/stretchr/testify/require"
-    "testing"
-    openapiclient "github.com/konfig-dev/newscatcher-sdks/go"
+	"context"
+	"os"
+	"testing"
+
+	newscatcherapi "github.com/konfig-dev/newscatcher-sdks/go"
+	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
 )
 
 func Test_newscatcherapi_LatestHeadlinesApiService(t *testing.T) {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+	apiKey := os.Getenv("NEWSCATCHER_API_KEY")
+	configuration := newscatcherapi.NewConfiguration()
+	configuration.Context = context.WithValue(configuration.Context, newscatcherapi.ContextAPIKeys, map[string]newscatcherapi.APIKey{
+		"x-api-key": {Key: apiKey},
+	})
+	apiClient := newscatcherapi.NewAPIClient(configuration)
 
-    t.Run("Test LatestHeadlinesApiService Get", func(t *testing.T) {
+	t.Run("Test LatestHeadlinesApiService Get", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
-        resp, httpRes, err := apiClient.LatestHeadlinesApi.Get().Execute()
+		resp, httpRes, err := apiClient.LatestHeadlinesApi.Get().Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
 
-    t.Run("Test LatestHeadlinesApiService Post", func(t *testing.T) {
+	t.Run("Test LatestHeadlinesApiService Post", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
-        resp, httpRes, err := apiClient.LatestHeadlinesApi.Post().Execute()
+		resp, httpRes, err := apiClient.LatestHeadlinesApi.Post().Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
 
 }
