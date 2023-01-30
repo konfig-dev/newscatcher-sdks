@@ -23,7 +23,7 @@ import (
 // LatestHeadlinesApiService LatestHeadlinesApi service
 type LatestHeadlinesApiService service
 
-type ApiGetRequest struct {
+type LatestHeadlinesApiGetRequest struct {
 	ctx context.Context
 	ApiService *LatestHeadlinesApiService
 	lang *string
@@ -39,66 +39,66 @@ type ApiGetRequest struct {
 }
 
 // Specifies the languages of the search. For example: &#x60;en&#x60;. The only accepted format is [ISO 639-1 — 2](https://en.wikipedia.org/wiki/ISO_639-1) letter code. 
-func (r ApiGetRequest) Lang(lang string) ApiGetRequest {
+func (r LatestHeadlinesApiGetRequest) Lang(lang string) LatestHeadlinesApiGetRequest {
 	r.lang = &lang
 	return r
 }
 
 // Inverse to the &#x60;lang&#x60; parameter 
-func (r ApiGetRequest) NotLang(notLang string) ApiGetRequest {
+func (r LatestHeadlinesApiGetRequest) NotLang(notLang string) LatestHeadlinesApiGetRequest {
 	r.notLang = &notLang
 	return r
 }
 
 // Countries where the news publisher is located. **Important**: This parameter is not responsible for the countries mentioned in the news article. One or multiple countries can be used in the search. The only acceptable format is [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) For example, &#x60;US,CA,MX&#x60; or just &#x60;US&#x60; 
-func (r ApiGetRequest) Countries(countries string) ApiGetRequest {
+func (r LatestHeadlinesApiGetRequest) Countries(countries string) LatestHeadlinesApiGetRequest {
 	r.countries = &countries
 	return r
 }
 
 // The inverse of the &#x60;countries&#x60; parameter. 
-func (r ApiGetRequest) NotCountries(notCountries string) ApiGetRequest {
+func (r LatestHeadlinesApiGetRequest) NotCountries(notCountries string) LatestHeadlinesApiGetRequest {
 	r.notCountries = &notCountries
 	return r
 }
 
 // Accepted values: &#x60;news&#x60;, &#x60;sport&#x60;, &#x60;tech&#x60;, &#x60;world&#x60;, &#x60;finance&#x60;, &#x60;politics&#x60;, &#x60;business&#x60;, &#x60;economics&#x60;, &#x60;entertainment&#x60;, &#x60;beauty&#x60;, &#x60;travel&#x60;, &#x60;music&#x60;, &#x60;food&#x60;, &#x60;science&#x60;, &#x60;gaming&#x60; The topic to which you want to restrict the articles of your choice. Not all news articles are assigned with a topic, therefore, we cannot guarantee that 100% of topics talking about technology will be assigned a tech label. 
-func (r ApiGetRequest) Topic(topic Topic) ApiGetRequest {
+func (r LatestHeadlinesApiGetRequest) Topic(topic Topic) LatestHeadlinesApiGetRequest {
 	r.topic = &topic
 	return r
 }
 
 // One or more news resources to filter your search. It should be the normal form of the URL, For example: &#x60;nytimes.com,theguardian.com&#x60; 
-func (r ApiGetRequest) Sources(sources string) ApiGetRequest {
+func (r LatestHeadlinesApiGetRequest) Sources(sources string) LatestHeadlinesApiGetRequest {
 	r.sources = &sources
 	return r
 }
 
 // One or more sources to be excluded from the search. Comma-separated list. For example: &#x60;nytimes.com,cnn.com,wsj.com&#x60; 
-func (r ApiGetRequest) NotSources(notSources string) ApiGetRequest {
+func (r LatestHeadlinesApiGetRequest) NotSources(notSources string) LatestHeadlinesApiGetRequest {
 	r.notSources = &notSources
 	return r
 }
 
 // Default: &#x60;True&#x60; Limit the search only for the sources which are in the top 1 million online websites. Unranked sources are assigned a rank that equals &#x60;999999&#x60; 
-func (r ApiGetRequest) RankedOnly(rankedOnly bool) ApiGetRequest {
+func (r LatestHeadlinesApiGetRequest) RankedOnly(rankedOnly bool) LatestHeadlinesApiGetRequest {
 	r.rankedOnly = &rankedOnly
 	return r
 }
 
 // &#x60;[1:100]&#x60; How many articles to return per page. 
-func (r ApiGetRequest) PageSize(pageSize int32) ApiGetRequest {
+func (r LatestHeadlinesApiGetRequest) PageSize(pageSize int32) LatestHeadlinesApiGetRequest {
 	r.pageSize = &pageSize
 	return r
 }
 
 // The number of the page. Use it to scroll through the results. This parameter is used to paginate: scroll through results because one API response cannot return more than 100 articles. 
-func (r ApiGetRequest) Page(page int32) ApiGetRequest {
+func (r LatestHeadlinesApiGetRequest) Page(page int32) LatestHeadlinesApiGetRequest {
 	r.page = &page
 	return r
 }
 
-func (r ApiGetRequest) Execute() (*Model200ResponseLatest, *http.Response, error) {
+func (r LatestHeadlinesApiGetRequest) Execute() (*Model200ResponseLatest, *http.Response, error) {
 	return r.ApiService.GetExecute(r)
 }
 
@@ -108,10 +108,10 @@ Get Get Latest News Articles
 Get the latest headlines given any topic, country, or language.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetRequest
+ @return LatestHeadlinesApiGetRequest
 */
-func (a *LatestHeadlinesApiService) Get() ApiGetRequest {
-	return ApiGetRequest{
+func (a *LatestHeadlinesApiService) Get() LatestHeadlinesApiGetRequest {
+	return LatestHeadlinesApiGetRequest{
 		ApiService: a,
 		ctx: a.client.cfg.Context,
 	}
@@ -119,7 +119,7 @@ func (a *LatestHeadlinesApiService) Get() ApiGetRequest {
 
 // Execute executes the request
 //  @return Model200ResponseLatest
-func (a *LatestHeadlinesApiService) GetExecute(r ApiGetRequest) (*Model200ResponseLatest, *http.Response, error) {
+func (a *LatestHeadlinesApiService) GetExecute(r LatestHeadlinesApiGetRequest) (*Model200ResponseLatest, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -290,18 +290,18 @@ func (a *LatestHeadlinesApiService) GetExecute(r ApiGetRequest) (*Model200Respon
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPostRequest struct {
+type LatestHeadlinesApiPostRequest struct {
 	ctx context.Context
 	ApiService *LatestHeadlinesApiService
 	latestHeadlines *LatestHeadlines
 }
 
-func (r ApiPostRequest) LatestHeadlines(latestHeadlines LatestHeadlines) ApiPostRequest {
+func (r LatestHeadlinesApiPostRequest) LatestHeadlines(latestHeadlines LatestHeadlines) LatestHeadlinesApiPostRequest {
 	r.latestHeadlines = &latestHeadlines
 	return r
 }
 
-func (r ApiPostRequest) Execute() (*Model200ResponseLatest, *http.Response, error) {
+func (r LatestHeadlinesApiPostRequest) Execute() (*Model200ResponseLatest, *http.Response, error) {
 	return r.ApiService.PostExecute(r)
 }
 
@@ -311,10 +311,10 @@ Post Get Latest News Articles
 Get the latest headlines given any topic, country, or language.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostRequest
+ @return LatestHeadlinesApiPostRequest
 */
-func (a *LatestHeadlinesApiService) Post() ApiPostRequest {
-	return ApiPostRequest{
+func (a *LatestHeadlinesApiService) Post() LatestHeadlinesApiPostRequest {
+	return LatestHeadlinesApiPostRequest{
 		ApiService: a,
 		ctx: a.client.cfg.Context,
 	}
@@ -322,7 +322,7 @@ func (a *LatestHeadlinesApiService) Post() ApiPostRequest {
 
 // Execute executes the request
 //  @return Model200ResponseLatest
-func (a *LatestHeadlinesApiService) PostExecute(r ApiPostRequest) (*Model200ResponseLatest, *http.Response, error) {
+func (a *LatestHeadlinesApiService) PostExecute(r LatestHeadlinesApiPostRequest) (*Model200ResponseLatest, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}

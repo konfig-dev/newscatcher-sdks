@@ -23,7 +23,7 @@ import (
 // SourcesApiService SourcesApi service
 type SourcesApiService service
 
-type ApiGetRequest struct {
+type SourcesApiGetRequest struct {
 	ctx context.Context
 	ApiService *SourcesApiService
 	lang *string
@@ -32,24 +32,24 @@ type ApiGetRequest struct {
 }
 
 // Specifies the languages of the search. For example: &#x60;en&#x60;. The only accepted format is [ISO 639-1 — 2](https://en.wikipedia.org/wiki/ISO_639-1) letter code. 
-func (r ApiGetRequest) Lang(lang string) ApiGetRequest {
+func (r SourcesApiGetRequest) Lang(lang string) SourcesApiGetRequest {
 	r.lang = &lang
 	return r
 }
 
 // Countries where the news publisher is located. **Important**: This parameter is not responsible for the countries mentioned in the news article. One or multiple countries can be used in the search. The only acceptable format is [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) For example, &#x60;US,CA,MX&#x60; or just &#x60;US&#x60; 
-func (r ApiGetRequest) Countries(countries string) ApiGetRequest {
+func (r SourcesApiGetRequest) Countries(countries string) SourcesApiGetRequest {
 	r.countries = &countries
 	return r
 }
 
 // Accepted values: &#x60;news&#x60;, &#x60;sport&#x60;, &#x60;tech&#x60;, &#x60;world&#x60;, &#x60;finance&#x60;, &#x60;politics&#x60;, &#x60;business&#x60;, &#x60;economics&#x60;, &#x60;entertainment&#x60;, &#x60;beauty&#x60;, &#x60;travel&#x60;, &#x60;music&#x60;, &#x60;food&#x60;, &#x60;science&#x60;, &#x60;gaming&#x60; The topic to which you want to restrict the articles of your choice. Not all news articles are assigned with a topic, therefore, we cannot guarantee that 100% of topics talking about technology will be assigned a tech label. 
-func (r ApiGetRequest) Topic(topic Topic) ApiGetRequest {
+func (r SourcesApiGetRequest) Topic(topic Topic) SourcesApiGetRequest {
 	r.topic = &topic
 	return r
 }
 
-func (r ApiGetRequest) Execute() (*Model200ResponseSources, *http.Response, error) {
+func (r SourcesApiGetRequest) Execute() (*Model200ResponseSources, *http.Response, error) {
 	return r.ApiService.GetExecute(r)
 }
 
@@ -59,10 +59,10 @@ Get Get top news sources supported by NewsCatcher.
 Returns a list of the top 100 supported news websites. Overall, we support over 60,000 websites. Using this endpoint, you may find the top 100 for your specific language, country, topic combination.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetRequest
+ @return SourcesApiGetRequest
 */
-func (a *SourcesApiService) Get() ApiGetRequest {
-	return ApiGetRequest{
+func (a *SourcesApiService) Get() SourcesApiGetRequest {
+	return SourcesApiGetRequest{
 		ApiService: a,
 		ctx: a.client.cfg.Context,
 	}
@@ -70,7 +70,7 @@ func (a *SourcesApiService) Get() ApiGetRequest {
 
 // Execute executes the request
 //  @return Model200ResponseSources
-func (a *SourcesApiService) GetExecute(r ApiGetRequest) (*Model200ResponseSources, *http.Response, error) {
+func (a *SourcesApiService) GetExecute(r SourcesApiGetRequest) (*Model200ResponseSources, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -220,18 +220,18 @@ func (a *SourcesApiService) GetExecute(r ApiGetRequest) (*Model200ResponseSource
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPostRequest struct {
+type SourcesApiPostRequest struct {
 	ctx context.Context
 	ApiService *SourcesApiService
 	sourcesQuery *SourcesQuery
 }
 
-func (r ApiPostRequest) SourcesQuery(sourcesQuery SourcesQuery) ApiPostRequest {
+func (r SourcesApiPostRequest) SourcesQuery(sourcesQuery SourcesQuery) SourcesApiPostRequest {
 	r.sourcesQuery = &sourcesQuery
 	return r
 }
 
-func (r ApiPostRequest) Execute() (*Model200ResponseSources, *http.Response, error) {
+func (r SourcesApiPostRequest) Execute() (*Model200ResponseSources, *http.Response, error) {
 	return r.ApiService.PostExecute(r)
 }
 
@@ -241,10 +241,10 @@ Post Get top news sources supported by NewsCatcher.
 Returns a list of the top 100 supported news websites. Overall, we support over 60,000 websites. Using this endpoint, you may find the top 100 for your specific language, country, topic combination.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostRequest
+ @return SourcesApiPostRequest
 */
-func (a *SourcesApiService) Post() ApiPostRequest {
-	return ApiPostRequest{
+func (a *SourcesApiService) Post() SourcesApiPostRequest {
+	return SourcesApiPostRequest{
 		ApiService: a,
 		ctx: a.client.cfg.Context,
 	}
@@ -252,7 +252,7 @@ func (a *SourcesApiService) Post() ApiPostRequest {
 
 // Execute executes the request
 //  @return Model200ResponseSources
-func (a *SourcesApiService) PostExecute(r ApiPostRequest) (*Model200ResponseSources, *http.Response, error) {
+func (a *SourcesApiService) PostExecute(r SourcesApiPostRequest) (*Model200ResponseSources, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
