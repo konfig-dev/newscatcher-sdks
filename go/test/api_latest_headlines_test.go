@@ -24,7 +24,7 @@ func Test_newscatcherapi_LatestHeadlinesApiService(t *testing.T) {
 	apiKey := os.Getenv("NEWSCATCHER_API_KEY")
 	configuration := newscatcherapi.NewConfiguration()
 	configuration.Context = context.WithValue(configuration.Context, newscatcherapi.ContextAPIKeys, map[string]newscatcherapi.APIKey{
-		"x-api-key": {Key: apiKey},
+		"api_key": {Key: apiKey},
 	})
 	apiClient := newscatcherapi.NewAPIClient(configuration)
 
@@ -42,9 +42,14 @@ func Test_newscatcherapi_LatestHeadlinesApiService(t *testing.T) {
 
 	t.Run("Test LatestHeadlinesApiService Post", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		request := apiClient.LatestHeadlinesApi.Post()
 
-		resp, httpRes, err := apiClient.LatestHeadlinesApi.Post().Execute()
+		lang := "en"
+		latestHeadlines := &newscatcherapi.LatestHeadlines{
+			Lang: &lang,
+		}
+		request = request.LatestHeadlines(*latestHeadlines)
+		resp, httpRes, err := request.Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
