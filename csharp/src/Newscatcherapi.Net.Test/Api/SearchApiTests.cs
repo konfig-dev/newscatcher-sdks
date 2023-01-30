@@ -19,6 +19,7 @@ using Xunit;
 
 using Newscatcherapi.Net.Client;
 using Newscatcherapi.Net.Api;
+using Newscatcherapi.Net.Model;
 // uncomment below to import models
 //using Newscatcherapi.Net.Model;
 
@@ -37,7 +38,11 @@ namespace Newscatcherapi.Net.Test.Api
 
         public SearchApiTests()
         {
-            instance = new SearchApi();
+
+            Configuration config = new Configuration();
+            string apiKey = System.Environment.GetEnvironmentVariable("NEWSCATCHER_API_KEY");
+            config.ApiKey.Add("x-api-key", apiKey);
+            instance = new SearchApi(config);
         }
 
         public void Dispose()
@@ -90,10 +95,11 @@ namespace Newscatcherapi.Net.Test.Api
         [Fact]
         public void PostTest()
         {
-            // TODO uncomment below to test the method and replace null with proper value
-            //Search search = null;
-            //var response = instance.Post(search);
-            //Assert.IsType<Model200Response>(response);
+            Search search = new Search();
+            search.Q = "Apple";
+            search.From = "three months ago";
+            var response = instance.Post(search);
+            Assert.IsType<Model200Response>(response);
         }
     }
 }

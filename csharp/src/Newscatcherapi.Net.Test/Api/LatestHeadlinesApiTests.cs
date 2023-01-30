@@ -19,6 +19,7 @@ using Xunit;
 
 using Newscatcherapi.Net.Client;
 using Newscatcherapi.Net.Api;
+using Newscatcherapi.Net.Model;
 // uncomment below to import models
 //using Newscatcherapi.Net.Model;
 
@@ -37,7 +38,10 @@ namespace Newscatcherapi.Net.Test.Api
 
         public LatestHeadlinesApiTests()
         {
-            instance = new LatestHeadlinesApi();
+            Configuration config = new Configuration();
+            string apiKey = System.Environment.GetEnvironmentVariable("NEWSCATCHER_API_KEY");
+            config.ApiKey.Add("x-api-key", apiKey);
+            instance = new LatestHeadlinesApi(config);
         }
 
         public void Dispose()
@@ -82,10 +86,9 @@ namespace Newscatcherapi.Net.Test.Api
         [Fact]
         public void PostTest()
         {
-            // TODO uncomment below to test the method and replace null with proper value
-            //LatestHeadlines latestHeadlines = null;
-            //var response = instance.Post(latestHeadlines);
-            //Assert.IsType<Model200ResponseLatest>(response);
+            LatestHeadlines latestHeadlines = new LatestHeadlines(null, LatestHeadlines.LangEnum.En);
+            var response = instance.Post(latestHeadlines);
+            Assert.IsType<Model200ResponseLatest>(response);
         }
     }
 }
