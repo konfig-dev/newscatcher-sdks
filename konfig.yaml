@@ -35,7 +35,6 @@ generators:
       userId: konfig-dev
       repoId: newscatcher-sdks/tree/main/csharp
   go:
-    disabled: true
     version: 1.0.0
     packageName: newscatcherapi
     outputDirectory: go
