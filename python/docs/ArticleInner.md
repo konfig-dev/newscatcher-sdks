@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **clean_url** | **str** |  | [optional] 
 **excerpt** | **str, none_type** |  | [optional] 
 **summary** | **str** |  | [optional] 
-**rights** | **str** |  | [optional] 
+**rights** | **str, none_type** |  | [optional] 
 **rank** | **int** |  | [optional] 
 **topic** | **str** |  | [optional] 
 **country** | **str** |  | [optional] 

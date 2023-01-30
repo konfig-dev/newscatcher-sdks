@@ -2314,6 +2314,7 @@ components:
         summary:
           type: string
         rights:
+          nullable: true
           type: string
         rank:
           type: integer
