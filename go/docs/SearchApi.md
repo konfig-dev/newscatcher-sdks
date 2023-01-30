@@ -26,31 +26,31 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    newscatcherapi "github.com/konfig-dev/newscatcher-sdks/go"
 )
 
 func main() {
     q := ""Elon Musk"" // string | Keyword/keywords you're searching for. This is the most important part of your query. Please, refer to the **Advanced Query Parameter** section below of the docs for more examples and explanations 
     lang := "en" // string | Specifies the languages of the search. For example: `en`. The only accepted format is [ISO 639-1 — 2](https://en.wikipedia.org/wiki/ISO_639-1) letter code.  (optional)
     notLang := "notLang_example" // string | Inverse to the `lang` parameter  (optional)
-    publishedDatePrecision := openapiclient.publish_date_precision("full") // PublishDatePrecision | There are 3 types of date precision we define: `full` — day and time of an article is correctly identified with the appropriate timezone `timezone unknown` — day and time of an article is correctly identified without timezone `date` — only the day is identified without an exact time  (optional)
+    publishedDatePrecision := newscatcherapi.publish_date_precision("full") // PublishDatePrecision | There are 3 types of date precision we define: `full` — day and time of an article is correctly identified with the appropriate timezone `timezone unknown` — day and time of an article is correctly identified without timezone `date` — only the day is identified without an exact time  (optional)
     from := "from_example" // string | `YYYY/mm/dd` From which point in time to start the search. The default timezone is UTC. Defaults to the past week.  (optional)
     to := "to_example" // string | `YYYY/mm/dd` Until which point in time to search for. The default timezone is UTC.  (optional)
-    searchIn := openapiclient.search_in("title") // SearchIn | By default, we search what you specified in the `q` parameter in both `title` and `summary` of the article. However, you can limit this to either `title` or `summary`  (optional)
+    searchIn := newscatcherapi.search_in("title") // SearchIn | By default, we search what you specified in the `q` parameter in both `title` and `summary` of the article. However, you can limit this to either `title` or `summary`  (optional)
     countries := "countries_example" // string | Countries where the news publisher is located. **Important**: This parameter is not responsible for the countries mentioned in the news article. One or multiple countries can be used in the search. The only acceptable format is [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) For example, `US,CA,MX` or just `US`  (optional)
     notCountries := "notCountries_example" // string | The inverse of the `countries` parameter.  (optional)
-    topic := openapiclient.topic("news") // Topic | Accepted values: `news`, `sport`, `tech`, `world`, `finance`, `politics`, `business`, `economics`, `entertainment`, `beauty`, `travel`, `music`, `food`, `science`, `gaming` The topic to which you want to restrict the articles of your choice. Not all news articles are assigned with a topic, therefore, we cannot guarantee that 100% of topics talking about technology will be assigned a tech label.  (optional)
+    topic := newscatcherapi.topic("news") // Topic | Accepted values: `news`, `sport`, `tech`, `world`, `finance`, `politics`, `business`, `economics`, `entertainment`, `beauty`, `travel`, `music`, `food`, `science`, `gaming` The topic to which you want to restrict the articles of your choice. Not all news articles are assigned with a topic, therefore, we cannot guarantee that 100% of topics talking about technology will be assigned a tech label.  (optional)
     sources := "sources_example" // string | One or more news resources to filter your search. It should be the normal form of the URL, For example: `nytimes.com,theguardian.com`  (optional)
     notSources := "notSources_example" // string | One or more sources to be excluded from the search. Comma-separated list. For example: `nytimes.com,cnn.com,wsj.com`  (optional)
     rankedOnly := true // bool | Default: `True` Limit the search only for the sources which are in the top 1 million online websites. Unranked sources are assigned a rank that equals `999999`  (optional)
     fromRank := int32(56) // int32 | `[0:999999]` The lowest boundary of the rank of a news website to filter by. Important: lower rank means that a source is more popular  (optional)
     toRank := int32(56) // int32 | `[0:999999]` The upper boundary of the rank of a news website to filter by.  (optional)
-    sortBy := openapiclient.sort_by("relevancy") // SortBy | `relevancy` (default value) — the most relevant results first `date` — the most recently published results first `rank` — the results from the highest-ranked sources first  (optional)
+    sortBy := newscatcherapi.sort_by("relevancy") // SortBy | `relevancy` (default value) — the most relevant results first `date` — the most recently published results first `rank` — the results from the highest-ranked sources first  (optional)
     pageSize := int32(56) // int32 | `[1:100]` How many articles to return per page.  (optional)
     page := int32(56) // int32 | The number of the page. Use it to scroll through the results. This parameter is used to paginate: scroll through results because one API response cannot return more than 100 articles.  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := newscatcherapi.NewConfiguration()
+    apiClient := newscatcherapi.NewAPIClient(configuration)
     resp, r, err := apiClient.SearchApi.Get(context.Background()).Q(q).Lang(lang).NotLang(notLang).PublishedDatePrecision(publishedDatePrecision).From(from).To(to).SearchIn(searchIn).Countries(countries).NotCountries(notCountries).Topic(topic).Sources(sources).NotSources(notSources).RankedOnly(rankedOnly).FromRank(fromRank).ToRank(toRank).SortBy(sortBy).PageSize(pageSize).Page(page).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SearchApi.Get``: %v\n", err)
@@ -126,14 +126,14 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    newscatcherapi "github.com/konfig-dev/newscatcher-sdks/go"
 )
 
 func main() {
-    search := *openapiclient.NewSearch() // Search |  (optional)
+    search := *newscatcherapi.NewSearch() // Search |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := newscatcherapi.NewConfiguration()
+    apiClient := newscatcherapi.NewAPIClient(configuration)
     resp, r, err := apiClient.SearchApi.Post(context.Background()).Search(search).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SearchApi.Post``: %v\n", err)

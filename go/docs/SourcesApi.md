@@ -26,16 +26,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    newscatcherapi "github.com/konfig-dev/newscatcher-sdks/go"
 )
 
 func main() {
     lang := "en" // string | Specifies the languages of the search. For example: `en`. The only accepted format is [ISO 639-1 — 2](https://en.wikipedia.org/wiki/ISO_639-1) letter code.  (optional)
     countries := "countries_example" // string | Countries where the news publisher is located. **Important**: This parameter is not responsible for the countries mentioned in the news article. One or multiple countries can be used in the search. The only acceptable format is [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) For example, `US,CA,MX` or just `US`  (optional)
-    topic := openapiclient.topic("news") // Topic | Accepted values: `news`, `sport`, `tech`, `world`, `finance`, `politics`, `business`, `economics`, `entertainment`, `beauty`, `travel`, `music`, `food`, `science`, `gaming` The topic to which you want to restrict the articles of your choice. Not all news articles are assigned with a topic, therefore, we cannot guarantee that 100% of topics talking about technology will be assigned a tech label.  (optional)
+    topic := newscatcherapi.topic("news") // Topic | Accepted values: `news`, `sport`, `tech`, `world`, `finance`, `politics`, `business`, `economics`, `entertainment`, `beauty`, `travel`, `music`, `food`, `science`, `gaming` The topic to which you want to restrict the articles of your choice. Not all news articles are assigned with a topic, therefore, we cannot guarantee that 100% of topics talking about technology will be assigned a tech label.  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := newscatcherapi.NewConfiguration()
+    apiClient := newscatcherapi.NewAPIClient(configuration)
     resp, r, err := apiClient.SourcesApi.Get(context.Background()).Lang(lang).Countries(countries).Topic(topic).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SourcesApi.Get``: %v\n", err)
@@ -96,14 +96,14 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    newscatcherapi "github.com/konfig-dev/newscatcher-sdks/go"
 )
 
 func main() {
-    sourcesQuery := *openapiclient.NewSourcesQuery() // SourcesQuery |  (optional)
+    sourcesQuery := *newscatcherapi.NewSourcesQuery() // SourcesQuery |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := newscatcherapi.NewConfiguration()
+    apiClient := newscatcherapi.NewAPIClient(configuration)
     resp, r, err := apiClient.SourcesApi.Post(context.Background()).SourcesQuery(sourcesQuery).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SourcesApi.Post``: %v\n", err)
