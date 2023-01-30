@@ -1,7 +1,7 @@
 # newscatcher-sdks
 
 
-|Language|Version|Documentation|Package Manager|Source|
+|Language|Version|Package Manager|Documentation|Source|
 |-|-|-|-|-|
 |Java|2.0.0|[Maven Central](https://search.maven.org/artifact/com.konfigthis.newscatcherapi/newscatcherapi-java-sdk/2.0.0/jar)|[Documentation](https://github.com/konfig-dev/newscatcher-sdks/tree/main/java/README.md)|[Source](https://github.com/konfig-dev/newscatcher-sdks/tree/main/java)|
 |Python|3.0.0|[PyPI](https://pypi.org/project/newscatcherapi-python-sdk/3.0.0)|[Documentation](https://github.com/konfig-dev/newscatcher-sdks/tree/main/python/README.md)|[Source](https://github.com/konfig-dev/newscatcher-sdks/tree/main/python)|
