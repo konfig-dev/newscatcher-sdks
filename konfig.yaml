@@ -35,7 +35,7 @@ generators:
       userId: konfig-dev
       repoId: newscatcher-sdks/tree/main/csharp
   go:
-    version: 2.0.0
+    version: 2.1.0
     packageName: newscatcherapi
     outputDirectory: go
     git:
