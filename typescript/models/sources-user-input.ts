@@ -13,7 +13,29 @@
  */
 
 
-export * from './api/latest-headlines-api';
-export * from './api/search-api';
-export * from './api/sources-api';
+/**
+ * 
+ * @export
+ * @interface SourcesUserInput
+ */
+export interface SourcesUserInput {
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof SourcesUserInput
+     */
+    'lang'?: Array<string> | null;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof SourcesUserInput
+     */
+    'countries'?: Array<string> | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof SourcesUserInput
+     */
+    'topic'?: string | null;
+}
 

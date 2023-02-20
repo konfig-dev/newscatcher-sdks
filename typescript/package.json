@@ -1,6 +1,6 @@
 {
   "name": "newscatcherapi-typescript-sdk",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Client for NewsCatcher News API V2",
   "author": "Konfig",
   "repository": {
@@ -19,7 +19,7 @@
   "scripts": {
     "build": "npm run clean && tsc",
     "clean": "rm -rf dist/",
-    "prepare": "npm run build",
+    "prepack": "npm run build",
     "test": "jest"
   },
   "dependencies": {

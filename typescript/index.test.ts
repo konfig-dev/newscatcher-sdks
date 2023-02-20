@@ -1,21 +1,25 @@
-import { Configuration, LatestHeadlinesApi, SearchApi, SourcesApi } from ".";
+import { Newscatcher } from "./index";
 
 describe("api", () => {
-  const apiKey = process.env.NEWSCATCHER_API_KEY;
-  const config = new Configuration({ apiKey });
+  const newscatcher = new Newscatcher({
+    apiKey: process.env.NEWSCATCHER_API_KEY,
+  });
   it("latest headlines", async () => {
-    const api = new LatestHeadlinesApi(config);
-    const result = await api.post({ lang: "en" });
+    const result = await newscatcher.latestHeadlines.post({
+      latestHeadlines: { lang: "en" },
+    });
     expect(result).not.toBeNull();
   });
   it("search", async () => {
-    const api = new SearchApi(config);
-    const result = await api.post({ q: "Apple", from: "three months ago" });
+    const result = await newscatcher.search.post({
+      search: { q: "Apple", from: "three months ago" },
+    });
     expect(result).not.toBeNull();
   });
   it("sources", async () => {
-    const api = new SourcesApi(config);
-    const result = await api.post({ lang: "en" });
+    const result = await newscatcher.sources.post({
+      sourcesQuery: { lang: "en" },
+    });
     expect(result).not.toBeNull();
   });
 });

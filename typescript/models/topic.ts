@@ -13,7 +13,31 @@
  */
 
 
-export * from './api/latest-headlines-api';
-export * from './api/search-api';
-export * from './api/sources-api';
+/**
+ * 
+ * @export
+ * @enum {string}
+ */
+
+export const Topic = {
+    News: 'news',
+    Sport: 'sport',
+    Tech: 'tech',
+    World: 'world',
+    Finance: 'finance',
+    Politics: 'politics',
+    Business: 'business',
+    Economics: 'economics',
+    Entertainment: 'entertainment',
+    Beauty: 'beauty',
+    Travel: 'travel',
+    Music: 'music',
+    Food: 'food',
+    Science: 'science',
+    Gaming: 'gaming'
+} as const;
+
+export type Topic = typeof Topic[keyof typeof Topic];
+
+
 

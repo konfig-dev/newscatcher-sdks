@@ -20,8 +20,10 @@ generators:
       userId: konfig-dev
       repoId: newscatcher-sdks/tree/main/python
   typescript:
-    version: 2.0.0
+    version: 3.0.0
     npmName: newscatcherapi-typescript-sdk
+    readmeSnippet: snippets/typescript.ts
+    clientName: Newscatcher
     outputDirectory: typescript
     git:
       userId: konfig-dev

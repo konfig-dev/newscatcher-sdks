@@ -1,5 +1,3 @@
-/* tslint:disable */
-/* eslint-disable */
 /**
  * NewsCatcher News API V2
  * NewsCatcher is a data-as-a-service startup that has one main goal: to build the largest database of structured news articles published online. In other words, we\'re like Google for the news part of the web, which you can access as a source of data.  Some useful links: - [How NewsCatcher Works](https://docs.newscatcherapi.com/knowledge-base/how-newscatcher-works) - [GitHub for the Python SDK](https://github.com/NewscatcherAPI/newscatcherapi-sdk-python) 
@@ -12,8 +10,32 @@
  * Do not edit the class manually.
  */
 
+import { Pageable } from "./pageable";
 
-export * from './api/latest-headlines-api';
-export * from './api/search-api';
-export * from './api/sources-api';
+export interface PageParameters {
+  [key: string]: any
+}
 
+export interface PageInfo {
+  [key: string]: any
+}
+
+export class Page<
+  Data extends PageInfo,
+  Parameters extends PageParameters
+> extends Pageable<Data, Parameters> {
+  protected previousParameters(): PageParameters {
+    throw Error("Stub")
+  }
+
+  protected nextParameters(): PageParameters {
+    throw Error("Stub")
+  }
+  hasPrevious(): boolean {
+    throw Error("Stub")
+  }
+
+  hasNext(): boolean {
+    throw Error("Stub")
+  }
+}

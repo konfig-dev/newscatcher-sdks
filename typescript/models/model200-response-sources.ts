@@ -12,8 +12,33 @@
  * Do not edit the class manually.
  */
 
+// May contain unused imports in some cases
+// @ts-ignore
+import { SourcesUserInput } from './sources-user-input';
 
-export * from './api/latest-headlines-api';
-export * from './api/search-api';
-export * from './api/sources-api';
+/**
+ * 
+ * @export
+ * @interface Model200ResponseSources
+ */
+export interface Model200ResponseSources {
+    /**
+     * 
+     * @type {string}
+     * @memberof Model200ResponseSources
+     */
+    'message'?: string;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof Model200ResponseSources
+     */
+    'sources'?: Array<string> | null;
+    /**
+     * 
+     * @type {SourcesUserInput}
+     * @memberof Model200ResponseSources
+     */
+    'user_input'?: SourcesUserInput;
+}
 

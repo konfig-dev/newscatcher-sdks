@@ -13,7 +13,19 @@
  */
 
 
-export * from './api/latest-headlines-api';
-export * from './api/search-api';
-export * from './api/sources-api';
+/**
+ * 
+ * @export
+ * @enum {string}
+ */
+
+export const SearchIn = {
+    Title: 'title',
+    Summary: 'summary',
+    TitleSummary: 'title_summary'
+} as const;
+
+export type SearchIn = typeof SearchIn[keyof typeof SearchIn];
+
+
 

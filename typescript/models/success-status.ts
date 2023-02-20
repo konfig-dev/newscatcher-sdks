@@ -13,7 +13,18 @@
  */
 
 
-export * from './api/latest-headlines-api';
-export * from './api/search-api';
-export * from './api/sources-api';
+/**
+ * 
+ * @export
+ * @enum {string}
+ */
+
+export const SuccessStatus = {
+    Ok: 'ok',
+    NoMatchesForYourSearch: 'No matches for your search.'
+} as const;
+
+export type SuccessStatus = typeof SuccessStatus[keyof typeof SuccessStatus];
+
+
 

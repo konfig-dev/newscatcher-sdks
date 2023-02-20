@@ -13,7 +13,19 @@
  */
 
 
-export * from './api/latest-headlines-api';
-export * from './api/search-api';
-export * from './api/sources-api';
+/**
+ * 
+ * @export
+ * @enum {string}
+ */
+
+export const SortBy = {
+    Relevancy: 'relevancy',
+    Date: 'date',
+    Rank: 'rank'
+} as const;
+
+export type SortBy = typeof SortBy[keyof typeof SortBy];
+
+
 

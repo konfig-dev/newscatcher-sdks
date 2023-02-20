@@ -1,5 +1,3 @@
-/* tslint:disable */
-/* eslint-disable */
 /**
  * NewsCatcher News API V2
  * NewsCatcher is a data-as-a-service startup that has one main goal: to build the largest database of structured news articles published online. In other words, we\'re like Google for the news part of the web, which you can access as a source of data.  Some useful links: - [How NewsCatcher Works](https://docs.newscatcherapi.com/knowledge-base/how-newscatcher-works) - [GitHub for the Python SDK](https://github.com/NewscatcherAPI/newscatcherapi-sdk-python) 
@@ -12,8 +10,31 @@
  * Do not edit the class manually.
  */
 
+import { PageInfo, PageParameters, Page } from "./page";
+import { PageRequest } from "./pageable";
 
-export * from './api/latest-headlines-api';
-export * from './api/search-api';
-export * from './api/sources-api';
-
+export const paginate = <
+  Data extends PageInfo,
+  Parameters extends PageParameters
+>({
+  request,
+  initialParameters,
+}: {
+  request: PageRequest<Data, Parameters>;
+  initialParameters: Parameters;
+}): Promise<Page<Data, Parameters>> => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      const data = await request(initialParameters);
+      resolve(
+        new Page({
+          data: data.data,
+          initialParameters,
+          request: (parameters) => request(parameters),
+        })
+      );
+    } catch (error) {
+      reject(error);
+    }
+  });
+};

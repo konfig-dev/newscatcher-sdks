@@ -13,7 +13,19 @@
  */
 
 
-export * from './api/latest-headlines-api';
-export * from './api/search-api';
-export * from './api/sources-api';
+/**
+ * 
+ * @export
+ * @enum {string}
+ */
+
+export const PublishDatePrecision = {
+    Full: 'full',
+    TimezoneUnknown: 'timezone unknown',
+    Date: 'date'
+} as const;
+
+export type PublishDatePrecision = typeof PublishDatePrecision[keyof typeof PublishDatePrecision];
+
+
 
