@@ -3,7 +3,7 @@
 
 |Language|Version|Package Manager|Documentation|Source|
 |-|-|-|-|-|
-|Java|2.0.0|[Maven Central](https://search.maven.org/artifact/com.konfigthis.newscatcherapi/newscatcherapi-java-sdk/2.0.0/jar)|[Documentation](https://github.com/konfig-dev/newscatcher-sdks/tree/main/java/README.md)|[Source](https://github.com/konfig-dev/newscatcher-sdks/tree/main/java)|
+|Java|2.1.0|[Maven Central](https://search.maven.org/artifact/com.konfigthis.newscatcherapi/newscatcherapi-java-sdk/2.1.0/jar)|[Documentation](https://github.com/konfig-dev/newscatcher-sdks/tree/main/java/README.md)|[Source](https://github.com/konfig-dev/newscatcher-sdks/tree/main/java)|
 |Python|3.0.0|[PyPI](https://pypi.org/project/newscatcherapi-python-sdk/3.0.0)|[Documentation](https://github.com/konfig-dev/newscatcher-sdks/tree/main/python/README.md)|[Source](https://github.com/konfig-dev/newscatcher-sdks/tree/main/python)|
 |TypeScript|3.0.0|[npm](https://www.npmjs.com/package/newscatcherapi-typescript-sdk/v/3.0.0)|[Documentation](https://github.com/konfig-dev/newscatcher-sdks/tree/main/typescript/README.md)|[Source](https://github.com/konfig-dev/newscatcher-sdks/tree/main/typescript)|
 |C#|2.0.0|[NuGet](https://nuget.org/packages/Newscatcherapi.Net/2.0.0)|[Documentation](https://github.com/konfig-dev/newscatcher-sdks/tree/main/csharp/README.md)|[Source](https://github.com/konfig-dev/newscatcher-sdks/tree/main/csharp)|
