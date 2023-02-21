@@ -9,10 +9,8 @@
 """
 
 
-import sys
 import unittest
 
-import newscatcherapi_client
 from newscatcherapi_client.model.page_size import PageSize
 from newscatcherapi_client.exceptions import ApiValueError
 
@@ -26,12 +24,12 @@ class TestPageSize(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testPageSize(self):
+    def testPageSizeValidation(self):
         """Test PageSize"""
         model = PageSize(1) 
-        assert model.value is 1, "Value is not correct"
+        assert int(model) == 1, "Value is not correct"
         model = PageSize(100)  # noqa: E501
-        assert model.value is 100, "Value is not correct"
+        assert int(model) == 100, "Value is not correct"
         self.assertRaises(ApiValueError, lambda: PageSize(-1))
         self.assertRaises(ApiValueError, lambda: PageSize(101))
 

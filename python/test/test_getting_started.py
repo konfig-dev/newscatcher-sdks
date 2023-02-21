@@ -39,8 +39,8 @@ class TestLatestHeadlinesApi(unittest.TestCase):
         sources = "nytimes.com,theguardian.com"
         not_sources = "wsj.com"
         ranked_only = True
-        page_size = PageSize(100)
-        page = Page(1)
+        page_size = 100
+        page = 1
         api_response = self.api.get(
             query_params={
                 "lang": lang,

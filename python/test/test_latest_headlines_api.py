@@ -34,9 +34,10 @@ class TestLatestHeadlinesApi(unittest.TestCase):
 
         Get Latest News Articles  # noqa: E501
         """
-        response = self.api.get(lang="en")
+        response = self.api.get(query_params={"lang": "en"})
         assert response is not None, "Received null response"
-        response = self.api.get(not_sources="nytimes.com,theguardian.com", page=1, page_size=50)
+        response = self.api.get(
+            query_params={"not_sources": "nytimes.com,theguardian.com", "page": 1, "page_size": 50})
         assert response is not None, "Received null response"
 
     def test_post(self):
@@ -44,7 +45,7 @@ class TestLatestHeadlinesApi(unittest.TestCase):
 
         Get Latest News Articles  # noqa: E501
         """
-        response = self.api.post(latest_headlines=LatestHeadlines(lang="en"))
+        response = self.api.post(body={"lang": "en"})
         assert response is not None, "Received null response"
 
 
