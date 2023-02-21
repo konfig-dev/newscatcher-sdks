@@ -35,7 +35,7 @@ class TestLatestHeadlinesApi(unittest.TestCase):
         not_lang = "af"
         countries = "US,CA"
         not_countries = "US,CA"
-        topic = Topic("business")
+        topic = "business"
         sources = "nytimes.com,theguardian.com"
         not_sources = "wsj.com"
         ranked_only = True
