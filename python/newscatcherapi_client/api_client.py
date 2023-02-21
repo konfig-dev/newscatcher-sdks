@@ -296,9 +296,14 @@ class ParameterSerializerBase:
                 var_name_piece,
                 named_parameter_expansion
             )
-        # bool, bytes, etc
         elif isinstance(in_data, bool):
-            return cls.__konfig_bool_expansion(in_data, prefix_separator_iterator, var_name_piece, named_parameter_expansion)
+            return cls.__konfig_bool_expansion(
+                in_data,
+                prefix_separator_iterator,
+                var_name_piece,
+                named_parameter_expansion
+            )
+        # bytes, etc
         raise ApiValueError('Unable to generate a ref6570 representation of {}'.format(in_data))
 
 
