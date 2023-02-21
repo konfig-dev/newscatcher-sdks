@@ -1,6 +1,6 @@
 /**
  * NewsCatcher News API V2
- * NewsCatcher is a data-as-a-service startup that has one main goal: to build the largest database of structured news articles published online. In other words, we\'re like Google for the news part of the web, which you can access as a source of data.  Some useful links: - [How NewsCatcher Works](https://docs.newscatcherapi.com/knowledge-base/how-newscatcher-works) - [GitHub for the Python SDK](https://github.com/NewscatcherAPI/newscatcherapi-sdk-python) 
+ * NewsCatcher is a data-as-a-service startup that has one main goal: to build the largest database of structured news articles published online. In other words, we\'re like Google for the news part of the web, which you can access as a source of data.  Some useful links: - [How NewsCatcher Works](https://docs.newscatcherapi.com/knowledge-base/how-newscatcher-works) - [GitHub for the Python SDK](https://github.com/NewscatcherAPI/newscatcherapi-sdk-python)
  *
  * The version of the OpenAPI document: 1.0.1
  * Contact: team@newscatcherapi.com
@@ -13,11 +13,18 @@
 import { Pageable } from "./pageable";
 
 export interface PageParameters {
-  [key: string]: any
+  page?: number;
+  pageSize?: number;
+  requestBody?: {
+    page?: number;
+    pageSize?: number;
+  };
 }
 
 export interface PageInfo {
-  [key: string]: any
+  total_pages?: number;
+  page?: number;
+  page_size?: number;
 }
 
 export class Page<
@@ -25,17 +32,17 @@ export class Page<
   Parameters extends PageParameters
 > extends Pageable<Data, Parameters> {
   protected previousParameters(): PageParameters {
-    throw Error("Stub")
+    throw Error("Stub");
   }
 
   protected nextParameters(): PageParameters {
-    throw Error("Stub")
+    throw Error("Stub");
   }
   hasPrevious(): boolean {
-    throw Error("Stub")
+    throw Error("Stub");
   }
 
   hasNext(): boolean {
-    throw Error("Stub")
+    throw Error("Stub");
   }
 }
