@@ -16,6 +16,7 @@ generators:
     packageName: newscatcherapi_client
     projectName: newscatcherapi-python-sdk
     outputDirectory: python
+    clientName: Newscatcher
     git:
       userId: konfig-dev
       repoId: newscatcher-sdks/tree/main/python
