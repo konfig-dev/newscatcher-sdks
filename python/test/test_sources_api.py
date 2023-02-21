@@ -34,7 +34,7 @@ class TestSourcesApi(unittest.TestCase):
 
         Get top news sources supported by NewsCatcher.  # noqa: E501
         """
-        response = self.api.get(lang="en")
+        response = self.api.get(query_params={"lang":"en"})
         assert response is not None, "Received null response"
 
     def test_post(self):
@@ -42,7 +42,7 @@ class TestSourcesApi(unittest.TestCase):
 
         Get top news sources supported by NewsCatcher.  # noqa: E501
         """
-        response = self.api.post(sources_query=SourcesQuery(lang="en"))
+        response = self.api.post(body={"lang":"en"})
         assert response is not None, "Received null response"
 
 
