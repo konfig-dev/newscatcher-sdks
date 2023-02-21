@@ -19,7 +19,7 @@ class TestLatestHeadlinesApi(unittest.TestCase):
     """LatestHeadlinesApi unit test stubs"""
 
     def setUp(self):
-        self.api = Newscatcher(api_key=os.environ["NEWSCATCHER_API_KEY"])
+        self.newscatcher = Newscatcher(api_key=os.environ["NEWSCATCHER_API_KEY"])
 
     def tearDown(self):
         pass
@@ -36,7 +36,7 @@ class TestLatestHeadlinesApi(unittest.TestCase):
         ranked_only = True
         page_size = 100
         page = 1
-        api_response = self.api.latest_headlines.get(
+        api_response = self.newscatcher.latest_headlines.get(
             query_params={
                 "lang": lang,
                 "not_lang": not_lang,
