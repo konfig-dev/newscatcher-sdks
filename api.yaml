@@ -777,6 +777,7 @@ components:
             nullable: true
           summary:
             type: string
+            nullable: true
           rights:
             type: string
             nullable: true

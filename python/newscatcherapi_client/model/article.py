@@ -71,7 +71,26 @@ class Article(
                                 *args,
                                 _configuration=_configuration,
                             )
-                    summary = schemas.StrSchema
+                    
+                    
+                    class summary(
+                        schemas.StrBase,
+                        schemas.NoneBase,
+                        schemas.Schema,
+                        schemas.NoneStrMixin
+                    ):
+                    
+                    
+                        def __new__(
+                            cls,
+                            *args: typing.Union[None, str, ],
+                            _configuration: typing.Optional[schemas.Configuration] = None,
+                        ) -> 'summary':
+                            return super().__new__(
+                                cls,
+                                *args,
+                                _configuration=_configuration,
+                            )
                     
                     
                     class rights(
@@ -312,7 +331,7 @@ class Article(
                 link: typing.Union[MetaOapg.properties.link, str, schemas.Unset] = schemas.unset,
                 clean_url: typing.Union[MetaOapg.properties.clean_url, str, schemas.Unset] = schemas.unset,
                 excerpt: typing.Union[MetaOapg.properties.excerpt, None, str, schemas.Unset] = schemas.unset,
-                summary: typing.Union[MetaOapg.properties.summary, str, schemas.Unset] = schemas.unset,
+                summary: typing.Union[MetaOapg.properties.summary, None, str, schemas.Unset] = schemas.unset,
                 rights: typing.Union[MetaOapg.properties.rights, None, str, schemas.Unset] = schemas.unset,
                 rank: typing.Union[MetaOapg.properties.rank, decimal.Decimal, int, schemas.Unset] = schemas.unset,
                 topic: typing.Union[MetaOapg.properties.topic, str, schemas.Unset] = schemas.unset,

@@ -27,7 +27,7 @@ Key | Input Type | Accessed Type | Description | Notes
 **link** | str,  | str,  |  | [optional] 
 **clean_url** | str,  | str,  |  | [optional] 
 **excerpt** | None, str,  | NoneClass, str,  |  | [optional] 
-**summary** | str,  | str,  |  | [optional] 
+**summary** | None, str,  | NoneClass, str,  |  | [optional] 
 **rights** | None, str,  | NoneClass, str,  |  | [optional] 
 **rank** | decimal.Decimal, int,  | decimal.Decimal,  |  | [optional] 
 **topic** | str,  | str,  |  | [optional] 
