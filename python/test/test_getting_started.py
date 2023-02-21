@@ -12,19 +12,14 @@
 import unittest
 
 import os
-from newscatcherapi_client.apis.tags.latest_headlines_api import LatestHeadlinesApi
-from newscatcherapi_client.configuration import Configuration
-from newscatcherapi_client.api_client import ApiClient
-from newscatcherapi_client.models import Topic, Page, PageSize
+from newscatcherapi_client import Newscatcher
 
 
 class TestLatestHeadlinesApi(unittest.TestCase):
     """LatestHeadlinesApi unit test stubs"""
 
     def setUp(self):
-        configuration = Configuration(api_key={'api_key': os.environ["NEWSCATCHER_API_KEY"]})
-        api_client = ApiClient(configuration)
-        self.api = LatestHeadlinesApi(api_client)  # noqa: E501
+        self.api = Newscatcher(api_key=os.environ["NEWSCATCHER_API_KEY"])
 
     def tearDown(self):
         pass
@@ -41,7 +36,7 @@ class TestLatestHeadlinesApi(unittest.TestCase):
         ranked_only = True
         page_size = 100
         page = 1
-        api_response = self.api.get(
+        api_response = self.api.latest_headlines.get(
             query_params={
                 "lang": lang,
                 "not_lang": not_lang,

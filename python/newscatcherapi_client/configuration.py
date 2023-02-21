@@ -128,7 +128,10 @@ conf = newscatcherapi_client.Configuration(
         # Authentication Settings
         self.api_key = {}
         if api_key:
-            self.api_key = api_key
+            if (isinstance(api_key, str)):
+                self.api_key = {'api_key': api_key}
+            else:
+                self.api_key = api_key
         """dict to store API key(s)
         """
         self.api_key_prefix = {}

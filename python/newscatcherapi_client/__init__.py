@@ -27,3 +27,5 @@ from newscatcherapi_client.exceptions import ApiTypeError
 from newscatcherapi_client.exceptions import ApiValueError
 from newscatcherapi_client.exceptions import ApiKeyError
 from newscatcherapi_client.exceptions import ApiException
+
+from newscatcherapi_client.client import Newscatcher
