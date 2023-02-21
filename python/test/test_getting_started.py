@@ -12,7 +12,7 @@
 import unittest
 
 import os
-from newscatcherapi_client.api.latest_headlines_api import LatestHeadlinesApi  # noqa: E501
+from newscatcherapi_client.apis.tags.latest_headlines_api import LatestHeadlinesApi
 from newscatcherapi_client.configuration import Configuration
 from newscatcherapi_client.api_client import ApiClient
 from newscatcherapi_client.models import Topic, Page, PageSize
@@ -41,10 +41,20 @@ class TestLatestHeadlinesApi(unittest.TestCase):
         ranked_only = True
         page_size = PageSize(100)
         page = Page(1)
-        api_response = self.api.get(lang=lang, not_lang=not_lang,
-                                    countries=countries, not_countries=not_countries, topic=topic,
-                                    sources=sources, not_sources=not_sources, ranked_only=ranked_only,
-                                    page_size=page_size, page=page)
+        api_response = self.api.get(
+            query_params={
+                "lang": lang,
+                "not_lang": not_lang,
+                "countries": countries,
+                "not_countries": not_countries,
+                "topic": topic,
+                "sources": sources,
+                "not_sources": not_sources,
+                "ranked_only": ranked_only,
+                "page_size": page_size,
+                "page": page
+            }
+        )
         assert api_response is not None, "Response is null"
 
 

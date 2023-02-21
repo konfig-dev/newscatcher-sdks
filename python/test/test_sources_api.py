@@ -12,7 +12,7 @@
 import unittest
 
 import os
-from newscatcherapi_client.api.sources_api import SourcesApi  # noqa: E501
+from newscatcherapi_client.apis.tags.sources_api import SourcesApi  # noqa: E501
 from newscatcherapi_client.configuration import Configuration
 from newscatcherapi_client.model.sources_query import SourcesQuery
 from newscatcherapi_client.api_client import ApiClient

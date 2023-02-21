@@ -12,7 +12,7 @@
 import unittest
 
 import os
-from newscatcherapi_client.api.latest_headlines_api import LatestHeadlinesApi  # noqa: E501
+from newscatcherapi_client.apis.tags.latest_headlines_api import LatestHeadlinesApi  # noqa: E501
 from newscatcherapi_client.configuration import Configuration
 from newscatcherapi_client.api_client import ApiClient
 from newscatcherapi_client.model.latest_headlines import LatestHeadlines
