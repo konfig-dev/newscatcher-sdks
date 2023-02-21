@@ -12,19 +12,14 @@
 import unittest
 
 import os
-from newscatcherapi_client.apis.tags.latest_headlines_api import LatestHeadlinesApi  # noqa: E501
-from newscatcherapi_client.configuration import Configuration
-from newscatcherapi_client.api_client import ApiClient
-from newscatcherapi_client.model.latest_headlines import LatestHeadlines
+from newscatcherapi_client import Newscatcher
 
 
 class TestLatestHeadlinesApi(unittest.TestCase):
     """LatestHeadlinesApi unit test stubs"""
 
     def setUp(self):
-        configuration = Configuration(api_key={'api_key': os.environ["NEWSCATCHER_API_KEY"]})
-        api_client = ApiClient(configuration)
-        self.api = LatestHeadlinesApi(api_client)  # noqa: E501
+        self.newscatcher = Newscatcher(api_key=os.environ["NEWSCATCHER_API_KEY"])  # noqa: E501
 
     def tearDown(self):
         pass
@@ -34,9 +29,9 @@ class TestLatestHeadlinesApi(unittest.TestCase):
 
         Get Latest News Articles  # noqa: E501
         """
-        response = self.api.get(query_params={"lang": "en"})
+        response = self.newscatcher.latest_headlines.get(query_params={"lang": "en"})
         assert response is not None, "Received null response"
-        response = self.api.get(
+        response = self.newscatcher.latest_headlines.get(
             query_params={"not_sources": "nytimes.com,theguardian.com", "page": 1, "page_size": 50})
         assert response is not None, "Received null response"
 
@@ -45,7 +40,7 @@ class TestLatestHeadlinesApi(unittest.TestCase):
 
         Get Latest News Articles  # noqa: E501
         """
-        response = self.api.post(body={"lang": "en"})
+        response = self.newscatcher.latest_headlines.post(body={"lang": "en"})
         assert response is not None, "Received null response"
 
 

@@ -24,6 +24,6 @@ class Newscatcher:
         if (configuration is None):
             raise Exception("configuration is required")
         api_client = ApiClient(configuration)
-        self.latest_headlines_api = LatestHeadlinesApi(api_client)
-        self.search_api = SearchApi(api_client)
-        self.sources_api = SourcesApi(api_client)
+        self.latest_headlines = LatestHeadlinesApi(api_client)
+        self.search = SearchApi(api_client)
+        self.sources = SourcesApi(api_client)

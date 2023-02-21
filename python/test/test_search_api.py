@@ -12,19 +12,14 @@
 import unittest
 
 import os
-from newscatcherapi_client.apis.tags.search_api import SearchApi  # noqa: E501
-from newscatcherapi_client.configuration import Configuration
-from newscatcherapi_client.api_client import ApiClient
-from newscatcherapi_client.model.search import Search
+from newscatcherapi_client import Newscatcher
 
 
 class TestSearchApi(unittest.TestCase):
     """SearchApi unit test stubs"""
 
     def setUp(self):
-        configuration = Configuration(api_key={'api_key': os.environ["NEWSCATCHER_API_KEY"]})
-        api_client = ApiClient(configuration)
-        self.api = SearchApi(api_client)  # noqa: E501
+        self.newscatcher = Newscatcher(api_key=os.environ["NEWSCATCHER_API_KEY"])
 
     def tearDown(self):
         pass
@@ -34,7 +29,7 @@ class TestSearchApi(unittest.TestCase):
 
         Search for specific news articles  # noqa: E501
         """
-        response = self.api.get(query_params={"q": "Apple", "from": "three months ago"})
+        response = self.newscatcher.search.get(query_params={"q": "Apple", "from": "three months ago"})
         assert response is not None, "Received null response"
 
     def test_post(self):
@@ -42,7 +37,7 @@ class TestSearchApi(unittest.TestCase):
 
         Search for specific news articles  # noqa: E501
         """
-        response = self.api.post(body={"q": 'Apple', "from": 'three months ago'})
+        response = self.newscatcher.search.post(body={"q": 'Apple', "from": 'three months ago'})
         assert response is not None, "Received null response"
 
 

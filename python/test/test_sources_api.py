@@ -12,19 +12,14 @@
 import unittest
 
 import os
-from newscatcherapi_client.apis.tags.sources_api import SourcesApi  # noqa: E501
-from newscatcherapi_client.configuration import Configuration
-from newscatcherapi_client.model.sources_query import SourcesQuery
-from newscatcherapi_client.api_client import ApiClient
+from newscatcherapi_client import Newscatcher
 
 
 class TestSourcesApi(unittest.TestCase):
     """SourcesApi unit test stubs"""
 
     def setUp(self):
-        configuration = Configuration(api_key={'api_key': os.environ["NEWSCATCHER_API_KEY"]})
-        api_client = ApiClient(configuration)
-        self.api = SourcesApi(api_client)  # noqa: E501
+        self.newscatcher = Newscatcher(api_key= os.environ["NEWSCATCHER_API_KEY"])
 
     def tearDown(self):
         pass
@@ -34,7 +29,7 @@ class TestSourcesApi(unittest.TestCase):
 
         Get top news sources supported by NewsCatcher.  # noqa: E501
         """
-        response = self.api.get(query_params={"lang":"en"})
+        response = self.newscatcher.sources.get(query_params={"lang":"en"})
         assert response is not None, "Received null response"
 
     def test_post(self):
@@ -42,7 +37,7 @@ class TestSourcesApi(unittest.TestCase):
 
         Get top news sources supported by NewsCatcher.  # noqa: E501
         """
-        response = self.api.post(body={"lang":"en"})
+        response = self.newscatcher.sources.post(body={"lang":"en"})
         assert response is not None, "Received null response"
 
 
