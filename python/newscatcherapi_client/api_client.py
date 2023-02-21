@@ -154,6 +154,23 @@ class ParameterSerializerBase:
     def _to_dict(name: str, value: str):
         return {name: value}
 
+    """
+    rfc6570 does not specify how boolean values are serialized so we use lowercase "true" and "false
+    """
+    @classmethod
+    def __konfig_bool_expansion(
+        cls,
+        in_data: typing.Any,
+        prefix_separator_iterator: PrefixSeparatorIterator,
+        var_name_piece: str,
+        named_parameter_expansion: bool
+    ) -> str:
+        item_value = "true" if in_data is True else "false"
+        if item_value is None or (item_value == '' and prefix_separator_iterator.separator == ';'):
+            return next(prefix_separator_iterator) + var_name_piece
+        value_pair_equals = '=' if named_parameter_expansion else ''
+        return next(prefix_separator_iterator) + var_name_piece + value_pair_equals + item_value
+
     @classmethod
     def __ref6570_str_float_int_expansion(
         cls,
@@ -280,6 +297,8 @@ class ParameterSerializerBase:
                 named_parameter_expansion
             )
         # bool, bytes, etc
+        elif isinstance(in_data, bool):
+            return cls.__konfig_bool_expansion(in_data, prefix_separator_iterator, var_name_piece, named_parameter_expansion)
         raise ApiValueError('Unable to generate a ref6570 representation of {}'.format(in_data))
 
 
