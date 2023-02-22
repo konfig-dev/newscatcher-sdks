@@ -12,11 +12,12 @@ generators:
       userId: konfig-dev
       repoId: newscatcher-sdks/tree/main/java
   python:
-    version: 4.0.0
+    version: 4.1.0
     packageName: newscatcherapi_client
     projectName: newscatcherapi-python-sdk
     outputDirectory: python
     clientName: Newscatcher
+    readmeSnippet: snippets/python.py
     git:
       userId: konfig-dev
       repoId: newscatcher-sdks/tree/main/python
