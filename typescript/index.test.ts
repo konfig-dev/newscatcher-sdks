@@ -16,7 +16,7 @@ describe("api", () => {
     while (page.hasNext()) {
       page = await page.next();
       paginationCount++;
-      console.log(`Paginated ${paginationCount} time(s)`);
+      console.log(`Paginated ${paginationCount} time`);
       expect(page.data).not.toBeNull();
       expect(page.data.page).toBeGreaterThan(lastPage);
       lastPage = page.data.page;
@@ -38,7 +38,7 @@ describe("api", () => {
     while (page.hasNext()) {
       page = await page.next();
       paginationCount++;
-      console.log(`Paginated ${paginationCount} time(s)`);
+      console.log(`Paginated ${paginationCount} time`);
       expect(page.data).not.toBeNull();
       expect(page.data.page).toBeGreaterThan(lastPage);
       lastPage = page.data.page;
