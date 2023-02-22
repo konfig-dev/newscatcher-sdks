@@ -4,18 +4,24 @@ const newscatcher = new Newscatcher({
   apiKey: process.env.NEWSCATCHER_API_KEY,
 });
 
-const latestHeadlines = await newscatcher.latestHeadlines.post({
-  latestHeadlines: { lang: "en" },
+let latestHeadlines = await newscatcher.latestHeadlines.post({
+  requestBody: { lang: "en" },
 });
-console.log(latestHeadlines);
+console.log(latestHeadlines.data);
+
+// Pagination
+while (latestHeadlines.hasNext()) {
+  latestHeadlines = await latestHeadlines.next();
+  console.log(latestHeadlines.data);
+}
 
 const search = await newscatcher.search.post({
-  search: { q: "Apple", from: "three months ago" },
+  requestBody: { q: "Apple", from: "three months ago" },
 });
-console.log(search);
+console.log(search.data);
 
 const sources = await newscatcher.sources.post({
-  sourcesQuery: { lang: "en" },
+  requestBody: { lang: "en" },
 });
 
-console.log(sources);
+console.log(sources.data);
