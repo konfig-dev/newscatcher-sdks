@@ -183,7 +183,7 @@ export const LatestHeadlinesApiFp = function(configuration?: Configuration) {
          * @throws {RequiredError}
          */
         async post(requestParameters: LatestHeadlinesApiPostRequest = {}, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Model200ResponseLatest>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.post(requestParameters.latestHeadlines, options);
+            const localVarAxiosArgs = await localVarAxiosParamCreator.post(requestParameters.requestBody, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
@@ -307,7 +307,7 @@ export interface LatestHeadlinesApiPostRequest {
      * @type {LatestHeadlines}
      * @memberof LatestHeadlinesApiPost
      */
-    readonly latestHeadlines?: LatestHeadlines
+    readonly requestBody?: LatestHeadlines
 }
 
 /**
@@ -326,7 +326,12 @@ export class LatestHeadlinesApi extends BaseAPI {
      * @memberof LatestHeadlinesApi
      */
     public get(requestParameters: LatestHeadlinesApiGetRequest = {}, options?: AxiosRequestConfig) {
-        return LatestHeadlinesApiFp(this.configuration).get(requestParameters, options).then((request) => request(this.axios, this.basePath));
+        return paginate({
+            initialParameters: requestParameters,
+            request: (parameters: LatestHeadlinesApiGetRequest) => {
+                return LatestHeadlinesApiFp(this.configuration).get(parameters, options).then((request) => request(this.axios, this.basePath));
+            },
+        });
     }
 
     /**
@@ -338,6 +343,11 @@ export class LatestHeadlinesApi extends BaseAPI {
      * @memberof LatestHeadlinesApi
      */
     public post(requestParameters: LatestHeadlinesApiPostRequest = {}, options?: AxiosRequestConfig) {
-        return LatestHeadlinesApiFp(this.configuration).post(requestParameters, options).then((request) => request(this.axios, this.basePath));
+        return paginate({
+            initialParameters: requestParameters,
+            request: (parameters: LatestHeadlinesApiPostRequest) => {
+                return LatestHeadlinesApiFp(this.configuration).post(parameters, options).then((request) => request(this.axios, this.basePath));
+            },
+        });
     }
 }

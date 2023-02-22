@@ -231,7 +231,7 @@ export const SearchApiFp = function(configuration?: Configuration) {
          * @throws {RequiredError}
          */
         async post(requestParameters: SearchApiPostRequest = {}, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Model200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.post(requestParameters.search, options);
+            const localVarAxiosArgs = await localVarAxiosParamCreator.post(requestParameters.requestBody, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
@@ -411,7 +411,7 @@ export interface SearchApiPostRequest {
      * @type {Search}
      * @memberof SearchApiPost
      */
-    readonly search?: Search
+    readonly requestBody?: Search
 }
 
 /**
@@ -430,7 +430,12 @@ export class SearchApi extends BaseAPI {
      * @memberof SearchApi
      */
     public get(requestParameters: SearchApiGetRequest, options?: AxiosRequestConfig) {
-        return SearchApiFp(this.configuration).get(requestParameters, options).then((request) => request(this.axios, this.basePath));
+        return paginate({
+            initialParameters: requestParameters,
+            request: (parameters: SearchApiGetRequest) => {
+                return SearchApiFp(this.configuration).get(parameters, options).then((request) => request(this.axios, this.basePath));
+            },
+        });
     }
 
     /**
@@ -442,6 +447,11 @@ export class SearchApi extends BaseAPI {
      * @memberof SearchApi
      */
     public post(requestParameters: SearchApiPostRequest = {}, options?: AxiosRequestConfig) {
-        return SearchApiFp(this.configuration).post(requestParameters, options).then((request) => request(this.axios, this.basePath));
+        return paginate({
+            initialParameters: requestParameters,
+            request: (parameters: SearchApiPostRequest) => {
+                return SearchApiFp(this.configuration).post(parameters, options).then((request) => request(this.axios, this.basePath));
+            },
+        });
     }
 }

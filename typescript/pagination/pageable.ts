@@ -11,8 +11,16 @@
  */
 
 import { AxiosPromise } from "axios";
-import { Page, PageInfo, PageParameters } from "./Page";
+import {
+  Page,
+  PageInfo,
+  PageParameterProperties,
+  PageParameters,
+} from "./Page";
 
+export type PageParametersBase<Parameters> = Parameters & {
+  requestBody?: Parameters;
+};
 export type PageRequest<
   Data extends PageInfo,
   Parameters extends PageParameters
@@ -23,28 +31,52 @@ export abstract class Pageable<
   Parameters extends PageParameters
 > {
   readonly data: Data;
-  private readonly initialParameters: Parameters;
+  protected readonly initialParameters: Parameters;
   private readonly _request: PageRequest<Data, Parameters>;
   async previous(): Promise<Page<Data, Parameters> | null> {
     if (!this.hasPrevious()) return null;
-    const response = await this.makeRequest(this.previousParameters());
+    if (this.previousParameters === null) return null;
+    const response = await this.makeRequest(this.previousParameters);
     return this.withData(response.data);
   }
   async next(): Promise<Page<Data, Parameters> | null> {
     if (!this.hasNext()) return null;
-    const response = await this.makeRequest(this.nextParameters());
+    if (this.nextParameters === null) return null;
+    const response = await this.makeRequest(this.nextParameters);
     return this.withData(response.data);
   }
 
-  protected abstract previousParameters(): PageParameters;
-  protected abstract nextParameters(): PageParameters;
+  /**
+   * Generate minimal set of parameters needed to get the previous page
+   */
+  protected abstract get previousParameters(): PageParameterProperties | null;
+
+  /**
+   * Generate minimal set of parameters needed to get the next page
+   */
+  protected abstract get nextParameters(): PageParameterProperties | null;
+
+  /**
+   * Is there a previous page based on PageInfo?
+   */
   abstract hasPrevious(): boolean;
+
+  /**
+   * Is there a next page based on PageInfo?
+   */
   abstract hasNext(): boolean;
 
   /**
-   * Helper for invoking a request
+   * Helper for invoking a request. Handles request body and parameter based pagination
    */
-  private makeRequest(parameters: PageParameters): AxiosPromise<Data> {
+  private makeRequest(parameters: PageParameterProperties): AxiosPromise<Data> {
+    // Handle request body pagination
+    if (this.initialParameters.requestBody !== undefined) {
+      return this._request({
+        ...this.initialParameters,
+        requestBody: { ...this.initialParameters.requestBody, ...parameters },
+      });
+    }
     return this._request({ ...this.initialParameters, ...parameters });
   }
 

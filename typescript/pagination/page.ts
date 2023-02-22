@@ -10,17 +10,21 @@
  * Do not edit the class manually.
  */
 
-import { Pageable } from "./pageable";
+import { Pageable, PageParametersBase } from "./pageable";
 
-export interface PageParameters {
+/**
+ * The set of parameters that appear in a paginated operation (requestBody or parameters)
+ */
+export type PageParameterProperties = {
   page?: number;
   pageSize?: number;
-  requestBody?: {
-    page?: number;
-    pageSize?: number;
-  };
-}
+};
 
+export type PageParameters = PageParametersBase<PageParameterProperties>;
+
+/**
+ * The set of properties that appear in a paginated operation's response
+ */
 export interface PageInfo {
   total_pages?: number;
   page?: number;
@@ -31,18 +35,26 @@ export class Page<
   Data extends PageInfo,
   Parameters extends PageParameters
 > extends Pageable<Data, Parameters> {
-  protected previousParameters(): PageParameters {
-    throw Error("Stub");
+  protected get previousParameters(): PageParameterProperties | null {
+    if (this.data.page === undefined) return null;
+    return {
+      page: this.data.page - 1,
+    };
   }
 
-  protected nextParameters(): PageParameters {
-    throw Error("Stub");
+  protected get nextParameters(): PageParameterProperties | null {
+    if (this.data.page === undefined) return null;
+    return {
+      page: this.data.page + 1,
+    };
   }
   hasPrevious(): boolean {
-    throw Error("Stub");
+    return this.data.page === undefined ? false : this.data.page > 0;
   }
 
   hasNext(): boolean {
-    throw Error("Stub");
+    if (this.data.page === undefined) return false;
+    if (this.data.total_pages === undefined) return false;
+    return this.data.page < this.data.total_pages;
   }
 }

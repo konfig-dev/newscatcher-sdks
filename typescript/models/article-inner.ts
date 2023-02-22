@@ -66,7 +66,7 @@ export interface ArticleInner {
      * @type {string}
      * @memberof ArticleInner
      */
-    'summary'?: string;
+    'summary'?: string | null;
     /**
      * 
      * @type {string}

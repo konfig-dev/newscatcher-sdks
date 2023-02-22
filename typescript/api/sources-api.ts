@@ -148,7 +148,7 @@ export const SourcesApiFp = function(configuration?: Configuration) {
          * @throws {RequiredError}
          */
         async post(requestParameters: SourcesApiPostRequest = {}, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Model200ResponseSources>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.post(requestParameters.sourcesQuery, options);
+            const localVarAxiosArgs = await localVarAxiosParamCreator.post(requestParameters.requestBody, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
@@ -223,7 +223,7 @@ export interface SourcesApiPostRequest {
      * @type {SourcesQuery}
      * @memberof SourcesApiPost
      */
-    readonly sourcesQuery?: SourcesQuery
+    readonly requestBody?: SourcesQuery
 }
 
 /**

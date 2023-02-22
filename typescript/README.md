@@ -1,6 +1,6 @@
-## newscatcherapi-typescript-sdk@3.0.0
+## newscatcherapi-typescript-sdk@4.0.0
 
-This generator creates TypeScript/JavaScript client that utilizes [axios](https://github.com/axios/axios). The generated Node module can be used in the following environments:
+This library that utilizes [axios](https://github.com/axios/axios). The generated Node module can be used in the following environments:
 
 Environment
 * Node.js
@@ -30,7 +30,7 @@ npm run build
 navigate to the folder of your consuming project and run the following command.
 
 ```
-npm install newscatcherapi-typescript-sdk@3.0.0 --save
+npm install newscatcherapi-typescript-sdk@4.0.0 --save
 ```
 
 ### Getting Started

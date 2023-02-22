@@ -21,7 +21,7 @@ generators:
       userId: konfig-dev
       repoId: newscatcher-sdks/tree/main/python
   typescript:
-    version: 3.0.0
+    version: 4.0.0
     npmName: newscatcherapi-typescript-sdk
     readmeSnippet: snippets/typescript.ts
     clientName: Newscatcher
@@ -29,6 +29,14 @@ generators:
     git:
       userId: konfig-dev
       repoId: newscatcher-sdks/tree/main/typescript
+    pagination:
+      parameters:
+        - page_size
+        - page
+      response:
+        - page
+        - total_pages
+        - page_size
   csharp:
     version: 2.1.0
     packageName: Newscatcherapi.Net
