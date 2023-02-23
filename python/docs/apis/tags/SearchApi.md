@@ -18,83 +18,46 @@ Main endpoint that allows you to find news article by keyword, date, language, c
 
 ### Example
 
-* Api Key Authentication (api_key):
 ```python
-import newscatcherapi_client
-from newscatcherapi_client.apis.tags import search_api
-from newscatcherapi_client.model.publish_date_precision import PublishDatePrecision
-from newscatcherapi_client.model.sort_by import SortBy
-from newscatcherapi_client.model.page import Page
-from newscatcherapi_client.model.model200_response import Model200Response
-from newscatcherapi_client.model.error_response import ErrorResponse
-from newscatcherapi_client.model.rank import Rank
-from newscatcherapi_client.model.search_in import SearchIn
-from newscatcherapi_client.model.page_size import PageSize
-from newscatcherapi_client.model.topic import Topic
 from pprint import pprint
-# Defining the host is optional and defaults to https://api.newscatcherapi.com/v2
-# See configuration.py for a list of all supported configuration parameters.
-configuration = newscatcherapi_client.Configuration(
-    host = "https://api.newscatcherapi.com/v2"
+from newscatcherapi_client import Newscatcher
+
+newscatcher = Newscatcher(
+        # Defining the host is optional and defaults to https://api.newscatcherapi.com/v2
+        # See configuration.py for a list of all supported configuration parameters.
+        host = "https://api.newscatcherapi.com/v2",
+    
+        # Configure API key authorization: api_key
+        api_key = 'YOUR_API_KEY'
+    
+        # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+        # api_key_prefix = {'api_key': 'Bearer'}
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: api_key
-configuration.api_key['api_key'] = 'YOUR_API_KEY'
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['api_key'] = 'Bearer'
-# Enter a context with an instance of the API client
-with newscatcherapi_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = search_api.SearchApi(api_client)
-
-    # example passing only required values which don't have defaults set
-    query_params = {
-        'q': "\"Elon Musk\"",
-    }
-    try:
-        # Search for specific news articles
-        api_response = api_instance.get(
-            query_params=query_params,
-        )
-        pprint(api_response)
-    except newscatcherapi_client.ApiException as e:
-        print("Exception when calling SearchApi->get: %s\n" % e)
-
-    # example passing only optional values
+# Search for specific news articles
+response = newscatcher.search.get(
     query_params = {
         'q': "\"Elon Musk\"",
         'lang': "en",
         'not_lang': "af",
-        'published_date_precision': PublishDatePrecision("full"),
+        'published_date_precision': "full",
         'from': "2021/05/06",
         'to': "2021/05/06",
-        'search_in': SearchIn("title"),
+        'search_in': "title",
         'countries': "US,CA",
         'not_countries': "US,CA",
-        'topic': Topic("business"),
+        'topic': "business",
         'sources': "nytimes.com,theguardian.com",
         'not_sources': "wsj.com",
         'ranked_only': True,
-        'from_rank': Rank(1000),
-        'to_rank': Rank(1000),
-        'sort_by': SortBy("rank"),
-        'page_size': PageSize(100),
-        'page': Page(1),
+        'from_rank': 1000,
+        'to_rank': 1000,
+        'sort_by': "rank",
+        'page_size': 100,
+        'page': 1,
     }
-    try:
-        # Search for specific news articles
-        api_response = api_instance.get(
-            query_params=query_params,
-        )
-        pprint(api_response)
-    except newscatcherapi_client.ApiException as e:
-        print("Exception when calling SearchApi->get: %s\n" % e)
+)
+pprint(response)
 ```
 ### Parameters
 
@@ -355,64 +318,42 @@ Main endpoint that allows you to find news article by keyword, date, language, c
 
 ### Example
 
-* Api Key Authentication (api_key):
 ```python
-import newscatcherapi_client
-from newscatcherapi_client.apis.tags import search_api
-from newscatcherapi_client.model.search import Search
-from newscatcherapi_client.model.model200_response import Model200Response
-from newscatcherapi_client.model.error_response import ErrorResponse
 from pprint import pprint
-# Defining the host is optional and defaults to https://api.newscatcherapi.com/v2
-# See configuration.py for a list of all supported configuration parameters.
-configuration = newscatcherapi_client.Configuration(
-    host = "https://api.newscatcherapi.com/v2"
+from newscatcherapi_client import Newscatcher
+
+newscatcher = Newscatcher(
+        # Defining the host is optional and defaults to https://api.newscatcherapi.com/v2
+        # See configuration.py for a list of all supported configuration parameters.
+        host = "https://api.newscatcherapi.com/v2",
+    
+        # Configure API key authorization: api_key
+        api_key = 'YOUR_API_KEY'
+    
+        # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+        # api_key_prefix = {'api_key': 'Bearer'}
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: api_key
-configuration.api_key['api_key'] = 'YOUR_API_KEY'
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['api_key'] = 'Bearer'
-# Enter a context with an instance of the API client
-with newscatcherapi_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = search_api.SearchApi(api_client)
-
-    # example passing only optional values
-    body = Search(
-        q="\"Elon Musk\"",
-        lang="en",
-        not_lang="af",
-        published_date_precision="full",
-        _from="2021/05/06",
-        to="2021/05/06",
-        search_in="title",
-        countries="US,CA",
-        not_countries="not_countries_example",
-        topic="business",
-        sources="nytimes.com,theguardian.com",
-        not_sources="not_sources_example",
-        ranked_only=True,
-        from_rank=0,
-        to_rank=0,
-        sort_by="rank",
-        page_size=100,
-        page=1,
-    )
-    try:
-        # Search for specific news articles
-        api_response = api_instance.post(
-            body=body,
-        )
-        pprint(api_response)
-    except newscatcherapi_client.ApiException as e:
-        print("Exception when calling SearchApi->post: %s\n" % e)
+# Search for specific news articles
+response = newscatcher.search.post(
+    body = {
+        'q': "\"Elon Musk\"",
+        'lang': "en",
+        'not_lang': "af",
+        'published_date_precision': "full",
+        '_from': "2021/05/06",
+        'to': "2021/05/06",
+        'search_in': "title",
+        'countries': "US,CA",
+        'topic': "business",
+        'sources': "nytimes.com,theguardian.com",
+        'ranked_only': True,
+        'sort_by': "rank",
+        'page_size': 100,
+        'page': 1,
+    }
+)
+pprint(response)
 ```
 ### Parameters
 

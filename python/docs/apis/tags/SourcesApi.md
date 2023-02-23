@@ -18,49 +18,31 @@ Returns a list of the top 100 supported news websites. Overall, we support over 
 
 ### Example
 
-* Api Key Authentication (api_key):
 ```python
-import newscatcherapi_client
-from newscatcherapi_client.apis.tags import sources_api
-from newscatcherapi_client.model.error_response import ErrorResponse
-from newscatcherapi_client.model.model200_response_sources import Model200ResponseSources
-from newscatcherapi_client.model.topic import Topic
 from pprint import pprint
-# Defining the host is optional and defaults to https://api.newscatcherapi.com/v2
-# See configuration.py for a list of all supported configuration parameters.
-configuration = newscatcherapi_client.Configuration(
-    host = "https://api.newscatcherapi.com/v2"
+from newscatcherapi_client import Newscatcher
+
+newscatcher = Newscatcher(
+        # Defining the host is optional and defaults to https://api.newscatcherapi.com/v2
+        # See configuration.py for a list of all supported configuration parameters.
+        host = "https://api.newscatcherapi.com/v2",
+    
+        # Configure API key authorization: api_key
+        api_key = 'YOUR_API_KEY'
+    
+        # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+        # api_key_prefix = {'api_key': 'Bearer'}
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: api_key
-configuration.api_key['api_key'] = 'YOUR_API_KEY'
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['api_key'] = 'Bearer'
-# Enter a context with an instance of the API client
-with newscatcherapi_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = sources_api.SourcesApi(api_client)
-
-    # example passing only optional values
+# Get top news sources supported by NewsCatcher.
+response = newscatcher.sources.get(
     query_params = {
         'lang': "en",
         'countries': "US,CA",
-        'topic': Topic("business"),
+        'topic': "business",
     }
-    try:
-        # Get top news sources supported by NewsCatcher.
-        api_response = api_instance.get(
-            query_params=query_params,
-        )
-        pprint(api_response)
-    except newscatcherapi_client.ApiException as e:
-        print("Exception when calling SourcesApi->get: %s\n" % e)
+)
+pprint(response)
 ```
 ### Parameters
 
@@ -208,49 +190,31 @@ Returns a list of the top 100 supported news websites. Overall, we support over 
 
 ### Example
 
-* Api Key Authentication (api_key):
 ```python
-import newscatcherapi_client
-from newscatcherapi_client.apis.tags import sources_api
-from newscatcherapi_client.model.sources_query import SourcesQuery
-from newscatcherapi_client.model.error_response import ErrorResponse
-from newscatcherapi_client.model.model200_response_sources import Model200ResponseSources
 from pprint import pprint
-# Defining the host is optional and defaults to https://api.newscatcherapi.com/v2
-# See configuration.py for a list of all supported configuration parameters.
-configuration = newscatcherapi_client.Configuration(
-    host = "https://api.newscatcherapi.com/v2"
+from newscatcherapi_client import Newscatcher
+
+newscatcher = Newscatcher(
+        # Defining the host is optional and defaults to https://api.newscatcherapi.com/v2
+        # See configuration.py for a list of all supported configuration parameters.
+        host = "https://api.newscatcherapi.com/v2",
+    
+        # Configure API key authorization: api_key
+        api_key = 'YOUR_API_KEY'
+    
+        # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+        # api_key_prefix = {'api_key': 'Bearer'}
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: api_key
-configuration.api_key['api_key'] = 'YOUR_API_KEY'
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['api_key'] = 'Bearer'
-# Enter a context with an instance of the API client
-with newscatcherapi_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = sources_api.SourcesApi(api_client)
-
-    # example passing only optional values
-    body = SourcesQuery(
-        lang="en",
-        countries="US,CA",
-        topic="business",
-    )
-    try:
-        # Get top news sources supported by NewsCatcher.
-        api_response = api_instance.post(
-            body=body,
-        )
-        pprint(api_response)
-    except newscatcherapi_client.ApiException as e:
-        print("Exception when calling SourcesApi->post: %s\n" % e)
+# Get top news sources supported by NewsCatcher.
+response = newscatcher.sources.post(
+    body = {
+        'lang': "en",
+        'countries': "US,CA",
+        'topic': "business",
+    }
+)
+pprint(response)
 ```
 ### Parameters
 

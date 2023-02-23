@@ -13,7 +13,7 @@
 from setuptools import setup, find_packages  # noqa: H301
 
 NAME = "newscatcherapi-python-sdk"
-VERSION = "4.1.0"
+VERSION = "4.2.0"
 # To install the library, run the following
 #
 # python setup.py install

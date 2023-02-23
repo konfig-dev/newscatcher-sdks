@@ -18,58 +18,38 @@ Get the latest headlines given any topic, country, or language.
 
 ### Example
 
-* Api Key Authentication (api_key):
 ```python
-import newscatcherapi_client
-from newscatcherapi_client.apis.tags import latest_headlines_api
-from newscatcherapi_client.model.model200_response_latest import Model200ResponseLatest
-from newscatcherapi_client.model.page import Page
-from newscatcherapi_client.model.error_response import ErrorResponse
-from newscatcherapi_client.model.page_size import PageSize
-from newscatcherapi_client.model.topic import Topic
 from pprint import pprint
-# Defining the host is optional and defaults to https://api.newscatcherapi.com/v2
-# See configuration.py for a list of all supported configuration parameters.
-configuration = newscatcherapi_client.Configuration(
-    host = "https://api.newscatcherapi.com/v2"
+from newscatcherapi_client import Newscatcher
+
+newscatcher = Newscatcher(
+        # Defining the host is optional and defaults to https://api.newscatcherapi.com/v2
+        # See configuration.py for a list of all supported configuration parameters.
+        host = "https://api.newscatcherapi.com/v2",
+    
+        # Configure API key authorization: api_key
+        api_key = 'YOUR_API_KEY'
+    
+        # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+        # api_key_prefix = {'api_key': 'Bearer'}
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: api_key
-configuration.api_key['api_key'] = 'YOUR_API_KEY'
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['api_key'] = 'Bearer'
-# Enter a context with an instance of the API client
-with newscatcherapi_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = latest_headlines_api.LatestHeadlinesApi(api_client)
-
-    # example passing only optional values
+# Get Latest News Articles
+response = newscatcher.latest_headlines.get(
     query_params = {
         'lang': "en",
         'not_lang': "af",
         'countries': "US,CA",
         'not_countries': "US,CA",
-        'topic': Topic("business"),
+        'topic': "business",
         'sources': "nytimes.com,theguardian.com",
         'not_sources': "wsj.com",
         'ranked_only': True,
-        'page_size': PageSize(100),
-        'page': Page(1),
+        'page_size': 100,
+        'page': 1,
     }
-    try:
-        # Get Latest News Articles
-        api_response = api_instance.get(
-            query_params=query_params,
-        )
-        pprint(api_response)
-    except newscatcherapi_client.ApiException as e:
-        print("Exception when calling LatestHeadlinesApi->get: %s\n" % e)
+)
+pprint(response)
 ```
 ### Parameters
 
@@ -271,56 +251,37 @@ Get the latest headlines given any topic, country, or language.
 
 ### Example
 
-* Api Key Authentication (api_key):
 ```python
-import newscatcherapi_client
-from newscatcherapi_client.apis.tags import latest_headlines_api
-from newscatcherapi_client.model.model200_response_latest import Model200ResponseLatest
-from newscatcherapi_client.model.error_response import ErrorResponse
-from newscatcherapi_client.model.latest_headlines import LatestHeadlines
 from pprint import pprint
-# Defining the host is optional and defaults to https://api.newscatcherapi.com/v2
-# See configuration.py for a list of all supported configuration parameters.
-configuration = newscatcherapi_client.Configuration(
-    host = "https://api.newscatcherapi.com/v2"
+from newscatcherapi_client import Newscatcher
+
+newscatcher = Newscatcher(
+        # Defining the host is optional and defaults to https://api.newscatcherapi.com/v2
+        # See configuration.py for a list of all supported configuration parameters.
+        host = "https://api.newscatcherapi.com/v2",
+    
+        # Configure API key authorization: api_key
+        api_key = 'YOUR_API_KEY'
+    
+        # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+        # api_key_prefix = {'api_key': 'Bearer'}
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: api_key
-configuration.api_key['api_key'] = 'YOUR_API_KEY'
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['api_key'] = 'Bearer'
-# Enter a context with an instance of the API client
-with newscatcherapi_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = latest_headlines_api.LatestHeadlinesApi(api_client)
-
-    # example passing only optional values
-    body = LatestHeadlines(
-        when="12h",
-        lang="en",
-        countries="US,CA",
-        not_countries="not_countries_example",
-        topic="business",
-        sources="nytimes.com,theguardian.com",
-        not_sources="wsj.com",
-        ranked_only=True,
-        page_size=100,
-        page=1,
-    )
-    try:
-        # Get Latest News Articles
-        api_response = api_instance.post(
-            body=body,
-        )
-        pprint(api_response)
-    except newscatcherapi_client.ApiException as e:
-        print("Exception when calling LatestHeadlinesApi->post: %s\n" % e)
+# Get Latest News Articles
+response = newscatcher.latest_headlines.post(
+    body = {
+        'when': "12h",
+        'lang': "en",
+        'countries': "US,CA",
+        'topic': "business",
+        'sources': "nytimes.com,theguardian.com",
+        'not_sources': "wsj.com",
+        'ranked_only': True,
+        'page_size': 100,
+        'page': 1,
+    }
+)
+pprint(response)
 ```
 ### Parameters
 
