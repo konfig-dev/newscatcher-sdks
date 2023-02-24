@@ -49,7 +49,7 @@ export class Page<
     };
   }
   hasPrevious(): boolean {
-    return this.data.page === undefined ? false : this.data.page > 0;
+    return this.data.page === undefined ? false : this.data.page > 1;
   }
 
   hasNext(): boolean {
