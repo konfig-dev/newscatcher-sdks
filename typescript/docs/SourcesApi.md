@@ -24,9 +24,9 @@ const newscatcher = new Newscatcher({
 })
 
 const response = await newscatcher.sources.get({
-        'lang': "en",
-        'countries': "US,CA",
-        'topic': "business",
+    'lang': "en",
+    'countries': "US,CA",
+    'topic': "business",
 })
 console.log(response)
 
@@ -84,7 +84,7 @@ const newscatcher = new Newscatcher({
 })
 
 const response = await newscatcher.sources.post({
-        'requestBody': {
+    'requestBody': {
         'lang': "en",
         'countries': "US,CA",
         'topic': "business",
