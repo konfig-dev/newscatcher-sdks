@@ -59,4 +59,22 @@ describe("api", () => {
     });
     expect(result).not.toBeNull();
   });
+  it("pageinate backwards", async () => {
+    let page = await newscatcher.latestHeadlines.get({
+      lang: "en",
+      notLang: "af",
+      countries: "US,CA",
+      notCountries: "US,CA",
+      topic: "business",
+      sources: "nytimes.com,theguardian.com",
+      notSources: "wsj.com",
+      rankedOnly: true,
+      pageSize: 100,
+      page: 2,
+    });
+    while (page.hasPrevious()) {
+      page = await page.previous();
+      console.log(page.data);
+    }
+  });
 });
