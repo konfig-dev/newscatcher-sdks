@@ -1,4 +1,4 @@
-## newscatcherapi-typescript-sdk@4.1.0
+## newscatcherapi-typescript-sdk@4.2.0
 
 This library that utilizes [axios](https://github.com/axios/axios). The generated Node module can be used in the following environments:
 
@@ -30,38 +30,45 @@ npm run build
 navigate to the folder of your consuming project and run the following command.
 
 ```
-npm install newscatcherapi-typescript-sdk@4.1.0 --save
+npm install newscatcherapi-typescript-sdk@4.2.0 --save
 ```
 
 ### Getting Started
 
 ```typescript
-import { Newscatcher } from "newscatcher-typescript-sdk";
+import { Newscatcher } from "newscatcherapi-typescript-sdk"
 
 const newscatcher = new Newscatcher({
-  apiKey: process.env.NEWSCATCHER_API_KEY,
-});
+    apiKey: 'API_KEY',
+})
 
-let latestHeadlines = await newscatcher.latestHeadlines.post({
-  requestBody: { lang: "en" },
-});
-console.log(latestHeadlines.data);
+const response = await newscatcher.latestHeadlines.get({
+    'lang': "en",
+    'notLang': "af",
+    'countries': "US,CA",
+    'notCountries': "US,CA",
+    'topic': "business",
+    'sources': "nytimes.com,theguardian.com",
+    'notSources': "wsj.com",
+    'rankedOnly': true,
+    'pageSize': 100,
+    'page': 1,
+})
 
-// Pagination
-while (latestHeadlines.hasNext()) {
-  latestHeadlines = await latestHeadlines.next();
-  console.log(latestHeadlines.data);
-}
-
-const search = await newscatcher.search.post({
-  requestBody: { q: "Apple", from: "three months ago" },
-});
-console.log(search.data);
-
-const sources = await newscatcher.sources.post({
-  requestBody: { lang: "en" },
-});
-
-console.log(sources.data);
-
+console.log(response)
 ```
+
+## Documentation for API Endpoints
+
+All URIs are relative to *https://api.newscatcherapi.com/v2*
+
+Class | Method | HTTP request | Description
+------------ | ------------- | ------------- | -------------
+*LatestHeadlinesApi* | [**get**](docs/LatestHeadlinesApi.md#get) | **GET** /latest_headlines | Get Latest News Articles
+*LatestHeadlinesApi* | [**post**](docs/LatestHeadlinesApi.md#post) | **POST** /latest_headlines | Get Latest News Articles
+*SearchApi* | [**get**](docs/SearchApi.md#get) | **GET** /search | Search for specific news articles
+*SearchApi* | [**post**](docs/SearchApi.md#post) | **POST** /search | Search for specific news articles
+*SourcesApi* | [**get**](docs/SourcesApi.md#get) | **GET** /sources | Get top news sources supported by NewsCatcher.
+*SourcesApi* | [**post**](docs/SourcesApi.md#post) | **POST** /sources | Get top news sources supported by NewsCatcher.
+
+
