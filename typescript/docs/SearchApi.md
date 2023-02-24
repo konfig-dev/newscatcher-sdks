@@ -23,28 +23,37 @@ const newscatcher = new Newscatcher({
     apiKey: 'API_KEY',
 })
 
-const response = await newscatcher.search.get({
-    'q': "\"Elon Musk\"",
-    'lang': "en",
-    'notLang': "af",
-    'publishedDatePrecision': "full",
-    'from': "2021/05/06",
-    'to': "2021/05/06",
-    'searchIn': "title",
-    'countries': "US,CA",
-    'notCountries': "US,CA",
-    'topic': "business",
-    'sources': "nytimes.com,theguardian.com",
-    'notSources': "wsj.com",
-    'rankedOnly': true,
-    'fromRank': 1000,
-    'toRank': 1000,
-    'sortBy': "rank",
-    'pageSize': 100,
-    'page': 1,
+let page = await newscatcher.search.get({
+        'q': "\"Elon Musk\"",
+        'lang': "en",
+        'notLang': "af",
+        'publishedDatePrecision': "full",
+        'from': "2021/05/06",
+        'to': "2021/05/06",
+        'searchIn': "title",
+        'countries': "US,CA",
+        'notCountries': "US,CA",
+        'topic': "business",
+        'sources': "nytimes.com,theguardian.com",
+        'notSources': "wsj.com",
+        'rankedOnly': true,
+        'fromRank': 1000,
+        'toRank': 1000,
+        'sortBy': "rank",
+        'pageSize': 100,
+        'page': 1,
 })
+// Use .next() and .hasNext() to paginate forward
+while (page.hasNext()) {
+    page = await page.next();
+    console.log(page.data);
+}
+// Use .previous() and .hasPrevious() to paginate forward
+while (page.hasPrevious()) {
+    page = await page.previous();
+    console.log(page.data);
+}
 
-console.log(response)
 ```
 
 
@@ -113,8 +122,8 @@ const newscatcher = new Newscatcher({
     apiKey: 'API_KEY',
 })
 
-const response = await newscatcher.search.post({
-    'requestBody': {
+let page = await newscatcher.search.post({
+        'requestBody': {
         'q': "\"Elon Musk\"",
         'lang': "en",
         'not_lang': "af",
@@ -131,8 +140,17 @@ const response = await newscatcher.search.post({
         'page': 1,
     },
 })
+// Use .next() and .hasNext() to paginate forward
+while (page.hasNext()) {
+    page = await page.next();
+    console.log(page.data);
+}
+// Use .previous() and .hasPrevious() to paginate forward
+while (page.hasPrevious()) {
+    page = await page.previous();
+    console.log(page.data);
+}
 
-console.log(response)
 ```
 
 

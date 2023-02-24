@@ -1,4 +1,4 @@
-## newscatcherapi-typescript-sdk@4.2.0
+## newscatcherapi-typescript-sdk@5.0.0
 
 This library that utilizes [axios](https://github.com/axios/axios). The generated Node module can be used in the following environments:
 
@@ -30,7 +30,7 @@ npm run build
 navigate to the folder of your consuming project and run the following command.
 
 ```
-npm install newscatcherapi-typescript-sdk@4.2.0 --save
+npm install newscatcherapi-typescript-sdk@5.0.0 --save
 ```
 
 ### Getting Started
@@ -42,20 +42,29 @@ const newscatcher = new Newscatcher({
     apiKey: 'API_KEY',
 })
 
-const response = await newscatcher.latestHeadlines.get({
-    'lang': "en",
-    'notLang': "af",
-    'countries': "US,CA",
-    'notCountries': "US,CA",
-    'topic': "business",
-    'sources': "nytimes.com,theguardian.com",
-    'notSources': "wsj.com",
-    'rankedOnly': true,
-    'pageSize': 100,
-    'page': 1,
+let page = await newscatcher.latestHeadlines.get({
+        'lang': "en",
+        'notLang': "af",
+        'countries': "US,CA",
+        'notCountries': "US,CA",
+        'topic': "business",
+        'sources': "nytimes.com,theguardian.com",
+        'notSources': "wsj.com",
+        'rankedOnly': true,
+        'pageSize': 100,
+        'page': 1,
 })
+// Use .next() and .hasNext() to paginate forward
+while (page.hasNext()) {
+    page = await page.next();
+    console.log(page.data);
+}
+// Use .previous() and .hasPrevious() to paginate forward
+while (page.hasPrevious()) {
+    page = await page.previous();
+    console.log(page.data);
+}
 
-console.log(response)
 ```
 
 ## Documentation for API Endpoints

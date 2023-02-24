@@ -21,7 +21,7 @@ generators:
       userId: konfig-dev
       repoId: newscatcher-sdks/tree/main/python
   typescript:
-    version: 4.2.0
+    version: 5.0.0
     npmName: newscatcherapi-typescript-sdk
     clientName: Newscatcher
     outputDirectory: typescript

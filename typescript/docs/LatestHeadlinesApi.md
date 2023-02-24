@@ -23,20 +23,29 @@ const newscatcher = new Newscatcher({
     apiKey: 'API_KEY',
 })
 
-const response = await newscatcher.latestHeadlines.get({
-    'lang': "en",
-    'notLang': "af",
-    'countries': "US,CA",
-    'notCountries': "US,CA",
-    'topic': "business",
-    'sources': "nytimes.com,theguardian.com",
-    'notSources': "wsj.com",
-    'rankedOnly': true,
-    'pageSize': 100,
-    'page': 1,
+let page = await newscatcher.latestHeadlines.get({
+        'lang': "en",
+        'notLang': "af",
+        'countries': "US,CA",
+        'notCountries': "US,CA",
+        'topic': "business",
+        'sources': "nytimes.com,theguardian.com",
+        'notSources': "wsj.com",
+        'rankedOnly': true,
+        'pageSize': 100,
+        'page': 1,
 })
+// Use .next() and .hasNext() to paginate forward
+while (page.hasNext()) {
+    page = await page.next();
+    console.log(page.data);
+}
+// Use .previous() and .hasPrevious() to paginate forward
+while (page.hasPrevious()) {
+    page = await page.previous();
+    console.log(page.data);
+}
 
-console.log(response)
 ```
 
 
@@ -97,8 +106,8 @@ const newscatcher = new Newscatcher({
     apiKey: 'API_KEY',
 })
 
-const response = await newscatcher.latestHeadlines.post({
-    'requestBody': {
+let page = await newscatcher.latestHeadlines.post({
+        'requestBody': {
         'when': "12h",
         'lang': "en",
         'countries': "US,CA",
@@ -110,8 +119,17 @@ const response = await newscatcher.latestHeadlines.post({
         'page': 1,
     },
 })
+// Use .next() and .hasNext() to paginate forward
+while (page.hasNext()) {
+    page = await page.next();
+    console.log(page.data);
+}
+// Use .previous() and .hasPrevious() to paginate forward
+while (page.hasPrevious()) {
+    page = await page.previous();
+    console.log(page.data);
+}
 
-console.log(response)
 ```
 
 
