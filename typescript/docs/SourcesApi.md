@@ -20,6 +20,8 @@ Returns a list of the top 100 supported news websites. Overall, we support over 
 import { Newscatcher } from "newscatcherapi-typescript-sdk"
 
 const newscatcher = new Newscatcher({
+    // Defining the base path is optional and defaults to https://api.newscatcherapi.com/v2
+    // basePath: "https://api.newscatcherapi.com/v2",
     apiKey: 'API_KEY',
 })
 
@@ -80,14 +82,16 @@ Returns a list of the top 100 supported news websites. Overall, we support over 
 import { Newscatcher } from "newscatcherapi-typescript-sdk"
 
 const newscatcher = new Newscatcher({
+    // Defining the base path is optional and defaults to https://api.newscatcherapi.com/v2
+    // basePath: "https://api.newscatcherapi.com/v2",
     apiKey: 'API_KEY',
 })
 
 const response = await newscatcher.sources.post({
     'requestBody': {
-        'lang': "en",
-        'countries': "US,CA",
-        'topic': "business",
+        "lang": "en",
+        "countries": "US,CA",
+        "topic": "business",
     },
 })
 console.log(response)

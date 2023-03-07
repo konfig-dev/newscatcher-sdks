@@ -20,6 +20,8 @@ Main endpoint that allows you to find news article by keyword, date, language, c
 import { Newscatcher } from "newscatcherapi-typescript-sdk"
 
 const newscatcher = new Newscatcher({
+    // Defining the base path is optional and defaults to https://api.newscatcherapi.com/v2
+    // basePath: "https://api.newscatcherapi.com/v2",
     apiKey: 'API_KEY',
 })
 
@@ -48,7 +50,7 @@ while (page.hasNext()) {
     page = await page.next();
     console.log(page.data);
 }
-// Use .previous() and .hasPrevious() to paginate forward
+// Use .previous() and .hasPrevious() to paginate backwards
 while (page.hasPrevious()) {
     page = await page.previous();
     console.log(page.data);
@@ -119,25 +121,27 @@ Main endpoint that allows you to find news article by keyword, date, language, c
 import { Newscatcher } from "newscatcherapi-typescript-sdk"
 
 const newscatcher = new Newscatcher({
+    // Defining the base path is optional and defaults to https://api.newscatcherapi.com/v2
+    // basePath: "https://api.newscatcherapi.com/v2",
     apiKey: 'API_KEY',
 })
 
 let page = await newscatcher.search.post({
     'requestBody': {
-        'q': "\"Elon Musk\"",
-        'lang': "en",
-        'not_lang': "af",
-        'published_date_precision': "full",
-        '_from': "2021/05/06",
-        'to': "2021/05/06",
-        'search_in': "title",
-        'countries': "US,CA",
-        'topic': "business",
-        'sources': "nytimes.com,theguardian.com",
-        'ranked_only': true,
-        'sort_by': "rank",
-        'page_size': 100,
-        'page': 1,
+        "q": "\"Elon Musk\"",
+        "lang": "en",
+        "not_lang": "af",
+        "published_date_precision": "full",
+        "_from": "2021/05/06",
+        "to": "2021/05/06",
+        "search_in": "title",
+        "countries": "US,CA",
+        "topic": "business",
+        "sources": "nytimes.com,theguardian.com",
+        "ranked_only": true,
+        "sort_by": "rank",
+        "page_size": 100,
+        "page": 1,
     },
 })
 // Use .next() and .hasNext() to paginate forward
@@ -145,7 +149,7 @@ while (page.hasNext()) {
     page = await page.next();
     console.log(page.data);
 }
-// Use .previous() and .hasPrevious() to paginate forward
+// Use .previous() and .hasPrevious() to paginate backwards
 while (page.hasPrevious()) {
     page = await page.previous();
     console.log(page.data);

@@ -12,15 +12,20 @@
  * Do not edit the class manually.
  */
 
+type ApiKey =
+  | string
+  | ((keyParamName: string) => string)
+  | ((keyParamName: string) => Promise<string>)
+  | { [apiKeyName: string]: string | undefined };
+
 export interface ConfigurationParameters {
-    apiKey?: string | Promise<string> | ((name: string) => string) | ((name: string) => Promise<string>);
+    apiKey?: ApiKey;
     username?: string;
     password?: string;
     accessToken?: string | Promise<string> | ((name?: string, scopes?: string[]) => string) | ((name?: string, scopes?: string[]) => Promise<string>);
     basePath?: string;
     baseOptions?: any;
-    oauthClientId?: string;
-    oauthClientSecret?: string;
+    userAgent?: string;
     formDataCtor?: new () => any;
 }
 
@@ -30,7 +35,7 @@ export class Configuration {
      * @param name security name
      * @memberof Configuration
      */
-    apiKey?: string | Promise<string> | ((name: string) => string) | ((name: string) => Promise<string>);
+    apiKey?: ApiKey;
     /**
      * parameter for basic security
      *
@@ -38,14 +43,6 @@ export class Configuration {
      * @memberof Configuration
      */
     username?: string;
-    /**
-     * client id for OAuth2 Application flow
-     */
-    oauthClientId?: string;
-    /**
-     * client secret for OAuth2 Application flow
-     */
-    oauthClientSecret?: string;
     /**
      * parameter for basic security
      *
@@ -82,16 +79,22 @@ export class Configuration {
      * @type {new () => FormData}
      */
     formDataCtor?: new () => any;
+    /**
+     * Default User-Agent header
+     */
+    userAgent: string;
 
     constructor(param: ConfigurationParameters = {}) {
-        this.apiKey = param.apiKey;
+        this.apiKey = param.apiKey
+        if (this.apiKey === undefined) {
+            this.apiKey = {}
+        }
         this.username = param.username;
         this.password = param.password;
         this.accessToken = param.accessToken;
         this.basePath = param.basePath;
         this.baseOptions = param.baseOptions;
-        this.oauthClientId = param.oauthClientId;
-        this.oauthClientSecret = param.oauthClientSecret;
+        this.userAgent = param.userAgent === undefined ? "Konfig/5.2.0/typescript" : param.userAgent;
         this.formDataCtor = param.formDataCtor;
     }
 

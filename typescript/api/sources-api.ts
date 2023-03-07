@@ -28,6 +28,7 @@ import { SourcesQuery } from '../models';
 // @ts-ignore
 import { Topic } from '../models';
 import { paginate } from "../pagination/paginate";
+import { requestBeforeHook } from '../requestBeforeHook';
 /**
  * SourcesApi - axios parameter creator
  * @export
@@ -52,8 +53,8 @@ export const SourcesApiAxiosParamCreator = function (configuration?: Configurati
                 baseOptions = configuration.baseOptions;
             }
 
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
+            const localVarRequestOptions: AxiosRequestConfig = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = configuration ? { "User-Agent": configuration.userAgent } : {} as any;
             const localVarQueryParameter = {} as any;
 
             // authentication api_key required
@@ -73,10 +74,17 @@ export const SourcesApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
+            requestBeforeHook({
+              queryParameters: localVarQueryParameter,
+              requestConfig: localVarRequestOptions,
+              path: localVarPath,
+              configuration
+            });
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             return {
                 url: toPathString(localVarUrlObj),
                 options: localVarRequestOptions,
@@ -98,8 +106,8 @@ export const SourcesApiAxiosParamCreator = function (configuration?: Configurati
                 baseOptions = configuration.baseOptions;
             }
 
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
+            const localVarRequestOptions: AxiosRequestConfig = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = configuration ? { "User-Agent": configuration.userAgent } : {} as any;
             const localVarQueryParameter = {} as any;
 
             // authentication api_key required
@@ -109,11 +117,18 @@ export const SourcesApiAxiosParamCreator = function (configuration?: Configurati
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(sourcesQuery, localVarRequestOptions, configuration)
 
+            requestBeforeHook({
+              queryParameters: localVarQueryParameter,
+              requestConfig: localVarRequestOptions,
+              path: localVarPath,
+              configuration
+            });
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             return {
                 url: toPathString(localVarUrlObj),
                 options: localVarRequestOptions,

@@ -20,6 +20,8 @@ Get the latest headlines given any topic, country, or language.
 import { Newscatcher } from "newscatcherapi-typescript-sdk"
 
 const newscatcher = new Newscatcher({
+    // Defining the base path is optional and defaults to https://api.newscatcherapi.com/v2
+    // basePath: "https://api.newscatcherapi.com/v2",
     apiKey: 'API_KEY',
 })
 
@@ -40,7 +42,7 @@ while (page.hasNext()) {
     page = await page.next();
     console.log(page.data);
 }
-// Use .previous() and .hasPrevious() to paginate forward
+// Use .previous() and .hasPrevious() to paginate backwards
 while (page.hasPrevious()) {
     page = await page.previous();
     console.log(page.data);
@@ -103,20 +105,22 @@ Get the latest headlines given any topic, country, or language.
 import { Newscatcher } from "newscatcherapi-typescript-sdk"
 
 const newscatcher = new Newscatcher({
+    // Defining the base path is optional and defaults to https://api.newscatcherapi.com/v2
+    // basePath: "https://api.newscatcherapi.com/v2",
     apiKey: 'API_KEY',
 })
 
 let page = await newscatcher.latestHeadlines.post({
     'requestBody': {
-        'when': "12h",
-        'lang': "en",
-        'countries': "US,CA",
-        'topic': "business",
-        'sources': "nytimes.com,theguardian.com",
-        'not_sources': "wsj.com",
-        'ranked_only': true,
-        'page_size': 100,
-        'page': 1,
+        "when": "12h",
+        "lang": "en",
+        "countries": "US,CA",
+        "topic": "business",
+        "sources": "nytimes.com,theguardian.com",
+        "not_sources": "wsj.com",
+        "ranked_only": true,
+        "page_size": 100,
+        "page": 1,
     },
 })
 // Use .next() and .hasNext() to paginate forward
@@ -124,7 +128,7 @@ while (page.hasNext()) {
     page = await page.next();
     console.log(page.data);
 }
-// Use .previous() and .hasPrevious() to paginate forward
+// Use .previous() and .hasPrevious() to paginate backwards
 while (page.hasPrevious()) {
     page = await page.previous();
     console.log(page.data);

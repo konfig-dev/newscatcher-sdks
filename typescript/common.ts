@@ -14,7 +14,8 @@
 
 import { Configuration } from "./configuration";
 import { RequiredError, RequestArgs } from "./base";
-import axios, { AxiosInstance, AxiosResponse } from 'axios';
+import { AxiosInstance, AxiosResponse } from 'axios';
+import { requestAfterHook } from "./requestAfterHook";
 
 /**
  *
@@ -39,10 +40,17 @@ export const assertParamExists = function (functionName: string, paramName: stri
  */
 export const setApiKeyToObject = async function (object: any, keyParamName: string, configuration?: Configuration) {
     if (configuration && configuration.apiKey) {
-        const localVarApiKeyValue = typeof configuration.apiKey === 'function'
-            ? await configuration.apiKey(keyParamName)
-            : await configuration.apiKey;
-        object[keyParamName] = localVarApiKeyValue;
+      if (typeof configuration.apiKey === "function")
+        object[keyParamName] = await configuration.apiKey(keyParamName);
+      else if (typeof configuration.apiKey === "string")
+        object[keyParamName] = configuration.apiKey;
+      else if (typeof configuration.apiKey === "object") {
+        if (keyParamName in configuration.apiKey)
+          object[keyParamName] = configuration.apiKey[keyParamName];
+      } else
+        throw Error(
+          `Unexpected type ${typeof configuration.apiKey} for Configuration.apiKey`
+        );
     }
 }
 
@@ -66,31 +74,6 @@ export const setBearerAuthToObject = async function (object: any, configuration?
             ? await configuration.accessToken()
             : await configuration.accessToken;
         object["Authorization"] = "Bearer " + accessToken;
-    }
-}
-
-/**
- *
- * @export
- */
-export const setOAuthToObject = async function (object: any, name: string, scopes: string[], configuration?: Configuration) {
-    if (configuration && configuration.oauthClientId && configuration.oauthClientSecret && configuration.accessToken === undefined) {
-        const oauthResponse = await axios.request({
-            url: "",
-            method: "POST",
-            headers: {
-                "content-type": "application/x-www-form-urlencoded",
-            },
-            data: `grant_type=client_credentials&client_id=${configuration.oauthClientId}&client_secret=${configuration.oauthClientSecret}`,
-        });
-        const json = await oauthResponse.data;
-        configuration.accessToken = json.access_token;
-    }
-    if (configuration && configuration.accessToken) {
-        const localVarAccessTokenValue = typeof configuration.accessToken === 'function'
-            ? await configuration.accessToken(name, scopes)
-            : await configuration.accessToken;
-        object["Authorization"] = "Bearer " + localVarAccessTokenValue;
     }
 }
 
@@ -153,7 +136,8 @@ export const toPathString = function (url: URL) {
  */
 export const createRequestFunction = function (axiosArgs: RequestArgs, globalAxios: AxiosInstance, BASE_PATH: string, configuration?: Configuration) {
     return <T = unknown, R = AxiosResponse<T>>(axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-        const axiosRequestArgs = {...axiosArgs.options, url: (configuration?.basePath || basePath) + axiosArgs.url};
-        return axios.request<T, R>(axiosRequestArgs);
+        const url = (configuration?.basePath || basePath) + axiosArgs.url
+        requestAfterHook({axiosArgs, basePath, url, configuration})
+        return axios.request<T, R>({...axiosArgs.options, url});
     };
 }

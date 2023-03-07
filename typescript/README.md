@@ -1,4 +1,4 @@
-## newscatcherapi-typescript-sdk@5.1.0
+## newscatcherapi-typescript-sdk@5.2.0
 
 This library that utilizes [axios](https://github.com/axios/axios). The generated Node module can be used in the following environments:
 
@@ -15,8 +15,6 @@ Module system
 * CommonJS
 * ES6 module system
 
-It can be used in both TypeScript and JavaScript. In TypeScript, the definition should be automatically resolved via `package.json`. ([Reference](http://www.typescriptlang.org/docs/handbook/typings-for-npm-packages.html))
-
 ### Building
 
 To build and compile the typescript sources to javascript use:
@@ -30,7 +28,7 @@ npm run build
 navigate to the folder of your consuming project and run the following command.
 
 ```
-npm install newscatcherapi-typescript-sdk@5.1.0 --save
+npm install newscatcherapi-typescript-sdk@5.2.0 --save
 ```
 
 ### Getting Started
@@ -39,6 +37,8 @@ npm install newscatcherapi-typescript-sdk@5.1.0 --save
 import { Newscatcher } from "newscatcherapi-typescript-sdk"
 
 const newscatcher = new Newscatcher({
+    // Defining the base path is optional and defaults to https://api.newscatcherapi.com/v2
+    // basePath: "https://api.newscatcherapi.com/v2",
     apiKey: 'API_KEY',
 })
 
@@ -59,7 +59,7 @@ while (page.hasNext()) {
     page = await page.next();
     console.log(page.data);
 }
-// Use .previous() and .hasPrevious() to paginate forward
+// Use .previous() and .hasPrevious() to paginate backwards
 while (page.hasPrevious()) {
     page = await page.previous();
     console.log(page.data);

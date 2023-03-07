@@ -10,31 +10,24 @@
  * Do not edit the class manually.
  */
 
-import { Pageable, PageParametersBase } from "./pageable";
-
-/**
- * The set of parameters that appear in a paginated operation (requestBody or parameters)
- */
-export type PageParameterProperties = {
-  page?: number;
-  pageSize?: number;
-};
-
-export type PageParameters = PageParametersBase<PageParameterProperties>;
-
-/**
- * The set of properties that appear in a paginated operation's response
- */
-export interface PageInfo {
-  total_pages?: number;
-  page?: number;
-  page_size?: number;
-}
+import {
+  PageInfo,
+  PageParameterProperties,
+  PageParameters,
+} from "./page-types";
+import { Pageable, PageRequest } from "./pageable";
 
 export class Page<
   Data extends PageInfo,
   Parameters extends PageParameters
 > extends Pageable<Data, Parameters> {
+  make(parameters: {
+    data: Data;
+    initialParameters: Parameters;
+    request: PageRequest<Data, Parameters>;
+  }): Pageable<Data, Parameters> {
+    return new Page(parameters);
+  }
   protected get previousParameters(): PageParameterProperties | null {
     if (this.data.page === undefined) return null;
     return {
