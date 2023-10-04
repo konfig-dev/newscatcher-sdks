@@ -1,5 +1,7 @@
 outputDirectory: /tmp/newscatcherapi-sdks-out
-specPath: api.yaml
+specPath: api-fixed.yaml
+specRemotePath: https://v3-api.newscatcherapi.com/docs/openapi.json
+specInputPath: api.yaml
 requiredEnvironmentVariables:
   - NEWSCATCHER_API_KEY
 generators:
@@ -8,6 +10,7 @@ generators:
     groupId: com.konfigthis.newscatcherapi
     artifactId: newscatcherapi-java-sdk
     outputDirectory: java
+    clientName: Newscatcher
     git:
       userId: konfig-dev
       repoId: newscatcher-sdks/tree/main/java
@@ -41,6 +44,7 @@ generators:
     packageName: Newscatcherapi.Net
     outputDirectory: csharp
     logoPath: logo.png
+    clientName: Newscatcher
     git:
       userId: konfig-dev
       repoId: newscatcher-sdks/tree/main/csharp
