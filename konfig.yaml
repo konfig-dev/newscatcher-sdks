@@ -1,7 +1,7 @@
 outputDirectory: /tmp/newscatcherapi-sdks-out
-specPath: api-fixed.yaml
 specRemotePath: https://v3-api.newscatcherapi.com/docs/openapi.json
-specInputPath: api.yaml
+specInputPath: openapi.json
+specPath: openapi-fixed.json
 requiredEnvironmentVariables:
   - NEWSCATCHER_API_KEY
 generators:
