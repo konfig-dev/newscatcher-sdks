@@ -40,7 +40,7 @@ generators:
     version: 2.1.0
     packageName: Newscatcherapi.Net
     outputDirectory: csharp
-    logoPath: logo.png
+    logoPath: ../logo.png
     git:
       userId: konfig-dev
       repoId: newscatcher-sdks/tree/main/csharp
