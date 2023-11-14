@@ -1,7 +1,12 @@
 # yaml-language-server: $schema=https://unpkg.com/konfig-lib@latest/konfig-yaml.schema.json
 
 outputDirectory: /tmp/newscatcherapi-sdks-out
-specPath: openapi.json
+specInputPath: openapi.json
+specPath: openapi-fixed.json
+filterPaths:
+  - path: /api/
+  - path: /api/health
+  - path: /api/endpoints
 requiredEnvironmentVariables:
   - NEWSCATCHER_API_KEY
 generators:
