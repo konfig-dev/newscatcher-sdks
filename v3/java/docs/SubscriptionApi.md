@@ -1,6 +1,6 @@
 # SubscriptionApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://v3-api.newscatcherapi.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -33,7 +33,7 @@ import java.util.UUID;
 public class Example {
   public static void main(String[] args) {
     Configuration configuration = new Configuration();
-    configuration.host = "http://localhost";
+    configuration.host = "https://v3-api.newscatcherapi.com";
     
     // Configure API key authorization: apiKey
     configuration.x-api-token  = "YOUR API KEY";
@@ -128,7 +128,7 @@ import java.util.UUID;
 public class Example {
   public static void main(String[] args) {
     Configuration configuration = new Configuration();
-    configuration.host = "http://localhost";
+    configuration.host = "https://v3-api.newscatcherapi.com";
     
     // Configure API key authorization: apiKey
     configuration.x-api-token  = "YOUR API KEY";

@@ -3,7 +3,7 @@
 <img src='https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg' width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a> <br> <p style=\"color: red\"><b><em> This is a Testing Phase API. Please use it for testing purposes only. </em></b></p> <br>
 
 
-[![PyPI](https://img.shields.io/badge/PyPI-v5.0.0-blue)](https://pypi.org/project/newscatcherapi-python-sdk/5.0.0)
+[![PyPI](https://img.shields.io/badge/PyPI-v6.0.0-blue)](https://pypi.org/project/newscatcherapi-python-sdk/6.0.0)
 [![README.md](https://img.shields.io/badge/README-Click%20Here-green)](https://github.com/konfig-dev/newscatcher-sdks/tree/main/v3/python#readme)
 
 ## Table of Contents<a id="table-of-contents"></a>
@@ -38,7 +38,7 @@ Python >=3.7
 ## Installing<a id="installing"></a>
 
 ```sh
-pip install newscatcherapi-python-sdk==5.0.0
+pip install newscatcherapi-python-sdk==6.0.0
 ```
 
 ## Getting Started<a id="getting-started"></a>

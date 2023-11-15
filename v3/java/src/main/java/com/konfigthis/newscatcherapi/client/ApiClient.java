@@ -59,7 +59,7 @@ import com.konfigthis.newscatcherapi.client.auth.ApiKeyAuth;
  */
 public class ApiClient extends ApiClientCustom {
 
-    private String basePath = "http://localhost";
+    private String basePath = "https://v3-api.newscatcherapi.com";
     private boolean debugging = false;
     private Map<String, String> defaultHeaderMap = new HashMap<String, String>();
     private Map<String, String> defaultCookieMap = new HashMap<String, String>();
@@ -155,7 +155,7 @@ public class ApiClient extends ApiClientCustom {
         json = new JSON();
 
         // Set default User-Agent.
-        setUserAgent("Konfig/3.0.0/java");
+        setUserAgent("Konfig/6.0.0/java");
 
         authentications = new HashMap<String, Authentication>();
     }
@@ -172,7 +172,7 @@ public class ApiClient extends ApiClientCustom {
     /**
      * Set base path
      *
-     * @param basePath Base path of the URL (e.g http://localhost)
+     * @param basePath Base path of the URL (e.g https://v3-api.newscatcherapi.com)
      * @return An instance of OkHttpClient
      */
     public ApiClient setBasePath(String basePath) {

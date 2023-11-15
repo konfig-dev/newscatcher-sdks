@@ -16,7 +16,7 @@ package com.konfigthis.newscatcherapi.client;
 public class Configuration {
     private static ApiClient defaultApiClient = new ApiClient();
     public boolean verifyingSsl = true;
-    public String host = "http://localhost";
+    public String host = "https://v3-api.newscatcherapi.com";
     public String x-api-token;
 
     /**

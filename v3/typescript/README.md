@@ -65,8 +65,8 @@ yarn add newscatcherapi-typescript-sdk
 import { Newscatcher } from "newscatcherapi-typescript-sdk";
 
 const newscatcher = new Newscatcher({
-  // Defining the base path is optional and defaults to http://localhost
-  // basePath: "http://localhost",
+  // Defining the base path is optional and defaults to https://v3-api.newscatcherapi.com
+  // basePath: "https://v3-api.newscatcherapi.com",
   apiKey: "API_KEY",
 });
 

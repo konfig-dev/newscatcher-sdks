@@ -84,7 +84,7 @@ func main() {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://v3-api.newscatcherapi.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------

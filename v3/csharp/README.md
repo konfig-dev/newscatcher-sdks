@@ -1,6 +1,6 @@
 # Newscatcherapi.Net - C#
 
-[![NuGet](https://img.shields.io/badge/NuGet-3.0.0-blue.svg)](https://www.nuget.org/packages/Newscatcherapi.Net/3.0.0)
+[![NuGet](https://img.shields.io/badge/NuGet-6.0.0-blue.svg)](https://www.nuget.org/packages/Newscatcherapi.Net/6.0.0)
 
 <img src='https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg' width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a> <br> <p style=\"color: red\"><b><em> This is a Testing Phase API. Please use it for testing purposes only. </em></b></p> <br>
 
@@ -118,7 +118,7 @@ namespace Example
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://v3-api.newscatcherapi.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------

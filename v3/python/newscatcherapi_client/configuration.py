@@ -115,7 +115,7 @@ conf = newscatcherapi_client.Configuration(
                  ):
         """Constructor
         """
-        self.host = "http://localhost" if host is None else host
+        self.host = "https://v3-api.newscatcherapi.com" if host is None else host
         """Default Base url
         """
         self.server_index = 0 if server_index is None and host is None else server_index
@@ -406,7 +406,7 @@ conf = newscatcherapi_client.Configuration(
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
                "Version of the API: Beta-3.0.0\n"\
-               "SDK Package Version: 5.0.0".\
+               "SDK Package Version: 6.0.0".\
                format(env=sys.platform, pyversion=sys.version)
 
     def get_host_settings(self):
@@ -416,7 +416,7 @@ conf = newscatcherapi_client.Configuration(
         """
         return [
             {
-                'url': "",
+                'url': "https://v3-api.newscatcherapi.com",
                 'description': "No description provided",
             }
         ]

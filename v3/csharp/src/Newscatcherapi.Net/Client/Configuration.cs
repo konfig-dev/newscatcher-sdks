@@ -33,7 +33,7 @@ namespace Newscatcherapi.Net.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "3.0.0";
+        public const string Version = "6.0.0";
 
         /// <summary>
         /// Identifier for ISO 8601 DateTime Format
@@ -116,8 +116,8 @@ namespace Newscatcherapi.Net.Client
         public Configuration()
         {
             Proxy = null;
-            UserAgent = "Konfig/3.0.0/csharp";
-            BasePath = "http://localhost";
+            UserAgent = "Konfig/6.0.0/csharp";
+            BasePath = "https://v3-api.newscatcherapi.com";
             DefaultHeaders = new ConcurrentDictionary<string, string>();
             ApiKey = new ConcurrentDictionary<string, string>();
             ApiKeyPrefix = new ConcurrentDictionary<string, string>();
@@ -126,7 +126,7 @@ namespace Newscatcherapi.Net.Client
             {
                 {
                     new Dictionary<string, object> {
-                        {"url", ""},
+                        {"url", "https://v3-api.newscatcherapi.com"},
                         {"description", "No description provided"},
                     }
                 }
@@ -147,7 +147,7 @@ namespace Newscatcherapi.Net.Client
             IDictionary<string, string> defaultHeaders,
             IDictionary<string, string> apiKey,
             IDictionary<string, string> apiKeyPrefix,
-            string basePath = "http://localhost") : this()
+            string basePath = "https://v3-api.newscatcherapi.com") : this()
         {
             if (string.IsNullOrWhiteSpace(basePath))
                 throw new ArgumentException("The provided basePath is invalid.", "basePath");
@@ -531,7 +531,7 @@ namespace Newscatcherapi.Net.Client
             report += "    OS: " + System.Environment.OSVersion + "\n";
             report += "    .NET Framework Version: " + System.Environment.Version  + "\n";
             report += "    Version of the API: Beta-3.0.0\n";
-            report += "    SDK Package Version: 3.0.0\n";
+            report += "    SDK Package Version: 6.0.0\n";
 
             return report;
         }

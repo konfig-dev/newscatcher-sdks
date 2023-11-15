@@ -105,13 +105,13 @@ type Configuration struct {
 func NewConfiguration() *Configuration {
 	cfg := &Configuration{
 		DefaultHeader:    make(map[string]string),
-		UserAgent:        "Konfig/3.0.0/go",
+		UserAgent:        "Konfig/6.0.0/go",
 		TokenUrl:   	  "",
 		Debug:            false,
         Context: context.Background(),
 		Servers:          ServerConfigurations{
 			{
-				URL: "",
+				URL: "https://v3-api.newscatcherapi.com",
 				Description: "No description provided",
 			},
 		},

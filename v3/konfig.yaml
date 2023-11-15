@@ -9,6 +9,10 @@ filterPaths:
   - path: /api/endpoints
 requiredEnvironmentVariables:
   - NEWSCATCHER_API_KEY
+fixConfig:
+  update:
+    $:
+      servers: [ { url: https://v3-api.newscatcherapi.com/ } ]
 generators:
   java:
     version: 6.0.0

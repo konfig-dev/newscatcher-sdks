@@ -1,6 +1,6 @@
 # APIClient.LatestHeadlinesApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://v3-api.newscatcherapi.com*
 
 Method | Path | Description
 ------------- | ------------- | -------------

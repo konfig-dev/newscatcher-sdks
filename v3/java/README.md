@@ -1,6 +1,6 @@
 # newscatcherapi-java-sdk
 
-[![Maven Central](https://img.shields.io/badge/Maven%20Central-v3.0.0-blue)](https://central.sonatype.com/artifact/com.konfigthis.newscatcherapi/newscatcherapi-java-sdk/3.0.0)
+[![Maven Central](https://img.shields.io/badge/Maven%20Central-v6.0.0-blue)](https://central.sonatype.com/artifact/com.konfigthis.newscatcherapi/newscatcherapi-java-sdk/6.0.0)
 
 <img src='https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg' width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a> <br> <p style=\"color: red\"><b><em> This is a Testing Phase API. Please use it for testing purposes only. </em></b></p> <br>
 
@@ -39,7 +39,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.konfigthis.newscatcherapi</groupId>
   <artifactId>newscatcherapi-java-sdk</artifactId>
-  <version>3.0.0</version>
+  <version>6.0.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -55,7 +55,7 @@ repositories {
 }
 
 dependencies {
-   implementation "com.konfigthis.newscatcherapi:newscatcherapi-java-sdk:3.0.0"
+   implementation "com.konfigthis.newscatcherapi:newscatcherapi-java-sdk:6.0.0"
 }
 ```
 
@@ -92,7 +92,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/newscatcherapi-java-sdk-3.0.0.jar`
+* `target/newscatcherapi-java-sdk-6.0.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -115,7 +115,7 @@ import java.util.UUID;
 public class Example {
   public static void main(String[] args) {
     Configuration configuration = new Configuration();
-    configuration.host = "http://localhost";
+    configuration.host = "https://v3-api.newscatcherapi.com";
     
     // Configure API key authorization: apiKey
     configuration.x-api-token  = "YOUR API KEY";
@@ -264,7 +264,7 @@ public class Example {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://v3-api.newscatcherapi.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
