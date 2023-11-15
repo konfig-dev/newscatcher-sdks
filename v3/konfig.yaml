@@ -11,7 +11,7 @@ requiredEnvironmentVariables:
   - NEWSCATCHER_API_KEY
 generators:
   java:
-    version: 3.0.0
+    version: 6.0.0
     groupId: com.konfigthis.newscatcherapi
     artifactId: newscatcherapi-java-sdk
     outputDirectory: java
@@ -20,7 +20,7 @@ generators:
       userId: konfig-dev
       repoId: newscatcher-sdks/tree/main/v3/java
   python:
-    version: 5.0.0
+    version: 6.0.0
     packageName: newscatcherapi_client
     projectName: newscatcherapi-python-sdk
     outputDirectory: python
@@ -45,7 +45,7 @@ generators:
         - total_pages
         - page_size
   csharp:
-    version: 3.0.0
+    version: 6.0.0
     packageName: Newscatcherapi.Net
     outputDirectory: csharp
     logoPath: ../logo.png
@@ -54,7 +54,7 @@ generators:
       userId: konfig-dev
       repoId: newscatcher-sdks/tree/main/v3/csharp
   go:
-    version: 3.0.0
+    version: 6.0.0
     packageName: newscatcherapi
     outputDirectory: go
     git:
