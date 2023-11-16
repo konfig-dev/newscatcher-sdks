@@ -7,8 +7,8 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**lang** | [**LangProperty**](LangProperty.md) |  |  [optional] |
-|**countries** | [**CountriesProperty**](CountriesProperty.md) |  |  [optional] |
+|**lang** | **Object** |  |  [optional] |
+|**countries** | **Object** |  |  [optional] |
 
 
 

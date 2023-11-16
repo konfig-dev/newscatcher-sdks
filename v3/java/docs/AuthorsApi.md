@@ -10,7 +10,7 @@ All URIs are relative to *https://v3-api.newscatcherapi.com*
 
 <a name="get"></a>
 # **get**
-> AuthorsGetResponse get(authorName).sources(sources).predefinedSources(predefinedSources).notSources(notSources).lang(lang).notLang(notLang).countries(countries).notCountries(notCountries).from(from).to(to).publishedDatePrecision(publishedDatePrecision).byParseDate(byParseDate).sortBy(sortBy).rankedOnly(rankedOnly).fromRank(fromRank).toRank(toRank).isHeadline(isHeadline).isPaidContent(isPaidContent).parentUrl(parentUrl).allLinks(allLinks).allDomainLinks(allDomainLinks).wordCountMin(wordCountMin).wordCountMax(wordCountMax).page(page).pageSize(pageSize).includeNlpData(includeNlpData).hasNlp(hasNlp).theme(theme).nerName(nerName).titleSentimentMin(titleSentimentMin).titleSentimentMax(titleSentimentMax).contentSentimentMin(contentSentimentMin).contentSentimentMax(contentSentimentMax).execute();
+> Object get(authorName).sources(sources).predefinedSources(predefinedSources).notSources(notSources).lang(lang).notLang(notLang).countries(countries).notCountries(notCountries).from(from).to(to).publishedDatePrecision(publishedDatePrecision).byParseDate(byParseDate).sortBy(sortBy).rankedOnly(rankedOnly).fromRank(fromRank).toRank(toRank).isHeadline(isHeadline).isPaidContent(isPaidContent).parentUrl(parentUrl).allLinks(allLinks).allDomainLinks(allDomainLinks).wordCountMin(wordCountMin).wordCountMax(wordCountMax).page(page).pageSize(pageSize).includeNlpData(includeNlpData).hasNlp(hasNlp).theme(theme).nerName(nerName).titleSentimentMin(titleSentimentMin).titleSentimentMax(titleSentimentMax).contentSentimentMin(contentSentimentMin).contentSentimentMax(contentSentimentMax).execute();
 
 [Get] Search By Author Request
 
@@ -47,8 +47,8 @@ public class Example {
     String notLang = "notLang_example";
     String countries = "countries_example";
     String notCountries = "notCountries_example";
-    From from = new From();
-    To to = new To();
+    Object from = null;
+    Object to = null;
     String publishedDatePrecision = "publishedDatePrecision_example";
     Boolean byParseDate = false;
     String sortBy = "relevancy";
@@ -73,7 +73,7 @@ public class Example {
     Double contentSentimentMin = 3.4D;
     Double contentSentimentMax = 3.4D;
     try {
-      AuthorsGetResponse result = client
+      Object result = client
               .authors
               .get(authorName)
               .sources(sources)
@@ -109,14 +109,6 @@ public class Example {
               .contentSentimentMin(contentSentimentMin)
               .contentSentimentMax(contentSentimentMax)
               .execute();
-      System.out.println(result);
-      System.out.println(result.getStatus());
-      System.out.println(result.getTotalHits());
-      System.out.println(result.getPage());
-      System.out.println(result.getTotalPages());
-      System.out.println(result.getPageSize());
-      System.out.println(result.getArticles());
-      System.out.println(result.getUserInput());
     } catch (ApiException e) {
       System.err.println("Exception when calling AuthorsApi#get");
       System.err.println("Status code: " + e.getStatusCode());
@@ -127,7 +119,7 @@ public class Example {
 
     // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request
     try {
-      ApiResponse<AuthorsGetResponse> response = client
+      ApiResponse<Object> response = client
               .authors
               .get(authorName)
               .sources(sources)
@@ -192,8 +184,8 @@ public class Example {
 | **notLang** | **String**|  | [optional] |
 | **countries** | **String**|  | [optional] |
 | **notCountries** | **String**|  | [optional] |
-| **from** | [**From**](.md)|  | [optional] |
-| **to** | [**To**](.md)|  | [optional] |
+| **from** | [**Object**](.md)|  | [optional] |
+| **to** | [**Object**](.md)|  | [optional] |
 | **publishedDatePrecision** | **String**|  | [optional] |
 | **byParseDate** | **Boolean**|  | [optional] [default to false] |
 | **sortBy** | **String**|  | [optional] [default to relevancy] |
@@ -220,7 +212,7 @@ public class Example {
 
 ### Return type
 
-[**AuthorsGetResponse**](AuthorsGetResponse.md)
+**Object**
 
 ### Authorization
 
@@ -238,7 +230,7 @@ public class Example {
 
 <a name="post"></a>
 # **post**
-> AuthorsPostResponse post(authorSearchRequest).execute();
+> Object post(authorSearchRequest).execute();
 
 [Post] Search By Author Request
 
@@ -275,8 +267,8 @@ public class Example {
     String notLang = "notLang_example";
     String countries = "countries_example";
     String notCountries = "notCountries_example";
-    From from = new From();
-    To to = new To();
+    Object from = null;
+    Object to = null;
     String publishedDatePrecision = "publishedDatePrecision_example";
     Boolean byParseDate = false;
     String sortBy = "relevancy";
@@ -301,7 +293,7 @@ public class Example {
     Double contentSentimentMin = 3.4D;
     Double contentSentimentMax = 3.4D;
     try {
-      AuthorsPostResponse result = client
+      Object result = client
               .authors
               .post(authorName)
               .sources(sources)
@@ -337,14 +329,6 @@ public class Example {
               .contentSentimentMin(contentSentimentMin)
               .contentSentimentMax(contentSentimentMax)
               .execute();
-      System.out.println(result);
-      System.out.println(result.getStatus());
-      System.out.println(result.getTotalHits());
-      System.out.println(result.getPage());
-      System.out.println(result.getTotalPages());
-      System.out.println(result.getPageSize());
-      System.out.println(result.getArticles());
-      System.out.println(result.getUserInput());
     } catch (ApiException e) {
       System.err.println("Exception when calling AuthorsApi#post");
       System.err.println("Status code: " + e.getStatusCode());
@@ -355,7 +339,7 @@ public class Example {
 
     // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request
     try {
-      ApiResponse<AuthorsPostResponse> response = client
+      ApiResponse<Object> response = client
               .authors
               .post(authorName)
               .sources(sources)
@@ -416,7 +400,7 @@ public class Example {
 
 ### Return type
 
-[**AuthorsPostResponse**](AuthorsPostResponse.md)
+**Object**
 
 ### Authorization
 

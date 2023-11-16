@@ -1,10 +1,10 @@
 # SDK Statistics
 
-| SDK Name | Lines of Code |
-| -------- | ------------- |
-| java | 50603 |
-| python | 52678 |
-| typescript | 11233 |
-| csharp | 32860 |
-| go | 39261 |
-| **Total** | 186635 |
+| SDK Name   | Lines of Code |
+| ---------- | ------------- |
+| java       | 43805         |
+| python     | 50756         |
+| typescript | 11243         |
+| csharp     | 32860         |
+| go         | 39261         |
+| **Total**  | 177925        |

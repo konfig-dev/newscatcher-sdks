@@ -10,6 +10,7 @@ public class SimpleTest {
     @Test
     public void initClientTest() {
         Configuration configuration = new Configuration();
+        configuration.apiKey = "API_KEY";
         Newscatcher client = new Newscatcher(configuration);
         assertNotNull(client);
     }

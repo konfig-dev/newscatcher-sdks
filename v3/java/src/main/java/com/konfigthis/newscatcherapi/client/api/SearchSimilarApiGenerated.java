@@ -1,6 +1,6 @@
 /*
  * NewsCatcher-V3 Production API
- * <img src='https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg' width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a> <br> <p style=\"color: red\"><b><em> This is a Testing Phase API. Please use it for testing purposes only. </em></b></p> <br>
+ * <img src='https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg' width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a>
  *
  * The version of the OpenAPI document: Beta-3.0.0
  * Contact: maksym@newscatcherapi.com
@@ -26,12 +26,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import com.konfigthis.newscatcherapi.client.model.AnyOfstringDateTime;
-import com.konfigthis.newscatcherapi.client.model.From;
 import com.konfigthis.newscatcherapi.client.model.MoreLikeThisRequest;
-import com.konfigthis.newscatcherapi.client.model.SearchSimilarGetResponse;
-import com.konfigthis.newscatcherapi.client.model.SearchSimilarPostResponse;
-import com.konfigthis.newscatcherapi.client.model.To;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -80,7 +75,7 @@ public class SearchSimilarApiGenerated {
         this.localCustomBaseUrl = customBaseUrl;
     }
 
-    private okhttp3.Call getCall(String q, String searchIn, Boolean includeSimilarDocuments, Integer similarDocumentsNumber, String similarDocumentsFields, String predefinedSources, String sources, String notSources, String lang, String notLang, String countries, String notCountries, From from, To to, Boolean byParseDate, String publishedDatePrecision, String sortBy, String rankedOnly, Integer fromRank, Integer toRank, Boolean isHeadline, Boolean isPaidContent, String parentUrl, String allLinks, String allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, Boolean includeNlpData, Boolean hasNlp, String theme, String nerName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getCall(String q, String searchIn, Boolean includeSimilarDocuments, Integer similarDocumentsNumber, String similarDocumentsFields, String predefinedSources, String sources, String notSources, String lang, String notLang, String countries, String notCountries, Object from, Object to, Boolean byParseDate, String publishedDatePrecision, String sortBy, String rankedOnly, Integer fromRank, Integer toRank, Boolean isHeadline, Boolean isPaidContent, String parentUrl, String allLinks, String allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, Boolean includeNlpData, Boolean hasNlp, String theme, String nerName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -273,7 +268,7 @@ public class SearchSimilarApiGenerated {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getValidateBeforeCall(String q, String searchIn, Boolean includeSimilarDocuments, Integer similarDocumentsNumber, String similarDocumentsFields, String predefinedSources, String sources, String notSources, String lang, String notLang, String countries, String notCountries, From from, To to, Boolean byParseDate, String publishedDatePrecision, String sortBy, String rankedOnly, Integer fromRank, Integer toRank, Boolean isHeadline, Boolean isPaidContent, String parentUrl, String allLinks, String allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, Boolean includeNlpData, Boolean hasNlp, String theme, String nerName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getValidateBeforeCall(String q, String searchIn, Boolean includeSimilarDocuments, Integer similarDocumentsNumber, String similarDocumentsFields, String predefinedSources, String sources, String notSources, String lang, String notLang, String countries, String notCountries, Object from, Object to, Boolean byParseDate, String publishedDatePrecision, String sortBy, String rankedOnly, Integer fromRank, Integer toRank, Boolean isHeadline, Boolean isPaidContent, String parentUrl, String allLinks, String allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, Boolean includeNlpData, Boolean hasNlp, String theme, String nerName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'q' is set
         if (q == null) {
             throw new ApiException("Missing the required parameter 'q' when calling get(Async)");
@@ -284,16 +279,16 @@ public class SearchSimilarApiGenerated {
     }
 
 
-    private ApiResponse<SearchSimilarGetResponse> getWithHttpInfo(String q, String searchIn, Boolean includeSimilarDocuments, Integer similarDocumentsNumber, String similarDocumentsFields, String predefinedSources, String sources, String notSources, String lang, String notLang, String countries, String notCountries, From from, To to, Boolean byParseDate, String publishedDatePrecision, String sortBy, String rankedOnly, Integer fromRank, Integer toRank, Boolean isHeadline, Boolean isPaidContent, String parentUrl, String allLinks, String allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, Boolean includeNlpData, Boolean hasNlp, String theme, String nerName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax) throws ApiException {
+    private ApiResponse<Object> getWithHttpInfo(String q, String searchIn, Boolean includeSimilarDocuments, Integer similarDocumentsNumber, String similarDocumentsFields, String predefinedSources, String sources, String notSources, String lang, String notLang, String countries, String notCountries, Object from, Object to, Boolean byParseDate, String publishedDatePrecision, String sortBy, String rankedOnly, Integer fromRank, Integer toRank, Boolean isHeadline, Boolean isPaidContent, String parentUrl, String allLinks, String allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, Boolean includeNlpData, Boolean hasNlp, String theme, String nerName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax) throws ApiException {
         okhttp3.Call localVarCall = getValidateBeforeCall(q, searchIn, includeSimilarDocuments, similarDocumentsNumber, similarDocumentsFields, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, from, to, byParseDate, publishedDatePrecision, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, null);
-        Type localVarReturnType = new TypeToken<SearchSimilarGetResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call getAsync(String q, String searchIn, Boolean includeSimilarDocuments, Integer similarDocumentsNumber, String similarDocumentsFields, String predefinedSources, String sources, String notSources, String lang, String notLang, String countries, String notCountries, From from, To to, Boolean byParseDate, String publishedDatePrecision, String sortBy, String rankedOnly, Integer fromRank, Integer toRank, Boolean isHeadline, Boolean isPaidContent, String parentUrl, String allLinks, String allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, Boolean includeNlpData, Boolean hasNlp, String theme, String nerName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax, final ApiCallback<SearchSimilarGetResponse> _callback) throws ApiException {
+    private okhttp3.Call getAsync(String q, String searchIn, Boolean includeSimilarDocuments, Integer similarDocumentsNumber, String similarDocumentsFields, String predefinedSources, String sources, String notSources, String lang, String notLang, String countries, String notCountries, Object from, Object to, Boolean byParseDate, String publishedDatePrecision, String sortBy, String rankedOnly, Integer fromRank, Integer toRank, Boolean isHeadline, Boolean isPaidContent, String parentUrl, String allLinks, String allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, Boolean includeNlpData, Boolean hasNlp, String theme, String nerName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getValidateBeforeCall(q, searchIn, includeSimilarDocuments, similarDocumentsNumber, similarDocumentsFields, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, from, to, byParseDate, publishedDatePrecision, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, _callback);
-        Type localVarReturnType = new TypeToken<SearchSimilarGetResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -311,8 +306,8 @@ public class SearchSimilarApiGenerated {
         private String notLang;
         private String countries;
         private String notCountries;
-        private From from;
-        private To to;
+        private Object from;
+        private Object to;
         private Boolean byParseDate;
         private String publishedDatePrecision;
         private String sortBy;
@@ -456,7 +451,7 @@ public class SearchSimilarApiGenerated {
          * @param from  (optional)
          * @return GetRequestBuilder
          */
-        public GetRequestBuilder from(From from) {
+        public GetRequestBuilder from(Object from) {
             this.from = from;
             return this;
         }
@@ -466,7 +461,7 @@ public class SearchSimilarApiGenerated {
          * @param to  (optional)
          * @return GetRequestBuilder
          */
-        public GetRequestBuilder to(To to) {
+        public GetRequestBuilder to(Object to) {
             this.to = to;
             return this;
         }
@@ -719,7 +714,7 @@ public class SearchSimilarApiGenerated {
 
         /**
          * Execute get request
-         * @return SearchSimilarGetResponse
+         * @return Object
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table summary="Response Details" border="1">
@@ -727,14 +722,14 @@ public class SearchSimilarApiGenerated {
             <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
          </table>
          */
-        public SearchSimilarGetResponse execute() throws ApiException {
-            ApiResponse<SearchSimilarGetResponse> localVarResp = getWithHttpInfo(q, searchIn, includeSimilarDocuments, similarDocumentsNumber, similarDocumentsFields, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, from, to, byParseDate, publishedDatePrecision, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax);
+        public Object execute() throws ApiException {
+            ApiResponse<Object> localVarResp = getWithHttpInfo(q, searchIn, includeSimilarDocuments, similarDocumentsNumber, similarDocumentsFields, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, from, to, byParseDate, publishedDatePrecision, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax);
             return localVarResp.getResponseBody();
         }
 
         /**
          * Execute get request with HTTP info returned
-         * @return ApiResponse&lt;SearchSimilarGetResponse&gt;
+         * @return ApiResponse&lt;Object&gt;
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table summary="Response Details" border="1">
@@ -742,7 +737,7 @@ public class SearchSimilarApiGenerated {
             <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
          </table>
          */
-        public ApiResponse<SearchSimilarGetResponse> executeWithHttpInfo() throws ApiException {
+        public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
             return getWithHttpInfo(q, searchIn, includeSimilarDocuments, similarDocumentsNumber, similarDocumentsFields, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, from, to, byParseDate, publishedDatePrecision, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax);
         }
 
@@ -757,7 +752,7 @@ public class SearchSimilarApiGenerated {
             <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
          </table>
          */
-        public okhttp3.Call executeAsync(final ApiCallback<SearchSimilarGetResponse> _callback) throws ApiException {
+        public okhttp3.Call executeAsync(final ApiCallback<Object> _callback) throws ApiException {
             return getAsync(q, searchIn, includeSimilarDocuments, similarDocumentsNumber, similarDocumentsFields, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, from, to, byParseDate, publishedDatePrecision, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, _callback);
         }
     }
@@ -836,16 +831,16 @@ public class SearchSimilarApiGenerated {
     }
 
 
-    private ApiResponse<SearchSimilarPostResponse> postWithHttpInfo(MoreLikeThisRequest moreLikeThisRequest) throws ApiException {
+    private ApiResponse<Object> postWithHttpInfo(MoreLikeThisRequest moreLikeThisRequest) throws ApiException {
         okhttp3.Call localVarCall = postValidateBeforeCall(moreLikeThisRequest, null);
-        Type localVarReturnType = new TypeToken<SearchSimilarPostResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call postAsync(MoreLikeThisRequest moreLikeThisRequest, final ApiCallback<SearchSimilarPostResponse> _callback) throws ApiException {
+    private okhttp3.Call postAsync(MoreLikeThisRequest moreLikeThisRequest, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postValidateBeforeCall(moreLikeThisRequest, _callback);
-        Type localVarReturnType = new TypeToken<SearchSimilarPostResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -863,8 +858,8 @@ public class SearchSimilarApiGenerated {
         private String notLang;
         private String countries;
         private String notCountries;
-        private From from;
-        private To to;
+        private Object from;
+        private Object to;
         private Boolean byParseDate;
         private String publishedDatePrecision;
         private String sortBy;
@@ -1008,7 +1003,7 @@ public class SearchSimilarApiGenerated {
          * @param from  (optional)
          * @return PostRequestBuilder
          */
-        public PostRequestBuilder from(From from) {
+        public PostRequestBuilder from(Object from) {
             this.from = from;
             return this;
         }
@@ -1018,7 +1013,7 @@ public class SearchSimilarApiGenerated {
          * @param to  (optional)
          * @return PostRequestBuilder
          */
-        public PostRequestBuilder to(To to) {
+        public PostRequestBuilder to(Object to) {
             this.to = to;
             return this;
         }
@@ -1313,7 +1308,7 @@ public class SearchSimilarApiGenerated {
 
         /**
          * Execute post request
-         * @return SearchSimilarPostResponse
+         * @return Object
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table summary="Response Details" border="1">
@@ -1321,15 +1316,15 @@ public class SearchSimilarApiGenerated {
             <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
          </table>
          */
-        public SearchSimilarPostResponse execute() throws ApiException {
+        public Object execute() throws ApiException {
             MoreLikeThisRequest moreLikeThisRequest = buildBodyParams();
-            ApiResponse<SearchSimilarPostResponse> localVarResp = postWithHttpInfo(moreLikeThisRequest);
+            ApiResponse<Object> localVarResp = postWithHttpInfo(moreLikeThisRequest);
             return localVarResp.getResponseBody();
         }
 
         /**
          * Execute post request with HTTP info returned
-         * @return ApiResponse&lt;SearchSimilarPostResponse&gt;
+         * @return ApiResponse&lt;Object&gt;
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table summary="Response Details" border="1">
@@ -1337,7 +1332,7 @@ public class SearchSimilarApiGenerated {
             <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
          </table>
          */
-        public ApiResponse<SearchSimilarPostResponse> executeWithHttpInfo() throws ApiException {
+        public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
             MoreLikeThisRequest moreLikeThisRequest = buildBodyParams();
             return postWithHttpInfo(moreLikeThisRequest);
         }
@@ -1353,7 +1348,7 @@ public class SearchSimilarApiGenerated {
             <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
          </table>
          */
-        public okhttp3.Call executeAsync(final ApiCallback<SearchSimilarPostResponse> _callback) throws ApiException {
+        public okhttp3.Call executeAsync(final ApiCallback<Object> _callback) throws ApiException {
             MoreLikeThisRequest moreLikeThisRequest = buildBodyParams();
             return postAsync(moreLikeThisRequest, _callback);
         }

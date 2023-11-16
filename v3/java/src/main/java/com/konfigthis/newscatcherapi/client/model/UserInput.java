@@ -1,6 +1,6 @@
 /*
  * NewsCatcher-V3 Production API
- * <img src='https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg' width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a> <br> <p style=\"color: red\"><b><em> This is a Testing Phase API. Please use it for testing purposes only. </em></b></p> <br>
+ * <img src='https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg' width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a>
  *
  * The version of the OpenAPI document: Beta-3.0.0
  * Contact: maksym@newscatcherapi.com
@@ -19,11 +19,10 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.konfigthis.newscatcherapi.client.model.CountriesProperty;
-import com.konfigthis.newscatcherapi.client.model.LangProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -53,16 +52,16 @@ import com.konfigthis.newscatcherapi.client.JSON;
 public class UserInput {
   public static final String SERIALIZED_NAME_LANG = "lang";
   @SerializedName(SERIALIZED_NAME_LANG)
-  private LangProperty lang;
+  private Object lang = null;
 
   public static final String SERIALIZED_NAME_COUNTRIES = "countries";
   @SerializedName(SERIALIZED_NAME_COUNTRIES)
-  private CountriesProperty countries;
+  private Object countries = null;
 
   public UserInput() {
   }
 
-  public UserInput lang(LangProperty lang) {
+  public UserInput lang(Object lang) {
     
     
     
@@ -78,12 +77,12 @@ public class UserInput {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public LangProperty getLang() {
+  public Object getLang() {
     return lang;
   }
 
 
-  public void setLang(LangProperty lang) {
+  public void setLang(Object lang) {
     
     
     
@@ -91,7 +90,7 @@ public class UserInput {
   }
 
 
-  public UserInput countries(CountriesProperty countries) {
+  public UserInput countries(Object countries) {
     
     
     
@@ -107,12 +106,12 @@ public class UserInput {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public CountriesProperty getCountries() {
+  public Object getCountries() {
     return countries;
   }
 
 
-  public void setCountries(CountriesProperty countries) {
+  public void setCountries(Object countries) {
     
     
     
@@ -179,9 +178,20 @@ public class UserInput {
         Objects.equals(this.additionalProperties, userInput.additionalProperties);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
     return Objects.hash(lang, countries, additionalProperties);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -231,14 +241,6 @@ public class UserInput {
         if (!UserInput.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in UserInput is not found in the empty JSON string", UserInput.openapiRequiredFields.toString()));
         }
-      }
-      // validate the optional field `lang`
-      if (jsonObj.get("lang") != null && !jsonObj.get("lang").isJsonNull()) {
-        LangProperty.validateJsonObject(jsonObj.getAsJsonObject("lang"));
-      }
-      // validate the optional field `countries`
-      if (jsonObj.get("countries") != null && !jsonObj.get("countries").isJsonNull()) {
-        CountriesProperty.validateJsonObject(jsonObj.getAsJsonObject("countries"));
       }
   }
 

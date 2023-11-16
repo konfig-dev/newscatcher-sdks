@@ -2,7 +2,7 @@
 
 [![Maven Central](https://img.shields.io/badge/Maven%20Central-v6.0.0-blue)](https://central.sonatype.com/artifact/com.konfigthis.newscatcherapi/newscatcherapi-java-sdk/6.0.0)
 
-<img src='https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg' width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a> <br> <p style=\"color: red\"><b><em> This is a Testing Phase API. Please use it for testing purposes only. </em></b></p> <br>
+<img src='https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg' width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a>
 
 ## Requirements
 
@@ -129,8 +129,8 @@ public class Example {
     String notLang = "notLang_example";
     String countries = "countries_example";
     String notCountries = "notCountries_example";
-    From from = new From();
-    To to = new To();
+    Object from = null;
+    Object to = null;
     String publishedDatePrecision = "publishedDatePrecision_example";
     Boolean byParseDate = false;
     String sortBy = "relevancy";
@@ -155,7 +155,7 @@ public class Example {
     Double contentSentimentMin = 3.4D;
     Double contentSentimentMax = 3.4D;
     try {
-      AuthorsGetResponse result = client
+      Object result = client
               .authors
               .get(authorName)
               .sources(sources)
@@ -191,14 +191,6 @@ public class Example {
               .contentSentimentMin(contentSentimentMin)
               .contentSentimentMax(contentSentimentMax)
               .execute();
-      System.out.println(result);
-      System.out.println(result.getStatus());
-      System.out.println(result.getTotalHits());
-      System.out.println(result.getPage());
-      System.out.println(result.getTotalPages());
-      System.out.println(result.getPageSize());
-      System.out.println(result.getArticles());
-      System.out.println(result.getUserInput());
     } catch (ApiException e) {
       System.err.println("Exception when calling AuthorsApi#get");
       System.err.println("Status code: " + e.getStatusCode());
@@ -209,7 +201,7 @@ public class Example {
 
     // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request
     try {
-      ApiResponse<AuthorsGetResponse> response = client
+      ApiResponse<Object> response = client
               .authors
               .get(authorName)
               .sources(sources)
@@ -284,15 +276,9 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
- - [AllDomainLinksProperty](docs/AllDomainLinksProperty.md)
- - [AllLinksProperty](docs/AllLinksProperty.md)
  - [AuthorSearchRequest](docs/AuthorSearchRequest.md)
- - [AuthorsGetResponse](docs/AuthorsGetResponse.md)
- - [AuthorsPostResponse](docs/AuthorsPostResponse.md)
- - [AuthorsProperty](docs/AuthorsProperty.md)
  - [Cluster](docs/Cluster.md)
  - [ClusteringSearchResponse](docs/ClusteringSearchResponse.md)
- - [CountriesProperty](docs/CountriesProperty.md)
  - [DtoResponsesAuthorSearchResponseArticleResult](docs/DtoResponsesAuthorSearchResponseArticleResult.md)
  - [DtoResponsesAuthorSearchResponseFailedSearchResponse](docs/DtoResponsesAuthorSearchResponseFailedSearchResponse.md)
  - [DtoResponsesAuthorSearchResponseSearchResponse](docs/DtoResponsesAuthorSearchResponseSearchResponse.md)
@@ -304,25 +290,14 @@ Class | Method | HTTP request | Description
  - [DtoResponsesSearchResponseFailedSearchResponse](docs/DtoResponsesSearchResponseFailedSearchResponse.md)
  - [DtoResponsesSearchResponseSearchResponse](docs/DtoResponsesSearchResponseSearchResponse.md)
  - [FailedLatestHeadlinesResponse](docs/FailedLatestHeadlinesResponse.md)
- - [From](docs/From.md)
- - [JournalistsProperty](docs/JournalistsProperty.md)
- - [LangProperty](docs/LangProperty.md)
- - [LatestHeadlinesGetResponse](docs/LatestHeadlinesGetResponse.md)
- - [LatestHeadlinesPostResponse](docs/LatestHeadlinesPostResponse.md)
  - [LatestHeadlinesRequest](docs/LatestHeadlinesRequest.md)
  - [LatestHeadlinesResponse](docs/LatestHeadlinesResponse.md)
- - [LocationPropertyInner](docs/LocationPropertyInner.md)
  - [MoreLikeThisRequest](docs/MoreLikeThisRequest.md)
- - [SearchGetResponse](docs/SearchGetResponse.md)
- - [SearchPostResponse](docs/SearchPostResponse.md)
  - [SearchRequest](docs/SearchRequest.md)
- - [SearchSimilarGetResponse](docs/SearchSimilarGetResponse.md)
- - [SearchSimilarPostResponse](docs/SearchSimilarPostResponse.md)
  - [SimilarDocument](docs/SimilarDocument.md)
  - [SourceResponse](docs/SourceResponse.md)
  - [SourcesRequest](docs/SourcesRequest.md)
  - [SubscriptionResponse](docs/SubscriptionResponse.md)
- - [To](docs/To.md)
  - [UserInput](docs/UserInput.md)
  - [ValidationError](docs/ValidationError.md)
 

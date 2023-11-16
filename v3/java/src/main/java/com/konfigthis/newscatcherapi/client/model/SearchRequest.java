@@ -1,6 +1,6 @@
 /*
  * NewsCatcher-V3 Production API
- * <img src='https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg' width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a> <br> <p style=\"color: red\"><b><em> This is a Testing Phase API. Please use it for testing purposes only. </em></b></p> <br>
+ * <img src='https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg' width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a>
  *
  * The version of the OpenAPI document: Beta-3.0.0
  * Contact: maksym@newscatcherapi.com
@@ -19,11 +19,10 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.konfigthis.newscatcherapi.client.model.From;
-import com.konfigthis.newscatcherapi.client.model.To;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -89,11 +88,11 @@ public class SearchRequest {
 
   public static final String SERIALIZED_NAME_FROM = "from_";
   @SerializedName(SERIALIZED_NAME_FROM)
-  private From from;
+  private Object from = null;
 
   public static final String SERIALIZED_NAME_TO = "to_";
   @SerializedName(SERIALIZED_NAME_TO)
-  private To to;
+  private Object to = null;
 
   public static final String SERIALIZED_NAME_PUBLISHED_DATE_PRECISION = "published_date_precision";
   @SerializedName(SERIALIZED_NAME_PUBLISHED_DATE_PRECISION)
@@ -475,7 +474,7 @@ public class SearchRequest {
   }
 
 
-  public SearchRequest from(From from) {
+  public SearchRequest from(Object from) {
     
     
     
@@ -491,12 +490,12 @@ public class SearchRequest {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public From getFrom() {
+  public Object getFrom() {
     return from;
   }
 
 
-  public void setFrom(From from) {
+  public void setFrom(Object from) {
     
     
     
@@ -504,7 +503,7 @@ public class SearchRequest {
   }
 
 
-  public SearchRequest to(To to) {
+  public SearchRequest to(Object to) {
     
     
     
@@ -520,12 +519,12 @@ public class SearchRequest {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public To getTo() {
+  public Object getTo() {
     return to;
   }
 
 
-  public void setTo(To to) {
+  public void setTo(Object to) {
     
     
     
@@ -1536,9 +1535,20 @@ public class SearchRequest {
         Objects.equals(this.additionalProperties, searchRequest.additionalProperties);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
     return Objects.hash(q, searchIn, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringEnabled, clusteringThreshold, clusteringVariable, includeNlpData, hasNlp, theme, orGEntityName, peREntityName, loCEntityName, miSCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, additionalProperties);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -1699,14 +1709,6 @@ public class SearchRequest {
       }
       if ((jsonObj.get("not_countries") != null && !jsonObj.get("not_countries").isJsonNull()) && !jsonObj.get("not_countries").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `not_countries` to be a primitive type in the JSON string but got `%s`", jsonObj.get("not_countries").toString()));
-      }
-      // validate the optional field `from_`
-      if (jsonObj.get("from_") != null && !jsonObj.get("from_").isJsonNull()) {
-        From.validateJsonObject(jsonObj.getAsJsonObject("from_"));
-      }
-      // validate the optional field `to_`
-      if (jsonObj.get("to_") != null && !jsonObj.get("to_").isJsonNull()) {
-        To.validateJsonObject(jsonObj.getAsJsonObject("to_"));
       }
       if ((jsonObj.get("published_date_precision") != null && !jsonObj.get("published_date_precision").isJsonNull()) && !jsonObj.get("published_date_precision").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `published_date_precision` to be a primitive type in the JSON string but got `%s`", jsonObj.get("published_date_precision").toString()));

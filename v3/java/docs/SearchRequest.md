@@ -16,8 +16,8 @@
 |**notLang** | **String** |  |  [optional] |
 |**countries** | **String** |  |  [optional] |
 |**notCountries** | **String** |  |  [optional] |
-|**from** | [**From**](From.md) |  |  [optional] |
-|**to** | [**To**](To.md) |  |  [optional] |
+|**from** | **Object** |  |  [optional] |
+|**to** | **Object** |  |  [optional] |
 |**publishedDatePrecision** | **String** |  |  [optional] |
 |**byParseDate** | **Boolean** |  |  [optional] |
 |**sortBy** | **String** |  |  [optional] |
