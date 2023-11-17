@@ -35,9 +35,7 @@ public class Example {
     Configuration configuration = new Configuration();
     configuration.host = "https://v3-api.newscatcherapi.com";
     
-    // Configure API key authorization: apiKey
-    configuration.x-api-token  = "YOUR API KEY";
-
+    configuration.apiKey  = "YOUR API KEY";
     Newscatcher client = new Newscatcher(configuration);
     String lang = "lang_example";
     String countries = "countries_example";
@@ -137,9 +135,7 @@ public class Example {
     Configuration configuration = new Configuration();
     configuration.host = "https://v3-api.newscatcherapi.com";
     
-    // Configure API key authorization: apiKey
-    configuration.x-api-token  = "YOUR API KEY";
-
+    configuration.apiKey  = "YOUR API KEY";
     Newscatcher client = new Newscatcher(configuration);
     String lang = "lang_example";
     String countries = "countries_example";
