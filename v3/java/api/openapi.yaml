@@ -2697,7 +2697,6 @@ components:
         all_links: {}
         all_domain_links: {}
         nlp:
-          default: {}
           example: {}
           title: Nlp
           type: object
@@ -2895,7 +2894,6 @@ components:
         all_links: {}
         all_domain_links: {}
         nlp:
-          default: {}
           example: {}
           title: Nlp
           type: object
@@ -3001,7 +2999,6 @@ components:
         all_links: {}
         all_domain_links: {}
         nlp:
-          default: {}
           example: {}
           title: Nlp
           type: object
@@ -3208,7 +3205,6 @@ components:
         all_links: {}
         all_domain_links: {}
         nlp:
-          default: {}
           example: {}
           title: Nlp
           type: object

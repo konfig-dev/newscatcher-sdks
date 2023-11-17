@@ -164,7 +164,7 @@ public class DtoResponsesAuthorSearchResponseArticleResult {
 
   public static final String SERIALIZED_NAME_NLP = "nlp";
   @SerializedName(SERIALIZED_NAME_NLP)
-  private Object nlp = null;
+  private Object nlp;
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
