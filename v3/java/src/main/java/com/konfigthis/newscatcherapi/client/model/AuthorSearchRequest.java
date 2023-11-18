@@ -794,7 +794,7 @@ public class AuthorSearchRequest {
 
 
   public AuthorSearchRequest wordCountMin(Integer wordCountMin) {
-    if (wordCountMin < 0) {
+    if (wordCountMin != null && wordCountMin < 0) {
       throw new IllegalArgumentException("Invalid value for wordCountMin. Must be greater than or equal to 0.");
     }
     
@@ -828,7 +828,7 @@ public class AuthorSearchRequest {
 
 
   public AuthorSearchRequest wordCountMax(Integer wordCountMax) {
-    if (wordCountMax < 0) {
+    if (wordCountMax != null && wordCountMax < 0) {
       throw new IllegalArgumentException("Invalid value for wordCountMax. Must be greater than or equal to 0.");
     }
     
@@ -862,7 +862,7 @@ public class AuthorSearchRequest {
 
 
   public AuthorSearchRequest page(Integer page) {
-    if (page < 0) {
+    if (page != null && page < 0) {
       throw new IllegalArgumentException("Invalid value for page. Must be greater than or equal to 0.");
     }
     
@@ -896,7 +896,7 @@ public class AuthorSearchRequest {
 
 
   public AuthorSearchRequest pageSize(Integer pageSize) {
-    if (pageSize < 0) {
+    if (pageSize != null && pageSize < 0) {
       throw new IllegalArgumentException("Invalid value for pageSize. Must be greater than or equal to 0.");
     }
     

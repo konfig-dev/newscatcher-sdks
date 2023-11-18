@@ -1,19 +1,18 @@
 package com.konfigthis.newscatcherapi.client;
 
-import com.konfigthis.newscatcherapi.client.api.AuthorsApiGenerated;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
 import java.util.Map;
 
 import static org.junit.Assert.assertNotNull;
 
 public class AllOperationsTest {
-    final String MOCK_SERVER_URL = "http://localhost:4010";
-    Newscatcher client;
+    static final String MOCK_SERVER_URL = "http://localhost:4010";
+    static Newscatcher client;
 
-    @Before
-    public void setUp() throws Exception {
+    @BeforeAll
+    public static void setUp() throws Exception {
         Configuration configuration = new Configuration();
         configuration.host = MOCK_SERVER_URL;
         configuration.apiKey = "YOUR API KEY";
