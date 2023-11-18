@@ -851,7 +851,7 @@ public class SearchRequest {
 
 
   public SearchRequest wordCountMin(Integer wordCountMin) {
-    if (wordCountMin < 0) {
+    if (wordCountMin != null && wordCountMin < 0) {
       throw new IllegalArgumentException("Invalid value for wordCountMin. Must be greater than or equal to 0.");
     }
     
@@ -875,7 +875,7 @@ public class SearchRequest {
 
 
   public void setWordCountMin(Integer wordCountMin) {
-    if (wordCountMin < 0) {
+    if (wordCountMin != null && wordCountMin < 0) {
       throw new IllegalArgumentException("Invalid value for wordCountMin. Must be greater than or equal to 0.");
     }
     
@@ -885,7 +885,7 @@ public class SearchRequest {
 
 
   public SearchRequest wordCountMax(Integer wordCountMax) {
-    if (wordCountMax < 0) {
+    if (wordCountMax != null && wordCountMax < 0) {
       throw new IllegalArgumentException("Invalid value for wordCountMax. Must be greater than or equal to 0.");
     }
     
@@ -909,7 +909,7 @@ public class SearchRequest {
 
 
   public void setWordCountMax(Integer wordCountMax) {
-    if (wordCountMax < 0) {
+    if (wordCountMax != null && wordCountMax < 0) {
       throw new IllegalArgumentException("Invalid value for wordCountMax. Must be greater than or equal to 0.");
     }
     
@@ -919,7 +919,7 @@ public class SearchRequest {
 
 
   public SearchRequest page(Integer page) {
-    if (page < 0) {
+    if (page != null && page < 0) {
       throw new IllegalArgumentException("Invalid value for page. Must be greater than or equal to 0.");
     }
     
@@ -943,7 +943,7 @@ public class SearchRequest {
 
 
   public void setPage(Integer page) {
-    if (page < 0) {
+    if (page != null && page < 0) {
       throw new IllegalArgumentException("Invalid value for page. Must be greater than or equal to 0.");
     }
     
@@ -953,7 +953,7 @@ public class SearchRequest {
 
 
   public SearchRequest pageSize(Integer pageSize) {
-    if (pageSize < 0) {
+    if (pageSize != null && pageSize < 0) {
       throw new IllegalArgumentException("Invalid value for pageSize. Must be greater than or equal to 0.");
     }
     
@@ -977,7 +977,7 @@ public class SearchRequest {
 
 
   public void setPageSize(Integer pageSize) {
-    if (pageSize < 0) {
+    if (pageSize != null && pageSize < 0) {
       throw new IllegalArgumentException("Invalid value for pageSize. Must be greater than or equal to 0.");
     }
     

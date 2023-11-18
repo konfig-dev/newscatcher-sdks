@@ -288,7 +288,7 @@ public class MoreLikeThisRequest {
 
 
   public MoreLikeThisRequest similarDocumentsNumber(Integer similarDocumentsNumber) {
-    if (similarDocumentsNumber < 0) {
+    if (similarDocumentsNumber != null && similarDocumentsNumber < 0) {
       throw new IllegalArgumentException("Invalid value for similarDocumentsNumber. Must be greater than or equal to 0.");
     }
     
@@ -312,7 +312,7 @@ public class MoreLikeThisRequest {
 
 
   public void setSimilarDocumentsNumber(Integer similarDocumentsNumber) {
-    if (similarDocumentsNumber < 0) {
+    if (similarDocumentsNumber != null && similarDocumentsNumber < 0) {
       throw new IllegalArgumentException("Invalid value for similarDocumentsNumber. Must be greater than or equal to 0.");
     }
     
@@ -931,7 +931,7 @@ public class MoreLikeThisRequest {
 
 
   public MoreLikeThisRequest wordCountMin(Integer wordCountMin) {
-    if (wordCountMin < 0) {
+    if (wordCountMin != null && wordCountMin < 0) {
       throw new IllegalArgumentException("Invalid value for wordCountMin. Must be greater than or equal to 0.");
     }
     
@@ -955,7 +955,7 @@ public class MoreLikeThisRequest {
 
 
   public void setWordCountMin(Integer wordCountMin) {
-    if (wordCountMin < 0) {
+    if (wordCountMin != null && wordCountMin < 0) {
       throw new IllegalArgumentException("Invalid value for wordCountMin. Must be greater than or equal to 0.");
     }
     
@@ -965,7 +965,7 @@ public class MoreLikeThisRequest {
 
 
   public MoreLikeThisRequest wordCountMax(Integer wordCountMax) {
-    if (wordCountMax < 0) {
+    if (wordCountMax != null && wordCountMax < 0) {
       throw new IllegalArgumentException("Invalid value for wordCountMax. Must be greater than or equal to 0.");
     }
     
@@ -989,7 +989,7 @@ public class MoreLikeThisRequest {
 
 
   public void setWordCountMax(Integer wordCountMax) {
-    if (wordCountMax < 0) {
+    if (wordCountMax != null && wordCountMax < 0) {
       throw new IllegalArgumentException("Invalid value for wordCountMax. Must be greater than or equal to 0.");
     }
     
@@ -999,7 +999,7 @@ public class MoreLikeThisRequest {
 
 
   public MoreLikeThisRequest page(Integer page) {
-    if (page < 0) {
+    if (page != null && page < 0) {
       throw new IllegalArgumentException("Invalid value for page. Must be greater than or equal to 0.");
     }
     
@@ -1023,7 +1023,7 @@ public class MoreLikeThisRequest {
 
 
   public void setPage(Integer page) {
-    if (page < 0) {
+    if (page != null && page < 0) {
       throw new IllegalArgumentException("Invalid value for page. Must be greater than or equal to 0.");
     }
     
@@ -1033,7 +1033,7 @@ public class MoreLikeThisRequest {
 
 
   public MoreLikeThisRequest pageSize(Integer pageSize) {
-    if (pageSize < 0) {
+    if (pageSize != null && pageSize < 0) {
       throw new IllegalArgumentException("Invalid value for pageSize. Must be greater than or equal to 0.");
     }
     
@@ -1057,7 +1057,7 @@ public class MoreLikeThisRequest {
 
 
   public void setPageSize(Integer pageSize) {
-    if (pageSize < 0) {
+    if (pageSize != null && pageSize < 0) {
       throw new IllegalArgumentException("Invalid value for pageSize. Must be greater than or equal to 0.");
     }
     
