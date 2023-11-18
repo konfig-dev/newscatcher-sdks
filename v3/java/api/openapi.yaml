@@ -105,13 +105,15 @@ paths:
         in: query
         name: from_
         required: false
-        schema: {}
+        schema:
+          type: string
         style: form
       - explode: true
         in: query
         name: to_
         required: false
-        schema: {}
+        schema:
+          type: string
         style: form
       - explode: true
         in: query
@@ -844,13 +846,15 @@ paths:
         in: query
         name: from_
         required: false
-        schema: {}
+        schema:
+          type: string
         style: form
       - explode: true
         in: query
         name: to_
         required: false
-        schema: {}
+        schema:
+          type: string
         style: form
       - explode: true
         in: query
@@ -1237,13 +1241,15 @@ paths:
         in: query
         name: from_
         required: false
-        schema: {}
+        schema:
+          type: string
         style: form
       - explode: true
         in: query
         name: to_
         required: false
-        schema: {}
+        schema:
+          type: string
         style: form
       - explode: true
         in: query
@@ -1648,7 +1654,7 @@ components:
         author_name: author_name
         has_nlp: true
         sources: sources
-        to_: ""
+        to_: to_
         sort_by: relevancy
         all_domain_links: all_domain_links
         word_count_max: 0
@@ -1665,7 +1671,7 @@ components:
         ner_name: ner_name
         content_sentiment_min: 7.061401241503109
         not_sources: not_sources
-        from_: ""
+        from_: from_
         countries: countries
         predefined_sources: predefined_sources
         not_lang: not_lang
@@ -1703,8 +1709,10 @@ components:
         not_countries:
           title: Not Countries
           type: string
-        from_: {}
-        to_: {}
+        from_:
+          type: string
+        to_:
+          type: string
         published_date_precision:
           title: Published Date Precision
           type: string
@@ -2122,7 +2130,7 @@ components:
       example:
         has_nlp: true
         sources: sources
-        to_: ""
+        to_: to_
         sort_by: relevancy
         all_domain_links: all_domain_links
         word_count_max: 0
@@ -2141,7 +2149,7 @@ components:
         ner_name: ner_name
         content_sentiment_min: 7.061401241503109
         not_sources: not_sources
-        from_: ""
+        from_: from_
         similar_documents_fields: "title,content"
         countries: countries
         predefined_sources: predefined_sources
@@ -2211,8 +2219,10 @@ components:
         not_countries:
           title: Not Countries
           type: string
-        from_: {}
-        to_: {}
+        from_:
+          type: string
+        to_:
+          type: string
         by_parse_date:
           default: false
           example: false
@@ -2310,7 +2320,7 @@ components:
       example:
         has_nlp: true
         sources: sources
-        to_: ""
+        to_: to_
         clustering_variable: clustering_variable
         ORG_entity_name: ORG_entity_name
         sort_by: relevancy
@@ -2332,7 +2342,7 @@ components:
         LOC_entity_name: LOC_entity_name
         MISC_entity_name: MISC_entity_name
         not_sources: not_sources
-        from_: ""
+        from_: from_
         countries: countries
         predefined_sources: predefined_sources
         not_lang: not_lang
@@ -2380,8 +2390,10 @@ components:
         not_countries:
           title: Not Countries
           type: string
-        from_: {}
-        to_: {}
+        from_:
+          type: string
+        to_:
+          type: string
         published_date_precision:
           title: Published Date Precision
           type: string
@@ -3688,8 +3700,10 @@ components:
         not_countries:
           title: Not Countries
           type: string
-        from_: {}
-        to_: {}
+        from_:
+          type: string
+        to_:
+          type: string
         published_date_precision:
           title: Published Date Precision
           type: string
@@ -3875,8 +3889,10 @@ components:
         not_countries:
           title: Not Countries
           type: string
-        from_: {}
-        to_: {}
+        from_:
+          type: string
+        to_:
+          type: string
         published_date_precision:
           title: Published Date Precision
           type: string
@@ -4296,8 +4312,10 @@ components:
         not_countries:
           title: Not Countries
           type: string
-        from_: {}
-        to_: {}
+        from_:
+          type: string
+        to_:
+          type: string
         published_date_precision:
           title: Published Date Precision
           type: string
@@ -4451,8 +4469,10 @@ components:
         not_countries:
           title: Not Countries
           type: string
-        from_: {}
-        to_: {}
+        from_:
+          type: string
+        to_:
+          type: string
         published_date_precision:
           title: Published Date Precision
           type: string
@@ -4602,8 +4622,10 @@ components:
         not_countries:
           title: Not Countries
           type: string
-        from_: {}
-        to_: {}
+        from_:
+          type: string
+        to_:
+          type: string
         by_parse_date:
           default: false
           example: false
@@ -4790,8 +4812,10 @@ components:
         not_countries:
           title: Not Countries
           type: string
-        from_: {}
-        to_: {}
+        from_:
+          type: string
+        to_:
+          type: string
         by_parse_date:
           default: false
           example: false

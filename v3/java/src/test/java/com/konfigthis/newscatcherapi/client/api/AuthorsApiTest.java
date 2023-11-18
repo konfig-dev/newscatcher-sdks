@@ -58,8 +58,8 @@ public class AuthorsApiTest {
         String notLang = null;
         String countries = null;
         String notCountries = null;
-        Object from = null;
-        Object to = null;
+        String from = null;
+        String to = null;
         String publishedDatePrecision = null;
         Boolean byParseDate = null;
         String sortBy = null;
@@ -137,8 +137,8 @@ public class AuthorsApiTest {
         String notLang = null;
         String countries = null;
         String notCountries = null;
-        Object from = null;
-        Object to = null;
+        String from = null;
+        String to = null;
         String publishedDatePrecision = null;
         Boolean byParseDate = null;
         String sortBy = null;

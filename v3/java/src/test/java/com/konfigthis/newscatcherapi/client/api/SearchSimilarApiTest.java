@@ -62,8 +62,8 @@ public class SearchSimilarApiTest {
         String notLang = null;
         String countries = null;
         String notCountries = null;
-        Object from = null;
-        Object to = null;
+        String from = null;
+        String to = null;
         Boolean byParseDate = null;
         String publishedDatePrecision = null;
         String sortBy = null;
@@ -149,8 +149,8 @@ public class SearchSimilarApiTest {
         String notLang = null;
         String countries = null;
         String notCountries = null;
-        Object from = null;
-        Object to = null;
+        String from = null;
+        String to = null;
         Boolean byParseDate = null;
         String publishedDatePrecision = null;
         String sortBy = null;

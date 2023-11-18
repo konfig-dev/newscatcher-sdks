@@ -22,7 +22,6 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -88,11 +87,11 @@ public class SearchRequest {
 
   public static final String SERIALIZED_NAME_FROM = "from_";
   @SerializedName(SERIALIZED_NAME_FROM)
-  private Object from = null;
+  private String from;
 
   public static final String SERIALIZED_NAME_TO = "to_";
   @SerializedName(SERIALIZED_NAME_TO)
-  private Object to = null;
+  private String to;
 
   public static final String SERIALIZED_NAME_PUBLISHED_DATE_PRECISION = "published_date_precision";
   @SerializedName(SERIALIZED_NAME_PUBLISHED_DATE_PRECISION)
@@ -474,7 +473,7 @@ public class SearchRequest {
   }
 
 
-  public SearchRequest from(Object from) {
+  public SearchRequest from(String from) {
     
     
     
@@ -490,12 +489,12 @@ public class SearchRequest {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Object getFrom() {
+  public String getFrom() {
     return from;
   }
 
 
-  public void setFrom(Object from) {
+  public void setFrom(String from) {
     
     
     
@@ -503,7 +502,7 @@ public class SearchRequest {
   }
 
 
-  public SearchRequest to(Object to) {
+  public SearchRequest to(String to) {
     
     
     
@@ -519,12 +518,12 @@ public class SearchRequest {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Object getTo() {
+  public String getTo() {
     return to;
   }
 
 
-  public void setTo(Object to) {
+  public void setTo(String to) {
     
     
     
@@ -1535,20 +1534,9 @@ public class SearchRequest {
         Objects.equals(this.additionalProperties, searchRequest.additionalProperties);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
     return Objects.hash(q, searchIn, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringEnabled, clusteringThreshold, clusteringVariable, includeNlpData, hasNlp, theme, orGEntityName, peREntityName, loCEntityName, miSCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, additionalProperties);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -1709,6 +1697,12 @@ public class SearchRequest {
       }
       if ((jsonObj.get("not_countries") != null && !jsonObj.get("not_countries").isJsonNull()) && !jsonObj.get("not_countries").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `not_countries` to be a primitive type in the JSON string but got `%s`", jsonObj.get("not_countries").toString()));
+      }
+      if ((jsonObj.get("from_") != null && !jsonObj.get("from_").isJsonNull()) && !jsonObj.get("from_").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `from_` to be a primitive type in the JSON string but got `%s`", jsonObj.get("from_").toString()));
+      }
+      if ((jsonObj.get("to_") != null && !jsonObj.get("to_").isJsonNull()) && !jsonObj.get("to_").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `to_` to be a primitive type in the JSON string but got `%s`", jsonObj.get("to_").toString()));
       }
       if ((jsonObj.get("published_date_precision") != null && !jsonObj.get("published_date_precision").isJsonNull()) && !jsonObj.get("published_date_precision").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `published_date_precision` to be a primitive type in the JSON string but got `%s`", jsonObj.get("published_date_precision").toString()));

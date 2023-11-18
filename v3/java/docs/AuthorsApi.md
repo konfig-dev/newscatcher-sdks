@@ -45,8 +45,8 @@ public class Example {
     String notLang = "notLang_example";
     String countries = "countries_example";
     String notCountries = "notCountries_example";
-    Object from = null;
-    Object to = null;
+    String from = "from_example";
+    String to = "to_example";
     String publishedDatePrecision = "publishedDatePrecision_example";
     Boolean byParseDate = false;
     String sortBy = "relevancy";
@@ -182,8 +182,8 @@ public class Example {
 | **notLang** | **String**|  | [optional] |
 | **countries** | **String**|  | [optional] |
 | **notCountries** | **String**|  | [optional] |
-| **from** | [**Object**](.md)|  | [optional] |
-| **to** | [**Object**](.md)|  | [optional] |
+| **from** | **String**|  | [optional] |
+| **to** | **String**|  | [optional] |
 | **publishedDatePrecision** | **String**|  | [optional] |
 | **byParseDate** | **Boolean**|  | [optional] [default to false] |
 | **sortBy** | **String**|  | [optional] [default to relevancy] |
@@ -263,8 +263,8 @@ public class Example {
     String notLang = "notLang_example";
     String countries = "countries_example";
     String notCountries = "notCountries_example";
-    Object from = null;
-    Object to = null;
+    String from = "from_example";
+    String to = "to_example";
     String publishedDatePrecision = "publishedDatePrecision_example";
     Boolean byParseDate = false;
     String sortBy = "relevancy";
