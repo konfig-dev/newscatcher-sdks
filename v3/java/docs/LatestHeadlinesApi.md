@@ -10,7 +10,7 @@ All URIs are relative to *https://v3-api.newscatcherapi.com*
 
 <a name="get"></a>
 # **get**
-> LatestHeadlinesGetResponse get().when(when).byParseDate(byParseDate).lang(lang).notLang(notLang).countries(countries).notCountries(notCountries).sources(sources).predefinedSources(predefinedSources).notSources(notSources).rankedOnly(rankedOnly).isHeadline(isHeadline).isPaidContent(isPaidContent).parentUrl(parentUrl).theme(theme).allLinks(allLinks).allDomainLinks(allDomainLinks).wordCountMin(wordCountMin).wordCountMax(wordCountMax).page(page).pageSize(pageSize).clusteringEnabled(clusteringEnabled).clusteringThreshold(clusteringThreshold).clusteringVariable(clusteringVariable).includeNlpData(includeNlpData).hasNlp(hasNlp).orGEntityName(orGEntityName).peREntityName(peREntityName).loCEntityName(loCEntityName).miSCEntityName(miSCEntityName).titleSentimentMin(titleSentimentMin).titleSentimentMax(titleSentimentMax).contentSentimentMin(contentSentimentMin).contentSentimentMax(contentSentimentMax).execute();
+> Object get().when(when).byParseDate(byParseDate).lang(lang).notLang(notLang).countries(countries).notCountries(notCountries).sources(sources).predefinedSources(predefinedSources).notSources(notSources).rankedOnly(rankedOnly).isHeadline(isHeadline).isPaidContent(isPaidContent).parentUrl(parentUrl).theme(theme).allLinks(allLinks).allDomainLinks(allDomainLinks).wordCountMin(wordCountMin).wordCountMax(wordCountMax).page(page).pageSize(pageSize).clusteringEnabled(clusteringEnabled).clusteringThreshold(clusteringThreshold).clusteringVariable(clusteringVariable).includeNlpData(includeNlpData).hasNlp(hasNlp).orGEntityName(orGEntityName).peREntityName(peREntityName).loCEntityName(loCEntityName).miSCEntityName(miSCEntityName).titleSentimentMin(titleSentimentMin).titleSentimentMax(titleSentimentMax).contentSentimentMin(contentSentimentMin).contentSentimentMax(contentSentimentMax).execute();
 
 [Get] Search For Latest Headlines Request
 
@@ -35,9 +35,7 @@ public class Example {
     Configuration configuration = new Configuration();
     configuration.host = "https://v3-api.newscatcherapi.com";
     
-    // Configure API key authorization: apiKey
-    configuration.x-api-token  = "YOUR API KEY";
-
+    configuration.apiKey  = "YOUR API KEY";
     Newscatcher client = new Newscatcher(configuration);
     String when = "7d";
     Boolean byParseDate = false;
@@ -73,7 +71,7 @@ public class Example {
     Double contentSentimentMin = 3.4D;
     Double contentSentimentMax = 3.4D;
     try {
-      LatestHeadlinesGetResponse result = client
+      Object result = client
               .latestHeadlines
               .get()
               .when(when)
@@ -110,16 +108,6 @@ public class Example {
               .contentSentimentMin(contentSentimentMin)
               .contentSentimentMax(contentSentimentMax)
               .execute();
-      System.out.println(result);
-      System.out.println(result.getStatus());
-      System.out.println(result.getTotalHits());
-      System.out.println(result.getPage());
-      System.out.println(result.getTotalPages());
-      System.out.println(result.getPageSize());
-      System.out.println(result.getClustersCount());
-      System.out.println(result.getClusters());
-      System.out.println(result.getUserInput());
-      System.out.println(result.getArticles());
     } catch (ApiException e) {
       System.err.println("Exception when calling LatestHeadlinesApi#get");
       System.err.println("Status code: " + e.getStatusCode());
@@ -130,7 +118,7 @@ public class Example {
 
     // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request
     try {
-      ApiResponse<LatestHeadlinesGetResponse> response = client
+      ApiResponse<Object> response = client
               .latestHeadlines
               .get()
               .when(when)
@@ -224,7 +212,7 @@ public class Example {
 
 ### Return type
 
-[**LatestHeadlinesGetResponse**](LatestHeadlinesGetResponse.md)
+**Object**
 
 ### Authorization
 
@@ -242,7 +230,7 @@ public class Example {
 
 <a name="post"></a>
 # **post**
-> LatestHeadlinesPostResponse post(latestHeadlinesRequest).execute();
+> Object post(latestHeadlinesRequest).execute();
 
 [Post] Search For Latest Headlines Request
 
@@ -267,9 +255,7 @@ public class Example {
     Configuration configuration = new Configuration();
     configuration.host = "https://v3-api.newscatcherapi.com";
     
-    // Configure API key authorization: apiKey
-    configuration.x-api-token  = "YOUR API KEY";
-
+    configuration.apiKey  = "YOUR API KEY";
     Newscatcher client = new Newscatcher(configuration);
     String when = "7d";
     Boolean byParseDate = false;
@@ -305,7 +291,7 @@ public class Example {
     Double contentSentimentMin = 3.4D;
     Double contentSentimentMax = 3.4D;
     try {
-      LatestHeadlinesPostResponse result = client
+      Object result = client
               .latestHeadlines
               .post()
               .when(when)
@@ -342,16 +328,6 @@ public class Example {
               .contentSentimentMin(contentSentimentMin)
               .contentSentimentMax(contentSentimentMax)
               .execute();
-      System.out.println(result);
-      System.out.println(result.getStatus());
-      System.out.println(result.getTotalHits());
-      System.out.println(result.getPage());
-      System.out.println(result.getTotalPages());
-      System.out.println(result.getPageSize());
-      System.out.println(result.getClustersCount());
-      System.out.println(result.getClusters());
-      System.out.println(result.getUserInput());
-      System.out.println(result.getArticles());
     } catch (ApiException e) {
       System.err.println("Exception when calling LatestHeadlinesApi#post");
       System.err.println("Status code: " + e.getStatusCode());
@@ -362,7 +338,7 @@ public class Example {
 
     // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request
     try {
-      ApiResponse<LatestHeadlinesPostResponse> response = client
+      ApiResponse<Object> response = client
               .latestHeadlines
               .post()
               .when(when)
@@ -424,7 +400,7 @@ public class Example {
 
 ### Return type
 
-[**LatestHeadlinesPostResponse**](LatestHeadlinesPostResponse.md)
+**Object**
 
 ### Authorization
 

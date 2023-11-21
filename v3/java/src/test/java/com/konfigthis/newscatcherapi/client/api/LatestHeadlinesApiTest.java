@@ -1,6 +1,6 @@
 /*
  * NewsCatcher-V3 Production API
- * <img src='https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg' width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a> <br> <p style=\"color: red\"><b><em> This is a Testing Phase API. Please use it for testing purposes only. </em></b></p> <br>
+ * <img src='https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg' width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a>
  *
  * The version of the OpenAPI document: Beta-3.0.0
  * Contact: maksym@newscatcherapi.com
@@ -16,8 +16,6 @@ import com.konfigthis.newscatcherapi.client.ApiException;
 import com.konfigthis.newscatcherapi.client.ApiClient;
 import com.konfigthis.newscatcherapi.client.ApiException;
 import com.konfigthis.newscatcherapi.client.Configuration;
-import com.konfigthis.newscatcherapi.client.model.LatestHeadlinesGetResponse;
-import com.konfigthis.newscatcherapi.client.model.LatestHeadlinesPostResponse;
 import com.konfigthis.newscatcherapi.client.model.LatestHeadlinesRequest;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -85,7 +83,7 @@ public class LatestHeadlinesApiTest {
         Double titleSentimentMax = null;
         Double contentSentimentMin = null;
         Double contentSentimentMax = null;
-        LatestHeadlinesGetResponse response = api.get()
+        Object response = api.get()
                 .when(when)
                 .byParseDate(byParseDate)
                 .lang(lang)
@@ -165,7 +163,7 @@ public class LatestHeadlinesApiTest {
         Double titleSentimentMax = null;
         Double contentSentimentMin = null;
         Double contentSentimentMax = null;
-        LatestHeadlinesPostResponse response = api.post()
+        Object response = api.post()
                 .when(when)
                 .byParseDate(byParseDate)
                 .lang(lang)

@@ -3,10 +3,8 @@ info:
   contact:
     email: maksym@newscatcherapi.com
     name: Maksym Sugonyaka
-  description: "<img src='https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg'\
-    \ width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a>\
-    \ <br> <p style=\"color: red\"><b><em> This is a Testing Phase API. Please use\
-    \ it for testing purposes only. </em></b></p> <br>"
+  description: <img src='https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg'
+    width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a>
   termsOfService: https://newscatcherapi.com/terms-of-service
   title: NewsCatcher-V3 Production API
   version: Beta-3.0.0
@@ -108,14 +106,14 @@ paths:
         name: from_
         required: false
         schema:
-          $ref: '#/components/schemas/From_'
+          type: string
         style: form
       - explode: true
         in: query
         name: to_
         required: false
         schema:
-          $ref: '#/components/schemas/To_'
+          type: string
         style: form
       - explode: true
         in: query
@@ -849,14 +847,14 @@ paths:
         name: from_
         required: false
         schema:
-          $ref: '#/components/schemas/From_'
+          type: string
         style: form
       - explode: true
         in: query
         name: to_
         required: false
         schema:
-          $ref: '#/components/schemas/To_'
+          type: string
         style: form
       - explode: true
         in: query
@@ -1244,14 +1242,14 @@ paths:
         name: from_
         required: false
         schema:
-          $ref: '#/components/schemas/From_'
+          type: string
         style: form
       - explode: true
         in: query
         name: to_
         required: false
         schema:
-          $ref: '#/components/schemas/To_'
+          type: string
         style: form
       - explode: true
         in: query
@@ -1656,7 +1654,7 @@ components:
         author_name: author_name
         has_nlp: true
         sources: sources
-        to_: null
+        to_: to_
         sort_by: relevancy
         all_domain_links: all_domain_links
         word_count_max: 0
@@ -1673,7 +1671,7 @@ components:
         ner_name: ner_name
         content_sentiment_min: 7.061401241503109
         not_sources: not_sources
-        from_: null
+        from_: from_
         countries: countries
         predefined_sources: predefined_sources
         not_lang: not_lang
@@ -1712,9 +1710,9 @@ components:
           title: Not Countries
           type: string
         from_:
-          $ref: '#/components/schemas/From_'
+          type: string
         to_:
-          $ref: '#/components/schemas/To_'
+          type: string
         published_date_precision:
           title: Published Date Precision
           type: string
@@ -2132,7 +2130,7 @@ components:
       example:
         has_nlp: true
         sources: sources
-        to_: null
+        to_: to_
         sort_by: relevancy
         all_domain_links: all_domain_links
         word_count_max: 0
@@ -2151,7 +2149,7 @@ components:
         ner_name: ner_name
         content_sentiment_min: 7.061401241503109
         not_sources: not_sources
-        from_: null
+        from_: from_
         similar_documents_fields: "title,content"
         countries: countries
         predefined_sources: predefined_sources
@@ -2222,9 +2220,9 @@ components:
           title: Not Countries
           type: string
         from_:
-          $ref: '#/components/schemas/From_'
+          type: string
         to_:
-          $ref: '#/components/schemas/To_'
+          type: string
         by_parse_date:
           default: false
           example: false
@@ -2322,7 +2320,7 @@ components:
       example:
         has_nlp: true
         sources: sources
-        to_: null
+        to_: to_
         clustering_variable: clustering_variable
         ORG_entity_name: ORG_entity_name
         sort_by: relevancy
@@ -2344,7 +2342,7 @@ components:
         LOC_entity_name: LOC_entity_name
         MISC_entity_name: MISC_entity_name
         not_sources: not_sources
-        from_: null
+        from_: from_
         countries: countries
         predefined_sources: predefined_sources
         not_lang: not_lang
@@ -2393,9 +2391,9 @@ components:
           title: Not Countries
           type: string
         from_:
-          $ref: '#/components/schemas/From_'
+          type: string
         to_:
-          $ref: '#/components/schemas/To_'
+          type: string
         published_date_precision:
           title: Published Date Precision
           type: string
@@ -2534,8 +2532,8 @@ components:
         - sources
         - sources
         user_input:
-          countries: null
-          lang: null
+          countries: ""
+          lang: ""
         message: message
       properties:
         message:
@@ -2603,20 +2601,17 @@ components:
       x-konfig-is-used-in-successful-response: true
     UserInput:
       example:
-        countries: null
-        lang: null
+        countries: ""
+        lang: ""
       properties:
-        lang:
-          $ref: '#/components/schemas/Lang_Property'
-        countries:
-          $ref: '#/components/schemas/Countries_Property'
+        lang: {}
+        countries: {}
       title: UserInput
       type: object
     ValidationError:
       properties:
         loc:
-          items:
-            $ref: '#/components/schemas/Location_Property_inner'
+          items: {}
           title: Location
           type: array
         msg:
@@ -2642,10 +2637,8 @@ components:
         author:
           title: Author
           type: string
-        authors:
-          $ref: '#/components/schemas/Authors_Property'
-        journalists:
-          $ref: '#/components/schemas/Journalists_Property'
+        authors: {}
+        journalists: {}
         published_date:
           title: Published Date
           type: string
@@ -2713,12 +2706,9 @@ components:
         twitter_account:
           title: Twitter Account
           type: string
-        all_links:
-          $ref: '#/components/schemas/All_Links_Property'
-        all_domain_links:
-          $ref: '#/components/schemas/All_Domain_Links_Property'
+        all_links: {}
+        all_domain_links: {}
         nlp:
-          default: {}
           example: {}
           title: Nlp
           type: object
@@ -2844,10 +2834,8 @@ components:
         author:
           title: Author
           type: string
-        authors:
-          $ref: '#/components/schemas/Authors_Property'
-        journalists:
-          $ref: '#/components/schemas/Journalists_Property'
+        authors: {}
+        journalists: {}
         published_date:
           title: Published Date
           type: string
@@ -2915,12 +2903,9 @@ components:
         twitter_account:
           title: Twitter Account
           type: string
-        all_links:
-          $ref: '#/components/schemas/All_Links_Property'
-        all_domain_links:
-          $ref: '#/components/schemas/All_Domain_Links_Property'
+        all_links: {}
+        all_domain_links: {}
         nlp:
-          default: {}
           example: {}
           title: Nlp
           type: object
@@ -2954,10 +2939,8 @@ components:
         author:
           title: Author
           type: string
-        authors:
-          $ref: '#/components/schemas/Authors_Property'
-        journalists:
-          $ref: '#/components/schemas/Journalists_Property'
+        authors: {}
+        journalists: {}
         published_date:
           title: Published Date
           type: string
@@ -3025,12 +3008,9 @@ components:
         twitter_account:
           title: Twitter Account
           type: string
-        all_links:
-          $ref: '#/components/schemas/All_Links_Property'
-        all_domain_links:
-          $ref: '#/components/schemas/All_Domain_Links_Property'
+        all_links: {}
+        all_domain_links: {}
         nlp:
-          default: {}
           example: {}
           title: Nlp
           type: object
@@ -3165,10 +3145,8 @@ components:
         author:
           title: Author
           type: string
-        authors:
-          $ref: '#/components/schemas/Authors_Property'
-        journalists:
-          $ref: '#/components/schemas/Journalists_Property'
+        authors: {}
+        journalists: {}
         published_date:
           title: Published Date
           type: string
@@ -3236,12 +3214,9 @@ components:
         twitter_account:
           title: Twitter Account
           type: string
-        all_links:
-          $ref: '#/components/schemas/All_Links_Property'
-        all_domain_links:
-          $ref: '#/components/schemas/All_Domain_Links_Property'
+        all_links: {}
+        all_domain_links: {}
         nlp:
-          default: {}
           example: {}
           title: Nlp
           type: object
@@ -3355,58 +3330,14 @@ components:
       - user_input
       title: SearchResponse
       type: object
-    SearchGetResponse:
-      anyOf:
-      - $ref: '#/components/schemas/dto__responses__SearchResponse__SearchResponse'
-      - $ref: '#/components/schemas/dto__responses__SearchResponse__FailedSearchResponse'
-      - $ref: '#/components/schemas/ClusteringSearchResponse'
-      title: Response Search Get
-      x-konfig-is-used-in-successful-response: true
-    SearchPostResponse:
-      anyOf:
-      - $ref: '#/components/schemas/dto__responses__SearchResponse__SearchResponse'
-      - $ref: '#/components/schemas/dto__responses__SearchResponse__FailedSearchResponse'
-      - $ref: '#/components/schemas/ClusteringSearchResponse'
-      title: Response Search Post
-      x-konfig-is-used-in-successful-response: true
-    LatestHeadlinesGetResponse:
-      anyOf:
-      - $ref: '#/components/schemas/ClusteringSearchResponse'
-      - $ref: '#/components/schemas/LatestHeadlinesResponse'
-      - $ref: '#/components/schemas/FailedLatestHeadlinesResponse'
-      title: Response Latestheadlines Get
-      x-konfig-is-used-in-successful-response: true
-    LatestHeadlinesPostResponse:
-      anyOf:
-      - $ref: '#/components/schemas/ClusteringSearchResponse'
-      - $ref: '#/components/schemas/LatestHeadlinesResponse'
-      - $ref: '#/components/schemas/FailedLatestHeadlinesResponse'
-      title: Response Latestheadlines Post
-      x-konfig-is-used-in-successful-response: true
-    AuthorsGetResponse:
-      anyOf:
-      - $ref: '#/components/schemas/dto__responses__AuthorSearchResponse__SearchResponse'
-      - $ref: '#/components/schemas/dto__responses__AuthorSearchResponse__FailedSearchResponse'
-      title: Response Authors Get
-      x-konfig-is-used-in-successful-response: true
-    AuthorsPostResponse:
-      anyOf:
-      - $ref: '#/components/schemas/dto__responses__AuthorSearchResponse__SearchResponse'
-      - $ref: '#/components/schemas/dto__responses__AuthorSearchResponse__FailedSearchResponse'
-      title: Response Authors Post
-      x-konfig-is-used-in-successful-response: true
-    SearchSimilarGetResponse:
-      anyOf:
-      - $ref: '#/components/schemas/dto__responses__MoreLikeThisResponse__SearchResponse'
-      - $ref: '#/components/schemas/dto__responses__MoreLikeThisResponse__FailedSearchResponse'
-      title: Response Searchsimilar Get
-      x-konfig-is-used-in-successful-response: true
-    SearchSimilarPostResponse:
-      anyOf:
-      - $ref: '#/components/schemas/dto__responses__MoreLikeThisResponse__SearchResponse'
-      - $ref: '#/components/schemas/dto__responses__MoreLikeThisResponse__FailedSearchResponse'
-      title: Response Searchsimilar Post
-      x-konfig-is-used-in-successful-response: true
+    SearchGetResponse: {}
+    SearchPostResponse: {}
+    LatestHeadlinesGetResponse: {}
+    LatestHeadlinesPostResponse: {}
+    AuthorsGetResponse: {}
+    AuthorsPostResponse: {}
+    SearchSimilarGetResponse: {}
+    SearchSimilarPostResponse: {}
     konfig-generated-schema-paths--api-search-get-parameters-1-schema:
       example: title_content
       type: string
@@ -3770,17 +3701,9 @@ components:
           title: Not Countries
           type: string
         from_:
-          anyOf:
-          - type: string
-          - format: date-time
-            type: string
-          title: 'From '
+          type: string
         to_:
-          anyOf:
-          - type: string
-          - format: date-time
-            type: string
-          title: 'To '
+          type: string
         published_date_precision:
           title: Published Date Precision
           type: string
@@ -3967,17 +3890,9 @@ components:
           title: Not Countries
           type: string
         from_:
-          anyOf:
-          - type: string
-          - format: date-time
-            type: string
-          title: 'From '
+          type: string
         to_:
-          anyOf:
-          - type: string
-          - format: date-time
-            type: string
-          title: 'To '
+          type: string
         published_date_precision:
           title: Published Date Precision
           type: string
@@ -4398,17 +4313,9 @@ components:
           title: Not Countries
           type: string
         from_:
-          anyOf:
-          - type: string
-          - format: date-time
-            type: string
-          title: 'From '
+          type: string
         to_:
-          anyOf:
-          - type: string
-          - format: date-time
-            type: string
-          title: 'To '
+          type: string
         published_date_precision:
           title: Published Date Precision
           type: string
@@ -4563,17 +4470,9 @@ components:
           title: Not Countries
           type: string
         from_:
-          anyOf:
-          - type: string
-          - format: date-time
-            type: string
-          title: 'From '
+          type: string
         to_:
-          anyOf:
-          - type: string
-          - format: date-time
-            type: string
-          title: 'To '
+          type: string
         published_date_precision:
           title: Published Date Precision
           type: string
@@ -4724,17 +4623,9 @@ components:
           title: Not Countries
           type: string
         from_:
-          anyOf:
-          - type: string
-          - format: date-time
-            type: string
-          title: 'From '
+          type: string
         to_:
-          anyOf:
-          - type: string
-          - format: date-time
-            type: string
-          title: 'To '
+          type: string
         by_parse_date:
           default: false
           example: false
@@ -4922,17 +4813,9 @@ components:
           title: Not Countries
           type: string
         from_:
-          anyOf:
-          - type: string
-          - format: date-time
-            type: string
-          title: 'From '
+          type: string
         to_:
-          anyOf:
-          - type: string
-          - format: date-time
-            type: string
-          title: 'To '
+          type: string
         by_parse_date:
           default: false
           example: false
@@ -5061,70 +4944,6 @@ components:
       type: object
       x-do-not-generate: true
       x-konfig-is-parameter: []
-    From_:
-      anyOf:
-      - type: string
-      - format: date-time
-        type: string
-      title: 'From '
-    To_:
-      anyOf:
-      - type: string
-      - format: date-time
-        type: string
-      title: 'To '
-    Lang_Property:
-      anyOf:
-      - items:
-          type: string
-        type: array
-      - type: string
-      title: Lang
-    Countries_Property:
-      anyOf:
-      - items:
-          type: string
-        type: array
-      - type: string
-      title: Countries
-    Location_Property_inner:
-      anyOf:
-      - type: string
-      - type: integer
-    Authors_Property:
-      anyOf:
-      - items:
-          type: string
-        type: array
-      - type: string
-      title: Authors
-    Journalists_Property:
-      anyOf:
-      - items:
-          type: string
-        type: array
-      - type: string
-      title: Journalists
-    All_Links_Property:
-      anyOf:
-      - items:
-          type: string
-        type: array
-      - type: string
-      default: []
-      example: []
-      title: All Links
-      x-konfig-original-example: []
-    All_Domain_Links_Property:
-      anyOf:
-      - items:
-          type: string
-        type: array
-      - type: string
-      default: []
-      example: []
-      title: All Domain Links
-      x-konfig-original-example: []
   securitySchemes:
     apiKey:
       in: header

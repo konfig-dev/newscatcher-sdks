@@ -1,6 +1,6 @@
 /*
  * NewsCatcher-V3 Production API
- * <img src='https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg' width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a> <br> <p style=\"color: red\"><b><em> This is a Testing Phase API. Please use it for testing purposes only. </em></b></p> <br>
+ * <img src='https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg' width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a>
  *
  * The version of the OpenAPI document: Beta-3.0.0
  * Contact: maksym@newscatcherapi.com
@@ -19,16 +19,13 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.konfigthis.newscatcherapi.client.model.AllDomainLinksProperty;
-import com.konfigthis.newscatcherapi.client.model.AllLinksProperty;
-import com.konfigthis.newscatcherapi.client.model.AuthorsProperty;
-import com.konfigthis.newscatcherapi.client.model.JournalistsProperty;
 import com.konfigthis.newscatcherapi.client.model.SimilarDocument;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -70,11 +67,11 @@ public class DtoResponsesMoreLikeThisResponseArticleResult {
 
   public static final String SERIALIZED_NAME_AUTHORS = "authors";
   @SerializedName(SERIALIZED_NAME_AUTHORS)
-  private AuthorsProperty authors;
+  private Object authors = null;
 
   public static final String SERIALIZED_NAME_JOURNALISTS = "journalists";
   @SerializedName(SERIALIZED_NAME_JOURNALISTS)
-  private JournalistsProperty journalists;
+  private Object journalists = null;
 
   public static final String SERIALIZED_NAME_PUBLISHED_DATE = "published_date";
   @SerializedName(SERIALIZED_NAME_PUBLISHED_DATE)
@@ -162,15 +159,15 @@ public class DtoResponsesMoreLikeThisResponseArticleResult {
 
   public static final String SERIALIZED_NAME_ALL_LINKS = "all_links";
   @SerializedName(SERIALIZED_NAME_ALL_LINKS)
-  private AllLinksProperty allLinks = [];
+  private Object allLinks = null;
 
   public static final String SERIALIZED_NAME_ALL_DOMAIN_LINKS = "all_domain_links";
   @SerializedName(SERIALIZED_NAME_ALL_DOMAIN_LINKS)
-  private AllDomainLinksProperty allDomainLinks = [];
+  private Object allDomainLinks = null;
 
   public static final String SERIALIZED_NAME_NLP = "nlp";
   @SerializedName(SERIALIZED_NAME_NLP)
-  private Object nlp = {};
+  private Object nlp;
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -274,7 +271,7 @@ public class DtoResponsesMoreLikeThisResponseArticleResult {
   }
 
 
-  public DtoResponsesMoreLikeThisResponseArticleResult authors(AuthorsProperty authors) {
+  public DtoResponsesMoreLikeThisResponseArticleResult authors(Object authors) {
     
     
     
@@ -290,12 +287,12 @@ public class DtoResponsesMoreLikeThisResponseArticleResult {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public AuthorsProperty getAuthors() {
+  public Object getAuthors() {
     return authors;
   }
 
 
-  public void setAuthors(AuthorsProperty authors) {
+  public void setAuthors(Object authors) {
     
     
     
@@ -303,7 +300,7 @@ public class DtoResponsesMoreLikeThisResponseArticleResult {
   }
 
 
-  public DtoResponsesMoreLikeThisResponseArticleResult journalists(JournalistsProperty journalists) {
+  public DtoResponsesMoreLikeThisResponseArticleResult journalists(Object journalists) {
     
     
     
@@ -319,12 +316,12 @@ public class DtoResponsesMoreLikeThisResponseArticleResult {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public JournalistsProperty getJournalists() {
+  public Object getJournalists() {
     return journalists;
   }
 
 
-  public void setJournalists(JournalistsProperty journalists) {
+  public void setJournalists(Object journalists) {
     
     
     
@@ -941,7 +938,7 @@ public class DtoResponsesMoreLikeThisResponseArticleResult {
   }
 
 
-  public DtoResponsesMoreLikeThisResponseArticleResult allLinks(AllLinksProperty allLinks) {
+  public DtoResponsesMoreLikeThisResponseArticleResult allLinks(Object allLinks) {
     
     
     
@@ -957,12 +954,12 @@ public class DtoResponsesMoreLikeThisResponseArticleResult {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public AllLinksProperty getAllLinks() {
+  public Object getAllLinks() {
     return allLinks;
   }
 
 
-  public void setAllLinks(AllLinksProperty allLinks) {
+  public void setAllLinks(Object allLinks) {
     
     
     
@@ -970,7 +967,7 @@ public class DtoResponsesMoreLikeThisResponseArticleResult {
   }
 
 
-  public DtoResponsesMoreLikeThisResponseArticleResult allDomainLinks(AllDomainLinksProperty allDomainLinks) {
+  public DtoResponsesMoreLikeThisResponseArticleResult allDomainLinks(Object allDomainLinks) {
     
     
     
@@ -986,12 +983,12 @@ public class DtoResponsesMoreLikeThisResponseArticleResult {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public AllDomainLinksProperty getAllDomainLinks() {
+  public Object getAllDomainLinks() {
     return allDomainLinks;
   }
 
 
-  public void setAllDomainLinks(AllDomainLinksProperty allDomainLinks) {
+  public void setAllDomainLinks(Object allDomainLinks) {
     
     
     
@@ -1221,9 +1218,20 @@ public class DtoResponsesMoreLikeThisResponseArticleResult {
         Objects.equals(this.additionalProperties, dtoResponsesMoreLikeThisResponseArticleResult.additionalProperties);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
     return Objects.hash(title, description, author, authors, journalists, publishedDate, publishedDatePrecision, updatedDate, updatedDatePrecision, parseDate, link, domainUrl, fullDomainUrl, nameSource, isHeadline, paidContent, extractionData, country, rights, rank, media, language, content, wordCount, isOpinion, twitterAccount, allLinks, allDomainLinks, nlp, id, score, similarDocuments, additionalProperties);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -1359,14 +1367,6 @@ public class DtoResponsesMoreLikeThisResponseArticleResult {
       if ((jsonObj.get("author") != null && !jsonObj.get("author").isJsonNull()) && !jsonObj.get("author").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `author` to be a primitive type in the JSON string but got `%s`", jsonObj.get("author").toString()));
       }
-      // validate the optional field `authors`
-      if (jsonObj.get("authors") != null && !jsonObj.get("authors").isJsonNull()) {
-        AuthorsProperty.validateJsonObject(jsonObj.getAsJsonObject("authors"));
-      }
-      // validate the optional field `journalists`
-      if (jsonObj.get("journalists") != null && !jsonObj.get("journalists").isJsonNull()) {
-        JournalistsProperty.validateJsonObject(jsonObj.getAsJsonObject("journalists"));
-      }
       if ((jsonObj.get("published_date") != null && !jsonObj.get("published_date").isJsonNull()) && !jsonObj.get("published_date").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `published_date` to be a primitive type in the JSON string but got `%s`", jsonObj.get("published_date").toString()));
       }
@@ -1417,14 +1417,6 @@ public class DtoResponsesMoreLikeThisResponseArticleResult {
       }
       if ((jsonObj.get("twitter_account") != null && !jsonObj.get("twitter_account").isJsonNull()) && !jsonObj.get("twitter_account").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `twitter_account` to be a primitive type in the JSON string but got `%s`", jsonObj.get("twitter_account").toString()));
-      }
-      // validate the optional field `all_links`
-      if (jsonObj.get("all_links") != null && !jsonObj.get("all_links").isJsonNull()) {
-        AllLinksProperty.validateJsonObject(jsonObj.getAsJsonObject("all_links"));
-      }
-      // validate the optional field `all_domain_links`
-      if (jsonObj.get("all_domain_links") != null && !jsonObj.get("all_domain_links").isJsonNull()) {
-        AllDomainLinksProperty.validateJsonObject(jsonObj.getAsJsonObject("all_domain_links"));
       }
       if (!jsonObj.get("id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));

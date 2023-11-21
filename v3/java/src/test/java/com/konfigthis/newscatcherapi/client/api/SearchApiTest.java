@@ -1,6 +1,6 @@
 /*
  * NewsCatcher-V3 Production API
- * <img src='https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg' width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a> <br> <p style=\"color: red\"><b><em> This is a Testing Phase API. Please use it for testing purposes only. </em></b></p> <br>
+ * <img src='https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg' width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a>
  *
  * The version of the OpenAPI document: Beta-3.0.0
  * Contact: maksym@newscatcherapi.com
@@ -16,12 +16,7 @@ import com.konfigthis.newscatcherapi.client.ApiException;
 import com.konfigthis.newscatcherapi.client.ApiClient;
 import com.konfigthis.newscatcherapi.client.ApiException;
 import com.konfigthis.newscatcherapi.client.Configuration;
-import com.konfigthis.newscatcherapi.client.model.AnyOfstringDateTime;
-import com.konfigthis.newscatcherapi.client.model.From;
-import com.konfigthis.newscatcherapi.client.model.SearchGetResponse;
-import com.konfigthis.newscatcherapi.client.model.SearchPostResponse;
 import com.konfigthis.newscatcherapi.client.model.SearchRequest;
-import com.konfigthis.newscatcherapi.client.model.To;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeAll;
@@ -64,8 +59,8 @@ public class SearchApiTest {
         String notLang = null;
         String countries = null;
         String notCountries = null;
-        From from = null;
-        To to = null;
+        String from = null;
+        String to = null;
         String publishedDatePrecision = null;
         Boolean byParseDate = null;
         String sortBy = null;
@@ -95,7 +90,7 @@ public class SearchApiTest {
         Double titleSentimentMax = null;
         Double contentSentimentMin = null;
         Double contentSentimentMax = null;
-        SearchGetResponse response = api.get(q)
+        Object response = api.get(q)
                 .searchIn(searchIn)
                 .predefinedSources(predefinedSources)
                 .sources(sources)
@@ -157,8 +152,8 @@ public class SearchApiTest {
         String notLang = null;
         String countries = null;
         String notCountries = null;
-        From from = null;
-        To to = null;
+        String from = null;
+        String to = null;
         String publishedDatePrecision = null;
         Boolean byParseDate = null;
         String sortBy = null;
@@ -188,7 +183,7 @@ public class SearchApiTest {
         Double titleSentimentMax = null;
         Double contentSentimentMin = null;
         Double contentSentimentMax = null;
-        SearchPostResponse response = api.post(q)
+        Object response = api.post(q)
                 .searchIn(searchIn)
                 .predefinedSources(predefinedSources)
                 .sources(sources)

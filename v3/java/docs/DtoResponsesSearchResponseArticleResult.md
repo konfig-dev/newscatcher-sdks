@@ -10,8 +10,8 @@
 |**title** | **String** |  |  |
 |**description** | **String** |  |  [optional] |
 |**author** | **String** |  |  [optional] |
-|**authors** | [**AuthorsProperty**](AuthorsProperty.md) |  |  [optional] |
-|**journalists** | [**JournalistsProperty**](JournalistsProperty.md) |  |  [optional] |
+|**authors** | **Object** |  |  [optional] |
+|**journalists** | **Object** |  |  [optional] |
 |**publishedDate** | **String** |  |  [optional] |
 |**publishedDatePrecision** | **String** |  |  [optional] |
 |**updatedDate** | **String** |  |  [optional] |
@@ -33,8 +33,8 @@
 |**wordCount** | **Integer** |  |  [optional] |
 |**isOpinion** | **Boolean** |  |  [optional] |
 |**twitterAccount** | **String** |  |  [optional] |
-|**allLinks** | [**AllLinksProperty**](AllLinksProperty.md) |  |  [optional] |
-|**allDomainLinks** | [**AllDomainLinksProperty**](AllDomainLinksProperty.md) |  |  [optional] |
+|**allLinks** | **Object** |  |  [optional] |
+|**allDomainLinks** | **Object** |  |  [optional] |
 |**nlp** | **Object** |  |  [optional] |
 |**id** | **String** |  |  |
 |**score** | **Double** |  |  |

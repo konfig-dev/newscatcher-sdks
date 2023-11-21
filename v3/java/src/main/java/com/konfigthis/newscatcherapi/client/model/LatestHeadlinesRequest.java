@@ -1,6 +1,6 @@
 /*
  * NewsCatcher-V3 Production API
- * <img src='https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg' width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a> <br> <p style=\"color: red\"><b><em> This is a Testing Phase API. Please use it for testing purposes only. </em></b></p> <br>
+ * <img src='https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg' width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a>
  *
  * The version of the OpenAPI document: Beta-3.0.0
  * Contact: maksym@newscatcherapi.com
@@ -649,7 +649,7 @@ public class LatestHeadlinesRequest {
 
 
   public LatestHeadlinesRequest wordCountMin(Integer wordCountMin) {
-    if (wordCountMin < 0) {
+    if (wordCountMin != null && wordCountMin < 0) {
       throw new IllegalArgumentException("Invalid value for wordCountMin. Must be greater than or equal to 0.");
     }
     
@@ -673,7 +673,7 @@ public class LatestHeadlinesRequest {
 
 
   public void setWordCountMin(Integer wordCountMin) {
-    if (wordCountMin < 0) {
+    if (wordCountMin != null && wordCountMin < 0) {
       throw new IllegalArgumentException("Invalid value for wordCountMin. Must be greater than or equal to 0.");
     }
     
@@ -683,7 +683,7 @@ public class LatestHeadlinesRequest {
 
 
   public LatestHeadlinesRequest wordCountMax(Integer wordCountMax) {
-    if (wordCountMax < 0) {
+    if (wordCountMax != null && wordCountMax < 0) {
       throw new IllegalArgumentException("Invalid value for wordCountMax. Must be greater than or equal to 0.");
     }
     
@@ -707,7 +707,7 @@ public class LatestHeadlinesRequest {
 
 
   public void setWordCountMax(Integer wordCountMax) {
-    if (wordCountMax < 0) {
+    if (wordCountMax != null && wordCountMax < 0) {
       throw new IllegalArgumentException("Invalid value for wordCountMax. Must be greater than or equal to 0.");
     }
     
@@ -717,7 +717,7 @@ public class LatestHeadlinesRequest {
 
 
   public LatestHeadlinesRequest page(Integer page) {
-    if (page < 0) {
+    if (page != null && page < 0) {
       throw new IllegalArgumentException("Invalid value for page. Must be greater than or equal to 0.");
     }
     
@@ -741,7 +741,7 @@ public class LatestHeadlinesRequest {
 
 
   public void setPage(Integer page) {
-    if (page < 0) {
+    if (page != null && page < 0) {
       throw new IllegalArgumentException("Invalid value for page. Must be greater than or equal to 0.");
     }
     
@@ -751,7 +751,7 @@ public class LatestHeadlinesRequest {
 
 
   public LatestHeadlinesRequest pageSize(Integer pageSize) {
-    if (pageSize < 0) {
+    if (pageSize != null && pageSize < 0) {
       throw new IllegalArgumentException("Invalid value for pageSize. Must be greater than or equal to 0.");
     }
     
@@ -775,7 +775,7 @@ public class LatestHeadlinesRequest {
 
 
   public void setPageSize(Integer pageSize) {
-    if (pageSize < 0) {
+    if (pageSize != null && pageSize < 0) {
       throw new IllegalArgumentException("Invalid value for pageSize. Must be greater than or equal to 0.");
     }
     

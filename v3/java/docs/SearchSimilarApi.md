@@ -10,7 +10,7 @@ All URIs are relative to *https://v3-api.newscatcherapi.com*
 
 <a name="get"></a>
 # **get**
-> SearchSimilarGetResponse get(q).searchIn(searchIn).includeSimilarDocuments(includeSimilarDocuments).similarDocumentsNumber(similarDocumentsNumber).similarDocumentsFields(similarDocumentsFields).predefinedSources(predefinedSources).sources(sources).notSources(notSources).lang(lang).notLang(notLang).countries(countries).notCountries(notCountries).from(from).to(to).byParseDate(byParseDate).publishedDatePrecision(publishedDatePrecision).sortBy(sortBy).rankedOnly(rankedOnly).fromRank(fromRank).toRank(toRank).isHeadline(isHeadline).isPaidContent(isPaidContent).parentUrl(parentUrl).allLinks(allLinks).allDomainLinks(allDomainLinks).wordCountMin(wordCountMin).wordCountMax(wordCountMax).page(page).pageSize(pageSize).includeNlpData(includeNlpData).hasNlp(hasNlp).theme(theme).nerName(nerName).titleSentimentMin(titleSentimentMin).titleSentimentMax(titleSentimentMax).contentSentimentMin(contentSentimentMin).contentSentimentMax(contentSentimentMax).execute();
+> Object get(q).searchIn(searchIn).includeSimilarDocuments(includeSimilarDocuments).similarDocumentsNumber(similarDocumentsNumber).similarDocumentsFields(similarDocumentsFields).predefinedSources(predefinedSources).sources(sources).notSources(notSources).lang(lang).notLang(notLang).countries(countries).notCountries(notCountries).from(from).to(to).byParseDate(byParseDate).publishedDatePrecision(publishedDatePrecision).sortBy(sortBy).rankedOnly(rankedOnly).fromRank(fromRank).toRank(toRank).isHeadline(isHeadline).isPaidContent(isPaidContent).parentUrl(parentUrl).allLinks(allLinks).allDomainLinks(allDomainLinks).wordCountMin(wordCountMin).wordCountMax(wordCountMax).page(page).pageSize(pageSize).includeNlpData(includeNlpData).hasNlp(hasNlp).theme(theme).nerName(nerName).titleSentimentMin(titleSentimentMin).titleSentimentMax(titleSentimentMax).contentSentimentMin(contentSentimentMin).contentSentimentMax(contentSentimentMax).execute();
 
 [Get] Search For Similar Articles Request
 
@@ -35,9 +35,7 @@ public class Example {
     Configuration configuration = new Configuration();
     configuration.host = "https://v3-api.newscatcherapi.com";
     
-    // Configure API key authorization: apiKey
-    configuration.x-api-token  = "YOUR API KEY";
-
+    configuration.apiKey  = "YOUR API KEY";
     Newscatcher client = new Newscatcher(configuration);
     String q = "q_example";
     String searchIn = "title_content";
@@ -51,8 +49,8 @@ public class Example {
     String notLang = "notLang_example";
     String countries = "countries_example";
     String notCountries = "notCountries_example";
-    From from = new From();
-    To to = new To();
+    String from = "from_example";
+    String to = "to_example";
     Boolean byParseDate = false;
     String publishedDatePrecision = "publishedDatePrecision_example";
     String sortBy = "relevancy";
@@ -77,7 +75,7 @@ public class Example {
     Double contentSentimentMin = 3.4D;
     Double contentSentimentMax = 3.4D;
     try {
-      SearchSimilarGetResponse result = client
+      Object result = client
               .searchSimilar
               .get(q)
               .searchIn(searchIn)
@@ -117,14 +115,6 @@ public class Example {
               .contentSentimentMin(contentSentimentMin)
               .contentSentimentMax(contentSentimentMax)
               .execute();
-      System.out.println(result);
-      System.out.println(result.getStatus());
-      System.out.println(result.getTotalHits());
-      System.out.println(result.getPage());
-      System.out.println(result.getTotalPages());
-      System.out.println(result.getPageSize());
-      System.out.println(result.getArticles());
-      System.out.println(result.getUserInput());
     } catch (ApiException e) {
       System.err.println("Exception when calling SearchSimilarApi#get");
       System.err.println("Status code: " + e.getStatusCode());
@@ -135,7 +125,7 @@ public class Example {
 
     // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request
     try {
-      ApiResponse<SearchSimilarGetResponse> response = client
+      ApiResponse<Object> response = client
               .searchSimilar
               .get(q)
               .searchIn(searchIn)
@@ -208,8 +198,8 @@ public class Example {
 | **notLang** | **String**|  | [optional] |
 | **countries** | **String**|  | [optional] |
 | **notCountries** | **String**|  | [optional] |
-| **from** | [**From**](.md)|  | [optional] |
-| **to** | [**To**](.md)|  | [optional] |
+| **from** | **String**|  | [optional] |
+| **to** | **String**|  | [optional] |
 | **byParseDate** | **Boolean**|  | [optional] [default to false] |
 | **publishedDatePrecision** | **String**|  | [optional] |
 | **sortBy** | **String**|  | [optional] [default to relevancy] |
@@ -236,7 +226,7 @@ public class Example {
 
 ### Return type
 
-[**SearchSimilarGetResponse**](SearchSimilarGetResponse.md)
+**Object**
 
 ### Authorization
 
@@ -254,7 +244,7 @@ public class Example {
 
 <a name="post"></a>
 # **post**
-> SearchSimilarPostResponse post(moreLikeThisRequest).execute();
+> Object post(moreLikeThisRequest).execute();
 
 [Post] Search For Similar Articles Request
 
@@ -279,9 +269,7 @@ public class Example {
     Configuration configuration = new Configuration();
     configuration.host = "https://v3-api.newscatcherapi.com";
     
-    // Configure API key authorization: apiKey
-    configuration.x-api-token  = "YOUR API KEY";
-
+    configuration.apiKey  = "YOUR API KEY";
     Newscatcher client = new Newscatcher(configuration);
     String q = "q_example";
     String searchIn = "title_content";
@@ -295,8 +283,8 @@ public class Example {
     String notLang = "notLang_example";
     String countries = "countries_example";
     String notCountries = "notCountries_example";
-    From from = new From();
-    To to = new To();
+    String from = "from_example";
+    String to = "to_example";
     Boolean byParseDate = false;
     String publishedDatePrecision = "publishedDatePrecision_example";
     String sortBy = "relevancy";
@@ -321,7 +309,7 @@ public class Example {
     Double contentSentimentMin = 3.4D;
     Double contentSentimentMax = 3.4D;
     try {
-      SearchSimilarPostResponse result = client
+      Object result = client
               .searchSimilar
               .post(q)
               .searchIn(searchIn)
@@ -361,14 +349,6 @@ public class Example {
               .contentSentimentMin(contentSentimentMin)
               .contentSentimentMax(contentSentimentMax)
               .execute();
-      System.out.println(result);
-      System.out.println(result.getStatus());
-      System.out.println(result.getTotalHits());
-      System.out.println(result.getPage());
-      System.out.println(result.getTotalPages());
-      System.out.println(result.getPageSize());
-      System.out.println(result.getArticles());
-      System.out.println(result.getUserInput());
     } catch (ApiException e) {
       System.err.println("Exception when calling SearchSimilarApi#post");
       System.err.println("Status code: " + e.getStatusCode());
@@ -379,7 +359,7 @@ public class Example {
 
     // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request
     try {
-      ApiResponse<SearchSimilarPostResponse> response = client
+      ApiResponse<Object> response = client
               .searchSimilar
               .post(q)
               .searchIn(searchIn)
@@ -444,7 +424,7 @@ public class Example {
 
 ### Return type
 
-[**SearchSimilarPostResponse**](SearchSimilarPostResponse.md)
+**Object**
 
 ### Authorization
 

@@ -1,6 +1,6 @@
 /*
  * NewsCatcher-V3 Production API
- * <img src='https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg' width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a> <br> <p style=\"color: red\"><b><em> This is a Testing Phase API. Please use it for testing purposes only. </em></b></p> <br>
+ * <img src='https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg' width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a>
  *
  * The version of the OpenAPI document: Beta-3.0.0
  * Contact: maksym@newscatcherapi.com
@@ -19,7 +19,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.konfigthis.newscatcherapi.client.model.LocationPropertyInner;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -54,7 +53,7 @@ import com.konfigthis.newscatcherapi.client.JSON;
 public class ValidationError {
   public static final String SERIALIZED_NAME_LOC = "loc";
   @SerializedName(SERIALIZED_NAME_LOC)
-  private List<LocationPropertyInner> loc = new ArrayList<>();
+  private List<Object> loc = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_MSG = "msg";
   @SerializedName(SERIALIZED_NAME_MSG)
@@ -67,7 +66,7 @@ public class ValidationError {
   public ValidationError() {
   }
 
-  public ValidationError loc(List<LocationPropertyInner> loc) {
+  public ValidationError loc(List<Object> loc) {
     
     
     
@@ -76,7 +75,7 @@ public class ValidationError {
     return this;
   }
 
-  public ValidationError addLocItem(LocationPropertyInner locItem) {
+  public ValidationError addLocItem(Object locItem) {
     this.loc.add(locItem);
     return this;
   }
@@ -88,12 +87,12 @@ public class ValidationError {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public List<LocationPropertyInner> getLoc() {
+  public List<Object> getLoc() {
     return loc;
   }
 
 
-  public void setLoc(List<LocationPropertyInner> loc) {
+  public void setLoc(List<Object> loc) {
     
     
     
@@ -284,16 +283,12 @@ public class ValidationError {
           throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
         }
       }
-      // ensure the json data is an array
-      if (!jsonObj.get("loc").isJsonArray()) {
+      // ensure the required json array is present
+      if (jsonObj.get("loc") == null) {
+        throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
+      } else if (!jsonObj.get("loc").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `loc` to be an array in the JSON string but got `%s`", jsonObj.get("loc").toString()));
       }
-
-      JsonArray jsonArrayloc = jsonObj.getAsJsonArray("loc");
-      // validate the required field `loc` (array)
-      for (int i = 0; i < jsonArrayloc.size(); i++) {
-        LocationPropertyInner.validateJsonObject(jsonArrayloc.get(i).getAsJsonObject());
-      };
       if (!jsonObj.get("msg").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `msg` to be a primitive type in the JSON string but got `%s`", jsonObj.get("msg").toString()));
       }

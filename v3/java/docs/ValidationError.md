@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**loc** | [**List&lt;LocationPropertyInner&gt;**](LocationPropertyInner.md) |  |  |
+|**loc** | **List&lt;Object&gt;** |  |  |
 |**msg** | **String** |  |  |
 |**type** | **String** |  |  |
 

@@ -1,6 +1,6 @@
 /*
  * NewsCatcher-V3 Production API
- * <img src='https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg' width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a> <br> <p style=\"color: red\"><b><em> This is a Testing Phase API. Please use it for testing purposes only. </em></b></p> <br>
+ * <img src='https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg' width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a>
  *
  * The version of the OpenAPI document: Beta-3.0.0
  * Contact: maksym@newscatcherapi.com
@@ -26,12 +26,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import com.konfigthis.newscatcherapi.client.model.AnyOfstringDateTime;
-import com.konfigthis.newscatcherapi.client.model.From;
-import com.konfigthis.newscatcherapi.client.model.SearchGetResponse;
-import com.konfigthis.newscatcherapi.client.model.SearchPostResponse;
 import com.konfigthis.newscatcherapi.client.model.SearchRequest;
-import com.konfigthis.newscatcherapi.client.model.To;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -80,7 +75,7 @@ public class SearchApiGenerated {
         this.localCustomBaseUrl = customBaseUrl;
     }
 
-    private okhttp3.Call getCall(String q, String searchIn, String predefinedSources, String sources, String notSources, String lang, String notLang, String countries, String notCountries, From from, To to, String publishedDatePrecision, Boolean byParseDate, String sortBy, String rankedOnly, Integer fromRank, Integer toRank, Boolean isHeadline, Boolean isPaidContent, String parentUrl, String allLinks, String allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, Boolean clusteringEnabled, Double clusteringThreshold, String clusteringVariable, Boolean includeNlpData, Boolean hasNlp, String theme, String orGEntityName, String peREntityName, String loCEntityName, String miSCEntityName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getCall(String q, String searchIn, String predefinedSources, String sources, String notSources, String lang, String notLang, String countries, String notCountries, String from, String to, String publishedDatePrecision, Boolean byParseDate, String sortBy, String rankedOnly, Integer fromRank, Integer toRank, Boolean isHeadline, Boolean isPaidContent, String parentUrl, String allLinks, String allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, Boolean clusteringEnabled, Double clusteringThreshold, String clusteringVariable, Boolean includeNlpData, Boolean hasNlp, String theme, String orGEntityName, String peREntityName, String loCEntityName, String miSCEntityName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -285,7 +280,7 @@ public class SearchApiGenerated {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getValidateBeforeCall(String q, String searchIn, String predefinedSources, String sources, String notSources, String lang, String notLang, String countries, String notCountries, From from, To to, String publishedDatePrecision, Boolean byParseDate, String sortBy, String rankedOnly, Integer fromRank, Integer toRank, Boolean isHeadline, Boolean isPaidContent, String parentUrl, String allLinks, String allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, Boolean clusteringEnabled, Double clusteringThreshold, String clusteringVariable, Boolean includeNlpData, Boolean hasNlp, String theme, String orGEntityName, String peREntityName, String loCEntityName, String miSCEntityName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getValidateBeforeCall(String q, String searchIn, String predefinedSources, String sources, String notSources, String lang, String notLang, String countries, String notCountries, String from, String to, String publishedDatePrecision, Boolean byParseDate, String sortBy, String rankedOnly, Integer fromRank, Integer toRank, Boolean isHeadline, Boolean isPaidContent, String parentUrl, String allLinks, String allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, Boolean clusteringEnabled, Double clusteringThreshold, String clusteringVariable, Boolean includeNlpData, Boolean hasNlp, String theme, String orGEntityName, String peREntityName, String loCEntityName, String miSCEntityName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'q' is set
         if (q == null) {
             throw new ApiException("Missing the required parameter 'q' when calling get(Async)");
@@ -296,16 +291,16 @@ public class SearchApiGenerated {
     }
 
 
-    private ApiResponse<SearchGetResponse> getWithHttpInfo(String q, String searchIn, String predefinedSources, String sources, String notSources, String lang, String notLang, String countries, String notCountries, From from, To to, String publishedDatePrecision, Boolean byParseDate, String sortBy, String rankedOnly, Integer fromRank, Integer toRank, Boolean isHeadline, Boolean isPaidContent, String parentUrl, String allLinks, String allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, Boolean clusteringEnabled, Double clusteringThreshold, String clusteringVariable, Boolean includeNlpData, Boolean hasNlp, String theme, String orGEntityName, String peREntityName, String loCEntityName, String miSCEntityName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax) throws ApiException {
+    private ApiResponse<Object> getWithHttpInfo(String q, String searchIn, String predefinedSources, String sources, String notSources, String lang, String notLang, String countries, String notCountries, String from, String to, String publishedDatePrecision, Boolean byParseDate, String sortBy, String rankedOnly, Integer fromRank, Integer toRank, Boolean isHeadline, Boolean isPaidContent, String parentUrl, String allLinks, String allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, Boolean clusteringEnabled, Double clusteringThreshold, String clusteringVariable, Boolean includeNlpData, Boolean hasNlp, String theme, String orGEntityName, String peREntityName, String loCEntityName, String miSCEntityName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax) throws ApiException {
         okhttp3.Call localVarCall = getValidateBeforeCall(q, searchIn, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringEnabled, clusteringThreshold, clusteringVariable, includeNlpData, hasNlp, theme, orGEntityName, peREntityName, loCEntityName, miSCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, null);
-        Type localVarReturnType = new TypeToken<SearchGetResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call getAsync(String q, String searchIn, String predefinedSources, String sources, String notSources, String lang, String notLang, String countries, String notCountries, From from, To to, String publishedDatePrecision, Boolean byParseDate, String sortBy, String rankedOnly, Integer fromRank, Integer toRank, Boolean isHeadline, Boolean isPaidContent, String parentUrl, String allLinks, String allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, Boolean clusteringEnabled, Double clusteringThreshold, String clusteringVariable, Boolean includeNlpData, Boolean hasNlp, String theme, String orGEntityName, String peREntityName, String loCEntityName, String miSCEntityName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax, final ApiCallback<SearchGetResponse> _callback) throws ApiException {
+    private okhttp3.Call getAsync(String q, String searchIn, String predefinedSources, String sources, String notSources, String lang, String notLang, String countries, String notCountries, String from, String to, String publishedDatePrecision, Boolean byParseDate, String sortBy, String rankedOnly, Integer fromRank, Integer toRank, Boolean isHeadline, Boolean isPaidContent, String parentUrl, String allLinks, String allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, Boolean clusteringEnabled, Double clusteringThreshold, String clusteringVariable, Boolean includeNlpData, Boolean hasNlp, String theme, String orGEntityName, String peREntityName, String loCEntityName, String miSCEntityName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getValidateBeforeCall(q, searchIn, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringEnabled, clusteringThreshold, clusteringVariable, includeNlpData, hasNlp, theme, orGEntityName, peREntityName, loCEntityName, miSCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, _callback);
-        Type localVarReturnType = new TypeToken<SearchGetResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -320,8 +315,8 @@ public class SearchApiGenerated {
         private String notLang;
         private String countries;
         private String notCountries;
-        private From from;
-        private To to;
+        private String from;
+        private String to;
         private String publishedDatePrecision;
         private Boolean byParseDate;
         private String sortBy;
@@ -441,7 +436,7 @@ public class SearchApiGenerated {
          * @param from  (optional)
          * @return GetRequestBuilder
          */
-        public GetRequestBuilder from(From from) {
+        public GetRequestBuilder from(String from) {
             this.from = from;
             return this;
         }
@@ -451,7 +446,7 @@ public class SearchApiGenerated {
          * @param to  (optional)
          * @return GetRequestBuilder
          */
-        public GetRequestBuilder to(To to) {
+        public GetRequestBuilder to(String to) {
             this.to = to;
             return this;
         }
@@ -764,7 +759,7 @@ public class SearchApiGenerated {
 
         /**
          * Execute get request
-         * @return SearchGetResponse
+         * @return Object
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table summary="Response Details" border="1">
@@ -772,14 +767,14 @@ public class SearchApiGenerated {
             <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
          </table>
          */
-        public SearchGetResponse execute() throws ApiException {
-            ApiResponse<SearchGetResponse> localVarResp = getWithHttpInfo(q, searchIn, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringEnabled, clusteringThreshold, clusteringVariable, includeNlpData, hasNlp, theme, orGEntityName, peREntityName, loCEntityName, miSCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax);
+        public Object execute() throws ApiException {
+            ApiResponse<Object> localVarResp = getWithHttpInfo(q, searchIn, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringEnabled, clusteringThreshold, clusteringVariable, includeNlpData, hasNlp, theme, orGEntityName, peREntityName, loCEntityName, miSCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax);
             return localVarResp.getResponseBody();
         }
 
         /**
          * Execute get request with HTTP info returned
-         * @return ApiResponse&lt;SearchGetResponse&gt;
+         * @return ApiResponse&lt;Object&gt;
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table summary="Response Details" border="1">
@@ -787,7 +782,7 @@ public class SearchApiGenerated {
             <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
          </table>
          */
-        public ApiResponse<SearchGetResponse> executeWithHttpInfo() throws ApiException {
+        public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
             return getWithHttpInfo(q, searchIn, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringEnabled, clusteringThreshold, clusteringVariable, includeNlpData, hasNlp, theme, orGEntityName, peREntityName, loCEntityName, miSCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax);
         }
 
@@ -802,7 +797,7 @@ public class SearchApiGenerated {
             <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
          </table>
          */
-        public okhttp3.Call executeAsync(final ApiCallback<SearchGetResponse> _callback) throws ApiException {
+        public okhttp3.Call executeAsync(final ApiCallback<Object> _callback) throws ApiException {
             return getAsync(q, searchIn, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringEnabled, clusteringThreshold, clusteringVariable, includeNlpData, hasNlp, theme, orGEntityName, peREntityName, loCEntityName, miSCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, _callback);
         }
     }
@@ -881,16 +876,16 @@ public class SearchApiGenerated {
     }
 
 
-    private ApiResponse<SearchPostResponse> postWithHttpInfo(SearchRequest searchRequest) throws ApiException {
+    private ApiResponse<Object> postWithHttpInfo(SearchRequest searchRequest) throws ApiException {
         okhttp3.Call localVarCall = postValidateBeforeCall(searchRequest, null);
-        Type localVarReturnType = new TypeToken<SearchPostResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call postAsync(SearchRequest searchRequest, final ApiCallback<SearchPostResponse> _callback) throws ApiException {
+    private okhttp3.Call postAsync(SearchRequest searchRequest, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postValidateBeforeCall(searchRequest, _callback);
-        Type localVarReturnType = new TypeToken<SearchPostResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -905,8 +900,8 @@ public class SearchApiGenerated {
         private String notLang;
         private String countries;
         private String notCountries;
-        private From from;
-        private To to;
+        private String from;
+        private String to;
         private String publishedDatePrecision;
         private Boolean byParseDate;
         private String sortBy;
@@ -1026,7 +1021,7 @@ public class SearchApiGenerated {
          * @param from  (optional)
          * @return PostRequestBuilder
          */
-        public PostRequestBuilder from(From from) {
+        public PostRequestBuilder from(String from) {
             this.from = from;
             return this;
         }
@@ -1036,7 +1031,7 @@ public class SearchApiGenerated {
          * @param to  (optional)
          * @return PostRequestBuilder
          */
-        public PostRequestBuilder to(To to) {
+        public PostRequestBuilder to(String to) {
             this.to = to;
             return this;
         }
@@ -1394,7 +1389,7 @@ public class SearchApiGenerated {
 
         /**
          * Execute post request
-         * @return SearchPostResponse
+         * @return Object
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table summary="Response Details" border="1">
@@ -1402,15 +1397,15 @@ public class SearchApiGenerated {
             <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
          </table>
          */
-        public SearchPostResponse execute() throws ApiException {
+        public Object execute() throws ApiException {
             SearchRequest searchRequest = buildBodyParams();
-            ApiResponse<SearchPostResponse> localVarResp = postWithHttpInfo(searchRequest);
+            ApiResponse<Object> localVarResp = postWithHttpInfo(searchRequest);
             return localVarResp.getResponseBody();
         }
 
         /**
          * Execute post request with HTTP info returned
-         * @return ApiResponse&lt;SearchPostResponse&gt;
+         * @return ApiResponse&lt;Object&gt;
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table summary="Response Details" border="1">
@@ -1418,7 +1413,7 @@ public class SearchApiGenerated {
             <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
          </table>
          */
-        public ApiResponse<SearchPostResponse> executeWithHttpInfo() throws ApiException {
+        public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
             SearchRequest searchRequest = buildBodyParams();
             return postWithHttpInfo(searchRequest);
         }
@@ -1434,7 +1429,7 @@ public class SearchApiGenerated {
             <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
          </table>
          */
-        public okhttp3.Call executeAsync(final ApiCallback<SearchPostResponse> _callback) throws ApiException {
+        public okhttp3.Call executeAsync(final ApiCallback<Object> _callback) throws ApiException {
             SearchRequest searchRequest = buildBodyParams();
             return postAsync(searchRequest, _callback);
         }

@@ -1,6 +1,6 @@
 /*
  * NewsCatcher-V3 Production API
- * <img src='https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg' width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a> <br> <p style=\"color: red\"><b><em> This is a Testing Phase API. Please use it for testing purposes only. </em></b></p> <br>
+ * <img src='https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg' width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a>
  *
  * The version of the OpenAPI document: Beta-3.0.0
  * Contact: maksym@newscatcherapi.com
@@ -26,12 +26,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import com.konfigthis.newscatcherapi.client.model.AnyOfstringDateTime;
 import com.konfigthis.newscatcherapi.client.model.AuthorSearchRequest;
-import com.konfigthis.newscatcherapi.client.model.AuthorsGetResponse;
-import com.konfigthis.newscatcherapi.client.model.AuthorsPostResponse;
-import com.konfigthis.newscatcherapi.client.model.From;
-import com.konfigthis.newscatcherapi.client.model.To;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -80,7 +75,7 @@ public class AuthorsApiGenerated {
         this.localCustomBaseUrl = customBaseUrl;
     }
 
-    private okhttp3.Call getCall(String authorName, String sources, String predefinedSources, String notSources, String lang, String notLang, String countries, String notCountries, From from, To to, String publishedDatePrecision, Boolean byParseDate, String sortBy, String rankedOnly, Integer fromRank, Integer toRank, Boolean isHeadline, Boolean isPaidContent, String parentUrl, String allLinks, String allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, Boolean includeNlpData, Boolean hasNlp, String theme, String nerName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getCall(String authorName, String sources, String predefinedSources, String notSources, String lang, String notLang, String countries, String notCountries, String from, String to, String publishedDatePrecision, Boolean byParseDate, String sortBy, String rankedOnly, Integer fromRank, Integer toRank, Boolean isHeadline, Boolean isPaidContent, String parentUrl, String allLinks, String allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, Boolean includeNlpData, Boolean hasNlp, String theme, String nerName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -257,7 +252,7 @@ public class AuthorsApiGenerated {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getValidateBeforeCall(String authorName, String sources, String predefinedSources, String notSources, String lang, String notLang, String countries, String notCountries, From from, To to, String publishedDatePrecision, Boolean byParseDate, String sortBy, String rankedOnly, Integer fromRank, Integer toRank, Boolean isHeadline, Boolean isPaidContent, String parentUrl, String allLinks, String allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, Boolean includeNlpData, Boolean hasNlp, String theme, String nerName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getValidateBeforeCall(String authorName, String sources, String predefinedSources, String notSources, String lang, String notLang, String countries, String notCountries, String from, String to, String publishedDatePrecision, Boolean byParseDate, String sortBy, String rankedOnly, Integer fromRank, Integer toRank, Boolean isHeadline, Boolean isPaidContent, String parentUrl, String allLinks, String allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, Boolean includeNlpData, Boolean hasNlp, String theme, String nerName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'authorName' is set
         if (authorName == null) {
             throw new ApiException("Missing the required parameter 'authorName' when calling get(Async)");
@@ -268,16 +263,16 @@ public class AuthorsApiGenerated {
     }
 
 
-    private ApiResponse<AuthorsGetResponse> getWithHttpInfo(String authorName, String sources, String predefinedSources, String notSources, String lang, String notLang, String countries, String notCountries, From from, To to, String publishedDatePrecision, Boolean byParseDate, String sortBy, String rankedOnly, Integer fromRank, Integer toRank, Boolean isHeadline, Boolean isPaidContent, String parentUrl, String allLinks, String allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, Boolean includeNlpData, Boolean hasNlp, String theme, String nerName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax) throws ApiException {
+    private ApiResponse<Object> getWithHttpInfo(String authorName, String sources, String predefinedSources, String notSources, String lang, String notLang, String countries, String notCountries, String from, String to, String publishedDatePrecision, Boolean byParseDate, String sortBy, String rankedOnly, Integer fromRank, Integer toRank, Boolean isHeadline, Boolean isPaidContent, String parentUrl, String allLinks, String allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, Boolean includeNlpData, Boolean hasNlp, String theme, String nerName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax) throws ApiException {
         okhttp3.Call localVarCall = getValidateBeforeCall(authorName, sources, predefinedSources, notSources, lang, notLang, countries, notCountries, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, null);
-        Type localVarReturnType = new TypeToken<AuthorsGetResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call getAsync(String authorName, String sources, String predefinedSources, String notSources, String lang, String notLang, String countries, String notCountries, From from, To to, String publishedDatePrecision, Boolean byParseDate, String sortBy, String rankedOnly, Integer fromRank, Integer toRank, Boolean isHeadline, Boolean isPaidContent, String parentUrl, String allLinks, String allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, Boolean includeNlpData, Boolean hasNlp, String theme, String nerName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax, final ApiCallback<AuthorsGetResponse> _callback) throws ApiException {
+    private okhttp3.Call getAsync(String authorName, String sources, String predefinedSources, String notSources, String lang, String notLang, String countries, String notCountries, String from, String to, String publishedDatePrecision, Boolean byParseDate, String sortBy, String rankedOnly, Integer fromRank, Integer toRank, Boolean isHeadline, Boolean isPaidContent, String parentUrl, String allLinks, String allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, Boolean includeNlpData, Boolean hasNlp, String theme, String nerName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getValidateBeforeCall(authorName, sources, predefinedSources, notSources, lang, notLang, countries, notCountries, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, _callback);
-        Type localVarReturnType = new TypeToken<AuthorsGetResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -291,8 +286,8 @@ public class AuthorsApiGenerated {
         private String notLang;
         private String countries;
         private String notCountries;
-        private From from;
-        private To to;
+        private String from;
+        private String to;
         private String publishedDatePrecision;
         private Boolean byParseDate;
         private String sortBy;
@@ -396,7 +391,7 @@ public class AuthorsApiGenerated {
          * @param from  (optional)
          * @return GetRequestBuilder
          */
-        public GetRequestBuilder from(From from) {
+        public GetRequestBuilder from(String from) {
             this.from = from;
             return this;
         }
@@ -406,7 +401,7 @@ public class AuthorsApiGenerated {
          * @param to  (optional)
          * @return GetRequestBuilder
          */
-        public GetRequestBuilder to(To to) {
+        public GetRequestBuilder to(String to) {
             this.to = to;
             return this;
         }
@@ -659,7 +654,7 @@ public class AuthorsApiGenerated {
 
         /**
          * Execute get request
-         * @return AuthorsGetResponse
+         * @return Object
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table summary="Response Details" border="1">
@@ -667,14 +662,14 @@ public class AuthorsApiGenerated {
             <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
          </table>
          */
-        public AuthorsGetResponse execute() throws ApiException {
-            ApiResponse<AuthorsGetResponse> localVarResp = getWithHttpInfo(authorName, sources, predefinedSources, notSources, lang, notLang, countries, notCountries, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax);
+        public Object execute() throws ApiException {
+            ApiResponse<Object> localVarResp = getWithHttpInfo(authorName, sources, predefinedSources, notSources, lang, notLang, countries, notCountries, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax);
             return localVarResp.getResponseBody();
         }
 
         /**
          * Execute get request with HTTP info returned
-         * @return ApiResponse&lt;AuthorsGetResponse&gt;
+         * @return ApiResponse&lt;Object&gt;
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table summary="Response Details" border="1">
@@ -682,7 +677,7 @@ public class AuthorsApiGenerated {
             <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
          </table>
          */
-        public ApiResponse<AuthorsGetResponse> executeWithHttpInfo() throws ApiException {
+        public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
             return getWithHttpInfo(authorName, sources, predefinedSources, notSources, lang, notLang, countries, notCountries, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax);
         }
 
@@ -697,7 +692,7 @@ public class AuthorsApiGenerated {
             <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
          </table>
          */
-        public okhttp3.Call executeAsync(final ApiCallback<AuthorsGetResponse> _callback) throws ApiException {
+        public okhttp3.Call executeAsync(final ApiCallback<Object> _callback) throws ApiException {
             return getAsync(authorName, sources, predefinedSources, notSources, lang, notLang, countries, notCountries, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, _callback);
         }
     }
@@ -776,16 +771,16 @@ public class AuthorsApiGenerated {
     }
 
 
-    private ApiResponse<AuthorsPostResponse> postWithHttpInfo(AuthorSearchRequest authorSearchRequest) throws ApiException {
+    private ApiResponse<Object> postWithHttpInfo(AuthorSearchRequest authorSearchRequest) throws ApiException {
         okhttp3.Call localVarCall = postValidateBeforeCall(authorSearchRequest, null);
-        Type localVarReturnType = new TypeToken<AuthorsPostResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call postAsync(AuthorSearchRequest authorSearchRequest, final ApiCallback<AuthorsPostResponse> _callback) throws ApiException {
+    private okhttp3.Call postAsync(AuthorSearchRequest authorSearchRequest, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postValidateBeforeCall(authorSearchRequest, _callback);
-        Type localVarReturnType = new TypeToken<AuthorsPostResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -799,8 +794,8 @@ public class AuthorsApiGenerated {
         private String notLang;
         private String countries;
         private String notCountries;
-        private From from;
-        private To to;
+        private String from;
+        private String to;
         private String publishedDatePrecision;
         private Boolean byParseDate;
         private String sortBy;
@@ -904,7 +899,7 @@ public class AuthorsApiGenerated {
          * @param from  (optional)
          * @return PostRequestBuilder
          */
-        public PostRequestBuilder from(From from) {
+        public PostRequestBuilder from(String from) {
             this.from = from;
             return this;
         }
@@ -914,7 +909,7 @@ public class AuthorsApiGenerated {
          * @param to  (optional)
          * @return PostRequestBuilder
          */
-        public PostRequestBuilder to(To to) {
+        public PostRequestBuilder to(String to) {
             this.to = to;
             return this;
         }
@@ -1205,7 +1200,7 @@ public class AuthorsApiGenerated {
 
         /**
          * Execute post request
-         * @return AuthorsPostResponse
+         * @return Object
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table summary="Response Details" border="1">
@@ -1213,15 +1208,15 @@ public class AuthorsApiGenerated {
             <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
          </table>
          */
-        public AuthorsPostResponse execute() throws ApiException {
+        public Object execute() throws ApiException {
             AuthorSearchRequest authorSearchRequest = buildBodyParams();
-            ApiResponse<AuthorsPostResponse> localVarResp = postWithHttpInfo(authorSearchRequest);
+            ApiResponse<Object> localVarResp = postWithHttpInfo(authorSearchRequest);
             return localVarResp.getResponseBody();
         }
 
         /**
          * Execute post request with HTTP info returned
-         * @return ApiResponse&lt;AuthorsPostResponse&gt;
+         * @return ApiResponse&lt;Object&gt;
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table summary="Response Details" border="1">
@@ -1229,7 +1224,7 @@ public class AuthorsApiGenerated {
             <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
          </table>
          */
-        public ApiResponse<AuthorsPostResponse> executeWithHttpInfo() throws ApiException {
+        public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
             AuthorSearchRequest authorSearchRequest = buildBodyParams();
             return postWithHttpInfo(authorSearchRequest);
         }
@@ -1245,7 +1240,7 @@ public class AuthorsApiGenerated {
             <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
          </table>
          */
-        public okhttp3.Call executeAsync(final ApiCallback<AuthorsPostResponse> _callback) throws ApiException {
+        public okhttp3.Call executeAsync(final ApiCallback<Object> _callback) throws ApiException {
             AuthorSearchRequest authorSearchRequest = buildBodyParams();
             return postAsync(authorSearchRequest, _callback);
         }

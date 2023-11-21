@@ -2,7 +2,7 @@
 """
     NewsCatcher-V3 Production API
 
-    <img src='https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg' width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a> <br> <p style=\"color: red\"><b><em> This is a Testing Phase API. Please use it for testing purposes only. </em></b></p> <br>
+    <img src='https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg' width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a>
 
     The version of the OpenAPI document: Beta-3.0.0
     Contact: maksym@newscatcherapi.com
@@ -96,22 +96,13 @@ def closest_type_match(value: typing.Any, types: typing.List[typing.Type]) -> ty
                         continue
             else:  # This is a non-generic type
                 if isinstance(value, t):
-                    if best_match is None or issubclass(best_match, t):
+                    if best_match is None or (isinstance(value, type) and issubclass(best_match, t)):
                         best_match = t
                 continue
 
         # Check for generic list type
         if origin == list and isinstance(value, list):
-            if args and issubclass(args[0], BaseModel):
-                try:
-                    [args[0](**item) for item in value]
-                    best_match = t
-                except ValidationError:
-                    continue
-            elif best_match is None or (typing_extensions.get_origin(best_match) == list and len(
-                    typing_extensions.get_args(best_match)) < len(args)):
-                if args and all(isinstance(item, args[0]) for item in value):
-                    best_match = t
+            best_match = t
 
     return best_match
 
@@ -125,27 +116,29 @@ def construct_model_instance(model: typing.Type[T], data: typing.Any) -> T:
     if typing_extensions.get_origin(model) is typing.Union:
         best_type = closest_type_match(data, model.__args__)
         return construct_model_instance(best_type, data)
-    # if model is scalar value like str, number, etc., use RootModel to construct
-    elif isinstance(model, type):
-        model = RootModel[model]
-        # try to coerce value to model type
-        try:
-            return model(data).root
-        except ValidationError as e:
-            pass
-        # if not possible, give  up
-        return model.model_construct(data).root
+    elif model is None or model is type(None):
+        return data
+    # if model is scalar value like str, number, etc. just return the value
+    elif isinstance(data, (str, float, int, bytes, bool)):
+        return data
     # if model is list, iterate over list and recursively call
     elif typing_extensions.get_origin(model) is list:
         item_model = typing_extensions.get_args(model)[0]
         return [construct_model_instance(item_model, item) for item in data]
+    # if model is free form object, just return the value
+    elif typing_extensions.get_origin(model) is dict:
+        return data
+    elif model is dict:
+        return data
     # if model is BaseModel, iterate over fields and recursively call
     elif issubclass(model, BaseModel):
         new_data = {}
         for field_name, field_type in model.__annotations__.items():
-            if field_name in data:
-                new_data[field_name] = construct_model_instance(field_type, data[field_name])
-        return model.model_construct(**data)
+            # get alias
+            alias = model.model_fields[field_name].alias
+            if alias in data:
+                new_data[alias] = construct_model_instance(field_type, data[alias])
+        return model.model_construct(**new_data)
     raise ApiTypeError(f"Unable to construct model instance of type {model}")
 
 
@@ -1291,9 +1284,10 @@ class ApiClient:
         fields: typing.Optional[typing.Tuple[typing.Tuple[str, str], ...]] = None,
         auth_settings: typing.Optional[typing.List[str]] = None,
         stream: bool = False,
-        timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
+        timeout: typing.Optional[typing.Union[float, typing.Tuple]] = None,
         host: typing.Optional[str] = None,
         prefix_separator_iterator: PrefixSeparatorIterator = None,
+        **kwargs
     ) -> AsyncResponseWrapper:
 
         # header parameters
@@ -1351,6 +1345,7 @@ class ApiClient:
             body=serialized_body,
             stream=stream,
             timeout=timeout,
+            **kwargs
         )
 
 
@@ -1366,7 +1361,7 @@ class ApiClient:
         fields: typing.Optional[typing.Tuple[typing.Tuple[str, str], ...]] = None,
         auth_settings: typing.Optional[typing.List[str]] = None,
         stream: bool = False,
-        timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
+        timeout: typing.Optional[typing.Union[float, typing.Tuple]] = None,
         host: typing.Optional[str] = None,
         prefix_separator_iterator: PrefixSeparatorIterator = None,
     ) -> ResponseWrapper:
@@ -1441,9 +1436,10 @@ class ApiClient:
         fields: typing.Optional[typing.Tuple[typing.Tuple[str, str], ...]] = None,
         auth_settings: typing.Optional[typing.List[str]] = None,
         stream: bool = False,
-        timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
+        timeout: typing.Optional[typing.Union[float, typing.Tuple]] = None,
         host: typing.Optional[str] = None,
         prefix_separator_iterator: PrefixSeparatorIterator = None,
+        **kwargs
     ) -> AsyncResponseWrapper:
         """Makes the HTTP request (synchronous) and returns deserialized data.
 
@@ -1481,6 +1477,7 @@ class ApiClient:
             timeout,
             host,
             prefix_separator_iterator,
+            **kwargs
         )
 
     def call_api(
@@ -1493,7 +1490,7 @@ class ApiClient:
         fields: typing.Optional[typing.Tuple[typing.Tuple[str, str], ...]] = None,
         auth_settings: typing.Optional[typing.List[str]] = None,
         stream: bool = False,
-        timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
+        timeout: typing.Optional[typing.Union[float, typing.Tuple]] = None,
         host: typing.Optional[str] = None,
         prefix_separator_iterator: PrefixSeparatorIterator = None,
     ) -> ResponseWrapper:
@@ -1553,7 +1550,8 @@ class ApiClient:
         fields: typing.Optional[typing.Tuple[typing.Tuple[str, str], ...]] = None,
         body: typing.Optional[typing.Union[str, bytes]] = None,
         stream: bool = False,
-        timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
+        timeout: typing.Optional[typing.Union[float, typing.Tuple]] = None,
+        **kwargs
     ) -> AsyncResponseWrapper:
         if body and fields:
             raise ApiValueError("body parameter cannot be used with fields parameter")
@@ -1565,26 +1563,25 @@ class ApiClient:
         session = aiohttp.ClientSession()
         t1 = time.time()
         if method == "GET":
-            session.get(url)
-            response = await session.get(url, headers=headers)
+            response = await session.get(url, headers=headers, timeout=timeout, **kwargs)
             return AsyncResponseWrapper(response, time.time() - t1, session)
         elif method == "HEAD":
-            response = await session.head(url, headers=headers)
+            response = await session.head(url, headers=headers, timeout=timeout, **kwargs)
             return AsyncResponseWrapper(response, time.time() - t1, session)
         elif method == "OPTIONS":
-            response = await session.options(url, data=data, headers=headers)
+            response = await session.options(url, data=data, headers=headers, timeout=timeout, **kwargs)
             return AsyncResponseWrapper(response, time.time() - t1, session)
         elif method == "POST":
-            response = await session.post(url, data=data, headers=headers)
+            response = await session.post(url, data=data, headers=headers, timeout=timeout, **kwargs)
             return AsyncResponseWrapper(response, time.time() - t1, session)
         elif method == "PUT":
-            response = await session.put(url, data=data, headers=headers)
+            response = await session.put(url, data=data, headers=headers, timeout=timeout, **kwargs)
             return AsyncResponseWrapper(response, time.time() - t1, session)
         elif method == "PATCH":
-            response = await session.patch(url, data=data, headers=headers)
+            response = await session.patch(url, data=data, headers=headers, timeout=timeout, **kwargs)
             return AsyncResponseWrapper(response, time.time() - t1, session)
         elif method == "DELETE":
-            response = await session.delete(url, data=data, headers=headers)
+            response = await session.delete(url, data=data, headers=headers, timeout=timeout, **kwargs)
             return AsyncResponseWrapper(response, time.time() - t1, session)
         raise ApiValueError(
             "http method must be `GET`, `HEAD`, `OPTIONS`,"
@@ -1599,7 +1596,7 @@ class ApiClient:
         fields: typing.Optional[typing.Tuple[typing.Tuple[str, str], ...]] = None,
         body: typing.Optional[typing.Union[str, bytes]] = None,
         stream: bool = False,
-        timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
+        timeout: typing.Optional[typing.Union[float, typing.Tuple]] = None,
     ) -> ResponseWrapper:
         """Makes the HTTP request using RESTClient."""
         if method == "GET":

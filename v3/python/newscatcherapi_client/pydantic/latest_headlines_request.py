@@ -3,7 +3,7 @@
 """
     NewsCatcher-V3 Production API
 
-    <img src='https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg' width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a> <br> <p style=\"color: red\"><b><em> This is a Testing Phase API. Please use it for testing purposes only. </em></b></p> <br>
+    <img src='https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg' width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a>
 
     The version of the OpenAPI document: Beta-3.0.0
     Contact: maksym@newscatcherapi.com
@@ -13,73 +13,73 @@
 from datetime import datetime, date
 import typing
 from enum import Enum
-from typing_extensions import TypedDict, Literal
+from typing_extensions import TypedDict, Literal, TYPE_CHECKING
 from pydantic import BaseModel, Field, RootModel
 
 
 class LatestHeadlinesRequest(BaseModel):
-    when: str = Field(None, alias='when')
+    when: typing.Optional[str] = Field(None, alias='when')
 
-    by_parse_date: bool = Field(None, alias='by_parse_date')
+    by_parse_date: typing.Optional[bool] = Field(None, alias='by_parse_date')
 
-    lang: str = Field(None, alias='lang')
+    lang: typing.Optional[str] = Field(None, alias='lang')
 
-    not_lang: str = Field(None, alias='not_lang')
+    not_lang: typing.Optional[str] = Field(None, alias='not_lang')
 
-    countries: str = Field(None, alias='countries')
+    countries: typing.Optional[str] = Field(None, alias='countries')
 
-    not_countries: str = Field(None, alias='not_countries')
+    not_countries: typing.Optional[str] = Field(None, alias='not_countries')
 
-    sources: str = Field(None, alias='sources')
+    sources: typing.Optional[str] = Field(None, alias='sources')
 
-    predefined_sources: str = Field(None, alias='predefined_sources')
+    predefined_sources: typing.Optional[str] = Field(None, alias='predefined_sources')
 
-    not_sources: str = Field(None, alias='not_sources')
+    not_sources: typing.Optional[str] = Field(None, alias='not_sources')
 
-    ranked_only: str = Field(None, alias='ranked_only')
+    ranked_only: typing.Optional[str] = Field(None, alias='ranked_only')
 
-    is_headline: bool = Field(None, alias='is_headline')
+    is_headline: typing.Optional[bool] = Field(None, alias='is_headline')
 
-    is_paid_content: bool = Field(None, alias='is_paid_content')
+    is_paid_content: typing.Optional[bool] = Field(None, alias='is_paid_content')
 
-    parent_url: str = Field(None, alias='parent_url')
+    parent_url: typing.Optional[str] = Field(None, alias='parent_url')
 
-    theme: str = Field(None, alias='theme')
+    theme: typing.Optional[str] = Field(None, alias='theme')
 
-    all_links: str = Field(None, alias='all_links')
+    all_links: typing.Optional[str] = Field(None, alias='all_links')
 
-    all_domain_links: str = Field(None, alias='all_domain_links')
+    all_domain_links: typing.Optional[str] = Field(None, alias='all_domain_links')
 
-    word_count_min: int = Field(None, alias='word_count_min')
+    word_count_min: typing.Optional[int] = Field(None, alias='word_count_min')
 
-    word_count_max: int = Field(None, alias='word_count_max')
+    word_count_max: typing.Optional[int] = Field(None, alias='word_count_max')
 
-    page: int = Field(None, alias='page')
+    page: typing.Optional[int] = Field(None, alias='page')
 
-    page_size: int = Field(None, alias='page_size')
+    page_size: typing.Optional[int] = Field(None, alias='page_size')
 
-    clustering_enabled: bool = Field(None, alias='clustering_enabled')
+    clustering_enabled: typing.Optional[bool] = Field(None, alias='clustering_enabled')
 
-    clustering_threshold: typing.Union[int, float] = Field(None, alias='clustering_threshold')
+    clustering_threshold: typing.Optional[typing.Union[int, float]] = Field(None, alias='clustering_threshold')
 
-    clustering_variable: str = Field(None, alias='clustering_variable')
+    clustering_variable: typing.Optional[str] = Field(None, alias='clustering_variable')
 
-    include_nlp_data: bool = Field(None, alias='include_nlp_data')
+    include_nlp_data: typing.Optional[bool] = Field(None, alias='include_nlp_data')
 
-    has_nlp: bool = Field(None, alias='has_nlp')
+    has_nlp: typing.Optional[bool] = Field(None, alias='has_nlp')
 
-    o_r_g_entity_name: str = Field(None, alias='ORG_entity_name')
+    o_r_g_entity_name: typing.Optional[str] = Field(None, alias='ORG_entity_name')
 
-    p_e_r_entity_name: str = Field(None, alias='PER_entity_name')
+    p_e_r_entity_name: typing.Optional[str] = Field(None, alias='PER_entity_name')
 
-    l_o_c_entity_name: str = Field(None, alias='LOC_entity_name')
+    l_o_c_entity_name: typing.Optional[str] = Field(None, alias='LOC_entity_name')
 
-    m_i_s_c_entity_name: str = Field(None, alias='MISC_entity_name')
+    m_i_s_c_entity_name: typing.Optional[str] = Field(None, alias='MISC_entity_name')
 
-    title_sentiment_min: typing.Union[int, float] = Field(None, alias='title_sentiment_min')
+    title_sentiment_min: typing.Optional[typing.Union[int, float]] = Field(None, alias='title_sentiment_min')
 
-    title_sentiment_max: typing.Union[int, float] = Field(None, alias='title_sentiment_max')
+    title_sentiment_max: typing.Optional[typing.Union[int, float]] = Field(None, alias='title_sentiment_max')
 
-    content_sentiment_min: typing.Union[int, float] = Field(None, alias='content_sentiment_min')
+    content_sentiment_min: typing.Optional[typing.Union[int, float]] = Field(None, alias='content_sentiment_min')
 
-    content_sentiment_max: typing.Union[int, float] = Field(None, alias='content_sentiment_max')
+    content_sentiment_max: typing.Optional[typing.Union[int, float]] = Field(None, alias='content_sentiment_max')

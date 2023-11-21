@@ -1,6 +1,6 @@
 /*
  * NewsCatcher-V3 Production API
- * <img src='https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg' width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a> <br> <p style=\"color: red\"><b><em> This is a Testing Phase API. Please use it for testing purposes only. </em></b></p> <br>
+ * <img src='https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg' width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a>
  *
  * The version of the OpenAPI document: Beta-3.0.0
  * Contact: maksym@newscatcherapi.com
@@ -19,8 +19,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.konfigthis.newscatcherapi.client.model.From;
-import com.konfigthis.newscatcherapi.client.model.To;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -101,11 +99,11 @@ public class MoreLikeThisRequest {
 
   public static final String SERIALIZED_NAME_FROM = "from_";
   @SerializedName(SERIALIZED_NAME_FROM)
-  private From from;
+  private String from;
 
   public static final String SERIALIZED_NAME_TO = "to_";
   @SerializedName(SERIALIZED_NAME_TO)
-  private To to;
+  private String to;
 
   public static final String SERIALIZED_NAME_BY_PARSE_DATE = "by_parse_date";
   @SerializedName(SERIALIZED_NAME_BY_PARSE_DATE)
@@ -290,7 +288,7 @@ public class MoreLikeThisRequest {
 
 
   public MoreLikeThisRequest similarDocumentsNumber(Integer similarDocumentsNumber) {
-    if (similarDocumentsNumber < 0) {
+    if (similarDocumentsNumber != null && similarDocumentsNumber < 0) {
       throw new IllegalArgumentException("Invalid value for similarDocumentsNumber. Must be greater than or equal to 0.");
     }
     
@@ -314,7 +312,7 @@ public class MoreLikeThisRequest {
 
 
   public void setSimilarDocumentsNumber(Integer similarDocumentsNumber) {
-    if (similarDocumentsNumber < 0) {
+    if (similarDocumentsNumber != null && similarDocumentsNumber < 0) {
       throw new IllegalArgumentException("Invalid value for similarDocumentsNumber. Must be greater than or equal to 0.");
     }
     
@@ -555,7 +553,7 @@ public class MoreLikeThisRequest {
   }
 
 
-  public MoreLikeThisRequest from(From from) {
+  public MoreLikeThisRequest from(String from) {
     
     
     
@@ -571,12 +569,12 @@ public class MoreLikeThisRequest {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public From getFrom() {
+  public String getFrom() {
     return from;
   }
 
 
-  public void setFrom(From from) {
+  public void setFrom(String from) {
     
     
     
@@ -584,7 +582,7 @@ public class MoreLikeThisRequest {
   }
 
 
-  public MoreLikeThisRequest to(To to) {
+  public MoreLikeThisRequest to(String to) {
     
     
     
@@ -600,12 +598,12 @@ public class MoreLikeThisRequest {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public To getTo() {
+  public String getTo() {
     return to;
   }
 
 
-  public void setTo(To to) {
+  public void setTo(String to) {
     
     
     
@@ -933,7 +931,7 @@ public class MoreLikeThisRequest {
 
 
   public MoreLikeThisRequest wordCountMin(Integer wordCountMin) {
-    if (wordCountMin < 0) {
+    if (wordCountMin != null && wordCountMin < 0) {
       throw new IllegalArgumentException("Invalid value for wordCountMin. Must be greater than or equal to 0.");
     }
     
@@ -957,7 +955,7 @@ public class MoreLikeThisRequest {
 
 
   public void setWordCountMin(Integer wordCountMin) {
-    if (wordCountMin < 0) {
+    if (wordCountMin != null && wordCountMin < 0) {
       throw new IllegalArgumentException("Invalid value for wordCountMin. Must be greater than or equal to 0.");
     }
     
@@ -967,7 +965,7 @@ public class MoreLikeThisRequest {
 
 
   public MoreLikeThisRequest wordCountMax(Integer wordCountMax) {
-    if (wordCountMax < 0) {
+    if (wordCountMax != null && wordCountMax < 0) {
       throw new IllegalArgumentException("Invalid value for wordCountMax. Must be greater than or equal to 0.");
     }
     
@@ -991,7 +989,7 @@ public class MoreLikeThisRequest {
 
 
   public void setWordCountMax(Integer wordCountMax) {
-    if (wordCountMax < 0) {
+    if (wordCountMax != null && wordCountMax < 0) {
       throw new IllegalArgumentException("Invalid value for wordCountMax. Must be greater than or equal to 0.");
     }
     
@@ -1001,7 +999,7 @@ public class MoreLikeThisRequest {
 
 
   public MoreLikeThisRequest page(Integer page) {
-    if (page < 0) {
+    if (page != null && page < 0) {
       throw new IllegalArgumentException("Invalid value for page. Must be greater than or equal to 0.");
     }
     
@@ -1025,7 +1023,7 @@ public class MoreLikeThisRequest {
 
 
   public void setPage(Integer page) {
-    if (page < 0) {
+    if (page != null && page < 0) {
       throw new IllegalArgumentException("Invalid value for page. Must be greater than or equal to 0.");
     }
     
@@ -1035,7 +1033,7 @@ public class MoreLikeThisRequest {
 
 
   public MoreLikeThisRequest pageSize(Integer pageSize) {
-    if (pageSize < 0) {
+    if (pageSize != null && pageSize < 0) {
       throw new IllegalArgumentException("Invalid value for pageSize. Must be greater than or equal to 0.");
     }
     
@@ -1059,7 +1057,7 @@ public class MoreLikeThisRequest {
 
 
   public void setPageSize(Integer pageSize) {
-    if (pageSize < 0) {
+    if (pageSize != null && pageSize < 0) {
       throw new IllegalArgumentException("Invalid value for pageSize. Must be greater than or equal to 0.");
     }
     
@@ -1591,13 +1589,11 @@ public class MoreLikeThisRequest {
       if ((jsonObj.get("not_countries") != null && !jsonObj.get("not_countries").isJsonNull()) && !jsonObj.get("not_countries").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `not_countries` to be a primitive type in the JSON string but got `%s`", jsonObj.get("not_countries").toString()));
       }
-      // validate the optional field `from_`
-      if (jsonObj.get("from_") != null && !jsonObj.get("from_").isJsonNull()) {
-        From.validateJsonObject(jsonObj.getAsJsonObject("from_"));
+      if ((jsonObj.get("from_") != null && !jsonObj.get("from_").isJsonNull()) && !jsonObj.get("from_").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `from_` to be a primitive type in the JSON string but got `%s`", jsonObj.get("from_").toString()));
       }
-      // validate the optional field `to_`
-      if (jsonObj.get("to_") != null && !jsonObj.get("to_").isJsonNull()) {
-        To.validateJsonObject(jsonObj.getAsJsonObject("to_"));
+      if ((jsonObj.get("to_") != null && !jsonObj.get("to_").isJsonNull()) && !jsonObj.get("to_").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `to_` to be a primitive type in the JSON string but got `%s`", jsonObj.get("to_").toString()));
       }
       if ((jsonObj.get("published_date_precision") != null && !jsonObj.get("published_date_precision").isJsonNull()) && !jsonObj.get("published_date_precision").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `published_date_precision` to be a primitive type in the JSON string but got `%s`", jsonObj.get("published_date_precision").toString()));
