@@ -3,7 +3,7 @@
 """
     NewsCatcher-V3 Production API
 
-    <img src='https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg' width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a> <br> <p style=\"color: red\"><b><em> This is a Testing Phase API. Please use it for testing purposes only. </em></b></p> <br>
+    <img src='https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg' width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a>
 
     The version of the OpenAPI document: Beta-3.0.0
     Contact: maksym@newscatcherapi.com
@@ -13,7 +13,7 @@
 from datetime import datetime, date
 import typing
 from enum import Enum
-from typing_extensions import TypedDict, Literal
+from typing_extensions import TypedDict, Literal, TYPE_CHECKING
 from pydantic import BaseModel, Field, RootModel
 
 from newscatcherapi_client.pydantic.dto_responses_latest_headlines_response_article_result import DtoResponsesLatestHeadlinesResponseArticleResult
@@ -21,14 +21,14 @@ from newscatcherapi_client.pydantic.dto_responses_latest_headlines_response_arti
 class FailedLatestHeadlinesResponse(BaseModel):
     user_input: typing.Dict[str, typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = Field(alias='user_input')
 
-    status: str = Field(None, alias='status')
+    status: typing.Optional[str] = Field(None, alias='status')
 
-    total_hits: int = Field(None, alias='total_hits')
+    total_hits: typing.Optional[int] = Field(None, alias='total_hits')
 
-    page: int = Field(None, alias='page')
+    page: typing.Optional[int] = Field(None, alias='page')
 
-    total_pages: int = Field(None, alias='total_pages')
+    total_pages: typing.Optional[int] = Field(None, alias='total_pages')
 
-    page_size: int = Field(None, alias='page_size')
+    page_size: typing.Optional[int] = Field(None, alias='page_size')
 
-    articles: typing.List[DtoResponsesLatestHeadlinesResponseArticleResult] = Field(None, alias='articles')
+    articles: typing.Optional[typing.List[DtoResponsesLatestHeadlinesResponseArticleResult]] = Field(None, alias='articles')

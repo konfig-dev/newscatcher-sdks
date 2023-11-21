@@ -3,7 +3,7 @@
 """
     NewsCatcher-V3 Production API
 
-    <img src='https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg' width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a> <br> <p style=\"color: red\"><b><em> This is a Testing Phase API. Please use it for testing purposes only. </em></b></p> <br>
+    <img src='https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg' width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a>
 
     The version of the OpenAPI document: Beta-3.0.0
     Contact: maksym@newscatcherapi.com
@@ -33,21 +33,15 @@ import frozendict  # noqa: F401
 
 from newscatcherapi_client import schemas  # noqa: F401
 
-from newscatcherapi_client.model.validation_error import ValidationError as ValidationErrorSchema
 from newscatcherapi_client.model.subscription_response import SubscriptionResponse as SubscriptionResponseSchema
 from newscatcherapi_client.model.http_validation_error import HTTPValidationError as HTTPValidationErrorSchema
-from newscatcherapi_client.model.validation_error_loc import ValidationErrorLoc as ValidationErrorLocSchema
 
-from newscatcherapi_client.type.validation_error_loc import ValidationErrorLoc
-from newscatcherapi_client.type.validation_error import ValidationError
 from newscatcherapi_client.type.http_validation_error import HTTPValidationError
 from newscatcherapi_client.type.subscription_response import SubscriptionResponse
 
 from ...api_client import Dictionary
 from newscatcherapi_client.pydantic.subscription_response import SubscriptionResponse as SubscriptionResponsePydantic
-from newscatcherapi_client.pydantic.validation_error_loc import ValidationErrorLoc as ValidationErrorLocPydantic
 from newscatcherapi_client.pydantic.http_validation_error import HTTPValidationError as HTTPValidationErrorPydantic
-from newscatcherapi_client.pydantic.validation_error import ValidationError as ValidationErrorPydantic
 
 from . import path
 
@@ -116,9 +110,10 @@ class BaseApi(api_client.Api):
     async def _aget_oapg(
         self,
         skip_deserialization: bool = True,
-        timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
+        timeout: typing.Optional[typing.Union[float, typing.Tuple]] = None,
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
         stream: bool = False,
+        **kwargs,
     ) -> typing.Union[
         ApiResponseFor200Async,
         api_client.ApiResponseWithoutDeserializationAsync,
@@ -152,6 +147,7 @@ class BaseApi(api_client.Api):
             headers=_headers,
             auth_settings=_auth,
             timeout=timeout,
+            **kwargs
         )
     
         if stream:
@@ -211,7 +207,7 @@ class BaseApi(api_client.Api):
     def _get_oapg(
         self,
         skip_deserialization: bool = True,
-        timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
+        timeout: typing.Optional[typing.Union[float, typing.Tuple]] = None,
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
         stream: bool = False,
     ) -> typing.Union[
@@ -277,6 +273,7 @@ class GetRaw(BaseApi):
 
     async def aget(
         self,
+        **kwargs,
     ) -> typing.Union[
         ApiResponseFor200Async,
         api_client.ApiResponseWithoutDeserializationAsync,
@@ -285,6 +282,7 @@ class GetRaw(BaseApi):
         args = self._get_mapped_args(
         )
         return await self._aget_oapg(
+            **kwargs,
         )
     
     def get(
@@ -303,8 +301,10 @@ class Get(BaseApi):
     async def aget(
         self,
         validate: bool = False,
+        **kwargs,
     ):
         raw_response = await self.raw.aget(
+            **kwargs,
         )
         if validate:
             return SubscriptionResponsePydantic(**raw_response.body)
@@ -327,6 +327,7 @@ class ApiForget(BaseApi):
 
     async def aget(
         self,
+        **kwargs,
     ) -> typing.Union[
         ApiResponseFor200Async,
         api_client.ApiResponseWithoutDeserializationAsync,
@@ -335,6 +336,7 @@ class ApiForget(BaseApi):
         args = self._get_mapped_args(
         )
         return await self._aget_oapg(
+            **kwargs,
         )
     
     def get(

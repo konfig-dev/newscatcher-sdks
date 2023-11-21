@@ -3,7 +3,7 @@
 """
     NewsCatcher-V3 Production API
 
-    <img src='https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg' width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a> <br> <p style=\"color: red\"><b><em> This is a Testing Phase API. Please use it for testing purposes only. </em></b></p> <br>
+    <img src='https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg' width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a>
 
     The version of the OpenAPI document: Beta-3.0.0
     Contact: maksym@newscatcherapi.com
@@ -33,27 +33,15 @@ import frozendict  # noqa: F401
 
 from newscatcherapi_client import schemas  # noqa: F401
 
-from newscatcherapi_client.model.validation_error import ValidationError as ValidationErrorSchema
 from newscatcherapi_client.model.source_response import SourceResponse as SourceResponseSchema
-from newscatcherapi_client.model.source_response_sources import SourceResponseSources as SourceResponseSourcesSchema
 from newscatcherapi_client.model.http_validation_error import HTTPValidationError as HTTPValidationErrorSchema
-from newscatcherapi_client.model.validation_error_loc import ValidationErrorLoc as ValidationErrorLocSchema
-from newscatcherapi_client.model.user_input import UserInput as UserInputSchema
 
 from newscatcherapi_client.type.source_response import SourceResponse
-from newscatcherapi_client.type.user_input import UserInput
-from newscatcherapi_client.type.validation_error_loc import ValidationErrorLoc
-from newscatcherapi_client.type.validation_error import ValidationError
-from newscatcherapi_client.type.source_response_sources import SourceResponseSources
 from newscatcherapi_client.type.http_validation_error import HTTPValidationError
 
 from ...api_client import Dictionary
 from newscatcherapi_client.pydantic.source_response import SourceResponse as SourceResponsePydantic
-from newscatcherapi_client.pydantic.validation_error_loc import ValidationErrorLoc as ValidationErrorLocPydantic
 from newscatcherapi_client.pydantic.http_validation_error import HTTPValidationError as HTTPValidationErrorPydantic
-from newscatcherapi_client.pydantic.user_input import UserInput as UserInputPydantic
-from newscatcherapi_client.pydantic.validation_error import ValidationError as ValidationErrorPydantic
-from newscatcherapi_client.pydantic.source_response_sources import SourceResponseSources as SourceResponseSourcesPydantic
 
 # Query params
 LangSchema = schemas.StrSchema
@@ -156,9 +144,10 @@ class BaseApi(api_client.Api):
         self,
             query_params: typing.Optional[dict] = {},
         skip_deserialization: bool = True,
-        timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
+        timeout: typing.Optional[typing.Union[float, typing.Tuple]] = None,
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
         stream: bool = False,
+        **kwargs,
     ) -> typing.Union[
         ApiResponseFor200Async,
         api_client.ApiResponseWithoutDeserializationAsync,
@@ -208,6 +197,7 @@ class BaseApi(api_client.Api):
             auth_settings=_auth,
             prefix_separator_iterator=prefix_separator_iterator,
             timeout=timeout,
+            **kwargs
         )
     
         if stream:
@@ -268,7 +258,7 @@ class BaseApi(api_client.Api):
         self,
             query_params: typing.Optional[dict] = {},
         skip_deserialization: bool = True,
-        timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
+        timeout: typing.Optional[typing.Union[float, typing.Tuple]] = None,
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
         stream: bool = False,
     ) -> typing.Union[
@@ -352,6 +342,7 @@ class GetRaw(BaseApi):
         self,
         lang: typing.Optional[str] = None,
         countries: typing.Optional[str] = None,
+        **kwargs,
     ) -> typing.Union[
         ApiResponseFor200Async,
         api_client.ApiResponseWithoutDeserializationAsync,
@@ -363,6 +354,7 @@ class GetRaw(BaseApi):
         )
         return await self._aget_oapg(
             query_params=args.query,
+            **kwargs,
         )
     
     def get(
@@ -388,10 +380,12 @@ class Get(BaseApi):
         lang: typing.Optional[str] = None,
         countries: typing.Optional[str] = None,
         validate: bool = False,
+        **kwargs,
     ):
         raw_response = await self.raw.aget(
             lang=lang,
             countries=countries,
+            **kwargs,
         )
         if validate:
             return SourceResponsePydantic(**raw_response.body)
@@ -420,6 +414,7 @@ class ApiForget(BaseApi):
         self,
         lang: typing.Optional[str] = None,
         countries: typing.Optional[str] = None,
+        **kwargs,
     ) -> typing.Union[
         ApiResponseFor200Async,
         api_client.ApiResponseWithoutDeserializationAsync,
@@ -431,6 +426,7 @@ class ApiForget(BaseApi):
         )
         return await self._aget_oapg(
             query_params=args.query,
+            **kwargs,
         )
     
     def get(
