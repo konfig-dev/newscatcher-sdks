@@ -153,7 +153,7 @@ public class Example {
     Double contentSentimentMin = 3.4D;
     Double contentSentimentMax = 3.4D;
     try {
-      Object result = client
+      FSearchResponse result = client
               .authors
               .get(authorName)
               .sources(sources)
@@ -189,6 +189,14 @@ public class Example {
               .contentSentimentMin(contentSentimentMin)
               .contentSentimentMax(contentSentimentMax)
               .execute();
+      System.out.println(result);
+      System.out.println(result.getStatus());
+      System.out.println(result.getTotalHits());
+      System.out.println(result.getPage());
+      System.out.println(result.getTotalPages());
+      System.out.println(result.getPageSize());
+      System.out.println(result.getArticles());
+      System.out.println(result.getUserInput());
     } catch (ApiException e) {
       System.err.println("Exception when calling AuthorsApi#get");
       System.err.println("Status code: " + e.getStatusCode());
@@ -199,7 +207,7 @@ public class Example {
 
     // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request
     try {
-      ApiResponse<Object> response = client
+      ApiResponse<FSearchResponse> response = client
               .authors
               .get(authorName)
               .sources(sources)
@@ -274,8 +282,15 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
+ - [ArticlesPropertyInner](docs/ArticlesPropertyInner.md)
+ - [ArticlesPropertyInner1](docs/ArticlesPropertyInner1.md)
+ - [ArticlesPropertyInner2](docs/ArticlesPropertyInner2.md)
+ - [ArticlesPropertyInner3](docs/ArticlesPropertyInner3.md)
  - [AuthorSearchRequest](docs/AuthorSearchRequest.md)
+ - [CSLHFResponse](docs/CSLHFResponse.md)
+ - [CSLHFResponse1](docs/CSLHFResponse1.md)
  - [Cluster](docs/Cluster.md)
+ - [Cluster1](docs/Cluster1.md)
  - [ClusteringSearchResponse](docs/ClusteringSearchResponse.md)
  - [DtoResponsesAuthorSearchResponseArticleResult](docs/DtoResponsesAuthorSearchResponseArticleResult.md)
  - [DtoResponsesAuthorSearchResponseFailedSearchResponse](docs/DtoResponsesAuthorSearchResponseFailedSearchResponse.md)
@@ -287,12 +302,19 @@ Class | Method | HTTP request | Description
  - [DtoResponsesSearchResponseArticleResult](docs/DtoResponsesSearchResponseArticleResult.md)
  - [DtoResponsesSearchResponseFailedSearchResponse](docs/DtoResponsesSearchResponseFailedSearchResponse.md)
  - [DtoResponsesSearchResponseSearchResponse](docs/DtoResponsesSearchResponseSearchResponse.md)
+ - [FCSearchResponse](docs/FCSearchResponse.md)
+ - [FCSearchResponse1](docs/FCSearchResponse1.md)
+ - [FSearchResponse](docs/FSearchResponse.md)
+ - [FSearchResponse1](docs/FSearchResponse1.md)
+ - [FSearchResponse2](docs/FSearchResponse2.md)
+ - [FSearchResponse3](docs/FSearchResponse3.md)
  - [FailedLatestHeadlinesResponse](docs/FailedLatestHeadlinesResponse.md)
  - [LatestHeadlinesRequest](docs/LatestHeadlinesRequest.md)
  - [LatestHeadlinesResponse](docs/LatestHeadlinesResponse.md)
  - [MoreLikeThisRequest](docs/MoreLikeThisRequest.md)
  - [SearchRequest](docs/SearchRequest.md)
  - [SimilarDocument](docs/SimilarDocument.md)
+ - [SimilarDocument1](docs/SimilarDocument1.md)
  - [SourceResponse](docs/SourceResponse.md)
  - [SourcesRequest](docs/SourcesRequest.md)
  - [SubscriptionResponse](docs/SubscriptionResponse.md)

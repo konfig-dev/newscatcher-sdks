@@ -1851,19 +1851,18 @@ components:
           type: integer
         clusters:
           items:
-            $ref: '#/components/schemas/Cluster'
+            $ref: '#/components/schemas/Cluster_1'
           title: Clusters
           type: array
         user_input:
           title: User Input
           type: object
+        articles:
+          items:
+            $ref: '#/components/schemas/Articles_Property_inner'
+          title: Articles
+          type: array
       required:
-      - clusters
-      - clusters_count
-      - page
-      - page_size
-      - total_hits
-      - total_pages
       - user_input
       title: ClusteringSearchResponse
       type: object
@@ -2111,7 +2110,7 @@ components:
           type: integer
         articles:
           items:
-            type: object
+            $ref: '#/components/schemas/Articles_Property_inner'
           title: Articles
           type: array
         user_input:
@@ -2808,18 +2807,13 @@ components:
           type: integer
         articles:
           items:
-            type: object
+            $ref: '#/components/schemas/Articles_Property_inner_1'
           title: Articles
           type: array
         user_input:
           title: User Input
           type: object
       required:
-      - articles
-      - page
-      - page_size
-      - total_hits
-      - total_pages
       - user_input
       title: SearchResponse
       type: object
@@ -3026,7 +3020,7 @@ components:
           default: []
           example: []
           items:
-            $ref: '#/components/schemas/SimilarDocument'
+            $ref: '#/components/schemas/SimilarDocument_1'
           title: Similar Documents
           type: array
           x-konfig-original-example: []
@@ -3119,18 +3113,13 @@ components:
           type: integer
         articles:
           items:
-            type: object
+            $ref: '#/components/schemas/Articles_Property_inner_2'
           title: Articles
           type: array
         user_input:
           title: User Input
           type: object
       required:
-      - articles
-      - page
-      - page_size
-      - total_hits
-      - total_pages
       - user_input
       title: SearchResponse
       type: object
@@ -3315,29 +3304,40 @@ components:
           type: integer
         articles:
           items:
-            type: object
+            $ref: '#/components/schemas/Articles_Property_inner_3'
           title: Articles
           type: array
         user_input:
           title: User Input
           type: object
+        clusters_count:
+          title: Clusters Count
+          type: integer
+        clusters:
+          items:
+            $ref: '#/components/schemas/Cluster_1'
+          title: Clusters
+          type: array
       required:
-      - articles
-      - page
-      - page_size
-      - total_hits
-      - total_pages
       - user_input
       title: SearchResponse
       type: object
-    SearchGetResponse: {}
-    SearchPostResponse: {}
-    LatestHeadlinesGetResponse: {}
-    LatestHeadlinesPostResponse: {}
-    AuthorsGetResponse: {}
-    AuthorsPostResponse: {}
-    SearchSimilarGetResponse: {}
-    SearchSimilarPostResponse: {}
+    SearchGetResponse:
+      $ref: '#/components/schemas/FCSearchResponse'
+    SearchPostResponse:
+      $ref: '#/components/schemas/FCSearchResponse1'
+    LatestHeadlinesGetResponse:
+      $ref: '#/components/schemas/CSLHFResponse'
+    LatestHeadlinesPostResponse:
+      $ref: '#/components/schemas/CSLHFResponse1'
+    AuthorsGetResponse:
+      $ref: '#/components/schemas/FSearchResponse'
+    AuthorsPostResponse:
+      $ref: '#/components/schemas/FSearchResponse1'
+    SearchSimilarGetResponse:
+      $ref: '#/components/schemas/FSearchResponse2'
+    SearchSimilarPostResponse:
+      $ref: '#/components/schemas/FSearchResponse3'
     konfig-generated-schema-paths--api-search-get-parameters-1-schema:
       example: title_content
       type: string
@@ -4944,6 +4944,1478 @@ components:
       type: object
       x-do-not-generate: true
       x-konfig-is-parameter: []
+    FCSearchResponse:
+      example:
+        total_hits: 0
+        user_input: "{}"
+        page: 6
+        total_pages: 1
+        clusters_count: 7
+        articles:
+        - country: country
+          paid_content: true
+          link: link
+          description: description
+          language: language
+          media: media
+          title: title
+          all_domain_links: ""
+          journalists: ""
+          content: content
+          score: 2.3021358869347655
+          word_count: 0
+          domain_url: domain_url
+          all_links: ""
+          rights: rights
+          rank: 5
+          twitter_account: twitter_account
+          id: id
+          name_source: name_source
+          extraction_data: extraction_data
+          updated_date_precision: updated_date_precision
+          full_domain_url: full_domain_url
+          author: author
+          is_headline: is_headline
+          nlp: {}
+          published_date_precision: published_date_precision
+          is_opinion: true
+          updated_date: updated_date
+          published_date: published_date
+          authors: ""
+          parse_date: parse_date
+        - country: country
+          paid_content: true
+          link: link
+          description: description
+          language: language
+          media: media
+          title: title
+          all_domain_links: ""
+          journalists: ""
+          content: content
+          score: 2.3021358869347655
+          word_count: 0
+          domain_url: domain_url
+          all_links: ""
+          rights: rights
+          rank: 5
+          twitter_account: twitter_account
+          id: id
+          name_source: name_source
+          extraction_data: extraction_data
+          updated_date_precision: updated_date_precision
+          full_domain_url: full_domain_url
+          author: author
+          is_headline: is_headline
+          nlp: {}
+          published_date_precision: published_date_precision
+          is_opinion: true
+          updated_date: updated_date
+          published_date: published_date
+          authors: ""
+          parse_date: parse_date
+        clusters:
+        - cluster_id: cluster_id
+          cluster_size: 9
+          articles:
+          - "{}"
+          - "{}"
+        - cluster_id: cluster_id
+          cluster_size: 9
+          articles:
+          - "{}"
+          - "{}"
+        status: ok
+        page_size: 5
+      properties:
+        status:
+          default: ok
+          example: ok
+          title: Status
+          type: string
+          x-konfig-original-example: ok
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__SearchResponse__SearchResponse-properties-status
+        total_hits:
+          title: Total Hits
+          type: integer
+        page:
+          title: Page
+          type: integer
+        total_pages:
+          title: Total Pages
+          type: integer
+        page_size:
+          title: Page Size
+          type: integer
+        articles:
+          items:
+            $ref: '#/components/schemas/Articles_Property_inner_3'
+          title: Articles
+          type: array
+        user_input:
+          title: User Input
+          type: object
+        clusters_count:
+          title: Clusters Count
+          type: integer
+        clusters:
+          items:
+            $ref: '#/components/schemas/Cluster_1'
+          title: Clusters
+          type: array
+      required:
+      - user_input
+      title: SearchResponse
+      type: object
+    FCSearchResponse1:
+      example:
+        total_hits: 0
+        user_input: "{}"
+        page: 6
+        total_pages: 1
+        clusters_count: 5
+        articles:
+        - country: country
+          paid_content: true
+          link: link
+          description: description
+          language: language
+          media: media
+          title: title
+          all_domain_links: ""
+          journalists: ""
+          content: content
+          score: 2.3021358869347655
+          word_count: 0
+          domain_url: domain_url
+          all_links: ""
+          rights: rights
+          rank: 5
+          twitter_account: twitter_account
+          id: id
+          name_source: name_source
+          extraction_data: extraction_data
+          updated_date_precision: updated_date_precision
+          full_domain_url: full_domain_url
+          author: author
+          is_headline: is_headline
+          nlp: {}
+          published_date_precision: published_date_precision
+          is_opinion: true
+          updated_date: updated_date
+          published_date: published_date
+          authors: ""
+          parse_date: parse_date
+        - country: country
+          paid_content: true
+          link: link
+          description: description
+          language: language
+          media: media
+          title: title
+          all_domain_links: ""
+          journalists: ""
+          content: content
+          score: 2.3021358869347655
+          word_count: 0
+          domain_url: domain_url
+          all_links: ""
+          rights: rights
+          rank: 5
+          twitter_account: twitter_account
+          id: id
+          name_source: name_source
+          extraction_data: extraction_data
+          updated_date_precision: updated_date_precision
+          full_domain_url: full_domain_url
+          author: author
+          is_headline: is_headline
+          nlp: {}
+          published_date_precision: published_date_precision
+          is_opinion: true
+          updated_date: updated_date
+          published_date: published_date
+          authors: ""
+          parse_date: parse_date
+        clusters:
+        - cluster_id: cluster_id
+          cluster_size: 9
+          articles:
+          - "{}"
+          - "{}"
+        - cluster_id: cluster_id
+          cluster_size: 9
+          articles:
+          - "{}"
+          - "{}"
+        status: ok
+        page_size: 5
+      properties:
+        status:
+          default: ok
+          example: ok
+          title: Status
+          type: string
+          x-konfig-original-example: ok
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__SearchResponse__SearchResponse-properties-status
+        total_hits:
+          title: Total Hits
+          type: integer
+        page:
+          title: Page
+          type: integer
+        total_pages:
+          title: Total Pages
+          type: integer
+        page_size:
+          title: Page Size
+          type: integer
+        articles:
+          items:
+            $ref: '#/components/schemas/Articles_Property_inner_3'
+          title: Articles
+          type: array
+        user_input:
+          title: User Input
+          type: object
+        clusters_count:
+          title: Clusters Count
+          type: integer
+        clusters:
+          items:
+            $ref: '#/components/schemas/Cluster_1'
+          title: Clusters
+          type: array
+      required:
+      - user_input
+      title: SearchResponse
+      type: object
+    CSLHFResponse:
+      example:
+        total_hits: 0
+        user_input: "{}"
+        page: 6
+        total_pages: 1
+        clusters_count: 5
+        articles:
+        - country: country
+          paid_content: true
+          link: link
+          description: description
+          language: language
+          media: media
+          title: title
+          all_domain_links: ""
+          journalists: ""
+          content: content
+          score: 7.061401241503109
+          word_count: 0
+          domain_url: domain_url
+          all_links: ""
+          rights: rights
+          rank: 2
+          twitter_account: twitter_account
+          id: id
+          name_source: name_source
+          extraction_data: extraction_data
+          updated_date_precision: updated_date_precision
+          full_domain_url: full_domain_url
+          author: author
+          is_headline: is_headline
+          nlp: {}
+          published_date_precision: published_date_precision
+          is_opinion: true
+          updated_date: updated_date
+          published_date: published_date
+          authors: ""
+          parse_date: parse_date
+        - country: country
+          paid_content: true
+          link: link
+          description: description
+          language: language
+          media: media
+          title: title
+          all_domain_links: ""
+          journalists: ""
+          content: content
+          score: 7.061401241503109
+          word_count: 0
+          domain_url: domain_url
+          all_links: ""
+          rights: rights
+          rank: 2
+          twitter_account: twitter_account
+          id: id
+          name_source: name_source
+          extraction_data: extraction_data
+          updated_date_precision: updated_date_precision
+          full_domain_url: full_domain_url
+          author: author
+          is_headline: is_headline
+          nlp: {}
+          published_date_precision: published_date_precision
+          is_opinion: true
+          updated_date: updated_date
+          published_date: published_date
+          authors: ""
+          parse_date: parse_date
+        clusters:
+        - cluster_id: cluster_id
+          cluster_size: 9
+          articles:
+          - "{}"
+          - "{}"
+        - cluster_id: cluster_id
+          cluster_size: 9
+          articles:
+          - "{}"
+          - "{}"
+        status: ok
+        page_size: 5
+      properties:
+        status:
+          default: ok
+          example: ok
+          title: Status
+          type: string
+          x-konfig-original-example: ok
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-ClusteringSearchResponse-properties-status
+        total_hits:
+          title: Total Hits
+          type: integer
+        page:
+          title: Page
+          type: integer
+        total_pages:
+          title: Total Pages
+          type: integer
+        page_size:
+          title: Page Size
+          type: integer
+        clusters_count:
+          title: Clusters Count
+          type: integer
+        clusters:
+          items:
+            $ref: '#/components/schemas/Cluster_1'
+          title: Clusters
+          type: array
+        user_input:
+          title: User Input
+          type: object
+        articles:
+          items:
+            $ref: '#/components/schemas/Articles_Property_inner'
+          title: Articles
+          type: array
+      required:
+      - user_input
+      title: ClusteringSearchResponse
+      type: object
+    CSLHFResponse1:
+      example:
+        total_hits: 0
+        user_input: "{}"
+        page: 6
+        total_pages: 1
+        clusters_count: 5
+        articles:
+        - country: country
+          paid_content: true
+          link: link
+          description: description
+          language: language
+          media: media
+          title: title
+          all_domain_links: ""
+          journalists: ""
+          content: content
+          score: 7.061401241503109
+          word_count: 0
+          domain_url: domain_url
+          all_links: ""
+          rights: rights
+          rank: 2
+          twitter_account: twitter_account
+          id: id
+          name_source: name_source
+          extraction_data: extraction_data
+          updated_date_precision: updated_date_precision
+          full_domain_url: full_domain_url
+          author: author
+          is_headline: is_headline
+          nlp: {}
+          published_date_precision: published_date_precision
+          is_opinion: true
+          updated_date: updated_date
+          published_date: published_date
+          authors: ""
+          parse_date: parse_date
+        - country: country
+          paid_content: true
+          link: link
+          description: description
+          language: language
+          media: media
+          title: title
+          all_domain_links: ""
+          journalists: ""
+          content: content
+          score: 7.061401241503109
+          word_count: 0
+          domain_url: domain_url
+          all_links: ""
+          rights: rights
+          rank: 2
+          twitter_account: twitter_account
+          id: id
+          name_source: name_source
+          extraction_data: extraction_data
+          updated_date_precision: updated_date_precision
+          full_domain_url: full_domain_url
+          author: author
+          is_headline: is_headline
+          nlp: {}
+          published_date_precision: published_date_precision
+          is_opinion: true
+          updated_date: updated_date
+          published_date: published_date
+          authors: ""
+          parse_date: parse_date
+        clusters:
+        - cluster_id: cluster_id
+          cluster_size: 9
+          articles:
+          - "{}"
+          - "{}"
+        - cluster_id: cluster_id
+          cluster_size: 9
+          articles:
+          - "{}"
+          - "{}"
+        status: ok
+        page_size: 5
+      properties:
+        status:
+          default: ok
+          example: ok
+          title: Status
+          type: string
+          x-konfig-original-example: ok
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-ClusteringSearchResponse-properties-status
+        total_hits:
+          title: Total Hits
+          type: integer
+        page:
+          title: Page
+          type: integer
+        total_pages:
+          title: Total Pages
+          type: integer
+        page_size:
+          title: Page Size
+          type: integer
+        clusters_count:
+          title: Clusters Count
+          type: integer
+        clusters:
+          items:
+            $ref: '#/components/schemas/Cluster_1'
+          title: Clusters
+          type: array
+        user_input:
+          title: User Input
+          type: object
+        articles:
+          items:
+            $ref: '#/components/schemas/Articles_Property_inner'
+          title: Articles
+          type: array
+      required:
+      - user_input
+      title: ClusteringSearchResponse
+      type: object
+    FSearchResponse:
+      example:
+        total_hits: 0
+        user_input: "{}"
+        page: 6
+        total_pages: 1
+        articles:
+        - country: country
+          paid_content: true
+          link: link
+          description: description
+          language: language
+          media: media
+          title: title
+          all_domain_links: ""
+          journalists: ""
+          content: content
+          score: 2.3021358869347655
+          word_count: 0
+          domain_url: domain_url
+          all_links: ""
+          rights: rights
+          rank: 5
+          twitter_account: twitter_account
+          id: id
+          name_source: name_source
+          extraction_data: extraction_data
+          updated_date_precision: updated_date_precision
+          full_domain_url: full_domain_url
+          author: author
+          is_headline: is_headline
+          nlp: {}
+          published_date_precision: published_date_precision
+          is_opinion: true
+          updated_date: updated_date
+          published_date: published_date
+          authors: ""
+          parse_date: parse_date
+        - country: country
+          paid_content: true
+          link: link
+          description: description
+          language: language
+          media: media
+          title: title
+          all_domain_links: ""
+          journalists: ""
+          content: content
+          score: 2.3021358869347655
+          word_count: 0
+          domain_url: domain_url
+          all_links: ""
+          rights: rights
+          rank: 5
+          twitter_account: twitter_account
+          id: id
+          name_source: name_source
+          extraction_data: extraction_data
+          updated_date_precision: updated_date_precision
+          full_domain_url: full_domain_url
+          author: author
+          is_headline: is_headline
+          nlp: {}
+          published_date_precision: published_date_precision
+          is_opinion: true
+          updated_date: updated_date
+          published_date: published_date
+          authors: ""
+          parse_date: parse_date
+        status: ok
+        page_size: 5
+      properties:
+        status:
+          default: ok
+          example: ok
+          title: Status
+          type: string
+          x-konfig-original-example: ok
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__AuthorSearchResponse__SearchResponse-properties-status
+        total_hits:
+          title: Total Hits
+          type: integer
+        page:
+          title: Page
+          type: integer
+        total_pages:
+          title: Total Pages
+          type: integer
+        page_size:
+          title: Page Size
+          type: integer
+        articles:
+          items:
+            $ref: '#/components/schemas/Articles_Property_inner_1'
+          title: Articles
+          type: array
+        user_input:
+          title: User Input
+          type: object
+      required:
+      - user_input
+      title: SearchResponse
+      type: object
+    FSearchResponse1:
+      example:
+        total_hits: 0
+        user_input: "{}"
+        page: 6
+        total_pages: 1
+        articles:
+        - country: country
+          paid_content: true
+          link: link
+          description: description
+          language: language
+          media: media
+          title: title
+          all_domain_links: ""
+          journalists: ""
+          content: content
+          score: 2.3021358869347655
+          word_count: 0
+          domain_url: domain_url
+          all_links: ""
+          rights: rights
+          rank: 5
+          twitter_account: twitter_account
+          id: id
+          name_source: name_source
+          extraction_data: extraction_data
+          updated_date_precision: updated_date_precision
+          full_domain_url: full_domain_url
+          author: author
+          is_headline: is_headline
+          nlp: {}
+          published_date_precision: published_date_precision
+          is_opinion: true
+          updated_date: updated_date
+          published_date: published_date
+          authors: ""
+          parse_date: parse_date
+        - country: country
+          paid_content: true
+          link: link
+          description: description
+          language: language
+          media: media
+          title: title
+          all_domain_links: ""
+          journalists: ""
+          content: content
+          score: 2.3021358869347655
+          word_count: 0
+          domain_url: domain_url
+          all_links: ""
+          rights: rights
+          rank: 5
+          twitter_account: twitter_account
+          id: id
+          name_source: name_source
+          extraction_data: extraction_data
+          updated_date_precision: updated_date_precision
+          full_domain_url: full_domain_url
+          author: author
+          is_headline: is_headline
+          nlp: {}
+          published_date_precision: published_date_precision
+          is_opinion: true
+          updated_date: updated_date
+          published_date: published_date
+          authors: ""
+          parse_date: parse_date
+        status: ok
+        page_size: 5
+      properties:
+        status:
+          default: ok
+          example: ok
+          title: Status
+          type: string
+          x-konfig-original-example: ok
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__AuthorSearchResponse__SearchResponse-properties-status
+        total_hits:
+          title: Total Hits
+          type: integer
+        page:
+          title: Page
+          type: integer
+        total_pages:
+          title: Total Pages
+          type: integer
+        page_size:
+          title: Page Size
+          type: integer
+        articles:
+          items:
+            $ref: '#/components/schemas/Articles_Property_inner_1'
+          title: Articles
+          type: array
+        user_input:
+          title: User Input
+          type: object
+      required:
+      - user_input
+      title: SearchResponse
+      type: object
+    FSearchResponse2:
+      example:
+        total_hits: 0
+        user_input: "{}"
+        page: 6
+        total_pages: 1
+        articles:
+        - country: country
+          paid_content: true
+          link: link
+          description: description
+          language: language
+          media: media
+          title: title
+          all_domain_links: ""
+          journalists: ""
+          content: content
+          score: 2.3021358869347655
+          word_count: 0
+          domain_url: domain_url
+          all_links: ""
+          similar_documents: []
+          rights: rights
+          rank: 5
+          twitter_account: twitter_account
+          id: id
+          name_source: name_source
+          extraction_data: extraction_data
+          updated_date_precision: updated_date_precision
+          full_domain_url: full_domain_url
+          author: author
+          is_headline: is_headline
+          nlp: {}
+          published_date_precision: published_date_precision
+          is_opinion: true
+          updated_date: updated_date
+          published_date: published_date
+          authors: ""
+          parse_date: parse_date
+        - country: country
+          paid_content: true
+          link: link
+          description: description
+          language: language
+          media: media
+          title: title
+          all_domain_links: ""
+          journalists: ""
+          content: content
+          score: 2.3021358869347655
+          word_count: 0
+          domain_url: domain_url
+          all_links: ""
+          similar_documents: []
+          rights: rights
+          rank: 5
+          twitter_account: twitter_account
+          id: id
+          name_source: name_source
+          extraction_data: extraction_data
+          updated_date_precision: updated_date_precision
+          full_domain_url: full_domain_url
+          author: author
+          is_headline: is_headline
+          nlp: {}
+          published_date_precision: published_date_precision
+          is_opinion: true
+          updated_date: updated_date
+          published_date: published_date
+          authors: ""
+          parse_date: parse_date
+        status: ok
+        page_size: 5
+      properties:
+        status:
+          default: ok
+          example: ok
+          title: Status
+          type: string
+          x-konfig-original-example: ok
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__MoreLikeThisResponse__SearchResponse-properties-status
+        total_hits:
+          title: Total Hits
+          type: integer
+        page:
+          title: Page
+          type: integer
+        total_pages:
+          title: Total Pages
+          type: integer
+        page_size:
+          title: Page Size
+          type: integer
+        articles:
+          items:
+            $ref: '#/components/schemas/Articles_Property_inner_2'
+          title: Articles
+          type: array
+        user_input:
+          title: User Input
+          type: object
+      required:
+      - user_input
+      title: SearchResponse
+      type: object
+    FSearchResponse3:
+      example:
+        total_hits: 0
+        user_input: "{}"
+        page: 6
+        total_pages: 1
+        articles:
+        - country: country
+          paid_content: true
+          link: link
+          description: description
+          language: language
+          media: media
+          title: title
+          all_domain_links: ""
+          journalists: ""
+          content: content
+          score: 2.3021358869347655
+          word_count: 0
+          domain_url: domain_url
+          all_links: ""
+          similar_documents: []
+          rights: rights
+          rank: 5
+          twitter_account: twitter_account
+          id: id
+          name_source: name_source
+          extraction_data: extraction_data
+          updated_date_precision: updated_date_precision
+          full_domain_url: full_domain_url
+          author: author
+          is_headline: is_headline
+          nlp: {}
+          published_date_precision: published_date_precision
+          is_opinion: true
+          updated_date: updated_date
+          published_date: published_date
+          authors: ""
+          parse_date: parse_date
+        - country: country
+          paid_content: true
+          link: link
+          description: description
+          language: language
+          media: media
+          title: title
+          all_domain_links: ""
+          journalists: ""
+          content: content
+          score: 2.3021358869347655
+          word_count: 0
+          domain_url: domain_url
+          all_links: ""
+          similar_documents: []
+          rights: rights
+          rank: 5
+          twitter_account: twitter_account
+          id: id
+          name_source: name_source
+          extraction_data: extraction_data
+          updated_date_precision: updated_date_precision
+          full_domain_url: full_domain_url
+          author: author
+          is_headline: is_headline
+          nlp: {}
+          published_date_precision: published_date_precision
+          is_opinion: true
+          updated_date: updated_date
+          published_date: published_date
+          authors: ""
+          parse_date: parse_date
+        status: ok
+        page_size: 5
+      properties:
+        status:
+          default: ok
+          example: ok
+          title: Status
+          type: string
+          x-konfig-original-example: ok
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__MoreLikeThisResponse__SearchResponse-properties-status
+        total_hits:
+          title: Total Hits
+          type: integer
+        page:
+          title: Page
+          type: integer
+        total_pages:
+          title: Total Pages
+          type: integer
+        page_size:
+          title: Page Size
+          type: integer
+        articles:
+          items:
+            $ref: '#/components/schemas/Articles_Property_inner_2'
+          title: Articles
+          type: array
+        user_input:
+          title: User Input
+          type: object
+      required:
+      - user_input
+      title: SearchResponse
+      type: object
+    Cluster_1:
+      example:
+        cluster_id: cluster_id
+        cluster_size: 9
+        articles:
+        - "{}"
+        - "{}"
+      properties:
+        cluster_id:
+          title: Cluster Id
+          type: string
+        cluster_size:
+          title: Cluster Size
+          type: integer
+        articles:
+          items:
+            type: object
+          title: Articles
+          type: array
+      required:
+      - articles
+      - cluster_id
+      - cluster_size
+      title: Cluster
+      type: object
+    Articles_Property_inner:
+      example:
+        country: country
+        paid_content: true
+        link: link
+        description: description
+        language: language
+        media: media
+        title: title
+        all_domain_links: ""
+        journalists: ""
+        content: content
+        score: 7.061401241503109
+        word_count: 0
+        domain_url: domain_url
+        all_links: ""
+        rights: rights
+        rank: 2
+        twitter_account: twitter_account
+        id: id
+        name_source: name_source
+        extraction_data: extraction_data
+        updated_date_precision: updated_date_precision
+        full_domain_url: full_domain_url
+        author: author
+        is_headline: is_headline
+        nlp: {}
+        published_date_precision: published_date_precision
+        is_opinion: true
+        updated_date: updated_date
+        published_date: published_date
+        authors: ""
+        parse_date: parse_date
+      properties:
+        title:
+          title: Title
+          type: string
+        description:
+          title: Description
+          type: string
+        author:
+          title: Author
+          type: string
+        authors: {}
+        journalists: {}
+        published_date:
+          title: Published Date
+          type: string
+        published_date_precision:
+          title: Published Date Precision
+          type: string
+        updated_date:
+          title: Updated Date
+          type: string
+        updated_date_precision:
+          title: Updated Date Precision
+          type: string
+        parse_date:
+          title: Parse Date
+          type: string
+        link:
+          title: Link
+          type: string
+        domain_url:
+          title: Domain Url
+          type: string
+        full_domain_url:
+          title: Full Domain Url
+          type: string
+        name_source:
+          title: Name Source
+          type: string
+        is_headline:
+          title: Is Headline
+          type: string
+        paid_content:
+          title: Paid Content
+          type: boolean
+        extraction_data:
+          title: Extraction Data
+          type: string
+        country:
+          title: Country
+          type: string
+        rights:
+          title: Rights
+          type: string
+        rank:
+          title: Rank
+          type: integer
+        media:
+          title: Media
+          type: string
+        language:
+          title: Language
+          type: string
+        content:
+          title: Content
+          type: string
+        word_count:
+          default: 0
+          example: 0
+          title: Word Count
+          type: integer
+          x-konfig-original-example: 0
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__LatestHeadlinesResponse__ArticleResult-properties-word_count
+        is_opinion:
+          title: Is Opinion
+          type: boolean
+        twitter_account:
+          title: Twitter Account
+          type: string
+        all_links: {}
+        all_domain_links: {}
+        nlp:
+          example: {}
+          title: Nlp
+          type: object
+          x-konfig-original-example: {}
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__LatestHeadlinesResponse__ArticleResult-properties-nlp
+        id:
+          title: Id
+          type: string
+        score:
+          title: Score
+          type: number
+      type: object
+    Articles_Property_inner_1:
+      example:
+        country: country
+        paid_content: true
+        link: link
+        description: description
+        language: language
+        media: media
+        title: title
+        all_domain_links: ""
+        journalists: ""
+        content: content
+        score: 2.3021358869347655
+        word_count: 0
+        domain_url: domain_url
+        all_links: ""
+        rights: rights
+        rank: 5
+        twitter_account: twitter_account
+        id: id
+        name_source: name_source
+        extraction_data: extraction_data
+        updated_date_precision: updated_date_precision
+        full_domain_url: full_domain_url
+        author: author
+        is_headline: is_headline
+        nlp: {}
+        published_date_precision: published_date_precision
+        is_opinion: true
+        updated_date: updated_date
+        published_date: published_date
+        authors: ""
+        parse_date: parse_date
+      properties:
+        title:
+          title: Title
+          type: string
+        description:
+          title: Description
+          type: string
+        author:
+          title: Author
+          type: string
+        authors: {}
+        journalists: {}
+        published_date:
+          title: Published Date
+          type: string
+        published_date_precision:
+          title: Published Date Precision
+          type: string
+        updated_date:
+          title: Updated Date
+          type: string
+        updated_date_precision:
+          title: Updated Date Precision
+          type: string
+        parse_date:
+          title: Parse Date
+          type: string
+        link:
+          title: Link
+          type: string
+        domain_url:
+          title: Domain Url
+          type: string
+        full_domain_url:
+          title: Full Domain Url
+          type: string
+        name_source:
+          title: Name Source
+          type: string
+        is_headline:
+          title: Is Headline
+          type: string
+        paid_content:
+          title: Paid Content
+          type: boolean
+        extraction_data:
+          title: Extraction Data
+          type: string
+        country:
+          title: Country
+          type: string
+        rights:
+          title: Rights
+          type: string
+        rank:
+          title: Rank
+          type: integer
+        media:
+          title: Media
+          type: string
+        language:
+          title: Language
+          type: string
+        content:
+          title: Content
+          type: string
+        word_count:
+          default: 0
+          example: 0
+          title: Word Count
+          type: integer
+          x-konfig-original-example: 0
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__AuthorSearchResponse__ArticleResult-properties-word_count
+        is_opinion:
+          title: Is Opinion
+          type: boolean
+        twitter_account:
+          title: Twitter Account
+          type: string
+        all_links: {}
+        all_domain_links: {}
+        nlp:
+          example: {}
+          title: Nlp
+          type: object
+          x-konfig-original-example: {}
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__AuthorSearchResponse__ArticleResult-properties-nlp
+        id:
+          title: Id
+          type: string
+        score:
+          title: Score
+          type: number
+      type: object
+    SimilarDocument_1:
+      properties:
+        title:
+          title: Title
+          type: string
+        id:
+          title: Id
+          type: string
+        score:
+          title: Score
+          type: number
+        link:
+          title: Link
+          type: string
+      required:
+      - id
+      - link
+      - score
+      - title
+      title: SimilarDocument
+      type: object
+    Articles_Property_inner_2:
+      example:
+        country: country
+        paid_content: true
+        link: link
+        description: description
+        language: language
+        media: media
+        title: title
+        all_domain_links: ""
+        journalists: ""
+        content: content
+        score: 2.3021358869347655
+        word_count: 0
+        domain_url: domain_url
+        all_links: ""
+        similar_documents: []
+        rights: rights
+        rank: 5
+        twitter_account: twitter_account
+        id: id
+        name_source: name_source
+        extraction_data: extraction_data
+        updated_date_precision: updated_date_precision
+        full_domain_url: full_domain_url
+        author: author
+        is_headline: is_headline
+        nlp: {}
+        published_date_precision: published_date_precision
+        is_opinion: true
+        updated_date: updated_date
+        published_date: published_date
+        authors: ""
+        parse_date: parse_date
+      properties:
+        title:
+          title: Title
+          type: string
+        description:
+          title: Description
+          type: string
+        author:
+          title: Author
+          type: string
+        authors: {}
+        journalists: {}
+        published_date:
+          title: Published Date
+          type: string
+        published_date_precision:
+          title: Published Date Precision
+          type: string
+        updated_date:
+          title: Updated Date
+          type: string
+        updated_date_precision:
+          title: Updated Date Precision
+          type: string
+        parse_date:
+          title: Parse Date
+          type: string
+        link:
+          title: Link
+          type: string
+        domain_url:
+          title: Domain Url
+          type: string
+        full_domain_url:
+          title: Full Domain Url
+          type: string
+        name_source:
+          title: Name Source
+          type: string
+        is_headline:
+          title: Is Headline
+          type: string
+        paid_content:
+          title: Paid Content
+          type: boolean
+        extraction_data:
+          title: Extraction Data
+          type: string
+        country:
+          title: Country
+          type: string
+        rights:
+          title: Rights
+          type: string
+        rank:
+          title: Rank
+          type: integer
+        media:
+          title: Media
+          type: string
+        language:
+          title: Language
+          type: string
+        content:
+          title: Content
+          type: string
+        word_count:
+          default: 0
+          example: 0
+          title: Word Count
+          type: integer
+          x-konfig-original-example: 0
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__MoreLikeThisResponse__ArticleResult-properties-word_count
+        is_opinion:
+          title: Is Opinion
+          type: boolean
+        twitter_account:
+          title: Twitter Account
+          type: string
+        all_links: {}
+        all_domain_links: {}
+        nlp:
+          example: {}
+          title: Nlp
+          type: object
+          x-konfig-original-example: {}
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__MoreLikeThisResponse__ArticleResult-properties-nlp
+        id:
+          title: Id
+          type: string
+        score:
+          title: Score
+          type: number
+        similar_documents:
+          default: []
+          example: []
+          items:
+            $ref: '#/components/schemas/SimilarDocument_1'
+          title: Similar Documents
+          type: array
+          x-konfig-original-example: []
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__MoreLikeThisResponse__ArticleResult-properties-similar_documents
+      type: object
+    Articles_Property_inner_3:
+      example:
+        country: country
+        paid_content: true
+        link: link
+        description: description
+        language: language
+        media: media
+        title: title
+        all_domain_links: ""
+        journalists: ""
+        content: content
+        score: 2.3021358869347655
+        word_count: 0
+        domain_url: domain_url
+        all_links: ""
+        rights: rights
+        rank: 5
+        twitter_account: twitter_account
+        id: id
+        name_source: name_source
+        extraction_data: extraction_data
+        updated_date_precision: updated_date_precision
+        full_domain_url: full_domain_url
+        author: author
+        is_headline: is_headline
+        nlp: {}
+        published_date_precision: published_date_precision
+        is_opinion: true
+        updated_date: updated_date
+        published_date: published_date
+        authors: ""
+        parse_date: parse_date
+      properties:
+        title:
+          title: Title
+          type: string
+        description:
+          title: Description
+          type: string
+        author:
+          title: Author
+          type: string
+        authors: {}
+        journalists: {}
+        published_date:
+          title: Published Date
+          type: string
+        published_date_precision:
+          title: Published Date Precision
+          type: string
+        updated_date:
+          title: Updated Date
+          type: string
+        updated_date_precision:
+          title: Updated Date Precision
+          type: string
+        parse_date:
+          title: Parse Date
+          type: string
+        link:
+          title: Link
+          type: string
+        domain_url:
+          title: Domain Url
+          type: string
+        full_domain_url:
+          title: Full Domain Url
+          type: string
+        name_source:
+          title: Name Source
+          type: string
+        is_headline:
+          title: Is Headline
+          type: string
+        paid_content:
+          title: Paid Content
+          type: boolean
+        extraction_data:
+          title: Extraction Data
+          type: string
+        country:
+          title: Country
+          type: string
+        rights:
+          title: Rights
+          type: string
+        rank:
+          title: Rank
+          type: integer
+        media:
+          title: Media
+          type: string
+        language:
+          title: Language
+          type: string
+        content:
+          title: Content
+          type: string
+        word_count:
+          default: 0
+          example: 0
+          title: Word Count
+          type: integer
+          x-konfig-original-example: 0
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__SearchResponse__ArticleResult-properties-word_count
+        is_opinion:
+          title: Is Opinion
+          type: boolean
+        twitter_account:
+          title: Twitter Account
+          type: string
+        all_links: {}
+        all_domain_links: {}
+        nlp:
+          example: {}
+          title: Nlp
+          type: object
+          x-konfig-original-example: {}
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__SearchResponse__ArticleResult-properties-nlp
+        id:
+          title: Id
+          type: string
+        score:
+          title: Score
+          type: number
+      type: object
   securitySchemes:
     apiKey:
       in: header

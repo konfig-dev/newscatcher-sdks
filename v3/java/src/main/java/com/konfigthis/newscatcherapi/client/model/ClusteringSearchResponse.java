@@ -19,7 +19,8 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.konfigthis.newscatcherapi.client.model.Cluster;
+import com.konfigthis.newscatcherapi.client.model.ArticlesPropertyInner;
+import com.konfigthis.newscatcherapi.client.model.Cluster1;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -78,11 +79,15 @@ public class ClusteringSearchResponse {
 
   public static final String SERIALIZED_NAME_CLUSTERS = "clusters";
   @SerializedName(SERIALIZED_NAME_CLUSTERS)
-  private List<Cluster> clusters = new ArrayList<>();
+  private List<Cluster1> clusters = null;
 
   public static final String SERIALIZED_NAME_USER_INPUT = "user_input";
   @SerializedName(SERIALIZED_NAME_USER_INPUT)
   private Object userInput;
+
+  public static final String SERIALIZED_NAME_ARTICLES = "articles";
+  @SerializedName(SERIALIZED_NAME_ARTICLES)
+  private List<ArticlesPropertyInner> articles = null;
 
   public ClusteringSearchResponse() {
   }
@@ -129,8 +134,8 @@ public class ClusteringSearchResponse {
    * Get totalHits
    * @return totalHits
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
 
   public Integer getTotalHits() {
     return totalHits;
@@ -158,8 +163,8 @@ public class ClusteringSearchResponse {
    * Get page
    * @return page
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
 
   public Integer getPage() {
     return page;
@@ -187,8 +192,8 @@ public class ClusteringSearchResponse {
    * Get totalPages
    * @return totalPages
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
 
   public Integer getTotalPages() {
     return totalPages;
@@ -216,8 +221,8 @@ public class ClusteringSearchResponse {
    * Get pageSize
    * @return pageSize
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
 
   public Integer getPageSize() {
     return pageSize;
@@ -245,8 +250,8 @@ public class ClusteringSearchResponse {
    * Get clustersCount
    * @return clustersCount
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
 
   public Integer getClustersCount() {
     return clustersCount;
@@ -261,7 +266,7 @@ public class ClusteringSearchResponse {
   }
 
 
-  public ClusteringSearchResponse clusters(List<Cluster> clusters) {
+  public ClusteringSearchResponse clusters(List<Cluster1> clusters) {
     
     
     
@@ -270,7 +275,10 @@ public class ClusteringSearchResponse {
     return this;
   }
 
-  public ClusteringSearchResponse addClustersItem(Cluster clustersItem) {
+  public ClusteringSearchResponse addClustersItem(Cluster1 clustersItem) {
+    if (this.clusters == null) {
+      this.clusters = new ArrayList<>();
+    }
     this.clusters.add(clustersItem);
     return this;
   }
@@ -279,15 +287,15 @@ public class ClusteringSearchResponse {
    * Get clusters
    * @return clusters
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
 
-  public List<Cluster> getClusters() {
+  public List<Cluster1> getClusters() {
     return clusters;
   }
 
 
-  public void setClusters(List<Cluster> clusters) {
+  public void setClusters(List<Cluster1> clusters) {
     
     
     
@@ -321,6 +329,43 @@ public class ClusteringSearchResponse {
     
     
     this.userInput = userInput;
+  }
+
+
+  public ClusteringSearchResponse articles(List<ArticlesPropertyInner> articles) {
+    
+    
+    
+    
+    this.articles = articles;
+    return this;
+  }
+
+  public ClusteringSearchResponse addArticlesItem(ArticlesPropertyInner articlesItem) {
+    if (this.articles == null) {
+      this.articles = new ArrayList<>();
+    }
+    this.articles.add(articlesItem);
+    return this;
+  }
+
+   /**
+   * Get articles
+   * @return articles
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<ArticlesPropertyInner> getArticles() {
+    return articles;
+  }
+
+
+  public void setArticles(List<ArticlesPropertyInner> articles) {
+    
+    
+    
+    this.articles = articles;
   }
 
   /**
@@ -385,13 +430,14 @@ public class ClusteringSearchResponse {
         Objects.equals(this.pageSize, clusteringSearchResponse.pageSize) &&
         Objects.equals(this.clustersCount, clusteringSearchResponse.clustersCount) &&
         Objects.equals(this.clusters, clusteringSearchResponse.clusters) &&
-        Objects.equals(this.userInput, clusteringSearchResponse.userInput)&&
+        Objects.equals(this.userInput, clusteringSearchResponse.userInput) &&
+        Objects.equals(this.articles, clusteringSearchResponse.articles)&&
         Objects.equals(this.additionalProperties, clusteringSearchResponse.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(status, totalHits, page, totalPages, pageSize, clustersCount, clusters, userInput, additionalProperties);
+    return Objects.hash(status, totalHits, page, totalPages, pageSize, clustersCount, clusters, userInput, articles, additionalProperties);
   }
 
   @Override
@@ -406,6 +452,7 @@ public class ClusteringSearchResponse {
     sb.append("    clustersCount: ").append(toIndentedString(clustersCount)).append("\n");
     sb.append("    clusters: ").append(toIndentedString(clusters)).append("\n");
     sb.append("    userInput: ").append(toIndentedString(userInput)).append("\n");
+    sb.append("    articles: ").append(toIndentedString(articles)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -437,15 +484,10 @@ public class ClusteringSearchResponse {
     openapiFields.add("clusters_count");
     openapiFields.add("clusters");
     openapiFields.add("user_input");
+    openapiFields.add("articles");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("total_hits");
-    openapiRequiredFields.add("page");
-    openapiRequiredFields.add("total_pages");
-    openapiRequiredFields.add("page_size");
-    openapiRequiredFields.add("clusters_count");
-    openapiRequiredFields.add("clusters");
     openapiRequiredFields.add("user_input");
   }
 
@@ -471,16 +513,34 @@ public class ClusteringSearchResponse {
       if ((jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) && !jsonObj.get("status").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
       }
-      // ensure the json data is an array
-      if (!jsonObj.get("clusters").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `clusters` to be an array in the JSON string but got `%s`", jsonObj.get("clusters").toString()));
-      }
+      if (jsonObj.get("clusters") != null && !jsonObj.get("clusters").isJsonNull()) {
+        JsonArray jsonArrayclusters = jsonObj.getAsJsonArray("clusters");
+        if (jsonArrayclusters != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("clusters").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `clusters` to be an array in the JSON string but got `%s`", jsonObj.get("clusters").toString()));
+          }
 
-      JsonArray jsonArrayclusters = jsonObj.getAsJsonArray("clusters");
-      // validate the required field `clusters` (array)
-      for (int i = 0; i < jsonArrayclusters.size(); i++) {
-        Cluster.validateJsonObject(jsonArrayclusters.get(i).getAsJsonObject());
-      };
+          // validate the optional field `clusters` (array)
+          for (int i = 0; i < jsonArrayclusters.size(); i++) {
+            Cluster1.validateJsonObject(jsonArrayclusters.get(i).getAsJsonObject());
+          };
+        }
+      }
+      if (jsonObj.get("articles") != null && !jsonObj.get("articles").isJsonNull()) {
+        JsonArray jsonArrayarticles = jsonObj.getAsJsonArray("articles");
+        if (jsonArrayarticles != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("articles").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `articles` to be an array in the JSON string but got `%s`", jsonObj.get("articles").toString()));
+          }
+
+          // validate the optional field `articles` (array)
+          for (int i = 0; i < jsonArrayarticles.size(); i++) {
+            ArticlesPropertyInner.validateJsonObject(jsonArrayarticles.get(i).getAsJsonObject());
+          };
+        }
+      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

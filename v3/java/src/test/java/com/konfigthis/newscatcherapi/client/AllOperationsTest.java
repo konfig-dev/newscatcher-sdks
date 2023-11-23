@@ -1,9 +1,8 @@
 package com.konfigthis.newscatcherapi.client;
 
+import com.konfigthis.newscatcherapi.client.model.*;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-
-import java.util.Map;
 
 import static org.junit.Assert.assertNotNull;
 
@@ -21,16 +20,17 @@ public class AllOperationsTest {
 
     @Test
     public void authorsGetOnlyRequired() throws ApiException {
-        Map test = (Map) client.authors.get("test").execute();
+        FSearchResponse test =
+                client.authors.get("test").execute();
         assertNotNull(test);
-        assertNotNull(test.get("user_input"));
+        assertNotNull(test.getUserInput());
     }
 
     @Test
     public void authorsPostOnlyRequired() throws ApiException {
-        Map test = (Map) client.authors.post("test").execute();
+        FSearchResponse1 test = client.authors.post("test").execute();
         assertNotNull(test);
-        assertNotNull(test.get("user_input"));
+        assertNotNull(test.getUserInput());
     }
 
     @Test
@@ -68,7 +68,7 @@ public class AllOperationsTest {
         Double titleSentimentMax = 3.4D;
         Double contentSentimentMin = 3.4D;
         Double contentSentimentMax = 3.4D;
-        Map test = (Map) client.latestHeadlines.get()
+        CSLHFResponse response = client.latestHeadlines.get()
                 .when(when)
                 .byParseDate(byParseDate)
                 .lang(lang)
@@ -103,8 +103,27 @@ public class AllOperationsTest {
                 .contentSentimentMin(contentSentimentMin)
                 .contentSentimentMax(contentSentimentMax)
                 .execute();
-        assertNotNull(test);
-        assertNotNull(test.get("user_input"));
+        assertNotNull(response);
+        assertNotNull(response.getUserInput());
+    }
+
+    @Test
+    public void testSearchSimilarGet() throws ApiException {
+        FSearchResponse2 response = client.searchSimilar.get("test").execute();
+        assertNotNull(response.getUserInput());
+    }
+
+    @Test
+    public void testSearchSimilarPost() throws ApiException {
+        FSearchResponse3 response = client.searchSimilar.post("test").searchIn("test").execute();
+        assertNotNull(response.getUserInput());
+    }
+
+    @Test
+    public void testSubscriptionsPost() throws ApiException {
+        SubscriptionResponse response = client.subscription.post().execute();
+        assertNotNull(response.getActive());
+        assertNotNull(response.getPlanName());
     }
 
 }

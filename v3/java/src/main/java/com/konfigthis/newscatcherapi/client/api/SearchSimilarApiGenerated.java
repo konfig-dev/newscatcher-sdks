@@ -26,6 +26,8 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import com.konfigthis.newscatcherapi.client.model.FSearchResponse2;
+import com.konfigthis.newscatcherapi.client.model.FSearchResponse3;
 import com.konfigthis.newscatcherapi.client.model.MoreLikeThisRequest;
 
 import java.lang.reflect.Type;
@@ -279,16 +281,16 @@ public class SearchSimilarApiGenerated {
     }
 
 
-    private ApiResponse<Object> getWithHttpInfo(String q, String searchIn, Boolean includeSimilarDocuments, Integer similarDocumentsNumber, String similarDocumentsFields, String predefinedSources, String sources, String notSources, String lang, String notLang, String countries, String notCountries, String from, String to, Boolean byParseDate, String publishedDatePrecision, String sortBy, String rankedOnly, Integer fromRank, Integer toRank, Boolean isHeadline, Boolean isPaidContent, String parentUrl, String allLinks, String allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, Boolean includeNlpData, Boolean hasNlp, String theme, String nerName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax) throws ApiException {
+    private ApiResponse<FSearchResponse2> getWithHttpInfo(String q, String searchIn, Boolean includeSimilarDocuments, Integer similarDocumentsNumber, String similarDocumentsFields, String predefinedSources, String sources, String notSources, String lang, String notLang, String countries, String notCountries, String from, String to, Boolean byParseDate, String publishedDatePrecision, String sortBy, String rankedOnly, Integer fromRank, Integer toRank, Boolean isHeadline, Boolean isPaidContent, String parentUrl, String allLinks, String allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, Boolean includeNlpData, Boolean hasNlp, String theme, String nerName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax) throws ApiException {
         okhttp3.Call localVarCall = getValidateBeforeCall(q, searchIn, includeSimilarDocuments, similarDocumentsNumber, similarDocumentsFields, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, from, to, byParseDate, publishedDatePrecision, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, null);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<FSearchResponse2>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call getAsync(String q, String searchIn, Boolean includeSimilarDocuments, Integer similarDocumentsNumber, String similarDocumentsFields, String predefinedSources, String sources, String notSources, String lang, String notLang, String countries, String notCountries, String from, String to, Boolean byParseDate, String publishedDatePrecision, String sortBy, String rankedOnly, Integer fromRank, Integer toRank, Boolean isHeadline, Boolean isPaidContent, String parentUrl, String allLinks, String allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, Boolean includeNlpData, Boolean hasNlp, String theme, String nerName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax, final ApiCallback<Object> _callback) throws ApiException {
+    private okhttp3.Call getAsync(String q, String searchIn, Boolean includeSimilarDocuments, Integer similarDocumentsNumber, String similarDocumentsFields, String predefinedSources, String sources, String notSources, String lang, String notLang, String countries, String notCountries, String from, String to, Boolean byParseDate, String publishedDatePrecision, String sortBy, String rankedOnly, Integer fromRank, Integer toRank, Boolean isHeadline, Boolean isPaidContent, String parentUrl, String allLinks, String allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, Boolean includeNlpData, Boolean hasNlp, String theme, String nerName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax, final ApiCallback<FSearchResponse2> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getValidateBeforeCall(q, searchIn, includeSimilarDocuments, similarDocumentsNumber, similarDocumentsFields, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, from, to, byParseDate, publishedDatePrecision, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, _callback);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<FSearchResponse2>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -714,7 +716,7 @@ public class SearchSimilarApiGenerated {
 
         /**
          * Execute get request
-         * @return Object
+         * @return FSearchResponse2
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table summary="Response Details" border="1">
@@ -722,14 +724,14 @@ public class SearchSimilarApiGenerated {
             <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
          </table>
          */
-        public Object execute() throws ApiException {
-            ApiResponse<Object> localVarResp = getWithHttpInfo(q, searchIn, includeSimilarDocuments, similarDocumentsNumber, similarDocumentsFields, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, from, to, byParseDate, publishedDatePrecision, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax);
+        public FSearchResponse2 execute() throws ApiException {
+            ApiResponse<FSearchResponse2> localVarResp = getWithHttpInfo(q, searchIn, includeSimilarDocuments, similarDocumentsNumber, similarDocumentsFields, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, from, to, byParseDate, publishedDatePrecision, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax);
             return localVarResp.getResponseBody();
         }
 
         /**
          * Execute get request with HTTP info returned
-         * @return ApiResponse&lt;Object&gt;
+         * @return ApiResponse&lt;FSearchResponse2&gt;
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table summary="Response Details" border="1">
@@ -737,7 +739,7 @@ public class SearchSimilarApiGenerated {
             <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
          </table>
          */
-        public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
+        public ApiResponse<FSearchResponse2> executeWithHttpInfo() throws ApiException {
             return getWithHttpInfo(q, searchIn, includeSimilarDocuments, similarDocumentsNumber, similarDocumentsFields, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, from, to, byParseDate, publishedDatePrecision, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax);
         }
 
@@ -752,7 +754,7 @@ public class SearchSimilarApiGenerated {
             <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
          </table>
          */
-        public okhttp3.Call executeAsync(final ApiCallback<Object> _callback) throws ApiException {
+        public okhttp3.Call executeAsync(final ApiCallback<FSearchResponse2> _callback) throws ApiException {
             return getAsync(q, searchIn, includeSimilarDocuments, similarDocumentsNumber, similarDocumentsFields, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, from, to, byParseDate, publishedDatePrecision, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, _callback);
         }
     }
@@ -831,16 +833,16 @@ public class SearchSimilarApiGenerated {
     }
 
 
-    private ApiResponse<Object> postWithHttpInfo(MoreLikeThisRequest moreLikeThisRequest) throws ApiException {
+    private ApiResponse<FSearchResponse3> postWithHttpInfo(MoreLikeThisRequest moreLikeThisRequest) throws ApiException {
         okhttp3.Call localVarCall = postValidateBeforeCall(moreLikeThisRequest, null);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<FSearchResponse3>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call postAsync(MoreLikeThisRequest moreLikeThisRequest, final ApiCallback<Object> _callback) throws ApiException {
+    private okhttp3.Call postAsync(MoreLikeThisRequest moreLikeThisRequest, final ApiCallback<FSearchResponse3> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postValidateBeforeCall(moreLikeThisRequest, _callback);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<FSearchResponse3>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1308,7 +1310,7 @@ public class SearchSimilarApiGenerated {
 
         /**
          * Execute post request
-         * @return Object
+         * @return FSearchResponse3
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table summary="Response Details" border="1">
@@ -1316,15 +1318,15 @@ public class SearchSimilarApiGenerated {
             <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
          </table>
          */
-        public Object execute() throws ApiException {
+        public FSearchResponse3 execute() throws ApiException {
             MoreLikeThisRequest moreLikeThisRequest = buildBodyParams();
-            ApiResponse<Object> localVarResp = postWithHttpInfo(moreLikeThisRequest);
+            ApiResponse<FSearchResponse3> localVarResp = postWithHttpInfo(moreLikeThisRequest);
             return localVarResp.getResponseBody();
         }
 
         /**
          * Execute post request with HTTP info returned
-         * @return ApiResponse&lt;Object&gt;
+         * @return ApiResponse&lt;FSearchResponse3&gt;
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table summary="Response Details" border="1">
@@ -1332,7 +1334,7 @@ public class SearchSimilarApiGenerated {
             <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
          </table>
          */
-        public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
+        public ApiResponse<FSearchResponse3> executeWithHttpInfo() throws ApiException {
             MoreLikeThisRequest moreLikeThisRequest = buildBodyParams();
             return postWithHttpInfo(moreLikeThisRequest);
         }
@@ -1348,7 +1350,7 @@ public class SearchSimilarApiGenerated {
             <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
          </table>
          */
-        public okhttp3.Call executeAsync(final ApiCallback<Object> _callback) throws ApiException {
+        public okhttp3.Call executeAsync(final ApiCallback<FSearchResponse3> _callback) throws ApiException {
             MoreLikeThisRequest moreLikeThisRequest = buildBodyParams();
             return postAsync(moreLikeThisRequest, _callback);
         }

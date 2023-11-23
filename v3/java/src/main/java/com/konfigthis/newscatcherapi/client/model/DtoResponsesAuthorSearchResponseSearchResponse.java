@@ -19,6 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.konfigthis.newscatcherapi.client.model.ArticlesPropertyInner1;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -73,7 +74,7 @@ public class DtoResponsesAuthorSearchResponseSearchResponse {
 
   public static final String SERIALIZED_NAME_ARTICLES = "articles";
   @SerializedName(SERIALIZED_NAME_ARTICLES)
-  private List<Object> articles = new ArrayList<>();
+  private List<ArticlesPropertyInner1> articles = null;
 
   public static final String SERIALIZED_NAME_USER_INPUT = "user_input";
   @SerializedName(SERIALIZED_NAME_USER_INPUT)
@@ -124,8 +125,8 @@ public class DtoResponsesAuthorSearchResponseSearchResponse {
    * Get totalHits
    * @return totalHits
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
 
   public Integer getTotalHits() {
     return totalHits;
@@ -153,8 +154,8 @@ public class DtoResponsesAuthorSearchResponseSearchResponse {
    * Get page
    * @return page
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
 
   public Integer getPage() {
     return page;
@@ -182,8 +183,8 @@ public class DtoResponsesAuthorSearchResponseSearchResponse {
    * Get totalPages
    * @return totalPages
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
 
   public Integer getTotalPages() {
     return totalPages;
@@ -211,8 +212,8 @@ public class DtoResponsesAuthorSearchResponseSearchResponse {
    * Get pageSize
    * @return pageSize
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
 
   public Integer getPageSize() {
     return pageSize;
@@ -227,7 +228,7 @@ public class DtoResponsesAuthorSearchResponseSearchResponse {
   }
 
 
-  public DtoResponsesAuthorSearchResponseSearchResponse articles(List<Object> articles) {
+  public DtoResponsesAuthorSearchResponseSearchResponse articles(List<ArticlesPropertyInner1> articles) {
     
     
     
@@ -236,7 +237,10 @@ public class DtoResponsesAuthorSearchResponseSearchResponse {
     return this;
   }
 
-  public DtoResponsesAuthorSearchResponseSearchResponse addArticlesItem(Object articlesItem) {
+  public DtoResponsesAuthorSearchResponseSearchResponse addArticlesItem(ArticlesPropertyInner1 articlesItem) {
+    if (this.articles == null) {
+      this.articles = new ArrayList<>();
+    }
     this.articles.add(articlesItem);
     return this;
   }
@@ -245,15 +249,15 @@ public class DtoResponsesAuthorSearchResponseSearchResponse {
    * Get articles
    * @return articles
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
 
-  public List<Object> getArticles() {
+  public List<ArticlesPropertyInner1> getArticles() {
     return articles;
   }
 
 
-  public void setArticles(List<Object> articles) {
+  public void setArticles(List<ArticlesPropertyInner1> articles) {
     
     
     
@@ -403,11 +407,6 @@ public class DtoResponsesAuthorSearchResponseSearchResponse {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("total_hits");
-    openapiRequiredFields.add("page");
-    openapiRequiredFields.add("total_pages");
-    openapiRequiredFields.add("page_size");
-    openapiRequiredFields.add("articles");
     openapiRequiredFields.add("user_input");
   }
 
@@ -433,11 +432,19 @@ public class DtoResponsesAuthorSearchResponseSearchResponse {
       if ((jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) && !jsonObj.get("status").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
       }
-      // ensure the required json array is present
-      if (jsonObj.get("articles") == null) {
-        throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
-      } else if (!jsonObj.get("articles").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `articles` to be an array in the JSON string but got `%s`", jsonObj.get("articles").toString()));
+      if (jsonObj.get("articles") != null && !jsonObj.get("articles").isJsonNull()) {
+        JsonArray jsonArrayarticles = jsonObj.getAsJsonArray("articles");
+        if (jsonArrayarticles != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("articles").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `articles` to be an array in the JSON string but got `%s`", jsonObj.get("articles").toString()));
+          }
+
+          // validate the optional field `articles` (array)
+          for (int i = 0; i < jsonArrayarticles.size(); i++) {
+            ArticlesPropertyInner1.validateJsonObject(jsonArrayarticles.get(i).getAsJsonObject());
+          };
+        }
       }
   }
 
