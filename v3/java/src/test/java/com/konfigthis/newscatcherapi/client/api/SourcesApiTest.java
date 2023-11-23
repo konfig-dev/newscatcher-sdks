@@ -18,7 +18,6 @@ import com.konfigthis.newscatcherapi.client.ApiException;
 import com.konfigthis.newscatcherapi.client.Configuration;
 import com.konfigthis.newscatcherapi.client.model.SourceResponse;
 import com.konfigthis.newscatcherapi.client.model.SourcesRequest;
-import com.konfigthis.newscatcherapi.client.model.UserInput;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeAll;

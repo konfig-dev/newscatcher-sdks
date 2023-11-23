@@ -17,7 +17,8 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.konfigthis.newscatcherapi.client.model.Cluster;
+import com.konfigthis.newscatcherapi.client.model.ArticlesPropertyInner;
+import com.konfigthis.newscatcherapi.client.model.Cluster1;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -103,6 +104,14 @@ public class ClusteringSearchResponseTest {
     @Test
     public void userInputTest() {
         // TODO: test userInput
+    }
+
+    /**
+     * Test the property 'articles'
+     */
+    @Test
+    public void articlesTest() {
+        // TODO: test articles
     }
 
 }

@@ -10,7 +10,7 @@ All URIs are relative to *https://v3-api.newscatcherapi.com*
 
 <a name="get"></a>
 # **get**
-> Object get(q).searchIn(searchIn).includeSimilarDocuments(includeSimilarDocuments).similarDocumentsNumber(similarDocumentsNumber).similarDocumentsFields(similarDocumentsFields).predefinedSources(predefinedSources).sources(sources).notSources(notSources).lang(lang).notLang(notLang).countries(countries).notCountries(notCountries).from(from).to(to).byParseDate(byParseDate).publishedDatePrecision(publishedDatePrecision).sortBy(sortBy).rankedOnly(rankedOnly).fromRank(fromRank).toRank(toRank).isHeadline(isHeadline).isPaidContent(isPaidContent).parentUrl(parentUrl).allLinks(allLinks).allDomainLinks(allDomainLinks).wordCountMin(wordCountMin).wordCountMax(wordCountMax).page(page).pageSize(pageSize).includeNlpData(includeNlpData).hasNlp(hasNlp).theme(theme).nerName(nerName).titleSentimentMin(titleSentimentMin).titleSentimentMax(titleSentimentMax).contentSentimentMin(contentSentimentMin).contentSentimentMax(contentSentimentMax).execute();
+> FSearchResponse2 get(q).searchIn(searchIn).includeSimilarDocuments(includeSimilarDocuments).similarDocumentsNumber(similarDocumentsNumber).similarDocumentsFields(similarDocumentsFields).predefinedSources(predefinedSources).sources(sources).notSources(notSources).lang(lang).notLang(notLang).countries(countries).notCountries(notCountries).from(from).to(to).byParseDate(byParseDate).publishedDatePrecision(publishedDatePrecision).sortBy(sortBy).rankedOnly(rankedOnly).fromRank(fromRank).toRank(toRank).isHeadline(isHeadline).isPaidContent(isPaidContent).parentUrl(parentUrl).allLinks(allLinks).allDomainLinks(allDomainLinks).wordCountMin(wordCountMin).wordCountMax(wordCountMax).page(page).pageSize(pageSize).includeNlpData(includeNlpData).hasNlp(hasNlp).theme(theme).nerName(nerName).titleSentimentMin(titleSentimentMin).titleSentimentMax(titleSentimentMax).contentSentimentMin(contentSentimentMin).contentSentimentMax(contentSentimentMax).execute();
 
 [Get] Search For Similar Articles Request
 
@@ -75,7 +75,7 @@ public class Example {
     Double contentSentimentMin = 3.4D;
     Double contentSentimentMax = 3.4D;
     try {
-      Object result = client
+      FSearchResponse2 result = client
               .searchSimilar
               .get(q)
               .searchIn(searchIn)
@@ -115,6 +115,14 @@ public class Example {
               .contentSentimentMin(contentSentimentMin)
               .contentSentimentMax(contentSentimentMax)
               .execute();
+      System.out.println(result);
+      System.out.println(result.getStatus());
+      System.out.println(result.getTotalHits());
+      System.out.println(result.getPage());
+      System.out.println(result.getTotalPages());
+      System.out.println(result.getPageSize());
+      System.out.println(result.getArticles());
+      System.out.println(result.getUserInput());
     } catch (ApiException e) {
       System.err.println("Exception when calling SearchSimilarApi#get");
       System.err.println("Status code: " + e.getStatusCode());
@@ -125,7 +133,7 @@ public class Example {
 
     // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request
     try {
-      ApiResponse<Object> response = client
+      ApiResponse<FSearchResponse2> response = client
               .searchSimilar
               .get(q)
               .searchIn(searchIn)
@@ -226,7 +234,7 @@ public class Example {
 
 ### Return type
 
-**Object**
+[**FSearchResponse2**](FSearchResponse2.md)
 
 ### Authorization
 
@@ -244,7 +252,7 @@ public class Example {
 
 <a name="post"></a>
 # **post**
-> Object post(moreLikeThisRequest).execute();
+> FSearchResponse3 post(moreLikeThisRequest).execute();
 
 [Post] Search For Similar Articles Request
 
@@ -309,7 +317,7 @@ public class Example {
     Double contentSentimentMin = 3.4D;
     Double contentSentimentMax = 3.4D;
     try {
-      Object result = client
+      FSearchResponse3 result = client
               .searchSimilar
               .post(q)
               .searchIn(searchIn)
@@ -349,6 +357,14 @@ public class Example {
               .contentSentimentMin(contentSentimentMin)
               .contentSentimentMax(contentSentimentMax)
               .execute();
+      System.out.println(result);
+      System.out.println(result.getStatus());
+      System.out.println(result.getTotalHits());
+      System.out.println(result.getPage());
+      System.out.println(result.getTotalPages());
+      System.out.println(result.getPageSize());
+      System.out.println(result.getArticles());
+      System.out.println(result.getUserInput());
     } catch (ApiException e) {
       System.err.println("Exception when calling SearchSimilarApi#post");
       System.err.println("Status code: " + e.getStatusCode());
@@ -359,7 +375,7 @@ public class Example {
 
     // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request
     try {
-      ApiResponse<Object> response = client
+      ApiResponse<FSearchResponse3> response = client
               .searchSimilar
               .post(q)
               .searchIn(searchIn)
@@ -424,7 +440,7 @@ public class Example {
 
 ### Return type
 
-**Object**
+[**FSearchResponse3**](FSearchResponse3.md)
 
 ### Authorization
 

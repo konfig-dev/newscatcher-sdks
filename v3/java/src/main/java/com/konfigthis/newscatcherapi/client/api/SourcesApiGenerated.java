@@ -28,7 +28,6 @@ import java.io.IOException;
 
 import com.konfigthis.newscatcherapi.client.model.SourceResponse;
 import com.konfigthis.newscatcherapi.client.model.SourcesRequest;
-import com.konfigthis.newscatcherapi.client.model.UserInput;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;

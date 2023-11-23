@@ -26,6 +26,8 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import com.konfigthis.newscatcherapi.client.model.CSLHFResponse;
+import com.konfigthis.newscatcherapi.client.model.CSLHFResponse1;
 import com.konfigthis.newscatcherapi.client.model.LatestHeadlinesRequest;
 
 import java.lang.reflect.Type;
@@ -258,16 +260,16 @@ public class LatestHeadlinesApiGenerated {
     }
 
 
-    private ApiResponse<Object> getWithHttpInfo(String when, Boolean byParseDate, String lang, String notLang, String countries, String notCountries, String sources, String predefinedSources, String notSources, String rankedOnly, Boolean isHeadline, Boolean isPaidContent, String parentUrl, String theme, String allLinks, String allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, Boolean clusteringEnabled, Double clusteringThreshold, String clusteringVariable, Boolean includeNlpData, Boolean hasNlp, String orGEntityName, String peREntityName, String loCEntityName, String miSCEntityName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax) throws ApiException {
+    private ApiResponse<CSLHFResponse> getWithHttpInfo(String when, Boolean byParseDate, String lang, String notLang, String countries, String notCountries, String sources, String predefinedSources, String notSources, String rankedOnly, Boolean isHeadline, Boolean isPaidContent, String parentUrl, String theme, String allLinks, String allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, Boolean clusteringEnabled, Double clusteringThreshold, String clusteringVariable, Boolean includeNlpData, Boolean hasNlp, String orGEntityName, String peREntityName, String loCEntityName, String miSCEntityName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax) throws ApiException {
         okhttp3.Call localVarCall = getValidateBeforeCall(when, byParseDate, lang, notLang, countries, notCountries, sources, predefinedSources, notSources, rankedOnly, isHeadline, isPaidContent, parentUrl, theme, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringEnabled, clusteringThreshold, clusteringVariable, includeNlpData, hasNlp, orGEntityName, peREntityName, loCEntityName, miSCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, null);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<CSLHFResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call getAsync(String when, Boolean byParseDate, String lang, String notLang, String countries, String notCountries, String sources, String predefinedSources, String notSources, String rankedOnly, Boolean isHeadline, Boolean isPaidContent, String parentUrl, String theme, String allLinks, String allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, Boolean clusteringEnabled, Double clusteringThreshold, String clusteringVariable, Boolean includeNlpData, Boolean hasNlp, String orGEntityName, String peREntityName, String loCEntityName, String miSCEntityName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax, final ApiCallback<Object> _callback) throws ApiException {
+    private okhttp3.Call getAsync(String when, Boolean byParseDate, String lang, String notLang, String countries, String notCountries, String sources, String predefinedSources, String notSources, String rankedOnly, Boolean isHeadline, Boolean isPaidContent, String parentUrl, String theme, String allLinks, String allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, Boolean clusteringEnabled, Double clusteringThreshold, String clusteringVariable, Boolean includeNlpData, Boolean hasNlp, String orGEntityName, String peREntityName, String loCEntityName, String miSCEntityName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax, final ApiCallback<CSLHFResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getValidateBeforeCall(when, byParseDate, lang, notLang, countries, notCountries, sources, predefinedSources, notSources, rankedOnly, isHeadline, isPaidContent, parentUrl, theme, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringEnabled, clusteringThreshold, clusteringVariable, includeNlpData, hasNlp, orGEntityName, peREntityName, loCEntityName, miSCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, _callback);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<CSLHFResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -658,7 +660,7 @@ public class LatestHeadlinesApiGenerated {
 
         /**
          * Execute get request
-         * @return Object
+         * @return CSLHFResponse
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table summary="Response Details" border="1">
@@ -666,14 +668,14 @@ public class LatestHeadlinesApiGenerated {
             <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
          </table>
          */
-        public Object execute() throws ApiException {
-            ApiResponse<Object> localVarResp = getWithHttpInfo(when, byParseDate, lang, notLang, countries, notCountries, sources, predefinedSources, notSources, rankedOnly, isHeadline, isPaidContent, parentUrl, theme, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringEnabled, clusteringThreshold, clusteringVariable, includeNlpData, hasNlp, orGEntityName, peREntityName, loCEntityName, miSCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax);
+        public CSLHFResponse execute() throws ApiException {
+            ApiResponse<CSLHFResponse> localVarResp = getWithHttpInfo(when, byParseDate, lang, notLang, countries, notCountries, sources, predefinedSources, notSources, rankedOnly, isHeadline, isPaidContent, parentUrl, theme, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringEnabled, clusteringThreshold, clusteringVariable, includeNlpData, hasNlp, orGEntityName, peREntityName, loCEntityName, miSCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax);
             return localVarResp.getResponseBody();
         }
 
         /**
          * Execute get request with HTTP info returned
-         * @return ApiResponse&lt;Object&gt;
+         * @return ApiResponse&lt;CSLHFResponse&gt;
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table summary="Response Details" border="1">
@@ -681,7 +683,7 @@ public class LatestHeadlinesApiGenerated {
             <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
          </table>
          */
-        public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
+        public ApiResponse<CSLHFResponse> executeWithHttpInfo() throws ApiException {
             return getWithHttpInfo(when, byParseDate, lang, notLang, countries, notCountries, sources, predefinedSources, notSources, rankedOnly, isHeadline, isPaidContent, parentUrl, theme, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringEnabled, clusteringThreshold, clusteringVariable, includeNlpData, hasNlp, orGEntityName, peREntityName, loCEntityName, miSCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax);
         }
 
@@ -696,7 +698,7 @@ public class LatestHeadlinesApiGenerated {
             <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
          </table>
          */
-        public okhttp3.Call executeAsync(final ApiCallback<Object> _callback) throws ApiException {
+        public okhttp3.Call executeAsync(final ApiCallback<CSLHFResponse> _callback) throws ApiException {
             return getAsync(when, byParseDate, lang, notLang, countries, notCountries, sources, predefinedSources, notSources, rankedOnly, isHeadline, isPaidContent, parentUrl, theme, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringEnabled, clusteringThreshold, clusteringVariable, includeNlpData, hasNlp, orGEntityName, peREntityName, loCEntityName, miSCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, _callback);
         }
     }
@@ -771,16 +773,16 @@ public class LatestHeadlinesApiGenerated {
     }
 
 
-    private ApiResponse<Object> postWithHttpInfo(LatestHeadlinesRequest latestHeadlinesRequest) throws ApiException {
+    private ApiResponse<CSLHFResponse1> postWithHttpInfo(LatestHeadlinesRequest latestHeadlinesRequest) throws ApiException {
         okhttp3.Call localVarCall = postValidateBeforeCall(latestHeadlinesRequest, null);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<CSLHFResponse1>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call postAsync(LatestHeadlinesRequest latestHeadlinesRequest, final ApiCallback<Object> _callback) throws ApiException {
+    private okhttp3.Call postAsync(LatestHeadlinesRequest latestHeadlinesRequest, final ApiCallback<CSLHFResponse1> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postValidateBeforeCall(latestHeadlinesRequest, _callback);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<CSLHFResponse1>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1209,7 +1211,7 @@ public class LatestHeadlinesApiGenerated {
 
         /**
          * Execute post request
-         * @return Object
+         * @return CSLHFResponse1
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table summary="Response Details" border="1">
@@ -1217,15 +1219,15 @@ public class LatestHeadlinesApiGenerated {
             <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
          </table>
          */
-        public Object execute() throws ApiException {
+        public CSLHFResponse1 execute() throws ApiException {
             LatestHeadlinesRequest latestHeadlinesRequest = buildBodyParams();
-            ApiResponse<Object> localVarResp = postWithHttpInfo(latestHeadlinesRequest);
+            ApiResponse<CSLHFResponse1> localVarResp = postWithHttpInfo(latestHeadlinesRequest);
             return localVarResp.getResponseBody();
         }
 
         /**
          * Execute post request with HTTP info returned
-         * @return ApiResponse&lt;Object&gt;
+         * @return ApiResponse&lt;CSLHFResponse1&gt;
          * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
          * @http.response.details
          <table summary="Response Details" border="1">
@@ -1233,7 +1235,7 @@ public class LatestHeadlinesApiGenerated {
             <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
          </table>
          */
-        public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
+        public ApiResponse<CSLHFResponse1> executeWithHttpInfo() throws ApiException {
             LatestHeadlinesRequest latestHeadlinesRequest = buildBodyParams();
             return postWithHttpInfo(latestHeadlinesRequest);
         }
@@ -1249,7 +1251,7 @@ public class LatestHeadlinesApiGenerated {
             <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
          </table>
          */
-        public okhttp3.Call executeAsync(final ApiCallback<Object> _callback) throws ApiException {
+        public okhttp3.Call executeAsync(final ApiCallback<CSLHFResponse1> _callback) throws ApiException {
             LatestHeadlinesRequest latestHeadlinesRequest = buildBodyParams();
             return postAsync(latestHeadlinesRequest, _callback);
         }

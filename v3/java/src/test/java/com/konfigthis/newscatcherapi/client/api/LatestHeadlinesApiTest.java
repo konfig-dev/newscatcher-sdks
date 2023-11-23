@@ -16,6 +16,8 @@ import com.konfigthis.newscatcherapi.client.ApiException;
 import com.konfigthis.newscatcherapi.client.ApiClient;
 import com.konfigthis.newscatcherapi.client.ApiException;
 import com.konfigthis.newscatcherapi.client.Configuration;
+import com.konfigthis.newscatcherapi.client.model.CSLHFResponse;
+import com.konfigthis.newscatcherapi.client.model.CSLHFResponse1;
 import com.konfigthis.newscatcherapi.client.model.LatestHeadlinesRequest;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -83,7 +85,7 @@ public class LatestHeadlinesApiTest {
         Double titleSentimentMax = null;
         Double contentSentimentMin = null;
         Double contentSentimentMax = null;
-        Object response = api.get()
+        CSLHFResponse response = api.get()
                 .when(when)
                 .byParseDate(byParseDate)
                 .lang(lang)
@@ -163,7 +165,7 @@ public class LatestHeadlinesApiTest {
         Double titleSentimentMax = null;
         Double contentSentimentMin = null;
         Double contentSentimentMax = null;
-        Object response = api.post()
+        CSLHFResponse1 response = api.post()
                 .when(when)
                 .byParseDate(byParseDate)
                 .lang(lang)

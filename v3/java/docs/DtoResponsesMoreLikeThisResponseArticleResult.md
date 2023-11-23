@@ -38,7 +38,7 @@
 |**nlp** | **Object** |  |  [optional] |
 |**id** | **String** |  |  |
 |**score** | **Double** |  |  |
-|**similarDocuments** | [**List&lt;SimilarDocument&gt;**](SimilarDocument.md) |  |  [optional] |
+|**similarDocuments** | [**List&lt;SimilarDocument1&gt;**](SimilarDocument1.md) |  |  [optional] |
 
 
 

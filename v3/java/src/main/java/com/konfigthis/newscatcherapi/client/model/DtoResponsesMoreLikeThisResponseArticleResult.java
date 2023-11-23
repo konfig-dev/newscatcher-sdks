@@ -19,7 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.konfigthis.newscatcherapi.client.model.SimilarDocument;
+import com.konfigthis.newscatcherapi.client.model.SimilarDocument1;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -179,7 +179,7 @@ public class DtoResponsesMoreLikeThisResponseArticleResult {
 
   public static final String SERIALIZED_NAME_SIMILAR_DOCUMENTS = "similar_documents";
   @SerializedName(SERIALIZED_NAME_SIMILAR_DOCUMENTS)
-  private List<SimilarDocument> similarDocuments = null;
+  private List<SimilarDocument1> similarDocuments = null;
 
   public DtoResponsesMoreLikeThisResponseArticleResult() {
   }
@@ -1092,7 +1092,7 @@ public class DtoResponsesMoreLikeThisResponseArticleResult {
   }
 
 
-  public DtoResponsesMoreLikeThisResponseArticleResult similarDocuments(List<SimilarDocument> similarDocuments) {
+  public DtoResponsesMoreLikeThisResponseArticleResult similarDocuments(List<SimilarDocument1> similarDocuments) {
     
     
     
@@ -1101,7 +1101,7 @@ public class DtoResponsesMoreLikeThisResponseArticleResult {
     return this;
   }
 
-  public DtoResponsesMoreLikeThisResponseArticleResult addSimilarDocumentsItem(SimilarDocument similarDocumentsItem) {
+  public DtoResponsesMoreLikeThisResponseArticleResult addSimilarDocumentsItem(SimilarDocument1 similarDocumentsItem) {
     if (this.similarDocuments == null) {
       this.similarDocuments = new ArrayList<>();
     }
@@ -1116,12 +1116,12 @@ public class DtoResponsesMoreLikeThisResponseArticleResult {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "[]", value = "")
 
-  public List<SimilarDocument> getSimilarDocuments() {
+  public List<SimilarDocument1> getSimilarDocuments() {
     return similarDocuments;
   }
 
 
-  public void setSimilarDocuments(List<SimilarDocument> similarDocuments) {
+  public void setSimilarDocuments(List<SimilarDocument1> similarDocuments) {
     
     
     
@@ -1431,7 +1431,7 @@ public class DtoResponsesMoreLikeThisResponseArticleResult {
 
           // validate the optional field `similar_documents` (array)
           for (int i = 0; i < jsonArraysimilarDocuments.size(); i++) {
-            SimilarDocument.validateJsonObject(jsonArraysimilarDocuments.get(i).getAsJsonObject());
+            SimilarDocument1.validateJsonObject(jsonArraysimilarDocuments.get(i).getAsJsonObject());
           };
         }
       }

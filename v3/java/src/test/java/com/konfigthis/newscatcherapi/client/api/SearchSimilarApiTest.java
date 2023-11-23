@@ -16,6 +16,8 @@ import com.konfigthis.newscatcherapi.client.ApiException;
 import com.konfigthis.newscatcherapi.client.ApiClient;
 import com.konfigthis.newscatcherapi.client.ApiException;
 import com.konfigthis.newscatcherapi.client.Configuration;
+import com.konfigthis.newscatcherapi.client.model.FSearchResponse2;
+import com.konfigthis.newscatcherapi.client.model.FSearchResponse3;
 import com.konfigthis.newscatcherapi.client.model.MoreLikeThisRequest;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -87,7 +89,7 @@ public class SearchSimilarApiTest {
         Double titleSentimentMax = null;
         Double contentSentimentMin = null;
         Double contentSentimentMax = null;
-        Object response = api.get(q)
+        FSearchResponse2 response = api.get(q)
                 .searchIn(searchIn)
                 .includeSimilarDocuments(includeSimilarDocuments)
                 .similarDocumentsNumber(similarDocumentsNumber)
@@ -174,7 +176,7 @@ public class SearchSimilarApiTest {
         Double titleSentimentMax = null;
         Double contentSentimentMin = null;
         Double contentSentimentMax = null;
-        Object response = api.post(q)
+        FSearchResponse3 response = api.post(q)
                 .searchIn(searchIn)
                 .includeSimilarDocuments(includeSimilarDocuments)
                 .similarDocumentsNumber(similarDocumentsNumber)

@@ -10,7 +10,7 @@ All URIs are relative to *https://v3-api.newscatcherapi.com*
 
 <a name="get"></a>
 # **get**
-> Object get(authorName).sources(sources).predefinedSources(predefinedSources).notSources(notSources).lang(lang).notLang(notLang).countries(countries).notCountries(notCountries).from(from).to(to).publishedDatePrecision(publishedDatePrecision).byParseDate(byParseDate).sortBy(sortBy).rankedOnly(rankedOnly).fromRank(fromRank).toRank(toRank).isHeadline(isHeadline).isPaidContent(isPaidContent).parentUrl(parentUrl).allLinks(allLinks).allDomainLinks(allDomainLinks).wordCountMin(wordCountMin).wordCountMax(wordCountMax).page(page).pageSize(pageSize).includeNlpData(includeNlpData).hasNlp(hasNlp).theme(theme).nerName(nerName).titleSentimentMin(titleSentimentMin).titleSentimentMax(titleSentimentMax).contentSentimentMin(contentSentimentMin).contentSentimentMax(contentSentimentMax).execute();
+> FSearchResponse get(authorName).sources(sources).predefinedSources(predefinedSources).notSources(notSources).lang(lang).notLang(notLang).countries(countries).notCountries(notCountries).from(from).to(to).publishedDatePrecision(publishedDatePrecision).byParseDate(byParseDate).sortBy(sortBy).rankedOnly(rankedOnly).fromRank(fromRank).toRank(toRank).isHeadline(isHeadline).isPaidContent(isPaidContent).parentUrl(parentUrl).allLinks(allLinks).allDomainLinks(allDomainLinks).wordCountMin(wordCountMin).wordCountMax(wordCountMax).page(page).pageSize(pageSize).includeNlpData(includeNlpData).hasNlp(hasNlp).theme(theme).nerName(nerName).titleSentimentMin(titleSentimentMin).titleSentimentMax(titleSentimentMax).contentSentimentMin(contentSentimentMin).contentSentimentMax(contentSentimentMax).execute();
 
 [Get] Search By Author Request
 
@@ -71,7 +71,7 @@ public class Example {
     Double contentSentimentMin = 3.4D;
     Double contentSentimentMax = 3.4D;
     try {
-      Object result = client
+      FSearchResponse result = client
               .authors
               .get(authorName)
               .sources(sources)
@@ -107,6 +107,14 @@ public class Example {
               .contentSentimentMin(contentSentimentMin)
               .contentSentimentMax(contentSentimentMax)
               .execute();
+      System.out.println(result);
+      System.out.println(result.getStatus());
+      System.out.println(result.getTotalHits());
+      System.out.println(result.getPage());
+      System.out.println(result.getTotalPages());
+      System.out.println(result.getPageSize());
+      System.out.println(result.getArticles());
+      System.out.println(result.getUserInput());
     } catch (ApiException e) {
       System.err.println("Exception when calling AuthorsApi#get");
       System.err.println("Status code: " + e.getStatusCode());
@@ -117,7 +125,7 @@ public class Example {
 
     // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request
     try {
-      ApiResponse<Object> response = client
+      ApiResponse<FSearchResponse> response = client
               .authors
               .get(authorName)
               .sources(sources)
@@ -210,7 +218,7 @@ public class Example {
 
 ### Return type
 
-**Object**
+[**FSearchResponse**](FSearchResponse.md)
 
 ### Authorization
 
@@ -228,7 +236,7 @@ public class Example {
 
 <a name="post"></a>
 # **post**
-> Object post(authorSearchRequest).execute();
+> FSearchResponse1 post(authorSearchRequest).execute();
 
 [Post] Search By Author Request
 
@@ -289,7 +297,7 @@ public class Example {
     Double contentSentimentMin = 3.4D;
     Double contentSentimentMax = 3.4D;
     try {
-      Object result = client
+      FSearchResponse1 result = client
               .authors
               .post(authorName)
               .sources(sources)
@@ -325,6 +333,14 @@ public class Example {
               .contentSentimentMin(contentSentimentMin)
               .contentSentimentMax(contentSentimentMax)
               .execute();
+      System.out.println(result);
+      System.out.println(result.getStatus());
+      System.out.println(result.getTotalHits());
+      System.out.println(result.getPage());
+      System.out.println(result.getTotalPages());
+      System.out.println(result.getPageSize());
+      System.out.println(result.getArticles());
+      System.out.println(result.getUserInput());
     } catch (ApiException e) {
       System.err.println("Exception when calling AuthorsApi#post");
       System.err.println("Status code: " + e.getStatusCode());
@@ -335,7 +351,7 @@ public class Example {
 
     // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request
     try {
-      ApiResponse<Object> response = client
+      ApiResponse<FSearchResponse1> response = client
               .authors
               .post(authorName)
               .sources(sources)
@@ -396,7 +412,7 @@ public class Example {
 
 ### Return type
 
-**Object**
+[**FSearchResponse1**](FSearchResponse1.md)
 
 ### Authorization
 

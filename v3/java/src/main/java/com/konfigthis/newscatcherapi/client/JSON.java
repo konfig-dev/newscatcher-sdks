@@ -110,8 +110,15 @@ public class JSON {
                 return new JsonPrimitive(src);
             }
         });
+        gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.newscatcherapi.client.model.ArticlesPropertyInner.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.newscatcherapi.client.model.ArticlesPropertyInner1.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.newscatcherapi.client.model.ArticlesPropertyInner2.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.newscatcherapi.client.model.ArticlesPropertyInner3.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.newscatcherapi.client.model.AuthorSearchRequest.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.newscatcherapi.client.model.CSLHFResponse.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.newscatcherapi.client.model.CSLHFResponse1.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.newscatcherapi.client.model.Cluster.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.newscatcherapi.client.model.Cluster1.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.newscatcherapi.client.model.ClusteringSearchResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.newscatcherapi.client.model.DtoResponsesAuthorSearchResponseArticleResult.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.newscatcherapi.client.model.DtoResponsesAuthorSearchResponseFailedSearchResponse.CustomTypeAdapterFactory());
@@ -123,12 +130,19 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.newscatcherapi.client.model.DtoResponsesSearchResponseArticleResult.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.newscatcherapi.client.model.DtoResponsesSearchResponseFailedSearchResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.newscatcherapi.client.model.DtoResponsesSearchResponseSearchResponse.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.newscatcherapi.client.model.FCSearchResponse.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.newscatcherapi.client.model.FCSearchResponse1.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.newscatcherapi.client.model.FSearchResponse.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.newscatcherapi.client.model.FSearchResponse1.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.newscatcherapi.client.model.FSearchResponse2.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.newscatcherapi.client.model.FSearchResponse3.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.newscatcherapi.client.model.FailedLatestHeadlinesResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.newscatcherapi.client.model.LatestHeadlinesRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.newscatcherapi.client.model.LatestHeadlinesResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.newscatcherapi.client.model.MoreLikeThisRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.newscatcherapi.client.model.SearchRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.newscatcherapi.client.model.SimilarDocument.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.newscatcherapi.client.model.SimilarDocument1.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.newscatcherapi.client.model.SourceResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.newscatcherapi.client.model.SourcesRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.konfigthis.newscatcherapi.client.model.SubscriptionResponse.CustomTypeAdapterFactory());

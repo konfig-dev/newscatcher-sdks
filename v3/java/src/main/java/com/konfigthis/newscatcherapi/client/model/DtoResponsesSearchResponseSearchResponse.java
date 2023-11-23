@@ -19,6 +19,8 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.konfigthis.newscatcherapi.client.model.ArticlesPropertyInner3;
+import com.konfigthis.newscatcherapi.client.model.Cluster1;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -73,11 +75,19 @@ public class DtoResponsesSearchResponseSearchResponse {
 
   public static final String SERIALIZED_NAME_ARTICLES = "articles";
   @SerializedName(SERIALIZED_NAME_ARTICLES)
-  private List<Object> articles = new ArrayList<>();
+  private List<ArticlesPropertyInner3> articles = null;
 
   public static final String SERIALIZED_NAME_USER_INPUT = "user_input";
   @SerializedName(SERIALIZED_NAME_USER_INPUT)
   private Object userInput;
+
+  public static final String SERIALIZED_NAME_CLUSTERS_COUNT = "clusters_count";
+  @SerializedName(SERIALIZED_NAME_CLUSTERS_COUNT)
+  private Integer clustersCount;
+
+  public static final String SERIALIZED_NAME_CLUSTERS = "clusters";
+  @SerializedName(SERIALIZED_NAME_CLUSTERS)
+  private List<Cluster1> clusters = null;
 
   public DtoResponsesSearchResponseSearchResponse() {
   }
@@ -124,8 +134,8 @@ public class DtoResponsesSearchResponseSearchResponse {
    * Get totalHits
    * @return totalHits
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
 
   public Integer getTotalHits() {
     return totalHits;
@@ -153,8 +163,8 @@ public class DtoResponsesSearchResponseSearchResponse {
    * Get page
    * @return page
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
 
   public Integer getPage() {
     return page;
@@ -182,8 +192,8 @@ public class DtoResponsesSearchResponseSearchResponse {
    * Get totalPages
    * @return totalPages
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
 
   public Integer getTotalPages() {
     return totalPages;
@@ -211,8 +221,8 @@ public class DtoResponsesSearchResponseSearchResponse {
    * Get pageSize
    * @return pageSize
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
 
   public Integer getPageSize() {
     return pageSize;
@@ -227,7 +237,7 @@ public class DtoResponsesSearchResponseSearchResponse {
   }
 
 
-  public DtoResponsesSearchResponseSearchResponse articles(List<Object> articles) {
+  public DtoResponsesSearchResponseSearchResponse articles(List<ArticlesPropertyInner3> articles) {
     
     
     
@@ -236,7 +246,10 @@ public class DtoResponsesSearchResponseSearchResponse {
     return this;
   }
 
-  public DtoResponsesSearchResponseSearchResponse addArticlesItem(Object articlesItem) {
+  public DtoResponsesSearchResponseSearchResponse addArticlesItem(ArticlesPropertyInner3 articlesItem) {
+    if (this.articles == null) {
+      this.articles = new ArrayList<>();
+    }
     this.articles.add(articlesItem);
     return this;
   }
@@ -245,15 +258,15 @@ public class DtoResponsesSearchResponseSearchResponse {
    * Get articles
    * @return articles
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
 
-  public List<Object> getArticles() {
+  public List<ArticlesPropertyInner3> getArticles() {
     return articles;
   }
 
 
-  public void setArticles(List<Object> articles) {
+  public void setArticles(List<ArticlesPropertyInner3> articles) {
     
     
     
@@ -287,6 +300,72 @@ public class DtoResponsesSearchResponseSearchResponse {
     
     
     this.userInput = userInput;
+  }
+
+
+  public DtoResponsesSearchResponseSearchResponse clustersCount(Integer clustersCount) {
+    
+    
+    
+    
+    this.clustersCount = clustersCount;
+    return this;
+  }
+
+   /**
+   * Get clustersCount
+   * @return clustersCount
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Integer getClustersCount() {
+    return clustersCount;
+  }
+
+
+  public void setClustersCount(Integer clustersCount) {
+    
+    
+    
+    this.clustersCount = clustersCount;
+  }
+
+
+  public DtoResponsesSearchResponseSearchResponse clusters(List<Cluster1> clusters) {
+    
+    
+    
+    
+    this.clusters = clusters;
+    return this;
+  }
+
+  public DtoResponsesSearchResponseSearchResponse addClustersItem(Cluster1 clustersItem) {
+    if (this.clusters == null) {
+      this.clusters = new ArrayList<>();
+    }
+    this.clusters.add(clustersItem);
+    return this;
+  }
+
+   /**
+   * Get clusters
+   * @return clusters
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<Cluster1> getClusters() {
+    return clusters;
+  }
+
+
+  public void setClusters(List<Cluster1> clusters) {
+    
+    
+    
+    this.clusters = clusters;
   }
 
   /**
@@ -350,13 +429,15 @@ public class DtoResponsesSearchResponseSearchResponse {
         Objects.equals(this.totalPages, dtoResponsesSearchResponseSearchResponse.totalPages) &&
         Objects.equals(this.pageSize, dtoResponsesSearchResponseSearchResponse.pageSize) &&
         Objects.equals(this.articles, dtoResponsesSearchResponseSearchResponse.articles) &&
-        Objects.equals(this.userInput, dtoResponsesSearchResponseSearchResponse.userInput)&&
+        Objects.equals(this.userInput, dtoResponsesSearchResponseSearchResponse.userInput) &&
+        Objects.equals(this.clustersCount, dtoResponsesSearchResponseSearchResponse.clustersCount) &&
+        Objects.equals(this.clusters, dtoResponsesSearchResponseSearchResponse.clusters)&&
         Objects.equals(this.additionalProperties, dtoResponsesSearchResponseSearchResponse.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(status, totalHits, page, totalPages, pageSize, articles, userInput, additionalProperties);
+    return Objects.hash(status, totalHits, page, totalPages, pageSize, articles, userInput, clustersCount, clusters, additionalProperties);
   }
 
   @Override
@@ -370,6 +451,8 @@ public class DtoResponsesSearchResponseSearchResponse {
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    articles: ").append(toIndentedString(articles)).append("\n");
     sb.append("    userInput: ").append(toIndentedString(userInput)).append("\n");
+    sb.append("    clustersCount: ").append(toIndentedString(clustersCount)).append("\n");
+    sb.append("    clusters: ").append(toIndentedString(clusters)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -400,14 +483,11 @@ public class DtoResponsesSearchResponseSearchResponse {
     openapiFields.add("page_size");
     openapiFields.add("articles");
     openapiFields.add("user_input");
+    openapiFields.add("clusters_count");
+    openapiFields.add("clusters");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("total_hits");
-    openapiRequiredFields.add("page");
-    openapiRequiredFields.add("total_pages");
-    openapiRequiredFields.add("page_size");
-    openapiRequiredFields.add("articles");
     openapiRequiredFields.add("user_input");
   }
 
@@ -433,11 +513,33 @@ public class DtoResponsesSearchResponseSearchResponse {
       if ((jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) && !jsonObj.get("status").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
       }
-      // ensure the required json array is present
-      if (jsonObj.get("articles") == null) {
-        throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
-      } else if (!jsonObj.get("articles").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `articles` to be an array in the JSON string but got `%s`", jsonObj.get("articles").toString()));
+      if (jsonObj.get("articles") != null && !jsonObj.get("articles").isJsonNull()) {
+        JsonArray jsonArrayarticles = jsonObj.getAsJsonArray("articles");
+        if (jsonArrayarticles != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("articles").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `articles` to be an array in the JSON string but got `%s`", jsonObj.get("articles").toString()));
+          }
+
+          // validate the optional field `articles` (array)
+          for (int i = 0; i < jsonArrayarticles.size(); i++) {
+            ArticlesPropertyInner3.validateJsonObject(jsonArrayarticles.get(i).getAsJsonObject());
+          };
+        }
+      }
+      if (jsonObj.get("clusters") != null && !jsonObj.get("clusters").isJsonNull()) {
+        JsonArray jsonArrayclusters = jsonObj.getAsJsonArray("clusters");
+        if (jsonArrayclusters != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("clusters").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `clusters` to be an array in the JSON string but got `%s`", jsonObj.get("clusters").toString()));
+          }
+
+          // validate the optional field `clusters` (array)
+          for (int i = 0; i < jsonArrayclusters.size(); i++) {
+            Cluster1.validateJsonObject(jsonArrayclusters.get(i).getAsJsonObject());
+          };
+        }
       }
   }
 

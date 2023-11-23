@@ -17,6 +17,8 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.konfigthis.newscatcherapi.client.model.ArticlesPropertyInner3;
+import com.konfigthis.newscatcherapi.client.model.Cluster1;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -94,6 +96,22 @@ public class DtoResponsesSearchResponseSearchResponseTest {
     @Test
     public void userInputTest() {
         // TODO: test userInput
+    }
+
+    /**
+     * Test the property 'clustersCount'
+     */
+    @Test
+    public void clustersCountTest() {
+        // TODO: test clustersCount
+    }
+
+    /**
+     * Test the property 'clusters'
+     */
+    @Test
+    public void clustersTest() {
+        // TODO: test clusters
     }
 
 }

@@ -19,6 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.konfigthis.newscatcherapi.client.model.ArticlesPropertyInner;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -73,7 +74,7 @@ public class LatestHeadlinesResponse {
 
   public static final String SERIALIZED_NAME_ARTICLES = "articles";
   @SerializedName(SERIALIZED_NAME_ARTICLES)
-  private List<Object> articles = new ArrayList<>();
+  private List<ArticlesPropertyInner> articles = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_USER_INPUT = "user_input";
   @SerializedName(SERIALIZED_NAME_USER_INPUT)
@@ -227,7 +228,7 @@ public class LatestHeadlinesResponse {
   }
 
 
-  public LatestHeadlinesResponse articles(List<Object> articles) {
+  public LatestHeadlinesResponse articles(List<ArticlesPropertyInner> articles) {
     
     
     
@@ -236,7 +237,7 @@ public class LatestHeadlinesResponse {
     return this;
   }
 
-  public LatestHeadlinesResponse addArticlesItem(Object articlesItem) {
+  public LatestHeadlinesResponse addArticlesItem(ArticlesPropertyInner articlesItem) {
     this.articles.add(articlesItem);
     return this;
   }
@@ -248,12 +249,12 @@ public class LatestHeadlinesResponse {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public List<Object> getArticles() {
+  public List<ArticlesPropertyInner> getArticles() {
     return articles;
   }
 
 
-  public void setArticles(List<Object> articles) {
+  public void setArticles(List<ArticlesPropertyInner> articles) {
     
     
     
@@ -433,12 +434,16 @@ public class LatestHeadlinesResponse {
       if ((jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) && !jsonObj.get("status").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
       }
-      // ensure the required json array is present
-      if (jsonObj.get("articles") == null) {
-        throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
-      } else if (!jsonObj.get("articles").isJsonArray()) {
+      // ensure the json data is an array
+      if (!jsonObj.get("articles").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `articles` to be an array in the JSON string but got `%s`", jsonObj.get("articles").toString()));
       }
+
+      JsonArray jsonArrayarticles = jsonObj.getAsJsonArray("articles");
+      // validate the required field `articles` (array)
+      for (int i = 0; i < jsonArrayarticles.size(); i++) {
+        ArticlesPropertyInner.validateJsonObject(jsonArrayarticles.get(i).getAsJsonObject());
+      };
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

@@ -10,7 +10,7 @@ All URIs are relative to *https://v3-api.newscatcherapi.com*
 
 <a name="get"></a>
 # **get**
-> Object get(q).searchIn(searchIn).predefinedSources(predefinedSources).sources(sources).notSources(notSources).lang(lang).notLang(notLang).countries(countries).notCountries(notCountries).from(from).to(to).publishedDatePrecision(publishedDatePrecision).byParseDate(byParseDate).sortBy(sortBy).rankedOnly(rankedOnly).fromRank(fromRank).toRank(toRank).isHeadline(isHeadline).isPaidContent(isPaidContent).parentUrl(parentUrl).allLinks(allLinks).allDomainLinks(allDomainLinks).wordCountMin(wordCountMin).wordCountMax(wordCountMax).page(page).pageSize(pageSize).clusteringEnabled(clusteringEnabled).clusteringThreshold(clusteringThreshold).clusteringVariable(clusteringVariable).includeNlpData(includeNlpData).hasNlp(hasNlp).theme(theme).orGEntityName(orGEntityName).peREntityName(peREntityName).loCEntityName(loCEntityName).miSCEntityName(miSCEntityName).titleSentimentMin(titleSentimentMin).titleSentimentMax(titleSentimentMax).contentSentimentMin(contentSentimentMin).contentSentimentMax(contentSentimentMax).execute();
+> FCSearchResponse get(q).searchIn(searchIn).predefinedSources(predefinedSources).sources(sources).notSources(notSources).lang(lang).notLang(notLang).countries(countries).notCountries(notCountries).from(from).to(to).publishedDatePrecision(publishedDatePrecision).byParseDate(byParseDate).sortBy(sortBy).rankedOnly(rankedOnly).fromRank(fromRank).toRank(toRank).isHeadline(isHeadline).isPaidContent(isPaidContent).parentUrl(parentUrl).allLinks(allLinks).allDomainLinks(allDomainLinks).wordCountMin(wordCountMin).wordCountMax(wordCountMax).page(page).pageSize(pageSize).clusteringEnabled(clusteringEnabled).clusteringThreshold(clusteringThreshold).clusteringVariable(clusteringVariable).includeNlpData(includeNlpData).hasNlp(hasNlp).theme(theme).orGEntityName(orGEntityName).peREntityName(peREntityName).loCEntityName(loCEntityName).miSCEntityName(miSCEntityName).titleSentimentMin(titleSentimentMin).titleSentimentMax(titleSentimentMax).contentSentimentMin(contentSentimentMin).contentSentimentMax(contentSentimentMax).execute();
 
 [Get] Search For Articles Request
 
@@ -78,7 +78,7 @@ public class Example {
     Double contentSentimentMin = 3.4D;
     Double contentSentimentMax = 3.4D;
     try {
-      Object result = client
+      FCSearchResponse result = client
               .search
               .get(q)
               .searchIn(searchIn)
@@ -121,6 +121,16 @@ public class Example {
               .contentSentimentMin(contentSentimentMin)
               .contentSentimentMax(contentSentimentMax)
               .execute();
+      System.out.println(result);
+      System.out.println(result.getStatus());
+      System.out.println(result.getTotalHits());
+      System.out.println(result.getPage());
+      System.out.println(result.getTotalPages());
+      System.out.println(result.getPageSize());
+      System.out.println(result.getArticles());
+      System.out.println(result.getUserInput());
+      System.out.println(result.getClustersCount());
+      System.out.println(result.getClusters());
     } catch (ApiException e) {
       System.err.println("Exception when calling SearchApi#get");
       System.err.println("Status code: " + e.getStatusCode());
@@ -131,7 +141,7 @@ public class Example {
 
     // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request
     try {
-      ApiResponse<Object> response = client
+      ApiResponse<FCSearchResponse> response = client
               .search
               .get(q)
               .searchIn(searchIn)
@@ -238,7 +248,7 @@ public class Example {
 
 ### Return type
 
-**Object**
+[**FCSearchResponse**](FCSearchResponse.md)
 
 ### Authorization
 
@@ -256,7 +266,7 @@ public class Example {
 
 <a name="post"></a>
 # **post**
-> Object post(searchRequest).execute();
+> FCSearchResponse1 post(searchRequest).execute();
 
 [Post] Search For Articles Request
 
@@ -324,7 +334,7 @@ public class Example {
     Double contentSentimentMin = 3.4D;
     Double contentSentimentMax = 3.4D;
     try {
-      Object result = client
+      FCSearchResponse1 result = client
               .search
               .post(q)
               .searchIn(searchIn)
@@ -367,6 +377,16 @@ public class Example {
               .contentSentimentMin(contentSentimentMin)
               .contentSentimentMax(contentSentimentMax)
               .execute();
+      System.out.println(result);
+      System.out.println(result.getStatus());
+      System.out.println(result.getTotalHits());
+      System.out.println(result.getPage());
+      System.out.println(result.getTotalPages());
+      System.out.println(result.getPageSize());
+      System.out.println(result.getArticles());
+      System.out.println(result.getUserInput());
+      System.out.println(result.getClustersCount());
+      System.out.println(result.getClusters());
     } catch (ApiException e) {
       System.err.println("Exception when calling SearchApi#post");
       System.err.println("Status code: " + e.getStatusCode());
@@ -377,7 +397,7 @@ public class Example {
 
     // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request
     try {
-      ApiResponse<Object> response = client
+      ApiResponse<FCSearchResponse1> response = client
               .search
               .post(q)
               .searchIn(searchIn)
@@ -445,7 +465,7 @@ public class Example {
 
 ### Return type
 
-**Object**
+[**FCSearchResponse1**](FCSearchResponse1.md)
 
 ### Authorization
 

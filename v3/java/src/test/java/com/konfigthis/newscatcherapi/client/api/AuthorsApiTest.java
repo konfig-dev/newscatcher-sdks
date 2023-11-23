@@ -17,6 +17,8 @@ import com.konfigthis.newscatcherapi.client.ApiClient;
 import com.konfigthis.newscatcherapi.client.ApiException;
 import com.konfigthis.newscatcherapi.client.Configuration;
 import com.konfigthis.newscatcherapi.client.model.AuthorSearchRequest;
+import com.konfigthis.newscatcherapi.client.model.FSearchResponse;
+import com.konfigthis.newscatcherapi.client.model.FSearchResponse1;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeAll;
@@ -83,7 +85,7 @@ public class AuthorsApiTest {
         Double titleSentimentMax = null;
         Double contentSentimentMin = null;
         Double contentSentimentMax = null;
-        Object response = api.get(authorName)
+        FSearchResponse response = api.get(authorName)
                 .sources(sources)
                 .predefinedSources(predefinedSources)
                 .notSources(notSources)
@@ -162,7 +164,7 @@ public class AuthorsApiTest {
         Double titleSentimentMax = null;
         Double contentSentimentMin = null;
         Double contentSentimentMax = null;
-        Object response = api.post(authorName)
+        FSearchResponse1 response = api.post(authorName)
                 .sources(sources)
                 .predefinedSources(predefinedSources)
                 .notSources(notSources)
