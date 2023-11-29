@@ -1,6 +1,6 @@
 # newscatcherapi-typescript-sdk<a id="newscatcherapi-typescript-sdk"></a>
 
-<img src=\'https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg\' width=\'286\' height=\'35\' /> <br>  <br>Visit our website  <a href=\'https://newscatcherapi.com\'>https://newscatcherapi.com</a> <br> <p style=\"color: red\"><b><em> This is a Testing Phase API. Please use it for testing purposes only. </em></b></p> <br>
+<img src=\'https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg\' width=\'286\' height=\'35\' /> <br>  <br>Visit our website  <a href=\'https://newscatcherapi.com\'>https://newscatcherapi.com</a>
 
 [![npm](https://img.shields.io/badge/npm-v6.0.0-blue)](https://www.npmjs.com/package/newscatcherapi-typescript-sdk/v/6.0.0)
 
