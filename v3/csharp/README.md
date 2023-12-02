@@ -65,10 +65,8 @@ namespace Example
             var notLang = "notLang_example";
             var countries = "countries_example";
             var notCountries = "notCountries_example";
-            var from = new From(
-            );
-            var to = new To(
-            );
+            var from = new From(DateTime.Now);
+            var to = new To(DateTime.Now);
             var publishedDatePrecision = "publishedDatePrecision_example";
             var byParseDate = false;
             var sortBy = "relevancy";
