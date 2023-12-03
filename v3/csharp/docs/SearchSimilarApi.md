@@ -44,10 +44,8 @@ namespace Example
             var notLang = "notLang_example";
             var countries = "countries_example";
             var notCountries = "notCountries_example";
-            var from = new From(
-            );
-            var to = new To(
-            );
+            var from = new From(DateTime.Now);
+            var to = new To(DateTime.Now);
             var byParseDate = false;
             var publishedDatePrecision = "publishedDatePrecision_example";
             var sortBy = "relevancy";
@@ -207,17 +205,21 @@ namespace Example
             var notLang = "notLang_example";
             var countries = "countries_example";
             var notCountries = "notCountries_example";
-            var from = new From();
-            var to = new To();
+            var from = new From(DateTime.Now);
+            var to = new To(DateTime.Now);
             var byParseDate = false;
             var publishedDatePrecision = "publishedDatePrecision_example";
             var sortBy = "relevancy";
             var rankedOnly = "rankedOnly_example";
+            var fromRank = default(int);
+            var toRank = default(int);
             var isHeadline = false;
             var isPaidContent = false;
             var parentUrl = "parentUrl_example";
             var allLinks = "allLinks_example";
             var allDomainLinks = "allDomainLinks_example";
+            var wordCountMin = default(int);
+            var wordCountMax = default(int);
             var page = 1;
             var pageSize = 100;
             var includeNlpData = false;

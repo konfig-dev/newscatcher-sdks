@@ -201,6 +201,8 @@ namespace Example
             var theme = "theme_example";
             var allLinks = "allLinks_example";
             var allDomainLinks = "allDomainLinks_example";
+            var wordCountMin = default(int);
+            var wordCountMax = default(int);
             var page = 1;
             var pageSize = 100;
             var clusteringEnabled = false;
