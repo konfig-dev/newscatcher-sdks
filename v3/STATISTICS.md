@@ -5,6 +5,6 @@
 | java | 59597 |
 | python | 52585 |
 | typescript | 11417 |
-| csharp | 32958 |
-| go | 39261 |
-| **Total** | 195818 |
+| csharp | 32965 |
+| go | 39271 |
+| **Total** | 195835 |

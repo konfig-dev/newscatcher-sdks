@@ -1,0 +1,3 @@
+[submodule "v3/go"]
+	path = v3/go
+	url = https://github.com/konfig-dev/newscatcher-go-sdk.git
