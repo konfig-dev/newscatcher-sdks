@@ -70,4 +70,4 @@ generators:
     outputDirectory: go
     git:
       userId: konfig-dev
-      repoId: newscatcher-sdks/v3/go
+      repoId: newscatcher-go-sdk/tree/main
