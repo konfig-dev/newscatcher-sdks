@@ -1,7 +1,10 @@
 examples: {}
 examples_2: {}
 examples_3: {}
-operationIds: {}
+operationIds:
+  /api/search_by_link:
+    get: SearchLink_get
+    post: SearchLink_post
 operationTags: {}
 renameTags: {}
 requestSchemaNames: {}
@@ -70,9 +73,17 @@ securityParameters:
     query: false
   has_nlp:
     query: false
+  iab_tags:
+    query: false
+  ids:
+    query: false
+  include_additional_info:
+    query: false
   include_nlp_data:
     query: false
   include_similar_documents:
+    query: false
+  iptc_tags:
     query: false
   is_headline:
     query: false
@@ -80,13 +91,21 @@ securityParameters:
     query: false
   lang:
     query: false
+  links:
+    query: false
   ner_name:
     query: false
+  not_author_name:
+    query: false
   not_countries:
+    query: false
+  not_iptc_tags:
     query: false
   not_lang:
     query: false
   not_sources:
+    query: false
+  not_theme:
     query: false
   page:
     query: false
@@ -109,6 +128,10 @@ securityParameters:
   similar_documents_number:
     query: false
   sort_by:
+    query: false
+  source_name:
+    query: false
+  source_url:
     query: false
   sources:
     query: false
