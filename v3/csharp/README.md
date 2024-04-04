@@ -1,6 +1,6 @@
 # Newscatcherapi.Net - C#
 
-[![NuGet](https://img.shields.io/badge/NuGet-6.0.0-blue.svg)](https://www.nuget.org/packages/Newscatcherapi.Net/6.0.0)
+[![NuGet](https://img.shields.io/badge/NuGet-6.0.1-blue.svg)](https://www.nuget.org/packages/Newscatcherapi.Net/6.0.1)
 
 <img src='https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg' width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a>
 
