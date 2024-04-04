@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Page** | **int** |  | 
 **TotalPages** | **int** |  | 
 **PageSize** | **int** |  | 
-**Articles** | [**List&lt;DtoResponsesSearchResponseArticleResult&gt;**](DtoResponsesSearchResponseArticleResult.md) |  | 
+**Articles** | **List&lt;Object&gt;** |  | 
 **UserInput** | **Object** |  | 
 **ClustersCount** | **int** |  | 
 **Clusters** | [**List&lt;Cluster&gt;**](Cluster.md) |  | 

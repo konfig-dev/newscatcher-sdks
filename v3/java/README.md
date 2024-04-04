@@ -1,8 +1,8 @@
 # newscatcherapi-java-sdk
 
-[![Maven Central](https://img.shields.io/badge/Maven%20Central-v6.0.0-blue)](https://central.sonatype.com/artifact/com.konfigthis.newscatcherapi/newscatcherapi-java-sdk/6.0.0)
-
 <img src='https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg' width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a>
+
+[![Maven Central](https://img.shields.io/badge/Maven%20Central-v6.0.1-blue)](https://central.sonatype.com/artifact/com.konfigthis.newscatcherapi/newscatcherapi-java-sdk/6.0.1)
 
 ## Requirements
 
@@ -39,7 +39,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.konfigthis.newscatcherapi</groupId>
   <artifactId>newscatcherapi-java-sdk</artifactId>
-  <version>6.0.0</version>
+  <version>6.0.1</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -55,7 +55,7 @@ repositories {
 }
 
 dependencies {
-   implementation "com.konfigthis.newscatcherapi:newscatcherapi-java-sdk:6.0.0"
+   implementation "com.konfigthis.newscatcherapi:newscatcherapi-java-sdk:6.0.1"
 }
 ```
 
@@ -92,7 +92,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/newscatcherapi-java-sdk-6.0.0.jar`
+* `target/newscatcherapi-java-sdk-6.0.1.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -120,13 +120,14 @@ public class Example {
     configuration.apiKey  = "YOUR API KEY";
     Newscatcher client = new Newscatcher(configuration);
     String authorName = "authorName_example";
-    String sources = "sources_example";
-    String predefinedSources = "predefinedSources_example";
-    String notSources = "notSources_example";
-    String lang = "lang_example";
-    String notLang = "notLang_example";
-    String countries = "countries_example";
-    String notCountries = "notCountries_example";
+    String notAuthorName = "notAuthorName_example";
+    Object sources = null;
+    Object predefinedSources = null;
+    Object notSources = null;
+    Object lang = null;
+    Object notLang = null;
+    Object countries = null;
+    Object notCountries = null;
     String from = "from_example";
     String to = "to_example";
     String publishedDatePrecision = "publishedDatePrecision_example";
@@ -137,9 +138,9 @@ public class Example {
     Integer toRank = 56;
     Boolean isHeadline = true;
     Boolean isPaidContent = true;
-    String parentUrl = "parentUrl_example";
-    String allLinks = "allLinks_example";
-    String allDomainLinks = "allDomainLinks_example";
+    Object parentUrl = null;
+    Object allLinks = null;
+    Object allDomainLinks = null;
     Integer wordCountMin = 56;
     Integer wordCountMax = 56;
     Integer page = 1;
@@ -147,15 +148,19 @@ public class Example {
     Boolean includeNlpData = true;
     Boolean hasNlp = true;
     String theme = "theme_example";
+    String notTheme = "notTheme_example";
     String nerName = "nerName_example";
     Double titleSentimentMin = 3.4D;
     Double titleSentimentMax = 3.4D;
     Double contentSentimentMin = 3.4D;
     Double contentSentimentMax = 3.4D;
+    Object iptcTags = null;
+    Object notIptcTags = null;
     try {
       FSearchResponse result = client
               .authors
               .get(authorName)
+              .notAuthorName(notAuthorName)
               .sources(sources)
               .predefinedSources(predefinedSources)
               .notSources(notSources)
@@ -183,11 +188,14 @@ public class Example {
               .includeNlpData(includeNlpData)
               .hasNlp(hasNlp)
               .theme(theme)
+              .notTheme(notTheme)
               .nerName(nerName)
               .titleSentimentMin(titleSentimentMin)
               .titleSentimentMax(titleSentimentMax)
               .contentSentimentMin(contentSentimentMin)
               .contentSentimentMax(contentSentimentMax)
+              .iptcTags(iptcTags)
+              .notIptcTags(notIptcTags)
               .execute();
       System.out.println(result);
       System.out.println(result.getStatus());
@@ -210,6 +218,7 @@ public class Example {
       ApiResponse<FSearchResponse> response = client
               .authors
               .get(authorName)
+              .notAuthorName(notAuthorName)
               .sources(sources)
               .predefinedSources(predefinedSources)
               .notSources(notSources)
@@ -237,11 +246,14 @@ public class Example {
               .includeNlpData(includeNlpData)
               .hasNlp(hasNlp)
               .theme(theme)
+              .notTheme(notTheme)
               .nerName(nerName)
               .titleSentimentMin(titleSentimentMin)
               .titleSentimentMax(titleSentimentMax)
               .contentSentimentMin(contentSentimentMin)
               .contentSentimentMax(contentSentimentMax)
+              .iptcTags(iptcTags)
+              .notIptcTags(notIptcTags)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
       System.out.println(response.getResponseHeaders());
@@ -272,6 +284,8 @@ Class | Method | HTTP request | Description
 *LatestHeadlinesApi* | [**post**](docs/LatestHeadlinesApi.md#post) | **POST** /api/latest_headlines | [Post] Search For Latest Headlines Request
 *SearchApi* | [**get**](docs/SearchApi.md#get) | **GET** /api/search | [Get] Search For Articles Request
 *SearchApi* | [**post**](docs/SearchApi.md#post) | **POST** /api/search | [Post] Search For Articles Request
+*SearchLinkApi* | [**get**](docs/SearchLinkApi.md#get) | **GET** /api/search_by_link | [Get] Search For Articles By Id Or Link
+*SearchLinkApi* | [**post**](docs/SearchLinkApi.md#post) | **POST** /api/search_by_link | [Post] Search For Articles Request
 *SearchSimilarApi* | [**get**](docs/SearchSimilarApi.md#get) | **GET** /api/search_similar | [Get] Search For Similar Articles Request
 *SearchSimilarApi* | [**post**](docs/SearchSimilarApi.md#post) | **POST** /api/search_similar | [Post] Search For Similar Articles Request
 *SourcesApi* | [**get**](docs/SourcesApi.md#get) | **GET** /api/sources | [Get] Search For Sources Request
@@ -282,43 +296,39 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
+ - [AdditionalSourceInfo](docs/AdditionalSourceInfo.md)
  - [ArticlesPropertyInner](docs/ArticlesPropertyInner.md)
  - [ArticlesPropertyInner1](docs/ArticlesPropertyInner1.md)
- - [ArticlesPropertyInner2](docs/ArticlesPropertyInner2.md)
- - [ArticlesPropertyInner3](docs/ArticlesPropertyInner3.md)
  - [AuthorSearchRequest](docs/AuthorSearchRequest.md)
- - [CSLHFResponse](docs/CSLHFResponse.md)
- - [CSLHFResponse1](docs/CSLHFResponse1.md)
+ - [CSLHResponse](docs/CSLHResponse.md)
+ - [CSLHResponse1](docs/CSLHResponse1.md)
+ - [CSearchResponse](docs/CSearchResponse.md)
+ - [CSearchResponse1](docs/CSearchResponse1.md)
  - [Cluster](docs/Cluster.md)
  - [Cluster1](docs/Cluster1.md)
  - [ClusteringSearchResponse](docs/ClusteringSearchResponse.md)
  - [DtoResponsesAuthorSearchResponseArticleResult](docs/DtoResponsesAuthorSearchResponseArticleResult.md)
  - [DtoResponsesAuthorSearchResponseFailedSearchResponse](docs/DtoResponsesAuthorSearchResponseFailedSearchResponse.md)
  - [DtoResponsesAuthorSearchResponseSearchResponse](docs/DtoResponsesAuthorSearchResponseSearchResponse.md)
- - [DtoResponsesLatestHeadlinesResponseArticleResult](docs/DtoResponsesLatestHeadlinesResponseArticleResult.md)
  - [DtoResponsesMoreLikeThisResponseArticleResult](docs/DtoResponsesMoreLikeThisResponseArticleResult.md)
  - [DtoResponsesMoreLikeThisResponseFailedSearchResponse](docs/DtoResponsesMoreLikeThisResponseFailedSearchResponse.md)
  - [DtoResponsesMoreLikeThisResponseSearchResponse](docs/DtoResponsesMoreLikeThisResponseSearchResponse.md)
- - [DtoResponsesSearchResponseArticleResult](docs/DtoResponsesSearchResponseArticleResult.md)
- - [DtoResponsesSearchResponseFailedSearchResponse](docs/DtoResponsesSearchResponseFailedSearchResponse.md)
  - [DtoResponsesSearchResponseSearchResponse](docs/DtoResponsesSearchResponseSearchResponse.md)
- - [FCSearchResponse](docs/FCSearchResponse.md)
- - [FCSearchResponse1](docs/FCSearchResponse1.md)
  - [FSearchResponse](docs/FSearchResponse.md)
  - [FSearchResponse1](docs/FSearchResponse1.md)
  - [FSearchResponse2](docs/FSearchResponse2.md)
  - [FSearchResponse3](docs/FSearchResponse3.md)
- - [FailedLatestHeadlinesResponse](docs/FailedLatestHeadlinesResponse.md)
  - [LatestHeadlinesRequest](docs/LatestHeadlinesRequest.md)
  - [LatestHeadlinesResponse](docs/LatestHeadlinesResponse.md)
  - [MoreLikeThisRequest](docs/MoreLikeThisRequest.md)
  - [SearchRequest](docs/SearchRequest.md)
+ - [SearchURLRequest](docs/SearchURLRequest.md)
  - [SimilarDocument](docs/SimilarDocument.md)
  - [SimilarDocument1](docs/SimilarDocument1.md)
+ - [SourceInfo](docs/SourceInfo.md)
  - [SourceResponse](docs/SourceResponse.md)
  - [SourcesRequest](docs/SourcesRequest.md)
  - [SubscriptionResponse](docs/SubscriptionResponse.md)
- - [UserInput](docs/UserInput.md)
  - [ValidationError](docs/ValidationError.md)
 
 

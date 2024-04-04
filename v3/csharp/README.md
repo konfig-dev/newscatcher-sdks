@@ -1,6 +1,6 @@
 # Newscatcherapi.Net - C#
 
-[![NuGet](https://img.shields.io/badge/NuGet-6.0.0-blue.svg)](https://www.nuget.org/packages/Newscatcherapi.Net/6.0.0)
+[![NuGet](https://img.shields.io/badge/NuGet-6.0.1-blue.svg)](https://www.nuget.org/packages/Newscatcherapi.Net/6.0.1)
 
 <img src='https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg' width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a>
 
@@ -58,13 +58,21 @@ namespace Example
             client.SetApiKey("YOUR_API_KEY");
 
             var authorName = "authorName_example";
-            var sources = "sources_example";
-            var predefinedSources = "predefinedSources_example";
-            var notSources = "notSources_example";
-            var lang = "lang_example";
-            var notLang = "notLang_example";
-            var countries = "countries_example";
-            var notCountries = "notCountries_example";
+            var notAuthorName = "notAuthorName_example";
+            var sources = new Object(
+            );
+            var predefinedSources = new Object(
+            );
+            var notSources = new Object(
+            );
+            var lang = new Object(
+            );
+            var notLang = new Object(
+            );
+            var countries = new Object(
+            );
+            var notCountries = new Object(
+            );
             var from = new From(DateTime.Now);
             var to = new To(DateTime.Now);
             var publishedDatePrecision = "publishedDatePrecision_example";
@@ -75,9 +83,12 @@ namespace Example
             var toRank = 56;
             var isHeadline = true;
             var isPaidContent = true;
-            var parentUrl = "parentUrl_example";
-            var allLinks = "allLinks_example";
-            var allDomainLinks = "allDomainLinks_example";
+            var parentUrl = new Object(
+            );
+            var allLinks = new Object(
+            );
+            var allDomainLinks = new Object(
+            );
             var wordCountMin = 56;
             var wordCountMax = 56;
             var page = 1;
@@ -85,16 +96,21 @@ namespace Example
             var includeNlpData = true;
             var hasNlp = true;
             var theme = "theme_example";
+            var notTheme = "notTheme_example";
             var nerName = "nerName_example";
             var titleSentimentMin = 8.14D;
             var titleSentimentMax = 8.14D;
             var contentSentimentMin = 8.14D;
             var contentSentimentMax = 8.14D;
+            var iptcTags = new Object(
+            );
+            var notIptcTags = new Object(
+            );
             
             try
             {
                 // [Get] Search By Author Request
-                AuthorsGetResponse result = client.Authors.Get(authorName, sources, predefinedSources, notSources, lang, notLang, countries, notCountries, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax);
+                AuthorsGetResponse result = client.Authors.Get(authorName, notAuthorName, sources, predefinedSources, notSources, lang, notLang, countries, notCountries, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, notTheme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -126,6 +142,8 @@ Class | Method | HTTP request | Description
 *LatestHeadlinesApi* | [**Post**](docs/LatestHeadlinesApi.md#post) | **POST** /api/latest_headlines | [Post] Search For Latest Headlines Request
 *SearchApi* | [**Get**](docs/SearchApi.md#get) | **GET** /api/search | [Get] Search For Articles Request
 *SearchApi* | [**Post**](docs/SearchApi.md#post) | **POST** /api/search | [Post] Search For Articles Request
+*SearchLinkApi* | [**Get**](docs/SearchLinkApi.md#get) | **GET** /api/search_by_link | [Get] Search For Articles By Id Or Link
+*SearchLinkApi* | [**Post**](docs/SearchLinkApi.md#post) | **POST** /api/search_by_link | [Post] Search For Articles Request
 *SearchSimilarApi* | [**Get**](docs/SearchSimilarApi.md#get) | **GET** /api/search_similar | [Get] Search For Similar Articles Request
 *SearchSimilarApi* | [**Post**](docs/SearchSimilarApi.md#post) | **POST** /api/search_similar | [Post] Search For Similar Articles Request
 *SourcesApi* | [**Get**](docs/SourcesApi.md#get) | **GET** /api/sources | [Get] Search For Sources Request
@@ -136,6 +154,7 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
+ - [AdditionalSourceInfo](docs/AdditionalSourceInfo.md)
  - [AllDomainLinksProperty](docs/AllDomainLinksProperty.md)
  - [AllLinksProperty](docs/AllLinksProperty.md)
  - [AuthorSearchRequest](docs/AuthorSearchRequest.md)
@@ -144,22 +163,16 @@ Class | Method | HTTP request | Description
  - [AuthorsProperty](docs/AuthorsProperty.md)
  - [Cluster](docs/Cluster.md)
  - [ClusteringSearchResponse](docs/ClusteringSearchResponse.md)
- - [CountriesProperty](docs/CountriesProperty.md)
  - [DtoResponsesAuthorSearchResponseArticleResult](docs/DtoResponsesAuthorSearchResponseArticleResult.md)
  - [DtoResponsesAuthorSearchResponseFailedSearchResponse](docs/DtoResponsesAuthorSearchResponseFailedSearchResponse.md)
  - [DtoResponsesAuthorSearchResponseSearchResponse](docs/DtoResponsesAuthorSearchResponseSearchResponse.md)
- - [DtoResponsesLatestHeadlinesResponseArticleResult](docs/DtoResponsesLatestHeadlinesResponseArticleResult.md)
  - [DtoResponsesMoreLikeThisResponseArticleResult](docs/DtoResponsesMoreLikeThisResponseArticleResult.md)
  - [DtoResponsesMoreLikeThisResponseFailedSearchResponse](docs/DtoResponsesMoreLikeThisResponseFailedSearchResponse.md)
  - [DtoResponsesMoreLikeThisResponseSearchResponse](docs/DtoResponsesMoreLikeThisResponseSearchResponse.md)
- - [DtoResponsesSearchResponseArticleResult](docs/DtoResponsesSearchResponseArticleResult.md)
- - [DtoResponsesSearchResponseFailedSearchResponse](docs/DtoResponsesSearchResponseFailedSearchResponse.md)
  - [DtoResponsesSearchResponseSearchResponse](docs/DtoResponsesSearchResponseSearchResponse.md)
- - [FailedLatestHeadlinesResponse](docs/FailedLatestHeadlinesResponse.md)
  - [From](docs/From.md)
  - [HTTPValidationError](docs/HTTPValidationError.md)
  - [JournalistsProperty](docs/JournalistsProperty.md)
- - [LangProperty](docs/LangProperty.md)
  - [LatestHeadlinesGetResponse](docs/LatestHeadlinesGetResponse.md)
  - [LatestHeadlinesPostResponse](docs/LatestHeadlinesPostResponse.md)
  - [LatestHeadlinesRequest](docs/LatestHeadlinesRequest.md)
@@ -171,12 +184,14 @@ Class | Method | HTTP request | Description
  - [SearchRequest](docs/SearchRequest.md)
  - [SearchSimilarGetResponse](docs/SearchSimilarGetResponse.md)
  - [SearchSimilarPostResponse](docs/SearchSimilarPostResponse.md)
+ - [SearchURLRequest](docs/SearchURLRequest.md)
  - [SimilarDocument](docs/SimilarDocument.md)
+ - [SourceInfo](docs/SourceInfo.md)
  - [SourceResponse](docs/SourceResponse.md)
+ - [SourcesPropertyInner](docs/SourcesPropertyInner.md)
  - [SourcesRequest](docs/SourcesRequest.md)
  - [SubscriptionResponse](docs/SubscriptionResponse.md)
  - [To](docs/To.md)
- - [UserInput](docs/UserInput.md)
  - [ValidationError](docs/ValidationError.md)
 
 

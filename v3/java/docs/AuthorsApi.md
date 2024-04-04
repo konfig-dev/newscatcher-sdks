@@ -10,7 +10,7 @@ All URIs are relative to *https://v3-api.newscatcherapi.com*
 
 <a name="get"></a>
 # **get**
-> FSearchResponse get(authorName).sources(sources).predefinedSources(predefinedSources).notSources(notSources).lang(lang).notLang(notLang).countries(countries).notCountries(notCountries).from(from).to(to).publishedDatePrecision(publishedDatePrecision).byParseDate(byParseDate).sortBy(sortBy).rankedOnly(rankedOnly).fromRank(fromRank).toRank(toRank).isHeadline(isHeadline).isPaidContent(isPaidContent).parentUrl(parentUrl).allLinks(allLinks).allDomainLinks(allDomainLinks).wordCountMin(wordCountMin).wordCountMax(wordCountMax).page(page).pageSize(pageSize).includeNlpData(includeNlpData).hasNlp(hasNlp).theme(theme).nerName(nerName).titleSentimentMin(titleSentimentMin).titleSentimentMax(titleSentimentMax).contentSentimentMin(contentSentimentMin).contentSentimentMax(contentSentimentMax).execute();
+> FSearchResponse get(authorName).notAuthorName(notAuthorName).sources(sources).predefinedSources(predefinedSources).notSources(notSources).lang(lang).notLang(notLang).countries(countries).notCountries(notCountries).from(from).to(to).publishedDatePrecision(publishedDatePrecision).byParseDate(byParseDate).sortBy(sortBy).rankedOnly(rankedOnly).fromRank(fromRank).toRank(toRank).isHeadline(isHeadline).isPaidContent(isPaidContent).parentUrl(parentUrl).allLinks(allLinks).allDomainLinks(allDomainLinks).wordCountMin(wordCountMin).wordCountMax(wordCountMax).page(page).pageSize(pageSize).includeNlpData(includeNlpData).hasNlp(hasNlp).theme(theme).notTheme(notTheme).nerName(nerName).titleSentimentMin(titleSentimentMin).titleSentimentMax(titleSentimentMax).contentSentimentMin(contentSentimentMin).contentSentimentMax(contentSentimentMax).iptcTags(iptcTags).notIptcTags(notIptcTags).execute();
 
 [Get] Search By Author Request
 
@@ -38,13 +38,14 @@ public class Example {
     configuration.apiKey  = "YOUR API KEY";
     Newscatcher client = new Newscatcher(configuration);
     String authorName = "authorName_example";
-    String sources = "sources_example";
-    String predefinedSources = "predefinedSources_example";
-    String notSources = "notSources_example";
-    String lang = "lang_example";
-    String notLang = "notLang_example";
-    String countries = "countries_example";
-    String notCountries = "notCountries_example";
+    String notAuthorName = "notAuthorName_example";
+    Object sources = null;
+    Object predefinedSources = null;
+    Object notSources = null;
+    Object lang = null;
+    Object notLang = null;
+    Object countries = null;
+    Object notCountries = null;
     String from = "from_example";
     String to = "to_example";
     String publishedDatePrecision = "publishedDatePrecision_example";
@@ -55,9 +56,9 @@ public class Example {
     Integer toRank = 56;
     Boolean isHeadline = true;
     Boolean isPaidContent = true;
-    String parentUrl = "parentUrl_example";
-    String allLinks = "allLinks_example";
-    String allDomainLinks = "allDomainLinks_example";
+    Object parentUrl = null;
+    Object allLinks = null;
+    Object allDomainLinks = null;
     Integer wordCountMin = 56;
     Integer wordCountMax = 56;
     Integer page = 1;
@@ -65,15 +66,19 @@ public class Example {
     Boolean includeNlpData = true;
     Boolean hasNlp = true;
     String theme = "theme_example";
+    String notTheme = "notTheme_example";
     String nerName = "nerName_example";
     Double titleSentimentMin = 3.4D;
     Double titleSentimentMax = 3.4D;
     Double contentSentimentMin = 3.4D;
     Double contentSentimentMax = 3.4D;
+    Object iptcTags = null;
+    Object notIptcTags = null;
     try {
       FSearchResponse result = client
               .authors
               .get(authorName)
+              .notAuthorName(notAuthorName)
               .sources(sources)
               .predefinedSources(predefinedSources)
               .notSources(notSources)
@@ -101,11 +106,14 @@ public class Example {
               .includeNlpData(includeNlpData)
               .hasNlp(hasNlp)
               .theme(theme)
+              .notTheme(notTheme)
               .nerName(nerName)
               .titleSentimentMin(titleSentimentMin)
               .titleSentimentMax(titleSentimentMax)
               .contentSentimentMin(contentSentimentMin)
               .contentSentimentMax(contentSentimentMax)
+              .iptcTags(iptcTags)
+              .notIptcTags(notIptcTags)
               .execute();
       System.out.println(result);
       System.out.println(result.getStatus());
@@ -128,6 +136,7 @@ public class Example {
       ApiResponse<FSearchResponse> response = client
               .authors
               .get(authorName)
+              .notAuthorName(notAuthorName)
               .sources(sources)
               .predefinedSources(predefinedSources)
               .notSources(notSources)
@@ -155,11 +164,14 @@ public class Example {
               .includeNlpData(includeNlpData)
               .hasNlp(hasNlp)
               .theme(theme)
+              .notTheme(notTheme)
               .nerName(nerName)
               .titleSentimentMin(titleSentimentMin)
               .titleSentimentMax(titleSentimentMax)
               .contentSentimentMin(contentSentimentMin)
               .contentSentimentMax(contentSentimentMax)
+              .iptcTags(iptcTags)
+              .notIptcTags(notIptcTags)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
       System.out.println(response.getResponseHeaders());
@@ -183,13 +195,14 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **authorName** | **String**|  | |
-| **sources** | **String**|  | [optional] |
-| **predefinedSources** | **String**|  | [optional] |
-| **notSources** | **String**|  | [optional] |
-| **lang** | **String**|  | [optional] |
-| **notLang** | **String**|  | [optional] |
-| **countries** | **String**|  | [optional] |
-| **notCountries** | **String**|  | [optional] |
+| **notAuthorName** | **String**|  | [optional] |
+| **sources** | [**Object**](.md)|  | [optional] |
+| **predefinedSources** | [**Object**](.md)|  | [optional] |
+| **notSources** | [**Object**](.md)|  | [optional] |
+| **lang** | [**Object**](.md)|  | [optional] |
+| **notLang** | [**Object**](.md)|  | [optional] |
+| **countries** | [**Object**](.md)|  | [optional] |
+| **notCountries** | [**Object**](.md)|  | [optional] |
 | **from** | **String**|  | [optional] |
 | **to** | **String**|  | [optional] |
 | **publishedDatePrecision** | **String**|  | [optional] |
@@ -200,9 +213,9 @@ public class Example {
 | **toRank** | **Integer**|  | [optional] |
 | **isHeadline** | **Boolean**|  | [optional] |
 | **isPaidContent** | **Boolean**|  | [optional] |
-| **parentUrl** | **String**|  | [optional] |
-| **allLinks** | **String**|  | [optional] |
-| **allDomainLinks** | **String**|  | [optional] |
+| **parentUrl** | [**Object**](.md)|  | [optional] |
+| **allLinks** | [**Object**](.md)|  | [optional] |
+| **allDomainLinks** | [**Object**](.md)|  | [optional] |
 | **wordCountMin** | **Integer**|  | [optional] |
 | **wordCountMax** | **Integer**|  | [optional] |
 | **page** | **Integer**|  | [optional] [default to 1] |
@@ -210,11 +223,14 @@ public class Example {
 | **includeNlpData** | **Boolean**|  | [optional] |
 | **hasNlp** | **Boolean**|  | [optional] |
 | **theme** | **String**|  | [optional] |
+| **notTheme** | **String**|  | [optional] |
 | **nerName** | **String**|  | [optional] |
 | **titleSentimentMin** | **Double**|  | [optional] |
 | **titleSentimentMax** | **Double**|  | [optional] |
 | **contentSentimentMin** | **Double**|  | [optional] |
 | **contentSentimentMax** | **Double**|  | [optional] |
+| **iptcTags** | [**Object**](.md)|  | [optional] |
+| **notIptcTags** | [**Object**](.md)|  | [optional] |
 
 ### Return type
 
@@ -264,13 +280,14 @@ public class Example {
     configuration.apiKey  = "YOUR API KEY";
     Newscatcher client = new Newscatcher(configuration);
     String authorName = "authorName_example";
-    String sources = "sources_example";
-    String predefinedSources = "predefinedSources_example";
-    String notSources = "notSources_example";
-    String lang = "lang_example";
-    String notLang = "notLang_example";
-    String countries = "countries_example";
-    String notCountries = "notCountries_example";
+    String notAuthorName = "notAuthorName_example";
+    Object sources = null;
+    Object predefinedSources = null;
+    Object notSources = null;
+    Object lang = null;
+    Object notLang = null;
+    Object countries = null;
+    Object notCountries = null;
     String from = "from_example";
     String to = "to_example";
     String publishedDatePrecision = "publishedDatePrecision_example";
@@ -281,9 +298,9 @@ public class Example {
     Integer toRank = 56;
     Boolean isHeadline = true;
     Boolean isPaidContent = true;
-    String parentUrl = "parentUrl_example";
-    String allLinks = "allLinks_example";
-    String allDomainLinks = "allDomainLinks_example";
+    Object parentUrl = null;
+    Object allLinks = null;
+    Object allDomainLinks = null;
     Integer wordCountMin = 56;
     Integer wordCountMax = 56;
     Integer page = 1;
@@ -291,15 +308,19 @@ public class Example {
     Boolean includeNlpData = true;
     Boolean hasNlp = true;
     String theme = "theme_example";
+    String notTheme = "notTheme_example";
     String nerName = "nerName_example";
     Double titleSentimentMin = 3.4D;
     Double titleSentimentMax = 3.4D;
     Double contentSentimentMin = 3.4D;
     Double contentSentimentMax = 3.4D;
+    Object iptcTags = null;
+    Object notIptcTags = null;
     try {
       FSearchResponse1 result = client
               .authors
               .post(authorName)
+              .notAuthorName(notAuthorName)
               .sources(sources)
               .predefinedSources(predefinedSources)
               .notSources(notSources)
@@ -327,11 +348,14 @@ public class Example {
               .includeNlpData(includeNlpData)
               .hasNlp(hasNlp)
               .theme(theme)
+              .notTheme(notTheme)
               .nerName(nerName)
               .titleSentimentMin(titleSentimentMin)
               .titleSentimentMax(titleSentimentMax)
               .contentSentimentMin(contentSentimentMin)
               .contentSentimentMax(contentSentimentMax)
+              .iptcTags(iptcTags)
+              .notIptcTags(notIptcTags)
               .execute();
       System.out.println(result);
       System.out.println(result.getStatus());
@@ -354,6 +378,7 @@ public class Example {
       ApiResponse<FSearchResponse1> response = client
               .authors
               .post(authorName)
+              .notAuthorName(notAuthorName)
               .sources(sources)
               .predefinedSources(predefinedSources)
               .notSources(notSources)
@@ -381,11 +406,14 @@ public class Example {
               .includeNlpData(includeNlpData)
               .hasNlp(hasNlp)
               .theme(theme)
+              .notTheme(notTheme)
               .nerName(nerName)
               .titleSentimentMin(titleSentimentMin)
               .titleSentimentMax(titleSentimentMax)
               .contentSentimentMin(contentSentimentMin)
               .contentSentimentMax(contentSentimentMax)
+              .iptcTags(iptcTags)
+              .notIptcTags(notIptcTags)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
       System.out.println(response.getResponseHeaders());

@@ -34,11 +34,18 @@ namespace Example
 
             var lang = "lang_example";
             var countries = "countries_example";
+            var predefinedSources = "predefinedSources_example";
+            var includeAdditionalInfo = true;
+            var fromRank = 56;
+            var toRank = 56;
+            var sourceName = new Object(
+            );
+            var sourceUrl = "sourceUrl_example";
             
             try
             {
                 // [Get] Search For Sources Request
-                SourceResponse result = client.Sources.Get(lang, countries);
+                SourceResponse result = client.Sources.Get(lang, countries, predefinedSources, includeAdditionalInfo, fromRank, toRank, sourceName, sourceUrl);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -65,7 +72,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // [Get] Search For Sources Request
-    ApiResponse<SourceResponse> response = apiInstance.GetWithHttpInfo(lang, countries);
+    ApiResponse<SourceResponse> response = apiInstance.GetWithHttpInfo(lang, countries, predefinedSources, includeAdditionalInfo, fromRank, toRank, sourceName, sourceUrl);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -84,6 +91,12 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **lang** | **string** |  | [optional]  |
 | **countries** | **string** |  | [optional]  |
+| **predefinedSources** | **string** |  | [optional]  |
+| **includeAdditionalInfo** | **bool?** |  | [optional]  |
+| **fromRank** | **int?** |  | [optional]  |
+| **toRank** | **int?** |  | [optional]  |
+| **sourceName** | [**Object**](Object.md) |  | [optional]  |
+| **sourceUrl** | **string** |  | [optional]  |
 
 ### Return type
 
@@ -125,10 +138,22 @@ namespace Example
 
             var lang = "lang_example";
             var countries = "countries_example";
+            var predefinedSources = "predefinedSources_example";
+            var includeAdditionalInfo = false;
+            var fromRank = default(int);
+            var toRank = default(int);
+            var sourceName = "sourceName_example";
+            var sourceUrl = "sourceUrl_example";
             
             var sourcesRequest = new SourcesRequest(
                 lang,
-                countries
+                countries,
+                predefinedSources,
+                includeAdditionalInfo,
+                fromRank,
+                toRank,
+                sourceName,
+                sourceUrl
             );
             
             try

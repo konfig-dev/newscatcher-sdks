@@ -10,7 +10,7 @@ All URIs are relative to *https://v3-api.newscatcherapi.com*
 
 <a name="get"></a>
 # **get**
-> SourceResponse get().lang(lang).countries(countries).execute();
+> SourceResponse get().lang(lang).countries(countries).predefinedSources(predefinedSources).includeAdditionalInfo(includeAdditionalInfo).fromRank(fromRank).toRank(toRank).sourceName(sourceName).sourceUrl(sourceUrl).execute();
 
 [Get] Search For Sources Request
 
@@ -39,12 +39,24 @@ public class Example {
     Newscatcher client = new Newscatcher(configuration);
     String lang = "lang_example";
     String countries = "countries_example";
+    String predefinedSources = "predefinedSources_example";
+    Boolean includeAdditionalInfo = true;
+    Integer fromRank = 56;
+    Integer toRank = 56;
+    Object sourceName = null;
+    String sourceUrl = "sourceUrl_example";
     try {
       SourceResponse result = client
               .sources
               .get()
               .lang(lang)
               .countries(countries)
+              .predefinedSources(predefinedSources)
+              .includeAdditionalInfo(includeAdditionalInfo)
+              .fromRank(fromRank)
+              .toRank(toRank)
+              .sourceName(sourceName)
+              .sourceUrl(sourceUrl)
               .execute();
       System.out.println(result);
       System.out.println(result.getMessage());
@@ -65,6 +77,12 @@ public class Example {
               .get()
               .lang(lang)
               .countries(countries)
+              .predefinedSources(predefinedSources)
+              .includeAdditionalInfo(includeAdditionalInfo)
+              .fromRank(fromRank)
+              .toRank(toRank)
+              .sourceName(sourceName)
+              .sourceUrl(sourceUrl)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
       System.out.println(response.getResponseHeaders());
@@ -89,6 +107,12 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **lang** | **String**|  | [optional] |
 | **countries** | **String**|  | [optional] |
+| **predefinedSources** | **String**|  | [optional] |
+| **includeAdditionalInfo** | **Boolean**|  | [optional] |
+| **fromRank** | **Integer**|  | [optional] |
+| **toRank** | **Integer**|  | [optional] |
+| **sourceName** | [**Object**](.md)|  | [optional] |
+| **sourceUrl** | **String**|  | [optional] |
 
 ### Return type
 
@@ -139,12 +163,24 @@ public class Example {
     Newscatcher client = new Newscatcher(configuration);
     String lang = "lang_example";
     String countries = "countries_example";
+    String predefinedSources = "predefinedSources_example";
+    Boolean includeAdditionalInfo = true;
+    Integer fromRank = 56;
+    Integer toRank = 56;
+    Object sourceName = null;
+    String sourceUrl = "sourceUrl_example";
     try {
       SourceResponse result = client
               .sources
               .post()
               .lang(lang)
               .countries(countries)
+              .predefinedSources(predefinedSources)
+              .includeAdditionalInfo(includeAdditionalInfo)
+              .fromRank(fromRank)
+              .toRank(toRank)
+              .sourceName(sourceName)
+              .sourceUrl(sourceUrl)
               .execute();
       System.out.println(result);
       System.out.println(result.getMessage());
@@ -165,6 +201,12 @@ public class Example {
               .post()
               .lang(lang)
               .countries(countries)
+              .predefinedSources(predefinedSources)
+              .includeAdditionalInfo(includeAdditionalInfo)
+              .fromRank(fromRank)
+              .toRank(toRank)
+              .sourceName(sourceName)
+              .sourceUrl(sourceUrl)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
       System.out.println(response.getResponseHeaders());

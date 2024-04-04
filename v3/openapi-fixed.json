@@ -3,7 +3,7 @@
   "info": {
     "title": "NewsCatcher-V3 Production API",
     "description": "<img src='https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg' width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a>",
-    "version": "Beta-3.0.0",
+    "version": "3.2.16",
     "termsOfService": "https://newscatcherapi.com/terms-of-service",
     "contact": {
       "name": "Maksym Sugonyaka",
@@ -24,6 +24,9 @@
     },
     {
       "name": "Authors"
+    },
+    {
+      "name": "SearchLink"
     },
     {
       "name": "SearchSimilar"
@@ -73,8 +76,7 @@
           {
             "required": false,
             "schema": {
-              "title": "Predefined Sources",
-              "type": "string"
+              "title": "Predefined Sources"
             },
             "name": "predefined_sources",
             "in": "query"
@@ -82,8 +84,7 @@
           {
             "required": false,
             "schema": {
-              "title": "Sources",
-              "type": "string"
+              "title": "Sources"
             },
             "name": "sources",
             "in": "query"
@@ -91,8 +92,7 @@
           {
             "required": false,
             "schema": {
-              "title": "Not Sources",
-              "type": "string"
+              "title": "Not Sources"
             },
             "name": "not_sources",
             "in": "query"
@@ -100,8 +100,7 @@
           {
             "required": false,
             "schema": {
-              "title": "Lang",
-              "type": "string"
+              "title": "Lang"
             },
             "name": "lang",
             "in": "query"
@@ -109,8 +108,7 @@
           {
             "required": false,
             "schema": {
-              "title": "Not Lang",
-              "type": "string"
+              "title": "Not Lang"
             },
             "name": "not_lang",
             "in": "query"
@@ -118,8 +116,7 @@
           {
             "required": false,
             "schema": {
-              "title": "Countries",
-              "type": "string"
+              "title": "Countries"
             },
             "name": "countries",
             "in": "query"
@@ -127,10 +124,17 @@
           {
             "required": false,
             "schema": {
-              "title": "Not Countries",
-              "type": "string"
+              "title": "Not Countries"
             },
             "name": "not_countries",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Not Author Name"
+            },
+            "name": "not_author_name",
             "in": "query"
           },
           {
@@ -244,8 +248,7 @@
           {
             "required": false,
             "schema": {
-              "title": "Parent Url",
-              "type": "string"
+              "title": "Parent Url"
             },
             "name": "parent_url",
             "in": "query"
@@ -253,8 +256,7 @@
           {
             "required": false,
             "schema": {
-              "title": "All Links",
-              "type": "string"
+              "title": "All Links"
             },
             "name": "all_links",
             "in": "query"
@@ -262,8 +264,7 @@
           {
             "required": false,
             "schema": {
-              "title": "All Domain Links",
-              "type": "string"
+              "title": "All Domain Links"
             },
             "name": "all_domain_links",
             "in": "query"
@@ -313,6 +314,15 @@
           {
             "required": false,
             "schema": {
+              "title": "Clustering Variable",
+              "type": "string"
+            },
+            "name": "clustering_variable",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
               "title": "Clustering Enabled",
               "type": "boolean"
             },
@@ -326,15 +336,6 @@
               "type": "number"
             },
             "name": "clustering_threshold",
-            "in": "query"
-          },
-          {
-            "required": false,
-            "schema": {
-              "title": "Clustering Variable",
-              "type": "string"
-            },
-            "name": "clustering_variable",
             "in": "query"
           },
           {
@@ -362,6 +363,15 @@
               "type": "string"
             },
             "name": "theme",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Not Theme",
+              "type": "string"
+            },
+            "name": "not_theme",
             "in": "query"
           },
           {
@@ -434,6 +444,38 @@
               "type": "number"
             },
             "name": "content_sentiment_max",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Iptc Tags"
+            },
+            "name": "iptc_tags",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Not Iptc Tags"
+            },
+            "name": "not_iptc_tags",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Source Name"
+            },
+            "name": "source_name",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Iab Tags"
+            },
+            "name": "iab_tags",
             "in": "query"
           }
         ],
@@ -547,8 +589,7 @@
           {
             "required": false,
             "schema": {
-              "title": "Lang",
-              "type": "string"
+              "title": "Lang"
             },
             "name": "lang",
             "in": "query"
@@ -556,8 +597,7 @@
           {
             "required": false,
             "schema": {
-              "title": "Not Lang",
-              "type": "string"
+              "title": "Not Lang"
             },
             "name": "not_lang",
             "in": "query"
@@ -565,8 +605,7 @@
           {
             "required": false,
             "schema": {
-              "title": "Countries",
-              "type": "string"
+              "title": "Countries"
             },
             "name": "countries",
             "in": "query"
@@ -574,8 +613,7 @@
           {
             "required": false,
             "schema": {
-              "title": "Not Countries",
-              "type": "string"
+              "title": "Not Countries"
             },
             "name": "not_countries",
             "in": "query"
@@ -583,8 +621,7 @@
           {
             "required": false,
             "schema": {
-              "title": "Sources",
-              "type": "string"
+              "title": "Sources"
             },
             "name": "sources",
             "in": "query"
@@ -592,8 +629,7 @@
           {
             "required": false,
             "schema": {
-              "title": "Predefined Sources",
-              "type": "string"
+              "title": "Predefined Sources"
             },
             "name": "predefined_sources",
             "in": "query"
@@ -601,10 +637,17 @@
           {
             "required": false,
             "schema": {
-              "title": "Not Sources",
-              "type": "string"
+              "title": "Not Sources"
             },
             "name": "not_sources",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Not Author Name"
+            },
+            "name": "not_author_name",
             "in": "query"
           },
           {
@@ -637,8 +680,7 @@
           {
             "required": false,
             "schema": {
-              "title": "Parent Url",
-              "type": "string"
+              "title": "Parent Url"
             },
             "name": "parent_url",
             "in": "query"
@@ -646,17 +688,7 @@
           {
             "required": false,
             "schema": {
-              "title": "Theme",
-              "type": "string"
-            },
-            "name": "theme",
-            "in": "query"
-          },
-          {
-            "required": false,
-            "schema": {
-              "title": "All Links",
-              "type": "string"
+              "title": "All Links"
             },
             "name": "all_links",
             "in": "query"
@@ -664,8 +696,7 @@
           {
             "required": false,
             "schema": {
-              "title": "All Domain Links",
-              "type": "string"
+              "title": "All Domain Links"
             },
             "name": "all_domain_links",
             "in": "query"
@@ -715,6 +746,15 @@
           {
             "required": false,
             "schema": {
+              "title": "Clustering Variable",
+              "type": "string"
+            },
+            "name": "clustering_variable",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
               "title": "Clustering Enabled",
               "type": "boolean"
             },
@@ -733,15 +773,6 @@
           {
             "required": false,
             "schema": {
-              "title": "Clustering Variable",
-              "type": "string"
-            },
-            "name": "clustering_variable",
-            "in": "query"
-          },
-          {
-            "required": false,
-            "schema": {
               "title": "Include Nlp Data",
               "type": "boolean"
             },
@@ -755,6 +786,24 @@
               "type": "boolean"
             },
             "name": "has_nlp",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Theme",
+              "type": "string"
+            },
+            "name": "theme",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Not Theme",
+              "type": "string"
+            },
+            "name": "not_theme",
             "in": "query"
           },
           {
@@ -827,6 +876,22 @@
               "type": "number"
             },
             "name": "content_sentiment_max",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Iptc Tags"
+            },
+            "name": "iptc_tags",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Not Iptc Tags"
+            },
+            "name": "not_iptc_tags",
             "in": "query"
           }
         ],
@@ -929,8 +994,16 @@
           {
             "required": false,
             "schema": {
-              "title": "Sources",
+              "title": "Not Author Name",
               "type": "string"
+            },
+            "name": "not_author_name",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Sources"
             },
             "name": "sources",
             "in": "query"
@@ -938,8 +1011,7 @@
           {
             "required": false,
             "schema": {
-              "title": "Predefined Sources",
-              "type": "string"
+              "title": "Predefined Sources"
             },
             "name": "predefined_sources",
             "in": "query"
@@ -947,8 +1019,7 @@
           {
             "required": false,
             "schema": {
-              "title": "Not Sources",
-              "type": "string"
+              "title": "Not Sources"
             },
             "name": "not_sources",
             "in": "query"
@@ -956,8 +1027,7 @@
           {
             "required": false,
             "schema": {
-              "title": "Lang",
-              "type": "string"
+              "title": "Lang"
             },
             "name": "lang",
             "in": "query"
@@ -965,8 +1035,7 @@
           {
             "required": false,
             "schema": {
-              "title": "Not Lang",
-              "type": "string"
+              "title": "Not Lang"
             },
             "name": "not_lang",
             "in": "query"
@@ -974,8 +1043,7 @@
           {
             "required": false,
             "schema": {
-              "title": "Countries",
-              "type": "string"
+              "title": "Countries"
             },
             "name": "countries",
             "in": "query"
@@ -983,8 +1051,7 @@
           {
             "required": false,
             "schema": {
-              "title": "Not Countries",
-              "type": "string"
+              "title": "Not Countries"
             },
             "name": "not_countries",
             "in": "query"
@@ -1100,8 +1167,7 @@
           {
             "required": false,
             "schema": {
-              "title": "Parent Url",
-              "type": "string"
+              "title": "Parent Url"
             },
             "name": "parent_url",
             "in": "query"
@@ -1109,8 +1175,7 @@
           {
             "required": false,
             "schema": {
-              "title": "All Links",
-              "type": "string"
+              "title": "All Links"
             },
             "name": "all_links",
             "in": "query"
@@ -1118,8 +1183,7 @@
           {
             "required": false,
             "schema": {
-              "title": "All Domain Links",
-              "type": "string"
+              "title": "All Domain Links"
             },
             "name": "all_domain_links",
             "in": "query"
@@ -1196,6 +1260,15 @@
           {
             "required": false,
             "schema": {
+              "title": "Not Theme",
+              "type": "string"
+            },
+            "name": "not_theme",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
               "title": "Ner Name",
               "type": "string"
             },
@@ -1236,6 +1309,22 @@
               "type": "number"
             },
             "name": "content_sentiment_max",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Iptc Tags"
+            },
+            "name": "iptc_tags",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Not Iptc Tags"
+            },
+            "name": "not_iptc_tags",
             "in": "query"
           }
         ],
@@ -1294,6 +1383,132 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/AuthorsPostResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/search_by_link": {
+      "get": {
+        "tags": [
+          "SearchLink"
+        ],
+        "summary": "[Get] Search For Articles By Id Or Link",
+        "operationId": "SearchLink_get",
+        "security": [
+          {
+            "apiKey": [
+            ]
+          }
+        ],
+        "description": "This endpoint allows you to search for articles. You can search for articles by id(s) or link(s).",
+        "parameters": [
+          {
+            "required": false,
+            "schema": {
+              "title": "Ids"
+            },
+            "name": "ids",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Links"
+            },
+            "name": "links",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Page",
+              "minimum": 0,
+              "type": "integer",
+              "default": 1
+            },
+            "name": "page",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Page Size",
+              "minimum": 0,
+              "type": "integer",
+              "default": 100
+            },
+            "name": "page_size",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/dto__responses__SearchResponse__SearchResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "SearchLink"
+        ],
+        "summary": "[Post] Search For Articles Request",
+        "operationId": "SearchLink_post",
+        "security": [
+          {
+            "apiKey": [
+            ]
+          }
+        ],
+        "description": "This endpoint allows you to search for articles. You can search for articles by id(s) or link(s).",
+        "parameters": [
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchURLRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/dto__responses__SearchResponse__SearchResponse"
                 }
               }
             }
@@ -1379,8 +1594,7 @@
           {
             "required": false,
             "schema": {
-              "title": "Predefined Sources",
-              "type": "string"
+              "title": "Predefined Sources"
             },
             "name": "predefined_sources",
             "in": "query"
@@ -1388,8 +1602,7 @@
           {
             "required": false,
             "schema": {
-              "title": "Sources",
-              "type": "string"
+              "title": "Sources"
             },
             "name": "sources",
             "in": "query"
@@ -1397,8 +1610,7 @@
           {
             "required": false,
             "schema": {
-              "title": "Not Sources",
-              "type": "string"
+              "title": "Not Sources"
             },
             "name": "not_sources",
             "in": "query"
@@ -1406,8 +1618,7 @@
           {
             "required": false,
             "schema": {
-              "title": "Lang",
-              "type": "string"
+              "title": "Lang"
             },
             "name": "lang",
             "in": "query"
@@ -1415,8 +1626,7 @@
           {
             "required": false,
             "schema": {
-              "title": "Not Lang",
-              "type": "string"
+              "title": "Not Lang"
             },
             "name": "not_lang",
             "in": "query"
@@ -1424,8 +1634,7 @@
           {
             "required": false,
             "schema": {
-              "title": "Countries",
-              "type": "string"
+              "title": "Countries"
             },
             "name": "countries",
             "in": "query"
@@ -1433,8 +1642,7 @@
           {
             "required": false,
             "schema": {
-              "title": "Not Countries",
-              "type": "string"
+              "title": "Not Countries"
             },
             "name": "not_countries",
             "in": "query"
@@ -1550,8 +1758,7 @@
           {
             "required": false,
             "schema": {
-              "title": "Parent Url",
-              "type": "string"
+              "title": "Parent Url"
             },
             "name": "parent_url",
             "in": "query"
@@ -1559,8 +1766,7 @@
           {
             "required": false,
             "schema": {
-              "title": "All Links",
-              "type": "string"
+              "title": "All Links"
             },
             "name": "all_links",
             "in": "query"
@@ -1568,8 +1774,7 @@
           {
             "required": false,
             "schema": {
-              "title": "All Domain Links",
-              "type": "string"
+              "title": "All Domain Links"
             },
             "name": "all_domain_links",
             "in": "query"
@@ -1646,6 +1851,15 @@
           {
             "required": false,
             "schema": {
+              "title": "Not Theme",
+              "type": "string"
+            },
+            "name": "not_theme",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
               "title": "Ner Name",
               "type": "string"
             },
@@ -1686,6 +1900,22 @@
               "type": "number"
             },
             "name": "content_sentiment_max",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Iptc Tags"
+            },
+            "name": "iptc_tags",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Not Iptc Tags"
+            },
+            "name": "not_iptc_tags",
             "in": "query"
           }
         ],
@@ -1792,6 +2022,59 @@
               "type": "string"
             },
             "name": "countries",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Predefined Sources",
+              "type": "string"
+            },
+            "name": "predefined_sources",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Include Additional Info",
+              "type": "boolean"
+            },
+            "name": "include_additional_info",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "From Rank",
+              "type": "integer"
+            },
+            "name": "from_rank",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "To Rank",
+              "type": "integer"
+            },
+            "name": "to_rank",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Source Name"
+            },
+            "name": "source_name",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Source Url",
+              "type": "string"
+            },
+            "name": "source_url",
             "in": "query"
           }
         ],
@@ -1948,6 +2231,24 @@
   },
   "components": {
     "schemas": {
+      "AdditionalSourceInfo": {
+        "title": "AdditionalSourceInfo",
+        "type": "object",
+        "properties": {
+          "nb_articles_for_7d": {
+            "title": "Nb Articles For 7D",
+            "type": "integer"
+          },
+          "country": {
+            "title": "Country",
+            "type": "string"
+          },
+          "rank": {
+            "title": "Rank",
+            "type": "integer"
+          }
+        }
+      },
       "AuthorSearchRequest": {
         "title": "AuthorSearchRequest",
         "required": [
@@ -1959,33 +2260,30 @@
             "title": "Author Name",
             "type": "string"
           },
-          "sources": {
-            "title": "Sources",
+          "not_author_name": {
+            "title": "Not Author Name",
             "type": "string"
+          },
+          "sources": {
+            "title": "Sources"
           },
           "predefined_sources": {
-            "title": "Predefined Sources",
-            "type": "string"
+            "title": "Predefined Sources"
           },
           "not_sources": {
-            "title": "Not Sources",
-            "type": "string"
+            "title": "Not Sources"
           },
           "lang": {
-            "title": "Lang",
-            "type": "string"
+            "title": "Lang"
           },
           "not_lang": {
-            "title": "Not Lang",
-            "type": "string"
+            "title": "Not Lang"
           },
           "countries": {
-            "title": "Countries",
-            "type": "string"
+            "title": "Countries"
           },
           "not_countries": {
-            "title": "Not Countries",
-            "type": "string"
+            "title": "Not Countries"
           },
           "from_": {
             "title": "From ",
@@ -2046,16 +2344,13 @@
             "type": "boolean"
           },
           "parent_url": {
-            "title": "Parent Url",
-            "type": "string"
+            "title": "Parent Url"
           },
           "all_links": {
-            "title": "All Links",
-            "type": "string"
+            "title": "All Links"
           },
           "all_domain_links": {
-            "title": "All Domain Links",
-            "type": "string"
+            "title": "All Domain Links"
           },
           "word_count_min": {
             "title": "Word Count Min",
@@ -2091,6 +2386,10 @@
             "title": "Theme",
             "type": "string"
           },
+          "not_theme": {
+            "title": "Not Theme",
+            "type": "string"
+          },
           "ner_name": {
             "title": "Ner Name",
             "type": "string"
@@ -2110,6 +2409,12 @@
           "content_sentiment_max": {
             "title": "Content Sentiment Max",
             "type": "number"
+          },
+          "iptc_tags": {
+            "title": "Iptc Tags"
+          },
+          "not_iptc_tags": {
+            "title": "Not Iptc Tags"
           }
         }
       },
@@ -2190,53 +2495,6 @@
           }
         }
       },
-      "FailedLatestHeadlinesResponse": {
-        "title": "FailedLatestHeadlinesResponse",
-        "required": [
-          "user_input"
-        ],
-        "type": "object",
-        "properties": {
-          "status": {
-            "title": "Status",
-            "type": "string",
-            "default": "No Matches for your search"
-          },
-          "total_hits": {
-            "title": "Total Hits",
-            "type": "integer",
-            "default": 0
-          },
-          "page": {
-            "title": "Page",
-            "type": "integer",
-            "default": 0
-          },
-          "total_pages": {
-            "title": "Total Pages",
-            "type": "integer",
-            "default": 0
-          },
-          "page_size": {
-            "title": "Page Size",
-            "type": "integer",
-            "default": 0
-          },
-          "articles": {
-            "title": "Articles",
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/dto__responses__LatestHeadlinesResponse__ArticleResult"
-            },
-            "default": [
-            ]
-          },
-          "user_input": {
-            "title": "User Input",
-            "type": "object"
-          }
-        }
-      },
       "HTTPValidationError": {
         "title": "HTTPValidationError",
         "type": "object",
@@ -2265,32 +2523,28 @@
             "default": false
           },
           "lang": {
-            "title": "Lang",
-            "type": "string"
+            "title": "Lang"
           },
           "not_lang": {
-            "title": "Not Lang",
-            "type": "string"
+            "title": "Not Lang"
           },
           "countries": {
-            "title": "Countries",
-            "type": "string"
+            "title": "Countries"
           },
           "not_countries": {
-            "title": "Not Countries",
-            "type": "string"
+            "title": "Not Countries"
           },
           "sources": {
-            "title": "Sources",
-            "type": "string"
+            "title": "Sources"
           },
           "predefined_sources": {
-            "title": "Predefined Sources",
-            "type": "string"
+            "title": "Predefined Sources"
           },
           "not_sources": {
-            "title": "Not Sources",
-            "type": "string"
+            "title": "Not Sources"
+          },
+          "not_author_name": {
+            "title": "Not Author Name"
           },
           "ranked_only": {
             "title": "Ranked Only",
@@ -2305,20 +2559,13 @@
             "type": "boolean"
           },
           "parent_url": {
-            "title": "Parent Url",
-            "type": "string"
-          },
-          "theme": {
-            "title": "Theme",
-            "type": "string"
+            "title": "Parent Url"
           },
           "all_links": {
-            "title": "All Links",
-            "type": "string"
+            "title": "All Links"
           },
           "all_domain_links": {
-            "title": "All Domain Links",
-            "type": "string"
+            "title": "All Domain Links"
           },
           "word_count_min": {
             "title": "Word Count Min",
@@ -2342,6 +2589,10 @@
             "type": "integer",
             "default": 100
           },
+          "clustering_variable": {
+            "title": "Clustering Variable",
+            "type": "string"
+          },
           "clustering_enabled": {
             "title": "Clustering Enabled",
             "type": "boolean"
@@ -2350,10 +2601,6 @@
             "title": "Clustering Threshold",
             "type": "number"
           },
-          "clustering_variable": {
-            "title": "Clustering Variable",
-            "type": "string"
-          },
           "include_nlp_data": {
             "title": "Include Nlp Data",
             "type": "boolean"
@@ -2361,6 +2608,14 @@
           "has_nlp": {
             "title": "Has Nlp",
             "type": "boolean"
+          },
+          "theme": {
+            "title": "Theme",
+            "type": "string"
+          },
+          "not_theme": {
+            "title": "Not Theme",
+            "type": "string"
           },
           "ORG_entity_name": {
             "title": "Org Entity Name",
@@ -2393,6 +2648,12 @@
           "content_sentiment_max": {
             "title": "Content Sentiment Max",
             "type": "number"
+          },
+          "iptc_tags": {
+            "title": "Iptc Tags"
+          },
+          "not_iptc_tags": {
+            "title": "Not Iptc Tags"
           }
         }
       },
@@ -2475,32 +2736,25 @@
             "default": "title,content"
           },
           "predefined_sources": {
-            "title": "Predefined Sources",
-            "type": "string"
+            "title": "Predefined Sources"
           },
           "sources": {
-            "title": "Sources",
-            "type": "string"
+            "title": "Sources"
           },
           "not_sources": {
-            "title": "Not Sources",
-            "type": "string"
+            "title": "Not Sources"
           },
           "lang": {
-            "title": "Lang",
-            "type": "string"
+            "title": "Lang"
           },
           "not_lang": {
-            "title": "Not Lang",
-            "type": "string"
+            "title": "Not Lang"
           },
           "countries": {
-            "title": "Countries",
-            "type": "string"
+            "title": "Countries"
           },
           "not_countries": {
-            "title": "Not Countries",
-            "type": "string"
+            "title": "Not Countries"
           },
           "from_": {
             "title": "From ",
@@ -2561,16 +2815,13 @@
             "type": "boolean"
           },
           "parent_url": {
-            "title": "Parent Url",
-            "type": "string"
+            "title": "Parent Url"
           },
           "all_links": {
-            "title": "All Links",
-            "type": "string"
+            "title": "All Links"
           },
           "all_domain_links": {
-            "title": "All Domain Links",
-            "type": "string"
+            "title": "All Domain Links"
           },
           "word_count_min": {
             "title": "Word Count Min",
@@ -2604,6 +2855,10 @@
           },
           "theme": {
             "title": "Theme",
+            "type": "string"
+          },
+          "not_theme": {
+            "title": "Not Theme",
             "type": "string"
           },
           "ner_name": {
@@ -2625,6 +2880,12 @@
           "content_sentiment_max": {
             "title": "Content Sentiment Max",
             "type": "number"
+          },
+          "iptc_tags": {
+            "title": "Iptc Tags"
+          },
+          "not_iptc_tags": {
+            "title": "Not Iptc Tags"
           }
         }
       },
@@ -2645,32 +2906,28 @@
             "default": "title_content"
           },
           "predefined_sources": {
-            "title": "Predefined Sources",
-            "type": "string"
+            "title": "Predefined Sources"
           },
           "sources": {
-            "title": "Sources",
-            "type": "string"
+            "title": "Sources"
           },
           "not_sources": {
-            "title": "Not Sources",
-            "type": "string"
+            "title": "Not Sources"
           },
           "lang": {
-            "title": "Lang",
-            "type": "string"
+            "title": "Lang"
           },
           "not_lang": {
-            "title": "Not Lang",
-            "type": "string"
+            "title": "Not Lang"
           },
           "countries": {
-            "title": "Countries",
-            "type": "string"
+            "title": "Countries"
           },
           "not_countries": {
-            "title": "Not Countries",
-            "type": "string"
+            "title": "Not Countries"
+          },
+          "not_author_name": {
+            "title": "Not Author Name"
           },
           "from_": {
             "title": "From ",
@@ -2731,16 +2988,13 @@
             "type": "boolean"
           },
           "parent_url": {
-            "title": "Parent Url",
-            "type": "string"
+            "title": "Parent Url"
           },
           "all_links": {
-            "title": "All Links",
-            "type": "string"
+            "title": "All Links"
           },
           "all_domain_links": {
-            "title": "All Domain Links",
-            "type": "string"
+            "title": "All Domain Links"
           },
           "word_count_min": {
             "title": "Word Count Min",
@@ -2764,6 +3018,10 @@
             "type": "integer",
             "default": 100
           },
+          "clustering_variable": {
+            "title": "Clustering Variable",
+            "type": "string"
+          },
           "clustering_enabled": {
             "title": "Clustering Enabled",
             "type": "boolean"
@@ -2771,10 +3029,6 @@
           "clustering_threshold": {
             "title": "Clustering Threshold",
             "type": "number"
-          },
-          "clustering_variable": {
-            "title": "Clustering Variable",
-            "type": "string"
           },
           "include_nlp_data": {
             "title": "Include Nlp Data",
@@ -2786,6 +3040,10 @@
           },
           "theme": {
             "title": "Theme",
+            "type": "string"
+          },
+          "not_theme": {
+            "title": "Not Theme",
             "type": "string"
           },
           "ORG_entity_name": {
@@ -2819,6 +3077,42 @@
           "content_sentiment_max": {
             "title": "Content Sentiment Max",
             "type": "number"
+          },
+          "iptc_tags": {
+            "title": "Iptc Tags"
+          },
+          "not_iptc_tags": {
+            "title": "Not Iptc Tags"
+          },
+          "source_name": {
+            "title": "Source Name"
+          },
+          "iab_tags": {
+            "title": "Iab Tags"
+          }
+        }
+      },
+      "SearchURLRequest": {
+        "title": "SearchURLRequest",
+        "type": "object",
+        "properties": {
+          "ids": {
+            "title": "Ids"
+          },
+          "links": {
+            "title": "Links"
+          },
+          "page": {
+            "title": "Page",
+            "minimum": 0,
+            "type": "integer",
+            "default": 1
+          },
+          "page_size": {
+            "title": "Page Size",
+            "minimum": 0,
+            "type": "integer",
+            "default": 100
           }
         }
       },
@@ -2850,6 +3144,30 @@
           }
         }
       },
+      "SourceInfo": {
+        "title": "SourceInfo",
+        "required": [
+          "domain_url"
+        ],
+        "type": "object",
+        "properties": {
+          "name_source": {
+            "title": "Name Source",
+            "type": "string"
+          },
+          "domain_url": {
+            "title": "Domain Url",
+            "type": "string"
+          },
+          "logo": {
+            "title": "Logo",
+            "type": "string"
+          },
+          "additional_info": {
+            "$ref": "#/components/schemas/AdditionalSourceInfo"
+          }
+        }
+      },
       "SourceResponse": {
         "title": "SourceResponse",
         "required": [
@@ -2867,11 +3185,19 @@
             "title": "Sources",
             "type": "array",
             "items": {
-              "type": "string"
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/SourceInfo"
+                },
+                {
+                  "type": "string"
+                }
+              ]
             }
           },
           "user_input": {
-            "$ref": "#/components/schemas/UserInput"
+            "title": "User Input",
+            "type": "object"
           }
         }
       },
@@ -2885,6 +3211,29 @@
           },
           "countries": {
             "title": "Countries",
+            "type": "string"
+          },
+          "predefined_sources": {
+            "title": "Predefined Sources",
+            "type": "string"
+          },
+          "include_additional_info": {
+            "title": "Include Additional Info",
+            "type": "boolean"
+          },
+          "from_rank": {
+            "title": "From Rank",
+            "type": "integer"
+          },
+          "to_rank": {
+            "title": "To Rank",
+            "type": "integer"
+          },
+          "source_name": {
+            "title": "Source Name"
+          },
+          "source_url": {
+            "title": "Source Url",
             "type": "string"
           }
         }
@@ -2920,40 +3269,6 @@
           "historical_days": {
             "title": "Historical Days",
             "type": "integer"
-          }
-        }
-      },
-      "UserInput": {
-        "title": "UserInput",
-        "type": "object",
-        "properties": {
-          "lang": {
-            "title": "Lang",
-            "anyOf": [
-              {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              {
-                "type": "string"
-              }
-            ]
-          },
-          "countries": {
-            "title": "Countries",
-            "anyOf": [
-              {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              {
-                "type": "string"
-              }
-            ]
           }
         }
       },
@@ -3271,193 +3586,6 @@
           }
         }
       },
-      "dto__responses__LatestHeadlinesResponse__ArticleResult": {
-        "title": "ArticleResult",
-        "required": [
-          "title",
-          "link",
-          "domain_url",
-          "full_domain_url",
-          "extraction_data",
-          "rank",
-          "id",
-          "score"
-        ],
-        "type": "object",
-        "properties": {
-          "title": {
-            "title": "Title",
-            "type": "string"
-          },
-          "description": {
-            "title": "Description",
-            "type": "string"
-          },
-          "author": {
-            "title": "Author",
-            "type": "string"
-          },
-          "authors": {
-            "title": "Authors",
-            "anyOf": [
-              {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              {
-                "type": "string"
-              }
-            ]
-          },
-          "journalists": {
-            "title": "Journalists",
-            "anyOf": [
-              {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              {
-                "type": "string"
-              }
-            ]
-          },
-          "published_date": {
-            "title": "Published Date",
-            "type": "string"
-          },
-          "published_date_precision": {
-            "title": "Published Date Precision",
-            "type": "string"
-          },
-          "updated_date": {
-            "title": "Updated Date",
-            "type": "string"
-          },
-          "updated_date_precision": {
-            "title": "Updated Date Precision",
-            "type": "string"
-          },
-          "parse_date": {
-            "title": "Parse Date",
-            "type": "string"
-          },
-          "link": {
-            "title": "Link",
-            "type": "string"
-          },
-          "domain_url": {
-            "title": "Domain Url",
-            "type": "string"
-          },
-          "full_domain_url": {
-            "title": "Full Domain Url",
-            "type": "string"
-          },
-          "name_source": {
-            "title": "Name Source",
-            "type": "string"
-          },
-          "is_headline": {
-            "title": "Is Headline",
-            "type": "string"
-          },
-          "paid_content": {
-            "title": "Paid Content",
-            "type": "boolean"
-          },
-          "extraction_data": {
-            "title": "Extraction Data",
-            "type": "string"
-          },
-          "country": {
-            "title": "Country",
-            "type": "string"
-          },
-          "rights": {
-            "title": "Rights",
-            "type": "string"
-          },
-          "rank": {
-            "title": "Rank",
-            "type": "integer"
-          },
-          "media": {
-            "title": "Media",
-            "type": "string"
-          },
-          "language": {
-            "title": "Language",
-            "type": "string"
-          },
-          "content": {
-            "title": "Content",
-            "type": "string"
-          },
-          "word_count": {
-            "title": "Word Count",
-            "type": "integer",
-            "default": 0
-          },
-          "is_opinion": {
-            "title": "Is Opinion",
-            "type": "boolean"
-          },
-          "twitter_account": {
-            "title": "Twitter Account",
-            "type": "string"
-          },
-          "all_links": {
-            "title": "All Links",
-            "anyOf": [
-              {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              {
-                "type": "string"
-              }
-            ],
-            "default": [
-            ]
-          },
-          "all_domain_links": {
-            "title": "All Domain Links",
-            "anyOf": [
-              {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              {
-                "type": "string"
-              }
-            ],
-            "default": [
-            ]
-          },
-          "nlp": {
-            "title": "Nlp",
-            "type": "object",
-            "default": {
-            }
-          },
-          "id": {
-            "title": "Id",
-            "type": "string"
-          },
-          "score": {
-            "title": "Score",
-            "type": "number"
-          }
-        }
-      },
       "dto__responses__MoreLikeThisResponse__ArticleResult": {
         "title": "ArticleResult",
         "required": [
@@ -3748,240 +3876,6 @@
           }
         }
       },
-      "dto__responses__SearchResponse__ArticleResult": {
-        "title": "ArticleResult",
-        "required": [
-          "title",
-          "link",
-          "domain_url",
-          "full_domain_url",
-          "extraction_data",
-          "rank",
-          "id",
-          "score"
-        ],
-        "type": "object",
-        "properties": {
-          "title": {
-            "title": "Title",
-            "type": "string"
-          },
-          "description": {
-            "title": "Description",
-            "type": "string"
-          },
-          "author": {
-            "title": "Author",
-            "type": "string"
-          },
-          "authors": {
-            "title": "Authors",
-            "anyOf": [
-              {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              {
-                "type": "string"
-              }
-            ]
-          },
-          "journalists": {
-            "title": "Journalists",
-            "anyOf": [
-              {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              {
-                "type": "string"
-              }
-            ]
-          },
-          "published_date": {
-            "title": "Published Date",
-            "type": "string"
-          },
-          "published_date_precision": {
-            "title": "Published Date Precision",
-            "type": "string"
-          },
-          "updated_date": {
-            "title": "Updated Date",
-            "type": "string"
-          },
-          "updated_date_precision": {
-            "title": "Updated Date Precision",
-            "type": "string"
-          },
-          "parse_date": {
-            "title": "Parse Date",
-            "type": "string"
-          },
-          "link": {
-            "title": "Link",
-            "type": "string"
-          },
-          "domain_url": {
-            "title": "Domain Url",
-            "type": "string"
-          },
-          "full_domain_url": {
-            "title": "Full Domain Url",
-            "type": "string"
-          },
-          "name_source": {
-            "title": "Name Source",
-            "type": "string"
-          },
-          "is_headline": {
-            "title": "Is Headline",
-            "type": "string"
-          },
-          "paid_content": {
-            "title": "Paid Content",
-            "type": "boolean"
-          },
-          "extraction_data": {
-            "title": "Extraction Data",
-            "type": "string"
-          },
-          "country": {
-            "title": "Country",
-            "type": "string"
-          },
-          "rights": {
-            "title": "Rights",
-            "type": "string"
-          },
-          "rank": {
-            "title": "Rank",
-            "type": "integer"
-          },
-          "media": {
-            "title": "Media",
-            "type": "string"
-          },
-          "language": {
-            "title": "Language",
-            "type": "string"
-          },
-          "content": {
-            "title": "Content",
-            "type": "string"
-          },
-          "word_count": {
-            "title": "Word Count",
-            "type": "integer",
-            "default": 0
-          },
-          "is_opinion": {
-            "title": "Is Opinion",
-            "type": "boolean"
-          },
-          "twitter_account": {
-            "title": "Twitter Account",
-            "type": "string"
-          },
-          "all_links": {
-            "title": "All Links",
-            "anyOf": [
-              {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              {
-                "type": "string"
-              }
-            ],
-            "default": [
-            ]
-          },
-          "all_domain_links": {
-            "title": "All Domain Links",
-            "anyOf": [
-              {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              {
-                "type": "string"
-              }
-            ],
-            "default": [
-            ]
-          },
-          "nlp": {
-            "title": "Nlp",
-            "type": "object",
-            "default": {
-            }
-          },
-          "id": {
-            "title": "Id",
-            "type": "string"
-          },
-          "score": {
-            "title": "Score",
-            "type": "number"
-          }
-        }
-      },
-      "dto__responses__SearchResponse__FailedSearchResponse": {
-        "title": "FailedSearchResponse",
-        "required": [
-          "user_input"
-        ],
-        "type": "object",
-        "properties": {
-          "status": {
-            "title": "Status",
-            "type": "string",
-            "default": "No Matches for your search"
-          },
-          "total_hits": {
-            "title": "Total Hits",
-            "type": "integer",
-            "default": 0
-          },
-          "page": {
-            "title": "Page",
-            "type": "integer",
-            "default": 0
-          },
-          "total_pages": {
-            "title": "Total Pages",
-            "type": "integer",
-            "default": 0
-          },
-          "page_size": {
-            "title": "Page Size",
-            "type": "integer",
-            "default": 0
-          },
-          "articles": {
-            "title": "Articles",
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/dto__responses__SearchResponse__ArticleResult"
-            },
-            "default": [
-            ]
-          },
-          "user_input": {
-            "title": "User Input",
-            "type": "object"
-          }
-        }
-      },
       "dto__responses__SearchResponse__SearchResponse": {
         "title": "SearchResponse",
         "required": [
@@ -4035,9 +3929,6 @@
             "$ref": "#/components/schemas/dto__responses__SearchResponse__SearchResponse"
           },
           {
-            "$ref": "#/components/schemas/dto__responses__SearchResponse__FailedSearchResponse"
-          },
-          {
             "$ref": "#/components/schemas/ClusteringSearchResponse"
           }
         ]
@@ -4047,9 +3938,6 @@
         "anyOf": [
           {
             "$ref": "#/components/schemas/dto__responses__SearchResponse__SearchResponse"
-          },
-          {
-            "$ref": "#/components/schemas/dto__responses__SearchResponse__FailedSearchResponse"
           },
           {
             "$ref": "#/components/schemas/ClusteringSearchResponse"
@@ -4064,9 +3952,6 @@
           },
           {
             "$ref": "#/components/schemas/LatestHeadlinesResponse"
-          },
-          {
-            "$ref": "#/components/schemas/FailedLatestHeadlinesResponse"
           }
         ]
       },
@@ -4078,9 +3963,6 @@
           },
           {
             "$ref": "#/components/schemas/LatestHeadlinesResponse"
-          },
-          {
-            "$ref": "#/components/schemas/FailedLatestHeadlinesResponse"
           }
         ]
       },

@@ -10,7 +10,7 @@ All URIs are relative to *https://v3-api.newscatcherapi.com*
 
 <a name="get"></a>
 # **get**
-> CSLHFResponse get().when(when).byParseDate(byParseDate).lang(lang).notLang(notLang).countries(countries).notCountries(notCountries).sources(sources).predefinedSources(predefinedSources).notSources(notSources).rankedOnly(rankedOnly).isHeadline(isHeadline).isPaidContent(isPaidContent).parentUrl(parentUrl).theme(theme).allLinks(allLinks).allDomainLinks(allDomainLinks).wordCountMin(wordCountMin).wordCountMax(wordCountMax).page(page).pageSize(pageSize).clusteringEnabled(clusteringEnabled).clusteringThreshold(clusteringThreshold).clusteringVariable(clusteringVariable).includeNlpData(includeNlpData).hasNlp(hasNlp).orGEntityName(orGEntityName).peREntityName(peREntityName).loCEntityName(loCEntityName).miSCEntityName(miSCEntityName).titleSentimentMin(titleSentimentMin).titleSentimentMax(titleSentimentMax).contentSentimentMin(contentSentimentMin).contentSentimentMax(contentSentimentMax).execute();
+> CSLHResponse get().when(when).byParseDate(byParseDate).lang(lang).notLang(notLang).countries(countries).notCountries(notCountries).sources(sources).predefinedSources(predefinedSources).notSources(notSources).notAuthorName(notAuthorName).rankedOnly(rankedOnly).isHeadline(isHeadline).isPaidContent(isPaidContent).parentUrl(parentUrl).allLinks(allLinks).allDomainLinks(allDomainLinks).wordCountMin(wordCountMin).wordCountMax(wordCountMax).page(page).pageSize(pageSize).clusteringVariable(clusteringVariable).clusteringEnabled(clusteringEnabled).clusteringThreshold(clusteringThreshold).includeNlpData(includeNlpData).hasNlp(hasNlp).theme(theme).notTheme(notTheme).orGEntityName(orGEntityName).peREntityName(peREntityName).loCEntityName(loCEntityName).miSCEntityName(miSCEntityName).titleSentimentMin(titleSentimentMin).titleSentimentMax(titleSentimentMax).contentSentimentMin(contentSentimentMin).contentSentimentMax(contentSentimentMax).iptcTags(iptcTags).notIptcTags(notIptcTags).execute();
 
 [Get] Search For Latest Headlines Request
 
@@ -39,29 +39,31 @@ public class Example {
     Newscatcher client = new Newscatcher(configuration);
     String when = "7d";
     Boolean byParseDate = false;
-    String lang = "lang_example";
-    String notLang = "notLang_example";
-    String countries = "countries_example";
-    String notCountries = "notCountries_example";
-    String sources = "sources_example";
-    String predefinedSources = "predefinedSources_example";
-    String notSources = "notSources_example";
+    Object lang = null;
+    Object notLang = null;
+    Object countries = null;
+    Object notCountries = null;
+    Object sources = null;
+    Object predefinedSources = null;
+    Object notSources = null;
+    Object notAuthorName = null;
     String rankedOnly = "rankedOnly_example";
     Boolean isHeadline = true;
     Boolean isPaidContent = true;
-    String parentUrl = "parentUrl_example";
-    String theme = "theme_example";
-    String allLinks = "allLinks_example";
-    String allDomainLinks = "allDomainLinks_example";
+    Object parentUrl = null;
+    Object allLinks = null;
+    Object allDomainLinks = null;
     Integer wordCountMin = 56;
     Integer wordCountMax = 56;
     Integer page = 1;
     Integer pageSize = 100;
+    String clusteringVariable = "clusteringVariable_example";
     Boolean clusteringEnabled = true;
     Double clusteringThreshold = 3.4D;
-    String clusteringVariable = "clusteringVariable_example";
     Boolean includeNlpData = true;
     Boolean hasNlp = true;
+    String theme = "theme_example";
+    String notTheme = "notTheme_example";
     String orGEntityName = "orGEntityName_example";
     String peREntityName = "peREntityName_example";
     String loCEntityName = "loCEntityName_example";
@@ -70,8 +72,10 @@ public class Example {
     Double titleSentimentMax = 3.4D;
     Double contentSentimentMin = 3.4D;
     Double contentSentimentMax = 3.4D;
+    Object iptcTags = null;
+    Object notIptcTags = null;
     try {
-      CSLHFResponse result = client
+      CSLHResponse result = client
               .latestHeadlines
               .get()
               .when(when)
@@ -83,22 +87,24 @@ public class Example {
               .sources(sources)
               .predefinedSources(predefinedSources)
               .notSources(notSources)
+              .notAuthorName(notAuthorName)
               .rankedOnly(rankedOnly)
               .isHeadline(isHeadline)
               .isPaidContent(isPaidContent)
               .parentUrl(parentUrl)
-              .theme(theme)
               .allLinks(allLinks)
               .allDomainLinks(allDomainLinks)
               .wordCountMin(wordCountMin)
               .wordCountMax(wordCountMax)
               .page(page)
               .pageSize(pageSize)
+              .clusteringVariable(clusteringVariable)
               .clusteringEnabled(clusteringEnabled)
               .clusteringThreshold(clusteringThreshold)
-              .clusteringVariable(clusteringVariable)
               .includeNlpData(includeNlpData)
               .hasNlp(hasNlp)
+              .theme(theme)
+              .notTheme(notTheme)
               .orGEntityName(orGEntityName)
               .peREntityName(peREntityName)
               .loCEntityName(loCEntityName)
@@ -107,6 +113,8 @@ public class Example {
               .titleSentimentMax(titleSentimentMax)
               .contentSentimentMin(contentSentimentMin)
               .contentSentimentMax(contentSentimentMax)
+              .iptcTags(iptcTags)
+              .notIptcTags(notIptcTags)
               .execute();
       System.out.println(result);
       System.out.println(result.getStatus());
@@ -128,7 +136,7 @@ public class Example {
 
     // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request
     try {
-      ApiResponse<CSLHFResponse> response = client
+      ApiResponse<CSLHResponse> response = client
               .latestHeadlines
               .get()
               .when(when)
@@ -140,22 +148,24 @@ public class Example {
               .sources(sources)
               .predefinedSources(predefinedSources)
               .notSources(notSources)
+              .notAuthorName(notAuthorName)
               .rankedOnly(rankedOnly)
               .isHeadline(isHeadline)
               .isPaidContent(isPaidContent)
               .parentUrl(parentUrl)
-              .theme(theme)
               .allLinks(allLinks)
               .allDomainLinks(allDomainLinks)
               .wordCountMin(wordCountMin)
               .wordCountMax(wordCountMax)
               .page(page)
               .pageSize(pageSize)
+              .clusteringVariable(clusteringVariable)
               .clusteringEnabled(clusteringEnabled)
               .clusteringThreshold(clusteringThreshold)
-              .clusteringVariable(clusteringVariable)
               .includeNlpData(includeNlpData)
               .hasNlp(hasNlp)
+              .theme(theme)
+              .notTheme(notTheme)
               .orGEntityName(orGEntityName)
               .peREntityName(peREntityName)
               .loCEntityName(loCEntityName)
@@ -164,6 +174,8 @@ public class Example {
               .titleSentimentMax(titleSentimentMax)
               .contentSentimentMin(contentSentimentMin)
               .contentSentimentMax(contentSentimentMax)
+              .iptcTags(iptcTags)
+              .notIptcTags(notIptcTags)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
       System.out.println(response.getResponseHeaders());
@@ -188,29 +200,31 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **when** | **String**|  | [optional] [default to 7d] |
 | **byParseDate** | **Boolean**|  | [optional] [default to false] |
-| **lang** | **String**|  | [optional] |
-| **notLang** | **String**|  | [optional] |
-| **countries** | **String**|  | [optional] |
-| **notCountries** | **String**|  | [optional] |
-| **sources** | **String**|  | [optional] |
-| **predefinedSources** | **String**|  | [optional] |
-| **notSources** | **String**|  | [optional] |
+| **lang** | [**Object**](.md)|  | [optional] |
+| **notLang** | [**Object**](.md)|  | [optional] |
+| **countries** | [**Object**](.md)|  | [optional] |
+| **notCountries** | [**Object**](.md)|  | [optional] |
+| **sources** | [**Object**](.md)|  | [optional] |
+| **predefinedSources** | [**Object**](.md)|  | [optional] |
+| **notSources** | [**Object**](.md)|  | [optional] |
+| **notAuthorName** | [**Object**](.md)|  | [optional] |
 | **rankedOnly** | **String**|  | [optional] |
 | **isHeadline** | **Boolean**|  | [optional] |
 | **isPaidContent** | **Boolean**|  | [optional] |
-| **parentUrl** | **String**|  | [optional] |
-| **theme** | **String**|  | [optional] |
-| **allLinks** | **String**|  | [optional] |
-| **allDomainLinks** | **String**|  | [optional] |
+| **parentUrl** | [**Object**](.md)|  | [optional] |
+| **allLinks** | [**Object**](.md)|  | [optional] |
+| **allDomainLinks** | [**Object**](.md)|  | [optional] |
 | **wordCountMin** | **Integer**|  | [optional] |
 | **wordCountMax** | **Integer**|  | [optional] |
 | **page** | **Integer**|  | [optional] [default to 1] |
 | **pageSize** | **Integer**|  | [optional] [default to 100] |
+| **clusteringVariable** | **String**|  | [optional] |
 | **clusteringEnabled** | **Boolean**|  | [optional] |
 | **clusteringThreshold** | **Double**|  | [optional] |
-| **clusteringVariable** | **String**|  | [optional] |
 | **includeNlpData** | **Boolean**|  | [optional] |
 | **hasNlp** | **Boolean**|  | [optional] |
+| **theme** | **String**|  | [optional] |
+| **notTheme** | **String**|  | [optional] |
 | **orGEntityName** | **String**|  | [optional] |
 | **peREntityName** | **String**|  | [optional] |
 | **loCEntityName** | **String**|  | [optional] |
@@ -219,10 +233,12 @@ public class Example {
 | **titleSentimentMax** | **Double**|  | [optional] |
 | **contentSentimentMin** | **Double**|  | [optional] |
 | **contentSentimentMax** | **Double**|  | [optional] |
+| **iptcTags** | [**Object**](.md)|  | [optional] |
+| **notIptcTags** | [**Object**](.md)|  | [optional] |
 
 ### Return type
 
-[**CSLHFResponse**](CSLHFResponse.md)
+[**CSLHResponse**](CSLHResponse.md)
 
 ### Authorization
 
@@ -240,7 +256,7 @@ public class Example {
 
 <a name="post"></a>
 # **post**
-> CSLHFResponse1 post(latestHeadlinesRequest).execute();
+> CSLHResponse1 post(latestHeadlinesRequest).execute();
 
 [Post] Search For Latest Headlines Request
 
@@ -269,29 +285,31 @@ public class Example {
     Newscatcher client = new Newscatcher(configuration);
     String when = "7d";
     Boolean byParseDate = false;
-    String lang = "lang_example";
-    String notLang = "notLang_example";
-    String countries = "countries_example";
-    String notCountries = "notCountries_example";
-    String sources = "sources_example";
-    String predefinedSources = "predefinedSources_example";
-    String notSources = "notSources_example";
+    Object lang = null;
+    Object notLang = null;
+    Object countries = null;
+    Object notCountries = null;
+    Object sources = null;
+    Object predefinedSources = null;
+    Object notSources = null;
+    Object notAuthorName = null;
     String rankedOnly = "rankedOnly_example";
     Boolean isHeadline = true;
     Boolean isPaidContent = true;
-    String parentUrl = "parentUrl_example";
-    String theme = "theme_example";
-    String allLinks = "allLinks_example";
-    String allDomainLinks = "allDomainLinks_example";
+    Object parentUrl = null;
+    Object allLinks = null;
+    Object allDomainLinks = null;
     Integer wordCountMin = 56;
     Integer wordCountMax = 56;
     Integer page = 1;
     Integer pageSize = 100;
+    String clusteringVariable = "clusteringVariable_example";
     Boolean clusteringEnabled = true;
     Double clusteringThreshold = 3.4D;
-    String clusteringVariable = "clusteringVariable_example";
     Boolean includeNlpData = true;
     Boolean hasNlp = true;
+    String theme = "theme_example";
+    String notTheme = "notTheme_example";
     String orGEntityName = "orGEntityName_example";
     String peREntityName = "peREntityName_example";
     String loCEntityName = "loCEntityName_example";
@@ -300,8 +318,10 @@ public class Example {
     Double titleSentimentMax = 3.4D;
     Double contentSentimentMin = 3.4D;
     Double contentSentimentMax = 3.4D;
+    Object iptcTags = null;
+    Object notIptcTags = null;
     try {
-      CSLHFResponse1 result = client
+      CSLHResponse1 result = client
               .latestHeadlines
               .post()
               .when(when)
@@ -313,22 +333,24 @@ public class Example {
               .sources(sources)
               .predefinedSources(predefinedSources)
               .notSources(notSources)
+              .notAuthorName(notAuthorName)
               .rankedOnly(rankedOnly)
               .isHeadline(isHeadline)
               .isPaidContent(isPaidContent)
               .parentUrl(parentUrl)
-              .theme(theme)
               .allLinks(allLinks)
               .allDomainLinks(allDomainLinks)
               .wordCountMin(wordCountMin)
               .wordCountMax(wordCountMax)
               .page(page)
               .pageSize(pageSize)
+              .clusteringVariable(clusteringVariable)
               .clusteringEnabled(clusteringEnabled)
               .clusteringThreshold(clusteringThreshold)
-              .clusteringVariable(clusteringVariable)
               .includeNlpData(includeNlpData)
               .hasNlp(hasNlp)
+              .theme(theme)
+              .notTheme(notTheme)
               .orGEntityName(orGEntityName)
               .peREntityName(peREntityName)
               .loCEntityName(loCEntityName)
@@ -337,6 +359,8 @@ public class Example {
               .titleSentimentMax(titleSentimentMax)
               .contentSentimentMin(contentSentimentMin)
               .contentSentimentMax(contentSentimentMax)
+              .iptcTags(iptcTags)
+              .notIptcTags(notIptcTags)
               .execute();
       System.out.println(result);
       System.out.println(result.getStatus());
@@ -358,7 +382,7 @@ public class Example {
 
     // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request
     try {
-      ApiResponse<CSLHFResponse1> response = client
+      ApiResponse<CSLHResponse1> response = client
               .latestHeadlines
               .post()
               .when(when)
@@ -370,22 +394,24 @@ public class Example {
               .sources(sources)
               .predefinedSources(predefinedSources)
               .notSources(notSources)
+              .notAuthorName(notAuthorName)
               .rankedOnly(rankedOnly)
               .isHeadline(isHeadline)
               .isPaidContent(isPaidContent)
               .parentUrl(parentUrl)
-              .theme(theme)
               .allLinks(allLinks)
               .allDomainLinks(allDomainLinks)
               .wordCountMin(wordCountMin)
               .wordCountMax(wordCountMax)
               .page(page)
               .pageSize(pageSize)
+              .clusteringVariable(clusteringVariable)
               .clusteringEnabled(clusteringEnabled)
               .clusteringThreshold(clusteringThreshold)
-              .clusteringVariable(clusteringVariable)
               .includeNlpData(includeNlpData)
               .hasNlp(hasNlp)
+              .theme(theme)
+              .notTheme(notTheme)
               .orGEntityName(orGEntityName)
               .peREntityName(peREntityName)
               .loCEntityName(loCEntityName)
@@ -394,6 +420,8 @@ public class Example {
               .titleSentimentMax(titleSentimentMax)
               .contentSentimentMin(contentSentimentMin)
               .contentSentimentMax(contentSentimentMax)
+              .iptcTags(iptcTags)
+              .notIptcTags(notIptcTags)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
       System.out.println(response.getResponseHeaders());
@@ -420,7 +448,7 @@ public class Example {
 
 ### Return type
 
-[**CSLHFResponse1**](CSLHFResponse1.md)
+[**CSLHResponse1**](CSLHResponse1.md)
 
 ### Authorization
 

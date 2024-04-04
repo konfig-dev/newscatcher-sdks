@@ -9,6 +9,7 @@ class TagValues(str, enum.Enum):
     SEARCH = "Search"
     LATEST_HEADLINES = "LatestHeadlines"
     AUTHORS = "Authors"
+    SEARCH_LINK = "SearchLink"
     SEARCH_SIMILAR = "SearchSimilar"
     SOURCES = "Sources"
     SUBSCRIPTION = "Subscription"

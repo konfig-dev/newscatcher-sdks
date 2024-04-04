@@ -10,7 +10,7 @@ All URIs are relative to *https://v3-api.newscatcherapi.com*
 
 <a name="get"></a>
 # **get**
-> FCSearchResponse get(q).searchIn(searchIn).predefinedSources(predefinedSources).sources(sources).notSources(notSources).lang(lang).notLang(notLang).countries(countries).notCountries(notCountries).from(from).to(to).publishedDatePrecision(publishedDatePrecision).byParseDate(byParseDate).sortBy(sortBy).rankedOnly(rankedOnly).fromRank(fromRank).toRank(toRank).isHeadline(isHeadline).isPaidContent(isPaidContent).parentUrl(parentUrl).allLinks(allLinks).allDomainLinks(allDomainLinks).wordCountMin(wordCountMin).wordCountMax(wordCountMax).page(page).pageSize(pageSize).clusteringEnabled(clusteringEnabled).clusteringThreshold(clusteringThreshold).clusteringVariable(clusteringVariable).includeNlpData(includeNlpData).hasNlp(hasNlp).theme(theme).orGEntityName(orGEntityName).peREntityName(peREntityName).loCEntityName(loCEntityName).miSCEntityName(miSCEntityName).titleSentimentMin(titleSentimentMin).titleSentimentMax(titleSentimentMax).contentSentimentMin(contentSentimentMin).contentSentimentMax(contentSentimentMax).execute();
+> CSearchResponse get(q).searchIn(searchIn).predefinedSources(predefinedSources).sources(sources).notSources(notSources).lang(lang).notLang(notLang).countries(countries).notCountries(notCountries).notAuthorName(notAuthorName).from(from).to(to).publishedDatePrecision(publishedDatePrecision).byParseDate(byParseDate).sortBy(sortBy).rankedOnly(rankedOnly).fromRank(fromRank).toRank(toRank).isHeadline(isHeadline).isPaidContent(isPaidContent).parentUrl(parentUrl).allLinks(allLinks).allDomainLinks(allDomainLinks).wordCountMin(wordCountMin).wordCountMax(wordCountMax).page(page).pageSize(pageSize).clusteringVariable(clusteringVariable).clusteringEnabled(clusteringEnabled).clusteringThreshold(clusteringThreshold).includeNlpData(includeNlpData).hasNlp(hasNlp).theme(theme).notTheme(notTheme).orGEntityName(orGEntityName).peREntityName(peREntityName).loCEntityName(loCEntityName).miSCEntityName(miSCEntityName).titleSentimentMin(titleSentimentMin).titleSentimentMax(titleSentimentMax).contentSentimentMin(contentSentimentMin).contentSentimentMax(contentSentimentMax).iptcTags(iptcTags).notIptcTags(notIptcTags).sourceName(sourceName).iabTags(iabTags).execute();
 
 [Get] Search For Articles Request
 
@@ -39,13 +39,14 @@ public class Example {
     Newscatcher client = new Newscatcher(configuration);
     String q = "q_example";
     String searchIn = "title_content";
-    String predefinedSources = "predefinedSources_example";
-    String sources = "sources_example";
-    String notSources = "notSources_example";
-    String lang = "lang_example";
-    String notLang = "notLang_example";
-    String countries = "countries_example";
-    String notCountries = "notCountries_example";
+    Object predefinedSources = null;
+    Object sources = null;
+    Object notSources = null;
+    Object lang = null;
+    Object notLang = null;
+    Object countries = null;
+    Object notCountries = null;
+    Object notAuthorName = null;
     String from = "from_example";
     String to = "to_example";
     String publishedDatePrecision = "publishedDatePrecision_example";
@@ -56,19 +57,20 @@ public class Example {
     Integer toRank = 56;
     Boolean isHeadline = true;
     Boolean isPaidContent = true;
-    String parentUrl = "parentUrl_example";
-    String allLinks = "allLinks_example";
-    String allDomainLinks = "allDomainLinks_example";
+    Object parentUrl = null;
+    Object allLinks = null;
+    Object allDomainLinks = null;
     Integer wordCountMin = 56;
     Integer wordCountMax = 56;
     Integer page = 1;
     Integer pageSize = 100;
+    String clusteringVariable = "clusteringVariable_example";
     Boolean clusteringEnabled = true;
     Double clusteringThreshold = 3.4D;
-    String clusteringVariable = "clusteringVariable_example";
     Boolean includeNlpData = true;
     Boolean hasNlp = true;
     String theme = "theme_example";
+    String notTheme = "notTheme_example";
     String orGEntityName = "orGEntityName_example";
     String peREntityName = "peREntityName_example";
     String loCEntityName = "loCEntityName_example";
@@ -77,8 +79,12 @@ public class Example {
     Double titleSentimentMax = 3.4D;
     Double contentSentimentMin = 3.4D;
     Double contentSentimentMax = 3.4D;
+    Object iptcTags = null;
+    Object notIptcTags = null;
+    Object sourceName = null;
+    Object iabTags = null;
     try {
-      FCSearchResponse result = client
+      CSearchResponse result = client
               .search
               .get(q)
               .searchIn(searchIn)
@@ -89,6 +95,7 @@ public class Example {
               .notLang(notLang)
               .countries(countries)
               .notCountries(notCountries)
+              .notAuthorName(notAuthorName)
               .from(from)
               .to(to)
               .publishedDatePrecision(publishedDatePrecision)
@@ -106,12 +113,13 @@ public class Example {
               .wordCountMax(wordCountMax)
               .page(page)
               .pageSize(pageSize)
+              .clusteringVariable(clusteringVariable)
               .clusteringEnabled(clusteringEnabled)
               .clusteringThreshold(clusteringThreshold)
-              .clusteringVariable(clusteringVariable)
               .includeNlpData(includeNlpData)
               .hasNlp(hasNlp)
               .theme(theme)
+              .notTheme(notTheme)
               .orGEntityName(orGEntityName)
               .peREntityName(peREntityName)
               .loCEntityName(loCEntityName)
@@ -120,6 +128,10 @@ public class Example {
               .titleSentimentMax(titleSentimentMax)
               .contentSentimentMin(contentSentimentMin)
               .contentSentimentMax(contentSentimentMax)
+              .iptcTags(iptcTags)
+              .notIptcTags(notIptcTags)
+              .sourceName(sourceName)
+              .iabTags(iabTags)
               .execute();
       System.out.println(result);
       System.out.println(result.getStatus());
@@ -141,7 +153,7 @@ public class Example {
 
     // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request
     try {
-      ApiResponse<FCSearchResponse> response = client
+      ApiResponse<CSearchResponse> response = client
               .search
               .get(q)
               .searchIn(searchIn)
@@ -152,6 +164,7 @@ public class Example {
               .notLang(notLang)
               .countries(countries)
               .notCountries(notCountries)
+              .notAuthorName(notAuthorName)
               .from(from)
               .to(to)
               .publishedDatePrecision(publishedDatePrecision)
@@ -169,12 +182,13 @@ public class Example {
               .wordCountMax(wordCountMax)
               .page(page)
               .pageSize(pageSize)
+              .clusteringVariable(clusteringVariable)
               .clusteringEnabled(clusteringEnabled)
               .clusteringThreshold(clusteringThreshold)
-              .clusteringVariable(clusteringVariable)
               .includeNlpData(includeNlpData)
               .hasNlp(hasNlp)
               .theme(theme)
+              .notTheme(notTheme)
               .orGEntityName(orGEntityName)
               .peREntityName(peREntityName)
               .loCEntityName(loCEntityName)
@@ -183,6 +197,10 @@ public class Example {
               .titleSentimentMax(titleSentimentMax)
               .contentSentimentMin(contentSentimentMin)
               .contentSentimentMax(contentSentimentMax)
+              .iptcTags(iptcTags)
+              .notIptcTags(notIptcTags)
+              .sourceName(sourceName)
+              .iabTags(iabTags)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
       System.out.println(response.getResponseHeaders());
@@ -207,13 +225,14 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **q** | **String**|  | |
 | **searchIn** | **String**|  | [optional] [default to title_content] |
-| **predefinedSources** | **String**|  | [optional] |
-| **sources** | **String**|  | [optional] |
-| **notSources** | **String**|  | [optional] |
-| **lang** | **String**|  | [optional] |
-| **notLang** | **String**|  | [optional] |
-| **countries** | **String**|  | [optional] |
-| **notCountries** | **String**|  | [optional] |
+| **predefinedSources** | [**Object**](.md)|  | [optional] |
+| **sources** | [**Object**](.md)|  | [optional] |
+| **notSources** | [**Object**](.md)|  | [optional] |
+| **lang** | [**Object**](.md)|  | [optional] |
+| **notLang** | [**Object**](.md)|  | [optional] |
+| **countries** | [**Object**](.md)|  | [optional] |
+| **notCountries** | [**Object**](.md)|  | [optional] |
+| **notAuthorName** | [**Object**](.md)|  | [optional] |
 | **from** | **String**|  | [optional] |
 | **to** | **String**|  | [optional] |
 | **publishedDatePrecision** | **String**|  | [optional] |
@@ -224,19 +243,20 @@ public class Example {
 | **toRank** | **Integer**|  | [optional] |
 | **isHeadline** | **Boolean**|  | [optional] |
 | **isPaidContent** | **Boolean**|  | [optional] |
-| **parentUrl** | **String**|  | [optional] |
-| **allLinks** | **String**|  | [optional] |
-| **allDomainLinks** | **String**|  | [optional] |
+| **parentUrl** | [**Object**](.md)|  | [optional] |
+| **allLinks** | [**Object**](.md)|  | [optional] |
+| **allDomainLinks** | [**Object**](.md)|  | [optional] |
 | **wordCountMin** | **Integer**|  | [optional] |
 | **wordCountMax** | **Integer**|  | [optional] |
 | **page** | **Integer**|  | [optional] [default to 1] |
 | **pageSize** | **Integer**|  | [optional] [default to 100] |
+| **clusteringVariable** | **String**|  | [optional] |
 | **clusteringEnabled** | **Boolean**|  | [optional] |
 | **clusteringThreshold** | **Double**|  | [optional] |
-| **clusteringVariable** | **String**|  | [optional] |
 | **includeNlpData** | **Boolean**|  | [optional] |
 | **hasNlp** | **Boolean**|  | [optional] |
 | **theme** | **String**|  | [optional] |
+| **notTheme** | **String**|  | [optional] |
 | **orGEntityName** | **String**|  | [optional] |
 | **peREntityName** | **String**|  | [optional] |
 | **loCEntityName** | **String**|  | [optional] |
@@ -245,10 +265,14 @@ public class Example {
 | **titleSentimentMax** | **Double**|  | [optional] |
 | **contentSentimentMin** | **Double**|  | [optional] |
 | **contentSentimentMax** | **Double**|  | [optional] |
+| **iptcTags** | [**Object**](.md)|  | [optional] |
+| **notIptcTags** | [**Object**](.md)|  | [optional] |
+| **sourceName** | [**Object**](.md)|  | [optional] |
+| **iabTags** | [**Object**](.md)|  | [optional] |
 
 ### Return type
 
-[**FCSearchResponse**](FCSearchResponse.md)
+[**CSearchResponse**](CSearchResponse.md)
 
 ### Authorization
 
@@ -266,7 +290,7 @@ public class Example {
 
 <a name="post"></a>
 # **post**
-> FCSearchResponse1 post(searchRequest).execute();
+> CSearchResponse1 post(searchRequest).execute();
 
 [Post] Search For Articles Request
 
@@ -295,13 +319,14 @@ public class Example {
     Newscatcher client = new Newscatcher(configuration);
     String q = "q_example";
     String searchIn = "title_content";
-    String predefinedSources = "predefinedSources_example";
-    String sources = "sources_example";
-    String notSources = "notSources_example";
-    String lang = "lang_example";
-    String notLang = "notLang_example";
-    String countries = "countries_example";
-    String notCountries = "notCountries_example";
+    Object predefinedSources = null;
+    Object sources = null;
+    Object notSources = null;
+    Object lang = null;
+    Object notLang = null;
+    Object countries = null;
+    Object notCountries = null;
+    Object notAuthorName = null;
     String from = "from_example";
     String to = "to_example";
     String publishedDatePrecision = "publishedDatePrecision_example";
@@ -312,19 +337,20 @@ public class Example {
     Integer toRank = 56;
     Boolean isHeadline = true;
     Boolean isPaidContent = true;
-    String parentUrl = "parentUrl_example";
-    String allLinks = "allLinks_example";
-    String allDomainLinks = "allDomainLinks_example";
+    Object parentUrl = null;
+    Object allLinks = null;
+    Object allDomainLinks = null;
     Integer wordCountMin = 56;
     Integer wordCountMax = 56;
     Integer page = 1;
     Integer pageSize = 100;
+    String clusteringVariable = "clusteringVariable_example";
     Boolean clusteringEnabled = true;
     Double clusteringThreshold = 3.4D;
-    String clusteringVariable = "clusteringVariable_example";
     Boolean includeNlpData = true;
     Boolean hasNlp = true;
     String theme = "theme_example";
+    String notTheme = "notTheme_example";
     String orGEntityName = "orGEntityName_example";
     String peREntityName = "peREntityName_example";
     String loCEntityName = "loCEntityName_example";
@@ -333,8 +359,12 @@ public class Example {
     Double titleSentimentMax = 3.4D;
     Double contentSentimentMin = 3.4D;
     Double contentSentimentMax = 3.4D;
+    Object iptcTags = null;
+    Object notIptcTags = null;
+    Object sourceName = null;
+    Object iabTags = null;
     try {
-      FCSearchResponse1 result = client
+      CSearchResponse1 result = client
               .search
               .post(q)
               .searchIn(searchIn)
@@ -345,6 +375,7 @@ public class Example {
               .notLang(notLang)
               .countries(countries)
               .notCountries(notCountries)
+              .notAuthorName(notAuthorName)
               .from(from)
               .to(to)
               .publishedDatePrecision(publishedDatePrecision)
@@ -362,12 +393,13 @@ public class Example {
               .wordCountMax(wordCountMax)
               .page(page)
               .pageSize(pageSize)
+              .clusteringVariable(clusteringVariable)
               .clusteringEnabled(clusteringEnabled)
               .clusteringThreshold(clusteringThreshold)
-              .clusteringVariable(clusteringVariable)
               .includeNlpData(includeNlpData)
               .hasNlp(hasNlp)
               .theme(theme)
+              .notTheme(notTheme)
               .orGEntityName(orGEntityName)
               .peREntityName(peREntityName)
               .loCEntityName(loCEntityName)
@@ -376,6 +408,10 @@ public class Example {
               .titleSentimentMax(titleSentimentMax)
               .contentSentimentMin(contentSentimentMin)
               .contentSentimentMax(contentSentimentMax)
+              .iptcTags(iptcTags)
+              .notIptcTags(notIptcTags)
+              .sourceName(sourceName)
+              .iabTags(iabTags)
               .execute();
       System.out.println(result);
       System.out.println(result.getStatus());
@@ -397,7 +433,7 @@ public class Example {
 
     // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request
     try {
-      ApiResponse<FCSearchResponse1> response = client
+      ApiResponse<CSearchResponse1> response = client
               .search
               .post(q)
               .searchIn(searchIn)
@@ -408,6 +444,7 @@ public class Example {
               .notLang(notLang)
               .countries(countries)
               .notCountries(notCountries)
+              .notAuthorName(notAuthorName)
               .from(from)
               .to(to)
               .publishedDatePrecision(publishedDatePrecision)
@@ -425,12 +462,13 @@ public class Example {
               .wordCountMax(wordCountMax)
               .page(page)
               .pageSize(pageSize)
+              .clusteringVariable(clusteringVariable)
               .clusteringEnabled(clusteringEnabled)
               .clusteringThreshold(clusteringThreshold)
-              .clusteringVariable(clusteringVariable)
               .includeNlpData(includeNlpData)
               .hasNlp(hasNlp)
               .theme(theme)
+              .notTheme(notTheme)
               .orGEntityName(orGEntityName)
               .peREntityName(peREntityName)
               .loCEntityName(loCEntityName)
@@ -439,6 +477,10 @@ public class Example {
               .titleSentimentMax(titleSentimentMax)
               .contentSentimentMin(contentSentimentMin)
               .contentSentimentMax(contentSentimentMax)
+              .iptcTags(iptcTags)
+              .notIptcTags(notIptcTags)
+              .sourceName(sourceName)
+              .iabTags(iabTags)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
       System.out.println(response.getResponseHeaders());
@@ -465,7 +507,7 @@ public class Example {
 
 ### Return type
 
-[**FCSearchResponse1**](FCSearchResponse1.md)
+[**CSearchResponse1**](CSearchResponse1.md)
 
 ### Authorization
 
