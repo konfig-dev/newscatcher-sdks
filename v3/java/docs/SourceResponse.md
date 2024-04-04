@@ -8,8 +8,8 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**message** | **String** |  |  |
-|**sources** | **List&lt;String&gt;** |  |  |
-|**userInput** | [**UserInput**](UserInput.md) |  |  |
+|**sources** | **List&lt;Object&gt;** |  |  |
+|**userInput** | **Object** |  |  |
 
 
 

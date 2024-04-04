@@ -12,7 +12,7 @@
 |**page** | **Integer** |  |  |
 |**totalPages** | **Integer** |  |  |
 |**pageSize** | **Integer** |  |  |
-|**articles** | [**List&lt;ArticlesPropertyInner&gt;**](ArticlesPropertyInner.md) |  |  |
+|**articles** | **List&lt;Object&gt;** |  |  |
 |**userInput** | **Object** |  |  |
 
 

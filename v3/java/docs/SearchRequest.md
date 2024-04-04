@@ -9,13 +9,14 @@
 |------------ | ------------- | ------------- | -------------|
 |**q** | **String** |  |  |
 |**searchIn** | **String** |  |  [optional] |
-|**predefinedSources** | **String** |  |  [optional] |
-|**sources** | **String** |  |  [optional] |
-|**notSources** | **String** |  |  [optional] |
-|**lang** | **String** |  |  [optional] |
-|**notLang** | **String** |  |  [optional] |
-|**countries** | **String** |  |  [optional] |
-|**notCountries** | **String** |  |  [optional] |
+|**predefinedSources** | **Object** |  |  [optional] |
+|**sources** | **Object** |  |  [optional] |
+|**notSources** | **Object** |  |  [optional] |
+|**lang** | **Object** |  |  [optional] |
+|**notLang** | **Object** |  |  [optional] |
+|**countries** | **Object** |  |  [optional] |
+|**notCountries** | **Object** |  |  [optional] |
+|**notAuthorName** | **Object** |  |  [optional] |
 |**from** | **String** |  |  [optional] |
 |**to** | **String** |  |  [optional] |
 |**publishedDatePrecision** | **String** |  |  [optional] |
@@ -26,19 +27,20 @@
 |**toRank** | **Integer** |  |  [optional] |
 |**isHeadline** | **Boolean** |  |  [optional] |
 |**isPaidContent** | **Boolean** |  |  [optional] |
-|**parentUrl** | **String** |  |  [optional] |
-|**allLinks** | **String** |  |  [optional] |
-|**allDomainLinks** | **String** |  |  [optional] |
+|**parentUrl** | **Object** |  |  [optional] |
+|**allLinks** | **Object** |  |  [optional] |
+|**allDomainLinks** | **Object** |  |  [optional] |
 |**wordCountMin** | **Integer** |  |  [optional] |
 |**wordCountMax** | **Integer** |  |  [optional] |
 |**page** | **Integer** |  |  [optional] |
 |**pageSize** | **Integer** |  |  [optional] |
+|**clusteringVariable** | **String** |  |  [optional] |
 |**clusteringEnabled** | **Boolean** |  |  [optional] |
 |**clusteringThreshold** | **Double** |  |  [optional] |
-|**clusteringVariable** | **String** |  |  [optional] |
 |**includeNlpData** | **Boolean** |  |  [optional] |
 |**hasNlp** | **Boolean** |  |  [optional] |
 |**theme** | **String** |  |  [optional] |
+|**notTheme** | **String** |  |  [optional] |
 |**orGEntityName** | **String** |  |  [optional] |
 |**peREntityName** | **String** |  |  [optional] |
 |**loCEntityName** | **String** |  |  [optional] |
@@ -47,6 +49,10 @@
 |**titleSentimentMax** | **Double** |  |  [optional] |
 |**contentSentimentMin** | **Double** |  |  [optional] |
 |**contentSentimentMax** | **Double** |  |  [optional] |
+|**iptcTags** | **Object** |  |  [optional] |
+|**notIptcTags** | **Object** |  |  [optional] |
+|**sourceName** | **Object** |  |  [optional] |
+|**iabTags** | **Object** |  |  [optional] |
 
 
 

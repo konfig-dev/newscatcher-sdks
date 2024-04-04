@@ -12,13 +12,13 @@
 |**includeSimilarDocuments** | **Boolean** |  |  [optional] |
 |**similarDocumentsNumber** | **Integer** |  |  [optional] |
 |**similarDocumentsFields** | **String** |  |  [optional] |
-|**predefinedSources** | **String** |  |  [optional] |
-|**sources** | **String** |  |  [optional] |
-|**notSources** | **String** |  |  [optional] |
-|**lang** | **String** |  |  [optional] |
-|**notLang** | **String** |  |  [optional] |
-|**countries** | **String** |  |  [optional] |
-|**notCountries** | **String** |  |  [optional] |
+|**predefinedSources** | **Object** |  |  [optional] |
+|**sources** | **Object** |  |  [optional] |
+|**notSources** | **Object** |  |  [optional] |
+|**lang** | **Object** |  |  [optional] |
+|**notLang** | **Object** |  |  [optional] |
+|**countries** | **Object** |  |  [optional] |
+|**notCountries** | **Object** |  |  [optional] |
 |**from** | **String** |  |  [optional] |
 |**to** | **String** |  |  [optional] |
 |**byParseDate** | **Boolean** |  |  [optional] |
@@ -29,9 +29,9 @@
 |**toRank** | **Integer** |  |  [optional] |
 |**isHeadline** | **Boolean** |  |  [optional] |
 |**isPaidContent** | **Boolean** |  |  [optional] |
-|**parentUrl** | **String** |  |  [optional] |
-|**allLinks** | **String** |  |  [optional] |
-|**allDomainLinks** | **String** |  |  [optional] |
+|**parentUrl** | **Object** |  |  [optional] |
+|**allLinks** | **Object** |  |  [optional] |
+|**allDomainLinks** | **Object** |  |  [optional] |
 |**wordCountMin** | **Integer** |  |  [optional] |
 |**wordCountMax** | **Integer** |  |  [optional] |
 |**page** | **Integer** |  |  [optional] |
@@ -39,11 +39,14 @@
 |**includeNlpData** | **Boolean** |  |  [optional] |
 |**hasNlp** | **Boolean** |  |  [optional] |
 |**theme** | **String** |  |  [optional] |
+|**notTheme** | **String** |  |  [optional] |
 |**nerName** | **String** |  |  [optional] |
 |**titleSentimentMin** | **Double** |  |  [optional] |
 |**titleSentimentMax** | **Double** |  |  [optional] |
 |**contentSentimentMin** | **Double** |  |  [optional] |
 |**contentSentimentMax** | **Double** |  |  [optional] |
+|**iptcTags** | **Object** |  |  [optional] |
+|**notIptcTags** | **Object** |  |  [optional] |
 
 
 

@@ -7,7 +7,7 @@ info:
     width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a>
   termsOfService: https://newscatcherapi.com/terms-of-service
   title: NewsCatcher-V3 Production API
-  version: Beta-3.0.0
+  version: 3.2.16
   x-konfig-has-globally-required-security: true
 servers:
 - url: https://v3-api.newscatcherapi.com/
@@ -15,6 +15,7 @@ tags:
 - name: Search
 - name: LatestHeadlines
 - name: Authors
+- name: SearchLink
 - name: SearchSimilar
 - name: Sources
 - name: Subscription
@@ -51,7 +52,6 @@ paths:
         required: false
         schema:
           title: Predefined Sources
-          type: string
         style: form
       - explode: true
         in: query
@@ -59,7 +59,6 @@ paths:
         required: false
         schema:
           title: Sources
-          type: string
         style: form
       - explode: true
         in: query
@@ -67,7 +66,6 @@ paths:
         required: false
         schema:
           title: Not Sources
-          type: string
         style: form
       - explode: true
         in: query
@@ -75,7 +73,6 @@ paths:
         required: false
         schema:
           title: Lang
-          type: string
         style: form
       - explode: true
         in: query
@@ -83,7 +80,6 @@ paths:
         required: false
         schema:
           title: Not Lang
-          type: string
         style: form
       - explode: true
         in: query
@@ -91,7 +87,6 @@ paths:
         required: false
         schema:
           title: Countries
-          type: string
         style: form
       - explode: true
         in: query
@@ -99,7 +94,13 @@ paths:
         required: false
         schema:
           title: Not Countries
-          type: string
+        style: form
+      - explode: true
+        in: query
+        name: not_author_name
+        required: false
+        schema:
+          title: Not Author Name
         style: form
       - explode: true
         in: query
@@ -133,7 +134,7 @@ paths:
           title: By Parse Date
           type: boolean
           x-konfig-original-example: false
-          x-konfig-generated-schema: konfig-generated-schema-paths--api-search-get-parameters-12-schema
+          x-konfig-generated-schema: konfig-generated-schema-paths--api-search-get-parameters-13-schema
         style: form
       - explode: true
         in: query
@@ -145,7 +146,7 @@ paths:
           title: Sort By
           type: string
           x-konfig-original-example: relevancy
-          x-konfig-generated-schema: konfig-generated-schema-paths--api-search-get-parameters-13-schema
+          x-konfig-generated-schema: konfig-generated-schema-paths--api-search-get-parameters-14-schema
         style: form
       - explode: true
         in: query
@@ -193,7 +194,6 @@ paths:
         required: false
         schema:
           title: Parent Url
-          type: string
         style: form
       - explode: true
         in: query
@@ -201,7 +201,6 @@ paths:
         required: false
         schema:
           title: All Links
-          type: string
         style: form
       - explode: true
         in: query
@@ -209,7 +208,6 @@ paths:
         required: false
         schema:
           title: All Domain Links
-          type: string
         style: form
       - explode: true
         in: query
@@ -240,7 +238,7 @@ paths:
           title: Page
           type: integer
           x-konfig-original-example: 1
-          x-konfig-generated-schema: konfig-generated-schema-paths--api-search-get-parameters-24-schema
+          x-konfig-generated-schema: konfig-generated-schema-paths--api-search-get-parameters-25-schema
         style: form
       - explode: true
         in: query
@@ -253,7 +251,15 @@ paths:
           title: Page Size
           type: integer
           x-konfig-original-example: 100
-          x-konfig-generated-schema: konfig-generated-schema-paths--api-search-get-parameters-25-schema
+          x-konfig-generated-schema: konfig-generated-schema-paths--api-search-get-parameters-26-schema
+        style: form
+      - explode: true
+        in: query
+        name: clustering_variable
+        required: false
+        schema:
+          title: Clustering Variable
+          type: string
         style: form
       - explode: true
         in: query
@@ -270,14 +276,6 @@ paths:
         schema:
           title: Clustering Threshold
           type: number
-        style: form
-      - explode: true
-        in: query
-        name: clustering_variable
-        required: false
-        schema:
-          title: Clustering Variable
-          type: string
         style: form
       - explode: true
         in: query
@@ -301,6 +299,14 @@ paths:
         required: false
         schema:
           title: Theme
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: not_theme
+        required: false
+        schema:
+          title: Not Theme
           type: string
         style: form
       - explode: true
@@ -366,6 +372,34 @@ paths:
         schema:
           title: Content Sentiment Max
           type: number
+        style: form
+      - explode: true
+        in: query
+        name: iptc_tags
+        required: false
+        schema:
+          title: Iptc Tags
+        style: form
+      - explode: true
+        in: query
+        name: not_iptc_tags
+        required: false
+        schema:
+          title: Not Iptc Tags
+        style: form
+      - explode: true
+        in: query
+        name: source_name
+        required: false
+        schema:
+          title: Source Name
+        style: form
+      - explode: true
+        in: query
+        name: iab_tags
+        required: false
+        schema:
+          title: Iab Tags
         style: form
       responses:
         "200":
@@ -460,7 +494,6 @@ paths:
         required: false
         schema:
           title: Lang
-          type: string
         style: form
       - explode: true
         in: query
@@ -468,7 +501,6 @@ paths:
         required: false
         schema:
           title: Not Lang
-          type: string
         style: form
       - explode: true
         in: query
@@ -476,7 +508,6 @@ paths:
         required: false
         schema:
           title: Countries
-          type: string
         style: form
       - explode: true
         in: query
@@ -484,7 +515,6 @@ paths:
         required: false
         schema:
           title: Not Countries
-          type: string
         style: form
       - explode: true
         in: query
@@ -492,7 +522,6 @@ paths:
         required: false
         schema:
           title: Sources
-          type: string
         style: form
       - explode: true
         in: query
@@ -500,7 +529,6 @@ paths:
         required: false
         schema:
           title: Predefined Sources
-          type: string
         style: form
       - explode: true
         in: query
@@ -508,7 +536,13 @@ paths:
         required: false
         schema:
           title: Not Sources
-          type: string
+        style: form
+      - explode: true
+        in: query
+        name: not_author_name
+        required: false
+        schema:
+          title: Not Author Name
         style: form
       - explode: true
         in: query
@@ -540,15 +574,6 @@ paths:
         required: false
         schema:
           title: Parent Url
-          type: string
-        style: form
-      - explode: true
-        in: query
-        name: theme
-        required: false
-        schema:
-          title: Theme
-          type: string
         style: form
       - explode: true
         in: query
@@ -556,7 +581,6 @@ paths:
         required: false
         schema:
           title: All Links
-          type: string
         style: form
       - explode: true
         in: query
@@ -564,7 +588,6 @@ paths:
         required: false
         schema:
           title: All Domain Links
-          type: string
         style: form
       - explode: true
         in: query
@@ -612,6 +635,14 @@ paths:
         style: form
       - explode: true
         in: query
+        name: clustering_variable
+        required: false
+        schema:
+          title: Clustering Variable
+          type: string
+        style: form
+      - explode: true
+        in: query
         name: clustering_enabled
         required: false
         schema:
@@ -628,14 +659,6 @@ paths:
         style: form
       - explode: true
         in: query
-        name: clustering_variable
-        required: false
-        schema:
-          title: Clustering Variable
-          type: string
-        style: form
-      - explode: true
-        in: query
         name: include_nlp_data
         required: false
         schema:
@@ -649,6 +672,22 @@ paths:
         schema:
           title: Has Nlp
           type: boolean
+        style: form
+      - explode: true
+        in: query
+        name: theme
+        required: false
+        schema:
+          title: Theme
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: not_theme
+        required: false
+        schema:
+          title: Not Theme
+          type: string
         style: form
       - explode: true
         in: query
@@ -713,6 +752,20 @@ paths:
         schema:
           title: Content Sentiment Max
           type: number
+        style: form
+      - explode: true
+        in: query
+        name: iptc_tags
+        required: false
+        schema:
+          title: Iptc Tags
+        style: form
+      - explode: true
+        in: query
+        name: not_iptc_tags
+        required: false
+        schema:
+          title: Not Iptc Tags
         style: form
       responses:
         "200":
@@ -788,11 +841,18 @@ paths:
         style: form
       - explode: true
         in: query
+        name: not_author_name
+        required: false
+        schema:
+          title: Not Author Name
+          type: string
+        style: form
+      - explode: true
+        in: query
         name: sources
         required: false
         schema:
           title: Sources
-          type: string
         style: form
       - explode: true
         in: query
@@ -800,7 +860,6 @@ paths:
         required: false
         schema:
           title: Predefined Sources
-          type: string
         style: form
       - explode: true
         in: query
@@ -808,7 +867,6 @@ paths:
         required: false
         schema:
           title: Not Sources
-          type: string
         style: form
       - explode: true
         in: query
@@ -816,7 +874,6 @@ paths:
         required: false
         schema:
           title: Lang
-          type: string
         style: form
       - explode: true
         in: query
@@ -824,7 +881,6 @@ paths:
         required: false
         schema:
           title: Not Lang
-          type: string
         style: form
       - explode: true
         in: query
@@ -832,7 +888,6 @@ paths:
         required: false
         schema:
           title: Countries
-          type: string
         style: form
       - explode: true
         in: query
@@ -840,7 +895,6 @@ paths:
         required: false
         schema:
           title: Not Countries
-          type: string
         style: form
       - explode: true
         in: query
@@ -874,7 +928,7 @@ paths:
           title: By Parse Date
           type: boolean
           x-konfig-original-example: false
-          x-konfig-generated-schema: konfig-generated-schema-paths--api-authors-get-parameters-11-schema
+          x-konfig-generated-schema: konfig-generated-schema-paths--api-authors-get-parameters-12-schema
         style: form
       - explode: true
         in: query
@@ -886,7 +940,7 @@ paths:
           title: Sort By
           type: string
           x-konfig-original-example: relevancy
-          x-konfig-generated-schema: konfig-generated-schema-paths--api-authors-get-parameters-12-schema
+          x-konfig-generated-schema: konfig-generated-schema-paths--api-authors-get-parameters-13-schema
         style: form
       - explode: true
         in: query
@@ -934,7 +988,6 @@ paths:
         required: false
         schema:
           title: Parent Url
-          type: string
         style: form
       - explode: true
         in: query
@@ -942,7 +995,6 @@ paths:
         required: false
         schema:
           title: All Links
-          type: string
         style: form
       - explode: true
         in: query
@@ -950,7 +1002,6 @@ paths:
         required: false
         schema:
           title: All Domain Links
-          type: string
         style: form
       - explode: true
         in: query
@@ -981,7 +1032,7 @@ paths:
           title: Page
           type: integer
           x-konfig-original-example: 1
-          x-konfig-generated-schema: konfig-generated-schema-paths--api-authors-get-parameters-23-schema
+          x-konfig-generated-schema: konfig-generated-schema-paths--api-authors-get-parameters-24-schema
         style: form
       - explode: true
         in: query
@@ -994,7 +1045,7 @@ paths:
           title: Page Size
           type: integer
           x-konfig-original-example: 100
-          x-konfig-generated-schema: konfig-generated-schema-paths--api-authors-get-parameters-24-schema
+          x-konfig-generated-schema: konfig-generated-schema-paths--api-authors-get-parameters-25-schema
         style: form
       - explode: true
         in: query
@@ -1018,6 +1069,14 @@ paths:
         required: false
         schema:
           title: Theme
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: not_theme
+        required: false
+        schema:
+          title: Not Theme
           type: string
         style: form
       - explode: true
@@ -1059,6 +1118,20 @@ paths:
         schema:
           title: Content Sentiment Max
           type: number
+        style: form
+      - explode: true
+        in: query
+        name: iptc_tags
+        required: false
+        schema:
+          title: Iptc Tags
+        style: form
+      - explode: true
+        in: query
+        name: not_iptc_tags
+        required: false
+        schema:
+          title: Not Iptc Tags
         style: form
       responses:
         "200":
@@ -1115,6 +1188,108 @@ paths:
       - Authors
       x-konfig-operation-can-have-single-parameter: true
       x-konfig-single-parameter-schema: konfig-generated-schema-single-parameter-schema-post--api-authors
+      x-content-type: application/json
+      x-accepts: application/json
+  /api/search_by_link:
+    get:
+      description: This endpoint allows you to search for articles. You can search
+        for articles by id(s) or link(s).
+      operationId: SearchLink_get
+      parameters:
+      - explode: true
+        in: query
+        name: ids
+        required: false
+        schema:
+          title: Ids
+        style: form
+      - explode: true
+        in: query
+        name: links
+        required: false
+        schema:
+          title: Links
+        style: form
+      - explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          default: 1
+          example: 1
+          minimum: 0
+          title: Page
+          type: integer
+          x-konfig-original-example: 1
+          x-konfig-generated-schema: konfig-generated-schema-paths--api-search_by_link-get-parameters-2-schema
+        style: form
+      - explode: true
+        in: query
+        name: page_size
+        required: false
+        schema:
+          default: 100
+          example: 100
+          minimum: 0
+          title: Page Size
+          type: integer
+          x-konfig-original-example: 100
+          x-konfig-generated-schema: konfig-generated-schema-paths--api-search_by_link-get-parameters-3-schema
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/dto__responses__SearchResponse__SearchResponse'
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+          x-do-not-generate: true
+      security:
+      - apiKey: []
+      summary: "[Get] Search For Articles By Id Or Link"
+      tags:
+      - SearchLink
+      x-konfig-operation-can-have-single-parameter: true
+      x-konfig-single-parameter-schema: konfig-generated-schema-single-parameter-schema-get--api-search_by_link
+      x-accepts: application/json
+    post:
+      description: This endpoint allows you to search for articles. You can search
+        for articles by id(s) or link(s).
+      operationId: SearchLink_post
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchURLRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/dto__responses__SearchResponse__SearchResponse'
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+          x-do-not-generate: true
+      security:
+      - apiKey: []
+      summary: "[Post] Search For Articles Request"
+      tags:
+      - SearchLink
+      x-konfig-operation-can-have-single-parameter: true
+      x-konfig-single-parameter-schema: konfig-generated-schema-single-parameter-schema-post--api-search_by_link
       x-content-type: application/json
       x-accepts: application/json
   /api/search_similar:
@@ -1187,7 +1362,6 @@ paths:
         required: false
         schema:
           title: Predefined Sources
-          type: string
         style: form
       - explode: true
         in: query
@@ -1195,7 +1369,6 @@ paths:
         required: false
         schema:
           title: Sources
-          type: string
         style: form
       - explode: true
         in: query
@@ -1203,7 +1376,6 @@ paths:
         required: false
         schema:
           title: Not Sources
-          type: string
         style: form
       - explode: true
         in: query
@@ -1211,7 +1383,6 @@ paths:
         required: false
         schema:
           title: Lang
-          type: string
         style: form
       - explode: true
         in: query
@@ -1219,7 +1390,6 @@ paths:
         required: false
         schema:
           title: Not Lang
-          type: string
         style: form
       - explode: true
         in: query
@@ -1227,7 +1397,6 @@ paths:
         required: false
         schema:
           title: Countries
-          type: string
         style: form
       - explode: true
         in: query
@@ -1235,7 +1404,6 @@ paths:
         required: false
         schema:
           title: Not Countries
-          type: string
         style: form
       - explode: true
         in: query
@@ -1329,7 +1497,6 @@ paths:
         required: false
         schema:
           title: Parent Url
-          type: string
         style: form
       - explode: true
         in: query
@@ -1337,7 +1504,6 @@ paths:
         required: false
         schema:
           title: All Links
-          type: string
         style: form
       - explode: true
         in: query
@@ -1345,7 +1511,6 @@ paths:
         required: false
         schema:
           title: All Domain Links
-          type: string
         style: form
       - explode: true
         in: query
@@ -1417,6 +1582,14 @@ paths:
         style: form
       - explode: true
         in: query
+        name: not_theme
+        required: false
+        schema:
+          title: Not Theme
+          type: string
+        style: form
+      - explode: true
+        in: query
         name: ner_name
         required: false
         schema:
@@ -1454,6 +1627,20 @@ paths:
         schema:
           title: Content Sentiment Max
           type: number
+        style: form
+      - explode: true
+        in: query
+        name: iptc_tags
+        required: false
+        schema:
+          title: Iptc Tags
+        style: form
+      - explode: true
+        in: query
+        name: not_iptc_tags
+        required: false
+        schema:
+          title: Not Iptc Tags
         style: form
       responses:
         "200":
@@ -1534,6 +1721,53 @@ paths:
         required: false
         schema:
           title: Countries
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: predefined_sources
+        required: false
+        schema:
+          title: Predefined Sources
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: include_additional_info
+        required: false
+        schema:
+          title: Include Additional Info
+          type: boolean
+        style: form
+      - explode: true
+        in: query
+        name: from_rank
+        required: false
+        schema:
+          title: From Rank
+          type: integer
+        style: form
+      - explode: true
+        in: query
+        name: to_rank
+        required: false
+        schema:
+          title: To Rank
+          type: integer
+        style: form
+      - explode: true
+        in: query
+        name: source_name
+        required: false
+        schema:
+          title: Source Name
+        style: form
+      - explode: true
+        in: query
+        name: source_url
+        required: false
+        schema:
+          title: Source Url
           type: string
         style: form
       responses:
@@ -1649,36 +1883,53 @@ paths:
       x-accepts: application/json
 components:
   schemas:
+    AdditionalSourceInfo:
+      properties:
+        nb_articles_for_7d:
+          title: Nb Articles For 7D
+          type: integer
+        country:
+          title: Country
+          type: string
+        rank:
+          title: Rank
+          type: integer
+      title: AdditionalSourceInfo
+      type: object
     AuthorSearchRequest:
       example:
         author_name: author_name
         has_nlp: true
-        sources: sources
+        sources: ""
         to_: to_
+        not_iptc_tags: ""
         sort_by: relevancy
-        all_domain_links: all_domain_links
+        all_domain_links: ""
         word_count_max: 0
-        all_links: all_links
+        not_theme: not_theme
+        all_links: ""
         content_sentiment_max: 9.301444243932576
         title_sentiment_max: 2.3021358869347655
         theme: theme
-        lang: lang
+        lang: ""
         to_rank: 6
-        not_countries: not_countries
+        not_countries: ""
         word_count_min: 0
         page_size: 100
         by_parse_date: false
         ner_name: ner_name
         content_sentiment_min: 7.061401241503109
-        not_sources: not_sources
+        not_sources: ""
         from_: from_
-        countries: countries
-        predefined_sources: predefined_sources
-        not_lang: not_lang
+        iptc_tags: ""
+        countries: ""
+        predefined_sources: ""
+        not_lang: ""
+        not_author_name: not_author_name
         from_rank: 0
         title_sentiment_min: 5.637376656633329
         is_headline: true
-        parent_url: parent_url
+        parent_url: ""
         published_date_precision: published_date_precision
         ranked_only: ranked_only
         include_nlp_data: true
@@ -1688,27 +1939,23 @@ components:
         author_name:
           title: Author Name
           type: string
+        not_author_name:
+          title: Not Author Name
+          type: string
         sources:
           title: Sources
-          type: string
         predefined_sources:
           title: Predefined Sources
-          type: string
         not_sources:
           title: Not Sources
-          type: string
         lang:
           title: Lang
-          type: string
         not_lang:
           title: Not Lang
-          type: string
         countries:
           title: Countries
-          type: string
         not_countries:
           title: Not Countries
-          type: string
         from_:
           type: string
         to_:
@@ -1747,13 +1994,10 @@ components:
           type: boolean
         parent_url:
           title: Parent Url
-          type: string
         all_links:
           title: All Links
-          type: string
         all_domain_links:
           title: All Domain Links
-          type: string
         word_count_min:
           minimum: 0
           title: Word Count Min
@@ -1787,6 +2031,9 @@ components:
         theme:
           title: Theme
           type: string
+        not_theme:
+          title: Not Theme
+          type: string
         ner_name:
           title: Ner Name
           type: string
@@ -1802,6 +2049,10 @@ components:
         content_sentiment_max:
           title: Content Sentiment Max
           type: number
+        iptc_tags:
+          title: Iptc Tags
+        not_iptc_tags:
+          title: Not Iptc Tags
       required:
       - author_name
       title: AuthorSearchRequest
@@ -1859,65 +2110,16 @@ components:
           type: object
         articles:
           items:
-            $ref: '#/components/schemas/Articles_Property_inner'
+            type: object
           title: Articles
           type: array
       required:
+      - page
+      - page_size
+      - total_hits
+      - total_pages
       - user_input
       title: ClusteringSearchResponse
-      type: object
-    FailedLatestHeadlinesResponse:
-      properties:
-        status:
-          default: No Matches for your search
-          example: No Matches for your search
-          title: Status
-          type: string
-          x-konfig-original-example: No Matches for your search
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-FailedLatestHeadlinesResponse-properties-status
-        total_hits:
-          default: 0
-          example: 0
-          title: Total Hits
-          type: integer
-          x-konfig-original-example: 0
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-FailedLatestHeadlinesResponse-properties-total_hits
-        page:
-          default: 0
-          example: 0
-          title: Page
-          type: integer
-          x-konfig-original-example: 0
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-FailedLatestHeadlinesResponse-properties-page
-        total_pages:
-          default: 0
-          example: 0
-          title: Total Pages
-          type: integer
-          x-konfig-original-example: 0
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-FailedLatestHeadlinesResponse-properties-total_pages
-        page_size:
-          default: 0
-          example: 0
-          title: Page Size
-          type: integer
-          x-konfig-original-example: 0
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-FailedLatestHeadlinesResponse-properties-page_size
-        articles:
-          default: []
-          example: []
-          items:
-            $ref: '#/components/schemas/dto__responses__LatestHeadlinesResponse__ArticleResult'
-          title: Articles
-          type: array
-          x-konfig-original-example: []
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-FailedLatestHeadlinesResponse-properties-articles
-        user_input:
-          title: User Input
-          type: object
-      required:
-      - user_input
-      title: FailedLatestHeadlinesResponse
       type: object
     HTTPValidationError:
       properties:
@@ -1933,32 +2135,36 @@ components:
     LatestHeadlinesRequest:
       example:
         has_nlp: true
-        sources: sources
+        sources: ""
         clustering_variable: clustering_variable
+        not_iptc_tags: ""
         ORG_entity_name: ORG_entity_name
-        all_domain_links: all_domain_links
+        all_domain_links: ""
         clustering_threshold: 1.4658129805029452
         when: 7d
         word_count_max: 0
-        all_links: all_links
+        not_theme: not_theme
+        all_links: ""
         content_sentiment_max: 7.061401241503109
         title_sentiment_max: 5.637376656633329
         theme: theme
-        lang: lang
-        not_countries: not_countries
+        lang: ""
+        not_countries: ""
         word_count_min: 0
         page_size: 100
         by_parse_date: false
         content_sentiment_min: 2.3021358869347655
         LOC_entity_name: LOC_entity_name
         MISC_entity_name: MISC_entity_name
-        not_sources: not_sources
-        countries: countries
-        not_lang: not_lang
-        predefined_sources: predefined_sources
+        not_sources: ""
+        iptc_tags: ""
+        countries: ""
+        not_lang: ""
+        predefined_sources: ""
+        not_author_name: ""
         title_sentiment_min: 5.962133916683182
         is_headline: true
-        parent_url: parent_url
+        parent_url: ""
         clustering_enabled: true
         ranked_only: ranked_only
         include_nlp_data: true
@@ -1982,25 +2188,20 @@ components:
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-LatestHeadlinesRequest-properties-by_parse_date
         lang:
           title: Lang
-          type: string
         not_lang:
           title: Not Lang
-          type: string
         countries:
           title: Countries
-          type: string
         not_countries:
           title: Not Countries
-          type: string
         sources:
           title: Sources
-          type: string
         predefined_sources:
           title: Predefined Sources
-          type: string
         not_sources:
           title: Not Sources
-          type: string
+        not_author_name:
+          title: Not Author Name
         ranked_only:
           title: Ranked Only
           type: string
@@ -2012,16 +2213,10 @@ components:
           type: boolean
         parent_url:
           title: Parent Url
-          type: string
-        theme:
-          title: Theme
-          type: string
         all_links:
           title: All Links
-          type: string
         all_domain_links:
           title: All Domain Links
-          type: string
         word_count_min:
           minimum: 0
           title: Word Count Min
@@ -2046,21 +2241,27 @@ components:
           type: integer
           x-konfig-original-example: 100
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-LatestHeadlinesRequest-properties-page_size
+        clustering_variable:
+          title: Clustering Variable
+          type: string
         clustering_enabled:
           title: Clustering Enabled
           type: boolean
         clustering_threshold:
           title: Clustering Threshold
           type: number
-        clustering_variable:
-          title: Clustering Variable
-          type: string
         include_nlp_data:
           title: Include Nlp Data
           type: boolean
         has_nlp:
           title: Has Nlp
           type: boolean
+        theme:
+          title: Theme
+          type: string
+        not_theme:
+          title: Not Theme
+          type: string
         ORG_entity_name:
           title: Org Entity Name
           type: string
@@ -2085,6 +2286,10 @@ components:
         content_sentiment_max:
           title: Content Sentiment Max
           type: number
+        iptc_tags:
+          title: Iptc Tags
+        not_iptc_tags:
+          title: Not Iptc Tags
       title: LatestHeadlinesRequest
       type: object
     LatestHeadlinesResponse:
@@ -2110,7 +2315,7 @@ components:
           type: integer
         articles:
           items:
-            $ref: '#/components/schemas/Articles_Property_inner'
+            type: object
           title: Articles
           type: array
         user_input:
@@ -2128,37 +2333,40 @@ components:
     MoreLikeThisRequest:
       example:
         has_nlp: true
-        sources: sources
+        sources: ""
         to_: to_
+        not_iptc_tags: ""
         sort_by: relevancy
-        all_domain_links: all_domain_links
+        all_domain_links: ""
         word_count_max: 0
         include_similar_documents: false
-        all_links: all_links
+        not_theme: not_theme
+        all_links: ""
         content_sentiment_max: 9.301444243932576
         title_sentiment_max: 2.3021358869347655
         theme: theme
-        lang: lang
+        lang: ""
         to_rank: 6
-        not_countries: not_countries
+        not_countries: ""
         word_count_min: 0
         page_size: 100
         search_in: title_content
         by_parse_date: false
         ner_name: ner_name
         content_sentiment_min: 7.061401241503109
-        not_sources: not_sources
+        not_sources: ""
         from_: from_
         similar_documents_fields: "title,content"
-        countries: countries
-        predefined_sources: predefined_sources
-        not_lang: not_lang
+        iptc_tags: ""
+        countries: ""
+        predefined_sources: ""
+        not_lang: ""
         from_rank: 0
         title_sentiment_min: 5.637376656633329
         is_headline: true
         q: q
         similar_documents_number: 5
-        parent_url: parent_url
+        parent_url: ""
         published_date_precision: published_date_precision
         ranked_only: ranked_only
         include_nlp_data: true
@@ -2199,25 +2407,18 @@ components:
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-MoreLikeThisRequest-properties-similar_documents_fields
         predefined_sources:
           title: Predefined Sources
-          type: string
         sources:
           title: Sources
-          type: string
         not_sources:
           title: Not Sources
-          type: string
         lang:
           title: Lang
-          type: string
         not_lang:
           title: Not Lang
-          type: string
         countries:
           title: Countries
-          type: string
         not_countries:
           title: Not Countries
-          type: string
         from_:
           type: string
         to_:
@@ -2256,13 +2457,10 @@ components:
           type: boolean
         parent_url:
           title: Parent Url
-          type: string
         all_links:
           title: All Links
-          type: string
         all_domain_links:
           title: All Domain Links
-          type: string
         word_count_min:
           minimum: 0
           title: Word Count Min
@@ -2296,6 +2494,9 @@ components:
         theme:
           title: Theme
           type: string
+        not_theme:
+          title: Not Theme
+          type: string
         ner_name:
           title: Ner Name
           type: string
@@ -2311,6 +2512,10 @@ components:
         content_sentiment_max:
           title: Content Sentiment Max
           type: number
+        iptc_tags:
+          title: Iptc Tags
+        not_iptc_tags:
+          title: Not Iptc Tags
       required:
       - q
       title: MoreLikeThisRequest
@@ -2318,21 +2523,24 @@ components:
     SearchRequest:
       example:
         has_nlp: true
-        sources: sources
+        sources: ""
         to_: to_
         clustering_variable: clustering_variable
+        not_iptc_tags: ""
         ORG_entity_name: ORG_entity_name
         sort_by: relevancy
-        all_domain_links: all_domain_links
+        all_domain_links: ""
         clustering_threshold: 5.637376656633329
         word_count_max: 0
-        all_links: all_links
+        not_theme: not_theme
+        all_links: ""
         content_sentiment_max: 3.616076749251911
         title_sentiment_max: 7.061401241503109
         theme: theme
-        lang: lang
+        lang: ""
         to_rank: 6
-        not_countries: not_countries
+        not_countries: ""
+        source_name: ""
         word_count_min: 0
         page_size: 100
         search_in: title_content
@@ -2340,16 +2548,19 @@ components:
         content_sentiment_min: 9.301444243932576
         LOC_entity_name: LOC_entity_name
         MISC_entity_name: MISC_entity_name
-        not_sources: not_sources
+        not_sources: ""
         from_: from_
-        countries: countries
-        predefined_sources: predefined_sources
-        not_lang: not_lang
+        iptc_tags: ""
+        countries: ""
+        iab_tags: ""
+        predefined_sources: ""
+        not_lang: ""
+        not_author_name: ""
         from_rank: 0
         title_sentiment_min: 2.3021358869347655
         is_headline: true
         q: q
-        parent_url: parent_url
+        parent_url: ""
         clustering_enabled: true
         published_date_precision: published_date_precision
         ranked_only: ranked_only
@@ -2370,25 +2581,20 @@ components:
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-SearchRequest-properties-search_in
         predefined_sources:
           title: Predefined Sources
-          type: string
         sources:
           title: Sources
-          type: string
         not_sources:
           title: Not Sources
-          type: string
         lang:
           title: Lang
-          type: string
         not_lang:
           title: Not Lang
-          type: string
         countries:
           title: Countries
-          type: string
         not_countries:
           title: Not Countries
-          type: string
+        not_author_name:
+          title: Not Author Name
         from_:
           type: string
         to_:
@@ -2427,13 +2633,10 @@ components:
           type: boolean
         parent_url:
           title: Parent Url
-          type: string
         all_links:
           title: All Links
-          type: string
         all_domain_links:
           title: All Domain Links
-          type: string
         word_count_min:
           minimum: 0
           title: Word Count Min
@@ -2458,15 +2661,15 @@ components:
           type: integer
           x-konfig-original-example: 100
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-SearchRequest-properties-page_size
+        clustering_variable:
+          title: Clustering Variable
+          type: string
         clustering_enabled:
           title: Clustering Enabled
           type: boolean
         clustering_threshold:
           title: Clustering Threshold
           type: number
-        clustering_variable:
-          title: Clustering Variable
-          type: string
         include_nlp_data:
           title: Include Nlp Data
           type: boolean
@@ -2475,6 +2678,9 @@ components:
           type: boolean
         theme:
           title: Theme
+          type: string
+        not_theme:
+          title: Not Theme
           type: string
         ORG_entity_name:
           title: Org Entity Name
@@ -2500,9 +2706,46 @@ components:
         content_sentiment_max:
           title: Content Sentiment Max
           type: number
+        iptc_tags:
+          title: Iptc Tags
+        not_iptc_tags:
+          title: Not Iptc Tags
+        source_name:
+          title: Source Name
+        iab_tags:
+          title: Iab Tags
       required:
       - q
       title: SearchRequest
+      type: object
+    SearchURLRequest:
+      example:
+        ids: ""
+        links: ""
+        page: 1
+        page_size: 100
+      properties:
+        ids:
+          title: Ids
+        links:
+          title: Links
+        page:
+          default: 1
+          example: 1
+          minimum: 0
+          title: Page
+          type: integer
+          x-konfig-original-example: 1
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-SearchURLRequest-properties-page
+        page_size:
+          default: 100
+          example: 100
+          minimum: 0
+          title: Page Size
+          type: integer
+          x-konfig-original-example: 100
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-SearchURLRequest-properties-page_size
+      title: SearchURLRequest
       type: object
     SimilarDocument:
       properties:
@@ -2525,26 +2768,41 @@ components:
       - title
       title: SimilarDocument
       type: object
+    SourceInfo:
+      properties:
+        name_source:
+          title: Name Source
+          type: string
+        domain_url:
+          title: Domain Url
+          type: string
+        logo:
+          title: Logo
+          type: string
+        additional_info:
+          $ref: '#/components/schemas/AdditionalSourceInfo'
+      required:
+      - domain_url
+      title: SourceInfo
+      type: object
     SourceResponse:
       example:
         sources:
-        - sources
-        - sources
-        user_input:
-          countries: ""
-          lang: ""
+        - ""
+        - ""
+        user_input: "{}"
         message: message
       properties:
         message:
           title: Message
           type: string
         sources:
-          items:
-            type: string
+          items: {}
           title: Sources
           type: array
         user_input:
-          $ref: '#/components/schemas/UserInput'
+          title: User Input
+          type: object
       required:
       - message
       - sources
@@ -2554,14 +2812,37 @@ components:
       x-konfig-is-used-in-successful-response: true
     SourcesRequest:
       example:
+        include_additional_info: true
         countries: countries
         lang: lang
+        to_rank: 6
+        predefined_sources: predefined_sources
+        source_name: ""
+        source_url: source_url
+        from_rank: 0
       properties:
         lang:
           title: Lang
           type: string
         countries:
           title: Countries
+          type: string
+        predefined_sources:
+          title: Predefined Sources
+          type: string
+        include_additional_info:
+          title: Include Additional Info
+          type: boolean
+        from_rank:
+          title: From Rank
+          type: integer
+        to_rank:
+          title: To Rank
+          type: integer
+        source_name:
+          title: Source Name
+        source_url:
+          title: Source Url
           type: string
       title: SourcesRequest
       type: object
@@ -2598,15 +2879,6 @@ components:
       title: SubscriptionResponse
       type: object
       x-konfig-is-used-in-successful-response: true
-    UserInput:
-      example:
-        countries: ""
-        lang: ""
-      properties:
-        lang: {}
-        countries: {}
-      title: UserInput
-      type: object
     ValidationError:
       properties:
         loc:
@@ -2807,7 +3079,7 @@ components:
           type: integer
         articles:
           items:
-            $ref: '#/components/schemas/Articles_Property_inner_1'
+            $ref: '#/components/schemas/Articles_Property_inner'
           title: Articles
           type: array
         user_input:
@@ -2816,111 +3088,6 @@ components:
       required:
       - user_input
       title: SearchResponse
-      type: object
-    dto__responses__LatestHeadlinesResponse__ArticleResult:
-      properties:
-        title:
-          title: Title
-          type: string
-        description:
-          title: Description
-          type: string
-        author:
-          title: Author
-          type: string
-        authors: {}
-        journalists: {}
-        published_date:
-          title: Published Date
-          type: string
-        published_date_precision:
-          title: Published Date Precision
-          type: string
-        updated_date:
-          title: Updated Date
-          type: string
-        updated_date_precision:
-          title: Updated Date Precision
-          type: string
-        parse_date:
-          title: Parse Date
-          type: string
-        link:
-          title: Link
-          type: string
-        domain_url:
-          title: Domain Url
-          type: string
-        full_domain_url:
-          title: Full Domain Url
-          type: string
-        name_source:
-          title: Name Source
-          type: string
-        is_headline:
-          title: Is Headline
-          type: string
-        paid_content:
-          title: Paid Content
-          type: boolean
-        extraction_data:
-          title: Extraction Data
-          type: string
-        country:
-          title: Country
-          type: string
-        rights:
-          title: Rights
-          type: string
-        rank:
-          title: Rank
-          type: integer
-        media:
-          title: Media
-          type: string
-        language:
-          title: Language
-          type: string
-        content:
-          title: Content
-          type: string
-        word_count:
-          default: 0
-          example: 0
-          title: Word Count
-          type: integer
-          x-konfig-original-example: 0
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__LatestHeadlinesResponse__ArticleResult-properties-word_count
-        is_opinion:
-          title: Is Opinion
-          type: boolean
-        twitter_account:
-          title: Twitter Account
-          type: string
-        all_links: {}
-        all_domain_links: {}
-        nlp:
-          example: {}
-          title: Nlp
-          type: object
-          x-konfig-original-example: {}
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__LatestHeadlinesResponse__ArticleResult-properties-nlp
-        id:
-          title: Id
-          type: string
-        score:
-          title: Score
-          type: number
-      required:
-      - domain_url
-      - extraction_data
-      - full_domain_url
-      - id
-      - link
-      - rank
-      - score
-      - title
-      title: ArticleResult
       type: object
     dto__responses__MoreLikeThisResponse__ArticleResult:
       properties:
@@ -3113,7 +3280,7 @@ components:
           type: integer
         articles:
           items:
-            $ref: '#/components/schemas/Articles_Property_inner_2'
+            $ref: '#/components/schemas/Articles_Property_inner_1'
           title: Articles
           type: array
         user_input:
@@ -3123,165 +3290,29 @@ components:
       - user_input
       title: SearchResponse
       type: object
-    dto__responses__SearchResponse__ArticleResult:
-      properties:
-        title:
-          title: Title
-          type: string
-        description:
-          title: Description
-          type: string
-        author:
-          title: Author
-          type: string
-        authors: {}
-        journalists: {}
-        published_date:
-          title: Published Date
-          type: string
-        published_date_precision:
-          title: Published Date Precision
-          type: string
-        updated_date:
-          title: Updated Date
-          type: string
-        updated_date_precision:
-          title: Updated Date Precision
-          type: string
-        parse_date:
-          title: Parse Date
-          type: string
-        link:
-          title: Link
-          type: string
-        domain_url:
-          title: Domain Url
-          type: string
-        full_domain_url:
-          title: Full Domain Url
-          type: string
-        name_source:
-          title: Name Source
-          type: string
-        is_headline:
-          title: Is Headline
-          type: string
-        paid_content:
-          title: Paid Content
-          type: boolean
-        extraction_data:
-          title: Extraction Data
-          type: string
-        country:
-          title: Country
-          type: string
-        rights:
-          title: Rights
-          type: string
-        rank:
-          title: Rank
-          type: integer
-        media:
-          title: Media
-          type: string
-        language:
-          title: Language
-          type: string
-        content:
-          title: Content
-          type: string
-        word_count:
-          default: 0
-          example: 0
-          title: Word Count
-          type: integer
-          x-konfig-original-example: 0
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__SearchResponse__ArticleResult-properties-word_count
-        is_opinion:
-          title: Is Opinion
-          type: boolean
-        twitter_account:
-          title: Twitter Account
-          type: string
-        all_links: {}
-        all_domain_links: {}
-        nlp:
-          example: {}
-          title: Nlp
-          type: object
-          x-konfig-original-example: {}
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__SearchResponse__ArticleResult-properties-nlp
-        id:
-          title: Id
-          type: string
-        score:
-          title: Score
-          type: number
-      required:
-      - domain_url
-      - extraction_data
-      - full_domain_url
-      - id
-      - link
-      - rank
-      - score
-      - title
-      title: ArticleResult
-      type: object
-    dto__responses__SearchResponse__FailedSearchResponse:
-      properties:
-        status:
-          default: No Matches for your search
-          example: No Matches for your search
-          title: Status
-          type: string
-          x-konfig-original-example: No Matches for your search
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__SearchResponse__FailedSearchResponse-properties-status
-        total_hits:
-          default: 0
-          example: 0
-          title: Total Hits
-          type: integer
-          x-konfig-original-example: 0
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__SearchResponse__FailedSearchResponse-properties-total_hits
-        page:
-          default: 0
-          example: 0
-          title: Page
-          type: integer
-          x-konfig-original-example: 0
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__SearchResponse__FailedSearchResponse-properties-page
-        total_pages:
-          default: 0
-          example: 0
-          title: Total Pages
-          type: integer
-          x-konfig-original-example: 0
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__SearchResponse__FailedSearchResponse-properties-total_pages
-        page_size:
-          default: 0
-          example: 0
-          title: Page Size
-          type: integer
-          x-konfig-original-example: 0
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__SearchResponse__FailedSearchResponse-properties-page_size
-        articles:
-          default: []
-          example: []
-          items:
-            $ref: '#/components/schemas/dto__responses__SearchResponse__ArticleResult'
-          title: Articles
-          type: array
-          x-konfig-original-example: []
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__SearchResponse__FailedSearchResponse-properties-articles
-        user_input:
-          title: User Input
-          type: object
-      required:
-      - user_input
-      title: FailedSearchResponse
-      type: object
     dto__responses__SearchResponse__SearchResponse:
+      example:
+        total_hits: 0
+        user_input: "{}"
+        page: 6
+        total_pages: 1
+        clusters_count: 5
+        articles:
+        - "{}"
+        - "{}"
+        clusters:
+        - cluster_id: cluster_id
+          cluster_size: 2
+          articles:
+          - "{}"
+          - "{}"
+        - cluster_id: cluster_id
+          cluster_size: 2
+          articles:
+          - "{}"
+          - "{}"
+        status: ok
+        page_size: 5
       properties:
         status:
           default: ok
@@ -3304,7 +3335,7 @@ components:
           type: integer
         articles:
           items:
-            $ref: '#/components/schemas/Articles_Property_inner_3'
+            type: object
           title: Articles
           type: array
         user_input:
@@ -3319,17 +3350,22 @@ components:
           title: Clusters
           type: array
       required:
+      - page
+      - page_size
+      - total_hits
+      - total_pages
       - user_input
       title: SearchResponse
       type: object
+      x-konfig-is-used-in-successful-response: true
     SearchGetResponse:
-      $ref: '#/components/schemas/FCSearchResponse'
+      $ref: '#/components/schemas/CSearchResponse'
     SearchPostResponse:
-      $ref: '#/components/schemas/FCSearchResponse1'
+      $ref: '#/components/schemas/CSearchResponse1'
     LatestHeadlinesGetResponse:
-      $ref: '#/components/schemas/CSLHFResponse'
+      $ref: '#/components/schemas/CSLHResponse'
     LatestHeadlinesPostResponse:
-      $ref: '#/components/schemas/CSLHFResponse1'
+      $ref: '#/components/schemas/CSLHResponse1'
     AuthorsGetResponse:
       $ref: '#/components/schemas/FSearchResponse'
     AuthorsPostResponse:
@@ -3342,19 +3378,19 @@ components:
       example: title_content
       type: string
       x-do-not-generate: true
-    konfig-generated-schema-paths--api-search-get-parameters-12-schema:
+    konfig-generated-schema-paths--api-search-get-parameters-13-schema:
       example: false
       type: boolean
       x-do-not-generate: true
-    konfig-generated-schema-paths--api-search-get-parameters-13-schema:
+    konfig-generated-schema-paths--api-search-get-parameters-14-schema:
       example: relevancy
       type: string
       x-do-not-generate: true
-    konfig-generated-schema-paths--api-search-get-parameters-24-schema:
+    konfig-generated-schema-paths--api-search-get-parameters-25-schema:
       example: 1
       type: number
       x-do-not-generate: true
-    konfig-generated-schema-paths--api-search-get-parameters-25-schema:
+    konfig-generated-schema-paths--api-search-get-parameters-26-schema:
       example: 100
       type: number
       x-do-not-generate: true
@@ -3374,19 +3410,27 @@ components:
       example: 100
       type: number
       x-do-not-generate: true
-    konfig-generated-schema-paths--api-authors-get-parameters-11-schema:
+    konfig-generated-schema-paths--api-authors-get-parameters-12-schema:
       example: false
       type: boolean
       x-do-not-generate: true
-    konfig-generated-schema-paths--api-authors-get-parameters-12-schema:
+    konfig-generated-schema-paths--api-authors-get-parameters-13-schema:
       example: relevancy
       type: string
       x-do-not-generate: true
-    konfig-generated-schema-paths--api-authors-get-parameters-23-schema:
+    konfig-generated-schema-paths--api-authors-get-parameters-24-schema:
       example: 1
       type: number
       x-do-not-generate: true
-    konfig-generated-schema-paths--api-authors-get-parameters-24-schema:
+    konfig-generated-schema-paths--api-authors-get-parameters-25-schema:
+      example: 100
+      type: number
+      x-do-not-generate: true
+    konfig-generated-schema-paths--api-search_by_link-get-parameters-2-schema:
+      example: 1
+      type: number
+      x-do-not-generate: true
+    konfig-generated-schema-paths--api-search_by_link-get-parameters-3-schema:
       example: 100
       type: number
       x-do-not-generate: true
@@ -3441,31 +3485,6 @@ components:
     konfig-generated-schema-components-schemas-ClusteringSearchResponse-properties-status:
       example: ok
       type: string
-      x-do-not-generate: true
-    konfig-generated-schema-components-schemas-FailedLatestHeadlinesResponse-properties-status:
-      example: No Matches for your search
-      type: string
-      x-do-not-generate: true
-    konfig-generated-schema-components-schemas-FailedLatestHeadlinesResponse-properties-total_hits:
-      example: 0
-      type: number
-      x-do-not-generate: true
-    konfig-generated-schema-components-schemas-FailedLatestHeadlinesResponse-properties-page:
-      example: 0
-      type: number
-      x-do-not-generate: true
-    konfig-generated-schema-components-schemas-FailedLatestHeadlinesResponse-properties-total_pages:
-      example: 0
-      type: number
-      x-do-not-generate: true
-    konfig-generated-schema-components-schemas-FailedLatestHeadlinesResponse-properties-page_size:
-      example: 0
-      type: number
-      x-do-not-generate: true
-    konfig-generated-schema-components-schemas-FailedLatestHeadlinesResponse-properties-articles:
-      items:
-        type: string
-      type: array
       x-do-not-generate: true
     konfig-generated-schema-components-schemas-LatestHeadlinesRequest-properties-when:
       example: 7d
@@ -3539,6 +3558,14 @@ components:
       example: 100
       type: number
       x-do-not-generate: true
+    konfig-generated-schema-components-schemas-SearchURLRequest-properties-page:
+      example: 1
+      type: number
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-SearchURLRequest-properties-page_size:
+      example: 100
+      type: number
+      x-do-not-generate: true
     konfig-generated-schema-components-schemas-dto__responses__AuthorSearchResponse__ArticleResult-properties-word_count:
       example: 0
       type: number
@@ -3576,15 +3603,6 @@ components:
     konfig-generated-schema-components-schemas-dto__responses__AuthorSearchResponse__SearchResponse-properties-status:
       example: ok
       type: string
-      x-do-not-generate: true
-    konfig-generated-schema-components-schemas-dto__responses__LatestHeadlinesResponse__ArticleResult-properties-word_count:
-      example: 0
-      type: number
-      x-do-not-generate: true
-    konfig-generated-schema-components-schemas-dto__responses__LatestHeadlinesResponse__ArticleResult-properties-nlp:
-      example: {}
-      properties: {}
-      type: object
       x-do-not-generate: true
     konfig-generated-schema-components-schemas-dto__responses__MoreLikeThisResponse__ArticleResult-properties-word_count:
       example: 0
@@ -3629,40 +3647,6 @@ components:
       example: ok
       type: string
       x-do-not-generate: true
-    konfig-generated-schema-components-schemas-dto__responses__SearchResponse__ArticleResult-properties-word_count:
-      example: 0
-      type: number
-      x-do-not-generate: true
-    konfig-generated-schema-components-schemas-dto__responses__SearchResponse__ArticleResult-properties-nlp:
-      example: {}
-      properties: {}
-      type: object
-      x-do-not-generate: true
-    konfig-generated-schema-components-schemas-dto__responses__SearchResponse__FailedSearchResponse-properties-status:
-      example: No Matches for your search
-      type: string
-      x-do-not-generate: true
-    konfig-generated-schema-components-schemas-dto__responses__SearchResponse__FailedSearchResponse-properties-total_hits:
-      example: 0
-      type: number
-      x-do-not-generate: true
-    konfig-generated-schema-components-schemas-dto__responses__SearchResponse__FailedSearchResponse-properties-page:
-      example: 0
-      type: number
-      x-do-not-generate: true
-    konfig-generated-schema-components-schemas-dto__responses__SearchResponse__FailedSearchResponse-properties-total_pages:
-      example: 0
-      type: number
-      x-do-not-generate: true
-    konfig-generated-schema-components-schemas-dto__responses__SearchResponse__FailedSearchResponse-properties-page_size:
-      example: 0
-      type: number
-      x-do-not-generate: true
-    konfig-generated-schema-components-schemas-dto__responses__SearchResponse__FailedSearchResponse-properties-articles:
-      items:
-        type: string
-      type: array
-      x-do-not-generate: true
     konfig-generated-schema-components-schemas-dto__responses__SearchResponse__SearchResponse-properties-status:
       example: ok
       type: string
@@ -3681,25 +3665,20 @@ components:
           x-konfig-generated-schema: konfig-generated-schema-paths--api-search-get-parameters-1-schema
         predefined_sources:
           title: Predefined Sources
-          type: string
         sources:
           title: Sources
-          type: string
         not_sources:
           title: Not Sources
-          type: string
         lang:
           title: Lang
-          type: string
         not_lang:
           title: Not Lang
-          type: string
         countries:
           title: Countries
-          type: string
         not_countries:
           title: Not Countries
-          type: string
+        not_author_name:
+          title: Not Author Name
         from_:
           type: string
         to_:
@@ -3713,14 +3692,14 @@ components:
           title: By Parse Date
           type: boolean
           x-konfig-original-example: false
-          x-konfig-generated-schema: konfig-generated-schema-paths--api-search-get-parameters-12-schema
+          x-konfig-generated-schema: konfig-generated-schema-paths--api-search-get-parameters-13-schema
         sort_by:
           default: relevancy
           example: relevancy
           title: Sort By
           type: string
           x-konfig-original-example: relevancy
-          x-konfig-generated-schema: konfig-generated-schema-paths--api-search-get-parameters-13-schema
+          x-konfig-generated-schema: konfig-generated-schema-paths--api-search-get-parameters-14-schema
         ranked_only:
           title: Ranked Only
           type: string
@@ -3738,13 +3717,10 @@ components:
           type: boolean
         parent_url:
           title: Parent Url
-          type: string
         all_links:
           title: All Links
-          type: string
         all_domain_links:
           title: All Domain Links
-          type: string
         word_count_min:
           minimum: 0
           title: Word Count Min
@@ -3760,7 +3736,7 @@ components:
           title: Page
           type: integer
           x-konfig-original-example: 1
-          x-konfig-generated-schema: konfig-generated-schema-paths--api-search-get-parameters-24-schema
+          x-konfig-generated-schema: konfig-generated-schema-paths--api-search-get-parameters-25-schema
         page_size:
           default: 100
           example: 100
@@ -3768,16 +3744,16 @@ components:
           title: Page Size
           type: integer
           x-konfig-original-example: 100
-          x-konfig-generated-schema: konfig-generated-schema-paths--api-search-get-parameters-25-schema
+          x-konfig-generated-schema: konfig-generated-schema-paths--api-search-get-parameters-26-schema
+        clustering_variable:
+          title: Clustering Variable
+          type: string
         clustering_enabled:
           title: Clustering Enabled
           type: boolean
         clustering_threshold:
           title: Clustering Threshold
           type: number
-        clustering_variable:
-          title: Clustering Variable
-          type: string
         include_nlp_data:
           title: Include Nlp Data
           type: boolean
@@ -3786,6 +3762,9 @@ components:
           type: boolean
         theme:
           title: Theme
+          type: string
+        not_theme:
+          title: Not Theme
           type: string
         ORG_entity_name:
           title: Org Entity Name
@@ -3811,6 +3790,14 @@ components:
         content_sentiment_max:
           title: Content Sentiment Max
           type: number
+        iptc_tags:
+          title: Iptc Tags
+        not_iptc_tags:
+          title: Not Iptc Tags
+        source_name:
+          title: Source Name
+        iab_tags:
+          title: Iab Tags
       required:
       - q
       type: object
@@ -3825,6 +3812,7 @@ components:
       - not_lang
       - countries
       - not_countries
+      - not_author_name
       - from_
       - to_
       - published_date_precision
@@ -3842,12 +3830,13 @@ components:
       - word_count_max
       - page
       - page_size
+      - clustering_variable
       - clustering_enabled
       - clustering_threshold
-      - clustering_variable
       - include_nlp_data
       - has_nlp
       - theme
+      - not_theme
       - ORG_entity_name
       - PER_entity_name
       - LOC_entity_name
@@ -3856,6 +3845,10 @@ components:
       - title_sentiment_max
       - content_sentiment_min
       - content_sentiment_max
+      - iptc_tags
+      - not_iptc_tags
+      - source_name
+      - iab_tags
     konfig-generated-schema-single-parameter-schema-post--api-search:
       properties:
         q:
@@ -3870,25 +3863,20 @@ components:
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-SearchRequest-properties-search_in
         predefined_sources:
           title: Predefined Sources
-          type: string
         sources:
           title: Sources
-          type: string
         not_sources:
           title: Not Sources
-          type: string
         lang:
           title: Lang
-          type: string
         not_lang:
           title: Not Lang
-          type: string
         countries:
           title: Countries
-          type: string
         not_countries:
           title: Not Countries
-          type: string
+        not_author_name:
+          title: Not Author Name
         from_:
           type: string
         to_:
@@ -3927,13 +3915,10 @@ components:
           type: boolean
         parent_url:
           title: Parent Url
-          type: string
         all_links:
           title: All Links
-          type: string
         all_domain_links:
           title: All Domain Links
-          type: string
         word_count_min:
           minimum: 0
           title: Word Count Min
@@ -3958,15 +3943,15 @@ components:
           type: integer
           x-konfig-original-example: 100
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-SearchRequest-properties-page_size
+        clustering_variable:
+          title: Clustering Variable
+          type: string
         clustering_enabled:
           title: Clustering Enabled
           type: boolean
         clustering_threshold:
           title: Clustering Threshold
           type: number
-        clustering_variable:
-          title: Clustering Variable
-          type: string
         include_nlp_data:
           title: Include Nlp Data
           type: boolean
@@ -3975,6 +3960,9 @@ components:
           type: boolean
         theme:
           title: Theme
+          type: string
+        not_theme:
+          title: Not Theme
           type: string
         ORG_entity_name:
           title: Org Entity Name
@@ -4000,6 +3988,14 @@ components:
         content_sentiment_max:
           title: Content Sentiment Max
           type: number
+        iptc_tags:
+          title: Iptc Tags
+        not_iptc_tags:
+          title: Not Iptc Tags
+        source_name:
+          title: Source Name
+        iab_tags:
+          title: Iab Tags
       required:
       - q
       type: object
@@ -4023,25 +4019,20 @@ components:
           x-konfig-generated-schema: konfig-generated-schema-paths--api-latest_headlines-get-parameters-1-schema
         lang:
           title: Lang
-          type: string
         not_lang:
           title: Not Lang
-          type: string
         countries:
           title: Countries
-          type: string
         not_countries:
           title: Not Countries
-          type: string
         sources:
           title: Sources
-          type: string
         predefined_sources:
           title: Predefined Sources
-          type: string
         not_sources:
           title: Not Sources
-          type: string
+        not_author_name:
+          title: Not Author Name
         ranked_only:
           title: Ranked Only
           type: string
@@ -4053,16 +4044,10 @@ components:
           type: boolean
         parent_url:
           title: Parent Url
-          type: string
-        theme:
-          title: Theme
-          type: string
         all_links:
           title: All Links
-          type: string
         all_domain_links:
           title: All Domain Links
-          type: string
         word_count_min:
           minimum: 0
           title: Word Count Min
@@ -4087,21 +4072,27 @@ components:
           type: integer
           x-konfig-original-example: 100
           x-konfig-generated-schema: konfig-generated-schema-paths--api-latest_headlines-get-parameters-19-schema
+        clustering_variable:
+          title: Clustering Variable
+          type: string
         clustering_enabled:
           title: Clustering Enabled
           type: boolean
         clustering_threshold:
           title: Clustering Threshold
           type: number
-        clustering_variable:
-          title: Clustering Variable
-          type: string
         include_nlp_data:
           title: Include Nlp Data
           type: boolean
         has_nlp:
           title: Has Nlp
           type: boolean
+        theme:
+          title: Theme
+          type: string
+        not_theme:
+          title: Not Theme
+          type: string
         ORG_entity_name:
           title: Org Entity Name
           type: string
@@ -4126,6 +4117,10 @@ components:
         content_sentiment_max:
           title: Content Sentiment Max
           type: number
+        iptc_tags:
+          title: Iptc Tags
+        not_iptc_tags:
+          title: Not Iptc Tags
       type: object
       x-do-not-generate: true
       x-konfig-is-parameter:
@@ -4138,22 +4133,24 @@ components:
       - sources
       - predefined_sources
       - not_sources
+      - not_author_name
       - ranked_only
       - is_headline
       - is_paid_content
       - parent_url
-      - theme
       - all_links
       - all_domain_links
       - word_count_min
       - word_count_max
       - page
       - page_size
+      - clustering_variable
       - clustering_enabled
       - clustering_threshold
-      - clustering_variable
       - include_nlp_data
       - has_nlp
+      - theme
+      - not_theme
       - ORG_entity_name
       - PER_entity_name
       - LOC_entity_name
@@ -4162,6 +4159,8 @@ components:
       - title_sentiment_max
       - content_sentiment_min
       - content_sentiment_max
+      - iptc_tags
+      - not_iptc_tags
     konfig-generated-schema-single-parameter-schema-post--api-latest_headlines:
       properties:
         when:
@@ -4180,25 +4179,20 @@ components:
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-LatestHeadlinesRequest-properties-by_parse_date
         lang:
           title: Lang
-          type: string
         not_lang:
           title: Not Lang
-          type: string
         countries:
           title: Countries
-          type: string
         not_countries:
           title: Not Countries
-          type: string
         sources:
           title: Sources
-          type: string
         predefined_sources:
           title: Predefined Sources
-          type: string
         not_sources:
           title: Not Sources
-          type: string
+        not_author_name:
+          title: Not Author Name
         ranked_only:
           title: Ranked Only
           type: string
@@ -4210,16 +4204,10 @@ components:
           type: boolean
         parent_url:
           title: Parent Url
-          type: string
-        theme:
-          title: Theme
-          type: string
         all_links:
           title: All Links
-          type: string
         all_domain_links:
           title: All Domain Links
-          type: string
         word_count_min:
           minimum: 0
           title: Word Count Min
@@ -4244,21 +4232,27 @@ components:
           type: integer
           x-konfig-original-example: 100
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-LatestHeadlinesRequest-properties-page_size
+        clustering_variable:
+          title: Clustering Variable
+          type: string
         clustering_enabled:
           title: Clustering Enabled
           type: boolean
         clustering_threshold:
           title: Clustering Threshold
           type: number
-        clustering_variable:
-          title: Clustering Variable
-          type: string
         include_nlp_data:
           title: Include Nlp Data
           type: boolean
         has_nlp:
           title: Has Nlp
           type: boolean
+        theme:
+          title: Theme
+          type: string
+        not_theme:
+          title: Not Theme
+          type: string
         ORG_entity_name:
           title: Org Entity Name
           type: string
@@ -4283,6 +4277,10 @@ components:
         content_sentiment_max:
           title: Content Sentiment Max
           type: number
+        iptc_tags:
+          title: Iptc Tags
+        not_iptc_tags:
+          title: Not Iptc Tags
       type: object
       x-do-not-generate: true
       x-konfig-is-parameter: []
@@ -4291,27 +4289,23 @@ components:
         author_name:
           title: Author Name
           type: string
+        not_author_name:
+          title: Not Author Name
+          type: string
         sources:
           title: Sources
-          type: string
         predefined_sources:
           title: Predefined Sources
-          type: string
         not_sources:
           title: Not Sources
-          type: string
         lang:
           title: Lang
-          type: string
         not_lang:
           title: Not Lang
-          type: string
         countries:
           title: Countries
-          type: string
         not_countries:
           title: Not Countries
-          type: string
         from_:
           type: string
         to_:
@@ -4325,14 +4319,14 @@ components:
           title: By Parse Date
           type: boolean
           x-konfig-original-example: false
-          x-konfig-generated-schema: konfig-generated-schema-paths--api-authors-get-parameters-11-schema
+          x-konfig-generated-schema: konfig-generated-schema-paths--api-authors-get-parameters-12-schema
         sort_by:
           default: relevancy
           example: relevancy
           title: Sort By
           type: string
           x-konfig-original-example: relevancy
-          x-konfig-generated-schema: konfig-generated-schema-paths--api-authors-get-parameters-12-schema
+          x-konfig-generated-schema: konfig-generated-schema-paths--api-authors-get-parameters-13-schema
         ranked_only:
           title: Ranked Only
           type: string
@@ -4350,13 +4344,10 @@ components:
           type: boolean
         parent_url:
           title: Parent Url
-          type: string
         all_links:
           title: All Links
-          type: string
         all_domain_links:
           title: All Domain Links
-          type: string
         word_count_min:
           minimum: 0
           title: Word Count Min
@@ -4372,7 +4363,7 @@ components:
           title: Page
           type: integer
           x-konfig-original-example: 1
-          x-konfig-generated-schema: konfig-generated-schema-paths--api-authors-get-parameters-23-schema
+          x-konfig-generated-schema: konfig-generated-schema-paths--api-authors-get-parameters-24-schema
         page_size:
           default: 100
           example: 100
@@ -4380,7 +4371,7 @@ components:
           title: Page Size
           type: integer
           x-konfig-original-example: 100
-          x-konfig-generated-schema: konfig-generated-schema-paths--api-authors-get-parameters-24-schema
+          x-konfig-generated-schema: konfig-generated-schema-paths--api-authors-get-parameters-25-schema
         include_nlp_data:
           title: Include Nlp Data
           type: boolean
@@ -4389,6 +4380,9 @@ components:
           type: boolean
         theme:
           title: Theme
+          type: string
+        not_theme:
+          title: Not Theme
           type: string
         ner_name:
           title: Ner Name
@@ -4405,12 +4399,17 @@ components:
         content_sentiment_max:
           title: Content Sentiment Max
           type: number
+        iptc_tags:
+          title: Iptc Tags
+        not_iptc_tags:
+          title: Not Iptc Tags
       required:
       - author_name
       type: object
       x-do-not-generate: true
       x-konfig-is-parameter:
       - author_name
+      - not_author_name
       - sources
       - predefined_sources
       - not_sources
@@ -4438,37 +4437,36 @@ components:
       - include_nlp_data
       - has_nlp
       - theme
+      - not_theme
       - ner_name
       - title_sentiment_min
       - title_sentiment_max
       - content_sentiment_min
       - content_sentiment_max
+      - iptc_tags
+      - not_iptc_tags
     konfig-generated-schema-single-parameter-schema-post--api-authors:
       properties:
         author_name:
           title: Author Name
           type: string
+        not_author_name:
+          title: Not Author Name
+          type: string
         sources:
           title: Sources
-          type: string
         predefined_sources:
           title: Predefined Sources
-          type: string
         not_sources:
           title: Not Sources
-          type: string
         lang:
           title: Lang
-          type: string
         not_lang:
           title: Not Lang
-          type: string
         countries:
           title: Countries
-          type: string
         not_countries:
           title: Not Countries
-          type: string
         from_:
           type: string
         to_:
@@ -4507,13 +4505,10 @@ components:
           type: boolean
         parent_url:
           title: Parent Url
-          type: string
         all_links:
           title: All Links
-          type: string
         all_domain_links:
           title: All Domain Links
-          type: string
         word_count_min:
           minimum: 0
           title: Word Count Min
@@ -4547,6 +4542,9 @@ components:
         theme:
           title: Theme
           type: string
+        not_theme:
+          title: Not Theme
+          type: string
         ner_name:
           title: Ner Name
           type: string
@@ -4562,8 +4560,66 @@ components:
         content_sentiment_max:
           title: Content Sentiment Max
           type: number
+        iptc_tags:
+          title: Iptc Tags
+        not_iptc_tags:
+          title: Not Iptc Tags
       required:
       - author_name
+      type: object
+      x-do-not-generate: true
+      x-konfig-is-parameter: []
+    konfig-generated-schema-single-parameter-schema-get--api-search_by_link:
+      properties:
+        ids:
+          title: Ids
+        links:
+          title: Links
+        page:
+          default: 1
+          example: 1
+          minimum: 0
+          title: Page
+          type: integer
+          x-konfig-original-example: 1
+          x-konfig-generated-schema: konfig-generated-schema-paths--api-search_by_link-get-parameters-2-schema
+        page_size:
+          default: 100
+          example: 100
+          minimum: 0
+          title: Page Size
+          type: integer
+          x-konfig-original-example: 100
+          x-konfig-generated-schema: konfig-generated-schema-paths--api-search_by_link-get-parameters-3-schema
+      type: object
+      x-do-not-generate: true
+      x-konfig-is-parameter:
+      - ids
+      - links
+      - page
+      - page_size
+    konfig-generated-schema-single-parameter-schema-post--api-search_by_link:
+      properties:
+        ids:
+          title: Ids
+        links:
+          title: Links
+        page:
+          default: 1
+          example: 1
+          minimum: 0
+          title: Page
+          type: integer
+          x-konfig-original-example: 1
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-SearchURLRequest-properties-page
+        page_size:
+          default: 100
+          example: 100
+          minimum: 0
+          title: Page Size
+          type: integer
+          x-konfig-original-example: 100
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-SearchURLRequest-properties-page_size
       type: object
       x-do-not-generate: true
       x-konfig-is-parameter: []
@@ -4603,25 +4659,18 @@ components:
           x-konfig-generated-schema: konfig-generated-schema-paths--api-search_similar-get-parameters-4-schema
         predefined_sources:
           title: Predefined Sources
-          type: string
         sources:
           title: Sources
-          type: string
         not_sources:
           title: Not Sources
-          type: string
         lang:
           title: Lang
-          type: string
         not_lang:
           title: Not Lang
-          type: string
         countries:
           title: Countries
-          type: string
         not_countries:
           title: Not Countries
-          type: string
         from_:
           type: string
         to_:
@@ -4660,13 +4709,10 @@ components:
           type: boolean
         parent_url:
           title: Parent Url
-          type: string
         all_links:
           title: All Links
-          type: string
         all_domain_links:
           title: All Domain Links
-          type: string
         word_count_min:
           minimum: 0
           title: Word Count Min
@@ -4700,6 +4746,9 @@ components:
         theme:
           title: Theme
           type: string
+        not_theme:
+          title: Not Theme
+          type: string
         ner_name:
           title: Ner Name
           type: string
@@ -4715,6 +4764,10 @@ components:
         content_sentiment_max:
           title: Content Sentiment Max
           type: number
+        iptc_tags:
+          title: Iptc Tags
+        not_iptc_tags:
+          title: Not Iptc Tags
       required:
       - q
       type: object
@@ -4752,11 +4805,14 @@ components:
       - include_nlp_data
       - has_nlp
       - theme
+      - not_theme
       - ner_name
       - title_sentiment_min
       - title_sentiment_max
       - content_sentiment_min
       - content_sentiment_max
+      - iptc_tags
+      - not_iptc_tags
     konfig-generated-schema-single-parameter-schema-post--api-search_similar:
       properties:
         q:
@@ -4793,25 +4849,18 @@ components:
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-MoreLikeThisRequest-properties-similar_documents_fields
         predefined_sources:
           title: Predefined Sources
-          type: string
         sources:
           title: Sources
-          type: string
         not_sources:
           title: Not Sources
-          type: string
         lang:
           title: Lang
-          type: string
         not_lang:
           title: Not Lang
-          type: string
         countries:
           title: Countries
-          type: string
         not_countries:
           title: Not Countries
-          type: string
         from_:
           type: string
         to_:
@@ -4850,13 +4899,10 @@ components:
           type: boolean
         parent_url:
           title: Parent Url
-          type: string
         all_links:
           title: All Links
-          type: string
         all_domain_links:
           title: All Domain Links
-          type: string
         word_count_min:
           minimum: 0
           title: Word Count Min
@@ -4890,6 +4936,9 @@ components:
         theme:
           title: Theme
           type: string
+        not_theme:
+          title: Not Theme
+          type: string
         ner_name:
           title: Ner Name
           type: string
@@ -4905,6 +4954,10 @@ components:
         content_sentiment_max:
           title: Content Sentiment Max
           type: number
+        iptc_tags:
+          title: Iptc Tags
+        not_iptc_tags:
+          title: Not Iptc Tags
       required:
       - q
       type: object
@@ -4918,11 +4971,34 @@ components:
         countries:
           title: Countries
           type: string
+        predefined_sources:
+          title: Predefined Sources
+          type: string
+        include_additional_info:
+          title: Include Additional Info
+          type: boolean
+        from_rank:
+          title: From Rank
+          type: integer
+        to_rank:
+          title: To Rank
+          type: integer
+        source_name:
+          title: Source Name
+        source_url:
+          title: Source Url
+          type: string
       type: object
       x-do-not-generate: true
       x-konfig-is-parameter:
       - lang
       - countries
+      - predefined_sources
+      - include_additional_info
+      - from_rank
+      - to_rank
+      - source_name
+      - source_url
     konfig-generated-schema-single-parameter-schema-post--api-sources:
       properties:
         lang:
@@ -4930,6 +5006,23 @@ components:
           type: string
         countries:
           title: Countries
+          type: string
+        predefined_sources:
+          title: Predefined Sources
+          type: string
+        include_additional_info:
+          title: Include Additional Info
+          type: boolean
+        from_rank:
+          title: From Rank
+          type: integer
+        to_rank:
+          title: To Rank
+          type: integer
+        source_name:
+          title: Source Name
+        source_url:
+          title: Source Url
           type: string
       type: object
       x-do-not-generate: true
@@ -4944,84 +5037,24 @@ components:
       type: object
       x-do-not-generate: true
       x-konfig-is-parameter: []
-    FCSearchResponse:
+    CSearchResponse:
       example:
         total_hits: 0
         user_input: "{}"
         page: 6
         total_pages: 1
-        clusters_count: 7
+        clusters_count: 5
         articles:
-        - country: country
-          paid_content: true
-          link: link
-          description: description
-          language: language
-          media: media
-          title: title
-          all_domain_links: ""
-          journalists: ""
-          content: content
-          score: 2.3021358869347655
-          word_count: 0
-          domain_url: domain_url
-          all_links: ""
-          rights: rights
-          rank: 5
-          twitter_account: twitter_account
-          id: id
-          name_source: name_source
-          extraction_data: extraction_data
-          updated_date_precision: updated_date_precision
-          full_domain_url: full_domain_url
-          author: author
-          is_headline: is_headline
-          nlp: {}
-          published_date_precision: published_date_precision
-          is_opinion: true
-          updated_date: updated_date
-          published_date: published_date
-          authors: ""
-          parse_date: parse_date
-        - country: country
-          paid_content: true
-          link: link
-          description: description
-          language: language
-          media: media
-          title: title
-          all_domain_links: ""
-          journalists: ""
-          content: content
-          score: 2.3021358869347655
-          word_count: 0
-          domain_url: domain_url
-          all_links: ""
-          rights: rights
-          rank: 5
-          twitter_account: twitter_account
-          id: id
-          name_source: name_source
-          extraction_data: extraction_data
-          updated_date_precision: updated_date_precision
-          full_domain_url: full_domain_url
-          author: author
-          is_headline: is_headline
-          nlp: {}
-          published_date_precision: published_date_precision
-          is_opinion: true
-          updated_date: updated_date
-          published_date: published_date
-          authors: ""
-          parse_date: parse_date
+        - "{}"
+        - "{}"
         clusters:
         - cluster_id: cluster_id
-          cluster_size: 9
+          cluster_size: 2
           articles:
           - "{}"
           - "{}"
         - cluster_id: cluster_id
-          cluster_size: 9
+          cluster_size: 2
           articles:
           - "{}"
           - "{}"
@@ -5049,7 +5082,7 @@ components:
           type: integer
         articles:
           items:
-            $ref: '#/components/schemas/Articles_Property_inner_3'
+            type: object
           title: Articles
           type: array
         user_input:
@@ -5064,10 +5097,15 @@ components:
           title: Clusters
           type: array
       required:
+      - page
+      - page_size
+      - total_hits
+      - total_pages
       - user_input
       title: SearchResponse
       type: object
-    FCSearchResponse1:
+      x-konfig-is-used-in-successful-response: true
+    CSearchResponse1:
       example:
         total_hits: 0
         user_input: "{}"
@@ -5075,76 +5113,16 @@ components:
         total_pages: 1
         clusters_count: 5
         articles:
-        - country: country
-          paid_content: true
-          link: link
-          description: description
-          language: language
-          media: media
-          title: title
-          all_domain_links: ""
-          journalists: ""
-          content: content
-          score: 2.3021358869347655
-          word_count: 0
-          domain_url: domain_url
-          all_links: ""
-          rights: rights
-          rank: 5
-          twitter_account: twitter_account
-          id: id
-          name_source: name_source
-          extraction_data: extraction_data
-          updated_date_precision: updated_date_precision
-          full_domain_url: full_domain_url
-          author: author
-          is_headline: is_headline
-          nlp: {}
-          published_date_precision: published_date_precision
-          is_opinion: true
-          updated_date: updated_date
-          published_date: published_date
-          authors: ""
-          parse_date: parse_date
-        - country: country
-          paid_content: true
-          link: link
-          description: description
-          language: language
-          media: media
-          title: title
-          all_domain_links: ""
-          journalists: ""
-          content: content
-          score: 2.3021358869347655
-          word_count: 0
-          domain_url: domain_url
-          all_links: ""
-          rights: rights
-          rank: 5
-          twitter_account: twitter_account
-          id: id
-          name_source: name_source
-          extraction_data: extraction_data
-          updated_date_precision: updated_date_precision
-          full_domain_url: full_domain_url
-          author: author
-          is_headline: is_headline
-          nlp: {}
-          published_date_precision: published_date_precision
-          is_opinion: true
-          updated_date: updated_date
-          published_date: published_date
-          authors: ""
-          parse_date: parse_date
+        - "{}"
+        - "{}"
         clusters:
         - cluster_id: cluster_id
-          cluster_size: 9
+          cluster_size: 2
           articles:
           - "{}"
           - "{}"
         - cluster_id: cluster_id
-          cluster_size: 9
+          cluster_size: 2
           articles:
           - "{}"
           - "{}"
@@ -5172,7 +5150,7 @@ components:
           type: integer
         articles:
           items:
-            $ref: '#/components/schemas/Articles_Property_inner_3'
+            type: object
           title: Articles
           type: array
         user_input:
@@ -5187,10 +5165,15 @@ components:
           title: Clusters
           type: array
       required:
+      - page
+      - page_size
+      - total_hits
+      - total_pages
       - user_input
       title: SearchResponse
       type: object
-    CSLHFResponse:
+      x-konfig-is-used-in-successful-response: true
+    CSLHResponse:
       example:
         total_hits: 0
         user_input: "{}"
@@ -5198,76 +5181,16 @@ components:
         total_pages: 1
         clusters_count: 5
         articles:
-        - country: country
-          paid_content: true
-          link: link
-          description: description
-          language: language
-          media: media
-          title: title
-          all_domain_links: ""
-          journalists: ""
-          content: content
-          score: 7.061401241503109
-          word_count: 0
-          domain_url: domain_url
-          all_links: ""
-          rights: rights
-          rank: 2
-          twitter_account: twitter_account
-          id: id
-          name_source: name_source
-          extraction_data: extraction_data
-          updated_date_precision: updated_date_precision
-          full_domain_url: full_domain_url
-          author: author
-          is_headline: is_headline
-          nlp: {}
-          published_date_precision: published_date_precision
-          is_opinion: true
-          updated_date: updated_date
-          published_date: published_date
-          authors: ""
-          parse_date: parse_date
-        - country: country
-          paid_content: true
-          link: link
-          description: description
-          language: language
-          media: media
-          title: title
-          all_domain_links: ""
-          journalists: ""
-          content: content
-          score: 7.061401241503109
-          word_count: 0
-          domain_url: domain_url
-          all_links: ""
-          rights: rights
-          rank: 2
-          twitter_account: twitter_account
-          id: id
-          name_source: name_source
-          extraction_data: extraction_data
-          updated_date_precision: updated_date_precision
-          full_domain_url: full_domain_url
-          author: author
-          is_headline: is_headline
-          nlp: {}
-          published_date_precision: published_date_precision
-          is_opinion: true
-          updated_date: updated_date
-          published_date: published_date
-          authors: ""
-          parse_date: parse_date
+        - "{}"
+        - "{}"
         clusters:
         - cluster_id: cluster_id
-          cluster_size: 9
+          cluster_size: 2
           articles:
           - "{}"
           - "{}"
         - cluster_id: cluster_id
-          cluster_size: 9
+          cluster_size: 2
           articles:
           - "{}"
           - "{}"
@@ -5306,14 +5229,18 @@ components:
           type: object
         articles:
           items:
-            $ref: '#/components/schemas/Articles_Property_inner'
+            type: object
           title: Articles
           type: array
       required:
+      - page
+      - page_size
+      - total_hits
+      - total_pages
       - user_input
       title: ClusteringSearchResponse
       type: object
-    CSLHFResponse1:
+    CSLHResponse1:
       example:
         total_hits: 0
         user_input: "{}"
@@ -5321,76 +5248,16 @@ components:
         total_pages: 1
         clusters_count: 5
         articles:
-        - country: country
-          paid_content: true
-          link: link
-          description: description
-          language: language
-          media: media
-          title: title
-          all_domain_links: ""
-          journalists: ""
-          content: content
-          score: 7.061401241503109
-          word_count: 0
-          domain_url: domain_url
-          all_links: ""
-          rights: rights
-          rank: 2
-          twitter_account: twitter_account
-          id: id
-          name_source: name_source
-          extraction_data: extraction_data
-          updated_date_precision: updated_date_precision
-          full_domain_url: full_domain_url
-          author: author
-          is_headline: is_headline
-          nlp: {}
-          published_date_precision: published_date_precision
-          is_opinion: true
-          updated_date: updated_date
-          published_date: published_date
-          authors: ""
-          parse_date: parse_date
-        - country: country
-          paid_content: true
-          link: link
-          description: description
-          language: language
-          media: media
-          title: title
-          all_domain_links: ""
-          journalists: ""
-          content: content
-          score: 7.061401241503109
-          word_count: 0
-          domain_url: domain_url
-          all_links: ""
-          rights: rights
-          rank: 2
-          twitter_account: twitter_account
-          id: id
-          name_source: name_source
-          extraction_data: extraction_data
-          updated_date_precision: updated_date_precision
-          full_domain_url: full_domain_url
-          author: author
-          is_headline: is_headline
-          nlp: {}
-          published_date_precision: published_date_precision
-          is_opinion: true
-          updated_date: updated_date
-          published_date: published_date
-          authors: ""
-          parse_date: parse_date
+        - "{}"
+        - "{}"
         clusters:
         - cluster_id: cluster_id
-          cluster_size: 9
+          cluster_size: 2
           articles:
           - "{}"
           - "{}"
         - cluster_id: cluster_id
-          cluster_size: 9
+          cluster_size: 2
           articles:
           - "{}"
           - "{}"
@@ -5429,10 +5296,14 @@ components:
           type: object
         articles:
           items:
-            $ref: '#/components/schemas/Articles_Property_inner'
+            type: object
           title: Articles
           type: array
       required:
+      - page
+      - page_size
+      - total_hits
+      - total_pages
       - user_input
       title: ClusteringSearchResponse
       type: object
@@ -5529,7 +5400,7 @@ components:
           type: integer
         articles:
           items:
-            $ref: '#/components/schemas/Articles_Property_inner_1'
+            $ref: '#/components/schemas/Articles_Property_inner'
           title: Articles
           type: array
         user_input:
@@ -5632,7 +5503,7 @@ components:
           type: integer
         articles:
           items:
-            $ref: '#/components/schemas/Articles_Property_inner_1'
+            $ref: '#/components/schemas/Articles_Property_inner'
           title: Articles
           type: array
         user_input:
@@ -5737,7 +5608,7 @@ components:
           type: integer
         articles:
           items:
-            $ref: '#/components/schemas/Articles_Property_inner_2'
+            $ref: '#/components/schemas/Articles_Property_inner_1'
           title: Articles
           type: array
         user_input:
@@ -5842,7 +5713,7 @@ components:
           type: integer
         articles:
           items:
-            $ref: '#/components/schemas/Articles_Property_inner_2'
+            $ref: '#/components/schemas/Articles_Property_inner_1'
           title: Articles
           type: array
         user_input:
@@ -5855,7 +5726,7 @@ components:
     Cluster_1:
       example:
         cluster_id: cluster_id
-        cluster_size: 9
+        cluster_size: 2
         articles:
         - "{}"
         - "{}"
@@ -5878,133 +5749,6 @@ components:
       title: Cluster
       type: object
     Articles_Property_inner:
-      example:
-        country: country
-        paid_content: true
-        link: link
-        description: description
-        language: language
-        media: media
-        title: title
-        all_domain_links: ""
-        journalists: ""
-        content: content
-        score: 7.061401241503109
-        word_count: 0
-        domain_url: domain_url
-        all_links: ""
-        rights: rights
-        rank: 2
-        twitter_account: twitter_account
-        id: id
-        name_source: name_source
-        extraction_data: extraction_data
-        updated_date_precision: updated_date_precision
-        full_domain_url: full_domain_url
-        author: author
-        is_headline: is_headline
-        nlp: {}
-        published_date_precision: published_date_precision
-        is_opinion: true
-        updated_date: updated_date
-        published_date: published_date
-        authors: ""
-        parse_date: parse_date
-      properties:
-        title:
-          title: Title
-          type: string
-        description:
-          title: Description
-          type: string
-        author:
-          title: Author
-          type: string
-        authors: {}
-        journalists: {}
-        published_date:
-          title: Published Date
-          type: string
-        published_date_precision:
-          title: Published Date Precision
-          type: string
-        updated_date:
-          title: Updated Date
-          type: string
-        updated_date_precision:
-          title: Updated Date Precision
-          type: string
-        parse_date:
-          title: Parse Date
-          type: string
-        link:
-          title: Link
-          type: string
-        domain_url:
-          title: Domain Url
-          type: string
-        full_domain_url:
-          title: Full Domain Url
-          type: string
-        name_source:
-          title: Name Source
-          type: string
-        is_headline:
-          title: Is Headline
-          type: string
-        paid_content:
-          title: Paid Content
-          type: boolean
-        extraction_data:
-          title: Extraction Data
-          type: string
-        country:
-          title: Country
-          type: string
-        rights:
-          title: Rights
-          type: string
-        rank:
-          title: Rank
-          type: integer
-        media:
-          title: Media
-          type: string
-        language:
-          title: Language
-          type: string
-        content:
-          title: Content
-          type: string
-        word_count:
-          default: 0
-          example: 0
-          title: Word Count
-          type: integer
-          x-konfig-original-example: 0
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__LatestHeadlinesResponse__ArticleResult-properties-word_count
-        is_opinion:
-          title: Is Opinion
-          type: boolean
-        twitter_account:
-          title: Twitter Account
-          type: string
-        all_links: {}
-        all_domain_links: {}
-        nlp:
-          example: {}
-          title: Nlp
-          type: object
-          x-konfig-original-example: {}
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__LatestHeadlinesResponse__ArticleResult-properties-nlp
-        id:
-          title: Id
-          type: string
-        score:
-          title: Score
-          type: number
-      type: object
-    Articles_Property_inner_1:
       example:
         country: country
         paid_content: true
@@ -6152,7 +5896,7 @@ components:
       - title
       title: SimilarDocument
       type: object
-    Articles_Property_inner_2:
+    Articles_Property_inner_1:
       example:
         country: country
         paid_content: true
@@ -6288,133 +6032,6 @@ components:
           type: array
           x-konfig-original-example: []
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__MoreLikeThisResponse__ArticleResult-properties-similar_documents
-      type: object
-    Articles_Property_inner_3:
-      example:
-        country: country
-        paid_content: true
-        link: link
-        description: description
-        language: language
-        media: media
-        title: title
-        all_domain_links: ""
-        journalists: ""
-        content: content
-        score: 2.3021358869347655
-        word_count: 0
-        domain_url: domain_url
-        all_links: ""
-        rights: rights
-        rank: 5
-        twitter_account: twitter_account
-        id: id
-        name_source: name_source
-        extraction_data: extraction_data
-        updated_date_precision: updated_date_precision
-        full_domain_url: full_domain_url
-        author: author
-        is_headline: is_headline
-        nlp: {}
-        published_date_precision: published_date_precision
-        is_opinion: true
-        updated_date: updated_date
-        published_date: published_date
-        authors: ""
-        parse_date: parse_date
-      properties:
-        title:
-          title: Title
-          type: string
-        description:
-          title: Description
-          type: string
-        author:
-          title: Author
-          type: string
-        authors: {}
-        journalists: {}
-        published_date:
-          title: Published Date
-          type: string
-        published_date_precision:
-          title: Published Date Precision
-          type: string
-        updated_date:
-          title: Updated Date
-          type: string
-        updated_date_precision:
-          title: Updated Date Precision
-          type: string
-        parse_date:
-          title: Parse Date
-          type: string
-        link:
-          title: Link
-          type: string
-        domain_url:
-          title: Domain Url
-          type: string
-        full_domain_url:
-          title: Full Domain Url
-          type: string
-        name_source:
-          title: Name Source
-          type: string
-        is_headline:
-          title: Is Headline
-          type: string
-        paid_content:
-          title: Paid Content
-          type: boolean
-        extraction_data:
-          title: Extraction Data
-          type: string
-        country:
-          title: Country
-          type: string
-        rights:
-          title: Rights
-          type: string
-        rank:
-          title: Rank
-          type: integer
-        media:
-          title: Media
-          type: string
-        language:
-          title: Language
-          type: string
-        content:
-          title: Content
-          type: string
-        word_count:
-          default: 0
-          example: 0
-          title: Word Count
-          type: integer
-          x-konfig-original-example: 0
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__SearchResponse__ArticleResult-properties-word_count
-        is_opinion:
-          title: Is Opinion
-          type: boolean
-        twitter_account:
-          title: Twitter Account
-          type: string
-        all_links: {}
-        all_domain_links: {}
-        nlp:
-          example: {}
-          title: Nlp
-          type: object
-          x-konfig-original-example: {}
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__SearchResponse__ArticleResult-properties-nlp
-        id:
-          title: Id
-          type: string
-        score:
-          title: Score
-          type: number
       type: object
   securitySchemes:
     apiKey:

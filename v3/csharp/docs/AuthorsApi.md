@@ -33,13 +33,21 @@ namespace Example
             client.SetApiKey("YOUR_API_KEY");
 
             var authorName = "authorName_example";
-            var sources = "sources_example";
-            var predefinedSources = "predefinedSources_example";
-            var notSources = "notSources_example";
-            var lang = "lang_example";
-            var notLang = "notLang_example";
-            var countries = "countries_example";
-            var notCountries = "notCountries_example";
+            var notAuthorName = "notAuthorName_example";
+            var sources = new Object(
+            );
+            var predefinedSources = new Object(
+            );
+            var notSources = new Object(
+            );
+            var lang = new Object(
+            );
+            var notLang = new Object(
+            );
+            var countries = new Object(
+            );
+            var notCountries = new Object(
+            );
             var from = new From(DateTime.Now);
             var to = new To(DateTime.Now);
             var publishedDatePrecision = "publishedDatePrecision_example";
@@ -50,9 +58,12 @@ namespace Example
             var toRank = 56;
             var isHeadline = true;
             var isPaidContent = true;
-            var parentUrl = "parentUrl_example";
-            var allLinks = "allLinks_example";
-            var allDomainLinks = "allDomainLinks_example";
+            var parentUrl = new Object(
+            );
+            var allLinks = new Object(
+            );
+            var allDomainLinks = new Object(
+            );
             var wordCountMin = 56;
             var wordCountMax = 56;
             var page = 1;
@@ -60,16 +71,21 @@ namespace Example
             var includeNlpData = true;
             var hasNlp = true;
             var theme = "theme_example";
+            var notTheme = "notTheme_example";
             var nerName = "nerName_example";
             var titleSentimentMin = 8.14D;
             var titleSentimentMax = 8.14D;
             var contentSentimentMin = 8.14D;
             var contentSentimentMax = 8.14D;
+            var iptcTags = new Object(
+            );
+            var notIptcTags = new Object(
+            );
             
             try
             {
                 // [Get] Search By Author Request
-                AuthorsGetResponse result = client.Authors.Get(authorName, sources, predefinedSources, notSources, lang, notLang, countries, notCountries, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax);
+                AuthorsGetResponse result = client.Authors.Get(authorName, notAuthorName, sources, predefinedSources, notSources, lang, notLang, countries, notCountries, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, notTheme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -96,7 +112,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // [Get] Search By Author Request
-    ApiResponse<AuthorsGetResponse> response = apiInstance.GetWithHttpInfo(authorName, sources, predefinedSources, notSources, lang, notLang, countries, notCountries, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax);
+    ApiResponse<AuthorsGetResponse> response = apiInstance.GetWithHttpInfo(authorName, notAuthorName, sources, predefinedSources, notSources, lang, notLang, countries, notCountries, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, notTheme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -114,13 +130,14 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **authorName** | **string** |  |  |
-| **sources** | **string** |  | [optional]  |
-| **predefinedSources** | **string** |  | [optional]  |
-| **notSources** | **string** |  | [optional]  |
-| **lang** | **string** |  | [optional]  |
-| **notLang** | **string** |  | [optional]  |
-| **countries** | **string** |  | [optional]  |
-| **notCountries** | **string** |  | [optional]  |
+| **notAuthorName** | **string** |  | [optional]  |
+| **sources** | [**Object**](Object.md) |  | [optional]  |
+| **predefinedSources** | [**Object**](Object.md) |  | [optional]  |
+| **notSources** | [**Object**](Object.md) |  | [optional]  |
+| **lang** | [**Object**](Object.md) |  | [optional]  |
+| **notLang** | [**Object**](Object.md) |  | [optional]  |
+| **countries** | [**Object**](Object.md) |  | [optional]  |
+| **notCountries** | [**Object**](Object.md) |  | [optional]  |
 | **from** | [**From**](From.md) |  | [optional]  |
 | **to** | [**To**](To.md) |  | [optional]  |
 | **publishedDatePrecision** | **string** |  | [optional]  |
@@ -131,9 +148,9 @@ catch (ApiException e)
 | **toRank** | **int?** |  | [optional]  |
 | **isHeadline** | **bool?** |  | [optional]  |
 | **isPaidContent** | **bool?** |  | [optional]  |
-| **parentUrl** | **string** |  | [optional]  |
-| **allLinks** | **string** |  | [optional]  |
-| **allDomainLinks** | **string** |  | [optional]  |
+| **parentUrl** | [**Object**](Object.md) |  | [optional]  |
+| **allLinks** | [**Object**](Object.md) |  | [optional]  |
+| **allDomainLinks** | [**Object**](Object.md) |  | [optional]  |
 | **wordCountMin** | **int?** |  | [optional]  |
 | **wordCountMax** | **int?** |  | [optional]  |
 | **page** | **int?** |  | [optional] [default to 1] |
@@ -141,11 +158,14 @@ catch (ApiException e)
 | **includeNlpData** | **bool?** |  | [optional]  |
 | **hasNlp** | **bool?** |  | [optional]  |
 | **theme** | **string** |  | [optional]  |
+| **notTheme** | **string** |  | [optional]  |
 | **nerName** | **string** |  | [optional]  |
 | **titleSentimentMin** | **double?** |  | [optional]  |
 | **titleSentimentMax** | **double?** |  | [optional]  |
 | **contentSentimentMin** | **double?** |  | [optional]  |
 | **contentSentimentMax** | **double?** |  | [optional]  |
+| **iptcTags** | [**Object**](Object.md) |  | [optional]  |
+| **notIptcTags** | [**Object**](Object.md) |  | [optional]  |
 
 ### Return type
 
@@ -186,6 +206,7 @@ namespace Example
             client.SetApiKey("YOUR_API_KEY");
 
             var authorName = "authorName_example";
+            var notAuthorName = "notAuthorName_example";
             var sources = "sources_example";
             var predefinedSources = "predefinedSources_example";
             var notSources = "notSources_example";
@@ -213,14 +234,18 @@ namespace Example
             var includeNlpData = false;
             var hasNlp = false;
             var theme = "theme_example";
+            var notTheme = "notTheme_example";
             var nerName = "nerName_example";
             var titleSentimentMin = default(double);
             var titleSentimentMax = default(double);
             var contentSentimentMin = default(double);
             var contentSentimentMax = default(double);
+            var iptcTags = "iptcTags_example";
+            var notIptcTags = "notIptcTags_example";
             
             var authorSearchRequest = new AuthorSearchRequest(
                 authorName,
+                notAuthorName,
                 sources,
                 predefinedSources,
                 notSources,
@@ -248,11 +273,14 @@ namespace Example
                 includeNlpData,
                 hasNlp,
                 theme,
+                notTheme,
                 nerName,
                 titleSentimentMin,
                 titleSentimentMax,
                 contentSentimentMin,
-                contentSentimentMax
+                contentSentimentMax,
+                iptcTags,
+                notIptcTags
             );
             
             try

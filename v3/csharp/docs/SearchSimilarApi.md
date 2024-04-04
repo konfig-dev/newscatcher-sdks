@@ -37,13 +37,20 @@ namespace Example
             var includeSimilarDocuments = false;
             var similarDocumentsNumber = 5;
             var similarDocumentsFields = "title,content";
-            var predefinedSources = "predefinedSources_example";
-            var sources = "sources_example";
-            var notSources = "notSources_example";
-            var lang = "lang_example";
-            var notLang = "notLang_example";
-            var countries = "countries_example";
-            var notCountries = "notCountries_example";
+            var predefinedSources = new Object(
+            );
+            var sources = new Object(
+            );
+            var notSources = new Object(
+            );
+            var lang = new Object(
+            );
+            var notLang = new Object(
+            );
+            var countries = new Object(
+            );
+            var notCountries = new Object(
+            );
             var from = new From(DateTime.Now);
             var to = new To(DateTime.Now);
             var byParseDate = false;
@@ -54,9 +61,12 @@ namespace Example
             var toRank = 56;
             var isHeadline = true;
             var isPaidContent = true;
-            var parentUrl = "parentUrl_example";
-            var allLinks = "allLinks_example";
-            var allDomainLinks = "allDomainLinks_example";
+            var parentUrl = new Object(
+            );
+            var allLinks = new Object(
+            );
+            var allDomainLinks = new Object(
+            );
             var wordCountMin = 56;
             var wordCountMax = 56;
             var page = 1;
@@ -64,16 +74,21 @@ namespace Example
             var includeNlpData = true;
             var hasNlp = true;
             var theme = "theme_example";
+            var notTheme = "notTheme_example";
             var nerName = "nerName_example";
             var titleSentimentMin = 8.14D;
             var titleSentimentMax = 8.14D;
             var contentSentimentMin = 8.14D;
             var contentSentimentMax = 8.14D;
+            var iptcTags = new Object(
+            );
+            var notIptcTags = new Object(
+            );
             
             try
             {
                 // [Get] Search For Similar Articles Request
-                SearchSimilarGetResponse result = client.SearchSimilar.Get(q, searchIn, includeSimilarDocuments, similarDocumentsNumber, similarDocumentsFields, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, from, to, byParseDate, publishedDatePrecision, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax);
+                SearchSimilarGetResponse result = client.SearchSimilar.Get(q, searchIn, includeSimilarDocuments, similarDocumentsNumber, similarDocumentsFields, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, from, to, byParseDate, publishedDatePrecision, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, notTheme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -100,7 +115,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // [Get] Search For Similar Articles Request
-    ApiResponse<SearchSimilarGetResponse> response = apiInstance.GetWithHttpInfo(q, searchIn, includeSimilarDocuments, similarDocumentsNumber, similarDocumentsFields, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, from, to, byParseDate, publishedDatePrecision, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax);
+    ApiResponse<SearchSimilarGetResponse> response = apiInstance.GetWithHttpInfo(q, searchIn, includeSimilarDocuments, similarDocumentsNumber, similarDocumentsFields, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, from, to, byParseDate, publishedDatePrecision, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, notTheme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -122,13 +137,13 @@ catch (ApiException e)
 | **includeSimilarDocuments** | **bool?** |  | [optional] [default to false] |
 | **similarDocumentsNumber** | **int?** |  | [optional] [default to 5] |
 | **similarDocumentsFields** | **string** |  | [optional] [default to &quot;title,content&quot;] |
-| **predefinedSources** | **string** |  | [optional]  |
-| **sources** | **string** |  | [optional]  |
-| **notSources** | **string** |  | [optional]  |
-| **lang** | **string** |  | [optional]  |
-| **notLang** | **string** |  | [optional]  |
-| **countries** | **string** |  | [optional]  |
-| **notCountries** | **string** |  | [optional]  |
+| **predefinedSources** | [**Object**](Object.md) |  | [optional]  |
+| **sources** | [**Object**](Object.md) |  | [optional]  |
+| **notSources** | [**Object**](Object.md) |  | [optional]  |
+| **lang** | [**Object**](Object.md) |  | [optional]  |
+| **notLang** | [**Object**](Object.md) |  | [optional]  |
+| **countries** | [**Object**](Object.md) |  | [optional]  |
+| **notCountries** | [**Object**](Object.md) |  | [optional]  |
 | **from** | [**From**](From.md) |  | [optional]  |
 | **to** | [**To**](To.md) |  | [optional]  |
 | **byParseDate** | **bool?** |  | [optional] [default to false] |
@@ -139,9 +154,9 @@ catch (ApiException e)
 | **toRank** | **int?** |  | [optional]  |
 | **isHeadline** | **bool?** |  | [optional]  |
 | **isPaidContent** | **bool?** |  | [optional]  |
-| **parentUrl** | **string** |  | [optional]  |
-| **allLinks** | **string** |  | [optional]  |
-| **allDomainLinks** | **string** |  | [optional]  |
+| **parentUrl** | [**Object**](Object.md) |  | [optional]  |
+| **allLinks** | [**Object**](Object.md) |  | [optional]  |
+| **allDomainLinks** | [**Object**](Object.md) |  | [optional]  |
 | **wordCountMin** | **int?** |  | [optional]  |
 | **wordCountMax** | **int?** |  | [optional]  |
 | **page** | **int?** |  | [optional] [default to 1] |
@@ -149,11 +164,14 @@ catch (ApiException e)
 | **includeNlpData** | **bool?** |  | [optional]  |
 | **hasNlp** | **bool?** |  | [optional]  |
 | **theme** | **string** |  | [optional]  |
+| **notTheme** | **string** |  | [optional]  |
 | **nerName** | **string** |  | [optional]  |
 | **titleSentimentMin** | **double?** |  | [optional]  |
 | **titleSentimentMax** | **double?** |  | [optional]  |
 | **contentSentimentMin** | **double?** |  | [optional]  |
 | **contentSentimentMax** | **double?** |  | [optional]  |
+| **iptcTags** | [**Object**](Object.md) |  | [optional]  |
+| **notIptcTags** | [**Object**](Object.md) |  | [optional]  |
 
 ### Return type
 
@@ -225,11 +243,14 @@ namespace Example
             var includeNlpData = false;
             var hasNlp = false;
             var theme = "theme_example";
+            var notTheme = "notTheme_example";
             var nerName = "nerName_example";
             var titleSentimentMin = default(double);
             var titleSentimentMax = default(double);
             var contentSentimentMin = default(double);
             var contentSentimentMax = default(double);
+            var iptcTags = "iptcTags_example";
+            var notIptcTags = "notIptcTags_example";
             
             var moreLikeThisRequest = new MoreLikeThisRequest(
                 q,
@@ -264,11 +285,14 @@ namespace Example
                 includeNlpData,
                 hasNlp,
                 theme,
+                notTheme,
                 nerName,
                 titleSentimentMin,
                 titleSentimentMax,
                 contentSentimentMin,
-                contentSentimentMax
+                contentSentimentMax,
+                iptcTags,
+                notIptcTags
             );
             
             try

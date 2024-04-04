@@ -34,13 +34,22 @@ namespace Example
 
             var q = "q_example";
             var searchIn = "title_content";
-            var predefinedSources = "predefinedSources_example";
-            var sources = "sources_example";
-            var notSources = "notSources_example";
-            var lang = "lang_example";
-            var notLang = "notLang_example";
-            var countries = "countries_example";
-            var notCountries = "notCountries_example";
+            var predefinedSources = new Object(
+            );
+            var sources = new Object(
+            );
+            var notSources = new Object(
+            );
+            var lang = new Object(
+            );
+            var notLang = new Object(
+            );
+            var countries = new Object(
+            );
+            var notCountries = new Object(
+            );
+            var notAuthorName = new Object(
+            );
             var from = new From(DateTime.Now);
             var to = new To(DateTime.Now);
             var publishedDatePrecision = "publishedDatePrecision_example";
@@ -51,19 +60,23 @@ namespace Example
             var toRank = 56;
             var isHeadline = true;
             var isPaidContent = true;
-            var parentUrl = "parentUrl_example";
-            var allLinks = "allLinks_example";
-            var allDomainLinks = "allDomainLinks_example";
+            var parentUrl = new Object(
+            );
+            var allLinks = new Object(
+            );
+            var allDomainLinks = new Object(
+            );
             var wordCountMin = 56;
             var wordCountMax = 56;
             var page = 1;
             var pageSize = 100;
+            var clusteringVariable = "clusteringVariable_example";
             var clusteringEnabled = true;
             var clusteringThreshold = 8.14D;
-            var clusteringVariable = "clusteringVariable_example";
             var includeNlpData = true;
             var hasNlp = true;
             var theme = "theme_example";
+            var notTheme = "notTheme_example";
             var oRGEntityName = "oRGEntityName_example";
             var pEREntityName = "pEREntityName_example";
             var lOCEntityName = "lOCEntityName_example";
@@ -72,11 +85,19 @@ namespace Example
             var titleSentimentMax = 8.14D;
             var contentSentimentMin = 8.14D;
             var contentSentimentMax = 8.14D;
+            var iptcTags = new Object(
+            );
+            var notIptcTags = new Object(
+            );
+            var sourceName = new Object(
+            );
+            var iabTags = new Object(
+            );
             
             try
             {
                 // [Get] Search For Articles Request
-                SearchGetResponse result = client.Search.Get(q, searchIn, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringEnabled, clusteringThreshold, clusteringVariable, includeNlpData, hasNlp, theme, oRGEntityName, pEREntityName, lOCEntityName, mISCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax);
+                SearchGetResponse result = client.Search.Get(q, searchIn, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, notAuthorName, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, oRGEntityName, pEREntityName, lOCEntityName, mISCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, sourceName, iabTags);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -103,7 +124,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // [Get] Search For Articles Request
-    ApiResponse<SearchGetResponse> response = apiInstance.GetWithHttpInfo(q, searchIn, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringEnabled, clusteringThreshold, clusteringVariable, includeNlpData, hasNlp, theme, oRGEntityName, pEREntityName, lOCEntityName, mISCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax);
+    ApiResponse<SearchGetResponse> response = apiInstance.GetWithHttpInfo(q, searchIn, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, notAuthorName, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, oRGEntityName, pEREntityName, lOCEntityName, mISCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, sourceName, iabTags);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -122,13 +143,14 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **q** | **string** |  |  |
 | **searchIn** | **string** |  | [optional] [default to &quot;title_content&quot;] |
-| **predefinedSources** | **string** |  | [optional]  |
-| **sources** | **string** |  | [optional]  |
-| **notSources** | **string** |  | [optional]  |
-| **lang** | **string** |  | [optional]  |
-| **notLang** | **string** |  | [optional]  |
-| **countries** | **string** |  | [optional]  |
-| **notCountries** | **string** |  | [optional]  |
+| **predefinedSources** | [**Object**](Object.md) |  | [optional]  |
+| **sources** | [**Object**](Object.md) |  | [optional]  |
+| **notSources** | [**Object**](Object.md) |  | [optional]  |
+| **lang** | [**Object**](Object.md) |  | [optional]  |
+| **notLang** | [**Object**](Object.md) |  | [optional]  |
+| **countries** | [**Object**](Object.md) |  | [optional]  |
+| **notCountries** | [**Object**](Object.md) |  | [optional]  |
+| **notAuthorName** | [**Object**](Object.md) |  | [optional]  |
 | **from** | [**From**](From.md) |  | [optional]  |
 | **to** | [**To**](To.md) |  | [optional]  |
 | **publishedDatePrecision** | **string** |  | [optional]  |
@@ -139,19 +161,20 @@ catch (ApiException e)
 | **toRank** | **int?** |  | [optional]  |
 | **isHeadline** | **bool?** |  | [optional]  |
 | **isPaidContent** | **bool?** |  | [optional]  |
-| **parentUrl** | **string** |  | [optional]  |
-| **allLinks** | **string** |  | [optional]  |
-| **allDomainLinks** | **string** |  | [optional]  |
+| **parentUrl** | [**Object**](Object.md) |  | [optional]  |
+| **allLinks** | [**Object**](Object.md) |  | [optional]  |
+| **allDomainLinks** | [**Object**](Object.md) |  | [optional]  |
 | **wordCountMin** | **int?** |  | [optional]  |
 | **wordCountMax** | **int?** |  | [optional]  |
 | **page** | **int?** |  | [optional] [default to 1] |
 | **pageSize** | **int?** |  | [optional] [default to 100] |
+| **clusteringVariable** | **string** |  | [optional]  |
 | **clusteringEnabled** | **bool?** |  | [optional]  |
 | **clusteringThreshold** | **double?** |  | [optional]  |
-| **clusteringVariable** | **string** |  | [optional]  |
 | **includeNlpData** | **bool?** |  | [optional]  |
 | **hasNlp** | **bool?** |  | [optional]  |
 | **theme** | **string** |  | [optional]  |
+| **notTheme** | **string** |  | [optional]  |
 | **oRGEntityName** | **string** |  | [optional]  |
 | **pEREntityName** | **string** |  | [optional]  |
 | **lOCEntityName** | **string** |  | [optional]  |
@@ -160,6 +183,10 @@ catch (ApiException e)
 | **titleSentimentMax** | **double?** |  | [optional]  |
 | **contentSentimentMin** | **double?** |  | [optional]  |
 | **contentSentimentMax** | **double?** |  | [optional]  |
+| **iptcTags** | [**Object**](Object.md) |  | [optional]  |
+| **notIptcTags** | [**Object**](Object.md) |  | [optional]  |
+| **sourceName** | [**Object**](Object.md) |  | [optional]  |
+| **iabTags** | [**Object**](Object.md) |  | [optional]  |
 
 ### Return type
 
@@ -208,6 +235,7 @@ namespace Example
             var notLang = "notLang_example";
             var countries = "countries_example";
             var notCountries = "notCountries_example";
+            var notAuthorName = "notAuthorName_example";
             var from = new From(DateTime.Now);
             var to = new To(DateTime.Now);
             var publishedDatePrecision = "publishedDatePrecision_example";
@@ -225,12 +253,13 @@ namespace Example
             var wordCountMax = default(int);
             var page = 1;
             var pageSize = 100;
+            var clusteringVariable = "clusteringVariable_example";
             var clusteringEnabled = false;
             var clusteringThreshold = default(double);
-            var clusteringVariable = "clusteringVariable_example";
             var includeNlpData = false;
             var hasNlp = false;
             var theme = "theme_example";
+            var notTheme = "notTheme_example";
             var oRGEntityName = "oRGEntityName_example";
             var pEREntityName = "pEREntityName_example";
             var lOCEntityName = "lOCEntityName_example";
@@ -239,6 +268,10 @@ namespace Example
             var titleSentimentMax = default(double);
             var contentSentimentMin = default(double);
             var contentSentimentMax = default(double);
+            var iptcTags = "iptcTags_example";
+            var notIptcTags = "notIptcTags_example";
+            var sourceName = "sourceName_example";
+            var iabTags = "iabTags_example";
             
             var searchRequest = new SearchRequest(
                 q,
@@ -250,6 +283,7 @@ namespace Example
                 notLang,
                 countries,
                 notCountries,
+                notAuthorName,
                 from,
                 to,
                 publishedDatePrecision,
@@ -267,12 +301,13 @@ namespace Example
                 wordCountMax,
                 page,
                 pageSize,
+                clusteringVariable,
                 clusteringEnabled,
                 clusteringThreshold,
-                clusteringVariable,
                 includeNlpData,
                 hasNlp,
                 theme,
+                notTheme,
                 oRGEntityName,
                 pEREntityName,
                 lOCEntityName,
@@ -280,7 +315,11 @@ namespace Example
                 titleSentimentMin,
                 titleSentimentMax,
                 contentSentimentMin,
-                contentSentimentMax
+                contentSentimentMax,
+                iptcTags,
+                notIptcTags,
+                sourceName,
+                iabTags
             );
             
             try

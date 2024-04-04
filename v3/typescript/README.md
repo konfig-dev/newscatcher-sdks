@@ -17,6 +17,8 @@
   * [`newscatcher.latestHeadlines.post`](#newscatcherlatestheadlinespost)
   * [`newscatcher.search.get`](#newscatchersearchget)
   * [`newscatcher.search.post`](#newscatchersearchpost)
+  * [`newscatcher.searchLink.get`](#newscatchersearchlinkget)
+  * [`newscatcher.searchLink.post`](#newscatchersearchlinkpost)
   * [`newscatcher.searchSimilar.get`](#newscatchersearchsimilarget)
   * [`newscatcher.searchSimilar.post`](#newscatchersearchsimilarpost)
   * [`newscatcher.sources.get`](#newscatchersourcesget)
@@ -104,19 +106,21 @@ const getResponse = await newscatcher.authors.get({
 
 ##### authorName: `string`<a id="authorname-string"></a>
 
-##### sources: `string`<a id="sources-string"></a>
+##### notAuthorName: `string`<a id="notauthorname-string"></a>
 
-##### predefinedSources: `string`<a id="predefinedsources-string"></a>
+##### sources: `any`<a id="sources-any"></a>
 
-##### notSources: `string`<a id="notsources-string"></a>
+##### predefinedSources: `any`<a id="predefinedsources-any"></a>
 
-##### lang: `string`<a id="lang-string"></a>
+##### notSources: `any`<a id="notsources-any"></a>
 
-##### notLang: `string`<a id="notlang-string"></a>
+##### lang: `any`<a id="lang-any"></a>
 
-##### countries: `string`<a id="countries-string"></a>
+##### notLang: `any`<a id="notlang-any"></a>
 
-##### notCountries: `string`<a id="notcountries-string"></a>
+##### countries: `any`<a id="countries-any"></a>
+
+##### notCountries: `any`<a id="notcountries-any"></a>
 
 ##### from: [`From`](./models/from.ts)<a id="from-frommodelsfromts"></a>
 
@@ -138,11 +142,11 @@ const getResponse = await newscatcher.authors.get({
 
 ##### isPaidContent: `boolean`<a id="ispaidcontent-boolean"></a>
 
-##### parentUrl: `string`<a id="parenturl-string"></a>
+##### parentUrl: `any`<a id="parenturl-any"></a>
 
-##### allLinks: `string`<a id="alllinks-string"></a>
+##### allLinks: `any`<a id="alllinks-any"></a>
 
-##### allDomainLinks: `string`<a id="alldomainlinks-string"></a>
+##### allDomainLinks: `any`<a id="alldomainlinks-any"></a>
 
 ##### wordCountMin: `number`<a id="wordcountmin-number"></a>
 
@@ -158,6 +162,8 @@ const getResponse = await newscatcher.authors.get({
 
 ##### theme: `string`<a id="theme-string"></a>
 
+##### notTheme: `string`<a id="nottheme-string"></a>
+
 ##### nerName: `string`<a id="nername-string"></a>
 
 ##### titleSentimentMin: `number`<a id="titlesentimentmin-number"></a>
@@ -167,6 +173,10 @@ const getResponse = await newscatcher.authors.get({
 ##### contentSentimentMin: `number`<a id="contentsentimentmin-number"></a>
 
 ##### contentSentimentMax: `number`<a id="contentsentimentmax-number"></a>
+
+##### iptcTags: `any`<a id="iptctags-any"></a>
+
+##### notIptcTags: `any`<a id="notiptctags-any"></a>
 
 #### 🔄 Return<a id="🔄-return"></a>
 
@@ -201,19 +211,21 @@ const postResponse = await newscatcher.authors.post({
 
 ##### author_name: `string`<a id="author_name-string"></a>
 
-##### sources: `string`<a id="sources-string"></a>
+##### not_author_name: `string`<a id="not_author_name-string"></a>
 
-##### predefined_sources: `string`<a id="predefined_sources-string"></a>
+##### sources: `any`<a id="sources-any"></a>
 
-##### not_sources: `string`<a id="not_sources-string"></a>
+##### predefined_sources: `any`<a id="predefined_sources-any"></a>
 
-##### lang: `string`<a id="lang-string"></a>
+##### not_sources: `any`<a id="not_sources-any"></a>
 
-##### not_lang: `string`<a id="not_lang-string"></a>
+##### lang: `any`<a id="lang-any"></a>
 
-##### countries: `string`<a id="countries-string"></a>
+##### not_lang: `any`<a id="not_lang-any"></a>
 
-##### not_countries: `string`<a id="not_countries-string"></a>
+##### countries: `any`<a id="countries-any"></a>
+
+##### not_countries: `any`<a id="not_countries-any"></a>
 
 ##### from_: [`From`](./models/from.ts)<a id="from_-frommodelsfromts"></a>
 
@@ -235,11 +247,11 @@ const postResponse = await newscatcher.authors.post({
 
 ##### is_paid_content: `boolean`<a id="is_paid_content-boolean"></a>
 
-##### parent_url: `string`<a id="parent_url-string"></a>
+##### parent_url: `any`<a id="parent_url-any"></a>
 
-##### all_links: `string`<a id="all_links-string"></a>
+##### all_links: `any`<a id="all_links-any"></a>
 
-##### all_domain_links: `string`<a id="all_domain_links-string"></a>
+##### all_domain_links: `any`<a id="all_domain_links-any"></a>
 
 ##### word_count_min: `number`<a id="word_count_min-number"></a>
 
@@ -255,6 +267,8 @@ const postResponse = await newscatcher.authors.post({
 
 ##### theme: `string`<a id="theme-string"></a>
 
+##### not_theme: `string`<a id="not_theme-string"></a>
+
 ##### ner_name: `string`<a id="ner_name-string"></a>
 
 ##### title_sentiment_min: `number`<a id="title_sentiment_min-number"></a>
@@ -264,6 +278,10 @@ const postResponse = await newscatcher.authors.post({
 ##### content_sentiment_min: `number`<a id="content_sentiment_min-number"></a>
 
 ##### content_sentiment_max: `number`<a id="content_sentiment_max-number"></a>
+
+##### iptc_tags: `any`<a id="iptc_tags-any"></a>
+
+##### not_iptc_tags: `any`<a id="not_iptc_tags-any"></a>
 
 #### 🔄 Return<a id="🔄-return"></a>
 
@@ -299,19 +317,21 @@ const getResponse = await newscatcher.latestHeadlines.get({
 
 ##### byParseDate: `boolean`<a id="byparsedate-boolean"></a>
 
-##### lang: `string`<a id="lang-string"></a>
+##### lang: `any`<a id="lang-any"></a>
 
-##### notLang: `string`<a id="notlang-string"></a>
+##### notLang: `any`<a id="notlang-any"></a>
 
-##### countries: `string`<a id="countries-string"></a>
+##### countries: `any`<a id="countries-any"></a>
 
-##### notCountries: `string`<a id="notcountries-string"></a>
+##### notCountries: `any`<a id="notcountries-any"></a>
 
-##### sources: `string`<a id="sources-string"></a>
+##### sources: `any`<a id="sources-any"></a>
 
-##### predefinedSources: `string`<a id="predefinedsources-string"></a>
+##### predefinedSources: `any`<a id="predefinedsources-any"></a>
 
-##### notSources: `string`<a id="notsources-string"></a>
+##### notSources: `any`<a id="notsources-any"></a>
+
+##### notAuthorName: `any`<a id="notauthorname-any"></a>
 
 ##### rankedOnly: `string`<a id="rankedonly-string"></a>
 
@@ -319,13 +339,11 @@ const getResponse = await newscatcher.latestHeadlines.get({
 
 ##### isPaidContent: `boolean`<a id="ispaidcontent-boolean"></a>
 
-##### parentUrl: `string`<a id="parenturl-string"></a>
+##### parentUrl: `any`<a id="parenturl-any"></a>
 
-##### theme: `string`<a id="theme-string"></a>
+##### allLinks: `any`<a id="alllinks-any"></a>
 
-##### allLinks: `string`<a id="alllinks-string"></a>
-
-##### allDomainLinks: `string`<a id="alldomainlinks-string"></a>
+##### allDomainLinks: `any`<a id="alldomainlinks-any"></a>
 
 ##### wordCountMin: `number`<a id="wordcountmin-number"></a>
 
@@ -335,15 +353,19 @@ const getResponse = await newscatcher.latestHeadlines.get({
 
 ##### pageSize: `number`<a id="pagesize-number"></a>
 
+##### clusteringVariable: `string`<a id="clusteringvariable-string"></a>
+
 ##### clusteringEnabled: `boolean`<a id="clusteringenabled-boolean"></a>
 
 ##### clusteringThreshold: `number`<a id="clusteringthreshold-number"></a>
 
-##### clusteringVariable: `string`<a id="clusteringvariable-string"></a>
-
 ##### includeNlpData: `boolean`<a id="includenlpdata-boolean"></a>
 
 ##### hasNlp: `boolean`<a id="hasnlp-boolean"></a>
+
+##### theme: `string`<a id="theme-string"></a>
+
+##### notTheme: `string`<a id="nottheme-string"></a>
 
 ##### orgEntityName: `string`<a id="orgentityname-string"></a>
 
@@ -360,6 +382,10 @@ const getResponse = await newscatcher.latestHeadlines.get({
 ##### contentSentimentMin: `number`<a id="contentsentimentmin-number"></a>
 
 ##### contentSentimentMax: `number`<a id="contentsentimentmax-number"></a>
+
+##### iptcTags: `any`<a id="iptctags-any"></a>
+
+##### notIptcTags: `any`<a id="notiptctags-any"></a>
 
 #### 🔄 Return<a id="🔄-return"></a>
 
@@ -395,19 +421,21 @@ const postResponse = await newscatcher.latestHeadlines.post({
 
 ##### by_parse_date: `boolean`<a id="by_parse_date-boolean"></a>
 
-##### lang: `string`<a id="lang-string"></a>
+##### lang: `any`<a id="lang-any"></a>
 
-##### not_lang: `string`<a id="not_lang-string"></a>
+##### not_lang: `any`<a id="not_lang-any"></a>
 
-##### countries: `string`<a id="countries-string"></a>
+##### countries: `any`<a id="countries-any"></a>
 
-##### not_countries: `string`<a id="not_countries-string"></a>
+##### not_countries: `any`<a id="not_countries-any"></a>
 
-##### sources: `string`<a id="sources-string"></a>
+##### sources: `any`<a id="sources-any"></a>
 
-##### predefined_sources: `string`<a id="predefined_sources-string"></a>
+##### predefined_sources: `any`<a id="predefined_sources-any"></a>
 
-##### not_sources: `string`<a id="not_sources-string"></a>
+##### not_sources: `any`<a id="not_sources-any"></a>
+
+##### not_author_name: `any`<a id="not_author_name-any"></a>
 
 ##### ranked_only: `string`<a id="ranked_only-string"></a>
 
@@ -415,13 +443,11 @@ const postResponse = await newscatcher.latestHeadlines.post({
 
 ##### is_paid_content: `boolean`<a id="is_paid_content-boolean"></a>
 
-##### parent_url: `string`<a id="parent_url-string"></a>
+##### parent_url: `any`<a id="parent_url-any"></a>
 
-##### theme: `string`<a id="theme-string"></a>
+##### all_links: `any`<a id="all_links-any"></a>
 
-##### all_links: `string`<a id="all_links-string"></a>
-
-##### all_domain_links: `string`<a id="all_domain_links-string"></a>
+##### all_domain_links: `any`<a id="all_domain_links-any"></a>
 
 ##### word_count_min: `number`<a id="word_count_min-number"></a>
 
@@ -431,15 +457,19 @@ const postResponse = await newscatcher.latestHeadlines.post({
 
 ##### page_size: `number`<a id="page_size-number"></a>
 
+##### clustering_variable: `string`<a id="clustering_variable-string"></a>
+
 ##### clustering_enabled: `boolean`<a id="clustering_enabled-boolean"></a>
 
 ##### clustering_threshold: `number`<a id="clustering_threshold-number"></a>
 
-##### clustering_variable: `string`<a id="clustering_variable-string"></a>
-
 ##### include_nlp_data: `boolean`<a id="include_nlp_data-boolean"></a>
 
 ##### has_nlp: `boolean`<a id="has_nlp-boolean"></a>
+
+##### theme: `string`<a id="theme-string"></a>
+
+##### not_theme: `string`<a id="not_theme-string"></a>
 
 ##### ORG_entity_name: `string`<a id="org_entity_name-string"></a>
 
@@ -456,6 +486,10 @@ const postResponse = await newscatcher.latestHeadlines.post({
 ##### content_sentiment_min: `number`<a id="content_sentiment_min-number"></a>
 
 ##### content_sentiment_max: `number`<a id="content_sentiment_max-number"></a>
+
+##### iptc_tags: `any`<a id="iptc_tags-any"></a>
+
+##### not_iptc_tags: `any`<a id="not_iptc_tags-any"></a>
 
 #### 🔄 Return<a id="🔄-return"></a>
 
@@ -493,19 +527,21 @@ const getResponse = await newscatcher.search.get({
 
 ##### searchIn: `string`<a id="searchin-string"></a>
 
-##### predefinedSources: `string`<a id="predefinedsources-string"></a>
+##### predefinedSources: `any`<a id="predefinedsources-any"></a>
 
-##### sources: `string`<a id="sources-string"></a>
+##### sources: `any`<a id="sources-any"></a>
 
-##### notSources: `string`<a id="notsources-string"></a>
+##### notSources: `any`<a id="notsources-any"></a>
 
-##### lang: `string`<a id="lang-string"></a>
+##### lang: `any`<a id="lang-any"></a>
 
-##### notLang: `string`<a id="notlang-string"></a>
+##### notLang: `any`<a id="notlang-any"></a>
 
-##### countries: `string`<a id="countries-string"></a>
+##### countries: `any`<a id="countries-any"></a>
 
-##### notCountries: `string`<a id="notcountries-string"></a>
+##### notCountries: `any`<a id="notcountries-any"></a>
+
+##### notAuthorName: `any`<a id="notauthorname-any"></a>
 
 ##### from: [`From`](./models/from.ts)<a id="from-frommodelsfromts"></a>
 
@@ -527,11 +563,11 @@ const getResponse = await newscatcher.search.get({
 
 ##### isPaidContent: `boolean`<a id="ispaidcontent-boolean"></a>
 
-##### parentUrl: `string`<a id="parenturl-string"></a>
+##### parentUrl: `any`<a id="parenturl-any"></a>
 
-##### allLinks: `string`<a id="alllinks-string"></a>
+##### allLinks: `any`<a id="alllinks-any"></a>
 
-##### allDomainLinks: `string`<a id="alldomainlinks-string"></a>
+##### allDomainLinks: `any`<a id="alldomainlinks-any"></a>
 
 ##### wordCountMin: `number`<a id="wordcountmin-number"></a>
 
@@ -541,17 +577,19 @@ const getResponse = await newscatcher.search.get({
 
 ##### pageSize: `number`<a id="pagesize-number"></a>
 
+##### clusteringVariable: `string`<a id="clusteringvariable-string"></a>
+
 ##### clusteringEnabled: `boolean`<a id="clusteringenabled-boolean"></a>
 
 ##### clusteringThreshold: `number`<a id="clusteringthreshold-number"></a>
-
-##### clusteringVariable: `string`<a id="clusteringvariable-string"></a>
 
 ##### includeNlpData: `boolean`<a id="includenlpdata-boolean"></a>
 
 ##### hasNlp: `boolean`<a id="hasnlp-boolean"></a>
 
 ##### theme: `string`<a id="theme-string"></a>
+
+##### notTheme: `string`<a id="nottheme-string"></a>
 
 ##### orgEntityName: `string`<a id="orgentityname-string"></a>
 
@@ -568,6 +606,14 @@ const getResponse = await newscatcher.search.get({
 ##### contentSentimentMin: `number`<a id="contentsentimentmin-number"></a>
 
 ##### contentSentimentMax: `number`<a id="contentsentimentmax-number"></a>
+
+##### iptcTags: `any`<a id="iptctags-any"></a>
+
+##### notIptcTags: `any`<a id="notiptctags-any"></a>
+
+##### sourceName: `any`<a id="sourcename-any"></a>
+
+##### iabTags: `any`<a id="iabtags-any"></a>
 
 #### 🔄 Return<a id="🔄-return"></a>
 
@@ -605,19 +651,21 @@ const postResponse = await newscatcher.search.post({
 
 ##### search_in: `string`<a id="search_in-string"></a>
 
-##### predefined_sources: `string`<a id="predefined_sources-string"></a>
+##### predefined_sources: `any`<a id="predefined_sources-any"></a>
 
-##### sources: `string`<a id="sources-string"></a>
+##### sources: `any`<a id="sources-any"></a>
 
-##### not_sources: `string`<a id="not_sources-string"></a>
+##### not_sources: `any`<a id="not_sources-any"></a>
 
-##### lang: `string`<a id="lang-string"></a>
+##### lang: `any`<a id="lang-any"></a>
 
-##### not_lang: `string`<a id="not_lang-string"></a>
+##### not_lang: `any`<a id="not_lang-any"></a>
 
-##### countries: `string`<a id="countries-string"></a>
+##### countries: `any`<a id="countries-any"></a>
 
-##### not_countries: `string`<a id="not_countries-string"></a>
+##### not_countries: `any`<a id="not_countries-any"></a>
+
+##### not_author_name: `any`<a id="not_author_name-any"></a>
 
 ##### from_: [`From`](./models/from.ts)<a id="from_-frommodelsfromts"></a>
 
@@ -639,11 +687,11 @@ const postResponse = await newscatcher.search.post({
 
 ##### is_paid_content: `boolean`<a id="is_paid_content-boolean"></a>
 
-##### parent_url: `string`<a id="parent_url-string"></a>
+##### parent_url: `any`<a id="parent_url-any"></a>
 
-##### all_links: `string`<a id="all_links-string"></a>
+##### all_links: `any`<a id="all_links-any"></a>
 
-##### all_domain_links: `string`<a id="all_domain_links-string"></a>
+##### all_domain_links: `any`<a id="all_domain_links-any"></a>
 
 ##### word_count_min: `number`<a id="word_count_min-number"></a>
 
@@ -653,17 +701,19 @@ const postResponse = await newscatcher.search.post({
 
 ##### page_size: `number`<a id="page_size-number"></a>
 
+##### clustering_variable: `string`<a id="clustering_variable-string"></a>
+
 ##### clustering_enabled: `boolean`<a id="clustering_enabled-boolean"></a>
 
 ##### clustering_threshold: `number`<a id="clustering_threshold-number"></a>
-
-##### clustering_variable: `string`<a id="clustering_variable-string"></a>
 
 ##### include_nlp_data: `boolean`<a id="include_nlp_data-boolean"></a>
 
 ##### has_nlp: `boolean`<a id="has_nlp-boolean"></a>
 
 ##### theme: `string`<a id="theme-string"></a>
+
+##### not_theme: `string`<a id="not_theme-string"></a>
 
 ##### ORG_entity_name: `string`<a id="org_entity_name-string"></a>
 
@@ -681,6 +731,14 @@ const postResponse = await newscatcher.search.post({
 
 ##### content_sentiment_max: `number`<a id="content_sentiment_max-number"></a>
 
+##### iptc_tags: `any`<a id="iptc_tags-any"></a>
+
+##### not_iptc_tags: `any`<a id="not_iptc_tags-any"></a>
+
+##### source_name: `any`<a id="source_name-any"></a>
+
+##### iab_tags: `any`<a id="iab_tags-any"></a>
+
 #### 🔄 Return<a id="🔄-return"></a>
 
 [SearchPostResponse](./models/search-post-response.ts)
@@ -688,6 +746,78 @@ const postResponse = await newscatcher.search.post({
 #### 🌐 Endpoint<a id="🌐-endpoint"></a>
 
 `/api/search` `POST`
+
+[🔙 **Back to Table of Contents**](#table-of-contents)
+
+---
+
+
+### `newscatcher.searchLink.get`<a id="newscatchersearchlinkget"></a>
+
+This endpoint allows you to search for articles. You can search for articles by id(s) or link(s).
+
+#### 🛠️ Usage<a id="🛠️-usage"></a>
+
+```typescript
+const getResponse = await newscatcher.searchLink.get({
+  page: 1,
+  pageSize: 100,
+});
+```
+
+#### ⚙️ Parameters<a id="⚙️-parameters"></a>
+
+##### ids: `any`<a id="ids-any"></a>
+
+##### links: `any`<a id="links-any"></a>
+
+##### page: `number`<a id="page-number"></a>
+
+##### pageSize: `number`<a id="pagesize-number"></a>
+
+#### 🔄 Return<a id="🔄-return"></a>
+
+[DtoResponsesSearchResponseSearchResponse](./models/dto-responses-search-response-search-response.ts)
+
+#### 🌐 Endpoint<a id="🌐-endpoint"></a>
+
+`/api/search_by_link` `GET`
+
+[🔙 **Back to Table of Contents**](#table-of-contents)
+
+---
+
+
+### `newscatcher.searchLink.post`<a id="newscatchersearchlinkpost"></a>
+
+This endpoint allows you to search for articles. You can search for articles by id(s) or link(s).
+
+#### 🛠️ Usage<a id="🛠️-usage"></a>
+
+```typescript
+const postResponse = await newscatcher.searchLink.post({
+  page: 1,
+  page_size: 100,
+});
+```
+
+#### ⚙️ Parameters<a id="⚙️-parameters"></a>
+
+##### ids: `any`<a id="ids-any"></a>
+
+##### links: `any`<a id="links-any"></a>
+
+##### page: `number`<a id="page-number"></a>
+
+##### page_size: `number`<a id="page_size-number"></a>
+
+#### 🔄 Return<a id="🔄-return"></a>
+
+[DtoResponsesSearchResponseSearchResponse](./models/dto-responses-search-response-search-response.ts)
+
+#### 🌐 Endpoint<a id="🌐-endpoint"></a>
+
+`/api/search_by_link` `POST`
 
 [🔙 **Back to Table of Contents**](#table-of-contents)
 
@@ -726,19 +856,19 @@ const getResponse = await newscatcher.searchSimilar.get({
 
 ##### similarDocumentsFields: `string`<a id="similardocumentsfields-string"></a>
 
-##### predefinedSources: `string`<a id="predefinedsources-string"></a>
+##### predefinedSources: `any`<a id="predefinedsources-any"></a>
 
-##### sources: `string`<a id="sources-string"></a>
+##### sources: `any`<a id="sources-any"></a>
 
-##### notSources: `string`<a id="notsources-string"></a>
+##### notSources: `any`<a id="notsources-any"></a>
 
-##### lang: `string`<a id="lang-string"></a>
+##### lang: `any`<a id="lang-any"></a>
 
-##### notLang: `string`<a id="notlang-string"></a>
+##### notLang: `any`<a id="notlang-any"></a>
 
-##### countries: `string`<a id="countries-string"></a>
+##### countries: `any`<a id="countries-any"></a>
 
-##### notCountries: `string`<a id="notcountries-string"></a>
+##### notCountries: `any`<a id="notcountries-any"></a>
 
 ##### from: [`From`](./models/from.ts)<a id="from-frommodelsfromts"></a>
 
@@ -760,11 +890,11 @@ const getResponse = await newscatcher.searchSimilar.get({
 
 ##### isPaidContent: `boolean`<a id="ispaidcontent-boolean"></a>
 
-##### parentUrl: `string`<a id="parenturl-string"></a>
+##### parentUrl: `any`<a id="parenturl-any"></a>
 
-##### allLinks: `string`<a id="alllinks-string"></a>
+##### allLinks: `any`<a id="alllinks-any"></a>
 
-##### allDomainLinks: `string`<a id="alldomainlinks-string"></a>
+##### allDomainLinks: `any`<a id="alldomainlinks-any"></a>
 
 ##### wordCountMin: `number`<a id="wordcountmin-number"></a>
 
@@ -780,6 +910,8 @@ const getResponse = await newscatcher.searchSimilar.get({
 
 ##### theme: `string`<a id="theme-string"></a>
 
+##### notTheme: `string`<a id="nottheme-string"></a>
+
 ##### nerName: `string`<a id="nername-string"></a>
 
 ##### titleSentimentMin: `number`<a id="titlesentimentmin-number"></a>
@@ -789,6 +921,10 @@ const getResponse = await newscatcher.searchSimilar.get({
 ##### contentSentimentMin: `number`<a id="contentsentimentmin-number"></a>
 
 ##### contentSentimentMax: `number`<a id="contentsentimentmax-number"></a>
+
+##### iptcTags: `any`<a id="iptctags-any"></a>
+
+##### notIptcTags: `any`<a id="notiptctags-any"></a>
 
 #### 🔄 Return<a id="🔄-return"></a>
 
@@ -835,19 +971,19 @@ const postResponse = await newscatcher.searchSimilar.post({
 
 ##### similar_documents_fields: `string`<a id="similar_documents_fields-string"></a>
 
-##### predefined_sources: `string`<a id="predefined_sources-string"></a>
+##### predefined_sources: `any`<a id="predefined_sources-any"></a>
 
-##### sources: `string`<a id="sources-string"></a>
+##### sources: `any`<a id="sources-any"></a>
 
-##### not_sources: `string`<a id="not_sources-string"></a>
+##### not_sources: `any`<a id="not_sources-any"></a>
 
-##### lang: `string`<a id="lang-string"></a>
+##### lang: `any`<a id="lang-any"></a>
 
-##### not_lang: `string`<a id="not_lang-string"></a>
+##### not_lang: `any`<a id="not_lang-any"></a>
 
-##### countries: `string`<a id="countries-string"></a>
+##### countries: `any`<a id="countries-any"></a>
 
-##### not_countries: `string`<a id="not_countries-string"></a>
+##### not_countries: `any`<a id="not_countries-any"></a>
 
 ##### from_: [`From`](./models/from.ts)<a id="from_-frommodelsfromts"></a>
 
@@ -869,11 +1005,11 @@ const postResponse = await newscatcher.searchSimilar.post({
 
 ##### is_paid_content: `boolean`<a id="is_paid_content-boolean"></a>
 
-##### parent_url: `string`<a id="parent_url-string"></a>
+##### parent_url: `any`<a id="parent_url-any"></a>
 
-##### all_links: `string`<a id="all_links-string"></a>
+##### all_links: `any`<a id="all_links-any"></a>
 
-##### all_domain_links: `string`<a id="all_domain_links-string"></a>
+##### all_domain_links: `any`<a id="all_domain_links-any"></a>
 
 ##### word_count_min: `number`<a id="word_count_min-number"></a>
 
@@ -889,6 +1025,8 @@ const postResponse = await newscatcher.searchSimilar.post({
 
 ##### theme: `string`<a id="theme-string"></a>
 
+##### not_theme: `string`<a id="not_theme-string"></a>
+
 ##### ner_name: `string`<a id="ner_name-string"></a>
 
 ##### title_sentiment_min: `number`<a id="title_sentiment_min-number"></a>
@@ -898,6 +1036,10 @@ const postResponse = await newscatcher.searchSimilar.post({
 ##### content_sentiment_min: `number`<a id="content_sentiment_min-number"></a>
 
 ##### content_sentiment_max: `number`<a id="content_sentiment_max-number"></a>
+
+##### iptc_tags: `any`<a id="iptc_tags-any"></a>
+
+##### not_iptc_tags: `any`<a id="not_iptc_tags-any"></a>
 
 #### 🔄 Return<a id="🔄-return"></a>
 
@@ -928,6 +1070,18 @@ const getResponse = await newscatcher.sources.get({});
 
 ##### countries: `string`<a id="countries-string"></a>
 
+##### predefinedSources: `string`<a id="predefinedsources-string"></a>
+
+##### includeAdditionalInfo: `boolean`<a id="includeadditionalinfo-boolean"></a>
+
+##### fromRank: `number`<a id="fromrank-number"></a>
+
+##### toRank: `number`<a id="torank-number"></a>
+
+##### sourceName: `any`<a id="sourcename-any"></a>
+
+##### sourceUrl: `string`<a id="sourceurl-string"></a>
+
 #### 🔄 Return<a id="🔄-return"></a>
 
 [SourceResponse](./models/source-response.ts)
@@ -956,6 +1110,18 @@ const postResponse = await newscatcher.sources.post({});
 ##### lang: `string`<a id="lang-string"></a>
 
 ##### countries: `string`<a id="countries-string"></a>
+
+##### predefined_sources: `string`<a id="predefined_sources-string"></a>
+
+##### include_additional_info: `boolean`<a id="include_additional_info-boolean"></a>
+
+##### from_rank: `number`<a id="from_rank-number"></a>
+
+##### to_rank: `number`<a id="to_rank-number"></a>
+
+##### source_name: `any`<a id="source_name-any"></a>
+
+##### source_url: `string`<a id="source_url-string"></a>
 
 #### 🔄 Return<a id="🔄-return"></a>
 

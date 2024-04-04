@@ -11,7 +11,7 @@
 <!-- toc -->
 
 - [Requirements](#requirements)
-- [Installing](#installing)
+- [Installation](#installation)
 - [Getting Started](#getting-started)
 - [Async](#async)
 - [Raw HTTP Response](#raw-http-response)
@@ -22,6 +22,8 @@
   * [`newscatcher.latest_headlines.post`](#newscatcherlatest_headlinespost)
   * [`newscatcher.search.get`](#newscatchersearchget)
   * [`newscatcher.search.post`](#newscatchersearchpost)
+  * [`newscatcher.search_link.get`](#newscatchersearch_linkget)
+  * [`newscatcher.search_link.post`](#newscatchersearch_linkpost)
   * [`newscatcher.search_similar.get`](#newscatchersearch_similarget)
   * [`newscatcher.search_similar.post`](#newscatchersearch_similarpost)
   * [`newscatcher.sources.get`](#newscatchersourcesget)
@@ -35,7 +37,7 @@
 
 Python >=3.7
 
-## Installing<a id="installing"></a>
+## Installation<a id="installation"></a>
 
 ```sh
 pip install newscatcherapi-python-sdk==6.0.1
@@ -55,13 +57,14 @@ try:
     # [Get] Search By Author Request
     get_response = newscatcher.authors.get(
         author_name="author_name_example",
-        sources="string_example",
-        predefined_sources="string_example",
-        not_sources="string_example",
-        lang="string_example",
-        not_lang="string_example",
-        countries="string_example",
-        not_countries="string_example",
+        not_author_name="string_example",
+        sources=None,
+        predefined_sources=None,
+        not_sources=None,
+        lang=None,
+        not_lang=None,
+        countries=None,
+        not_countries=None,
         from_="string_example",
         to_="string_example",
         published_date_precision="string_example",
@@ -72,9 +75,9 @@ try:
         to_rank=1,
         is_headline=True,
         is_paid_content=True,
-        parent_url="string_example",
-        all_links="string_example",
-        all_domain_links="string_example",
+        parent_url=None,
+        all_links=None,
+        all_domain_links=None,
         word_count_min=0,
         word_count_max=0,
         page=1,
@@ -82,11 +85,14 @@ try:
         include_nlp_data=True,
         has_nlp=True,
         theme="string_example",
+        not_theme="string_example",
         ner_name="string_example",
         title_sentiment_min=3.14,
         title_sentiment_max=3.14,
         content_sentiment_min=3.14,
         content_sentiment_max=3.14,
+        iptc_tags=None,
+        not_iptc_tags=None,
     )
     print(get_response)
 except ApiException as e:
@@ -119,13 +125,14 @@ async def main():
         # [Get] Search By Author Request
         get_response = await newscatcher.authors.aget(
             author_name="author_name_example",
-            sources="string_example",
-            predefined_sources="string_example",
-            not_sources="string_example",
-            lang="string_example",
-            not_lang="string_example",
-            countries="string_example",
-            not_countries="string_example",
+            not_author_name="string_example",
+            sources=None,
+            predefined_sources=None,
+            not_sources=None,
+            lang=None,
+            not_lang=None,
+            countries=None,
+            not_countries=None,
             from_="string_example",
             to_="string_example",
             published_date_precision="string_example",
@@ -136,9 +143,9 @@ async def main():
             to_rank=1,
             is_headline=True,
             is_paid_content=True,
-            parent_url="string_example",
-            all_links="string_example",
-            all_domain_links="string_example",
+            parent_url=None,
+            all_links=None,
+            all_domain_links=None,
             word_count_min=0,
             word_count_max=0,
             page=1,
@@ -146,11 +153,14 @@ async def main():
             include_nlp_data=True,
             has_nlp=True,
             theme="string_example",
+            not_theme="string_example",
             ner_name="string_example",
             title_sentiment_min=3.14,
             title_sentiment_max=3.14,
             content_sentiment_min=3.14,
             content_sentiment_max=3.14,
+            iptc_tags=None,
+            not_iptc_tags=None,
         )
         print(get_response)
     except ApiException as e:
@@ -183,13 +193,14 @@ try:
     # [Get] Search By Author Request
     get_response = newscatcher.authors.raw.get(
         author_name="author_name_example",
-        sources="string_example",
-        predefined_sources="string_example",
-        not_sources="string_example",
-        lang="string_example",
-        not_lang="string_example",
-        countries="string_example",
-        not_countries="string_example",
+        not_author_name="string_example",
+        sources=None,
+        predefined_sources=None,
+        not_sources=None,
+        lang=None,
+        not_lang=None,
+        countries=None,
+        not_countries=None,
         from_="string_example",
         to_="string_example",
         published_date_precision="string_example",
@@ -200,9 +211,9 @@ try:
         to_rank=1,
         is_headline=True,
         is_paid_content=True,
-        parent_url="string_example",
-        all_links="string_example",
-        all_domain_links="string_example",
+        parent_url=None,
+        all_links=None,
+        all_domain_links=None,
         word_count_min=0,
         word_count_max=0,
         page=1,
@@ -210,11 +221,14 @@ try:
         include_nlp_data=True,
         has_nlp=True,
         theme="string_example",
+        not_theme="string_example",
         ner_name="string_example",
         title_sentiment_min=3.14,
         title_sentiment_max=3.14,
         content_sentiment_min=3.14,
         content_sentiment_max=3.14,
+        iptc_tags=None,
+        not_iptc_tags=None,
     )
     pprint(get_response.body)
     pprint(get_response.headers)
@@ -242,13 +256,14 @@ This endpoint allows you to search for articles by author. You need to specify t
 ```python
 get_response = newscatcher.authors.get(
     author_name="author_name_example",
-    sources="string_example",
-    predefined_sources="string_example",
-    not_sources="string_example",
-    lang="string_example",
-    not_lang="string_example",
-    countries="string_example",
-    not_countries="string_example",
+    not_author_name="string_example",
+    sources=None,
+    predefined_sources=None,
+    not_sources=None,
+    lang=None,
+    not_lang=None,
+    countries=None,
+    not_countries=None,
     from_="string_example",
     to_="string_example",
     published_date_precision="string_example",
@@ -259,9 +274,9 @@ get_response = newscatcher.authors.get(
     to_rank=1,
     is_headline=True,
     is_paid_content=True,
-    parent_url="string_example",
-    all_links="string_example",
-    all_domain_links="string_example",
+    parent_url=None,
+    all_links=None,
+    all_domain_links=None,
     word_count_min=0,
     word_count_max=0,
     page=1,
@@ -269,11 +284,14 @@ get_response = newscatcher.authors.get(
     include_nlp_data=True,
     has_nlp=True,
     theme="string_example",
+    not_theme="string_example",
     ner_name="string_example",
     title_sentiment_min=3.14,
     title_sentiment_max=3.14,
     content_sentiment_min=3.14,
     content_sentiment_max=3.14,
+    iptc_tags=None,
+    not_iptc_tags=None,
 )
 ```
 
@@ -281,19 +299,21 @@ get_response = newscatcher.authors.get(
 
 ##### author_name: `str`<a id="author_name-str"></a>
 
-##### sources: `str`<a id="sources-str"></a>
+##### not_author_name: `str`<a id="not_author_name-str"></a>
 
-##### predefined_sources: `str`<a id="predefined_sources-str"></a>
+##### sources: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="sources-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
 
-##### not_sources: `str`<a id="not_sources-str"></a>
+##### predefined_sources: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="predefined_sources-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
 
-##### lang: `str`<a id="lang-str"></a>
+##### not_sources: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="not_sources-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
 
-##### not_lang: `str`<a id="not_lang-str"></a>
+##### lang: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="lang-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
 
-##### countries: `str`<a id="countries-str"></a>
+##### not_lang: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="not_lang-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
 
-##### not_countries: `str`<a id="not_countries-str"></a>
+##### countries: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="countries-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
+
+##### not_countries: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="not_countries-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
 
 ##### from_: Union[`str`, `datetime`]<a id="from_-unionstr-datetime"></a>
 
@@ -317,11 +337,11 @@ get_response = newscatcher.authors.get(
 
 ##### is_paid_content: `bool`<a id="is_paid_content-bool"></a>
 
-##### parent_url: `str`<a id="parent_url-str"></a>
+##### parent_url: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="parent_url-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
 
-##### all_links: `str`<a id="all_links-str"></a>
+##### all_links: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="all_links-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
 
-##### all_domain_links: `str`<a id="all_domain_links-str"></a>
+##### all_domain_links: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="all_domain_links-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
 
 ##### word_count_min: `int`<a id="word_count_min-int"></a>
 
@@ -337,6 +357,8 @@ get_response = newscatcher.authors.get(
 
 ##### theme: `str`<a id="theme-str"></a>
 
+##### not_theme: `str`<a id="not_theme-str"></a>
+
 ##### ner_name: `str`<a id="ner_name-str"></a>
 
 ##### title_sentiment_min: `Union[int, float]`<a id="title_sentiment_min-unionint-float"></a>
@@ -346,6 +368,10 @@ get_response = newscatcher.authors.get(
 ##### content_sentiment_min: `Union[int, float]`<a id="content_sentiment_min-unionint-float"></a>
 
 ##### content_sentiment_max: `Union[int, float]`<a id="content_sentiment_max-unionint-float"></a>
+
+##### iptc_tags: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="iptc_tags-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
+
+##### not_iptc_tags: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="not_iptc_tags-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
 
 #### 🔄 Return<a id="🔄-return"></a>
 
@@ -368,13 +394,14 @@ This endpoint allows you to search for articles by author. You need to specify t
 ```python
 post_response = newscatcher.authors.post(
     author_name="string_example",
-    sources="string_example",
-    predefined_sources="string_example",
-    not_sources="string_example",
-    lang="string_example",
-    not_lang="string_example",
-    countries="string_example",
-    not_countries="string_example",
+    not_author_name="string_example",
+    sources=None,
+    predefined_sources=None,
+    not_sources=None,
+    lang=None,
+    not_lang=None,
+    countries=None,
+    not_countries=None,
     from_="string_example",
     to_="string_example",
     published_date_precision="string_example",
@@ -385,9 +412,9 @@ post_response = newscatcher.authors.post(
     to_rank=1,
     is_headline=True,
     is_paid_content=True,
-    parent_url="string_example",
-    all_links="string_example",
-    all_domain_links="string_example",
+    parent_url=None,
+    all_links=None,
+    all_domain_links=None,
     word_count_min=0,
     word_count_max=0,
     page=1,
@@ -395,11 +422,14 @@ post_response = newscatcher.authors.post(
     include_nlp_data=True,
     has_nlp=True,
     theme="string_example",
+    not_theme="string_example",
     ner_name="string_example",
     title_sentiment_min=3.14,
     title_sentiment_max=3.14,
     content_sentiment_min=3.14,
     content_sentiment_max=3.14,
+    iptc_tags=None,
+    not_iptc_tags=None,
 )
 ```
 
@@ -407,19 +437,21 @@ post_response = newscatcher.authors.post(
 
 ##### author_name: `str`<a id="author_name-str"></a>
 
-##### sources: `str`<a id="sources-str"></a>
+##### not_author_name: `str`<a id="not_author_name-str"></a>
 
-##### predefined_sources: `str`<a id="predefined_sources-str"></a>
+##### sources: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="sources-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 
-##### not_sources: `str`<a id="not_sources-str"></a>
+##### predefined_sources: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="predefined_sources-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 
-##### lang: `str`<a id="lang-str"></a>
+##### not_sources: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="not_sources-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 
-##### not_lang: `str`<a id="not_lang-str"></a>
+##### lang: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="lang-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 
-##### countries: `str`<a id="countries-str"></a>
+##### not_lang: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="not_lang-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 
-##### not_countries: `str`<a id="not_countries-str"></a>
+##### countries: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="countries-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
+
+##### not_countries: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="not_countries-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 
 ##### from_: Union[`str`, `datetime`]<a id="from_-unionstr-datetime"></a>
 
@@ -443,11 +475,11 @@ post_response = newscatcher.authors.post(
 
 ##### is_paid_content: `bool`<a id="is_paid_content-bool"></a>
 
-##### parent_url: `str`<a id="parent_url-str"></a>
+##### parent_url: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="parent_url-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 
-##### all_links: `str`<a id="all_links-str"></a>
+##### all_links: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="all_links-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 
-##### all_domain_links: `str`<a id="all_domain_links-str"></a>
+##### all_domain_links: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="all_domain_links-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 
 ##### word_count_min: `int`<a id="word_count_min-int"></a>
 
@@ -463,6 +495,8 @@ post_response = newscatcher.authors.post(
 
 ##### theme: `str`<a id="theme-str"></a>
 
+##### not_theme: `str`<a id="not_theme-str"></a>
+
 ##### ner_name: `str`<a id="ner_name-str"></a>
 
 ##### title_sentiment_min: `Union[int, float]`<a id="title_sentiment_min-unionint-float"></a>
@@ -472,6 +506,10 @@ post_response = newscatcher.authors.post(
 ##### content_sentiment_min: `Union[int, float]`<a id="content_sentiment_min-unionint-float"></a>
 
 ##### content_sentiment_max: `Union[int, float]`<a id="content_sentiment_max-unionint-float"></a>
+
+##### iptc_tags: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="iptc_tags-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
+
+##### not_iptc_tags: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="not_iptc_tags-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 
 #### ⚙️ Request Body<a id="⚙️-request-body"></a>
 
@@ -498,29 +536,31 @@ This endpoint allows you to get latest headlines. You need to specify since when
 get_response = newscatcher.latest_headlines.get(
     when="7d",
     by_parse_date=False,
-    lang="string_example",
-    not_lang="string_example",
-    countries="string_example",
-    not_countries="string_example",
-    sources="string_example",
-    predefined_sources="string_example",
-    not_sources="string_example",
+    lang=None,
+    not_lang=None,
+    countries=None,
+    not_countries=None,
+    sources=None,
+    predefined_sources=None,
+    not_sources=None,
+    not_author_name=None,
     ranked_only="string_example",
     is_headline=True,
     is_paid_content=True,
-    parent_url="string_example",
-    theme="string_example",
-    all_links="string_example",
-    all_domain_links="string_example",
+    parent_url=None,
+    all_links=None,
+    all_domain_links=None,
     word_count_min=0,
     word_count_max=0,
     page=1,
     page_size=100,
+    clustering_variable="string_example",
     clustering_enabled=True,
     clustering_threshold=3.14,
-    clustering_variable="string_example",
     include_nlp_data=True,
     has_nlp=True,
+    theme="string_example",
+    not_theme="string_example",
     org_entity_name="string_example",
     per_entity_name="string_example",
     loc_entity_name="string_example",
@@ -529,6 +569,8 @@ get_response = newscatcher.latest_headlines.get(
     title_sentiment_max=3.14,
     content_sentiment_min=3.14,
     content_sentiment_max=3.14,
+    iptc_tags=None,
+    not_iptc_tags=None,
 )
 ```
 
@@ -538,19 +580,21 @@ get_response = newscatcher.latest_headlines.get(
 
 ##### by_parse_date: `bool`<a id="by_parse_date-bool"></a>
 
-##### lang: `str`<a id="lang-str"></a>
+##### lang: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="lang-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
 
-##### not_lang: `str`<a id="not_lang-str"></a>
+##### not_lang: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="not_lang-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
 
-##### countries: `str`<a id="countries-str"></a>
+##### countries: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="countries-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
 
-##### not_countries: `str`<a id="not_countries-str"></a>
+##### not_countries: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="not_countries-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
 
-##### sources: `str`<a id="sources-str"></a>
+##### sources: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="sources-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
 
-##### predefined_sources: `str`<a id="predefined_sources-str"></a>
+##### predefined_sources: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="predefined_sources-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
 
-##### not_sources: `str`<a id="not_sources-str"></a>
+##### not_sources: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="not_sources-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
+
+##### not_author_name: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="not_author_name-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
 
 ##### ranked_only: `str`<a id="ranked_only-str"></a>
 
@@ -558,13 +602,11 @@ get_response = newscatcher.latest_headlines.get(
 
 ##### is_paid_content: `bool`<a id="is_paid_content-bool"></a>
 
-##### parent_url: `str`<a id="parent_url-str"></a>
+##### parent_url: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="parent_url-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
 
-##### theme: `str`<a id="theme-str"></a>
+##### all_links: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="all_links-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
 
-##### all_links: `str`<a id="all_links-str"></a>
-
-##### all_domain_links: `str`<a id="all_domain_links-str"></a>
+##### all_domain_links: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="all_domain_links-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
 
 ##### word_count_min: `int`<a id="word_count_min-int"></a>
 
@@ -574,15 +616,19 @@ get_response = newscatcher.latest_headlines.get(
 
 ##### page_size: `int`<a id="page_size-int"></a>
 
+##### clustering_variable: `str`<a id="clustering_variable-str"></a>
+
 ##### clustering_enabled: `bool`<a id="clustering_enabled-bool"></a>
 
 ##### clustering_threshold: `Union[int, float]`<a id="clustering_threshold-unionint-float"></a>
 
-##### clustering_variable: `str`<a id="clustering_variable-str"></a>
-
 ##### include_nlp_data: `bool`<a id="include_nlp_data-bool"></a>
 
 ##### has_nlp: `bool`<a id="has_nlp-bool"></a>
+
+##### theme: `str`<a id="theme-str"></a>
+
+##### not_theme: `str`<a id="not_theme-str"></a>
 
 ##### org_entity_name: `str`<a id="org_entity_name-str"></a>
 
@@ -599,6 +645,10 @@ get_response = newscatcher.latest_headlines.get(
 ##### content_sentiment_min: `Union[int, float]`<a id="content_sentiment_min-unionint-float"></a>
 
 ##### content_sentiment_max: `Union[int, float]`<a id="content_sentiment_max-unionint-float"></a>
+
+##### iptc_tags: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="iptc_tags-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
+
+##### not_iptc_tags: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="not_iptc_tags-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
 
 #### 🔄 Return<a id="🔄-return"></a>
 
@@ -622,29 +672,31 @@ This endpoint allows you to get latest headlines. You need to specify since when
 post_response = newscatcher.latest_headlines.post(
     when="7d",
     by_parse_date=False,
-    lang="string_example",
-    not_lang="string_example",
-    countries="string_example",
-    not_countries="string_example",
-    sources="string_example",
-    predefined_sources="string_example",
-    not_sources="string_example",
+    lang=None,
+    not_lang=None,
+    countries=None,
+    not_countries=None,
+    sources=None,
+    predefined_sources=None,
+    not_sources=None,
+    not_author_name=None,
     ranked_only="string_example",
     is_headline=True,
     is_paid_content=True,
-    parent_url="string_example",
-    theme="string_example",
-    all_links="string_example",
-    all_domain_links="string_example",
+    parent_url=None,
+    all_links=None,
+    all_domain_links=None,
     word_count_min=0,
     word_count_max=0,
     page=1,
     page_size=100,
+    clustering_variable="string_example",
     clustering_enabled=True,
     clustering_threshold=3.14,
-    clustering_variable="string_example",
     include_nlp_data=True,
     has_nlp=True,
+    theme="string_example",
+    not_theme="string_example",
     org_entity_name="string_example",
     per_entity_name="string_example",
     loc_entity_name="string_example",
@@ -653,6 +705,8 @@ post_response = newscatcher.latest_headlines.post(
     title_sentiment_max=3.14,
     content_sentiment_min=3.14,
     content_sentiment_max=3.14,
+    iptc_tags=None,
+    not_iptc_tags=None,
 )
 ```
 
@@ -662,19 +716,21 @@ post_response = newscatcher.latest_headlines.post(
 
 ##### by_parse_date: `bool`<a id="by_parse_date-bool"></a>
 
-##### lang: `str`<a id="lang-str"></a>
+##### lang: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="lang-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 
-##### not_lang: `str`<a id="not_lang-str"></a>
+##### not_lang: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="not_lang-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 
-##### countries: `str`<a id="countries-str"></a>
+##### countries: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="countries-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 
-##### not_countries: `str`<a id="not_countries-str"></a>
+##### not_countries: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="not_countries-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 
-##### sources: `str`<a id="sources-str"></a>
+##### sources: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="sources-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 
-##### predefined_sources: `str`<a id="predefined_sources-str"></a>
+##### predefined_sources: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="predefined_sources-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 
-##### not_sources: `str`<a id="not_sources-str"></a>
+##### not_sources: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="not_sources-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
+
+##### not_author_name: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="not_author_name-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 
 ##### ranked_only: `str`<a id="ranked_only-str"></a>
 
@@ -682,13 +738,11 @@ post_response = newscatcher.latest_headlines.post(
 
 ##### is_paid_content: `bool`<a id="is_paid_content-bool"></a>
 
-##### parent_url: `str`<a id="parent_url-str"></a>
+##### parent_url: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="parent_url-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 
-##### theme: `str`<a id="theme-str"></a>
+##### all_links: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="all_links-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 
-##### all_links: `str`<a id="all_links-str"></a>
-
-##### all_domain_links: `str`<a id="all_domain_links-str"></a>
+##### all_domain_links: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="all_domain_links-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 
 ##### word_count_min: `int`<a id="word_count_min-int"></a>
 
@@ -698,15 +752,19 @@ post_response = newscatcher.latest_headlines.post(
 
 ##### page_size: `int`<a id="page_size-int"></a>
 
+##### clustering_variable: `str`<a id="clustering_variable-str"></a>
+
 ##### clustering_enabled: `bool`<a id="clustering_enabled-bool"></a>
 
 ##### clustering_threshold: `Union[int, float]`<a id="clustering_threshold-unionint-float"></a>
 
-##### clustering_variable: `str`<a id="clustering_variable-str"></a>
-
 ##### include_nlp_data: `bool`<a id="include_nlp_data-bool"></a>
 
 ##### has_nlp: `bool`<a id="has_nlp-bool"></a>
+
+##### theme: `str`<a id="theme-str"></a>
+
+##### not_theme: `str`<a id="not_theme-str"></a>
 
 ##### org_entity_name: `str`<a id="org_entity_name-str"></a>
 
@@ -723,6 +781,10 @@ post_response = newscatcher.latest_headlines.post(
 ##### content_sentiment_min: `Union[int, float]`<a id="content_sentiment_min-unionint-float"></a>
 
 ##### content_sentiment_max: `Union[int, float]`<a id="content_sentiment_max-unionint-float"></a>
+
+##### iptc_tags: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="iptc_tags-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
+
+##### not_iptc_tags: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="not_iptc_tags-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 
 #### ⚙️ Request Body<a id="⚙️-request-body"></a>
 
@@ -749,13 +811,14 @@ This endpoint allows you to search for articles. You can search for articles by 
 get_response = newscatcher.search.get(
     q="q_example",
     search_in="title_content",
-    predefined_sources="string_example",
-    sources="string_example",
-    not_sources="string_example",
-    lang="string_example",
-    not_lang="string_example",
-    countries="string_example",
-    not_countries="string_example",
+    predefined_sources=None,
+    sources=None,
+    not_sources=None,
+    lang=None,
+    not_lang=None,
+    countries=None,
+    not_countries=None,
+    not_author_name=None,
     from_="string_example",
     to_="string_example",
     published_date_precision="string_example",
@@ -766,19 +829,20 @@ get_response = newscatcher.search.get(
     to_rank=1,
     is_headline=True,
     is_paid_content=True,
-    parent_url="string_example",
-    all_links="string_example",
-    all_domain_links="string_example",
+    parent_url=None,
+    all_links=None,
+    all_domain_links=None,
     word_count_min=0,
     word_count_max=0,
     page=1,
     page_size=100,
+    clustering_variable="string_example",
     clustering_enabled=True,
     clustering_threshold=3.14,
-    clustering_variable="string_example",
     include_nlp_data=True,
     has_nlp=True,
     theme="string_example",
+    not_theme="string_example",
     org_entity_name="string_example",
     per_entity_name="string_example",
     loc_entity_name="string_example",
@@ -787,6 +851,10 @@ get_response = newscatcher.search.get(
     title_sentiment_max=3.14,
     content_sentiment_min=3.14,
     content_sentiment_max=3.14,
+    iptc_tags=None,
+    not_iptc_tags=None,
+    source_name=None,
+    iab_tags=None,
 )
 ```
 
@@ -796,19 +864,21 @@ get_response = newscatcher.search.get(
 
 ##### search_in: `str`<a id="search_in-str"></a>
 
-##### predefined_sources: `str`<a id="predefined_sources-str"></a>
+##### predefined_sources: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="predefined_sources-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
 
-##### sources: `str`<a id="sources-str"></a>
+##### sources: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="sources-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
 
-##### not_sources: `str`<a id="not_sources-str"></a>
+##### not_sources: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="not_sources-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
 
-##### lang: `str`<a id="lang-str"></a>
+##### lang: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="lang-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
 
-##### not_lang: `str`<a id="not_lang-str"></a>
+##### not_lang: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="not_lang-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
 
-##### countries: `str`<a id="countries-str"></a>
+##### countries: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="countries-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
 
-##### not_countries: `str`<a id="not_countries-str"></a>
+##### not_countries: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="not_countries-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
+
+##### not_author_name: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="not_author_name-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
 
 ##### from_: Union[`str`, `datetime`]<a id="from_-unionstr-datetime"></a>
 
@@ -832,11 +902,11 @@ get_response = newscatcher.search.get(
 
 ##### is_paid_content: `bool`<a id="is_paid_content-bool"></a>
 
-##### parent_url: `str`<a id="parent_url-str"></a>
+##### parent_url: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="parent_url-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
 
-##### all_links: `str`<a id="all_links-str"></a>
+##### all_links: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="all_links-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
 
-##### all_domain_links: `str`<a id="all_domain_links-str"></a>
+##### all_domain_links: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="all_domain_links-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
 
 ##### word_count_min: `int`<a id="word_count_min-int"></a>
 
@@ -846,17 +916,19 @@ get_response = newscatcher.search.get(
 
 ##### page_size: `int`<a id="page_size-int"></a>
 
+##### clustering_variable: `str`<a id="clustering_variable-str"></a>
+
 ##### clustering_enabled: `bool`<a id="clustering_enabled-bool"></a>
 
 ##### clustering_threshold: `Union[int, float]`<a id="clustering_threshold-unionint-float"></a>
-
-##### clustering_variable: `str`<a id="clustering_variable-str"></a>
 
 ##### include_nlp_data: `bool`<a id="include_nlp_data-bool"></a>
 
 ##### has_nlp: `bool`<a id="has_nlp-bool"></a>
 
 ##### theme: `str`<a id="theme-str"></a>
+
+##### not_theme: `str`<a id="not_theme-str"></a>
 
 ##### org_entity_name: `str`<a id="org_entity_name-str"></a>
 
@@ -873,6 +945,14 @@ get_response = newscatcher.search.get(
 ##### content_sentiment_min: `Union[int, float]`<a id="content_sentiment_min-unionint-float"></a>
 
 ##### content_sentiment_max: `Union[int, float]`<a id="content_sentiment_max-unionint-float"></a>
+
+##### iptc_tags: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="iptc_tags-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
+
+##### not_iptc_tags: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="not_iptc_tags-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
+
+##### source_name: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="source_name-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
+
+##### iab_tags: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="iab_tags-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
 
 #### 🔄 Return<a id="🔄-return"></a>
 
@@ -896,13 +976,14 @@ This endpoint allows you to search for articles. You can search for articles by 
 post_response = newscatcher.search.post(
     q="string_example",
     search_in="title_content",
-    predefined_sources="string_example",
-    sources="string_example",
-    not_sources="string_example",
-    lang="string_example",
-    not_lang="string_example",
-    countries="string_example",
-    not_countries="string_example",
+    predefined_sources=None,
+    sources=None,
+    not_sources=None,
+    lang=None,
+    not_lang=None,
+    countries=None,
+    not_countries=None,
+    not_author_name=None,
     from_="string_example",
     to_="string_example",
     published_date_precision="string_example",
@@ -913,19 +994,20 @@ post_response = newscatcher.search.post(
     to_rank=1,
     is_headline=True,
     is_paid_content=True,
-    parent_url="string_example",
-    all_links="string_example",
-    all_domain_links="string_example",
+    parent_url=None,
+    all_links=None,
+    all_domain_links=None,
     word_count_min=0,
     word_count_max=0,
     page=1,
     page_size=100,
+    clustering_variable="string_example",
     clustering_enabled=True,
     clustering_threshold=3.14,
-    clustering_variable="string_example",
     include_nlp_data=True,
     has_nlp=True,
     theme="string_example",
+    not_theme="string_example",
     org_entity_name="string_example",
     per_entity_name="string_example",
     loc_entity_name="string_example",
@@ -934,6 +1016,10 @@ post_response = newscatcher.search.post(
     title_sentiment_max=3.14,
     content_sentiment_min=3.14,
     content_sentiment_max=3.14,
+    iptc_tags=None,
+    not_iptc_tags=None,
+    source_name=None,
+    iab_tags=None,
 )
 ```
 
@@ -943,19 +1029,21 @@ post_response = newscatcher.search.post(
 
 ##### search_in: `str`<a id="search_in-str"></a>
 
-##### predefined_sources: `str`<a id="predefined_sources-str"></a>
+##### predefined_sources: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="predefined_sources-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 
-##### sources: `str`<a id="sources-str"></a>
+##### sources: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="sources-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 
-##### not_sources: `str`<a id="not_sources-str"></a>
+##### not_sources: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="not_sources-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 
-##### lang: `str`<a id="lang-str"></a>
+##### lang: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="lang-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 
-##### not_lang: `str`<a id="not_lang-str"></a>
+##### not_lang: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="not_lang-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 
-##### countries: `str`<a id="countries-str"></a>
+##### countries: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="countries-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 
-##### not_countries: `str`<a id="not_countries-str"></a>
+##### not_countries: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="not_countries-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
+
+##### not_author_name: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="not_author_name-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 
 ##### from_: Union[`str`, `datetime`]<a id="from_-unionstr-datetime"></a>
 
@@ -979,11 +1067,11 @@ post_response = newscatcher.search.post(
 
 ##### is_paid_content: `bool`<a id="is_paid_content-bool"></a>
 
-##### parent_url: `str`<a id="parent_url-str"></a>
+##### parent_url: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="parent_url-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 
-##### all_links: `str`<a id="all_links-str"></a>
+##### all_links: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="all_links-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 
-##### all_domain_links: `str`<a id="all_domain_links-str"></a>
+##### all_domain_links: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="all_domain_links-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 
 ##### word_count_min: `int`<a id="word_count_min-int"></a>
 
@@ -993,17 +1081,19 @@ post_response = newscatcher.search.post(
 
 ##### page_size: `int`<a id="page_size-int"></a>
 
+##### clustering_variable: `str`<a id="clustering_variable-str"></a>
+
 ##### clustering_enabled: `bool`<a id="clustering_enabled-bool"></a>
 
 ##### clustering_threshold: `Union[int, float]`<a id="clustering_threshold-unionint-float"></a>
-
-##### clustering_variable: `str`<a id="clustering_variable-str"></a>
 
 ##### include_nlp_data: `bool`<a id="include_nlp_data-bool"></a>
 
 ##### has_nlp: `bool`<a id="has_nlp-bool"></a>
 
 ##### theme: `str`<a id="theme-str"></a>
+
+##### not_theme: `str`<a id="not_theme-str"></a>
 
 ##### org_entity_name: `str`<a id="org_entity_name-str"></a>
 
@@ -1021,6 +1111,14 @@ post_response = newscatcher.search.post(
 
 ##### content_sentiment_max: `Union[int, float]`<a id="content_sentiment_max-unionint-float"></a>
 
+##### iptc_tags: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="iptc_tags-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
+
+##### not_iptc_tags: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="not_iptc_tags-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
+
+##### source_name: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="source_name-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
+
+##### iab_tags: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="iab_tags-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
+
 #### ⚙️ Request Body<a id="⚙️-request-body"></a>
 
 [`SearchRequest`](./newscatcherapi_client/type/search_request.py)
@@ -1031,6 +1129,83 @@ post_response = newscatcher.search.post(
 #### 🌐 Endpoint<a id="🌐-endpoint"></a>
 
 `/api/search` `post`
+
+[🔙 **Back to Table of Contents**](#table-of-contents)
+
+---
+
+### `newscatcher.search_link.get`<a id="newscatchersearch_linkget"></a>
+
+This endpoint allows you to search for articles. You can search for articles by id(s) or link(s).
+
+#### 🛠️ Usage<a id="🛠️-usage"></a>
+
+```python
+get_response = newscatcher.search_link.get(
+    ids=None,
+    links=None,
+    page=1,
+    page_size=100,
+)
+```
+
+#### ⚙️ Parameters<a id="⚙️-parameters"></a>
+
+##### ids: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="ids-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
+
+##### links: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="links-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
+
+##### page: `int`<a id="page-int"></a>
+
+##### page_size: `int`<a id="page_size-int"></a>
+
+#### 🔄 Return<a id="🔄-return"></a>
+
+[`DtoResponsesSearchResponseSearchResponse`](./newscatcherapi_client/pydantic/dto_responses_search_response_search_response.py)
+
+#### 🌐 Endpoint<a id="🌐-endpoint"></a>
+
+`/api/search_by_link` `get`
+
+[🔙 **Back to Table of Contents**](#table-of-contents)
+
+---
+
+### `newscatcher.search_link.post`<a id="newscatchersearch_linkpost"></a>
+
+This endpoint allows you to search for articles. You can search for articles by id(s) or link(s).
+
+#### 🛠️ Usage<a id="🛠️-usage"></a>
+
+```python
+post_response = newscatcher.search_link.post(
+    ids=None,
+    links=None,
+    page=1,
+    page_size=100,
+)
+```
+
+#### ⚙️ Parameters<a id="⚙️-parameters"></a>
+
+##### ids: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="ids-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
+
+##### links: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="links-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
+
+##### page: `int`<a id="page-int"></a>
+
+##### page_size: `int`<a id="page_size-int"></a>
+
+#### ⚙️ Request Body<a id="⚙️-request-body"></a>
+
+[`SearchURLRequest`](./newscatcherapi_client/type/search_url_request.py)
+#### 🔄 Return<a id="🔄-return"></a>
+
+[`DtoResponsesSearchResponseSearchResponse`](./newscatcherapi_client/pydantic/dto_responses_search_response_search_response.py)
+
+#### 🌐 Endpoint<a id="🌐-endpoint"></a>
+
+`/api/search_by_link` `post`
 
 [🔙 **Back to Table of Contents**](#table-of-contents)
 
@@ -1049,13 +1224,13 @@ get_response = newscatcher.search_similar.get(
     include_similar_documents=False,
     similar_documents_number=5,
     similar_documents_fields="title,content",
-    predefined_sources="string_example",
-    sources="string_example",
-    not_sources="string_example",
-    lang="string_example",
-    not_lang="string_example",
-    countries="string_example",
-    not_countries="string_example",
+    predefined_sources=None,
+    sources=None,
+    not_sources=None,
+    lang=None,
+    not_lang=None,
+    countries=None,
+    not_countries=None,
     from_="string_example",
     to_="string_example",
     by_parse_date=False,
@@ -1066,9 +1241,9 @@ get_response = newscatcher.search_similar.get(
     to_rank=1,
     is_headline=True,
     is_paid_content=True,
-    parent_url="string_example",
-    all_links="string_example",
-    all_domain_links="string_example",
+    parent_url=None,
+    all_links=None,
+    all_domain_links=None,
     word_count_min=0,
     word_count_max=0,
     page=1,
@@ -1076,11 +1251,14 @@ get_response = newscatcher.search_similar.get(
     include_nlp_data=True,
     has_nlp=True,
     theme="string_example",
+    not_theme="string_example",
     ner_name="string_example",
     title_sentiment_min=3.14,
     title_sentiment_max=3.14,
     content_sentiment_min=3.14,
     content_sentiment_max=3.14,
+    iptc_tags=None,
+    not_iptc_tags=None,
 )
 ```
 
@@ -1096,19 +1274,19 @@ get_response = newscatcher.search_similar.get(
 
 ##### similar_documents_fields: `str`<a id="similar_documents_fields-str"></a>
 
-##### predefined_sources: `str`<a id="predefined_sources-str"></a>
+##### predefined_sources: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="predefined_sources-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
 
-##### sources: `str`<a id="sources-str"></a>
+##### sources: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="sources-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
 
-##### not_sources: `str`<a id="not_sources-str"></a>
+##### not_sources: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="not_sources-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
 
-##### lang: `str`<a id="lang-str"></a>
+##### lang: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="lang-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
 
-##### not_lang: `str`<a id="not_lang-str"></a>
+##### not_lang: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="not_lang-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
 
-##### countries: `str`<a id="countries-str"></a>
+##### countries: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="countries-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
 
-##### not_countries: `str`<a id="not_countries-str"></a>
+##### not_countries: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="not_countries-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
 
 ##### from_: Union[`str`, `datetime`]<a id="from_-unionstr-datetime"></a>
 
@@ -1132,11 +1310,11 @@ get_response = newscatcher.search_similar.get(
 
 ##### is_paid_content: `bool`<a id="is_paid_content-bool"></a>
 
-##### parent_url: `str`<a id="parent_url-str"></a>
+##### parent_url: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="parent_url-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
 
-##### all_links: `str`<a id="all_links-str"></a>
+##### all_links: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="all_links-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
 
-##### all_domain_links: `str`<a id="all_domain_links-str"></a>
+##### all_domain_links: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="all_domain_links-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
 
 ##### word_count_min: `int`<a id="word_count_min-int"></a>
 
@@ -1152,6 +1330,8 @@ get_response = newscatcher.search_similar.get(
 
 ##### theme: `str`<a id="theme-str"></a>
 
+##### not_theme: `str`<a id="not_theme-str"></a>
+
 ##### ner_name: `str`<a id="ner_name-str"></a>
 
 ##### title_sentiment_min: `Union[int, float]`<a id="title_sentiment_min-unionint-float"></a>
@@ -1161,6 +1341,10 @@ get_response = newscatcher.search_similar.get(
 ##### content_sentiment_min: `Union[int, float]`<a id="content_sentiment_min-unionint-float"></a>
 
 ##### content_sentiment_max: `Union[int, float]`<a id="content_sentiment_max-unionint-float"></a>
+
+##### iptc_tags: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="iptc_tags-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
+
+##### not_iptc_tags: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="not_iptc_tags-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
 
 #### 🔄 Return<a id="🔄-return"></a>
 
@@ -1187,13 +1371,13 @@ post_response = newscatcher.search_similar.post(
     include_similar_documents=False,
     similar_documents_number=5,
     similar_documents_fields="title,content",
-    predefined_sources="string_example",
-    sources="string_example",
-    not_sources="string_example",
-    lang="string_example",
-    not_lang="string_example",
-    countries="string_example",
-    not_countries="string_example",
+    predefined_sources=None,
+    sources=None,
+    not_sources=None,
+    lang=None,
+    not_lang=None,
+    countries=None,
+    not_countries=None,
     from_="string_example",
     to_="string_example",
     by_parse_date=False,
@@ -1204,9 +1388,9 @@ post_response = newscatcher.search_similar.post(
     to_rank=1,
     is_headline=True,
     is_paid_content=True,
-    parent_url="string_example",
-    all_links="string_example",
-    all_domain_links="string_example",
+    parent_url=None,
+    all_links=None,
+    all_domain_links=None,
     word_count_min=0,
     word_count_max=0,
     page=1,
@@ -1214,11 +1398,14 @@ post_response = newscatcher.search_similar.post(
     include_nlp_data=True,
     has_nlp=True,
     theme="string_example",
+    not_theme="string_example",
     ner_name="string_example",
     title_sentiment_min=3.14,
     title_sentiment_max=3.14,
     content_sentiment_min=3.14,
     content_sentiment_max=3.14,
+    iptc_tags=None,
+    not_iptc_tags=None,
 )
 ```
 
@@ -1234,19 +1421,19 @@ post_response = newscatcher.search_similar.post(
 
 ##### similar_documents_fields: `str`<a id="similar_documents_fields-str"></a>
 
-##### predefined_sources: `str`<a id="predefined_sources-str"></a>
+##### predefined_sources: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="predefined_sources-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 
-##### sources: `str`<a id="sources-str"></a>
+##### sources: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="sources-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 
-##### not_sources: `str`<a id="not_sources-str"></a>
+##### not_sources: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="not_sources-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 
-##### lang: `str`<a id="lang-str"></a>
+##### lang: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="lang-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 
-##### not_lang: `str`<a id="not_lang-str"></a>
+##### not_lang: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="not_lang-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 
-##### countries: `str`<a id="countries-str"></a>
+##### countries: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="countries-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 
-##### not_countries: `str`<a id="not_countries-str"></a>
+##### not_countries: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="not_countries-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 
 ##### from_: Union[`str`, `datetime`]<a id="from_-unionstr-datetime"></a>
 
@@ -1270,11 +1457,11 @@ post_response = newscatcher.search_similar.post(
 
 ##### is_paid_content: `bool`<a id="is_paid_content-bool"></a>
 
-##### parent_url: `str`<a id="parent_url-str"></a>
+##### parent_url: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="parent_url-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 
-##### all_links: `str`<a id="all_links-str"></a>
+##### all_links: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="all_links-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 
-##### all_domain_links: `str`<a id="all_domain_links-str"></a>
+##### all_domain_links: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="all_domain_links-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 
 ##### word_count_min: `int`<a id="word_count_min-int"></a>
 
@@ -1290,6 +1477,8 @@ post_response = newscatcher.search_similar.post(
 
 ##### theme: `str`<a id="theme-str"></a>
 
+##### not_theme: `str`<a id="not_theme-str"></a>
+
 ##### ner_name: `str`<a id="ner_name-str"></a>
 
 ##### title_sentiment_min: `Union[int, float]`<a id="title_sentiment_min-unionint-float"></a>
@@ -1299,6 +1488,10 @@ post_response = newscatcher.search_similar.post(
 ##### content_sentiment_min: `Union[int, float]`<a id="content_sentiment_min-unionint-float"></a>
 
 ##### content_sentiment_max: `Union[int, float]`<a id="content_sentiment_max-unionint-float"></a>
+
+##### iptc_tags: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="iptc_tags-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
+
+##### not_iptc_tags: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="not_iptc_tags-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 
 #### ⚙️ Request Body<a id="⚙️-request-body"></a>
 
@@ -1325,6 +1518,12 @@ This endpoint allows you to get the list of sources that are available in the da
 get_response = newscatcher.sources.get(
     lang="string_example",
     countries="string_example",
+    predefined_sources="string_example",
+    include_additional_info=True,
+    from_rank=1,
+    to_rank=1,
+    source_name=None,
+    source_url="string_example",
 )
 ```
 
@@ -1333,6 +1532,18 @@ get_response = newscatcher.sources.get(
 ##### lang: `str`<a id="lang-str"></a>
 
 ##### countries: `str`<a id="countries-str"></a>
+
+##### predefined_sources: `str`<a id="predefined_sources-str"></a>
+
+##### include_additional_info: `bool`<a id="include_additional_info-bool"></a>
+
+##### from_rank: `int`<a id="from_rank-int"></a>
+
+##### to_rank: `int`<a id="to_rank-int"></a>
+
+##### source_name: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="source_name-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
+
+##### source_url: `str`<a id="source_url-str"></a>
 
 #### 🔄 Return<a id="🔄-return"></a>
 
@@ -1356,6 +1567,12 @@ This endpoint allows you to get the list of sources that are available in the da
 post_response = newscatcher.sources.post(
     lang="string_example",
     countries="string_example",
+    predefined_sources="string_example",
+    include_additional_info=True,
+    from_rank=1,
+    to_rank=1,
+    source_name=None,
+    source_url="string_example",
 )
 ```
 
@@ -1364,6 +1581,18 @@ post_response = newscatcher.sources.post(
 ##### lang: `str`<a id="lang-str"></a>
 
 ##### countries: `str`<a id="countries-str"></a>
+
+##### predefined_sources: `str`<a id="predefined_sources-str"></a>
+
+##### include_additional_info: `bool`<a id="include_additional_info-bool"></a>
+
+##### from_rank: `int`<a id="from_rank-int"></a>
+
+##### to_rank: `int`<a id="to_rank-int"></a>
+
+##### source_name: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="source_name-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
+
+##### source_url: `str`<a id="source_url-str"></a>
 
 #### ⚙️ Request Body<a id="⚙️-request-body"></a>
 
