@@ -68,7 +68,7 @@ public class AllOperationsTest {
         Double titleSentimentMax = 3.4D;
         Double contentSentimentMin = 3.4D;
         Double contentSentimentMax = 3.4D;
-        CSLHFResponse response = client.latestHeadlines.get()
+        CSLHResponse response = client.latestHeadlines.get()
                 .when(when)
                 .byParseDate(byParseDate)
                 .lang(lang)
