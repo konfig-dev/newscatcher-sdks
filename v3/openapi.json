@@ -445,6 +445,14 @@
             "in": "query"
           },
           {
+            "required": false,
+            "schema": {
+              "title": "Not Iab Tags"
+            },
+            "name": "not_iab_tags",
+            "in": "query"
+          },
+          {
             "required": true,
             "schema": {
               "title": "X-Api-Token",
@@ -880,6 +888,22 @@
               "title": "Not Iptc Tags"
             },
             "name": "not_iptc_tags",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Iab Tags"
+            },
+            "name": "iab_tags",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Not Iab Tags"
+            },
+            "name": "not_iab_tags",
             "in": "query"
           },
           {
@@ -1335,6 +1359,22 @@
               "title": "Not Iptc Tags"
             },
             "name": "not_iptc_tags",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Iab Tags"
+            },
+            "name": "iab_tags",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Not Iab Tags"
+            },
+            "name": "not_iab_tags",
             "in": "query"
           },
           {
@@ -2493,6 +2533,12 @@
           },
           "not_iptc_tags": {
             "title": "Not Iptc Tags"
+          },
+          "iab_tags": {
+            "title": "Iab Tags"
+          },
+          "not_iab_tags": {
+            "title": "Not Iab Tags"
           }
         }
       },
@@ -2732,6 +2778,12 @@
           },
           "not_iptc_tags": {
             "title": "Not Iptc Tags"
+          },
+          "iab_tags": {
+            "title": "Iab Tags"
+          },
+          "not_iab_tags": {
+            "title": "Not Iab Tags"
           }
         }
       },
@@ -3167,6 +3219,9 @@
           },
           "iab_tags": {
             "title": "Iab Tags"
+          },
+          "not_iab_tags": {
+            "title": "Not Iab Tags"
           }
         }
       },
