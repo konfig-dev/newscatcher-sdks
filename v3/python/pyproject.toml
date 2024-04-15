@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "newscatcherapi-python-sdk"
-version = "6.0.2"
+version = "6.0.3"
 description = "Client for NewsCatcher-V3 Production API"
 authors = ["Maksym Sugonyaka <maksym@newscatcherapi.com>"]
 license = "MIT"
