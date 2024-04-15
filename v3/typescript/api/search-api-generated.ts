@@ -88,10 +88,11 @@ export const SearchApiAxiosParamCreator = function (configuration?: Configuratio
          * @param {any} [notIptcTags] 
          * @param {any} [sourceName] 
          * @param {any} [iabTags] 
+         * @param {any} [notIabTags] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        get: async (q: string, searchIn?: string, predefinedSources?: any, sources?: any, notSources?: any, lang?: any, notLang?: any, countries?: any, notCountries?: any, notAuthorName?: any, from?: From, to?: To, publishedDatePrecision?: string, byParseDate?: boolean, sortBy?: string, rankedOnly?: string, fromRank?: number, toRank?: number, isHeadline?: boolean, isPaidContent?: boolean, parentUrl?: any, allLinks?: any, allDomainLinks?: any, wordCountMin?: number, wordCountMax?: number, page?: number, pageSize?: number, clusteringVariable?: string, clusteringEnabled?: boolean, clusteringThreshold?: number, includeNlpData?: boolean, hasNlp?: boolean, theme?: string, notTheme?: string, orgEntityName?: string, perEntityName?: string, locEntityName?: string, miscEntityName?: string, titleSentimentMin?: number, titleSentimentMax?: number, contentSentimentMin?: number, contentSentimentMax?: number, iptcTags?: any, notIptcTags?: any, sourceName?: any, iabTags?: any, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        get: async (q: string, searchIn?: string, predefinedSources?: any, sources?: any, notSources?: any, lang?: any, notLang?: any, countries?: any, notCountries?: any, notAuthorName?: any, from?: From, to?: To, publishedDatePrecision?: string, byParseDate?: boolean, sortBy?: string, rankedOnly?: string, fromRank?: number, toRank?: number, isHeadline?: boolean, isPaidContent?: boolean, parentUrl?: any, allLinks?: any, allDomainLinks?: any, wordCountMin?: number, wordCountMax?: number, page?: number, pageSize?: number, clusteringVariable?: string, clusteringEnabled?: boolean, clusteringThreshold?: number, includeNlpData?: boolean, hasNlp?: boolean, theme?: string, notTheme?: string, orgEntityName?: string, perEntityName?: string, locEntityName?: string, miscEntityName?: string, titleSentimentMin?: number, titleSentimentMax?: number, contentSentimentMin?: number, contentSentimentMax?: number, iptcTags?: any, notIptcTags?: any, sourceName?: any, iabTags?: any, notIabTags?: any, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'q' is not null or undefined
             assertParamExists('get', 'q', q)
             const localVarPath = `/api/search`;
@@ -292,6 +293,10 @@ export const SearchApiAxiosParamCreator = function (configuration?: Configuratio
                 localVarQueryParameter['iab_tags'] = iabTags;
             }
 
+            if (notIabTags !== undefined) {
+                localVarQueryParameter['not_iab_tags'] = notIabTags;
+            }
+
 
     
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -377,7 +382,7 @@ export const SearchApiFp = function(configuration?: Configuration) {
          * @throws {RequiredError}
          */
         async get(requestParameters: SearchApiGetRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SearchGetResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.get(requestParameters.q, requestParameters.searchIn, requestParameters.predefinedSources, requestParameters.sources, requestParameters.notSources, requestParameters.lang, requestParameters.notLang, requestParameters.countries, requestParameters.notCountries, requestParameters.notAuthorName, requestParameters.from, requestParameters.to, requestParameters.publishedDatePrecision, requestParameters.byParseDate, requestParameters.sortBy, requestParameters.rankedOnly, requestParameters.fromRank, requestParameters.toRank, requestParameters.isHeadline, requestParameters.isPaidContent, requestParameters.parentUrl, requestParameters.allLinks, requestParameters.allDomainLinks, requestParameters.wordCountMin, requestParameters.wordCountMax, requestParameters.page, requestParameters.pageSize, requestParameters.clusteringVariable, requestParameters.clusteringEnabled, requestParameters.clusteringThreshold, requestParameters.includeNlpData, requestParameters.hasNlp, requestParameters.theme, requestParameters.notTheme, requestParameters.orgEntityName, requestParameters.perEntityName, requestParameters.locEntityName, requestParameters.miscEntityName, requestParameters.titleSentimentMin, requestParameters.titleSentimentMax, requestParameters.contentSentimentMin, requestParameters.contentSentimentMax, requestParameters.iptcTags, requestParameters.notIptcTags, requestParameters.sourceName, requestParameters.iabTags, options);
+            const localVarAxiosArgs = await localVarAxiosParamCreator.get(requestParameters.q, requestParameters.searchIn, requestParameters.predefinedSources, requestParameters.sources, requestParameters.notSources, requestParameters.lang, requestParameters.notLang, requestParameters.countries, requestParameters.notCountries, requestParameters.notAuthorName, requestParameters.from, requestParameters.to, requestParameters.publishedDatePrecision, requestParameters.byParseDate, requestParameters.sortBy, requestParameters.rankedOnly, requestParameters.fromRank, requestParameters.toRank, requestParameters.isHeadline, requestParameters.isPaidContent, requestParameters.parentUrl, requestParameters.allLinks, requestParameters.allDomainLinks, requestParameters.wordCountMin, requestParameters.wordCountMax, requestParameters.page, requestParameters.pageSize, requestParameters.clusteringVariable, requestParameters.clusteringEnabled, requestParameters.clusteringThreshold, requestParameters.includeNlpData, requestParameters.hasNlp, requestParameters.theme, requestParameters.notTheme, requestParameters.orgEntityName, requestParameters.perEntityName, requestParameters.locEntityName, requestParameters.miscEntityName, requestParameters.titleSentimentMin, requestParameters.titleSentimentMax, requestParameters.contentSentimentMin, requestParameters.contentSentimentMax, requestParameters.iptcTags, requestParameters.notIptcTags, requestParameters.sourceName, requestParameters.iabTags, requestParameters.notIabTags, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -434,7 +439,8 @@ export const SearchApiFp = function(configuration?: Configuration) {
                 iptc_tags: requestParameters.iptc_tags,
                 not_iptc_tags: requestParameters.not_iptc_tags,
                 source_name: requestParameters.source_name,
-                iab_tags: requestParameters.iab_tags
+                iab_tags: requestParameters.iab_tags,
+                not_iab_tags: requestParameters.not_iab_tags
             };
             const localVarAxiosArgs = await localVarAxiosParamCreator.post(searchRequest, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
@@ -800,6 +806,13 @@ export type SearchApiGetRequest = {
     * @memberof SearchApiGet
     */
     readonly iabTags?: any
+    
+    /**
+    * 
+    * @type {any}
+    * @memberof SearchApiGet
+    */
+    readonly notIabTags?: any
     
 }
 

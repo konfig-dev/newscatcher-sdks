@@ -98,6 +98,7 @@ public class SearchApiTest {
         Object notIptcTags = null;
         Object sourceName = null;
         Object iabTags = null;
+        Object notIabTags = null;
         CSearchResponse response = api.get(q)
                 .searchIn(searchIn)
                 .predefinedSources(predefinedSources)
@@ -144,6 +145,7 @@ public class SearchApiTest {
                 .notIptcTags(notIptcTags)
                 .sourceName(sourceName)
                 .iabTags(iabTags)
+                .notIabTags(notIabTags)
                 .execute();
         // TODO: test validations
     }
@@ -203,6 +205,7 @@ public class SearchApiTest {
         Object notIptcTags = null;
         Object sourceName = null;
         Object iabTags = null;
+        Object notIabTags = null;
         CSearchResponse1 response = api.post(q)
                 .searchIn(searchIn)
                 .predefinedSources(predefinedSources)
@@ -249,6 +252,7 @@ public class SearchApiTest {
                 .notIptcTags(notIptcTags)
                 .sourceName(sourceName)
                 .iabTags(iabTags)
+                .notIabTags(notIabTags)
                 .execute();
         // TODO: test validations
     }

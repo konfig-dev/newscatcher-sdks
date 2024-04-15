@@ -77,7 +77,7 @@ public class AuthorsApiGenerated {
         this.localCustomBaseUrl = customBaseUrl;
     }
 
-    private okhttp3.Call getCall(String authorName, String notAuthorName, Object sources, Object predefinedSources, Object notSources, Object lang, Object notLang, Object countries, Object notCountries, String from, String to, String publishedDatePrecision, Boolean byParseDate, String sortBy, String rankedOnly, Integer fromRank, Integer toRank, Boolean isHeadline, Boolean isPaidContent, Object parentUrl, Object allLinks, Object allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, Boolean includeNlpData, Boolean hasNlp, String theme, String notTheme, String nerName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax, Object iptcTags, Object notIptcTags, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getCall(String authorName, String notAuthorName, Object sources, Object predefinedSources, Object notSources, Object lang, Object notLang, Object countries, Object notCountries, String from, String to, String publishedDatePrecision, Boolean byParseDate, String sortBy, String rankedOnly, Integer fromRank, Integer toRank, Boolean isHeadline, Boolean isPaidContent, Object parentUrl, Object allLinks, Object allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, Boolean includeNlpData, Boolean hasNlp, String theme, String notTheme, String nerName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax, Object iptcTags, Object notIptcTags, Object iabTags, Object notIabTags, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -250,6 +250,14 @@ public class AuthorsApiGenerated {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("not_iptc_tags", notIptcTags));
         }
 
+        if (iabTags != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("iab_tags", iabTags));
+        }
+
+        if (notIabTags != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("not_iab_tags", notIabTags));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -270,26 +278,26 @@ public class AuthorsApiGenerated {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getValidateBeforeCall(String authorName, String notAuthorName, Object sources, Object predefinedSources, Object notSources, Object lang, Object notLang, Object countries, Object notCountries, String from, String to, String publishedDatePrecision, Boolean byParseDate, String sortBy, String rankedOnly, Integer fromRank, Integer toRank, Boolean isHeadline, Boolean isPaidContent, Object parentUrl, Object allLinks, Object allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, Boolean includeNlpData, Boolean hasNlp, String theme, String notTheme, String nerName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax, Object iptcTags, Object notIptcTags, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getValidateBeforeCall(String authorName, String notAuthorName, Object sources, Object predefinedSources, Object notSources, Object lang, Object notLang, Object countries, Object notCountries, String from, String to, String publishedDatePrecision, Boolean byParseDate, String sortBy, String rankedOnly, Integer fromRank, Integer toRank, Boolean isHeadline, Boolean isPaidContent, Object parentUrl, Object allLinks, Object allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, Boolean includeNlpData, Boolean hasNlp, String theme, String notTheme, String nerName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax, Object iptcTags, Object notIptcTags, Object iabTags, Object notIabTags, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'authorName' is set
         if (authorName == null) {
             throw new ApiException("Missing the required parameter 'authorName' when calling get(Async)");
         }
 
-        return getCall(authorName, notAuthorName, sources, predefinedSources, notSources, lang, notLang, countries, notCountries, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, notTheme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, _callback);
+        return getCall(authorName, notAuthorName, sources, predefinedSources, notSources, lang, notLang, countries, notCountries, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, notTheme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, iabTags, notIabTags, _callback);
 
     }
 
 
-    private ApiResponse<FSearchResponse> getWithHttpInfo(String authorName, String notAuthorName, Object sources, Object predefinedSources, Object notSources, Object lang, Object notLang, Object countries, Object notCountries, String from, String to, String publishedDatePrecision, Boolean byParseDate, String sortBy, String rankedOnly, Integer fromRank, Integer toRank, Boolean isHeadline, Boolean isPaidContent, Object parentUrl, Object allLinks, Object allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, Boolean includeNlpData, Boolean hasNlp, String theme, String notTheme, String nerName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax, Object iptcTags, Object notIptcTags) throws ApiException {
-        okhttp3.Call localVarCall = getValidateBeforeCall(authorName, notAuthorName, sources, predefinedSources, notSources, lang, notLang, countries, notCountries, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, notTheme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, null);
+    private ApiResponse<FSearchResponse> getWithHttpInfo(String authorName, String notAuthorName, Object sources, Object predefinedSources, Object notSources, Object lang, Object notLang, Object countries, Object notCountries, String from, String to, String publishedDatePrecision, Boolean byParseDate, String sortBy, String rankedOnly, Integer fromRank, Integer toRank, Boolean isHeadline, Boolean isPaidContent, Object parentUrl, Object allLinks, Object allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, Boolean includeNlpData, Boolean hasNlp, String theme, String notTheme, String nerName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax, Object iptcTags, Object notIptcTags, Object iabTags, Object notIabTags) throws ApiException {
+        okhttp3.Call localVarCall = getValidateBeforeCall(authorName, notAuthorName, sources, predefinedSources, notSources, lang, notLang, countries, notCountries, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, notTheme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, iabTags, notIabTags, null);
         Type localVarReturnType = new TypeToken<FSearchResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call getAsync(String authorName, String notAuthorName, Object sources, Object predefinedSources, Object notSources, Object lang, Object notLang, Object countries, Object notCountries, String from, String to, String publishedDatePrecision, Boolean byParseDate, String sortBy, String rankedOnly, Integer fromRank, Integer toRank, Boolean isHeadline, Boolean isPaidContent, Object parentUrl, Object allLinks, Object allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, Boolean includeNlpData, Boolean hasNlp, String theme, String notTheme, String nerName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax, Object iptcTags, Object notIptcTags, final ApiCallback<FSearchResponse> _callback) throws ApiException {
+    private okhttp3.Call getAsync(String authorName, String notAuthorName, Object sources, Object predefinedSources, Object notSources, Object lang, Object notLang, Object countries, Object notCountries, String from, String to, String publishedDatePrecision, Boolean byParseDate, String sortBy, String rankedOnly, Integer fromRank, Integer toRank, Boolean isHeadline, Boolean isPaidContent, Object parentUrl, Object allLinks, Object allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, Boolean includeNlpData, Boolean hasNlp, String theme, String notTheme, String nerName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax, Object iptcTags, Object notIptcTags, Object iabTags, Object notIabTags, final ApiCallback<FSearchResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getValidateBeforeCall(authorName, notAuthorName, sources, predefinedSources, notSources, lang, notLang, countries, notCountries, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, notTheme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, _callback);
+        okhttp3.Call localVarCall = getValidateBeforeCall(authorName, notAuthorName, sources, predefinedSources, notSources, lang, notLang, countries, notCountries, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, notTheme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, iabTags, notIabTags, _callback);
         Type localVarReturnType = new TypeToken<FSearchResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -333,6 +341,8 @@ public class AuthorsApiGenerated {
         private Double contentSentimentMax;
         private Object iptcTags;
         private Object notIptcTags;
+        private Object iabTags;
+        private Object notIabTags;
 
         private GetRequestBuilder(String authorName) {
             this.authorName = authorName;
@@ -699,6 +709,26 @@ public class AuthorsApiGenerated {
         }
         
         /**
+         * Set iabTags
+         * @param iabTags  (optional)
+         * @return GetRequestBuilder
+         */
+        public GetRequestBuilder iabTags(Object iabTags) {
+            this.iabTags = iabTags;
+            return this;
+        }
+        
+        /**
+         * Set notIabTags
+         * @param notIabTags  (optional)
+         * @return GetRequestBuilder
+         */
+        public GetRequestBuilder notIabTags(Object notIabTags) {
+            this.notIabTags = notIabTags;
+            return this;
+        }
+        
+        /**
          * Build call for get
          * @param _callback ApiCallback API callback
          * @return Call to execute
@@ -710,7 +740,7 @@ public class AuthorsApiGenerated {
          </table>
          */
         public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
-            return getCall(authorName, notAuthorName, sources, predefinedSources, notSources, lang, notLang, countries, notCountries, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, notTheme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, _callback);
+            return getCall(authorName, notAuthorName, sources, predefinedSources, notSources, lang, notLang, countries, notCountries, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, notTheme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, iabTags, notIabTags, _callback);
         }
 
 
@@ -725,7 +755,7 @@ public class AuthorsApiGenerated {
          </table>
          */
         public FSearchResponse execute() throws ApiException {
-            ApiResponse<FSearchResponse> localVarResp = getWithHttpInfo(authorName, notAuthorName, sources, predefinedSources, notSources, lang, notLang, countries, notCountries, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, notTheme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags);
+            ApiResponse<FSearchResponse> localVarResp = getWithHttpInfo(authorName, notAuthorName, sources, predefinedSources, notSources, lang, notLang, countries, notCountries, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, notTheme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, iabTags, notIabTags);
             return localVarResp.getResponseBody();
         }
 
@@ -740,7 +770,7 @@ public class AuthorsApiGenerated {
          </table>
          */
         public ApiResponse<FSearchResponse> executeWithHttpInfo() throws ApiException {
-            return getWithHttpInfo(authorName, notAuthorName, sources, predefinedSources, notSources, lang, notLang, countries, notCountries, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, notTheme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags);
+            return getWithHttpInfo(authorName, notAuthorName, sources, predefinedSources, notSources, lang, notLang, countries, notCountries, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, notTheme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, iabTags, notIabTags);
         }
 
         /**
@@ -755,7 +785,7 @@ public class AuthorsApiGenerated {
          </table>
          */
         public okhttp3.Call executeAsync(final ApiCallback<FSearchResponse> _callback) throws ApiException {
-            return getAsync(authorName, notAuthorName, sources, predefinedSources, notSources, lang, notLang, countries, notCountries, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, notTheme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, _callback);
+            return getAsync(authorName, notAuthorName, sources, predefinedSources, notSources, lang, notLang, countries, notCountries, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, notTheme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, iabTags, notIabTags, _callback);
         }
     }
 
@@ -885,6 +915,8 @@ public class AuthorsApiGenerated {
         private Double contentSentimentMax;
         private Object iptcTags;
         private Object notIptcTags;
+        private Object iabTags;
+        private Object notIabTags;
 
         private PostRequestBuilder(String authorName) {
             this.authorName = authorName;
@@ -1251,6 +1283,26 @@ public class AuthorsApiGenerated {
         }
         
         /**
+         * Set iabTags
+         * @param iabTags  (optional)
+         * @return PostRequestBuilder
+         */
+        public PostRequestBuilder iabTags(Object iabTags) {
+            this.iabTags = iabTags;
+            return this;
+        }
+        
+        /**
+         * Set notIabTags
+         * @param notIabTags  (optional)
+         * @return PostRequestBuilder
+         */
+        public PostRequestBuilder notIabTags(Object notIabTags) {
+            this.notIabTags = notIabTags;
+            return this;
+        }
+        
+        /**
          * Build call for post
          * @param _callback ApiCallback API callback
          * @return Call to execute
@@ -1305,6 +1357,8 @@ public class AuthorsApiGenerated {
             authorSearchRequest.contentSentimentMax(this.contentSentimentMax);
             authorSearchRequest.iptcTags(this.iptcTags);
             authorSearchRequest.notIptcTags(this.notIptcTags);
+            authorSearchRequest.iabTags(this.iabTags);
+            authorSearchRequest.notIabTags(this.notIabTags);
             return authorSearchRequest;
         }
 

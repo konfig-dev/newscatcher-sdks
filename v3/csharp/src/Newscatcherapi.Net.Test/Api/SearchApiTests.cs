@@ -111,11 +111,13 @@ namespace Newscatcherapi.Net.Test.Api
             );
             var iabTags = new Object(
             );
+            var notIabTags = new Object(
+            );
             
             try
             {
                 // [Get] Search For Articles Request
-                SearchGetResponse result = client.Search.Get(q, searchIn, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, notAuthorName, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, oRGEntityName, pEREntityName, lOCEntityName, mISCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, sourceName, iabTags);
+                SearchGetResponse result = client.Search.Get(q, searchIn, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, notAuthorName, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, oRGEntityName, pEREntityName, lOCEntityName, mISCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, sourceName, iabTags, notIabTags);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -184,6 +186,7 @@ namespace Newscatcherapi.Net.Test.Api
             var notIptcTags = "notIptcTags_example";
             var sourceName = "sourceName_example";
             var iabTags = "iabTags_example";
+            var notIabTags = "notIabTags_example";
             
             var searchRequest = new SearchRequest(
                 q,
@@ -231,7 +234,8 @@ namespace Newscatcherapi.Net.Test.Api
                 iptcTags,
                 notIptcTags,
                 sourceName,
-                iabTags
+                iabTags,
+                notIabTags
             );
             
             try

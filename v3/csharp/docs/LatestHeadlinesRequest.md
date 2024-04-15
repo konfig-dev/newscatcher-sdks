@@ -41,6 +41,8 @@ Name | Type | Description | Notes
 **ContentSentimentMax** | **double** |  | [optional] 
 **IptcTags** | **Object** |  | [optional] 
 **NotIptcTags** | **Object** |  | [optional] 
+**IabTags** | **Object** |  | [optional] 
+**NotIabTags** | **Object** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -401,6 +401,13 @@ paths:
         schema:
           title: Iab Tags
         style: form
+      - explode: true
+        in: query
+        name: not_iab_tags
+        required: false
+        schema:
+          title: Not Iab Tags
+        style: form
       responses:
         "200":
           content:
@@ -767,6 +774,20 @@ paths:
         schema:
           title: Not Iptc Tags
         style: form
+      - explode: true
+        in: query
+        name: iab_tags
+        required: false
+        schema:
+          title: Iab Tags
+        style: form
+      - explode: true
+        in: query
+        name: not_iab_tags
+        required: false
+        schema:
+          title: Not Iab Tags
+        style: form
       responses:
         "200":
           content:
@@ -1132,6 +1153,20 @@ paths:
         required: false
         schema:
           title: Not Iptc Tags
+        style: form
+      - explode: true
+        in: query
+        name: iab_tags
+        required: false
+        schema:
+          title: Iab Tags
+        style: form
+      - explode: true
+        in: query
+        name: not_iab_tags
+        required: false
+        schema:
+          title: Not Iab Tags
         style: form
       responses:
         "200":
@@ -1923,12 +1958,14 @@ components:
         from_: from_
         iptc_tags: ""
         countries: ""
+        iab_tags: ""
         predefined_sources: ""
         not_lang: ""
         not_author_name: not_author_name
         from_rank: 0
         title_sentiment_min: 5.637376656633329
         is_headline: true
+        not_iab_tags: ""
         parent_url: ""
         published_date_precision: published_date_precision
         ranked_only: ranked_only
@@ -2053,6 +2090,10 @@ components:
           title: Iptc Tags
         not_iptc_tags:
           title: Not Iptc Tags
+        iab_tags:
+          title: Iab Tags
+        not_iab_tags:
+          title: Not Iab Tags
       required:
       - author_name
       title: AuthorSearchRequest
@@ -2159,11 +2200,13 @@ components:
         not_sources: ""
         iptc_tags: ""
         countries: ""
+        iab_tags: ""
         not_lang: ""
         predefined_sources: ""
         not_author_name: ""
         title_sentiment_min: 5.962133916683182
         is_headline: true
+        not_iab_tags: ""
         parent_url: ""
         clustering_enabled: true
         ranked_only: ranked_only
@@ -2290,6 +2333,10 @@ components:
           title: Iptc Tags
         not_iptc_tags:
           title: Not Iptc Tags
+        iab_tags:
+          title: Iab Tags
+        not_iab_tags:
+          title: Not Iab Tags
       title: LatestHeadlinesRequest
       type: object
     LatestHeadlinesResponse:
@@ -2560,6 +2607,7 @@ components:
         title_sentiment_min: 2.3021358869347655
         is_headline: true
         q: q
+        not_iab_tags: ""
         parent_url: ""
         clustering_enabled: true
         published_date_precision: published_date_precision
@@ -2714,6 +2762,8 @@ components:
           title: Source Name
         iab_tags:
           title: Iab Tags
+        not_iab_tags:
+          title: Not Iab Tags
       required:
       - q
       title: SearchRequest
@@ -3798,6 +3848,8 @@ components:
           title: Source Name
         iab_tags:
           title: Iab Tags
+        not_iab_tags:
+          title: Not Iab Tags
       required:
       - q
       type: object
@@ -3849,6 +3901,7 @@ components:
       - not_iptc_tags
       - source_name
       - iab_tags
+      - not_iab_tags
     konfig-generated-schema-single-parameter-schema-post--api-search:
       properties:
         q:
@@ -3996,6 +4049,8 @@ components:
           title: Source Name
         iab_tags:
           title: Iab Tags
+        not_iab_tags:
+          title: Not Iab Tags
       required:
       - q
       type: object
@@ -4121,6 +4176,10 @@ components:
           title: Iptc Tags
         not_iptc_tags:
           title: Not Iptc Tags
+        iab_tags:
+          title: Iab Tags
+        not_iab_tags:
+          title: Not Iab Tags
       type: object
       x-do-not-generate: true
       x-konfig-is-parameter:
@@ -4161,6 +4220,8 @@ components:
       - content_sentiment_max
       - iptc_tags
       - not_iptc_tags
+      - iab_tags
+      - not_iab_tags
     konfig-generated-schema-single-parameter-schema-post--api-latest_headlines:
       properties:
         when:
@@ -4281,6 +4342,10 @@ components:
           title: Iptc Tags
         not_iptc_tags:
           title: Not Iptc Tags
+        iab_tags:
+          title: Iab Tags
+        not_iab_tags:
+          title: Not Iab Tags
       type: object
       x-do-not-generate: true
       x-konfig-is-parameter: []
@@ -4403,6 +4468,10 @@ components:
           title: Iptc Tags
         not_iptc_tags:
           title: Not Iptc Tags
+        iab_tags:
+          title: Iab Tags
+        not_iab_tags:
+          title: Not Iab Tags
       required:
       - author_name
       type: object
@@ -4445,6 +4514,8 @@ components:
       - content_sentiment_max
       - iptc_tags
       - not_iptc_tags
+      - iab_tags
+      - not_iab_tags
     konfig-generated-schema-single-parameter-schema-post--api-authors:
       properties:
         author_name:
@@ -4564,6 +4635,10 @@ components:
           title: Iptc Tags
         not_iptc_tags:
           title: Not Iptc Tags
+        iab_tags:
+          title: Iab Tags
+        not_iab_tags:
+          title: Not Iab Tags
       required:
       - author_name
       type: object

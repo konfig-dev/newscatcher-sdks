@@ -178,6 +178,10 @@ const getResponse = await newscatcher.authors.get({
 
 ##### notIptcTags: `any`<a id="notiptctags-any"></a>
 
+##### iabTags: `any`<a id="iabtags-any"></a>
+
+##### notIabTags: `any`<a id="notiabtags-any"></a>
+
 #### 🔄 Return<a id="🔄-return"></a>
 
 [AuthorsGetResponse](./models/authors-get-response.ts)
@@ -283,6 +287,10 @@ const postResponse = await newscatcher.authors.post({
 
 ##### not_iptc_tags: `any`<a id="not_iptc_tags-any"></a>
 
+##### iab_tags: `any`<a id="iab_tags-any"></a>
+
+##### not_iab_tags: `any`<a id="not_iab_tags-any"></a>
+
 #### 🔄 Return<a id="🔄-return"></a>
 
 [AuthorsPostResponse](./models/authors-post-response.ts)
@@ -387,6 +395,10 @@ const getResponse = await newscatcher.latestHeadlines.get({
 
 ##### notIptcTags: `any`<a id="notiptctags-any"></a>
 
+##### iabTags: `any`<a id="iabtags-any"></a>
+
+##### notIabTags: `any`<a id="notiabtags-any"></a>
+
 #### 🔄 Return<a id="🔄-return"></a>
 
 [LatestHeadlinesGetResponse](./models/latest-headlines-get-response.ts)
@@ -490,6 +502,10 @@ const postResponse = await newscatcher.latestHeadlines.post({
 ##### iptc_tags: `any`<a id="iptc_tags-any"></a>
 
 ##### not_iptc_tags: `any`<a id="not_iptc_tags-any"></a>
+
+##### iab_tags: `any`<a id="iab_tags-any"></a>
+
+##### not_iab_tags: `any`<a id="not_iab_tags-any"></a>
 
 #### 🔄 Return<a id="🔄-return"></a>
 
@@ -615,6 +631,8 @@ const getResponse = await newscatcher.search.get({
 
 ##### iabTags: `any`<a id="iabtags-any"></a>
 
+##### notIabTags: `any`<a id="notiabtags-any"></a>
+
 #### 🔄 Return<a id="🔄-return"></a>
 
 [SearchGetResponse](./models/search-get-response.ts)
@@ -738,6 +756,8 @@ const postResponse = await newscatcher.search.post({
 ##### source_name: `any`<a id="source_name-any"></a>
 
 ##### iab_tags: `any`<a id="iab_tags-any"></a>
+
+##### not_iab_tags: `any`<a id="not_iab_tags-any"></a>
 
 #### 🔄 Return<a id="🔄-return"></a>
 

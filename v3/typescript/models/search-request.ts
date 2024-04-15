@@ -295,5 +295,11 @@ export interface SearchRequest {
      * @memberof SearchRequest
      */
     'iab_tags'?: any;
+    /**
+     * 
+     * @type {any}
+     * @memberof SearchRequest
+     */
+    'not_iab_tags'?: any;
 }
 

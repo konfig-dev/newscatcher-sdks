@@ -10,7 +10,7 @@ All URIs are relative to *https://v3-api.newscatcherapi.com*
 
 <a name="get"></a>
 # **get**
-> FSearchResponse get(authorName).notAuthorName(notAuthorName).sources(sources).predefinedSources(predefinedSources).notSources(notSources).lang(lang).notLang(notLang).countries(countries).notCountries(notCountries).from(from).to(to).publishedDatePrecision(publishedDatePrecision).byParseDate(byParseDate).sortBy(sortBy).rankedOnly(rankedOnly).fromRank(fromRank).toRank(toRank).isHeadline(isHeadline).isPaidContent(isPaidContent).parentUrl(parentUrl).allLinks(allLinks).allDomainLinks(allDomainLinks).wordCountMin(wordCountMin).wordCountMax(wordCountMax).page(page).pageSize(pageSize).includeNlpData(includeNlpData).hasNlp(hasNlp).theme(theme).notTheme(notTheme).nerName(nerName).titleSentimentMin(titleSentimentMin).titleSentimentMax(titleSentimentMax).contentSentimentMin(contentSentimentMin).contentSentimentMax(contentSentimentMax).iptcTags(iptcTags).notIptcTags(notIptcTags).execute();
+> FSearchResponse get(authorName).notAuthorName(notAuthorName).sources(sources).predefinedSources(predefinedSources).notSources(notSources).lang(lang).notLang(notLang).countries(countries).notCountries(notCountries).from(from).to(to).publishedDatePrecision(publishedDatePrecision).byParseDate(byParseDate).sortBy(sortBy).rankedOnly(rankedOnly).fromRank(fromRank).toRank(toRank).isHeadline(isHeadline).isPaidContent(isPaidContent).parentUrl(parentUrl).allLinks(allLinks).allDomainLinks(allDomainLinks).wordCountMin(wordCountMin).wordCountMax(wordCountMax).page(page).pageSize(pageSize).includeNlpData(includeNlpData).hasNlp(hasNlp).theme(theme).notTheme(notTheme).nerName(nerName).titleSentimentMin(titleSentimentMin).titleSentimentMax(titleSentimentMax).contentSentimentMin(contentSentimentMin).contentSentimentMax(contentSentimentMax).iptcTags(iptcTags).notIptcTags(notIptcTags).iabTags(iabTags).notIabTags(notIabTags).execute();
 
 [Get] Search By Author Request
 
@@ -74,6 +74,8 @@ public class Example {
     Double contentSentimentMax = 3.4D;
     Object iptcTags = null;
     Object notIptcTags = null;
+    Object iabTags = null;
+    Object notIabTags = null;
     try {
       FSearchResponse result = client
               .authors
@@ -114,6 +116,8 @@ public class Example {
               .contentSentimentMax(contentSentimentMax)
               .iptcTags(iptcTags)
               .notIptcTags(notIptcTags)
+              .iabTags(iabTags)
+              .notIabTags(notIabTags)
               .execute();
       System.out.println(result);
       System.out.println(result.getStatus());
@@ -172,6 +176,8 @@ public class Example {
               .contentSentimentMax(contentSentimentMax)
               .iptcTags(iptcTags)
               .notIptcTags(notIptcTags)
+              .iabTags(iabTags)
+              .notIabTags(notIabTags)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
       System.out.println(response.getResponseHeaders());
@@ -231,6 +237,8 @@ public class Example {
 | **contentSentimentMax** | **Double**|  | [optional] |
 | **iptcTags** | [**Object**](.md)|  | [optional] |
 | **notIptcTags** | [**Object**](.md)|  | [optional] |
+| **iabTags** | [**Object**](.md)|  | [optional] |
+| **notIabTags** | [**Object**](.md)|  | [optional] |
 
 ### Return type
 
@@ -316,6 +324,8 @@ public class Example {
     Double contentSentimentMax = 3.4D;
     Object iptcTags = null;
     Object notIptcTags = null;
+    Object iabTags = null;
+    Object notIabTags = null;
     try {
       FSearchResponse1 result = client
               .authors
@@ -356,6 +366,8 @@ public class Example {
               .contentSentimentMax(contentSentimentMax)
               .iptcTags(iptcTags)
               .notIptcTags(notIptcTags)
+              .iabTags(iabTags)
+              .notIabTags(notIabTags)
               .execute();
       System.out.println(result);
       System.out.println(result.getStatus());
@@ -414,6 +426,8 @@ public class Example {
               .contentSentimentMax(contentSentimentMax)
               .iptcTags(iptcTags)
               .notIptcTags(notIptcTags)
+              .iabTags(iabTags)
+              .notIabTags(notIabTags)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
       System.out.println(response.getResponseHeaders());

@@ -93,6 +93,8 @@ try:
         content_sentiment_max=3.14,
         iptc_tags=None,
         not_iptc_tags=None,
+        iab_tags=None,
+        not_iab_tags=None,
     )
     print(get_response)
 except ApiException as e:
@@ -161,6 +163,8 @@ async def main():
             content_sentiment_max=3.14,
             iptc_tags=None,
             not_iptc_tags=None,
+            iab_tags=None,
+            not_iab_tags=None,
         )
         print(get_response)
     except ApiException as e:
@@ -229,6 +233,8 @@ try:
         content_sentiment_max=3.14,
         iptc_tags=None,
         not_iptc_tags=None,
+        iab_tags=None,
+        not_iab_tags=None,
     )
     pprint(get_response.body)
     pprint(get_response.headers)
@@ -292,6 +298,8 @@ get_response = newscatcher.authors.get(
     content_sentiment_max=3.14,
     iptc_tags=None,
     not_iptc_tags=None,
+    iab_tags=None,
+    not_iab_tags=None,
 )
 ```
 
@@ -373,6 +381,10 @@ get_response = newscatcher.authors.get(
 
 ##### not_iptc_tags: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="not_iptc_tags-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
 
+##### iab_tags: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="iab_tags-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
+
+##### not_iab_tags: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="not_iab_tags-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
+
 #### 🔄 Return<a id="🔄-return"></a>
 
 [`AuthorsGetResponse`](./newscatcherapi_client/pydantic/authors_get_response.py)
@@ -430,6 +442,8 @@ post_response = newscatcher.authors.post(
     content_sentiment_max=3.14,
     iptc_tags=None,
     not_iptc_tags=None,
+    iab_tags=None,
+    not_iab_tags=None,
 )
 ```
 
@@ -511,6 +525,10 @@ post_response = newscatcher.authors.post(
 
 ##### not_iptc_tags: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="not_iptc_tags-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 
+##### iab_tags: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="iab_tags-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
+
+##### not_iab_tags: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="not_iab_tags-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
+
 #### ⚙️ Request Body<a id="⚙️-request-body"></a>
 
 [`AuthorSearchRequest`](./newscatcherapi_client/type/author_search_request.py)
@@ -571,6 +589,8 @@ get_response = newscatcher.latest_headlines.get(
     content_sentiment_max=3.14,
     iptc_tags=None,
     not_iptc_tags=None,
+    iab_tags=None,
+    not_iab_tags=None,
 )
 ```
 
@@ -650,6 +670,10 @@ get_response = newscatcher.latest_headlines.get(
 
 ##### not_iptc_tags: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="not_iptc_tags-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
 
+##### iab_tags: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="iab_tags-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
+
+##### not_iab_tags: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="not_iab_tags-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
+
 #### 🔄 Return<a id="🔄-return"></a>
 
 [`LatestHeadlinesGetResponse`](./newscatcherapi_client/pydantic/latest_headlines_get_response.py)
@@ -707,6 +731,8 @@ post_response = newscatcher.latest_headlines.post(
     content_sentiment_max=3.14,
     iptc_tags=None,
     not_iptc_tags=None,
+    iab_tags=None,
+    not_iab_tags=None,
 )
 ```
 
@@ -786,6 +812,10 @@ post_response = newscatcher.latest_headlines.post(
 
 ##### not_iptc_tags: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="not_iptc_tags-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 
+##### iab_tags: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="iab_tags-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
+
+##### not_iab_tags: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="not_iab_tags-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
+
 #### ⚙️ Request Body<a id="⚙️-request-body"></a>
 
 [`LatestHeadlinesRequest`](./newscatcherapi_client/type/latest_headlines_request.py)
@@ -855,6 +885,7 @@ get_response = newscatcher.search.get(
     not_iptc_tags=None,
     source_name=None,
     iab_tags=None,
+    not_iab_tags=None,
 )
 ```
 
@@ -954,6 +985,8 @@ get_response = newscatcher.search.get(
 
 ##### iab_tags: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="iab_tags-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
 
+##### not_iab_tags: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="not_iab_tags-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
+
 #### 🔄 Return<a id="🔄-return"></a>
 
 [`SearchGetResponse`](./newscatcherapi_client/pydantic/search_get_response.py)
@@ -1020,6 +1053,7 @@ post_response = newscatcher.search.post(
     not_iptc_tags=None,
     source_name=None,
     iab_tags=None,
+    not_iab_tags=None,
 )
 ```
 
@@ -1118,6 +1152,8 @@ post_response = newscatcher.search.post(
 ##### source_name: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="source_name-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 
 ##### iab_tags: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="iab_tags-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
+
+##### not_iab_tags: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="not_iab_tags-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 
 #### ⚙️ Request Body<a id="⚙️-request-body"></a>
 

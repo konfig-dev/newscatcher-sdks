@@ -118,6 +118,12 @@ export const operationParameterMap: Record<string, Entry> = {
             {
                 name: 'not_iptc_tags'
             },
+            {
+                name: 'iab_tags'
+            },
+            {
+                name: 'not_iab_tags'
+            },
         ]
     },
     '/api/authors-POST': {
@@ -232,6 +238,12 @@ export const operationParameterMap: Record<string, Entry> = {
             },
             {
                 name: 'not_iptc_tags'
+            },
+            {
+                name: 'iab_tags'
+            },
+            {
+                name: 'not_iab_tags'
             },
         ]
     },
@@ -348,6 +360,12 @@ export const operationParameterMap: Record<string, Entry> = {
             {
                 name: 'not_iptc_tags'
             },
+            {
+                name: 'iab_tags'
+            },
+            {
+                name: 'not_iab_tags'
+            },
         ]
     },
     '/api/latest_headlines-POST': {
@@ -462,6 +480,12 @@ export const operationParameterMap: Record<string, Entry> = {
             },
             {
                 name: 'not_iptc_tags'
+            },
+            {
+                name: 'iab_tags'
+            },
+            {
+                name: 'not_iab_tags'
             },
         ]
     },
@@ -605,6 +629,9 @@ export const operationParameterMap: Record<string, Entry> = {
             {
                 name: 'iab_tags'
             },
+            {
+                name: 'not_iab_tags'
+            },
         ]
     },
     '/api/search-POST': {
@@ -746,6 +773,9 @@ export const operationParameterMap: Record<string, Entry> = {
             },
             {
                 name: 'iab_tags'
+            },
+            {
+                name: 'not_iab_tags'
             },
         ]
     },

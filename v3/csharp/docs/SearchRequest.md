@@ -50,6 +50,7 @@ Name | Type | Description | Notes
 **NotIptcTags** | **Object** |  | [optional] 
 **SourceName** | **Object** |  | [optional] 
 **IabTags** | **Object** |  | [optional] 
+**NotIabTags** | **Object** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

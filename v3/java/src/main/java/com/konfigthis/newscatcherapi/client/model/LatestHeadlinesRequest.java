@@ -198,6 +198,14 @@ public class LatestHeadlinesRequest {
   @SerializedName(SERIALIZED_NAME_NOT_IPTC_TAGS)
   private Object notIptcTags = null;
 
+  public static final String SERIALIZED_NAME_IAB_TAGS = "iab_tags";
+  @SerializedName(SERIALIZED_NAME_IAB_TAGS)
+  private Object iabTags = null;
+
+  public static final String SERIALIZED_NAME_NOT_IAB_TAGS = "not_iab_tags";
+  @SerializedName(SERIALIZED_NAME_NOT_IAB_TAGS)
+  private Object notIabTags = null;
+
   public LatestHeadlinesRequest() {
   }
 
@@ -1338,6 +1346,64 @@ public class LatestHeadlinesRequest {
     this.notIptcTags = notIptcTags;
   }
 
+
+  public LatestHeadlinesRequest iabTags(Object iabTags) {
+    
+    
+    
+    
+    this.iabTags = iabTags;
+    return this;
+  }
+
+   /**
+   * Get iabTags
+   * @return iabTags
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Object getIabTags() {
+    return iabTags;
+  }
+
+
+  public void setIabTags(Object iabTags) {
+    
+    
+    
+    this.iabTags = iabTags;
+  }
+
+
+  public LatestHeadlinesRequest notIabTags(Object notIabTags) {
+    
+    
+    
+    
+    this.notIabTags = notIabTags;
+    return this;
+  }
+
+   /**
+   * Get notIabTags
+   * @return notIabTags
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Object getNotIabTags() {
+    return notIabTags;
+  }
+
+
+  public void setNotIabTags(Object notIabTags) {
+    
+    
+    
+    this.notIabTags = notIabTags;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -1429,7 +1495,9 @@ public class LatestHeadlinesRequest {
         Objects.equals(this.contentSentimentMin, latestHeadlinesRequest.contentSentimentMin) &&
         Objects.equals(this.contentSentimentMax, latestHeadlinesRequest.contentSentimentMax) &&
         Objects.equals(this.iptcTags, latestHeadlinesRequest.iptcTags) &&
-        Objects.equals(this.notIptcTags, latestHeadlinesRequest.notIptcTags)&&
+        Objects.equals(this.notIptcTags, latestHeadlinesRequest.notIptcTags) &&
+        Objects.equals(this.iabTags, latestHeadlinesRequest.iabTags) &&
+        Objects.equals(this.notIabTags, latestHeadlinesRequest.notIabTags)&&
         Objects.equals(this.additionalProperties, latestHeadlinesRequest.additionalProperties);
   }
 
@@ -1439,7 +1507,7 @@ public class LatestHeadlinesRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(when, byParseDate, lang, notLang, countries, notCountries, sources, predefinedSources, notSources, notAuthorName, rankedOnly, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, orGEntityName, peREntityName, loCEntityName, miSCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, additionalProperties);
+    return Objects.hash(when, byParseDate, lang, notLang, countries, notCountries, sources, predefinedSources, notSources, notAuthorName, rankedOnly, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, orGEntityName, peREntityName, loCEntityName, miSCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, iabTags, notIabTags, additionalProperties);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -1490,6 +1558,8 @@ public class LatestHeadlinesRequest {
     sb.append("    contentSentimentMax: ").append(toIndentedString(contentSentimentMax)).append("\n");
     sb.append("    iptcTags: ").append(toIndentedString(iptcTags)).append("\n");
     sb.append("    notIptcTags: ").append(toIndentedString(notIptcTags)).append("\n");
+    sb.append("    iabTags: ").append(toIndentedString(iabTags)).append("\n");
+    sb.append("    notIabTags: ").append(toIndentedString(notIabTags)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -1550,6 +1620,8 @@ public class LatestHeadlinesRequest {
     openapiFields.add("content_sentiment_max");
     openapiFields.add("iptc_tags");
     openapiFields.add("not_iptc_tags");
+    openapiFields.add("iab_tags");
+    openapiFields.add("not_iab_tags");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

@@ -353,6 +353,22 @@ namespace Newscatcherapi.Net.Test.Model
         {
             // TODO unit test for the property 'NotIptcTags'
         }
+        /// <summary>
+        /// Test the property 'IabTags'
+        /// </summary>
+        [Fact]
+        public void IabTagsTest()
+        {
+            // TODO unit test for the property 'IabTags'
+        }
+        /// <summary>
+        /// Test the property 'NotIabTags'
+        /// </summary>
+        [Fact]
+        public void NotIabTagsTest()
+        {
+            // TODO unit test for the property 'NotIabTags'
+        }
 
     }
 

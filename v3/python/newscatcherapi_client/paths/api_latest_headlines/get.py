@@ -115,6 +115,8 @@ ContentSentimentMinSchema = schemas.NumberSchema
 ContentSentimentMaxSchema = schemas.NumberSchema
 IptcTagsSchema = schemas.AnyTypeSchema
 NotIptcTagsSchema = schemas.AnyTypeSchema
+IabTagsSchema = schemas.AnyTypeSchema
+NotIabTagsSchema = schemas.AnyTypeSchema
 RequestRequiredQueryParams = typing_extensions.TypedDict(
     'RequestRequiredQueryParams',
     {
@@ -160,6 +162,8 @@ RequestOptionalQueryParams = typing_extensions.TypedDict(
         'content_sentiment_max': typing.Union[ContentSentimentMaxSchema, decimal.Decimal, int, float, ],
         'iptc_tags': typing.Union[IptcTagsSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ],
         'not_iptc_tags': typing.Union[NotIptcTagsSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ],
+        'iab_tags': typing.Union[IabTagsSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ],
+        'not_iab_tags': typing.Union[NotIabTagsSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ],
     },
     total=False
 )
@@ -391,6 +395,18 @@ request_query_not_iptc_tags = api_client.QueryParameter(
     schema=NotIptcTagsSchema,
     explode=True,
 )
+request_query_iab_tags = api_client.QueryParameter(
+    name="iab_tags",
+    style=api_client.ParameterStyle.FORM,
+    schema=IabTagsSchema,
+    explode=True,
+)
+request_query_not_iab_tags = api_client.QueryParameter(
+    name="not_iab_tags",
+    style=api_client.ParameterStyle.FORM,
+    schema=NotIabTagsSchema,
+    explode=True,
+)
 _auth = [
     'apiKey',
 ]
@@ -486,6 +502,8 @@ class BaseApi(api_client.Api):
         content_sentiment_max: typing.Optional[typing.Union[int, float]] = None,
         iptc_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_iptc_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        not_iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
     ) -> api_client.MappedArgs:
         args: api_client.MappedArgs = api_client.MappedArgs()
         _query_params = {}
@@ -563,6 +581,10 @@ class BaseApi(api_client.Api):
             _query_params["iptc_tags"] = iptc_tags
         if not_iptc_tags is not None:
             _query_params["not_iptc_tags"] = not_iptc_tags
+        if iab_tags is not None:
+            _query_params["iab_tags"] = iab_tags
+        if not_iab_tags is not None:
+            _query_params["not_iab_tags"] = not_iab_tags
         args.query = _query_params
         return args
 
@@ -627,6 +649,8 @@ class BaseApi(api_client.Api):
             request_query_content_sentiment_max,
             request_query_iptc_tags,
             request_query_not_iptc_tags,
+            request_query_iab_tags,
+            request_query_not_iab_tags,
         ):
             parameter_data = query_params.get(parameter.name, schemas.unset)
             if parameter_data is schemas.unset:
@@ -775,6 +799,8 @@ class BaseApi(api_client.Api):
             request_query_content_sentiment_max,
             request_query_iptc_tags,
             request_query_not_iptc_tags,
+            request_query_iab_tags,
+            request_query_not_iab_tags,
         ):
             parameter_data = query_params.get(parameter.name, schemas.unset)
             if parameter_data is schemas.unset:
@@ -875,6 +901,8 @@ class GetRaw(BaseApi):
         content_sentiment_max: typing.Optional[typing.Union[int, float]] = None,
         iptc_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_iptc_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        not_iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         **kwargs,
     ) -> typing.Union[
         ApiResponseFor200Async,
@@ -919,6 +947,8 @@ class GetRaw(BaseApi):
             content_sentiment_max=content_sentiment_max,
             iptc_tags=iptc_tags,
             not_iptc_tags=not_iptc_tags,
+            iab_tags=iab_tags,
+            not_iab_tags=not_iab_tags,
         )
         return await self._aget_oapg(
             query_params=args.query,
@@ -964,6 +994,8 @@ class GetRaw(BaseApi):
         content_sentiment_max: typing.Optional[typing.Union[int, float]] = None,
         iptc_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_iptc_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        not_iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
     ) -> typing.Union[
         ApiResponseFor200,
         api_client.ApiResponseWithoutDeserialization,
@@ -1006,6 +1038,8 @@ class GetRaw(BaseApi):
             content_sentiment_max=content_sentiment_max,
             iptc_tags=iptc_tags,
             not_iptc_tags=not_iptc_tags,
+            iab_tags=iab_tags,
+            not_iab_tags=not_iab_tags,
         )
         return self._get_oapg(
             query_params=args.query,
@@ -1052,6 +1086,8 @@ class Get(BaseApi):
         content_sentiment_max: typing.Optional[typing.Union[int, float]] = None,
         iptc_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_iptc_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        not_iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         validate: bool = False,
         **kwargs,
     ) -> LatestHeadlinesGetResponsePydantic:
@@ -1093,6 +1129,8 @@ class Get(BaseApi):
             content_sentiment_max=content_sentiment_max,
             iptc_tags=iptc_tags,
             not_iptc_tags=not_iptc_tags,
+            iab_tags=iab_tags,
+            not_iab_tags=not_iab_tags,
             **kwargs,
         )
         if validate:
@@ -1139,6 +1177,8 @@ class Get(BaseApi):
         content_sentiment_max: typing.Optional[typing.Union[int, float]] = None,
         iptc_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_iptc_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        not_iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         validate: bool = False,
     ) -> LatestHeadlinesGetResponsePydantic:
         raw_response = self.raw.get(
@@ -1179,6 +1219,8 @@ class Get(BaseApi):
             content_sentiment_max=content_sentiment_max,
             iptc_tags=iptc_tags,
             not_iptc_tags=not_iptc_tags,
+            iab_tags=iab_tags,
+            not_iab_tags=not_iab_tags,
         )
         if validate:
             return RootModel[LatestHeadlinesGetResponsePydantic](raw_response.body).root
@@ -1227,6 +1269,8 @@ class ApiForget(BaseApi):
         content_sentiment_max: typing.Optional[typing.Union[int, float]] = None,
         iptc_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_iptc_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        not_iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         **kwargs,
     ) -> typing.Union[
         ApiResponseFor200Async,
@@ -1271,6 +1315,8 @@ class ApiForget(BaseApi):
             content_sentiment_max=content_sentiment_max,
             iptc_tags=iptc_tags,
             not_iptc_tags=not_iptc_tags,
+            iab_tags=iab_tags,
+            not_iab_tags=not_iab_tags,
         )
         return await self._aget_oapg(
             query_params=args.query,
@@ -1316,6 +1362,8 @@ class ApiForget(BaseApi):
         content_sentiment_max: typing.Optional[typing.Union[int, float]] = None,
         iptc_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_iptc_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        not_iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
     ) -> typing.Union[
         ApiResponseFor200,
         api_client.ApiResponseWithoutDeserialization,
@@ -1358,6 +1406,8 @@ class ApiForget(BaseApi):
             content_sentiment_max=content_sentiment_max,
             iptc_tags=iptc_tags,
             not_iptc_tags=not_iptc_tags,
+            iab_tags=iab_tags,
+            not_iab_tags=not_iab_tags,
         )
         return self._get_oapg(
             query_params=args.query,

@@ -79,10 +79,12 @@ export const AuthorsApiAxiosParamCreator = function (configuration?: Configurati
          * @param {number} [contentSentimentMax] 
          * @param {any} [iptcTags] 
          * @param {any} [notIptcTags] 
+         * @param {any} [iabTags] 
+         * @param {any} [notIabTags] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        get: async (authorName: string, notAuthorName?: string, sources?: any, predefinedSources?: any, notSources?: any, lang?: any, notLang?: any, countries?: any, notCountries?: any, from?: From, to?: To, publishedDatePrecision?: string, byParseDate?: boolean, sortBy?: string, rankedOnly?: string, fromRank?: number, toRank?: number, isHeadline?: boolean, isPaidContent?: boolean, parentUrl?: any, allLinks?: any, allDomainLinks?: any, wordCountMin?: number, wordCountMax?: number, page?: number, pageSize?: number, includeNlpData?: boolean, hasNlp?: boolean, theme?: string, notTheme?: string, nerName?: string, titleSentimentMin?: number, titleSentimentMax?: number, contentSentimentMin?: number, contentSentimentMax?: number, iptcTags?: any, notIptcTags?: any, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        get: async (authorName: string, notAuthorName?: string, sources?: any, predefinedSources?: any, notSources?: any, lang?: any, notLang?: any, countries?: any, notCountries?: any, from?: From, to?: To, publishedDatePrecision?: string, byParseDate?: boolean, sortBy?: string, rankedOnly?: string, fromRank?: number, toRank?: number, isHeadline?: boolean, isPaidContent?: boolean, parentUrl?: any, allLinks?: any, allDomainLinks?: any, wordCountMin?: number, wordCountMax?: number, page?: number, pageSize?: number, includeNlpData?: boolean, hasNlp?: boolean, theme?: string, notTheme?: string, nerName?: string, titleSentimentMin?: number, titleSentimentMax?: number, contentSentimentMin?: number, contentSentimentMax?: number, iptcTags?: any, notIptcTags?: any, iabTags?: any, notIabTags?: any, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'authorName' is not null or undefined
             assertParamExists('get', 'authorName', authorName)
             const localVarPath = `/api/authors`;
@@ -247,6 +249,14 @@ export const AuthorsApiAxiosParamCreator = function (configuration?: Configurati
                 localVarQueryParameter['not_iptc_tags'] = notIptcTags;
             }
 
+            if (iabTags !== undefined) {
+                localVarQueryParameter['iab_tags'] = iabTags;
+            }
+
+            if (notIabTags !== undefined) {
+                localVarQueryParameter['not_iab_tags'] = notIabTags;
+            }
+
 
     
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -332,7 +342,7 @@ export const AuthorsApiFp = function(configuration?: Configuration) {
          * @throws {RequiredError}
          */
         async get(requestParameters: AuthorsApiGetRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AuthorsGetResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.get(requestParameters.authorName, requestParameters.notAuthorName, requestParameters.sources, requestParameters.predefinedSources, requestParameters.notSources, requestParameters.lang, requestParameters.notLang, requestParameters.countries, requestParameters.notCountries, requestParameters.from, requestParameters.to, requestParameters.publishedDatePrecision, requestParameters.byParseDate, requestParameters.sortBy, requestParameters.rankedOnly, requestParameters.fromRank, requestParameters.toRank, requestParameters.isHeadline, requestParameters.isPaidContent, requestParameters.parentUrl, requestParameters.allLinks, requestParameters.allDomainLinks, requestParameters.wordCountMin, requestParameters.wordCountMax, requestParameters.page, requestParameters.pageSize, requestParameters.includeNlpData, requestParameters.hasNlp, requestParameters.theme, requestParameters.notTheme, requestParameters.nerName, requestParameters.titleSentimentMin, requestParameters.titleSentimentMax, requestParameters.contentSentimentMin, requestParameters.contentSentimentMax, requestParameters.iptcTags, requestParameters.notIptcTags, options);
+            const localVarAxiosArgs = await localVarAxiosParamCreator.get(requestParameters.authorName, requestParameters.notAuthorName, requestParameters.sources, requestParameters.predefinedSources, requestParameters.notSources, requestParameters.lang, requestParameters.notLang, requestParameters.countries, requestParameters.notCountries, requestParameters.from, requestParameters.to, requestParameters.publishedDatePrecision, requestParameters.byParseDate, requestParameters.sortBy, requestParameters.rankedOnly, requestParameters.fromRank, requestParameters.toRank, requestParameters.isHeadline, requestParameters.isPaidContent, requestParameters.parentUrl, requestParameters.allLinks, requestParameters.allDomainLinks, requestParameters.wordCountMin, requestParameters.wordCountMax, requestParameters.page, requestParameters.pageSize, requestParameters.includeNlpData, requestParameters.hasNlp, requestParameters.theme, requestParameters.notTheme, requestParameters.nerName, requestParameters.titleSentimentMin, requestParameters.titleSentimentMax, requestParameters.contentSentimentMin, requestParameters.contentSentimentMax, requestParameters.iptcTags, requestParameters.notIptcTags, requestParameters.iabTags, requestParameters.notIabTags, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -380,7 +390,9 @@ export const AuthorsApiFp = function(configuration?: Configuration) {
                 content_sentiment_min: requestParameters.content_sentiment_min,
                 content_sentiment_max: requestParameters.content_sentiment_max,
                 iptc_tags: requestParameters.iptc_tags,
-                not_iptc_tags: requestParameters.not_iptc_tags
+                not_iptc_tags: requestParameters.not_iptc_tags,
+                iab_tags: requestParameters.iab_tags,
+                not_iab_tags: requestParameters.not_iab_tags
             };
             const localVarAxiosArgs = await localVarAxiosParamCreator.post(authorSearchRequest, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
@@ -683,6 +695,20 @@ export type AuthorsApiGetRequest = {
     * @memberof AuthorsApiGet
     */
     readonly notIptcTags?: any
+    
+    /**
+    * 
+    * @type {any}
+    * @memberof AuthorsApiGet
+    */
+    readonly iabTags?: any
+    
+    /**
+    * 
+    * @type {any}
+    * @memberof AuthorsApiGet
+    */
+    readonly notIabTags?: any
     
 }
 

@@ -75,10 +75,12 @@ export const LatestHeadlinesApiAxiosParamCreator = function (configuration?: Con
          * @param {number} [contentSentimentMax] 
          * @param {any} [iptcTags] 
          * @param {any} [notIptcTags] 
+         * @param {any} [iabTags] 
+         * @param {any} [notIabTags] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        get: async (when?: string, byParseDate?: boolean, lang?: any, notLang?: any, countries?: any, notCountries?: any, sources?: any, predefinedSources?: any, notSources?: any, notAuthorName?: any, rankedOnly?: string, isHeadline?: boolean, isPaidContent?: boolean, parentUrl?: any, allLinks?: any, allDomainLinks?: any, wordCountMin?: number, wordCountMax?: number, page?: number, pageSize?: number, clusteringVariable?: string, clusteringEnabled?: boolean, clusteringThreshold?: number, includeNlpData?: boolean, hasNlp?: boolean, theme?: string, notTheme?: string, orgEntityName?: string, perEntityName?: string, locEntityName?: string, miscEntityName?: string, titleSentimentMin?: number, titleSentimentMax?: number, contentSentimentMin?: number, contentSentimentMax?: number, iptcTags?: any, notIptcTags?: any, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        get: async (when?: string, byParseDate?: boolean, lang?: any, notLang?: any, countries?: any, notCountries?: any, sources?: any, predefinedSources?: any, notSources?: any, notAuthorName?: any, rankedOnly?: string, isHeadline?: boolean, isPaidContent?: boolean, parentUrl?: any, allLinks?: any, allDomainLinks?: any, wordCountMin?: number, wordCountMax?: number, page?: number, pageSize?: number, clusteringVariable?: string, clusteringEnabled?: boolean, clusteringThreshold?: number, includeNlpData?: boolean, hasNlp?: boolean, theme?: string, notTheme?: string, orgEntityName?: string, perEntityName?: string, locEntityName?: string, miscEntityName?: string, titleSentimentMin?: number, titleSentimentMax?: number, contentSentimentMin?: number, contentSentimentMax?: number, iptcTags?: any, notIptcTags?: any, iabTags?: any, notIabTags?: any, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/latest_headlines`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -241,6 +243,14 @@ export const LatestHeadlinesApiAxiosParamCreator = function (configuration?: Con
                 localVarQueryParameter['not_iptc_tags'] = notIptcTags;
             }
 
+            if (iabTags !== undefined) {
+                localVarQueryParameter['iab_tags'] = iabTags;
+            }
+
+            if (notIabTags !== undefined) {
+                localVarQueryParameter['not_iab_tags'] = notIabTags;
+            }
+
 
     
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -326,7 +336,7 @@ export const LatestHeadlinesApiFp = function(configuration?: Configuration) {
          * @throws {RequiredError}
          */
         async get(requestParameters: LatestHeadlinesApiGetRequest = {}, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<LatestHeadlinesGetResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.get(requestParameters.when, requestParameters.byParseDate, requestParameters.lang, requestParameters.notLang, requestParameters.countries, requestParameters.notCountries, requestParameters.sources, requestParameters.predefinedSources, requestParameters.notSources, requestParameters.notAuthorName, requestParameters.rankedOnly, requestParameters.isHeadline, requestParameters.isPaidContent, requestParameters.parentUrl, requestParameters.allLinks, requestParameters.allDomainLinks, requestParameters.wordCountMin, requestParameters.wordCountMax, requestParameters.page, requestParameters.pageSize, requestParameters.clusteringVariable, requestParameters.clusteringEnabled, requestParameters.clusteringThreshold, requestParameters.includeNlpData, requestParameters.hasNlp, requestParameters.theme, requestParameters.notTheme, requestParameters.orgEntityName, requestParameters.perEntityName, requestParameters.locEntityName, requestParameters.miscEntityName, requestParameters.titleSentimentMin, requestParameters.titleSentimentMax, requestParameters.contentSentimentMin, requestParameters.contentSentimentMax, requestParameters.iptcTags, requestParameters.notIptcTags, options);
+            const localVarAxiosArgs = await localVarAxiosParamCreator.get(requestParameters.when, requestParameters.byParseDate, requestParameters.lang, requestParameters.notLang, requestParameters.countries, requestParameters.notCountries, requestParameters.sources, requestParameters.predefinedSources, requestParameters.notSources, requestParameters.notAuthorName, requestParameters.rankedOnly, requestParameters.isHeadline, requestParameters.isPaidContent, requestParameters.parentUrl, requestParameters.allLinks, requestParameters.allDomainLinks, requestParameters.wordCountMin, requestParameters.wordCountMax, requestParameters.page, requestParameters.pageSize, requestParameters.clusteringVariable, requestParameters.clusteringEnabled, requestParameters.clusteringThreshold, requestParameters.includeNlpData, requestParameters.hasNlp, requestParameters.theme, requestParameters.notTheme, requestParameters.orgEntityName, requestParameters.perEntityName, requestParameters.locEntityName, requestParameters.miscEntityName, requestParameters.titleSentimentMin, requestParameters.titleSentimentMax, requestParameters.contentSentimentMin, requestParameters.contentSentimentMax, requestParameters.iptcTags, requestParameters.notIptcTags, requestParameters.iabTags, requestParameters.notIabTags, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -374,7 +384,9 @@ export const LatestHeadlinesApiFp = function(configuration?: Configuration) {
                 content_sentiment_min: requestParameters.content_sentiment_min,
                 content_sentiment_max: requestParameters.content_sentiment_max,
                 iptc_tags: requestParameters.iptc_tags,
-                not_iptc_tags: requestParameters.not_iptc_tags
+                not_iptc_tags: requestParameters.not_iptc_tags,
+                iab_tags: requestParameters.iab_tags,
+                not_iab_tags: requestParameters.not_iab_tags
             };
             const localVarAxiosArgs = await localVarAxiosParamCreator.post(latestHeadlinesRequest, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
@@ -677,6 +689,20 @@ export type LatestHeadlinesApiGetRequest = {
     * @memberof LatestHeadlinesApiGet
     */
     readonly notIptcTags?: any
+    
+    /**
+    * 
+    * @type {any}
+    * @memberof LatestHeadlinesApiGet
+    */
+    readonly iabTags?: any
+    
+    /**
+    * 
+    * @type {any}
+    * @memberof LatestHeadlinesApiGet
+    */
+    readonly notIabTags?: any
     
 }
 

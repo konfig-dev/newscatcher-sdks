@@ -81,11 +81,15 @@ namespace Example
             );
             var notIptcTags = new Object(
             );
+            var iabTags = new Object(
+            );
+            var notIabTags = new Object(
+            );
             
             try
             {
                 // [Get] Search By Author Request
-                AuthorsGetResponse result = client.Authors.Get(authorName, notAuthorName, sources, predefinedSources, notSources, lang, notLang, countries, notCountries, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, notTheme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags);
+                AuthorsGetResponse result = client.Authors.Get(authorName, notAuthorName, sources, predefinedSources, notSources, lang, notLang, countries, notCountries, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, notTheme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, iabTags, notIabTags);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -112,7 +116,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // [Get] Search By Author Request
-    ApiResponse<AuthorsGetResponse> response = apiInstance.GetWithHttpInfo(authorName, notAuthorName, sources, predefinedSources, notSources, lang, notLang, countries, notCountries, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, notTheme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags);
+    ApiResponse<AuthorsGetResponse> response = apiInstance.GetWithHttpInfo(authorName, notAuthorName, sources, predefinedSources, notSources, lang, notLang, countries, notCountries, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, notTheme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, iabTags, notIabTags);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -166,6 +170,8 @@ catch (ApiException e)
 | **contentSentimentMax** | **double?** |  | [optional]  |
 | **iptcTags** | [**Object**](Object.md) |  | [optional]  |
 | **notIptcTags** | [**Object**](Object.md) |  | [optional]  |
+| **iabTags** | [**Object**](Object.md) |  | [optional]  |
+| **notIabTags** | [**Object**](Object.md) |  | [optional]  |
 
 ### Return type
 
@@ -242,6 +248,8 @@ namespace Example
             var contentSentimentMax = default(double);
             var iptcTags = "iptcTags_example";
             var notIptcTags = "notIptcTags_example";
+            var iabTags = "iabTags_example";
+            var notIabTags = "notIabTags_example";
             
             var authorSearchRequest = new AuthorSearchRequest(
                 authorName,
@@ -280,7 +288,9 @@ namespace Example
                 contentSentimentMin,
                 contentSentimentMax,
                 iptcTags,
-                notIptcTags
+                notIptcTags,
+                iabTags,
+                notIabTags
             );
             
             try

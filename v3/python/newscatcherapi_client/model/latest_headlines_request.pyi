@@ -92,6 +92,8 @@ class LatestHeadlinesRequest(
             content_sentiment_max = schemas.NumberSchema
             iptc_tags = schemas.AnyTypeSchema
             not_iptc_tags = schemas.AnyTypeSchema
+            iab_tags = schemas.AnyTypeSchema
+            not_iab_tags = schemas.AnyTypeSchema
             __annotations__ = {
                 "when": when,
                 "by_parse_date": by_parse_date,
@@ -130,6 +132,8 @@ class LatestHeadlinesRequest(
                 "content_sentiment_max": content_sentiment_max,
                 "iptc_tags": iptc_tags,
                 "not_iptc_tags": not_iptc_tags,
+                "iab_tags": iab_tags,
+                "not_iab_tags": not_iab_tags,
             }
     
     @typing.overload
@@ -244,9 +248,15 @@ class LatestHeadlinesRequest(
     def __getitem__(self, name: typing_extensions.Literal["not_iptc_tags"]) -> MetaOapg.properties.not_iptc_tags: ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["iab_tags"]) -> MetaOapg.properties.iab_tags: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["not_iab_tags"]) -> MetaOapg.properties.not_iab_tags: ...
+    
+    @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["when", "by_parse_date", "lang", "not_lang", "countries", "not_countries", "sources", "predefined_sources", "not_sources", "not_author_name", "ranked_only", "is_headline", "is_paid_content", "parent_url", "all_links", "all_domain_links", "word_count_min", "word_count_max", "page", "page_size", "clustering_variable", "clustering_enabled", "clustering_threshold", "include_nlp_data", "has_nlp", "theme", "not_theme", "ORG_entity_name", "PER_entity_name", "LOC_entity_name", "MISC_entity_name", "title_sentiment_min", "title_sentiment_max", "content_sentiment_min", "content_sentiment_max", "iptc_tags", "not_iptc_tags", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["when", "by_parse_date", "lang", "not_lang", "countries", "not_countries", "sources", "predefined_sources", "not_sources", "not_author_name", "ranked_only", "is_headline", "is_paid_content", "parent_url", "all_links", "all_domain_links", "word_count_min", "word_count_max", "page", "page_size", "clustering_variable", "clustering_enabled", "clustering_threshold", "include_nlp_data", "has_nlp", "theme", "not_theme", "ORG_entity_name", "PER_entity_name", "LOC_entity_name", "MISC_entity_name", "title_sentiment_min", "title_sentiment_max", "content_sentiment_min", "content_sentiment_max", "iptc_tags", "not_iptc_tags", "iab_tags", "not_iab_tags", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
@@ -363,9 +373,15 @@ class LatestHeadlinesRequest(
     def get_item_oapg(self, name: typing_extensions.Literal["not_iptc_tags"]) -> typing.Union[MetaOapg.properties.not_iptc_tags, schemas.Unset]: ...
     
     @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["iab_tags"]) -> typing.Union[MetaOapg.properties.iab_tags, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["not_iab_tags"]) -> typing.Union[MetaOapg.properties.not_iab_tags, schemas.Unset]: ...
+    
+    @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["when", "by_parse_date", "lang", "not_lang", "countries", "not_countries", "sources", "predefined_sources", "not_sources", "not_author_name", "ranked_only", "is_headline", "is_paid_content", "parent_url", "all_links", "all_domain_links", "word_count_min", "word_count_max", "page", "page_size", "clustering_variable", "clustering_enabled", "clustering_threshold", "include_nlp_data", "has_nlp", "theme", "not_theme", "ORG_entity_name", "PER_entity_name", "LOC_entity_name", "MISC_entity_name", "title_sentiment_min", "title_sentiment_max", "content_sentiment_min", "content_sentiment_max", "iptc_tags", "not_iptc_tags", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["when", "by_parse_date", "lang", "not_lang", "countries", "not_countries", "sources", "predefined_sources", "not_sources", "not_author_name", "ranked_only", "is_headline", "is_paid_content", "parent_url", "all_links", "all_domain_links", "word_count_min", "word_count_max", "page", "page_size", "clustering_variable", "clustering_enabled", "clustering_threshold", "include_nlp_data", "has_nlp", "theme", "not_theme", "ORG_entity_name", "PER_entity_name", "LOC_entity_name", "MISC_entity_name", "title_sentiment_min", "title_sentiment_max", "content_sentiment_min", "content_sentiment_max", "iptc_tags", "not_iptc_tags", "iab_tags", "not_iab_tags", ], str]):
         return super().get_item_oapg(name)
     
 
@@ -409,6 +425,8 @@ class LatestHeadlinesRequest(
         content_sentiment_max: typing.Union[MetaOapg.properties.content_sentiment_max, decimal.Decimal, int, float, schemas.Unset] = schemas.unset,
         iptc_tags: typing.Union[MetaOapg.properties.iptc_tags, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, schemas.Unset] = schemas.unset,
         not_iptc_tags: typing.Union[MetaOapg.properties.not_iptc_tags, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, schemas.Unset] = schemas.unset,
+        iab_tags: typing.Union[MetaOapg.properties.iab_tags, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, schemas.Unset] = schemas.unset,
+        not_iab_tags: typing.Union[MetaOapg.properties.not_iab_tags, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'LatestHeadlinesRequest':
@@ -452,6 +470,8 @@ class LatestHeadlinesRequest(
             content_sentiment_max=content_sentiment_max,
             iptc_tags=iptc_tags,
             not_iptc_tags=not_iptc_tags,
+            iab_tags=iab_tags,
+            not_iab_tags=not_iab_tags,
             _configuration=_configuration,
             **kwargs,
         )

@@ -86,7 +86,8 @@ namespace Newscatcherapi.Net.Model
         /// <param name="notIptcTags">notIptcTags.</param>
         /// <param name="sourceName">sourceName.</param>
         /// <param name="iabTags">iabTags.</param>
-        public SearchRequest(string q = default(string), string searchIn = "title_content", Object predefinedSources = default(Object), Object sources = default(Object), Object notSources = default(Object), Object lang = default(Object), Object notLang = default(Object), Object countries = default(Object), Object notCountries = default(Object), Object notAuthorName = default(Object), From from = default(From), To to = default(To), string publishedDatePrecision = default(string), bool byParseDate = false, string sortBy = "relevancy", string rankedOnly = default(string), int fromRank = default(int), int toRank = default(int), bool isHeadline = default(bool), bool isPaidContent = default(bool), Object parentUrl = default(Object), Object allLinks = default(Object), Object allDomainLinks = default(Object), int wordCountMin = default(int), int wordCountMax = default(int), int page = 1, int pageSize = 100, string clusteringVariable = default(string), bool clusteringEnabled = default(bool), double clusteringThreshold = default(double), bool includeNlpData = default(bool), bool hasNlp = default(bool), string theme = default(string), string notTheme = default(string), string oRGEntityName = default(string), string pEREntityName = default(string), string lOCEntityName = default(string), string mISCEntityName = default(string), double titleSentimentMin = default(double), double titleSentimentMax = default(double), double contentSentimentMin = default(double), double contentSentimentMax = default(double), Object iptcTags = default(Object), Object notIptcTags = default(Object), Object sourceName = default(Object), Object iabTags = default(Object))
+        /// <param name="notIabTags">notIabTags.</param>
+        public SearchRequest(string q = default(string), string searchIn = "title_content", Object predefinedSources = default(Object), Object sources = default(Object), Object notSources = default(Object), Object lang = default(Object), Object notLang = default(Object), Object countries = default(Object), Object notCountries = default(Object), Object notAuthorName = default(Object), From from = default(From), To to = default(To), string publishedDatePrecision = default(string), bool byParseDate = false, string sortBy = "relevancy", string rankedOnly = default(string), int fromRank = default(int), int toRank = default(int), bool isHeadline = default(bool), bool isPaidContent = default(bool), Object parentUrl = default(Object), Object allLinks = default(Object), Object allDomainLinks = default(Object), int wordCountMin = default(int), int wordCountMax = default(int), int page = 1, int pageSize = 100, string clusteringVariable = default(string), bool clusteringEnabled = default(bool), double clusteringThreshold = default(double), bool includeNlpData = default(bool), bool hasNlp = default(bool), string theme = default(string), string notTheme = default(string), string oRGEntityName = default(string), string pEREntityName = default(string), string lOCEntityName = default(string), string mISCEntityName = default(string), double titleSentimentMin = default(double), double titleSentimentMax = default(double), double contentSentimentMin = default(double), double contentSentimentMax = default(double), Object iptcTags = default(Object), Object notIptcTags = default(Object), Object sourceName = default(Object), Object iabTags = default(Object), Object notIabTags = default(Object))
         {
             // to ensure "q" is required (not null)
             if (q == null)
@@ -141,6 +142,7 @@ namespace Newscatcherapi.Net.Model
             this.NotIptcTags = notIptcTags;
             this.SourceName = sourceName;
             this.IabTags = iabTags;
+            this.NotIabTags = notIabTags;
         }
 
         /// <summary>
@@ -420,6 +422,12 @@ namespace Newscatcherapi.Net.Model
         public Object IabTags { get; set; }
 
         /// <summary>
+        /// Gets or Sets NotIabTags
+        /// </summary>
+        [DataMember(Name = "not_iab_tags", EmitDefaultValue = true)]
+        public Object NotIabTags { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -473,6 +481,7 @@ namespace Newscatcherapi.Net.Model
             sb.Append("  NotIptcTags: ").Append(NotIptcTags).Append("\n");
             sb.Append("  SourceName: ").Append(SourceName).Append("\n");
             sb.Append("  IabTags: ").Append(IabTags).Append("\n");
+            sb.Append("  NotIabTags: ").Append(NotIabTags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -720,6 +729,11 @@ namespace Newscatcherapi.Net.Model
                     this.IabTags == input.IabTags ||
                     (this.IabTags != null &&
                     this.IabTags.Equals(input.IabTags))
+                ) && 
+                (
+                    this.NotIabTags == input.NotIabTags ||
+                    (this.NotIabTags != null &&
+                    this.NotIabTags.Equals(input.NotIabTags))
                 );
         }
 
@@ -864,6 +878,10 @@ namespace Newscatcherapi.Net.Model
                 if (this.IabTags != null)
                 {
                     hashCode = (hashCode * 59) + this.IabTags.GetHashCode();
+                }
+                if (this.NotIabTags != null)
+                {
+                    hashCode = (hashCode * 59) + this.NotIabTags.GetHashCode();
                 }
                 return hashCode;
             }

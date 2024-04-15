@@ -407,4 +407,12 @@ public class SearchRequestTest {
         // TODO: test iabTags
     }
 
+    /**
+     * Test the property 'notIabTags'
+     */
+    @Test
+    public void notIabTagsTest() {
+        // TODO: test notIabTags
+    }
+
 }

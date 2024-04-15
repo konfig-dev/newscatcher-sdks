@@ -89,6 +89,8 @@ public class AuthorsApiTest {
         Double contentSentimentMax = null;
         Object iptcTags = null;
         Object notIptcTags = null;
+        Object iabTags = null;
+        Object notIabTags = null;
         FSearchResponse response = api.get(authorName)
                 .notAuthorName(notAuthorName)
                 .sources(sources)
@@ -126,6 +128,8 @@ public class AuthorsApiTest {
                 .contentSentimentMax(contentSentimentMax)
                 .iptcTags(iptcTags)
                 .notIptcTags(notIptcTags)
+                .iabTags(iabTags)
+                .notIabTags(notIabTags)
                 .execute();
         // TODO: test validations
     }
@@ -176,6 +180,8 @@ public class AuthorsApiTest {
         Double contentSentimentMax = null;
         Object iptcTags = null;
         Object notIptcTags = null;
+        Object iabTags = null;
+        Object notIabTags = null;
         FSearchResponse1 response = api.post(authorName)
                 .notAuthorName(notAuthorName)
                 .sources(sources)
@@ -213,6 +219,8 @@ public class AuthorsApiTest {
                 .contentSentimentMax(contentSentimentMax)
                 .iptcTags(iptcTags)
                 .notIptcTags(notIptcTags)
+                .iabTags(iabTags)
+                .notIabTags(notIabTags)
                 .execute();
         // TODO: test validations
     }

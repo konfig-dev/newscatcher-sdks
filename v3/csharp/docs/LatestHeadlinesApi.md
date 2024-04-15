@@ -82,11 +82,15 @@ namespace Example
             );
             var notIptcTags = new Object(
             );
+            var iabTags = new Object(
+            );
+            var notIabTags = new Object(
+            );
             
             try
             {
                 // [Get] Search For Latest Headlines Request
-                LatestHeadlinesGetResponse result = client.LatestHeadlines.Get(when, byParseDate, lang, notLang, countries, notCountries, sources, predefinedSources, notSources, notAuthorName, rankedOnly, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, oRGEntityName, pEREntityName, lOCEntityName, mISCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags);
+                LatestHeadlinesGetResponse result = client.LatestHeadlines.Get(when, byParseDate, lang, notLang, countries, notCountries, sources, predefinedSources, notSources, notAuthorName, rankedOnly, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, oRGEntityName, pEREntityName, lOCEntityName, mISCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, iabTags, notIabTags);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -113,7 +117,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // [Get] Search For Latest Headlines Request
-    ApiResponse<LatestHeadlinesGetResponse> response = apiInstance.GetWithHttpInfo(when, byParseDate, lang, notLang, countries, notCountries, sources, predefinedSources, notSources, notAuthorName, rankedOnly, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, oRGEntityName, pEREntityName, lOCEntityName, mISCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags);
+    ApiResponse<LatestHeadlinesGetResponse> response = apiInstance.GetWithHttpInfo(when, byParseDate, lang, notLang, countries, notCountries, sources, predefinedSources, notSources, notAuthorName, rankedOnly, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, oRGEntityName, pEREntityName, lOCEntityName, mISCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, iabTags, notIabTags);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -167,6 +171,8 @@ catch (ApiException e)
 | **contentSentimentMax** | **double?** |  | [optional]  |
 | **iptcTags** | [**Object**](Object.md) |  | [optional]  |
 | **notIptcTags** | [**Object**](Object.md) |  | [optional]  |
+| **iabTags** | [**Object**](Object.md) |  | [optional]  |
+| **notIabTags** | [**Object**](Object.md) |  | [optional]  |
 
 ### Return type
 
@@ -243,6 +249,8 @@ namespace Example
             var contentSentimentMax = default(double);
             var iptcTags = "iptcTags_example";
             var notIptcTags = "notIptcTags_example";
+            var iabTags = "iabTags_example";
+            var notIabTags = "notIabTags_example";
             
             var latestHeadlinesRequest = new LatestHeadlinesRequest(
                 when,
@@ -281,7 +289,9 @@ namespace Example
                 contentSentimentMin,
                 contentSentimentMax,
                 iptcTags,
-                notIptcTags
+                notIptcTags,
+                iabTags,
+                notIabTags
             );
             
             try

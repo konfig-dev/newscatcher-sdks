@@ -239,5 +239,17 @@ export interface LatestHeadlinesRequest {
      * @memberof LatestHeadlinesRequest
      */
     'not_iptc_tags'?: any;
+    /**
+     * 
+     * @type {any}
+     * @memberof LatestHeadlinesRequest
+     */
+    'iab_tags'?: any;
+    /**
+     * 
+     * @type {any}
+     * @memberof LatestHeadlinesRequest
+     */
+    'not_iab_tags'?: any;
 }
 

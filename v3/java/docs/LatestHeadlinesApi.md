@@ -10,7 +10,7 @@ All URIs are relative to *https://v3-api.newscatcherapi.com*
 
 <a name="get"></a>
 # **get**
-> CSLHResponse get().when(when).byParseDate(byParseDate).lang(lang).notLang(notLang).countries(countries).notCountries(notCountries).sources(sources).predefinedSources(predefinedSources).notSources(notSources).notAuthorName(notAuthorName).rankedOnly(rankedOnly).isHeadline(isHeadline).isPaidContent(isPaidContent).parentUrl(parentUrl).allLinks(allLinks).allDomainLinks(allDomainLinks).wordCountMin(wordCountMin).wordCountMax(wordCountMax).page(page).pageSize(pageSize).clusteringVariable(clusteringVariable).clusteringEnabled(clusteringEnabled).clusteringThreshold(clusteringThreshold).includeNlpData(includeNlpData).hasNlp(hasNlp).theme(theme).notTheme(notTheme).orGEntityName(orGEntityName).peREntityName(peREntityName).loCEntityName(loCEntityName).miSCEntityName(miSCEntityName).titleSentimentMin(titleSentimentMin).titleSentimentMax(titleSentimentMax).contentSentimentMin(contentSentimentMin).contentSentimentMax(contentSentimentMax).iptcTags(iptcTags).notIptcTags(notIptcTags).execute();
+> CSLHResponse get().when(when).byParseDate(byParseDate).lang(lang).notLang(notLang).countries(countries).notCountries(notCountries).sources(sources).predefinedSources(predefinedSources).notSources(notSources).notAuthorName(notAuthorName).rankedOnly(rankedOnly).isHeadline(isHeadline).isPaidContent(isPaidContent).parentUrl(parentUrl).allLinks(allLinks).allDomainLinks(allDomainLinks).wordCountMin(wordCountMin).wordCountMax(wordCountMax).page(page).pageSize(pageSize).clusteringVariable(clusteringVariable).clusteringEnabled(clusteringEnabled).clusteringThreshold(clusteringThreshold).includeNlpData(includeNlpData).hasNlp(hasNlp).theme(theme).notTheme(notTheme).orGEntityName(orGEntityName).peREntityName(peREntityName).loCEntityName(loCEntityName).miSCEntityName(miSCEntityName).titleSentimentMin(titleSentimentMin).titleSentimentMax(titleSentimentMax).contentSentimentMin(contentSentimentMin).contentSentimentMax(contentSentimentMax).iptcTags(iptcTags).notIptcTags(notIptcTags).iabTags(iabTags).notIabTags(notIabTags).execute();
 
 [Get] Search For Latest Headlines Request
 
@@ -74,6 +74,8 @@ public class Example {
     Double contentSentimentMax = 3.4D;
     Object iptcTags = null;
     Object notIptcTags = null;
+    Object iabTags = null;
+    Object notIabTags = null;
     try {
       CSLHResponse result = client
               .latestHeadlines
@@ -115,6 +117,8 @@ public class Example {
               .contentSentimentMax(contentSentimentMax)
               .iptcTags(iptcTags)
               .notIptcTags(notIptcTags)
+              .iabTags(iabTags)
+              .notIabTags(notIabTags)
               .execute();
       System.out.println(result);
       System.out.println(result.getStatus());
@@ -176,6 +180,8 @@ public class Example {
               .contentSentimentMax(contentSentimentMax)
               .iptcTags(iptcTags)
               .notIptcTags(notIptcTags)
+              .iabTags(iabTags)
+              .notIabTags(notIabTags)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
       System.out.println(response.getResponseHeaders());
@@ -235,6 +241,8 @@ public class Example {
 | **contentSentimentMax** | **Double**|  | [optional] |
 | **iptcTags** | [**Object**](.md)|  | [optional] |
 | **notIptcTags** | [**Object**](.md)|  | [optional] |
+| **iabTags** | [**Object**](.md)|  | [optional] |
+| **notIabTags** | [**Object**](.md)|  | [optional] |
 
 ### Return type
 
@@ -320,6 +328,8 @@ public class Example {
     Double contentSentimentMax = 3.4D;
     Object iptcTags = null;
     Object notIptcTags = null;
+    Object iabTags = null;
+    Object notIabTags = null;
     try {
       CSLHResponse1 result = client
               .latestHeadlines
@@ -361,6 +371,8 @@ public class Example {
               .contentSentimentMax(contentSentimentMax)
               .iptcTags(iptcTags)
               .notIptcTags(notIptcTags)
+              .iabTags(iabTags)
+              .notIabTags(notIabTags)
               .execute();
       System.out.println(result);
       System.out.println(result.getStatus());
@@ -422,6 +434,8 @@ public class Example {
               .contentSentimentMax(contentSentimentMax)
               .iptcTags(iptcTags)
               .notIptcTags(notIptcTags)
+              .iabTags(iabTags)
+              .notIabTags(notIabTags)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
       System.out.println(response.getResponseHeaders());

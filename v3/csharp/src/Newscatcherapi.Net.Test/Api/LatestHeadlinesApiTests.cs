@@ -100,11 +100,15 @@ namespace Newscatcherapi.Net.Test.Api
             );
             var notIptcTags = new Object(
             );
+            var iabTags = new Object(
+            );
+            var notIabTags = new Object(
+            );
             
             try
             {
                 // [Get] Search For Latest Headlines Request
-                LatestHeadlinesGetResponse result = client.LatestHeadlines.Get(when, byParseDate, lang, notLang, countries, notCountries, sources, predefinedSources, notSources, notAuthorName, rankedOnly, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, oRGEntityName, pEREntityName, lOCEntityName, mISCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags);
+                LatestHeadlinesGetResponse result = client.LatestHeadlines.Get(when, byParseDate, lang, notLang, countries, notCountries, sources, predefinedSources, notSources, notAuthorName, rankedOnly, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, oRGEntityName, pEREntityName, lOCEntityName, mISCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, iabTags, notIabTags);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -164,6 +168,8 @@ namespace Newscatcherapi.Net.Test.Api
             var contentSentimentMax = default(double);
             var iptcTags = "iptcTags_example";
             var notIptcTags = "notIptcTags_example";
+            var iabTags = "iabTags_example";
+            var notIabTags = "notIabTags_example";
             
             var latestHeadlinesRequest = new LatestHeadlinesRequest(
                 when,
@@ -202,7 +208,9 @@ namespace Newscatcherapi.Net.Test.Api
                 contentSentimentMin,
                 contentSentimentMax,
                 iptcTags,
-                notIptcTags
+                notIptcTags,
+                iabTags,
+                notIabTags
             );
             
             try

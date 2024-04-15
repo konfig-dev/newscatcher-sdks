@@ -241,5 +241,17 @@ export interface AuthorSearchRequest {
      * @memberof AuthorSearchRequest
      */
     'not_iptc_tags'?: any;
+    /**
+     * 
+     * @type {any}
+     * @memberof AuthorSearchRequest
+     */
+    'iab_tags'?: any;
+    /**
+     * 
+     * @type {any}
+     * @memberof AuthorSearchRequest
+     */
+    'not_iab_tags'?: any;
 }
 

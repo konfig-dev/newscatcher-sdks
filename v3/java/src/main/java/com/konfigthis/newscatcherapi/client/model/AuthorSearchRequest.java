@@ -198,6 +198,14 @@ public class AuthorSearchRequest {
   @SerializedName(SERIALIZED_NAME_NOT_IPTC_TAGS)
   private Object notIptcTags = null;
 
+  public static final String SERIALIZED_NAME_IAB_TAGS = "iab_tags";
+  @SerializedName(SERIALIZED_NAME_IAB_TAGS)
+  private Object iabTags = null;
+
+  public static final String SERIALIZED_NAME_NOT_IAB_TAGS = "not_iab_tags";
+  @SerializedName(SERIALIZED_NAME_NOT_IAB_TAGS)
+  private Object notIabTags = null;
+
   public AuthorSearchRequest() {
   }
 
@@ -1329,6 +1337,64 @@ public class AuthorSearchRequest {
     this.notIptcTags = notIptcTags;
   }
 
+
+  public AuthorSearchRequest iabTags(Object iabTags) {
+    
+    
+    
+    
+    this.iabTags = iabTags;
+    return this;
+  }
+
+   /**
+   * Get iabTags
+   * @return iabTags
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Object getIabTags() {
+    return iabTags;
+  }
+
+
+  public void setIabTags(Object iabTags) {
+    
+    
+    
+    this.iabTags = iabTags;
+  }
+
+
+  public AuthorSearchRequest notIabTags(Object notIabTags) {
+    
+    
+    
+    
+    this.notIabTags = notIabTags;
+    return this;
+  }
+
+   /**
+   * Get notIabTags
+   * @return notIabTags
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Object getNotIabTags() {
+    return notIabTags;
+  }
+
+
+  public void setNotIabTags(Object notIabTags) {
+    
+    
+    
+    this.notIabTags = notIabTags;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -1420,7 +1486,9 @@ public class AuthorSearchRequest {
         Objects.equals(this.contentSentimentMin, authorSearchRequest.contentSentimentMin) &&
         Objects.equals(this.contentSentimentMax, authorSearchRequest.contentSentimentMax) &&
         Objects.equals(this.iptcTags, authorSearchRequest.iptcTags) &&
-        Objects.equals(this.notIptcTags, authorSearchRequest.notIptcTags)&&
+        Objects.equals(this.notIptcTags, authorSearchRequest.notIptcTags) &&
+        Objects.equals(this.iabTags, authorSearchRequest.iabTags) &&
+        Objects.equals(this.notIabTags, authorSearchRequest.notIabTags)&&
         Objects.equals(this.additionalProperties, authorSearchRequest.additionalProperties);
   }
 
@@ -1430,7 +1498,7 @@ public class AuthorSearchRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(authorName, notAuthorName, sources, predefinedSources, notSources, lang, notLang, countries, notCountries, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, notTheme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, additionalProperties);
+    return Objects.hash(authorName, notAuthorName, sources, predefinedSources, notSources, lang, notLang, countries, notCountries, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, notTheme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, iabTags, notIabTags, additionalProperties);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -1481,6 +1549,8 @@ public class AuthorSearchRequest {
     sb.append("    contentSentimentMax: ").append(toIndentedString(contentSentimentMax)).append("\n");
     sb.append("    iptcTags: ").append(toIndentedString(iptcTags)).append("\n");
     sb.append("    notIptcTags: ").append(toIndentedString(notIptcTags)).append("\n");
+    sb.append("    iabTags: ").append(toIndentedString(iabTags)).append("\n");
+    sb.append("    notIabTags: ").append(toIndentedString(notIabTags)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -1541,6 +1611,8 @@ public class AuthorSearchRequest {
     openapiFields.add("content_sentiment_max");
     openapiFields.add("iptc_tags");
     openapiFields.add("not_iptc_tags");
+    openapiFields.add("iab_tags");
+    openapiFields.add("not_iab_tags");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

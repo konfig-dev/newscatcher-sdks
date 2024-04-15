@@ -94,5 +94,9 @@ class OptionalLatestHeadlinesRequest(TypedDict, total=False):
 
     not_iptc_tags: typing.Union[bool, date, datetime, dict, float, int, list, str, None]
 
+    iab_tags: typing.Union[bool, date, datetime, dict, float, int, list, str, None]
+
+    not_iab_tags: typing.Union[bool, date, datetime, dict, float, int, list, str, None]
+
 class LatestHeadlinesRequest(RequiredLatestHeadlinesRequest, OptionalLatestHeadlinesRequest):
     pass

@@ -89,6 +89,8 @@ public class LatestHeadlinesApiTest {
         Double contentSentimentMax = null;
         Object iptcTags = null;
         Object notIptcTags = null;
+        Object iabTags = null;
+        Object notIabTags = null;
         CSLHResponse response = api.get()
                 .when(when)
                 .byParseDate(byParseDate)
@@ -127,6 +129,8 @@ public class LatestHeadlinesApiTest {
                 .contentSentimentMax(contentSentimentMax)
                 .iptcTags(iptcTags)
                 .notIptcTags(notIptcTags)
+                .iabTags(iabTags)
+                .notIabTags(notIabTags)
                 .execute();
         // TODO: test validations
     }
@@ -177,6 +181,8 @@ public class LatestHeadlinesApiTest {
         Double contentSentimentMax = null;
         Object iptcTags = null;
         Object notIptcTags = null;
+        Object iabTags = null;
+        Object notIabTags = null;
         CSLHResponse1 response = api.post()
                 .when(when)
                 .byParseDate(byParseDate)
@@ -215,6 +221,8 @@ public class LatestHeadlinesApiTest {
                 .contentSentimentMax(contentSentimentMax)
                 .iptcTags(iptcTags)
                 .notIptcTags(notIptcTags)
+                .iabTags(iabTags)
+                .notIabTags(notIabTags)
                 .execute();
         // TODO: test validations
     }

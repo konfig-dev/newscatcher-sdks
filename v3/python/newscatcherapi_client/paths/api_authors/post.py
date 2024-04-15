@@ -154,6 +154,8 @@ class BaseApi(api_client.Api):
         content_sentiment_max: typing.Optional[typing.Union[int, float]] = None,
         iptc_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_iptc_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        not_iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
     ) -> api_client.MappedArgs:
         args: api_client.MappedArgs = api_client.MappedArgs()
         _body = {}
@@ -231,6 +233,10 @@ class BaseApi(api_client.Api):
             _body["iptc_tags"] = iptc_tags
         if not_iptc_tags is not None:
             _body["not_iptc_tags"] = not_iptc_tags
+        if iab_tags is not None:
+            _body["iab_tags"] = iab_tags
+        if not_iab_tags is not None:
+            _body["not_iab_tags"] = not_iab_tags
         args.body = _body
         return args
 
@@ -475,6 +481,8 @@ class PostRaw(BaseApi):
         content_sentiment_max: typing.Optional[typing.Union[int, float]] = None,
         iptc_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_iptc_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        not_iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         **kwargs,
     ) -> typing.Union[
         ApiResponseFor200Async,
@@ -519,6 +527,8 @@ class PostRaw(BaseApi):
             content_sentiment_max=content_sentiment_max,
             iptc_tags=iptc_tags,
             not_iptc_tags=not_iptc_tags,
+            iab_tags=iab_tags,
+            not_iab_tags=not_iab_tags,
         )
         return await self._apost_oapg(
             body=args.body,
@@ -564,6 +574,8 @@ class PostRaw(BaseApi):
         content_sentiment_max: typing.Optional[typing.Union[int, float]] = None,
         iptc_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_iptc_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        not_iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
     ) -> typing.Union[
         ApiResponseFor200,
         api_client.ApiResponseWithoutDeserialization,
@@ -606,6 +618,8 @@ class PostRaw(BaseApi):
             content_sentiment_max=content_sentiment_max,
             iptc_tags=iptc_tags,
             not_iptc_tags=not_iptc_tags,
+            iab_tags=iab_tags,
+            not_iab_tags=not_iab_tags,
         )
         return self._post_oapg(
             body=args.body,
@@ -652,6 +666,8 @@ class Post(BaseApi):
         content_sentiment_max: typing.Optional[typing.Union[int, float]] = None,
         iptc_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_iptc_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        not_iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         validate: bool = False,
         **kwargs,
     ) -> AuthorsPostResponsePydantic:
@@ -693,6 +709,8 @@ class Post(BaseApi):
             content_sentiment_max=content_sentiment_max,
             iptc_tags=iptc_tags,
             not_iptc_tags=not_iptc_tags,
+            iab_tags=iab_tags,
+            not_iab_tags=not_iab_tags,
             **kwargs,
         )
         if validate:
@@ -739,6 +757,8 @@ class Post(BaseApi):
         content_sentiment_max: typing.Optional[typing.Union[int, float]] = None,
         iptc_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_iptc_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        not_iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         validate: bool = False,
     ) -> AuthorsPostResponsePydantic:
         raw_response = self.raw.post(
@@ -779,6 +799,8 @@ class Post(BaseApi):
             content_sentiment_max=content_sentiment_max,
             iptc_tags=iptc_tags,
             not_iptc_tags=not_iptc_tags,
+            iab_tags=iab_tags,
+            not_iab_tags=not_iab_tags,
         )
         if validate:
             return RootModel[AuthorsPostResponsePydantic](raw_response.body).root
@@ -827,6 +849,8 @@ class ApiForpost(BaseApi):
         content_sentiment_max: typing.Optional[typing.Union[int, float]] = None,
         iptc_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_iptc_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        not_iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         **kwargs,
     ) -> typing.Union[
         ApiResponseFor200Async,
@@ -871,6 +895,8 @@ class ApiForpost(BaseApi):
             content_sentiment_max=content_sentiment_max,
             iptc_tags=iptc_tags,
             not_iptc_tags=not_iptc_tags,
+            iab_tags=iab_tags,
+            not_iab_tags=not_iab_tags,
         )
         return await self._apost_oapg(
             body=args.body,
@@ -916,6 +942,8 @@ class ApiForpost(BaseApi):
         content_sentiment_max: typing.Optional[typing.Union[int, float]] = None,
         iptc_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_iptc_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        not_iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
     ) -> typing.Union[
         ApiResponseFor200,
         api_client.ApiResponseWithoutDeserialization,
@@ -958,6 +986,8 @@ class ApiForpost(BaseApi):
             content_sentiment_max=content_sentiment_max,
             iptc_tags=iptc_tags,
             not_iptc_tags=not_iptc_tags,
+            iab_tags=iab_tags,
+            not_iab_tags=not_iab_tags,
         )
         return self._post_oapg(
             body=args.body,

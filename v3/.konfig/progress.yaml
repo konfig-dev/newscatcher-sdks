@@ -99,6 +99,8 @@ securityParameters:
     query: false
   not_countries:
     query: false
+  not_iab_tags:
+    query: false
   not_iptc_tags:
     query: false
   not_lang:

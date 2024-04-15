@@ -171,6 +171,8 @@ class AuthorSearchRequest(
             content_sentiment_max = schemas.NumberSchema
             iptc_tags = schemas.AnyTypeSchema
             not_iptc_tags = schemas.AnyTypeSchema
+            iab_tags = schemas.AnyTypeSchema
+            not_iab_tags = schemas.AnyTypeSchema
             __annotations__ = {
                 "author_name": author_name,
                 "not_author_name": not_author_name,
@@ -209,6 +211,8 @@ class AuthorSearchRequest(
                 "content_sentiment_max": content_sentiment_max,
                 "iptc_tags": iptc_tags,
                 "not_iptc_tags": not_iptc_tags,
+                "iab_tags": iab_tags,
+                "not_iab_tags": not_iab_tags,
             }
     
     author_name: MetaOapg.properties.author_name
@@ -325,9 +329,15 @@ class AuthorSearchRequest(
     def __getitem__(self, name: typing_extensions.Literal["not_iptc_tags"]) -> MetaOapg.properties.not_iptc_tags: ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["iab_tags"]) -> MetaOapg.properties.iab_tags: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["not_iab_tags"]) -> MetaOapg.properties.not_iab_tags: ...
+    
+    @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["author_name", "not_author_name", "sources", "predefined_sources", "not_sources", "lang", "not_lang", "countries", "not_countries", "from_", "to_", "published_date_precision", "by_parse_date", "sort_by", "ranked_only", "from_rank", "to_rank", "is_headline", "is_paid_content", "parent_url", "all_links", "all_domain_links", "word_count_min", "word_count_max", "page", "page_size", "include_nlp_data", "has_nlp", "theme", "not_theme", "ner_name", "title_sentiment_min", "title_sentiment_max", "content_sentiment_min", "content_sentiment_max", "iptc_tags", "not_iptc_tags", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["author_name", "not_author_name", "sources", "predefined_sources", "not_sources", "lang", "not_lang", "countries", "not_countries", "from_", "to_", "published_date_precision", "by_parse_date", "sort_by", "ranked_only", "from_rank", "to_rank", "is_headline", "is_paid_content", "parent_url", "all_links", "all_domain_links", "word_count_min", "word_count_max", "page", "page_size", "include_nlp_data", "has_nlp", "theme", "not_theme", "ner_name", "title_sentiment_min", "title_sentiment_max", "content_sentiment_min", "content_sentiment_max", "iptc_tags", "not_iptc_tags", "iab_tags", "not_iab_tags", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
@@ -444,9 +454,15 @@ class AuthorSearchRequest(
     def get_item_oapg(self, name: typing_extensions.Literal["not_iptc_tags"]) -> typing.Union[MetaOapg.properties.not_iptc_tags, schemas.Unset]: ...
     
     @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["iab_tags"]) -> typing.Union[MetaOapg.properties.iab_tags, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["not_iab_tags"]) -> typing.Union[MetaOapg.properties.not_iab_tags, schemas.Unset]: ...
+    
+    @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["author_name", "not_author_name", "sources", "predefined_sources", "not_sources", "lang", "not_lang", "countries", "not_countries", "from_", "to_", "published_date_precision", "by_parse_date", "sort_by", "ranked_only", "from_rank", "to_rank", "is_headline", "is_paid_content", "parent_url", "all_links", "all_domain_links", "word_count_min", "word_count_max", "page", "page_size", "include_nlp_data", "has_nlp", "theme", "not_theme", "ner_name", "title_sentiment_min", "title_sentiment_max", "content_sentiment_min", "content_sentiment_max", "iptc_tags", "not_iptc_tags", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["author_name", "not_author_name", "sources", "predefined_sources", "not_sources", "lang", "not_lang", "countries", "not_countries", "from_", "to_", "published_date_precision", "by_parse_date", "sort_by", "ranked_only", "from_rank", "to_rank", "is_headline", "is_paid_content", "parent_url", "all_links", "all_domain_links", "word_count_min", "word_count_max", "page", "page_size", "include_nlp_data", "has_nlp", "theme", "not_theme", "ner_name", "title_sentiment_min", "title_sentiment_max", "content_sentiment_min", "content_sentiment_max", "iptc_tags", "not_iptc_tags", "iab_tags", "not_iab_tags", ], str]):
         return super().get_item_oapg(name)
     
 
@@ -490,6 +506,8 @@ class AuthorSearchRequest(
         content_sentiment_max: typing.Union[MetaOapg.properties.content_sentiment_max, decimal.Decimal, int, float, schemas.Unset] = schemas.unset,
         iptc_tags: typing.Union[MetaOapg.properties.iptc_tags, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, schemas.Unset] = schemas.unset,
         not_iptc_tags: typing.Union[MetaOapg.properties.not_iptc_tags, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, schemas.Unset] = schemas.unset,
+        iab_tags: typing.Union[MetaOapg.properties.iab_tags, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, schemas.Unset] = schemas.unset,
+        not_iab_tags: typing.Union[MetaOapg.properties.not_iab_tags, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'AuthorSearchRequest':
@@ -533,6 +551,8 @@ class AuthorSearchRequest(
             content_sentiment_max=content_sentiment_max,
             iptc_tags=iptc_tags,
             not_iptc_tags=not_iptc_tags,
+            iab_tags=iab_tags,
+            not_iab_tags=not_iab_tags,
             _configuration=_configuration,
             **kwargs,
         )

@@ -77,7 +77,9 @@ namespace Newscatcherapi.Net.Model
         /// <param name="contentSentimentMax">contentSentimentMax.</param>
         /// <param name="iptcTags">iptcTags.</param>
         /// <param name="notIptcTags">notIptcTags.</param>
-        public AuthorSearchRequest(string authorName = default(string), string notAuthorName = default(string), Object sources = default(Object), Object predefinedSources = default(Object), Object notSources = default(Object), Object lang = default(Object), Object notLang = default(Object), Object countries = default(Object), Object notCountries = default(Object), From from = default(From), To to = default(To), string publishedDatePrecision = default(string), bool byParseDate = false, string sortBy = "relevancy", string rankedOnly = default(string), int fromRank = default(int), int toRank = default(int), bool isHeadline = default(bool), bool isPaidContent = default(bool), Object parentUrl = default(Object), Object allLinks = default(Object), Object allDomainLinks = default(Object), int wordCountMin = default(int), int wordCountMax = default(int), int page = 1, int pageSize = 100, bool includeNlpData = default(bool), bool hasNlp = default(bool), string theme = default(string), string notTheme = default(string), string nerName = default(string), double titleSentimentMin = default(double), double titleSentimentMax = default(double), double contentSentimentMin = default(double), double contentSentimentMax = default(double), Object iptcTags = default(Object), Object notIptcTags = default(Object))
+        /// <param name="iabTags">iabTags.</param>
+        /// <param name="notIabTags">notIabTags.</param>
+        public AuthorSearchRequest(string authorName = default(string), string notAuthorName = default(string), Object sources = default(Object), Object predefinedSources = default(Object), Object notSources = default(Object), Object lang = default(Object), Object notLang = default(Object), Object countries = default(Object), Object notCountries = default(Object), From from = default(From), To to = default(To), string publishedDatePrecision = default(string), bool byParseDate = false, string sortBy = "relevancy", string rankedOnly = default(string), int fromRank = default(int), int toRank = default(int), bool isHeadline = default(bool), bool isPaidContent = default(bool), Object parentUrl = default(Object), Object allLinks = default(Object), Object allDomainLinks = default(Object), int wordCountMin = default(int), int wordCountMax = default(int), int page = 1, int pageSize = 100, bool includeNlpData = default(bool), bool hasNlp = default(bool), string theme = default(string), string notTheme = default(string), string nerName = default(string), double titleSentimentMin = default(double), double titleSentimentMax = default(double), double contentSentimentMin = default(double), double contentSentimentMax = default(double), Object iptcTags = default(Object), Object notIptcTags = default(Object), Object iabTags = default(Object), Object notIabTags = default(Object))
         {
             // to ensure "authorName" is required (not null)
             if (authorName == null)
@@ -122,6 +124,8 @@ namespace Newscatcherapi.Net.Model
             this.ContentSentimentMax = contentSentimentMax;
             this.IptcTags = iptcTags;
             this.NotIptcTags = notIptcTags;
+            this.IabTags = iabTags;
+            this.NotIabTags = notIabTags;
         }
 
         /// <summary>
@@ -347,6 +351,18 @@ namespace Newscatcherapi.Net.Model
         public Object NotIptcTags { get; set; }
 
         /// <summary>
+        /// Gets or Sets IabTags
+        /// </summary>
+        [DataMember(Name = "iab_tags", EmitDefaultValue = true)]
+        public Object IabTags { get; set; }
+
+        /// <summary>
+        /// Gets or Sets NotIabTags
+        /// </summary>
+        [DataMember(Name = "not_iab_tags", EmitDefaultValue = true)]
+        public Object NotIabTags { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -391,6 +407,8 @@ namespace Newscatcherapi.Net.Model
             sb.Append("  ContentSentimentMax: ").Append(ContentSentimentMax).Append("\n");
             sb.Append("  IptcTags: ").Append(IptcTags).Append("\n");
             sb.Append("  NotIptcTags: ").Append(NotIptcTags).Append("\n");
+            sb.Append("  IabTags: ").Append(IabTags).Append("\n");
+            sb.Append("  NotIabTags: ").Append(NotIabTags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -595,6 +613,16 @@ namespace Newscatcherapi.Net.Model
                     this.NotIptcTags == input.NotIptcTags ||
                     (this.NotIptcTags != null &&
                     this.NotIptcTags.Equals(input.NotIptcTags))
+                ) && 
+                (
+                    this.IabTags == input.IabTags ||
+                    (this.IabTags != null &&
+                    this.IabTags.Equals(input.IabTags))
+                ) && 
+                (
+                    this.NotIabTags == input.NotIabTags ||
+                    (this.NotIabTags != null &&
+                    this.NotIabTags.Equals(input.NotIabTags))
                 );
         }
 
@@ -709,6 +737,14 @@ namespace Newscatcherapi.Net.Model
                 if (this.NotIptcTags != null)
                 {
                     hashCode = (hashCode * 59) + this.NotIptcTags.GetHashCode();
+                }
+                if (this.IabTags != null)
+                {
+                    hashCode = (hashCode * 59) + this.IabTags.GetHashCode();
+                }
+                if (this.NotIabTags != null)
+                {
+                    hashCode = (hashCode * 59) + this.NotIabTags.GetHashCode();
                 }
                 return hashCode;
             }

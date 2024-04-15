@@ -156,6 +156,8 @@ public class Example {
     Double contentSentimentMax = 3.4D;
     Object iptcTags = null;
     Object notIptcTags = null;
+    Object iabTags = null;
+    Object notIabTags = null;
     try {
       FSearchResponse result = client
               .authors
@@ -196,6 +198,8 @@ public class Example {
               .contentSentimentMax(contentSentimentMax)
               .iptcTags(iptcTags)
               .notIptcTags(notIptcTags)
+              .iabTags(iabTags)
+              .notIabTags(notIabTags)
               .execute();
       System.out.println(result);
       System.out.println(result.getStatus());
@@ -254,6 +258,8 @@ public class Example {
               .contentSentimentMax(contentSentimentMax)
               .iptcTags(iptcTags)
               .notIptcTags(notIptcTags)
+              .iabTags(iabTags)
+              .notIabTags(notIabTags)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
       System.out.println(response.getResponseHeaders());

@@ -335,4 +335,20 @@ public class AuthorSearchRequestTest {
         // TODO: test notIptcTags
     }
 
+    /**
+     * Test the property 'iabTags'
+     */
+    @Test
+    public void iabTagsTest() {
+        // TODO: test iabTags
+    }
+
+    /**
+     * Test the property 'notIabTags'
+     */
+    @Test
+    public void notIabTagsTest() {
+        // TODO: test notIabTags
+    }
+
 }

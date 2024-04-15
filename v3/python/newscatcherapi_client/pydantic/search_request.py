@@ -110,6 +110,8 @@ class SearchRequest(BaseModel):
 
     iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = Field(None, alias='iab_tags')
 
+    not_iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = Field(None, alias='not_iab_tags')
+
     model_config = ConfigDict(
         protected_namespaces=(),
         arbitrary_types_allowed=True

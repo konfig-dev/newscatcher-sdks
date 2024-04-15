@@ -44,6 +44,8 @@
 |**contentSentimentMax** | **Double** |  |  [optional] |
 |**iptcTags** | **Object** |  |  [optional] |
 |**notIptcTags** | **Object** |  |  [optional] |
+|**iabTags** | **Object** |  |  [optional] |
+|**notIabTags** | **Object** |  |  [optional] |
 
 
 

@@ -112,6 +112,12 @@ operation_parameter_map = {
             {
                 'name': 'not_iptc_tags'
             },
+            {
+                'name': 'iab_tags'
+            },
+            {
+                'name': 'not_iab_tags'
+            },
         ]
     },
     '/api/authors-POST': {
@@ -226,6 +232,12 @@ operation_parameter_map = {
             },
             {
                 'name': 'not_iptc_tags'
+            },
+            {
+                'name': 'iab_tags'
+            },
+            {
+                'name': 'not_iab_tags'
             },
         ]
     },
@@ -342,6 +354,12 @@ operation_parameter_map = {
             {
                 'name': 'not_iptc_tags'
             },
+            {
+                'name': 'iab_tags'
+            },
+            {
+                'name': 'not_iab_tags'
+            },
         ]
     },
     '/api/latest_headlines-POST': {
@@ -456,6 +474,12 @@ operation_parameter_map = {
             },
             {
                 'name': 'not_iptc_tags'
+            },
+            {
+                'name': 'iab_tags'
+            },
+            {
+                'name': 'not_iab_tags'
             },
         ]
     },
@@ -599,6 +623,9 @@ operation_parameter_map = {
             {
                 'name': 'iab_tags'
             },
+            {
+                'name': 'not_iab_tags'
+            },
         ]
     },
     '/api/search-POST': {
@@ -740,6 +767,9 @@ operation_parameter_map = {
             },
             {
                 'name': 'iab_tags'
+            },
+            {
+                'name': 'not_iab_tags'
             },
         ]
     },
