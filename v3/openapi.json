@@ -471,7 +471,7 @@
                   "title": "Response Search Get",
                   "anyOf": [
                     {
-                      "$ref": "#/components/schemas/dto__responses__SearchResponse__SearchResponse"
+                      "$ref": "#/components/schemas/dto__responses__search_response__SearchResponse"
                     },
                     {
                       "$ref": "#/components/schemas/ClusteringSearchResponse"
@@ -530,7 +530,7 @@
                   "title": "Response Search Post",
                   "anyOf": [
                     {
-                      "$ref": "#/components/schemas/dto__responses__SearchResponse__SearchResponse"
+                      "$ref": "#/components/schemas/dto__responses__search_response__SearchResponse"
                     },
                     {
                       "$ref": "#/components/schemas/ClusteringSearchResponse"
@@ -1396,10 +1396,10 @@
                   "title": "Response Authors Get",
                   "anyOf": [
                     {
-                      "$ref": "#/components/schemas/dto__responses__AuthorSearchResponse__SearchResponse"
+                      "$ref": "#/components/schemas/dto__responses__author_search_response__SearchResponse"
                     },
                     {
-                      "$ref": "#/components/schemas/dto__responses__AuthorSearchResponse__FailedSearchResponse"
+                      "$ref": "#/components/schemas/dto__responses__author_search_response__FailedSearchResponse"
                     }
                   ]
                 }
@@ -1455,10 +1455,10 @@
                   "title": "Response Authors Post",
                   "anyOf": [
                     {
-                      "$ref": "#/components/schemas/dto__responses__AuthorSearchResponse__SearchResponse"
+                      "$ref": "#/components/schemas/dto__responses__author_search_response__SearchResponse"
                     },
                     {
-                      "$ref": "#/components/schemas/dto__responses__AuthorSearchResponse__FailedSearchResponse"
+                      "$ref": "#/components/schemas/dto__responses__author_search_response__FailedSearchResponse"
                     }
                   ]
                 }
@@ -1541,7 +1541,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/dto__responses__SearchResponse__SearchResponse"
+                  "$ref": "#/components/schemas/dto__responses__search_response__SearchResponse"
                 }
               }
             }
@@ -1592,7 +1592,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/dto__responses__SearchResponse__SearchResponse"
+                  "$ref": "#/components/schemas/dto__responses__search_response__SearchResponse"
                 }
               }
             }
@@ -2015,10 +2015,10 @@
                   "title": "Response Searchsimilar Get",
                   "anyOf": [
                     {
-                      "$ref": "#/components/schemas/dto__responses__MoreLikeThisResponse__SearchResponse"
+                      "$ref": "#/components/schemas/dto__responses__more_like_this_response__SearchResponse"
                     },
                     {
-                      "$ref": "#/components/schemas/dto__responses__MoreLikeThisResponse__FailedSearchResponse"
+                      "$ref": "#/components/schemas/dto__responses__more_like_this_response__FailedSearchResponse"
                     }
                   ]
                 }
@@ -2074,10 +2074,10 @@
                   "title": "Response Searchsimilar Post",
                   "anyOf": [
                     {
-                      "$ref": "#/components/schemas/dto__responses__MoreLikeThisResponse__SearchResponse"
+                      "$ref": "#/components/schemas/dto__responses__more_like_this_response__SearchResponse"
                     },
                     {
-                      "$ref": "#/components/schemas/dto__responses__MoreLikeThisResponse__FailedSearchResponse"
+                      "$ref": "#/components/schemas/dto__responses__more_like_this_response__FailedSearchResponse"
                     }
                   ]
                 }
@@ -2365,7 +2365,8 @@
             "title": "Rank",
             "type": "integer"
           }
-        }
+        },
+        "description": "AdditionalSourceInfo DTO class."
       },
       "AuthorSearchRequest": {
         "title": "AuthorSearchRequest",
@@ -2540,7 +2541,8 @@
           "not_iab_tags": {
             "title": "Not Iab Tags"
           }
-        }
+        },
+        "description": "Author search request DTO."
       },
       "Cluster": {
         "title": "Cluster",
@@ -2566,7 +2568,8 @@
               "type": "object"
             }
           }
-        }
+        },
+        "description": "Cluster DTO class."
       },
       "ClusteringSearchResponse": {
         "title": "ClusteringSearchResponse",
@@ -2617,7 +2620,8 @@
             "title": "User Input",
             "type": "object"
           }
-        }
+        },
+        "description": "ClusteringSearchResponse DTO class."
       },
       "HTTPValidationError": {
         "title": "HTTPValidationError",
@@ -2785,7 +2789,8 @@
           "not_iab_tags": {
             "title": "Not Iab Tags"
           }
-        }
+        },
+        "description": "Latest headlines request DTO."
       },
       "LatestHeadlinesResponse": {
         "title": "LatestHeadlinesResponse",
@@ -2831,7 +2836,8 @@
             "title": "User Input",
             "type": "object"
           }
-        }
+        },
+        "description": "LatestHeadlinesResponse DTO class."
       },
       "MoreLikeThisRequest": {
         "title": "MoreLikeThisRequest",
@@ -3017,7 +3023,8 @@
           "not_iptc_tags": {
             "title": "Not Iptc Tags"
           }
-        }
+        },
+        "description": "More like this request DTO."
       },
       "SearchRequest": {
         "title": "SearchRequest",
@@ -3223,7 +3230,8 @@
           "not_iab_tags": {
             "title": "Not Iab Tags"
           }
-        }
+        },
+        "description": "Search request DTO"
       },
       "SearchURLRequest": {
         "title": "SearchURLRequest",
@@ -3247,7 +3255,8 @@
             "type": "integer",
             "default": 100
           }
-        }
+        },
+        "description": "Search URL Request DTO."
       },
       "SimilarDocument": {
         "title": "SimilarDocument",
@@ -3275,7 +3284,8 @@
             "title": "Link",
             "type": "string"
           }
-        }
+        },
+        "description": "SimilarDocument DTO class."
       },
       "SourceInfo": {
         "title": "SourceInfo",
@@ -3299,7 +3309,8 @@
           "additional_info": {
             "$ref": "#/components/schemas/AdditionalSourceInfo"
           }
-        }
+        },
+        "description": "\"SourceInfo DTO class."
       },
       "SourceResponse": {
         "title": "SourceResponse",
@@ -3332,7 +3343,8 @@
             "title": "User Input",
             "type": "object"
           }
-        }
+        },
+        "description": "SourceResponse DTO class."
       },
       "SourcesRequest": {
         "title": "SourcesRequest",
@@ -3369,7 +3381,8 @@
             "title": "Source Url",
             "type": "string"
           }
-        }
+        },
+        "description": "Sources request DTO"
       },
       "SubscriptionResponse": {
         "title": "SubscriptionResponse",
@@ -3403,7 +3416,8 @@
             "title": "Historical Days",
             "type": "integer"
           }
-        }
+        },
+        "description": "SubscriptionResponse DTO class."
       },
       "ValidationError": {
         "title": "ValidationError",
@@ -3438,7 +3452,7 @@
           }
         }
       },
-      "dto__responses__AuthorSearchResponse__ArticleResult": {
+      "dto__responses__author_search_response__ArticleResult": {
         "title": "ArticleResult",
         "required": [
           "title",
@@ -3621,9 +3635,10 @@
             "title": "Score",
             "type": "number"
           }
-        }
+        },
+        "description": "Article result data model"
       },
-      "dto__responses__AuthorSearchResponse__FailedSearchResponse": {
+      "dto__responses__author_search_response__FailedSearchResponse": {
         "title": "FailedSearchResponse",
         "required": [
           "user_input"
@@ -3659,7 +3674,7 @@
             "title": "Articles",
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/dto__responses__AuthorSearchResponse__ArticleResult"
+              "$ref": "#/components/schemas/dto__responses__author_search_response__ArticleResult"
             },
             "default": []
           },
@@ -3667,9 +3682,10 @@
             "title": "User Input",
             "type": "object"
           }
-        }
+        },
+        "description": "Failed search response data model"
       },
-      "dto__responses__AuthorSearchResponse__SearchResponse": {
+      "dto__responses__author_search_response__SearchResponse": {
         "title": "SearchResponse",
         "required": [
           "total_hits",
@@ -3713,9 +3729,10 @@
             "title": "User Input",
             "type": "object"
           }
-        }
+        },
+        "description": "Search response data model"
       },
-      "dto__responses__MoreLikeThisResponse__ArticleResult": {
+      "dto__responses__more_like_this_response__ArticleResult": {
         "title": "ArticleResult",
         "required": [
           "title",
@@ -3906,9 +3923,10 @@
             },
             "default": []
           }
-        }
+        },
+        "description": "ArticleResult DTO class."
       },
-      "dto__responses__MoreLikeThisResponse__FailedSearchResponse": {
+      "dto__responses__more_like_this_response__FailedSearchResponse": {
         "title": "FailedSearchResponse",
         "required": [
           "user_input"
@@ -3944,7 +3962,7 @@
             "title": "Articles",
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/dto__responses__MoreLikeThisResponse__ArticleResult"
+              "$ref": "#/components/schemas/dto__responses__more_like_this_response__ArticleResult"
             },
             "default": []
           },
@@ -3952,9 +3970,10 @@
             "title": "User Input",
             "type": "object"
           }
-        }
+        },
+        "description": "FailedSearchResponse DTO class."
       },
-      "dto__responses__MoreLikeThisResponse__SearchResponse": {
+      "dto__responses__more_like_this_response__SearchResponse": {
         "title": "SearchResponse",
         "required": [
           "total_hits",
@@ -3998,9 +4017,10 @@
             "title": "User Input",
             "type": "object"
           }
-        }
+        },
+        "description": "SearchResponse DTO class."
       },
-      "dto__responses__SearchResponse__SearchResponse": {
+      "dto__responses__search_response__SearchResponse": {
         "title": "SearchResponse",
         "required": [
           "total_hits",
@@ -4044,7 +4064,8 @@
             "title": "User Input",
             "type": "object"
           }
-        }
+        },
+        "description": "SearchResponse DTO class."
       }
     }
   }
