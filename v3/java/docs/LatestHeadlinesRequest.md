@@ -2,6 +2,7 @@
 
 # LatestHeadlinesRequest
 
+Latest headlines request DTO.
 
 ## Properties
 

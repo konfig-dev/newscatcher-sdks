@@ -2,6 +2,7 @@
 
 # DtoResponsesAuthorSearchResponseFailedSearchResponse
 
+Failed search response data model
 
 ## Properties
 

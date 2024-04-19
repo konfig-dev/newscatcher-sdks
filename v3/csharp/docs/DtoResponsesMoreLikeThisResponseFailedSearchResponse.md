@@ -1,4 +1,5 @@
 # Newscatcherapi.Net.Model.DtoResponsesMoreLikeThisResponseFailedSearchResponse
+FailedSearchResponse DTO class.
 
 ## Properties
 

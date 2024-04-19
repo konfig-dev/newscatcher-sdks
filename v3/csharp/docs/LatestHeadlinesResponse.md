@@ -1,4 +1,5 @@
 # Newscatcherapi.Net.Model.LatestHeadlinesResponse
+LatestHeadlinesResponse DTO class.
 
 ## Properties
 

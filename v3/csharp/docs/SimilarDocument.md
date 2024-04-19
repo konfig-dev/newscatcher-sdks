@@ -1,4 +1,5 @@
 # Newscatcherapi.Net.Model.SimilarDocument
+SimilarDocument DTO class.
 
 ## Properties
 

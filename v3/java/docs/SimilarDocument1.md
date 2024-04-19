@@ -2,6 +2,7 @@
 
 # SimilarDocument1
 
+SimilarDocument DTO class.
 
 ## Properties
 

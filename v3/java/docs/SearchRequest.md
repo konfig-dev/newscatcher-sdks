@@ -2,6 +2,7 @@
 
 # SearchRequest
 
+Search request DTO
 
 ## Properties
 

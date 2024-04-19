@@ -2,6 +2,7 @@
 
 # DtoResponsesAuthorSearchResponseSearchResponse
 
+Search response data model
 
 ## Properties
 

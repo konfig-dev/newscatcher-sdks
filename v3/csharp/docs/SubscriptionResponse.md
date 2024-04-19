@@ -1,4 +1,5 @@
 # Newscatcherapi.Net.Model.SubscriptionResponse
+SubscriptionResponse DTO class.
 
 ## Properties
 

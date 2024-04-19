@@ -27,7 +27,7 @@ using OpenAPIDateConverter = Newscatcherapi.Net.Client.OpenAPIDateConverter;
 namespace Newscatcherapi.Net.Model
 {
     /// <summary>
-    /// AuthorSearchRequest
+    /// Author search request DTO.
     /// </summary>
     [DataContract(Name = "AuthorSearchRequest")]
     public partial class AuthorSearchRequest : IEquatable<AuthorSearchRequest>, IValidatableObject

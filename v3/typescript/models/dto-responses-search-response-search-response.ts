@@ -12,7 +12,7 @@ import type * as buffer from "buffer"
 
 
 /**
- * 
+ * SearchResponse DTO class.
  * @export
  * @interface DtoResponsesSearchResponseSearchResponse
  */

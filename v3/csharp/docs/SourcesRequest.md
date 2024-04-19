@@ -1,4 +1,5 @@
 # Newscatcherapi.Net.Model.SourcesRequest
+Sources request DTO
 
 ## Properties
 

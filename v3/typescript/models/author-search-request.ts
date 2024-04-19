@@ -14,7 +14,7 @@ import { From } from './from';
 import { To } from './to';
 
 /**
- * 
+ * Author search request DTO.
  * @export
  * @interface AuthorSearchRequest
  */

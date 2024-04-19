@@ -16,7 +16,7 @@ import { AuthorsProperty } from './authors-property';
 import { JournalistsProperty } from './journalists-property';
 
 /**
- * 
+ * Article result data model
  * @export
  * @interface DtoResponsesAuthorSearchResponseArticleResult
  */

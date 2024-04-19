@@ -1500,7 +1500,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/dto__responses__SearchResponse__SearchResponse"
+                  "$ref": "#/components/schemas/dto__responses__search_response__SearchResponse"
                 }
               }
             }
@@ -1548,7 +1548,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/dto__responses__SearchResponse__SearchResponse"
+                  "$ref": "#/components/schemas/dto__responses__search_response__SearchResponse"
                 }
               }
             }
@@ -2273,6 +2273,7 @@
     "schemas": {
       "AdditionalSourceInfo": {
         "title": "AdditionalSourceInfo",
+        "description": "AdditionalSourceInfo DTO class.",
         "type": "object",
         "properties": {
           "nb_articles_for_7d": {
@@ -2291,6 +2292,7 @@
       },
       "AuthorSearchRequest": {
         "title": "AuthorSearchRequest",
+        "description": "Author search request DTO.",
         "required": [
           "author_name"
         ],
@@ -2466,6 +2468,7 @@
       },
       "Cluster": {
         "title": "Cluster",
+        "description": "Cluster DTO class.",
         "required": [
           "cluster_id",
           "cluster_size",
@@ -2492,6 +2495,7 @@
       },
       "ClusteringSearchResponse": {
         "title": "ClusteringSearchResponse",
+        "description": "ClusteringSearchResponse DTO class.",
         "required": [
           "total_hits",
           "page",
@@ -2556,6 +2560,7 @@
       },
       "LatestHeadlinesRequest": {
         "title": "LatestHeadlinesRequest",
+        "description": "Latest headlines request DTO.",
         "type": "object",
         "properties": {
           "when": {
@@ -2711,6 +2716,7 @@
       },
       "LatestHeadlinesResponse": {
         "title": "LatestHeadlinesResponse",
+        "description": "LatestHeadlinesResponse DTO class.",
         "required": [
           "total_hits",
           "page",
@@ -2757,6 +2763,7 @@
       },
       "MoreLikeThisRequest": {
         "title": "MoreLikeThisRequest",
+        "description": "More like this request DTO.",
         "required": [
           "q"
         ],
@@ -2943,6 +2950,7 @@
       },
       "SearchRequest": {
         "title": "SearchRequest",
+        "description": "Search request DTO",
         "required": [
           "q"
         ],
@@ -3149,6 +3157,7 @@
       },
       "SearchURLRequest": {
         "title": "SearchURLRequest",
+        "description": "Search URL Request DTO.",
         "type": "object",
         "properties": {
           "ids": {
@@ -3173,6 +3182,7 @@
       },
       "SimilarDocument": {
         "title": "SimilarDocument",
+        "description": "SimilarDocument DTO class.",
         "required": [
           "id",
           "score",
@@ -3201,6 +3211,7 @@
       },
       "SourceInfo": {
         "title": "SourceInfo",
+        "description": "\"SourceInfo DTO class.",
         "required": [
           "domain_url"
         ],
@@ -3225,6 +3236,7 @@
       },
       "SourceResponse": {
         "title": "SourceResponse",
+        "description": "SourceResponse DTO class.",
         "required": [
           "message",
           "sources",
@@ -3258,6 +3270,7 @@
       },
       "SourcesRequest": {
         "title": "SourcesRequest",
+        "description": "Sources request DTO",
         "type": "object",
         "properties": {
           "lang": {
@@ -3295,6 +3308,7 @@
       },
       "SubscriptionResponse": {
         "title": "SubscriptionResponse",
+        "description": "SubscriptionResponse DTO class.",
         "required": [
           "active",
           "plan_name"
@@ -3360,8 +3374,9 @@
           }
         }
       },
-      "dto__responses__AuthorSearchResponse__ArticleResult": {
+      "dto__responses__author_search_response__ArticleResult": {
         "title": "ArticleResult",
+        "description": "Article result data model",
         "required": [
           "title",
           "link",
@@ -3548,8 +3563,9 @@
           }
         }
       },
-      "dto__responses__AuthorSearchResponse__FailedSearchResponse": {
+      "dto__responses__author_search_response__FailedSearchResponse": {
         "title": "FailedSearchResponse",
+        "description": "Failed search response data model",
         "required": [
           "user_input"
         ],
@@ -3584,7 +3600,7 @@
             "title": "Articles",
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/dto__responses__AuthorSearchResponse__ArticleResult"
+              "$ref": "#/components/schemas/dto__responses__author_search_response__ArticleResult"
             },
             "default": [
             ]
@@ -3595,8 +3611,9 @@
           }
         }
       },
-      "dto__responses__AuthorSearchResponse__SearchResponse": {
+      "dto__responses__author_search_response__SearchResponse": {
         "title": "SearchResponse",
+        "description": "Search response data model",
         "required": [
           "total_hits",
           "page",
@@ -3641,8 +3658,9 @@
           }
         }
       },
-      "dto__responses__MoreLikeThisResponse__ArticleResult": {
+      "dto__responses__more_like_this_response__ArticleResult": {
         "title": "ArticleResult",
+        "description": "ArticleResult DTO class.",
         "required": [
           "title",
           "link",
@@ -3838,8 +3856,9 @@
           }
         }
       },
-      "dto__responses__MoreLikeThisResponse__FailedSearchResponse": {
+      "dto__responses__more_like_this_response__FailedSearchResponse": {
         "title": "FailedSearchResponse",
+        "description": "FailedSearchResponse DTO class.",
         "required": [
           "user_input"
         ],
@@ -3874,7 +3893,7 @@
             "title": "Articles",
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/dto__responses__MoreLikeThisResponse__ArticleResult"
+              "$ref": "#/components/schemas/dto__responses__more_like_this_response__ArticleResult"
             },
             "default": [
             ]
@@ -3885,8 +3904,9 @@
           }
         }
       },
-      "dto__responses__MoreLikeThisResponse__SearchResponse": {
+      "dto__responses__more_like_this_response__SearchResponse": {
         "title": "SearchResponse",
+        "description": "SearchResponse DTO class.",
         "required": [
           "total_hits",
           "page",
@@ -3931,8 +3951,9 @@
           }
         }
       },
-      "dto__responses__SearchResponse__SearchResponse": {
+      "dto__responses__search_response__SearchResponse": {
         "title": "SearchResponse",
+        "description": "SearchResponse DTO class.",
         "required": [
           "total_hits",
           "page",
@@ -3981,7 +4002,7 @@
         "title": "Response Search Get",
         "anyOf": [
           {
-            "$ref": "#/components/schemas/dto__responses__SearchResponse__SearchResponse"
+            "$ref": "#/components/schemas/dto__responses__search_response__SearchResponse"
           },
           {
             "$ref": "#/components/schemas/ClusteringSearchResponse"
@@ -3992,7 +4013,7 @@
         "title": "Response Search Post",
         "anyOf": [
           {
-            "$ref": "#/components/schemas/dto__responses__SearchResponse__SearchResponse"
+            "$ref": "#/components/schemas/dto__responses__search_response__SearchResponse"
           },
           {
             "$ref": "#/components/schemas/ClusteringSearchResponse"
@@ -4025,10 +4046,10 @@
         "title": "Response Authors Get",
         "anyOf": [
           {
-            "$ref": "#/components/schemas/dto__responses__AuthorSearchResponse__SearchResponse"
+            "$ref": "#/components/schemas/dto__responses__author_search_response__SearchResponse"
           },
           {
-            "$ref": "#/components/schemas/dto__responses__AuthorSearchResponse__FailedSearchResponse"
+            "$ref": "#/components/schemas/dto__responses__author_search_response__FailedSearchResponse"
           }
         ]
       },
@@ -4036,10 +4057,10 @@
         "title": "Response Authors Post",
         "anyOf": [
           {
-            "$ref": "#/components/schemas/dto__responses__AuthorSearchResponse__SearchResponse"
+            "$ref": "#/components/schemas/dto__responses__author_search_response__SearchResponse"
           },
           {
-            "$ref": "#/components/schemas/dto__responses__AuthorSearchResponse__FailedSearchResponse"
+            "$ref": "#/components/schemas/dto__responses__author_search_response__FailedSearchResponse"
           }
         ]
       },
@@ -4047,10 +4068,10 @@
         "title": "Response Searchsimilar Get",
         "anyOf": [
           {
-            "$ref": "#/components/schemas/dto__responses__MoreLikeThisResponse__SearchResponse"
+            "$ref": "#/components/schemas/dto__responses__more_like_this_response__SearchResponse"
           },
           {
-            "$ref": "#/components/schemas/dto__responses__MoreLikeThisResponse__FailedSearchResponse"
+            "$ref": "#/components/schemas/dto__responses__more_like_this_response__FailedSearchResponse"
           }
         ]
       },
@@ -4058,10 +4079,10 @@
         "title": "Response Searchsimilar Post",
         "anyOf": [
           {
-            "$ref": "#/components/schemas/dto__responses__MoreLikeThisResponse__SearchResponse"
+            "$ref": "#/components/schemas/dto__responses__more_like_this_response__SearchResponse"
           },
           {
-            "$ref": "#/components/schemas/dto__responses__MoreLikeThisResponse__FailedSearchResponse"
+            "$ref": "#/components/schemas/dto__responses__more_like_this_response__FailedSearchResponse"
           }
         ]
       }

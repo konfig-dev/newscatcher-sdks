@@ -2,6 +2,7 @@
 
 # SubscriptionResponse
 
+SubscriptionResponse DTO class.
 
 ## Properties
 

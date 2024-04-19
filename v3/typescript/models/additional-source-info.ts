@@ -12,7 +12,7 @@ import type * as buffer from "buffer"
 
 
 /**
- * 
+ * AdditionalSourceInfo DTO class.
  * @export
  * @interface AdditionalSourceInfo
  */

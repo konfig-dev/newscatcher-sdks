@@ -2,6 +2,7 @@
 
 # SourceResponse
 
+SourceResponse DTO class.
 
 ## Properties
 

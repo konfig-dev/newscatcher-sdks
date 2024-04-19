@@ -2,6 +2,7 @@
 
 # LatestHeadlinesResponse
 
+LatestHeadlinesResponse DTO class.
 
 ## Properties
 

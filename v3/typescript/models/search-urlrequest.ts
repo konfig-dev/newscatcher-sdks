@@ -12,7 +12,7 @@ import type * as buffer from "buffer"
 
 
 /**
- * 
+ * Search URL Request DTO.
  * @export
  * @interface SearchURLRequest
  */

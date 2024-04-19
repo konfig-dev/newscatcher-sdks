@@ -1276,7 +1276,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/dto__responses__SearchResponse__SearchResponse'
+                $ref: '#/components/schemas/dto__responses__search_response__SearchResponse'
           description: Successful Response
         "422":
           content:
@@ -1309,7 +1309,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/dto__responses__SearchResponse__SearchResponse'
+                $ref: '#/components/schemas/dto__responses__search_response__SearchResponse'
           description: Successful Response
         "422":
           content:
@@ -1919,6 +1919,7 @@ paths:
 components:
   schemas:
     AdditionalSourceInfo:
+      description: AdditionalSourceInfo DTO class.
       properties:
         nb_articles_for_7d:
           title: Nb Articles For 7D
@@ -1932,6 +1933,7 @@ components:
       title: AdditionalSourceInfo
       type: object
     AuthorSearchRequest:
+      description: Author search request DTO.
       example:
         author_name: author_name
         has_nlp: true
@@ -2099,6 +2101,7 @@ components:
       title: AuthorSearchRequest
       type: object
     Cluster:
+      description: Cluster DTO class.
       properties:
         cluster_id:
           title: Cluster Id
@@ -2118,6 +2121,7 @@ components:
       title: Cluster
       type: object
     ClusteringSearchResponse:
+      description: ClusteringSearchResponse DTO class.
       properties:
         status:
           default: ok
@@ -2174,6 +2178,7 @@ components:
       x-konfig-is-used-in-non-successful-response: true
       x-do-not-generate: true
     LatestHeadlinesRequest:
+      description: Latest headlines request DTO.
       example:
         has_nlp: true
         sources: ""
@@ -2340,6 +2345,7 @@ components:
       title: LatestHeadlinesRequest
       type: object
     LatestHeadlinesResponse:
+      description: LatestHeadlinesResponse DTO class.
       properties:
         status:
           default: ok
@@ -2378,6 +2384,7 @@ components:
       title: LatestHeadlinesResponse
       type: object
     MoreLikeThisRequest:
+      description: More like this request DTO.
       example:
         has_nlp: true
         sources: ""
@@ -2568,6 +2575,7 @@ components:
       title: MoreLikeThisRequest
       type: object
     SearchRequest:
+      description: Search request DTO
       example:
         has_nlp: true
         sources: ""
@@ -2769,6 +2777,7 @@ components:
       title: SearchRequest
       type: object
     SearchURLRequest:
+      description: Search URL Request DTO.
       example:
         ids: ""
         links: ""
@@ -2798,6 +2807,7 @@ components:
       title: SearchURLRequest
       type: object
     SimilarDocument:
+      description: SimilarDocument DTO class.
       properties:
         title:
           title: Title
@@ -2819,6 +2829,7 @@ components:
       title: SimilarDocument
       type: object
     SourceInfo:
+      description: '"SourceInfo DTO class.'
       properties:
         name_source:
           title: Name Source
@@ -2836,6 +2847,7 @@ components:
       title: SourceInfo
       type: object
     SourceResponse:
+      description: SourceResponse DTO class.
       example:
         sources:
         - ""
@@ -2861,6 +2873,7 @@ components:
       type: object
       x-konfig-is-used-in-successful-response: true
     SourcesRequest:
+      description: Sources request DTO
       example:
         include_additional_info: true
         countries: countries
@@ -2897,6 +2910,7 @@ components:
       title: SourcesRequest
       type: object
     SubscriptionResponse:
+      description: SubscriptionResponse DTO class.
       example:
         usage_remaining_calls: 1
         usage_assigned_calls: 6
@@ -2947,7 +2961,8 @@ components:
       - type
       title: ValidationError
       type: object
-    dto__responses__AuthorSearchResponse__ArticleResult:
+    dto__responses__author_search_response__ArticleResult:
+      description: Article result data model
       properties:
         title:
           title: Title
@@ -3020,7 +3035,7 @@ components:
           title: Word Count
           type: integer
           x-konfig-original-example: 0
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__AuthorSearchResponse__ArticleResult-properties-word_count
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__author_search_response__ArticleResult-properties-word_count
         is_opinion:
           title: Is Opinion
           type: boolean
@@ -3034,7 +3049,7 @@ components:
           title: Nlp
           type: object
           x-konfig-original-example: {}
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__AuthorSearchResponse__ArticleResult-properties-nlp
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__author_search_response__ArticleResult-properties-nlp
         id:
           title: Id
           type: string
@@ -3053,7 +3068,8 @@ components:
       - title
       title: ArticleResult
       type: object
-    dto__responses__AuthorSearchResponse__FailedSearchResponse:
+    dto__responses__author_search_response__FailedSearchResponse:
+      description: Failed search response data model
       properties:
         status:
           default: No Matches for your search
@@ -3061,44 +3077,44 @@ components:
           title: Status
           type: string
           x-konfig-original-example: No Matches for your search
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__AuthorSearchResponse__FailedSearchResponse-properties-status
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__author_search_response__FailedSearchResponse-properties-status
         total_hits:
           default: 0
           example: 0
           title: Total Hits
           type: integer
           x-konfig-original-example: 0
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__AuthorSearchResponse__FailedSearchResponse-properties-total_hits
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__author_search_response__FailedSearchResponse-properties-total_hits
         page:
           default: 0
           example: 0
           title: Page
           type: integer
           x-konfig-original-example: 0
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__AuthorSearchResponse__FailedSearchResponse-properties-page
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__author_search_response__FailedSearchResponse-properties-page
         total_pages:
           default: 0
           example: 0
           title: Total Pages
           type: integer
           x-konfig-original-example: 0
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__AuthorSearchResponse__FailedSearchResponse-properties-total_pages
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__author_search_response__FailedSearchResponse-properties-total_pages
         page_size:
           default: 0
           example: 0
           title: Page Size
           type: integer
           x-konfig-original-example: 0
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__AuthorSearchResponse__FailedSearchResponse-properties-page_size
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__author_search_response__FailedSearchResponse-properties-page_size
         articles:
           default: []
           example: []
           items:
-            $ref: '#/components/schemas/dto__responses__AuthorSearchResponse__ArticleResult'
+            $ref: '#/components/schemas/dto__responses__author_search_response__ArticleResult'
           title: Articles
           type: array
           x-konfig-original-example: []
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__AuthorSearchResponse__FailedSearchResponse-properties-articles
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__author_search_response__FailedSearchResponse-properties-articles
         user_input:
           title: User Input
           type: object
@@ -3106,7 +3122,8 @@ components:
       - user_input
       title: FailedSearchResponse
       type: object
-    dto__responses__AuthorSearchResponse__SearchResponse:
+    dto__responses__author_search_response__SearchResponse:
+      description: Search response data model
       properties:
         status:
           default: ok
@@ -3114,7 +3131,7 @@ components:
           title: Status
           type: string
           x-konfig-original-example: ok
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__AuthorSearchResponse__SearchResponse-properties-status
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__author_search_response__SearchResponse-properties-status
         total_hits:
           title: Total Hits
           type: integer
@@ -3139,7 +3156,8 @@ components:
       - user_input
       title: SearchResponse
       type: object
-    dto__responses__MoreLikeThisResponse__ArticleResult:
+    dto__responses__more_like_this_response__ArticleResult:
+      description: ArticleResult DTO class.
       properties:
         title:
           title: Title
@@ -3212,7 +3230,7 @@ components:
           title: Word Count
           type: integer
           x-konfig-original-example: 0
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__MoreLikeThisResponse__ArticleResult-properties-word_count
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__more_like_this_response__ArticleResult-properties-word_count
         is_opinion:
           title: Is Opinion
           type: boolean
@@ -3226,7 +3244,7 @@ components:
           title: Nlp
           type: object
           x-konfig-original-example: {}
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__MoreLikeThisResponse__ArticleResult-properties-nlp
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__more_like_this_response__ArticleResult-properties-nlp
         id:
           title: Id
           type: string
@@ -3241,7 +3259,7 @@ components:
           title: Similar Documents
           type: array
           x-konfig-original-example: []
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__MoreLikeThisResponse__ArticleResult-properties-similar_documents
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__more_like_this_response__ArticleResult-properties-similar_documents
       required:
       - content
       - domain_url
@@ -3254,7 +3272,8 @@ components:
       - title
       title: ArticleResult
       type: object
-    dto__responses__MoreLikeThisResponse__FailedSearchResponse:
+    dto__responses__more_like_this_response__FailedSearchResponse:
+      description: FailedSearchResponse DTO class.
       properties:
         status:
           default: No Matches for your search
@@ -3262,44 +3281,44 @@ components:
           title: Status
           type: string
           x-konfig-original-example: No Matches for your search
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__MoreLikeThisResponse__FailedSearchResponse-properties-status
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__more_like_this_response__FailedSearchResponse-properties-status
         total_hits:
           default: 0
           example: 0
           title: Total Hits
           type: integer
           x-konfig-original-example: 0
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__MoreLikeThisResponse__FailedSearchResponse-properties-total_hits
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__more_like_this_response__FailedSearchResponse-properties-total_hits
         page:
           default: 0
           example: 0
           title: Page
           type: integer
           x-konfig-original-example: 0
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__MoreLikeThisResponse__FailedSearchResponse-properties-page
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__more_like_this_response__FailedSearchResponse-properties-page
         total_pages:
           default: 0
           example: 0
           title: Total Pages
           type: integer
           x-konfig-original-example: 0
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__MoreLikeThisResponse__FailedSearchResponse-properties-total_pages
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__more_like_this_response__FailedSearchResponse-properties-total_pages
         page_size:
           default: 0
           example: 0
           title: Page Size
           type: integer
           x-konfig-original-example: 0
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__MoreLikeThisResponse__FailedSearchResponse-properties-page_size
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__more_like_this_response__FailedSearchResponse-properties-page_size
         articles:
           default: []
           example: []
           items:
-            $ref: '#/components/schemas/dto__responses__MoreLikeThisResponse__ArticleResult'
+            $ref: '#/components/schemas/dto__responses__more_like_this_response__ArticleResult'
           title: Articles
           type: array
           x-konfig-original-example: []
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__MoreLikeThisResponse__FailedSearchResponse-properties-articles
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__more_like_this_response__FailedSearchResponse-properties-articles
         user_input:
           title: User Input
           type: object
@@ -3307,7 +3326,8 @@ components:
       - user_input
       title: FailedSearchResponse
       type: object
-    dto__responses__MoreLikeThisResponse__SearchResponse:
+    dto__responses__more_like_this_response__SearchResponse:
+      description: SearchResponse DTO class.
       properties:
         status:
           default: ok
@@ -3315,7 +3335,7 @@ components:
           title: Status
           type: string
           x-konfig-original-example: ok
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__MoreLikeThisResponse__SearchResponse-properties-status
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__more_like_this_response__SearchResponse-properties-status
         total_hits:
           title: Total Hits
           type: integer
@@ -3340,7 +3360,8 @@ components:
       - user_input
       title: SearchResponse
       type: object
-    dto__responses__SearchResponse__SearchResponse:
+    dto__responses__search_response__SearchResponse:
+      description: SearchResponse DTO class.
       example:
         total_hits: 0
         user_input: "{}"
@@ -3370,7 +3391,7 @@ components:
           title: Status
           type: string
           x-konfig-original-example: ok
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__SearchResponse__SearchResponse-properties-status
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__search_response__SearchResponse-properties-status
         total_hits:
           title: Total Hits
           type: integer
@@ -3616,88 +3637,88 @@ components:
       example: 100
       type: number
       x-do-not-generate: true
-    konfig-generated-schema-components-schemas-dto__responses__AuthorSearchResponse__ArticleResult-properties-word_count:
+    konfig-generated-schema-components-schemas-dto__responses__author_search_response__ArticleResult-properties-word_count:
       example: 0
       type: number
       x-do-not-generate: true
-    konfig-generated-schema-components-schemas-dto__responses__AuthorSearchResponse__ArticleResult-properties-nlp:
+    konfig-generated-schema-components-schemas-dto__responses__author_search_response__ArticleResult-properties-nlp:
       example: {}
       properties: {}
       type: object
       x-do-not-generate: true
-    konfig-generated-schema-components-schemas-dto__responses__AuthorSearchResponse__FailedSearchResponse-properties-status:
+    konfig-generated-schema-components-schemas-dto__responses__author_search_response__FailedSearchResponse-properties-status:
       example: No Matches for your search
       type: string
       x-do-not-generate: true
-    konfig-generated-schema-components-schemas-dto__responses__AuthorSearchResponse__FailedSearchResponse-properties-total_hits:
+    konfig-generated-schema-components-schemas-dto__responses__author_search_response__FailedSearchResponse-properties-total_hits:
       example: 0
       type: number
       x-do-not-generate: true
-    konfig-generated-schema-components-schemas-dto__responses__AuthorSearchResponse__FailedSearchResponse-properties-page:
+    konfig-generated-schema-components-schemas-dto__responses__author_search_response__FailedSearchResponse-properties-page:
       example: 0
       type: number
       x-do-not-generate: true
-    konfig-generated-schema-components-schemas-dto__responses__AuthorSearchResponse__FailedSearchResponse-properties-total_pages:
+    konfig-generated-schema-components-schemas-dto__responses__author_search_response__FailedSearchResponse-properties-total_pages:
       example: 0
       type: number
       x-do-not-generate: true
-    konfig-generated-schema-components-schemas-dto__responses__AuthorSearchResponse__FailedSearchResponse-properties-page_size:
+    konfig-generated-schema-components-schemas-dto__responses__author_search_response__FailedSearchResponse-properties-page_size:
       example: 0
       type: number
       x-do-not-generate: true
-    konfig-generated-schema-components-schemas-dto__responses__AuthorSearchResponse__FailedSearchResponse-properties-articles:
+    konfig-generated-schema-components-schemas-dto__responses__author_search_response__FailedSearchResponse-properties-articles:
       items:
         type: string
       type: array
       x-do-not-generate: true
-    konfig-generated-schema-components-schemas-dto__responses__AuthorSearchResponse__SearchResponse-properties-status:
+    konfig-generated-schema-components-schemas-dto__responses__author_search_response__SearchResponse-properties-status:
       example: ok
       type: string
       x-do-not-generate: true
-    konfig-generated-schema-components-schemas-dto__responses__MoreLikeThisResponse__ArticleResult-properties-word_count:
+    konfig-generated-schema-components-schemas-dto__responses__more_like_this_response__ArticleResult-properties-word_count:
       example: 0
       type: number
       x-do-not-generate: true
-    konfig-generated-schema-components-schemas-dto__responses__MoreLikeThisResponse__ArticleResult-properties-nlp:
+    konfig-generated-schema-components-schemas-dto__responses__more_like_this_response__ArticleResult-properties-nlp:
       example: {}
       properties: {}
       type: object
       x-do-not-generate: true
-    konfig-generated-schema-components-schemas-dto__responses__MoreLikeThisResponse__ArticleResult-properties-similar_documents:
+    konfig-generated-schema-components-schemas-dto__responses__more_like_this_response__ArticleResult-properties-similar_documents:
       items:
         type: string
       type: array
       x-do-not-generate: true
-    konfig-generated-schema-components-schemas-dto__responses__MoreLikeThisResponse__FailedSearchResponse-properties-status:
+    konfig-generated-schema-components-schemas-dto__responses__more_like_this_response__FailedSearchResponse-properties-status:
       example: No Matches for your search
       type: string
       x-do-not-generate: true
-    konfig-generated-schema-components-schemas-dto__responses__MoreLikeThisResponse__FailedSearchResponse-properties-total_hits:
+    konfig-generated-schema-components-schemas-dto__responses__more_like_this_response__FailedSearchResponse-properties-total_hits:
       example: 0
       type: number
       x-do-not-generate: true
-    konfig-generated-schema-components-schemas-dto__responses__MoreLikeThisResponse__FailedSearchResponse-properties-page:
+    konfig-generated-schema-components-schemas-dto__responses__more_like_this_response__FailedSearchResponse-properties-page:
       example: 0
       type: number
       x-do-not-generate: true
-    konfig-generated-schema-components-schemas-dto__responses__MoreLikeThisResponse__FailedSearchResponse-properties-total_pages:
+    konfig-generated-schema-components-schemas-dto__responses__more_like_this_response__FailedSearchResponse-properties-total_pages:
       example: 0
       type: number
       x-do-not-generate: true
-    konfig-generated-schema-components-schemas-dto__responses__MoreLikeThisResponse__FailedSearchResponse-properties-page_size:
+    konfig-generated-schema-components-schemas-dto__responses__more_like_this_response__FailedSearchResponse-properties-page_size:
       example: 0
       type: number
       x-do-not-generate: true
-    konfig-generated-schema-components-schemas-dto__responses__MoreLikeThisResponse__FailedSearchResponse-properties-articles:
+    konfig-generated-schema-components-schemas-dto__responses__more_like_this_response__FailedSearchResponse-properties-articles:
       items:
         type: string
       type: array
       x-do-not-generate: true
-    konfig-generated-schema-components-schemas-dto__responses__MoreLikeThisResponse__SearchResponse-properties-status:
+    konfig-generated-schema-components-schemas-dto__responses__more_like_this_response__SearchResponse-properties-status:
       example: ok
       type: string
       x-do-not-generate: true
-    konfig-generated-schema-components-schemas-dto__responses__SearchResponse__SearchResponse-properties-status:
+    konfig-generated-schema-components-schemas-dto__responses__search_response__SearchResponse-properties-status:
       example: ok
       type: string
       x-do-not-generate: true
@@ -5113,6 +5134,7 @@ components:
       x-do-not-generate: true
       x-konfig-is-parameter: []
     CSearchResponse:
+      description: SearchResponse DTO class.
       example:
         total_hits: 0
         user_input: "{}"
@@ -5142,7 +5164,7 @@ components:
           title: Status
           type: string
           x-konfig-original-example: ok
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__SearchResponse__SearchResponse-properties-status
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__search_response__SearchResponse-properties-status
         total_hits:
           title: Total Hits
           type: integer
@@ -5181,6 +5203,7 @@ components:
       type: object
       x-konfig-is-used-in-successful-response: true
     CSearchResponse1:
+      description: SearchResponse DTO class.
       example:
         total_hits: 0
         user_input: "{}"
@@ -5210,7 +5233,7 @@ components:
           title: Status
           type: string
           x-konfig-original-example: ok
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__SearchResponse__SearchResponse-properties-status
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__search_response__SearchResponse-properties-status
         total_hits:
           title: Total Hits
           type: integer
@@ -5249,6 +5272,7 @@ components:
       type: object
       x-konfig-is-used-in-successful-response: true
     CSLHResponse:
+      description: ClusteringSearchResponse DTO class.
       example:
         total_hits: 0
         user_input: "{}"
@@ -5316,6 +5340,7 @@ components:
       title: ClusteringSearchResponse
       type: object
     CSLHResponse1:
+      description: ClusteringSearchResponse DTO class.
       example:
         total_hits: 0
         user_input: "{}"
@@ -5383,6 +5408,7 @@ components:
       title: ClusteringSearchResponse
       type: object
     FSearchResponse:
+      description: Search response data model
       example:
         total_hits: 0
         user_input: "{}"
@@ -5460,7 +5486,7 @@ components:
           title: Status
           type: string
           x-konfig-original-example: ok
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__AuthorSearchResponse__SearchResponse-properties-status
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__author_search_response__SearchResponse-properties-status
         total_hits:
           title: Total Hits
           type: integer
@@ -5486,6 +5512,7 @@ components:
       title: SearchResponse
       type: object
     FSearchResponse1:
+      description: Search response data model
       example:
         total_hits: 0
         user_input: "{}"
@@ -5563,7 +5590,7 @@ components:
           title: Status
           type: string
           x-konfig-original-example: ok
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__AuthorSearchResponse__SearchResponse-properties-status
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__author_search_response__SearchResponse-properties-status
         total_hits:
           title: Total Hits
           type: integer
@@ -5589,6 +5616,7 @@ components:
       title: SearchResponse
       type: object
     FSearchResponse2:
+      description: SearchResponse DTO class.
       example:
         total_hits: 0
         user_input: "{}"
@@ -5668,7 +5696,7 @@ components:
           title: Status
           type: string
           x-konfig-original-example: ok
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__MoreLikeThisResponse__SearchResponse-properties-status
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__more_like_this_response__SearchResponse-properties-status
         total_hits:
           title: Total Hits
           type: integer
@@ -5694,6 +5722,7 @@ components:
       title: SearchResponse
       type: object
     FSearchResponse3:
+      description: SearchResponse DTO class.
       example:
         total_hits: 0
         user_input: "{}"
@@ -5773,7 +5802,7 @@ components:
           title: Status
           type: string
           x-konfig-original-example: ok
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__MoreLikeThisResponse__SearchResponse-properties-status
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__more_like_this_response__SearchResponse-properties-status
         total_hits:
           title: Total Hits
           type: integer
@@ -5799,6 +5828,7 @@ components:
       title: SearchResponse
       type: object
     Cluster_1:
+      description: Cluster DTO class.
       example:
         cluster_id: cluster_id
         cluster_size: 2
@@ -5928,7 +5958,7 @@ components:
           title: Word Count
           type: integer
           x-konfig-original-example: 0
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__AuthorSearchResponse__ArticleResult-properties-word_count
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__author_search_response__ArticleResult-properties-word_count
         is_opinion:
           title: Is Opinion
           type: boolean
@@ -5942,7 +5972,7 @@ components:
           title: Nlp
           type: object
           x-konfig-original-example: {}
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__AuthorSearchResponse__ArticleResult-properties-nlp
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__author_search_response__ArticleResult-properties-nlp
         id:
           title: Id
           type: string
@@ -5951,6 +5981,7 @@ components:
           type: number
       type: object
     SimilarDocument_1:
+      description: SimilarDocument DTO class.
       properties:
         title:
           title: Title
@@ -6077,7 +6108,7 @@ components:
           title: Word Count
           type: integer
           x-konfig-original-example: 0
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__MoreLikeThisResponse__ArticleResult-properties-word_count
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__more_like_this_response__ArticleResult-properties-word_count
         is_opinion:
           title: Is Opinion
           type: boolean
@@ -6091,7 +6122,7 @@ components:
           title: Nlp
           type: object
           x-konfig-original-example: {}
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__MoreLikeThisResponse__ArticleResult-properties-nlp
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__more_like_this_response__ArticleResult-properties-nlp
         id:
           title: Id
           type: string
@@ -6106,7 +6137,7 @@ components:
           title: Similar Documents
           type: array
           x-konfig-original-example: []
-          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__MoreLikeThisResponse__ArticleResult-properties-similar_documents
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__more_like_this_response__ArticleResult-properties-similar_documents
       type: object
   securitySchemes:
     apiKey:

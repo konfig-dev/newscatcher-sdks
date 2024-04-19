@@ -1,4 +1,5 @@
 # Newscatcherapi.Net.Model.MoreLikeThisRequest
+More like this request DTO.
 
 ## Properties
 

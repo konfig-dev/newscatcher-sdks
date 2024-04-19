@@ -27,7 +27,7 @@ using OpenAPIDateConverter = Newscatcherapi.Net.Client.OpenAPIDateConverter;
 namespace Newscatcherapi.Net.Model
 {
     /// <summary>
-    /// SimilarDocument
+    /// SimilarDocument DTO class.
     /// </summary>
     [DataContract(Name = "SimilarDocument")]
     public partial class SimilarDocument : IEquatable<SimilarDocument>, IValidatableObject

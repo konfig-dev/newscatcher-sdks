@@ -13,7 +13,7 @@ import type * as buffer from "buffer"
 import { Cluster } from './cluster';
 
 /**
- * 
+ * ClusteringSearchResponse DTO class.
  * @export
  * @interface ClusteringSearchResponse
  */

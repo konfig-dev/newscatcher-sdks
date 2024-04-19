@@ -2,6 +2,7 @@
 
 # AdditionalSourceInfo
 
+AdditionalSourceInfo DTO class.
 
 ## Properties
 

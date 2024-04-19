@@ -2,6 +2,7 @@
 
 # ClusteringSearchResponse
 
+ClusteringSearchResponse DTO class.
 
 ## Properties
 

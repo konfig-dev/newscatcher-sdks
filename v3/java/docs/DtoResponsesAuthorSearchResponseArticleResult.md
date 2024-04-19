@@ -2,6 +2,7 @@
 
 # DtoResponsesAuthorSearchResponseArticleResult
 
+Article result data model
 
 ## Properties
 

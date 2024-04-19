@@ -27,7 +27,7 @@ using OpenAPIDateConverter = Newscatcherapi.Net.Client.OpenAPIDateConverter;
 namespace Newscatcherapi.Net.Model
 {
     /// <summary>
-    /// SourceInfo
+    /// \&quot;SourceInfo DTO class.
     /// </summary>
     [DataContract(Name = "SourceInfo")]
     public partial class SourceInfo : IEquatable<SourceInfo>, IValidatableObject
