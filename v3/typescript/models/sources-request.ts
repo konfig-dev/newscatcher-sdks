@@ -12,7 +12,7 @@ import type * as buffer from "buffer"
 
 
 /**
- * 
+ * Sources request DTO
  * @export
  * @interface SourcesRequest
  */

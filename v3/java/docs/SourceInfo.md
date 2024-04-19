@@ -2,6 +2,7 @@
 
 # SourceInfo
 
+\"SourceInfo DTO class.
 
 ## Properties
 

@@ -2,6 +2,7 @@
 
 # CSearchResponse1
 
+SearchResponse DTO class.
 
 ## Properties
 

@@ -13,7 +13,7 @@ import type * as buffer from "buffer"
 import { AdditionalSourceInfo } from './additional-source-info';
 
 /**
- * 
+ * \"SourceInfo DTO class.
  * @export
  * @interface SourceInfo
  */

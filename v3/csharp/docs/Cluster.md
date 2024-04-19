@@ -1,4 +1,5 @@
 # Newscatcherapi.Net.Model.Cluster
+Cluster DTO class.
 
 ## Properties
 

@@ -12,7 +12,7 @@ import type * as buffer from "buffer"
 
 
 /**
- * 
+ * SubscriptionResponse DTO class.
  * @export
  * @interface SubscriptionResponse
  */

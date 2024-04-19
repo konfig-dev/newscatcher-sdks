@@ -2,6 +2,7 @@
 
 # MoreLikeThisRequest
 
+More like this request DTO.
 
 ## Properties
 

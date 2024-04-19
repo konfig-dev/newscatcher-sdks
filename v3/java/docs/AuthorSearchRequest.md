@@ -2,6 +2,7 @@
 
 # AuthorSearchRequest
 
+Author search request DTO.
 
 ## Properties
 

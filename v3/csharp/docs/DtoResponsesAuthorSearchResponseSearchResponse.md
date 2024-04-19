@@ -1,4 +1,5 @@
 # Newscatcherapi.Net.Model.DtoResponsesAuthorSearchResponseSearchResponse
+Search response data model
 
 ## Properties
 

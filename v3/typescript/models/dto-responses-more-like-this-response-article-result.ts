@@ -17,7 +17,7 @@ import { JournalistsProperty } from './journalists-property';
 import { SimilarDocument } from './similar-document';
 
 /**
- * 
+ * ArticleResult DTO class.
  * @export
  * @interface DtoResponsesMoreLikeThisResponseArticleResult
  */

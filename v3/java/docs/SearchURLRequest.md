@@ -2,6 +2,7 @@
 
 # SearchURLRequest
 
+Search URL Request DTO.
 
 ## Properties
 

@@ -1,4 +1,5 @@
 # Newscatcherapi.Net.Model.AdditionalSourceInfo
+AdditionalSourceInfo DTO class.
 
 ## Properties
 

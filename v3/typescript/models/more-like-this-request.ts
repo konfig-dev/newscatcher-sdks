@@ -14,7 +14,7 @@ import { From } from './from';
 import { To } from './to';
 
 /**
- * 
+ * More like this request DTO.
  * @export
  * @interface MoreLikeThisRequest
  */

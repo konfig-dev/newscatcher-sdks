@@ -12,7 +12,7 @@ import type * as buffer from "buffer"
 
 
 /**
- * 
+ * SimilarDocument DTO class.
  * @export
  * @interface SimilarDocument
  */

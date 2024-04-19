@@ -1,4 +1,5 @@
 # Newscatcherapi.Net.Model.SearchURLRequest
+Search URL Request DTO.
 
 ## Properties
 

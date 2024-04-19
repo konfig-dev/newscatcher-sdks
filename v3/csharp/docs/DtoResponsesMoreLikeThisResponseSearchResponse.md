@@ -1,4 +1,5 @@
 # Newscatcherapi.Net.Model.DtoResponsesMoreLikeThisResponseSearchResponse
+SearchResponse DTO class.
 
 ## Properties
 

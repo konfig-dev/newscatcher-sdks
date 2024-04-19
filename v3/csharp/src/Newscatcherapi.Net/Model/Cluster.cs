@@ -27,7 +27,7 @@ using OpenAPIDateConverter = Newscatcherapi.Net.Client.OpenAPIDateConverter;
 namespace Newscatcherapi.Net.Model
 {
     /// <summary>
-    /// Cluster
+    /// Cluster DTO class.
     /// </summary>
     [DataContract(Name = "Cluster")]
     public partial class Cluster : IEquatable<Cluster>, IValidatableObject

@@ -13,7 +13,7 @@ import type * as buffer from "buffer"
 import { SourcesPropertyInner } from './sources-property-inner';
 
 /**
- * 
+ * SourceResponse DTO class.
  * @export
  * @interface SourceResponse
  */

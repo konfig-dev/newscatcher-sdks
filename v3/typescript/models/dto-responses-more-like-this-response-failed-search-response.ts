@@ -13,7 +13,7 @@ import type * as buffer from "buffer"
 import { DtoResponsesMoreLikeThisResponseArticleResult } from './dto-responses-more-like-this-response-article-result';
 
 /**
- * 
+ * FailedSearchResponse DTO class.
  * @export
  * @interface DtoResponsesMoreLikeThisResponseFailedSearchResponse
  */

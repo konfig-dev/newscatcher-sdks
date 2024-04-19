@@ -27,9 +27,9 @@ using OpenAPIDateConverter = Newscatcherapi.Net.Client.OpenAPIDateConverter;
 namespace Newscatcherapi.Net.Model
 {
     /// <summary>
-    /// DtoResponsesMoreLikeThisResponseSearchResponse
+    /// SearchResponse DTO class.
     /// </summary>
-    [DataContract(Name = "dto__responses__MoreLikeThisResponse__SearchResponse")]
+    [DataContract(Name = "dto__responses__more_like_this_response__SearchResponse")]
     public partial class DtoResponsesMoreLikeThisResponseSearchResponse : IEquatable<DtoResponsesMoreLikeThisResponseSearchResponse>, IValidatableObject
     {
         /// <summary>

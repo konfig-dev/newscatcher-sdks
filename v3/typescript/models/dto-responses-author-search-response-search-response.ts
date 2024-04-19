@@ -12,7 +12,7 @@ import type * as buffer from "buffer"
 
 
 /**
- * 
+ * Search response data model
  * @export
  * @interface DtoResponsesAuthorSearchResponseSearchResponse
  */

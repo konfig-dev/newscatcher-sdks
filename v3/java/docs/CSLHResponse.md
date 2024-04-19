@@ -2,6 +2,7 @@
 
 # CSLHResponse
 
+ClusteringSearchResponse DTO class.
 
 ## Properties
 

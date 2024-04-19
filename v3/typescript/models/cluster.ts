@@ -12,7 +12,7 @@ import type * as buffer from "buffer"
 
 
 /**
- * 
+ * Cluster DTO class.
  * @export
  * @interface Cluster
  */

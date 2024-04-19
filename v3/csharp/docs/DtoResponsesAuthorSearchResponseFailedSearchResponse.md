@@ -1,4 +1,5 @@
 # Newscatcherapi.Net.Model.DtoResponsesAuthorSearchResponseFailedSearchResponse
+Failed search response data model
 
 ## Properties
 

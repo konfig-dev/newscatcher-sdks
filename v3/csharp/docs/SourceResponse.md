@@ -1,4 +1,5 @@
 # Newscatcherapi.Net.Model.SourceResponse
+SourceResponse DTO class.
 
 ## Properties
 

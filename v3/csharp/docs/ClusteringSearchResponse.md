@@ -1,4 +1,5 @@
 # Newscatcherapi.Net.Model.ClusteringSearchResponse
+ClusteringSearchResponse DTO class.
 
 ## Properties
 

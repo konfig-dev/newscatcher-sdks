@@ -1,4 +1,5 @@
 # Newscatcherapi.Net.Model.DtoResponsesSearchResponseSearchResponse
+SearchResponse DTO class.
 
 ## Properties
 

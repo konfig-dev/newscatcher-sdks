@@ -2,6 +2,7 @@
 
 # FSearchResponse3
 
+SearchResponse DTO class.
 
 ## Properties
 

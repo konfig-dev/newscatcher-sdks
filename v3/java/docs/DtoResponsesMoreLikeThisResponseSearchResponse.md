@@ -2,6 +2,7 @@
 
 # DtoResponsesMoreLikeThisResponseSearchResponse
 
+SearchResponse DTO class.
 
 ## Properties
 

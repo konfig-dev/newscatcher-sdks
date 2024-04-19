@@ -2,6 +2,7 @@
 
 # FSearchResponse
 
+Search response data model
 
 ## Properties
 

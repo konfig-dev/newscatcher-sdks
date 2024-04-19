@@ -12,7 +12,7 @@ import type * as buffer from "buffer"
 
 
 /**
- * 
+ * LatestHeadlinesResponse DTO class.
  * @export
  * @interface LatestHeadlinesResponse
  */

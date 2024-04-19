@@ -2,6 +2,7 @@
 
 # Cluster1
 
+Cluster DTO class.
 
 ## Properties
 
