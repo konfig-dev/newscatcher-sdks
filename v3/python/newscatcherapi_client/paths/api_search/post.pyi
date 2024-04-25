@@ -155,6 +155,7 @@ class BaseApi(api_client.Api):
         source_name: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        exclude_duplicates: typing.Optional[bool] = None,
     ) -> api_client.MappedArgs:
         args: api_client.MappedArgs = api_client.MappedArgs()
         _body = {}
@@ -252,6 +253,8 @@ class BaseApi(api_client.Api):
             _body["iab_tags"] = iab_tags
         if not_iab_tags is not None:
             _body["not_iab_tags"] = not_iab_tags
+        if exclude_duplicates is not None:
+            _body["exclude_duplicates"] = exclude_duplicates
         args.body = _body
         return args
 
@@ -506,6 +509,7 @@ class PostRaw(BaseApi):
         source_name: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        exclude_duplicates: typing.Optional[bool] = None,
         **kwargs,
     ) -> typing.Union[
         ApiResponseFor200Async,
@@ -560,6 +564,7 @@ class PostRaw(BaseApi):
             source_name=source_name,
             iab_tags=iab_tags,
             not_iab_tags=not_iab_tags,
+            exclude_duplicates=exclude_duplicates,
         )
         return await self._apost_oapg(
             body=args.body,
@@ -615,6 +620,7 @@ class PostRaw(BaseApi):
         source_name: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        exclude_duplicates: typing.Optional[bool] = None,
     ) -> typing.Union[
         ApiResponseFor200,
         api_client.ApiResponseWithoutDeserialization,
@@ -667,6 +673,7 @@ class PostRaw(BaseApi):
             source_name=source_name,
             iab_tags=iab_tags,
             not_iab_tags=not_iab_tags,
+            exclude_duplicates=exclude_duplicates,
         )
         return self._post_oapg(
             body=args.body,
@@ -723,6 +730,7 @@ class Post(BaseApi):
         source_name: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        exclude_duplicates: typing.Optional[bool] = None,
         validate: bool = False,
         **kwargs,
     ) -> SearchPostResponsePydantic:
@@ -774,6 +782,7 @@ class Post(BaseApi):
             source_name=source_name,
             iab_tags=iab_tags,
             not_iab_tags=not_iab_tags,
+            exclude_duplicates=exclude_duplicates,
             **kwargs,
         )
         if validate:
@@ -830,6 +839,7 @@ class Post(BaseApi):
         source_name: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        exclude_duplicates: typing.Optional[bool] = None,
         validate: bool = False,
     ) -> SearchPostResponsePydantic:
         raw_response = self.raw.post(
@@ -880,6 +890,7 @@ class Post(BaseApi):
             source_name=source_name,
             iab_tags=iab_tags,
             not_iab_tags=not_iab_tags,
+            exclude_duplicates=exclude_duplicates,
         )
         if validate:
             return RootModel[SearchPostResponsePydantic](raw_response.body).root
@@ -938,6 +949,7 @@ class ApiForpost(BaseApi):
         source_name: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        exclude_duplicates: typing.Optional[bool] = None,
         **kwargs,
     ) -> typing.Union[
         ApiResponseFor200Async,
@@ -992,6 +1004,7 @@ class ApiForpost(BaseApi):
             source_name=source_name,
             iab_tags=iab_tags,
             not_iab_tags=not_iab_tags,
+            exclude_duplicates=exclude_duplicates,
         )
         return await self._apost_oapg(
             body=args.body,
@@ -1047,6 +1060,7 @@ class ApiForpost(BaseApi):
         source_name: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        exclude_duplicates: typing.Optional[bool] = None,
     ) -> typing.Union[
         ApiResponseFor200,
         api_client.ApiResponseWithoutDeserialization,
@@ -1099,6 +1113,7 @@ class ApiForpost(BaseApi):
             source_name=source_name,
             iab_tags=iab_tags,
             not_iab_tags=not_iab_tags,
+            exclude_duplicates=exclude_duplicates,
         )
         return self._post_oapg(
             body=args.body,

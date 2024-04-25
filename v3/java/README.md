@@ -2,7 +2,7 @@
 
 <img src='https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg' width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a>
 
-[![Maven Central](https://img.shields.io/badge/Maven%20Central-v6.0.3-blue)](https://central.sonatype.com/artifact/com.konfigthis.newscatcherapi/newscatcherapi-java-sdk/6.0.3)
+[![Maven Central](https://img.shields.io/badge/Maven%20Central-v6.0.4-blue)](https://central.sonatype.com/artifact/com.konfigthis.newscatcherapi/newscatcherapi-java-sdk/6.0.4)
 
 ## Requirements
 
@@ -39,7 +39,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.konfigthis.newscatcherapi</groupId>
   <artifactId>newscatcherapi-java-sdk</artifactId>
-  <version>6.0.3</version>
+  <version>6.0.4</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -55,7 +55,7 @@ repositories {
 }
 
 dependencies {
-   implementation "com.konfigthis.newscatcherapi:newscatcherapi-java-sdk:6.0.3"
+   implementation "com.konfigthis.newscatcherapi:newscatcherapi-java-sdk:6.0.4"
 }
 ```
 
@@ -92,7 +92,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/newscatcherapi-java-sdk-6.0.3.jar`
+* `target/newscatcherapi-java-sdk-6.0.4.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -298,6 +298,8 @@ Class | Method | HTTP request | Description
 *SourcesApi* | [**post**](docs/SourcesApi.md#post) | **POST** /api/sources | [Post] Search For Sources Request
 *SubscriptionApi* | [**get**](docs/SubscriptionApi.md#get) | **GET** /api/subscription | [Get] Get My Plan Info
 *SubscriptionApi* | [**post**](docs/SubscriptionApi.md#post) | **POST** /api/subscription | [Post] Get My Plan Info
+*SearchDuplicatesByOriginalIdApi* | [**get**](docs/SearchDuplicatesByOriginalIdApi.md#get) | **GET** /api/search_duplicates_by_original_id | [Get] Search Duplicate Articles For Articles Request
+*SearchDuplicatesByOriginalIdApi* | [**post**](docs/SearchDuplicatesByOriginalIdApi.md#post) | **POST** /api/search_duplicates_by_original_id | [Post] Search Duplicate Articles For Articles Request
 
 
 ## Documentation for Models
@@ -310,6 +312,8 @@ Class | Method | HTTP request | Description
  - [CSLHResponse1](docs/CSLHResponse1.md)
  - [CSearchResponse](docs/CSearchResponse.md)
  - [CSearchResponse1](docs/CSearchResponse1.md)
+ - [CSearchResponse2](docs/CSearchResponse2.md)
+ - [CSearchResponse3](docs/CSearchResponse3.md)
  - [Cluster](docs/Cluster.md)
  - [Cluster1](docs/Cluster1.md)
  - [ClusteringSearchResponse](docs/ClusteringSearchResponse.md)
@@ -320,6 +324,7 @@ Class | Method | HTTP request | Description
  - [DtoResponsesMoreLikeThisResponseFailedSearchResponse](docs/DtoResponsesMoreLikeThisResponseFailedSearchResponse.md)
  - [DtoResponsesMoreLikeThisResponseSearchResponse](docs/DtoResponsesMoreLikeThisResponseSearchResponse.md)
  - [DtoResponsesSearchResponseSearchResponse](docs/DtoResponsesSearchResponseSearchResponse.md)
+ - [DuplicatesByOriginalIdRequest](docs/DuplicatesByOriginalIdRequest.md)
  - [FSearchResponse](docs/FSearchResponse.md)
  - [FSearchResponse1](docs/FSearchResponse1.md)
  - [FSearchResponse2](docs/FSearchResponse2.md)

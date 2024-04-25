@@ -55,6 +55,7 @@ Search request DTO
 |**sourceName** | **Object** |  |  [optional] |
 |**iabTags** | **Object** |  |  [optional] |
 |**notIabTags** | **Object** |  |  [optional] |
+|**excludeDuplicates** | **Boolean** |  |  [optional] |
 
 
 

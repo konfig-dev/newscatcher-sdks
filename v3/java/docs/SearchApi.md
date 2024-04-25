@@ -10,7 +10,7 @@ All URIs are relative to *https://v3-api.newscatcherapi.com*
 
 <a name="get"></a>
 # **get**
-> CSearchResponse get(q).searchIn(searchIn).predefinedSources(predefinedSources).sources(sources).notSources(notSources).lang(lang).notLang(notLang).countries(countries).notCountries(notCountries).notAuthorName(notAuthorName).from(from).to(to).publishedDatePrecision(publishedDatePrecision).byParseDate(byParseDate).sortBy(sortBy).rankedOnly(rankedOnly).fromRank(fromRank).toRank(toRank).isHeadline(isHeadline).isPaidContent(isPaidContent).parentUrl(parentUrl).allLinks(allLinks).allDomainLinks(allDomainLinks).wordCountMin(wordCountMin).wordCountMax(wordCountMax).page(page).pageSize(pageSize).clusteringVariable(clusteringVariable).clusteringEnabled(clusteringEnabled).clusteringThreshold(clusteringThreshold).includeNlpData(includeNlpData).hasNlp(hasNlp).theme(theme).notTheme(notTheme).orGEntityName(orGEntityName).peREntityName(peREntityName).loCEntityName(loCEntityName).miSCEntityName(miSCEntityName).titleSentimentMin(titleSentimentMin).titleSentimentMax(titleSentimentMax).contentSentimentMin(contentSentimentMin).contentSentimentMax(contentSentimentMax).iptcTags(iptcTags).notIptcTags(notIptcTags).sourceName(sourceName).iabTags(iabTags).notIabTags(notIabTags).execute();
+> CSearchResponse get(q).searchIn(searchIn).predefinedSources(predefinedSources).sources(sources).notSources(notSources).lang(lang).notLang(notLang).countries(countries).notCountries(notCountries).notAuthorName(notAuthorName).from(from).to(to).publishedDatePrecision(publishedDatePrecision).byParseDate(byParseDate).sortBy(sortBy).rankedOnly(rankedOnly).fromRank(fromRank).toRank(toRank).isHeadline(isHeadline).isPaidContent(isPaidContent).parentUrl(parentUrl).allLinks(allLinks).allDomainLinks(allDomainLinks).wordCountMin(wordCountMin).wordCountMax(wordCountMax).page(page).pageSize(pageSize).clusteringVariable(clusteringVariable).clusteringEnabled(clusteringEnabled).clusteringThreshold(clusteringThreshold).includeNlpData(includeNlpData).hasNlp(hasNlp).theme(theme).notTheme(notTheme).orGEntityName(orGEntityName).peREntityName(peREntityName).loCEntityName(loCEntityName).miSCEntityName(miSCEntityName).titleSentimentMin(titleSentimentMin).titleSentimentMax(titleSentimentMax).contentSentimentMin(contentSentimentMin).contentSentimentMax(contentSentimentMax).iptcTags(iptcTags).notIptcTags(notIptcTags).sourceName(sourceName).iabTags(iabTags).notIabTags(notIabTags).excludeDuplicates(excludeDuplicates).execute();
 
 [Get] Search For Articles Request
 
@@ -84,6 +84,7 @@ public class Example {
     Object sourceName = null;
     Object iabTags = null;
     Object notIabTags = null;
+    Boolean excludeDuplicates = true;
     try {
       CSearchResponse result = client
               .search
@@ -134,6 +135,7 @@ public class Example {
               .sourceName(sourceName)
               .iabTags(iabTags)
               .notIabTags(notIabTags)
+              .excludeDuplicates(excludeDuplicates)
               .execute();
       System.out.println(result);
       System.out.println(result.getStatus());
@@ -204,6 +206,7 @@ public class Example {
               .sourceName(sourceName)
               .iabTags(iabTags)
               .notIabTags(notIabTags)
+              .excludeDuplicates(excludeDuplicates)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
       System.out.println(response.getResponseHeaders());
@@ -273,6 +276,7 @@ public class Example {
 | **sourceName** | [**Object**](.md)|  | [optional] |
 | **iabTags** | [**Object**](.md)|  | [optional] |
 | **notIabTags** | [**Object**](.md)|  | [optional] |
+| **excludeDuplicates** | **Boolean**|  | [optional] |
 
 ### Return type
 
@@ -368,6 +372,7 @@ public class Example {
     Object sourceName = null;
     Object iabTags = null;
     Object notIabTags = null;
+    Boolean excludeDuplicates = true;
     try {
       CSearchResponse1 result = client
               .search
@@ -418,6 +423,7 @@ public class Example {
               .sourceName(sourceName)
               .iabTags(iabTags)
               .notIabTags(notIabTags)
+              .excludeDuplicates(excludeDuplicates)
               .execute();
       System.out.println(result);
       System.out.println(result.getStatus());
@@ -488,6 +494,7 @@ public class Example {
               .sourceName(sourceName)
               .iabTags(iabTags)
               .notIabTags(notIabTags)
+              .excludeDuplicates(excludeDuplicates)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
       System.out.println(response.getResponseHeaders());

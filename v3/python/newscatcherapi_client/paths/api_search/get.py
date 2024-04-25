@@ -201,6 +201,7 @@ NotIptcTagsSchema = schemas.AnyTypeSchema
 SourceNameSchema = schemas.AnyTypeSchema
 IabTagsSchema = schemas.AnyTypeSchema
 NotIabTagsSchema = schemas.AnyTypeSchema
+ExcludeDuplicatesSchema = schemas.BoolSchema
 RequestRequiredQueryParams = typing_extensions.TypedDict(
     'RequestRequiredQueryParams',
     {
@@ -256,6 +257,7 @@ RequestOptionalQueryParams = typing_extensions.TypedDict(
         'source_name': typing.Union[SourceNameSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ],
         'iab_tags': typing.Union[IabTagsSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ],
         'not_iab_tags': typing.Union[NotIabTagsSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ],
+        'exclude_duplicates': typing.Union[ExcludeDuplicatesSchema, bool, ],
     },
     total=False
 )
@@ -548,6 +550,12 @@ request_query_not_iab_tags = api_client.QueryParameter(
     schema=NotIabTagsSchema,
     explode=True,
 )
+request_query_exclude_duplicates = api_client.QueryParameter(
+    name="exclude_duplicates",
+    style=api_client.ParameterStyle.FORM,
+    schema=ExcludeDuplicatesSchema,
+    explode=True,
+)
 _auth = [
     'apiKey',
 ]
@@ -653,6 +661,7 @@ class BaseApi(api_client.Api):
         source_name: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        exclude_duplicates: typing.Optional[bool] = None,
     ) -> api_client.MappedArgs:
         args: api_client.MappedArgs = api_client.MappedArgs()
         _query_params = {}
@@ -750,6 +759,8 @@ class BaseApi(api_client.Api):
             _query_params["iab_tags"] = iab_tags
         if not_iab_tags is not None:
             _query_params["not_iab_tags"] = not_iab_tags
+        if exclude_duplicates is not None:
+            _query_params["exclude_duplicates"] = exclude_duplicates
         args.query = _query_params
         return args
 
@@ -824,6 +835,7 @@ class BaseApi(api_client.Api):
             request_query_source_name,
             request_query_iab_tags,
             request_query_not_iab_tags,
+            request_query_exclude_duplicates,
         ):
             parameter_data = query_params.get(parameter.name, schemas.unset)
             if parameter_data is schemas.unset:
@@ -982,6 +994,7 @@ class BaseApi(api_client.Api):
             request_query_source_name,
             request_query_iab_tags,
             request_query_not_iab_tags,
+            request_query_exclude_duplicates,
         ):
             parameter_data = query_params.get(parameter.name, schemas.unset)
             if parameter_data is schemas.unset:
@@ -1092,6 +1105,7 @@ class GetRaw(BaseApi):
         source_name: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        exclude_duplicates: typing.Optional[bool] = None,
         **kwargs,
     ) -> typing.Union[
         ApiResponseFor200Async,
@@ -1146,6 +1160,7 @@ class GetRaw(BaseApi):
             source_name=source_name,
             iab_tags=iab_tags,
             not_iab_tags=not_iab_tags,
+            exclude_duplicates=exclude_duplicates,
         )
         return await self._aget_oapg(
             query_params=args.query,
@@ -1201,6 +1216,7 @@ class GetRaw(BaseApi):
         source_name: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        exclude_duplicates: typing.Optional[bool] = None,
     ) -> typing.Union[
         ApiResponseFor200,
         api_client.ApiResponseWithoutDeserialization,
@@ -1253,6 +1269,7 @@ class GetRaw(BaseApi):
             source_name=source_name,
             iab_tags=iab_tags,
             not_iab_tags=not_iab_tags,
+            exclude_duplicates=exclude_duplicates,
         )
         return self._get_oapg(
             query_params=args.query,
@@ -1309,6 +1326,7 @@ class Get(BaseApi):
         source_name: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        exclude_duplicates: typing.Optional[bool] = None,
         validate: bool = False,
         **kwargs,
     ) -> SearchGetResponsePydantic:
@@ -1360,6 +1378,7 @@ class Get(BaseApi):
             source_name=source_name,
             iab_tags=iab_tags,
             not_iab_tags=not_iab_tags,
+            exclude_duplicates=exclude_duplicates,
             **kwargs,
         )
         if validate:
@@ -1416,6 +1435,7 @@ class Get(BaseApi):
         source_name: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        exclude_duplicates: typing.Optional[bool] = None,
         validate: bool = False,
     ) -> SearchGetResponsePydantic:
         raw_response = self.raw.get(
@@ -1466,6 +1486,7 @@ class Get(BaseApi):
             source_name=source_name,
             iab_tags=iab_tags,
             not_iab_tags=not_iab_tags,
+            exclude_duplicates=exclude_duplicates,
         )
         if validate:
             return RootModel[SearchGetResponsePydantic](raw_response.body).root
@@ -1524,6 +1545,7 @@ class ApiForget(BaseApi):
         source_name: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        exclude_duplicates: typing.Optional[bool] = None,
         **kwargs,
     ) -> typing.Union[
         ApiResponseFor200Async,
@@ -1578,6 +1600,7 @@ class ApiForget(BaseApi):
             source_name=source_name,
             iab_tags=iab_tags,
             not_iab_tags=not_iab_tags,
+            exclude_duplicates=exclude_duplicates,
         )
         return await self._aget_oapg(
             query_params=args.query,
@@ -1633,6 +1656,7 @@ class ApiForget(BaseApi):
         source_name: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        exclude_duplicates: typing.Optional[bool] = None,
     ) -> typing.Union[
         ApiResponseFor200,
         api_client.ApiResponseWithoutDeserialization,
@@ -1685,6 +1709,7 @@ class ApiForget(BaseApi):
             source_name=source_name,
             iab_tags=iab_tags,
             not_iab_tags=not_iab_tags,
+            exclude_duplicates=exclude_duplicates,
         )
         return self._get_oapg(
             query_params=args.query,

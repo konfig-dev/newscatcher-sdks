@@ -1,6 +1,6 @@
 # Newscatcherapi.Net - C#
 
-[![NuGet](https://img.shields.io/badge/NuGet-6.0.3-blue.svg)](https://www.nuget.org/packages/Newscatcherapi.Net/6.0.3)
+[![NuGet](https://img.shields.io/badge/NuGet-6.0.4-blue.svg)](https://www.nuget.org/packages/Newscatcherapi.Net/6.0.4)
 
 <img src='https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg' width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a>
 
@@ -154,6 +154,8 @@ Class | Method | HTTP request | Description
 *SourcesApi* | [**Post**](docs/SourcesApi.md#post) | **POST** /api/sources | [Post] Search For Sources Request
 *SubscriptionApi* | [**Get**](docs/SubscriptionApi.md#get) | **GET** /api/subscription | [Get] Get My Plan Info
 *SubscriptionApi* | [**Post**](docs/SubscriptionApi.md#post) | **POST** /api/subscription | [Post] Get My Plan Info
+*SearchDuplicatesByOriginalIdApi* | [**Get**](docs/SearchDuplicatesByOriginalIdApi.md#get) | **GET** /api/search_duplicates_by_original_id | [Get] Search Duplicate Articles For Articles Request
+*SearchDuplicatesByOriginalIdApi* | [**Post**](docs/SearchDuplicatesByOriginalIdApi.md#post) | **POST** /api/search_duplicates_by_original_id | [Post] Search Duplicate Articles For Articles Request
 
 
 ## Documentation for Models
@@ -174,6 +176,7 @@ Class | Method | HTTP request | Description
  - [DtoResponsesMoreLikeThisResponseFailedSearchResponse](docs/DtoResponsesMoreLikeThisResponseFailedSearchResponse.md)
  - [DtoResponsesMoreLikeThisResponseSearchResponse](docs/DtoResponsesMoreLikeThisResponseSearchResponse.md)
  - [DtoResponsesSearchResponseSearchResponse](docs/DtoResponsesSearchResponseSearchResponse.md)
+ - [DuplicatesByOriginalIdRequest](docs/DuplicatesByOriginalIdRequest.md)
  - [From](docs/From.md)
  - [HTTPValidationError](docs/HTTPValidationError.md)
  - [JournalistsProperty](docs/JournalistsProperty.md)
@@ -189,6 +192,8 @@ Class | Method | HTTP request | Description
  - [SearchSimilarGetResponse](docs/SearchSimilarGetResponse.md)
  - [SearchSimilarPostResponse](docs/SearchSimilarPostResponse.md)
  - [SearchURLRequest](docs/SearchURLRequest.md)
+ - [SearchduplicatesbyoriginalidGetResponse](docs/SearchduplicatesbyoriginalidGetResponse.md)
+ - [SearchduplicatesbyoriginalidPostResponse](docs/SearchduplicatesbyoriginalidPostResponse.md)
  - [SimilarDocument](docs/SimilarDocument.md)
  - [SourceInfo](docs/SourceInfo.md)
  - [SourceResponse](docs/SourceResponse.md)

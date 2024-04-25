@@ -19,4 +19,5 @@ export * from './api/search-link-api';
 export * from './api/search-similar-api';
 export * from './api/sources-api';
 export * from './api/subscription-api';
+export * from './api/search-duplicates-by-original-id-api';
 

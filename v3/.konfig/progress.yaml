@@ -5,6 +5,9 @@ operationIds:
   /api/search_by_link:
     get: SearchLink_get
     post: SearchLink_post
+  /api/search_duplicates_by_original_id:
+    get: Searchduplicatesbyoriginalid_get
+    post: Searchduplicatesbyoriginalid_post
 operationTags: {}
 renameTags: {}
 requestSchemaNames: {}
@@ -31,6 +34,13 @@ responseSchemaNames:
     post:
       '200':
         application/json: SearchPostResponse
+  /api/search_duplicates_by_original_id:
+    get:
+      '200':
+        application/json: SearchduplicatesbyoriginalidGetResponse
+    post:
+      '200':
+        application/json: SearchduplicatesbyoriginalidPostResponse
   /api/search_similar:
     get:
       '200':
@@ -66,6 +76,8 @@ securityParameters:
   content_sentiment_min:
     query: false
   countries:
+    query: false
+  exclude_duplicates:
     query: false
   from_:
     query: false
@@ -108,6 +120,8 @@ securityParameters:
   not_sources:
     query: false
   not_theme:
+    query: false
+  original_article_id:
     query: false
   page:
     query: false

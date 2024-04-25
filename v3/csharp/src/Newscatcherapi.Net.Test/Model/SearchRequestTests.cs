@@ -433,6 +433,14 @@ namespace Newscatcherapi.Net.Test.Model
         {
             // TODO unit test for the property 'NotIabTags'
         }
+        /// <summary>
+        /// Test the property 'ExcludeDuplicates'
+        /// </summary>
+        [Fact]
+        public void ExcludeDuplicatesTest()
+        {
+            // TODO unit test for the property 'ExcludeDuplicates'
+        }
 
     }
 

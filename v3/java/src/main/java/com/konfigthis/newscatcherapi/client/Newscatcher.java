@@ -7,6 +7,7 @@ import com.konfigthis.newscatcherapi.client.api.SearchLinkApi;
 import com.konfigthis.newscatcherapi.client.api.SearchSimilarApi;
 import com.konfigthis.newscatcherapi.client.api.SourcesApi;
 import com.konfigthis.newscatcherapi.client.api.SubscriptionApi;
+import com.konfigthis.newscatcherapi.client.api.SearchDuplicatesByOriginalIdApi;
 
 public class Newscatcher {
     private ApiClient apiClient;
@@ -17,6 +18,7 @@ public class Newscatcher {
     public final SearchSimilarApi searchSimilar;
     public final SourcesApi sources;
     public final SubscriptionApi subscription;
+    public final SearchDuplicatesByOriginalIdApi searchDuplicatesByOriginalId;
 
     public Newscatcher() {
         this(null);
@@ -31,6 +33,7 @@ public class Newscatcher {
         this.searchSimilar = new SearchSimilarApi(this.apiClient);
         this.sources = new SourcesApi(this.apiClient);
         this.subscription = new SubscriptionApi(this.apiClient);
+        this.searchDuplicatesByOriginalId = new SearchDuplicatesByOriginalIdApi(this.apiClient);
     }
 
 }

@@ -239,6 +239,10 @@ public class SearchRequest {
   @SerializedName(SERIALIZED_NAME_NOT_IAB_TAGS)
   private Object notIabTags = null;
 
+  public static final String SERIALIZED_NAME_EXCLUDE_DUPLICATES = "exclude_duplicates";
+  @SerializedName(SERIALIZED_NAME_EXCLUDE_DUPLICATES)
+  private Boolean excludeDuplicates;
+
   public SearchRequest() {
   }
 
@@ -1669,6 +1673,35 @@ public class SearchRequest {
     this.notIabTags = notIabTags;
   }
 
+
+  public SearchRequest excludeDuplicates(Boolean excludeDuplicates) {
+    
+    
+    
+    
+    this.excludeDuplicates = excludeDuplicates;
+    return this;
+  }
+
+   /**
+   * Get excludeDuplicates
+   * @return excludeDuplicates
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Boolean getExcludeDuplicates() {
+    return excludeDuplicates;
+  }
+
+
+  public void setExcludeDuplicates(Boolean excludeDuplicates) {
+    
+    
+    
+    this.excludeDuplicates = excludeDuplicates;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -1770,7 +1803,8 @@ public class SearchRequest {
         Objects.equals(this.notIptcTags, searchRequest.notIptcTags) &&
         Objects.equals(this.sourceName, searchRequest.sourceName) &&
         Objects.equals(this.iabTags, searchRequest.iabTags) &&
-        Objects.equals(this.notIabTags, searchRequest.notIabTags)&&
+        Objects.equals(this.notIabTags, searchRequest.notIabTags) &&
+        Objects.equals(this.excludeDuplicates, searchRequest.excludeDuplicates)&&
         Objects.equals(this.additionalProperties, searchRequest.additionalProperties);
   }
 
@@ -1780,7 +1814,7 @@ public class SearchRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(q, searchIn, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, notAuthorName, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, orGEntityName, peREntityName, loCEntityName, miSCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, sourceName, iabTags, notIabTags, additionalProperties);
+    return Objects.hash(q, searchIn, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, notAuthorName, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, orGEntityName, peREntityName, loCEntityName, miSCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, sourceName, iabTags, notIabTags, excludeDuplicates, additionalProperties);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -1841,6 +1875,7 @@ public class SearchRequest {
     sb.append("    sourceName: ").append(toIndentedString(sourceName)).append("\n");
     sb.append("    iabTags: ").append(toIndentedString(iabTags)).append("\n");
     sb.append("    notIabTags: ").append(toIndentedString(notIabTags)).append("\n");
+    sb.append("    excludeDuplicates: ").append(toIndentedString(excludeDuplicates)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -1911,6 +1946,7 @@ public class SearchRequest {
     openapiFields.add("source_name");
     openapiFields.add("iab_tags");
     openapiFields.add("not_iab_tags");
+    openapiFields.add("exclude_duplicates");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

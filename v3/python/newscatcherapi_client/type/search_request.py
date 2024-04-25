@@ -112,5 +112,7 @@ class OptionalSearchRequest(TypedDict, total=False):
 
     not_iab_tags: typing.Union[bool, date, datetime, dict, float, int, list, str, None]
 
+    exclude_duplicates: bool
+
 class SearchRequest(RequiredSearchRequest, OptionalSearchRequest):
     pass
