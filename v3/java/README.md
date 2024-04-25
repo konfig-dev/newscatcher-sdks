@@ -2,7 +2,7 @@
 
 <img src='https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg' width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a>
 
-[![Maven Central](https://img.shields.io/badge/Maven%20Central-v6.0.3-blue)](https://central.sonatype.com/artifact/com.konfigthis.newscatcherapi/newscatcherapi-java-sdk/6.0.3)
+[![Maven Central](https://img.shields.io/badge/Maven%20Central-v6.0.4-blue)](https://central.sonatype.com/artifact/com.konfigthis.newscatcherapi/newscatcherapi-java-sdk/6.0.4)
 
 ## Requirements
 
@@ -39,7 +39,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.konfigthis.newscatcherapi</groupId>
   <artifactId>newscatcherapi-java-sdk</artifactId>
-  <version>6.0.3</version>
+  <version>6.0.4</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -55,7 +55,7 @@ repositories {
 }
 
 dependencies {
-   implementation "com.konfigthis.newscatcherapi:newscatcherapi-java-sdk:6.0.3"
+   implementation "com.konfigthis.newscatcherapi:newscatcherapi-java-sdk:6.0.4"
 }
 ```
 
@@ -92,7 +92,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/newscatcherapi-java-sdk-6.0.3.jar`
+* `target/newscatcherapi-java-sdk-6.0.4.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
