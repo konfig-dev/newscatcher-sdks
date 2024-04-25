@@ -8,6 +8,7 @@ from newscatcherapi_client.apis.tags.search_link_api import SearchLinkApi
 from newscatcherapi_client.apis.tags.search_similar_api import SearchSimilarApi
 from newscatcherapi_client.apis.tags.sources_api import SourcesApi
 from newscatcherapi_client.apis.tags.subscription_api import SubscriptionApi
+from newscatcherapi_client.apis.tags.search_duplicates_by_original_id_api import SearchDuplicatesByOriginalIdApi
 
 TagToApi = typing_extensions.TypedDict(
     'TagToApi',
@@ -19,6 +20,7 @@ TagToApi = typing_extensions.TypedDict(
         TagValues.SEARCH_SIMILAR: SearchSimilarApi,
         TagValues.SOURCES: SourcesApi,
         TagValues.SUBSCRIPTION: SubscriptionApi,
+        TagValues.SEARCH_DUPLICATES_BY_ORIGINAL_ID: SearchDuplicatesByOriginalIdApi,
     }
 )
 
@@ -31,5 +33,6 @@ tag_to_api = TagToApi(
         TagValues.SEARCH_SIMILAR: SearchSimilarApi,
         TagValues.SOURCES: SourcesApi,
         TagValues.SUBSCRIPTION: SubscriptionApi,
+        TagValues.SEARCH_DUPLICATES_BY_ORIGINAL_ID: SearchDuplicatesByOriginalIdApi,
     }
 )

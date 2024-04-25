@@ -23,6 +23,7 @@ from newscatcherapi_client.apis.tags.search_link_api import SearchLinkApi
 from newscatcherapi_client.apis.tags.search_similar_api import SearchSimilarApi
 from newscatcherapi_client.apis.tags.sources_api import SourcesApi
 from newscatcherapi_client.apis.tags.subscription_api import SubscriptionApi
+from newscatcherapi_client.apis.tags.search_duplicates_by_original_id_api import SearchDuplicatesByOriginalIdApi
 
 
 
@@ -42,3 +43,4 @@ class Newscatcher(ClientCustom):
         self.search_similar: SearchSimilarApi = SearchSimilarApi(api_client)
         self.sources: SourcesApi = SourcesApi(api_client)
         self.subscription: SubscriptionApi = SubscriptionApi(api_client)
+        self.search_duplicates_by_original_id: SearchDuplicatesByOriginalIdApi = SearchDuplicatesByOriginalIdApi(api_client)

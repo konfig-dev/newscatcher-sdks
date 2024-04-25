@@ -298,6 +298,8 @@ Class | Method | HTTP request | Description
 *SourcesApi* | [**post**](docs/SourcesApi.md#post) | **POST** /api/sources | [Post] Search For Sources Request
 *SubscriptionApi* | [**get**](docs/SubscriptionApi.md#get) | **GET** /api/subscription | [Get] Get My Plan Info
 *SubscriptionApi* | [**post**](docs/SubscriptionApi.md#post) | **POST** /api/subscription | [Post] Get My Plan Info
+*SearchDuplicatesByOriginalIdApi* | [**get**](docs/SearchDuplicatesByOriginalIdApi.md#get) | **GET** /api/search_duplicates_by_original_id | [Get] Search Duplicate Articles For Articles Request
+*SearchDuplicatesByOriginalIdApi* | [**post**](docs/SearchDuplicatesByOriginalIdApi.md#post) | **POST** /api/search_duplicates_by_original_id | [Post] Search Duplicate Articles For Articles Request
 
 
 ## Documentation for Models
@@ -310,6 +312,8 @@ Class | Method | HTTP request | Description
  - [CSLHResponse1](docs/CSLHResponse1.md)
  - [CSearchResponse](docs/CSearchResponse.md)
  - [CSearchResponse1](docs/CSearchResponse1.md)
+ - [CSearchResponse2](docs/CSearchResponse2.md)
+ - [CSearchResponse3](docs/CSearchResponse3.md)
  - [Cluster](docs/Cluster.md)
  - [Cluster1](docs/Cluster1.md)
  - [ClusteringSearchResponse](docs/ClusteringSearchResponse.md)
@@ -320,6 +324,7 @@ Class | Method | HTTP request | Description
  - [DtoResponsesMoreLikeThisResponseFailedSearchResponse](docs/DtoResponsesMoreLikeThisResponseFailedSearchResponse.md)
  - [DtoResponsesMoreLikeThisResponseSearchResponse](docs/DtoResponsesMoreLikeThisResponseSearchResponse.md)
  - [DtoResponsesSearchResponseSearchResponse](docs/DtoResponsesSearchResponseSearchResponse.md)
+ - [DuplicatesByOriginalIdRequest](docs/DuplicatesByOriginalIdRequest.md)
  - [FSearchResponse](docs/FSearchResponse.md)
  - [FSearchResponse1](docs/FSearchResponse1.md)
  - [FSearchResponse2](docs/FSearchResponse2.md)

@@ -154,6 +154,8 @@ Class | Method | HTTP request | Description
 *SourcesApi* | [**Post**](docs/SourcesApi.md#post) | **POST** /api/sources | [Post] Search For Sources Request
 *SubscriptionApi* | [**Get**](docs/SubscriptionApi.md#get) | **GET** /api/subscription | [Get] Get My Plan Info
 *SubscriptionApi* | [**Post**](docs/SubscriptionApi.md#post) | **POST** /api/subscription | [Post] Get My Plan Info
+*SearchDuplicatesByOriginalIdApi* | [**Get**](docs/SearchDuplicatesByOriginalIdApi.md#get) | **GET** /api/search_duplicates_by_original_id | [Get] Search Duplicate Articles For Articles Request
+*SearchDuplicatesByOriginalIdApi* | [**Post**](docs/SearchDuplicatesByOriginalIdApi.md#post) | **POST** /api/search_duplicates_by_original_id | [Post] Search Duplicate Articles For Articles Request
 
 
 ## Documentation for Models
@@ -174,6 +176,7 @@ Class | Method | HTTP request | Description
  - [DtoResponsesMoreLikeThisResponseFailedSearchResponse](docs/DtoResponsesMoreLikeThisResponseFailedSearchResponse.md)
  - [DtoResponsesMoreLikeThisResponseSearchResponse](docs/DtoResponsesMoreLikeThisResponseSearchResponse.md)
  - [DtoResponsesSearchResponseSearchResponse](docs/DtoResponsesSearchResponseSearchResponse.md)
+ - [DuplicatesByOriginalIdRequest](docs/DuplicatesByOriginalIdRequest.md)
  - [From](docs/From.md)
  - [HTTPValidationError](docs/HTTPValidationError.md)
  - [JournalistsProperty](docs/JournalistsProperty.md)
@@ -189,6 +192,8 @@ Class | Method | HTTP request | Description
  - [SearchSimilarGetResponse](docs/SearchSimilarGetResponse.md)
  - [SearchSimilarPostResponse](docs/SearchSimilarPostResponse.md)
  - [SearchURLRequest](docs/SearchURLRequest.md)
+ - [SearchduplicatesbyoriginalidGetResponse](docs/SearchduplicatesbyoriginalidGetResponse.md)
+ - [SearchduplicatesbyoriginalidPostResponse](docs/SearchduplicatesbyoriginalidPostResponse.md)
  - [SimilarDocument](docs/SimilarDocument.md)
  - [SourceInfo](docs/SourceInfo.md)
  - [SourceResponse](docs/SourceResponse.md)

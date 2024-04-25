@@ -54,6 +54,11 @@ namespace Newscatcherapi.Net.Client
         public virtual ISubscriptionApi Subscription { get; set; }
 
         /// <summary>
+        /// API instance
+        /// </summary>
+        public virtual ISearchDuplicatesByOriginalIdApi SearchDuplicatesByOriginalId { get; set; }
+
+        /// <summary>
         /// Configuration instance
         /// </summary>
         public readonly Configuration Configuration;
@@ -76,6 +81,7 @@ namespace Newscatcherapi.Net.Client
             SearchSimilar = new SearchSimilarApi(Configuration);
             Sources = new SourcesApi(Configuration);
             Subscription = new SubscriptionApi(Configuration);
+            SearchDuplicatesByOriginalId = new SearchDuplicatesByOriginalIdApi(Configuration);
         }
 
         /// <summary>

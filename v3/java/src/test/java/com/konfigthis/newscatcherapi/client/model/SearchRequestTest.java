@@ -415,4 +415,12 @@ public class SearchRequestTest {
         // TODO: test notIabTags
     }
 
+    /**
+     * Test the property 'excludeDuplicates'
+     */
+    @Test
+    public void excludeDuplicatesTest() {
+        // TODO: test excludeDuplicates
+    }
+
 }

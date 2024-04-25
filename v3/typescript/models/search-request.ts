@@ -301,5 +301,11 @@ export interface SearchRequest {
      * @memberof SearchRequest
      */
     'not_iab_tags'?: any;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof SearchRequest
+     */
+    'exclude_duplicates'?: boolean;
 }
 

@@ -19,6 +19,7 @@ tags:
 - name: SearchSimilar
 - name: Sources
 - name: Subscription
+- name: search_duplicates_by_original_id
 paths:
   /api/search:
     get:
@@ -407,6 +408,14 @@ paths:
         required: false
         schema:
           title: Not Iab Tags
+        style: form
+      - explode: true
+        in: query
+        name: exclude_duplicates
+        required: false
+        schema:
+          title: Exclude Duplicates
+          type: boolean
         style: form
       responses:
         "200":
@@ -1916,6 +1925,102 @@ paths:
       x-konfig-operation-can-have-single-parameter: true
       x-konfig-single-parameter-schema: konfig-generated-schema-single-parameter-schema-post--api-subscription
       x-accepts: application/json
+  /api/search_duplicates_by_original_id:
+    get:
+      description: This endpoint allows you to search for duplicate articles by original
+        article id.
+      operationId: Searchduplicatesbyoriginalid_get
+      parameters:
+      - explode: true
+        in: query
+        name: original_article_id
+        required: true
+        schema:
+          title: Original Article Id
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          default: 1
+          example: 1
+          minimum: 0
+          title: Page
+          type: integer
+          x-konfig-original-example: 1
+          x-konfig-generated-schema: konfig-generated-schema-paths--api-search_duplicates_by_original_id-get-parameters-1-schema
+        style: form
+      - explode: true
+        in: query
+        name: page_size
+        required: false
+        schema:
+          default: 100
+          example: 100
+          minimum: 0
+          title: Page Size
+          type: integer
+          x-konfig-original-example: 100
+          x-konfig-generated-schema: konfig-generated-schema-paths--api-search_duplicates_by_original_id-get-parameters-2-schema
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchduplicatesbyoriginalidGetResponse'
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+          x-do-not-generate: true
+      security:
+      - apiKey: []
+      summary: "[Get] Search Duplicate Articles For Articles Request"
+      tags:
+      - search_duplicates_by_original_id
+      x-konfig-operation-can-have-single-parameter: true
+      x-konfig-single-parameter-schema: konfig-generated-schema-single-parameter-schema-get--api-search_duplicates_by_original_id
+      x-accepts: application/json
+    post:
+      description: This endpoint allows you to search for duplicate articles by original
+        article id.
+      operationId: Searchduplicatesbyoriginalid_post
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DuplicatesByOriginalIdRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchduplicatesbyoriginalidPostResponse'
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+          x-do-not-generate: true
+      security:
+      - apiKey: []
+      summary: "[Post] Search Duplicate Articles For Articles Request"
+      tags:
+      - search_duplicates_by_original_id
+      x-konfig-operation-can-have-single-parameter: true
+      x-konfig-single-parameter-schema: konfig-generated-schema-single-parameter-schema-post--api-search_duplicates_by_original_id
+      x-content-type: application/json
+      x-accepts: application/json
 components:
   schemas:
     AdditionalSourceInfo:
@@ -2165,6 +2270,36 @@ components:
       - total_pages
       - user_input
       title: ClusteringSearchResponse
+      type: object
+    DuplicatesByOriginalIdRequest:
+      description: Duplicates by original article ID request DTO
+      example:
+        original_article_id: original_article_id
+        page: 1
+        page_size: 100
+      properties:
+        original_article_id:
+          title: Original Article Id
+          type: string
+        page:
+          default: 1
+          example: 1
+          minimum: 0
+          title: Page
+          type: integer
+          x-konfig-original-example: 1
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-DuplicatesByOriginalIdRequest-properties-page
+        page_size:
+          default: 100
+          example: 100
+          minimum: 0
+          title: Page Size
+          type: integer
+          x-konfig-original-example: 100
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-DuplicatesByOriginalIdRequest-properties-page_size
+      required:
+      - original_article_id
+      title: DuplicatesByOriginalIdRequest
       type: object
     HTTPValidationError:
       properties:
@@ -2594,6 +2729,7 @@ components:
         theme: theme
         lang: ""
         to_rank: 6
+        exclude_duplicates: true
         not_countries: ""
         source_name: ""
         word_count_min: 0
@@ -2772,6 +2908,9 @@ components:
           title: Iab Tags
         not_iab_tags:
           title: Not Iab Tags
+        exclude_duplicates:
+          title: Exclude Duplicates
+          type: boolean
       required:
       - q
       title: SearchRequest
@@ -3445,6 +3584,10 @@ components:
       $ref: '#/components/schemas/FSearchResponse2'
     SearchSimilarPostResponse:
       $ref: '#/components/schemas/FSearchResponse3'
+    SearchduplicatesbyoriginalidGetResponse:
+      $ref: '#/components/schemas/CSearchResponse2'
+    SearchduplicatesbyoriginalidPostResponse:
+      $ref: '#/components/schemas/CSearchResponse3'
     konfig-generated-schema-paths--api-search-get-parameters-1-schema:
       example: title_content
       type: string
@@ -3537,6 +3680,14 @@ components:
       example: 100
       type: number
       x-do-not-generate: true
+    konfig-generated-schema-paths--api-search_duplicates_by_original_id-get-parameters-1-schema:
+      example: 1
+      type: number
+      x-do-not-generate: true
+    konfig-generated-schema-paths--api-search_duplicates_by_original_id-get-parameters-2-schema:
+      example: 100
+      type: number
+      x-do-not-generate: true
     konfig-generated-schema-components-schemas-AuthorSearchRequest-properties-by_parse_date:
       example: false
       type: boolean
@@ -3556,6 +3707,14 @@ components:
     konfig-generated-schema-components-schemas-ClusteringSearchResponse-properties-status:
       example: ok
       type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-DuplicatesByOriginalIdRequest-properties-page:
+      example: 1
+      type: number
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-DuplicatesByOriginalIdRequest-properties-page_size:
+      example: 100
+      type: number
       x-do-not-generate: true
     konfig-generated-schema-components-schemas-LatestHeadlinesRequest-properties-when:
       example: 7d
@@ -3871,6 +4030,9 @@ components:
           title: Iab Tags
         not_iab_tags:
           title: Not Iab Tags
+        exclude_duplicates:
+          title: Exclude Duplicates
+          type: boolean
       required:
       - q
       type: object
@@ -3923,6 +4085,7 @@ components:
       - source_name
       - iab_tags
       - not_iab_tags
+      - exclude_duplicates
     konfig-generated-schema-single-parameter-schema-post--api-search:
       properties:
         q:
@@ -4072,6 +4235,9 @@ components:
           title: Iab Tags
         not_iab_tags:
           title: Not Iab Tags
+        exclude_duplicates:
+          title: Exclude Duplicates
+          type: boolean
       required:
       - q
       type: object
@@ -5133,6 +5299,61 @@ components:
       type: object
       x-do-not-generate: true
       x-konfig-is-parameter: []
+    konfig-generated-schema-single-parameter-schema-get--api-search_duplicates_by_original_id:
+      properties:
+        original_article_id:
+          title: Original Article Id
+          type: string
+        page:
+          default: 1
+          example: 1
+          minimum: 0
+          title: Page
+          type: integer
+          x-konfig-original-example: 1
+          x-konfig-generated-schema: konfig-generated-schema-paths--api-search_duplicates_by_original_id-get-parameters-1-schema
+        page_size:
+          default: 100
+          example: 100
+          minimum: 0
+          title: Page Size
+          type: integer
+          x-konfig-original-example: 100
+          x-konfig-generated-schema: konfig-generated-schema-paths--api-search_duplicates_by_original_id-get-parameters-2-schema
+      required:
+      - original_article_id
+      type: object
+      x-do-not-generate: true
+      x-konfig-is-parameter:
+      - original_article_id
+      - page
+      - page_size
+    konfig-generated-schema-single-parameter-schema-post--api-search_duplicates_by_original_id:
+      properties:
+        original_article_id:
+          title: Original Article Id
+          type: string
+        page:
+          default: 1
+          example: 1
+          minimum: 0
+          title: Page
+          type: integer
+          x-konfig-original-example: 1
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-DuplicatesByOriginalIdRequest-properties-page
+        page_size:
+          default: 100
+          example: 100
+          minimum: 0
+          title: Page Size
+          type: integer
+          x-konfig-original-example: 100
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-DuplicatesByOriginalIdRequest-properties-page_size
+      required:
+      - original_article_id
+      type: object
+      x-do-not-generate: true
+      x-konfig-is-parameter: []
     CSearchResponse:
       description: SearchResponse DTO class.
       example:
@@ -5827,6 +6048,144 @@ components:
       - user_input
       title: SearchResponse
       type: object
+    CSearchResponse2:
+      description: SearchResponse DTO class.
+      example:
+        total_hits: 0
+        user_input: "{}"
+        page: 6
+        total_pages: 1
+        clusters_count: 5
+        articles:
+        - "{}"
+        - "{}"
+        clusters:
+        - cluster_id: cluster_id
+          cluster_size: 2
+          articles:
+          - "{}"
+          - "{}"
+        - cluster_id: cluster_id
+          cluster_size: 2
+          articles:
+          - "{}"
+          - "{}"
+        status: ok
+        page_size: 5
+      properties:
+        status:
+          default: ok
+          example: ok
+          title: Status
+          type: string
+          x-konfig-original-example: ok
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__search_response__SearchResponse-properties-status
+        total_hits:
+          title: Total Hits
+          type: integer
+        page:
+          title: Page
+          type: integer
+        total_pages:
+          title: Total Pages
+          type: integer
+        page_size:
+          title: Page Size
+          type: integer
+        articles:
+          items:
+            type: object
+          title: Articles
+          type: array
+        user_input:
+          title: User Input
+          type: object
+        clusters_count:
+          title: Clusters Count
+          type: integer
+        clusters:
+          items:
+            $ref: '#/components/schemas/Cluster_1'
+          title: Clusters
+          type: array
+      required:
+      - page
+      - page_size
+      - total_hits
+      - total_pages
+      - user_input
+      title: SearchResponse
+      type: object
+      x-konfig-is-used-in-successful-response: true
+    CSearchResponse3:
+      description: SearchResponse DTO class.
+      example:
+        total_hits: 0
+        user_input: "{}"
+        page: 6
+        total_pages: 1
+        clusters_count: 5
+        articles:
+        - "{}"
+        - "{}"
+        clusters:
+        - cluster_id: cluster_id
+          cluster_size: 2
+          articles:
+          - "{}"
+          - "{}"
+        - cluster_id: cluster_id
+          cluster_size: 2
+          articles:
+          - "{}"
+          - "{}"
+        status: ok
+        page_size: 5
+      properties:
+        status:
+          default: ok
+          example: ok
+          title: Status
+          type: string
+          x-konfig-original-example: ok
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__search_response__SearchResponse-properties-status
+        total_hits:
+          title: Total Hits
+          type: integer
+        page:
+          title: Page
+          type: integer
+        total_pages:
+          title: Total Pages
+          type: integer
+        page_size:
+          title: Page Size
+          type: integer
+        articles:
+          items:
+            type: object
+          title: Articles
+          type: array
+        user_input:
+          title: User Input
+          type: object
+        clusters_count:
+          title: Clusters Count
+          type: integer
+        clusters:
+          items:
+            $ref: '#/components/schemas/Cluster_1'
+          title: Clusters
+          type: array
+      required:
+      - page
+      - page_size
+      - total_hits
+      - total_pages
+      - user_input
+      title: SearchResponse
+      type: object
+      x-konfig-is-used-in-successful-response: true
     Cluster_1:
       description: Cluster DTO class.
       example:
