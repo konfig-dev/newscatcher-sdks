@@ -1123,30 +1123,4 @@ operation_parameter_map = {
         'parameters': [
         ]
     },
-    '/api/search_duplicates_by_original_id-GET': {
-        'parameters': [
-            {
-                'name': 'original_article_id'
-            },
-            {
-                'name': 'page'
-            },
-            {
-                'name': 'page_size'
-            },
-        ]
-    },
-    '/api/search_duplicates_by_original_id-POST': {
-        'parameters': [
-            {
-                'name': 'original_article_id'
-            },
-            {
-                'name': 'page'
-            },
-            {
-                'name': 'page_size'
-            },
-        ]
-    },
 };

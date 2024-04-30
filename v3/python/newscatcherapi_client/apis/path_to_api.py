@@ -8,7 +8,6 @@ from newscatcherapi_client.apis.paths.api_search_by_link import ApiSearchByLink
 from newscatcherapi_client.apis.paths.api_search_similar import ApiSearchSimilar
 from newscatcherapi_client.apis.paths.api_sources import ApiSources
 from newscatcherapi_client.apis.paths.api_subscription import ApiSubscription
-from newscatcherapi_client.apis.paths.api_search_duplicates_by_original_id import ApiSearchDuplicatesByOriginalId
 
 PathToApi = typing_extensions.TypedDict(
     'PathToApi',
@@ -20,7 +19,6 @@ PathToApi = typing_extensions.TypedDict(
         PathValues.API_SEARCH_SIMILAR: ApiSearchSimilar,
         PathValues.API_SOURCES: ApiSources,
         PathValues.API_SUBSCRIPTION: ApiSubscription,
-        PathValues.API_SEARCH_DUPLICATES_BY_ORIGINAL_ID: ApiSearchDuplicatesByOriginalId,
     }
 )
 
@@ -33,6 +31,5 @@ path_to_api = PathToApi(
         PathValues.API_SEARCH_SIMILAR: ApiSearchSimilar,
         PathValues.API_SOURCES: ApiSources,
         PathValues.API_SUBSCRIPTION: ApiSubscription,
-        PathValues.API_SEARCH_DUPLICATES_BY_ORIGINAL_ID: ApiSearchDuplicatesByOriginalId,
     }
 )

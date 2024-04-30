@@ -13,4 +13,3 @@ class PathValues(str, enum.Enum):
     API_SEARCH_SIMILAR = "/api/search_similar"
     API_SOURCES = "/api/sources"
     API_SUBSCRIPTION = "/api/subscription"
-    API_SEARCH_DUPLICATES_BY_ORIGINAL_ID = "/api/search_duplicates_by_original_id"

@@ -36,9 +36,6 @@
     },
     {
       "name": "Subscription"
-    },
-    {
-      "name": "search_duplicates_by_original_id"
     }
   ],
   "paths": {
@@ -2279,125 +2276,6 @@
           }
         }
       }
-    },
-    "/api/search_duplicates_by_original_id": {
-      "get": {
-        "tags": [
-          "search_duplicates_by_original_id"
-        ],
-        "summary": "[Get] Search Duplicate Articles For Articles Request",
-        "operationId": "Searchduplicatesbyoriginalid_get",
-        "security": [
-          {
-            "apiKey": [
-            ]
-          }
-        ],
-        "description": "This endpoint allows you to search for duplicate articles by original article id.",
-        "parameters": [
-          {
-            "required": true,
-            "schema": {
-              "title": "Original Article Id",
-              "type": "string"
-            },
-            "name": "original_article_id",
-            "in": "query"
-          },
-          {
-            "required": false,
-            "schema": {
-              "title": "Page",
-              "minimum": 0,
-              "type": "integer",
-              "default": 1
-            },
-            "name": "page",
-            "in": "query"
-          },
-          {
-            "required": false,
-            "schema": {
-              "title": "Page Size",
-              "minimum": 0,
-              "type": "integer",
-              "default": 100
-            },
-            "name": "page_size",
-            "in": "query"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SearchduplicatesbyoriginalidGetResponse"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "search_duplicates_by_original_id"
-        ],
-        "summary": "[Post] Search Duplicate Articles For Articles Request",
-        "operationId": "Searchduplicatesbyoriginalid_post",
-        "security": [
-          {
-            "apiKey": [
-            ]
-          }
-        ],
-        "description": "This endpoint allows you to search for duplicate articles by original article id.",
-        "parameters": [
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/DuplicatesByOriginalIdRequest"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SearchduplicatesbyoriginalidPostResponse"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      }
     }
   },
   "components": {
@@ -2673,32 +2551,6 @@
           "user_input": {
             "title": "User Input",
             "type": "object"
-          }
-        }
-      },
-      "DuplicatesByOriginalIdRequest": {
-        "title": "DuplicatesByOriginalIdRequest",
-        "description": "Duplicates by original article ID request DTO",
-        "required": [
-          "original_article_id"
-        ],
-        "type": "object",
-        "properties": {
-          "original_article_id": {
-            "title": "Original Article Id",
-            "type": "string"
-          },
-          "page": {
-            "title": "Page",
-            "minimum": 0,
-            "type": "integer",
-            "default": 1
-          },
-          "page_size": {
-            "title": "Page Size",
-            "minimum": 0,
-            "type": "integer",
-            "default": 100
           }
         }
       },
@@ -4244,28 +4096,6 @@
           },
           {
             "$ref": "#/components/schemas/dto__responses__more_like_this_response__FailedSearchResponse"
-          }
-        ]
-      },
-      "SearchduplicatesbyoriginalidGetResponse": {
-        "title": "Response Search Duplicates Get",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/dto__responses__search_response__SearchResponse"
-          },
-          {
-            "$ref": "#/components/schemas/ClusteringSearchResponse"
-          }
-        ]
-      },
-      "SearchduplicatesbyoriginalidPostResponse": {
-        "title": "Response Search Duplicates Post",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/dto__responses__search_response__SearchResponse"
-          },
-          {
-            "$ref": "#/components/schemas/ClusteringSearchResponse"
           }
         ]
       }
