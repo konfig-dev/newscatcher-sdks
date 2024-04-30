@@ -18,7 +18,6 @@ import {
   SearchSimilarApi,
   SourcesApi,
   SubscriptionApi,
-  SearchDuplicatesByOriginalIdApi,
 } from "./api";
 import { Configuration, ConfigurationParameters } from "./configuration";
 import { NewscatcherCustom } from "./client-custom";
@@ -31,7 +30,6 @@ export class Newscatcher extends NewscatcherCustom {
   readonly searchSimilar: SearchSimilarApi;
   readonly sources: SourcesApi;
   readonly subscription: SubscriptionApi;
-  readonly searchDuplicatesByOriginalId: SearchDuplicatesByOriginalIdApi;
 
   constructor(configurationParameters: ConfigurationParameters) {
     super(configurationParameters);
@@ -43,7 +41,6 @@ export class Newscatcher extends NewscatcherCustom {
     this.searchSimilar = new SearchSimilarApi(configuration);
     this.sources = new SourcesApi(configuration);
     this.subscription = new SubscriptionApi(configuration);
-    this.searchDuplicatesByOriginalId = new SearchDuplicatesByOriginalIdApi(configuration);
   }
 
 }

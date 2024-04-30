@@ -25,8 +25,6 @@
   * [`newscatcher.sources.post`](#newscatchersourcespost)
   * [`newscatcher.subscription.get`](#newscatchersubscriptionget)
   * [`newscatcher.subscription.post`](#newscatchersubscriptionpost)
-  * [`newscatcher.searchDuplicatesByOriginalId.get`](#newscatchersearchduplicatesbyoriginalidget)
-  * [`newscatcher.searchDuplicatesByOriginalId.post`](#newscatchersearchduplicatesbyoriginalidpost)
 
 <!-- tocstop -->
 
@@ -1202,76 +1200,6 @@ const postResponse = await newscatcher.subscription.post();
 #### 🌐 Endpoint<a id="🌐-endpoint"></a>
 
 `/api/subscription` `POST`
-
-[🔙 **Back to Table of Contents**](#table-of-contents)
-
----
-
-
-### `newscatcher.searchDuplicatesByOriginalId.get`<a id="newscatchersearchduplicatesbyoriginalidget"></a>
-
-This endpoint allows you to search for duplicate articles by original article id.
-
-#### 🛠️ Usage<a id="🛠️-usage"></a>
-
-```typescript
-const getResponse = await newscatcher.searchDuplicatesByOriginalId.get({
-  originalArticleId: "originalArticleId_example",
-  page: 1,
-  pageSize: 100,
-});
-```
-
-#### ⚙️ Parameters<a id="⚙️-parameters"></a>
-
-##### originalArticleId: `string`<a id="originalarticleid-string"></a>
-
-##### page: `number`<a id="page-number"></a>
-
-##### pageSize: `number`<a id="pagesize-number"></a>
-
-#### 🔄 Return<a id="🔄-return"></a>
-
-[SearchduplicatesbyoriginalidGetResponse](./models/searchduplicatesbyoriginalid-get-response.ts)
-
-#### 🌐 Endpoint<a id="🌐-endpoint"></a>
-
-`/api/search_duplicates_by_original_id` `GET`
-
-[🔙 **Back to Table of Contents**](#table-of-contents)
-
----
-
-
-### `newscatcher.searchDuplicatesByOriginalId.post`<a id="newscatchersearchduplicatesbyoriginalidpost"></a>
-
-This endpoint allows you to search for duplicate articles by original article id.
-
-#### 🛠️ Usage<a id="🛠️-usage"></a>
-
-```typescript
-const postResponse = await newscatcher.searchDuplicatesByOriginalId.post({
-  original_article_id: "original_article_id_example",
-  page: 1,
-  page_size: 100,
-});
-```
-
-#### ⚙️ Parameters<a id="⚙️-parameters"></a>
-
-##### original_article_id: `string`<a id="original_article_id-string"></a>
-
-##### page: `number`<a id="page-number"></a>
-
-##### page_size: `number`<a id="page_size-number"></a>
-
-#### 🔄 Return<a id="🔄-return"></a>
-
-[SearchduplicatesbyoriginalidPostResponse](./models/searchduplicatesbyoriginalid-post-response.ts)
-
-#### 🌐 Endpoint<a id="🌐-endpoint"></a>
-
-`/api/search_duplicates_by_original_id` `POST`
 
 [🔙 **Back to Table of Contents**](#table-of-contents)
 

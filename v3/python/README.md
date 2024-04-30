@@ -30,8 +30,6 @@
   * [`newscatcher.sources.post`](#newscatchersourcespost)
   * [`newscatcher.subscription.get`](#newscatchersubscriptionget)
   * [`newscatcher.subscription.post`](#newscatchersubscriptionpost)
-  * [`newscatcher.search_duplicates_by_original_id.get`](#newscatchersearch_duplicates_by_original_idget)
-  * [`newscatcher.search_duplicates_by_original_id.post`](#newscatchersearch_duplicates_by_original_idpost)
 
 <!-- tocstop -->
 
@@ -1692,77 +1690,6 @@ post_response = newscatcher.subscription.post()
 #### 🌐 Endpoint<a id="🌐-endpoint"></a>
 
 `/api/subscription` `post`
-
-[🔙 **Back to Table of Contents**](#table-of-contents)
-
----
-
-### `newscatcher.search_duplicates_by_original_id.get`<a id="newscatchersearch_duplicates_by_original_idget"></a>
-
-This endpoint allows you to search for duplicate articles by original article id.
-
-#### 🛠️ Usage<a id="🛠️-usage"></a>
-
-```python
-get_response = newscatcher.search_duplicates_by_original_id.get(
-    original_article_id="original_article_id_example",
-    page=1,
-    page_size=100,
-)
-```
-
-#### ⚙️ Parameters<a id="⚙️-parameters"></a>
-
-##### original_article_id: `str`<a id="original_article_id-str"></a>
-
-##### page: `int`<a id="page-int"></a>
-
-##### page_size: `int`<a id="page_size-int"></a>
-
-#### 🔄 Return<a id="🔄-return"></a>
-
-[`SearchduplicatesbyoriginalidGetResponse`](./newscatcherapi_client/pydantic/searchduplicatesbyoriginalid_get_response.py)
-
-#### 🌐 Endpoint<a id="🌐-endpoint"></a>
-
-`/api/search_duplicates_by_original_id` `get`
-
-[🔙 **Back to Table of Contents**](#table-of-contents)
-
----
-
-### `newscatcher.search_duplicates_by_original_id.post`<a id="newscatchersearch_duplicates_by_original_idpost"></a>
-
-This endpoint allows you to search for duplicate articles by original article id.
-
-#### 🛠️ Usage<a id="🛠️-usage"></a>
-
-```python
-post_response = newscatcher.search_duplicates_by_original_id.post(
-    original_article_id="string_example",
-    page=1,
-    page_size=100,
-)
-```
-
-#### ⚙️ Parameters<a id="⚙️-parameters"></a>
-
-##### original_article_id: `str`<a id="original_article_id-str"></a>
-
-##### page: `int`<a id="page-int"></a>
-
-##### page_size: `int`<a id="page_size-int"></a>
-
-#### ⚙️ Request Body<a id="⚙️-request-body"></a>
-
-[`DuplicatesByOriginalIdRequest`](./newscatcherapi_client/type/duplicates_by_original_id_request.py)
-#### 🔄 Return<a id="🔄-return"></a>
-
-[`SearchduplicatesbyoriginalidPostResponse`](./newscatcherapi_client/pydantic/searchduplicatesbyoriginalid_post_response.py)
-
-#### 🌐 Endpoint<a id="🌐-endpoint"></a>
-
-`/api/search_duplicates_by_original_id` `post`
 
 [🔙 **Back to Table of Contents**](#table-of-contents)
 

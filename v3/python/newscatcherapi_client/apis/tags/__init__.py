@@ -13,4 +13,3 @@ class TagValues(str, enum.Enum):
     SEARCH_SIMILAR = "SearchSimilar"
     SOURCES = "Sources"
     SUBSCRIPTION = "Subscription"
-    SEARCH_DUPLICATES_BY_ORIGINAL_ID = "search_duplicates_by_original_id"
