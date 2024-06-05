@@ -99,6 +99,8 @@ securityParameters:
     query: false
   is_headline:
     query: false
+  is_opinion:
+    query: false
   is_paid_content:
     query: false
   lang:

@@ -138,6 +138,12 @@ export interface SearchRequest {
      * @type {boolean}
      * @memberof SearchRequest
      */
+    'is_opinion'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof SearchRequest
+     */
     'is_paid_content'?: boolean;
     /**
      * 

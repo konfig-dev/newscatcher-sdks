@@ -136,6 +136,14 @@ public class LatestHeadlinesRequestTest {
     }
 
     /**
+     * Test the property 'isOpinion'
+     */
+    @Test
+    public void isOpinionTest() {
+        // TODO: test isOpinion
+    }
+
+    /**
      * Test the property 'isPaidContent'
      */
     @Test

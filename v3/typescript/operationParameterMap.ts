@@ -62,6 +62,9 @@ export const operationParameterMap: Record<string, Entry> = {
                 name: 'is_headline'
             },
             {
+                name: 'is_opinion'
+            },
+            {
                 name: 'is_paid_content'
             },
             {
@@ -183,6 +186,9 @@ export const operationParameterMap: Record<string, Entry> = {
                 name: 'is_headline'
             },
             {
+                name: 'is_opinion'
+            },
+            {
                 name: 'is_paid_content'
             },
             {
@@ -284,6 +290,9 @@ export const operationParameterMap: Record<string, Entry> = {
             },
             {
                 name: 'is_headline'
+            },
+            {
+                name: 'is_opinion'
             },
             {
                 name: 'is_paid_content'
@@ -405,6 +414,9 @@ export const operationParameterMap: Record<string, Entry> = {
             },
             {
                 name: 'is_headline'
+            },
+            {
+                name: 'is_opinion'
             },
             {
                 name: 'is_paid_content'
@@ -547,6 +559,9 @@ export const operationParameterMap: Record<string, Entry> = {
             },
             {
                 name: 'is_headline'
+            },
+            {
+                name: 'is_opinion'
             },
             {
                 name: 'is_paid_content'
@@ -695,6 +710,9 @@ export const operationParameterMap: Record<string, Entry> = {
             },
             {
                 name: 'is_headline'
+            },
+            {
+                name: 'is_opinion'
             },
             {
                 name: 'is_paid_content'
@@ -883,6 +901,9 @@ export const operationParameterMap: Record<string, Entry> = {
                 name: 'is_headline'
             },
             {
+                name: 'is_opinion'
+            },
+            {
                 name: 'is_paid_content'
             },
             {
@@ -1005,6 +1026,9 @@ export const operationParameterMap: Record<string, Entry> = {
             },
             {
                 name: 'is_headline'
+            },
+            {
+                name: 'is_opinion'
             },
             {
                 name: 'is_paid_content'

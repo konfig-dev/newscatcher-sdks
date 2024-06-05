@@ -150,6 +150,12 @@ export interface MoreLikeThisRequest {
      * @type {boolean}
      * @memberof MoreLikeThisRequest
      */
+    'is_opinion'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof MoreLikeThisRequest
+     */
     'is_paid_content'?: boolean;
     /**
      * 

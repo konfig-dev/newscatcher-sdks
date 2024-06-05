@@ -20,6 +20,7 @@ from newscatcherapi_client.type.additional_source_info import AdditionalSourceIn
 class RequiredSourceInfo(TypedDict):
     domain_url: str
 
+
 class OptionalSourceInfo(TypedDict, total=False):
     name_source: str
 

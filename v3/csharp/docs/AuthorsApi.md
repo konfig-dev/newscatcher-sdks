@@ -57,6 +57,7 @@ namespace Example
             var fromRank = 56;
             var toRank = 56;
             var isHeadline = true;
+            var isOpinion = true;
             var isPaidContent = true;
             var parentUrl = new Object(
             );
@@ -89,7 +90,7 @@ namespace Example
             try
             {
                 // [Get] Search By Author Request
-                AuthorsGetResponse result = client.Authors.Get(authorName, notAuthorName, sources, predefinedSources, notSources, lang, notLang, countries, notCountries, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, notTheme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, iabTags, notIabTags);
+                AuthorsGetResponse result = client.Authors.Get(authorName, notAuthorName, sources, predefinedSources, notSources, lang, notLang, countries, notCountries, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isOpinion, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, notTheme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, iabTags, notIabTags);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -116,7 +117,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // [Get] Search By Author Request
-    ApiResponse<AuthorsGetResponse> response = apiInstance.GetWithHttpInfo(authorName, notAuthorName, sources, predefinedSources, notSources, lang, notLang, countries, notCountries, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, notTheme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, iabTags, notIabTags);
+    ApiResponse<AuthorsGetResponse> response = apiInstance.GetWithHttpInfo(authorName, notAuthorName, sources, predefinedSources, notSources, lang, notLang, countries, notCountries, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isOpinion, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, notTheme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, iabTags, notIabTags);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -151,6 +152,7 @@ catch (ApiException e)
 | **fromRank** | **int?** |  | [optional]  |
 | **toRank** | **int?** |  | [optional]  |
 | **isHeadline** | **bool?** |  | [optional]  |
+| **isOpinion** | **bool?** |  | [optional]  |
 | **isPaidContent** | **bool?** |  | [optional]  |
 | **parentUrl** | [**Object**](Object.md) |  | [optional]  |
 | **allLinks** | [**Object**](Object.md) |  | [optional]  |
@@ -229,6 +231,7 @@ namespace Example
             var fromRank = default(int);
             var toRank = default(int);
             var isHeadline = false;
+            var isOpinion = false;
             var isPaidContent = false;
             var parentUrl = "parentUrl_example";
             var allLinks = "allLinks_example";
@@ -270,6 +273,7 @@ namespace Example
                 fromRank,
                 toRank,
                 isHeadline,
+                isOpinion,
                 isPaidContent,
                 parentUrl,
                 allLinks,

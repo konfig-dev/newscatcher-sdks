@@ -75,6 +75,7 @@ namespace Newscatcherapi.Net.Test.Api
             var fromRank = 56;
             var toRank = 56;
             var isHeadline = true;
+            var isOpinion = true;
             var isPaidContent = true;
             var parentUrl = new Object(
             );
@@ -107,7 +108,7 @@ namespace Newscatcherapi.Net.Test.Api
             try
             {
                 // [Get] Search By Author Request
-                AuthorsGetResponse result = client.Authors.Get(authorName, notAuthorName, sources, predefinedSources, notSources, lang, notLang, countries, notCountries, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, notTheme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, iabTags, notIabTags);
+                AuthorsGetResponse result = client.Authors.Get(authorName, notAuthorName, sources, predefinedSources, notSources, lang, notLang, countries, notCountries, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isOpinion, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, notTheme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, iabTags, notIabTags);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -148,6 +149,7 @@ namespace Newscatcherapi.Net.Test.Api
             var fromRank = default(int);
             var toRank = default(int);
             var isHeadline = false;
+            var isOpinion = false;
             var isPaidContent = false;
             var parentUrl = "parentUrl_example";
             var allLinks = "allLinks_example";
@@ -189,6 +191,7 @@ namespace Newscatcherapi.Net.Test.Api
                 fromRank,
                 toRank,
                 isHeadline,
+                isOpinion,
                 isPaidContent,
                 parentUrl,
                 allLinks,

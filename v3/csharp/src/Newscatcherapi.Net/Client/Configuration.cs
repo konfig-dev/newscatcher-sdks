@@ -33,7 +33,7 @@ namespace Newscatcherapi.Net.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "6.0.5";
+        public const string Version = "6.0.6";
 
         /// <summary>
         /// Identifier for ISO 8601 DateTime Format
@@ -116,7 +116,7 @@ namespace Newscatcherapi.Net.Client
         public Configuration()
         {
             Proxy = null;
-            UserAgent = "Konfig/6.0.5/csharp";
+            UserAgent = "Konfig/6.0.6/csharp";
             BasePath = "https://v3-api.newscatcherapi.com";
             DefaultHeaders = new ConcurrentDictionary<string, string>();
             ApiKey = new ConcurrentDictionary<string, string>();
@@ -519,7 +519,7 @@ namespace Newscatcherapi.Net.Client
             report += "    OS: " + System.Environment.OSVersion + "\n";
             report += "    .NET Framework Version: " + System.Environment.Version  + "\n";
             report += "    Version of the API: 3.2.16\n";
-            report += "    SDK Package Version: 6.0.5\n";
+            report += "    SDK Package Version: 6.0.6\n";
 
             return report;
         }

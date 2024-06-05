@@ -44,6 +44,8 @@ class OptionalLatestHeadlinesRequest(TypedDict, total=False):
 
     is_headline: bool
 
+    is_opinion: bool
+
     is_paid_content: bool
 
     parent_url: typing.Union[bool, date, datetime, dict, float, int, list, str, None]

@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **FromRank** | **int** |  | [optional] 
 **ToRank** | **int** |  | [optional] 
 **IsHeadline** | **bool** |  | [optional] 
+**IsOpinion** | **bool** |  | [optional] 
 **IsPaidContent** | **bool** |  | [optional] 
 **ParentUrl** | **Object** |  | [optional] 
 **AllLinks** | **Object** |  | [optional] 

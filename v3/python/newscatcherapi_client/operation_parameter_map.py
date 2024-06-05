@@ -56,6 +56,9 @@ operation_parameter_map = {
                 'name': 'is_headline'
             },
             {
+                'name': 'is_opinion'
+            },
+            {
                 'name': 'is_paid_content'
             },
             {
@@ -177,6 +180,9 @@ operation_parameter_map = {
                 'name': 'is_headline'
             },
             {
+                'name': 'is_opinion'
+            },
+            {
                 'name': 'is_paid_content'
             },
             {
@@ -278,6 +284,9 @@ operation_parameter_map = {
             },
             {
                 'name': 'is_headline'
+            },
+            {
+                'name': 'is_opinion'
             },
             {
                 'name': 'is_paid_content'
@@ -399,6 +408,9 @@ operation_parameter_map = {
             },
             {
                 'name': 'is_headline'
+            },
+            {
+                'name': 'is_opinion'
             },
             {
                 'name': 'is_paid_content'
@@ -541,6 +553,9 @@ operation_parameter_map = {
             },
             {
                 'name': 'is_headline'
+            },
+            {
+                'name': 'is_opinion'
             },
             {
                 'name': 'is_paid_content'
@@ -689,6 +704,9 @@ operation_parameter_map = {
             },
             {
                 'name': 'is_headline'
+            },
+            {
+                'name': 'is_opinion'
             },
             {
                 'name': 'is_paid_content'
@@ -877,6 +895,9 @@ operation_parameter_map = {
                 'name': 'is_headline'
             },
             {
+                'name': 'is_opinion'
+            },
+            {
                 'name': 'is_paid_content'
             },
             {
@@ -999,6 +1020,9 @@ operation_parameter_map = {
             },
             {
                 'name': 'is_headline'
+            },
+            {
+                'name': 'is_opinion'
             },
             {
                 'name': 'is_paid_content'

@@ -127,6 +127,10 @@ public class SearchRequest {
   @SerializedName(SERIALIZED_NAME_IS_HEADLINE)
   private Boolean isHeadline;
 
+  public static final String SERIALIZED_NAME_IS_OPINION = "is_opinion";
+  @SerializedName(SERIALIZED_NAME_IS_OPINION)
+  private Boolean isOpinion;
+
   public static final String SERIALIZED_NAME_IS_PAID_CONTENT = "is_paid_content";
   @SerializedName(SERIALIZED_NAME_IS_PAID_CONTENT)
   private Boolean isPaidContent;
@@ -794,6 +798,35 @@ public class SearchRequest {
     
     
     this.isHeadline = isHeadline;
+  }
+
+
+  public SearchRequest isOpinion(Boolean isOpinion) {
+    
+    
+    
+    
+    this.isOpinion = isOpinion;
+    return this;
+  }
+
+   /**
+   * Get isOpinion
+   * @return isOpinion
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Boolean getIsOpinion() {
+    return isOpinion;
+  }
+
+
+  public void setIsOpinion(Boolean isOpinion) {
+    
+    
+    
+    this.isOpinion = isOpinion;
   }
 
 
@@ -1776,6 +1809,7 @@ public class SearchRequest {
         Objects.equals(this.fromRank, searchRequest.fromRank) &&
         Objects.equals(this.toRank, searchRequest.toRank) &&
         Objects.equals(this.isHeadline, searchRequest.isHeadline) &&
+        Objects.equals(this.isOpinion, searchRequest.isOpinion) &&
         Objects.equals(this.isPaidContent, searchRequest.isPaidContent) &&
         Objects.equals(this.parentUrl, searchRequest.parentUrl) &&
         Objects.equals(this.allLinks, searchRequest.allLinks) &&
@@ -1814,7 +1848,7 @@ public class SearchRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(q, searchIn, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, notAuthorName, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, orGEntityName, peREntityName, loCEntityName, miSCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, sourceName, iabTags, notIabTags, excludeDuplicates, additionalProperties);
+    return Objects.hash(q, searchIn, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, notAuthorName, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isOpinion, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, orGEntityName, peREntityName, loCEntityName, miSCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, sourceName, iabTags, notIabTags, excludeDuplicates, additionalProperties);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -1847,6 +1881,7 @@ public class SearchRequest {
     sb.append("    fromRank: ").append(toIndentedString(fromRank)).append("\n");
     sb.append("    toRank: ").append(toIndentedString(toRank)).append("\n");
     sb.append("    isHeadline: ").append(toIndentedString(isHeadline)).append("\n");
+    sb.append("    isOpinion: ").append(toIndentedString(isOpinion)).append("\n");
     sb.append("    isPaidContent: ").append(toIndentedString(isPaidContent)).append("\n");
     sb.append("    parentUrl: ").append(toIndentedString(parentUrl)).append("\n");
     sb.append("    allLinks: ").append(toIndentedString(allLinks)).append("\n");
@@ -1918,6 +1953,7 @@ public class SearchRequest {
     openapiFields.add("from_rank");
     openapiFields.add("to_rank");
     openapiFields.add("is_headline");
+    openapiFields.add("is_opinion");
     openapiFields.add("is_paid_content");
     openapiFields.add("parent_url");
     openapiFields.add("all_links");

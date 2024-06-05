@@ -63,6 +63,7 @@ export const SearchSimilarApiAxiosParamCreator = function (configuration?: Confi
          * @param {number} [fromRank] 
          * @param {number} [toRank] 
          * @param {boolean} [isHeadline] 
+         * @param {boolean} [isOpinion] 
          * @param {boolean} [isPaidContent] 
          * @param {any} [parentUrl] 
          * @param {any} [allLinks] 
@@ -85,7 +86,7 @@ export const SearchSimilarApiAxiosParamCreator = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        get: async (q: string, searchIn?: string, includeSimilarDocuments?: boolean, similarDocumentsNumber?: number, similarDocumentsFields?: string, predefinedSources?: any, sources?: any, notSources?: any, lang?: any, notLang?: any, countries?: any, notCountries?: any, from?: From, to?: To, byParseDate?: boolean, publishedDatePrecision?: string, sortBy?: string, rankedOnly?: string, fromRank?: number, toRank?: number, isHeadline?: boolean, isPaidContent?: boolean, parentUrl?: any, allLinks?: any, allDomainLinks?: any, wordCountMin?: number, wordCountMax?: number, page?: number, pageSize?: number, includeNlpData?: boolean, hasNlp?: boolean, theme?: string, notTheme?: string, nerName?: string, titleSentimentMin?: number, titleSentimentMax?: number, contentSentimentMin?: number, contentSentimentMax?: number, iptcTags?: any, notIptcTags?: any, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        get: async (q: string, searchIn?: string, includeSimilarDocuments?: boolean, similarDocumentsNumber?: number, similarDocumentsFields?: string, predefinedSources?: any, sources?: any, notSources?: any, lang?: any, notLang?: any, countries?: any, notCountries?: any, from?: From, to?: To, byParseDate?: boolean, publishedDatePrecision?: string, sortBy?: string, rankedOnly?: string, fromRank?: number, toRank?: number, isHeadline?: boolean, isOpinion?: boolean, isPaidContent?: boolean, parentUrl?: any, allLinks?: any, allDomainLinks?: any, wordCountMin?: number, wordCountMax?: number, page?: number, pageSize?: number, includeNlpData?: boolean, hasNlp?: boolean, theme?: string, notTheme?: string, nerName?: string, titleSentimentMin?: number, titleSentimentMax?: number, contentSentimentMin?: number, contentSentimentMax?: number, iptcTags?: any, notIptcTags?: any, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'q' is not null or undefined
             assertParamExists('get', 'q', q)
             const localVarPath = `/api/search_similar`;
@@ -184,6 +185,10 @@ export const SearchSimilarApiAxiosParamCreator = function (configuration?: Confi
 
             if (isHeadline !== undefined) {
                 localVarQueryParameter['is_headline'] = isHeadline;
+            }
+
+            if (isOpinion !== undefined) {
+                localVarQueryParameter['is_opinion'] = isOpinion;
             }
 
             if (isPaidContent !== undefined) {
@@ -347,7 +352,7 @@ export const SearchSimilarApiFp = function(configuration?: Configuration) {
          * @throws {RequiredError}
          */
         async get(requestParameters: SearchSimilarApiGetRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SearchSimilarGetResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.get(requestParameters.q, requestParameters.searchIn, requestParameters.includeSimilarDocuments, requestParameters.similarDocumentsNumber, requestParameters.similarDocumentsFields, requestParameters.predefinedSources, requestParameters.sources, requestParameters.notSources, requestParameters.lang, requestParameters.notLang, requestParameters.countries, requestParameters.notCountries, requestParameters.from, requestParameters.to, requestParameters.byParseDate, requestParameters.publishedDatePrecision, requestParameters.sortBy, requestParameters.rankedOnly, requestParameters.fromRank, requestParameters.toRank, requestParameters.isHeadline, requestParameters.isPaidContent, requestParameters.parentUrl, requestParameters.allLinks, requestParameters.allDomainLinks, requestParameters.wordCountMin, requestParameters.wordCountMax, requestParameters.page, requestParameters.pageSize, requestParameters.includeNlpData, requestParameters.hasNlp, requestParameters.theme, requestParameters.notTheme, requestParameters.nerName, requestParameters.titleSentimentMin, requestParameters.titleSentimentMax, requestParameters.contentSentimentMin, requestParameters.contentSentimentMax, requestParameters.iptcTags, requestParameters.notIptcTags, options);
+            const localVarAxiosArgs = await localVarAxiosParamCreator.get(requestParameters.q, requestParameters.searchIn, requestParameters.includeSimilarDocuments, requestParameters.similarDocumentsNumber, requestParameters.similarDocumentsFields, requestParameters.predefinedSources, requestParameters.sources, requestParameters.notSources, requestParameters.lang, requestParameters.notLang, requestParameters.countries, requestParameters.notCountries, requestParameters.from, requestParameters.to, requestParameters.byParseDate, requestParameters.publishedDatePrecision, requestParameters.sortBy, requestParameters.rankedOnly, requestParameters.fromRank, requestParameters.toRank, requestParameters.isHeadline, requestParameters.isOpinion, requestParameters.isPaidContent, requestParameters.parentUrl, requestParameters.allLinks, requestParameters.allDomainLinks, requestParameters.wordCountMin, requestParameters.wordCountMax, requestParameters.page, requestParameters.pageSize, requestParameters.includeNlpData, requestParameters.hasNlp, requestParameters.theme, requestParameters.notTheme, requestParameters.nerName, requestParameters.titleSentimentMin, requestParameters.titleSentimentMax, requestParameters.contentSentimentMin, requestParameters.contentSentimentMax, requestParameters.iptcTags, requestParameters.notIptcTags, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -380,6 +385,7 @@ export const SearchSimilarApiFp = function(configuration?: Configuration) {
                 from_rank: requestParameters.from_rank,
                 to_rank: requestParameters.to_rank,
                 is_headline: requestParameters.is_headline,
+                is_opinion: requestParameters.is_opinion,
                 is_paid_content: requestParameters.is_paid_content,
                 parent_url: requestParameters.parent_url,
                 all_links: requestParameters.all_links,
@@ -589,6 +595,13 @@ export type SearchSimilarApiGetRequest = {
     * @memberof SearchSimilarApiGet
     */
     readonly isHeadline?: boolean
+    
+    /**
+    * 
+    * @type {boolean}
+    * @memberof SearchSimilarApiGet
+    */
+    readonly isOpinion?: boolean
     
     /**
     * 

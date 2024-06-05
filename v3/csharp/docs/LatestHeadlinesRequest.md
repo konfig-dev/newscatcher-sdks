@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **NotAuthorName** | **Object** |  | [optional] 
 **RankedOnly** | **string** |  | [optional] 
 **IsHeadline** | **bool** |  | [optional] 
+**IsOpinion** | **bool** |  | [optional] 
 **IsPaidContent** | **bool** |  | [optional] 
 **ParentUrl** | **Object** |  | [optional] 
 **AllLinks** | **Object** |  | [optional] 

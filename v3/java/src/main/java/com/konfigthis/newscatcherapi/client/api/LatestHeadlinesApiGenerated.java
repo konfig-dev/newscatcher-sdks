@@ -77,7 +77,7 @@ public class LatestHeadlinesApiGenerated {
         this.localCustomBaseUrl = customBaseUrl;
     }
 
-    private okhttp3.Call getCall(String when, Boolean byParseDate, Object lang, Object notLang, Object countries, Object notCountries, Object sources, Object predefinedSources, Object notSources, Object notAuthorName, String rankedOnly, Boolean isHeadline, Boolean isPaidContent, Object parentUrl, Object allLinks, Object allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, String clusteringVariable, Boolean clusteringEnabled, Double clusteringThreshold, Boolean includeNlpData, Boolean hasNlp, String theme, String notTheme, String orGEntityName, String peREntityName, String loCEntityName, String miSCEntityName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax, Object iptcTags, Object notIptcTags, Object iabTags, Object notIabTags, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getCall(String when, Boolean byParseDate, Object lang, Object notLang, Object countries, Object notCountries, Object sources, Object predefinedSources, Object notSources, Object notAuthorName, String rankedOnly, Boolean isHeadline, Boolean isOpinion, Boolean isPaidContent, Object parentUrl, Object allLinks, Object allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, String clusteringVariable, Boolean clusteringEnabled, Double clusteringThreshold, Boolean includeNlpData, Boolean hasNlp, String theme, String notTheme, String orGEntityName, String peREntityName, String loCEntityName, String miSCEntityName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax, Object iptcTags, Object notIptcTags, Object iabTags, Object notIabTags, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -148,6 +148,10 @@ public class LatestHeadlinesApiGenerated {
 
         if (isHeadline != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("is_headline", isHeadline));
+        }
+
+        if (isOpinion != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("is_opinion", isOpinion));
         }
 
         if (isPaidContent != null) {
@@ -278,21 +282,21 @@ public class LatestHeadlinesApiGenerated {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getValidateBeforeCall(String when, Boolean byParseDate, Object lang, Object notLang, Object countries, Object notCountries, Object sources, Object predefinedSources, Object notSources, Object notAuthorName, String rankedOnly, Boolean isHeadline, Boolean isPaidContent, Object parentUrl, Object allLinks, Object allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, String clusteringVariable, Boolean clusteringEnabled, Double clusteringThreshold, Boolean includeNlpData, Boolean hasNlp, String theme, String notTheme, String orGEntityName, String peREntityName, String loCEntityName, String miSCEntityName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax, Object iptcTags, Object notIptcTags, Object iabTags, Object notIabTags, final ApiCallback _callback) throws ApiException {
-        return getCall(when, byParseDate, lang, notLang, countries, notCountries, sources, predefinedSources, notSources, notAuthorName, rankedOnly, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, orGEntityName, peREntityName, loCEntityName, miSCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, iabTags, notIabTags, _callback);
+    private okhttp3.Call getValidateBeforeCall(String when, Boolean byParseDate, Object lang, Object notLang, Object countries, Object notCountries, Object sources, Object predefinedSources, Object notSources, Object notAuthorName, String rankedOnly, Boolean isHeadline, Boolean isOpinion, Boolean isPaidContent, Object parentUrl, Object allLinks, Object allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, String clusteringVariable, Boolean clusteringEnabled, Double clusteringThreshold, Boolean includeNlpData, Boolean hasNlp, String theme, String notTheme, String orGEntityName, String peREntityName, String loCEntityName, String miSCEntityName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax, Object iptcTags, Object notIptcTags, Object iabTags, Object notIabTags, final ApiCallback _callback) throws ApiException {
+        return getCall(when, byParseDate, lang, notLang, countries, notCountries, sources, predefinedSources, notSources, notAuthorName, rankedOnly, isHeadline, isOpinion, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, orGEntityName, peREntityName, loCEntityName, miSCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, iabTags, notIabTags, _callback);
 
     }
 
 
-    private ApiResponse<CSLHResponse> getWithHttpInfo(String when, Boolean byParseDate, Object lang, Object notLang, Object countries, Object notCountries, Object sources, Object predefinedSources, Object notSources, Object notAuthorName, String rankedOnly, Boolean isHeadline, Boolean isPaidContent, Object parentUrl, Object allLinks, Object allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, String clusteringVariable, Boolean clusteringEnabled, Double clusteringThreshold, Boolean includeNlpData, Boolean hasNlp, String theme, String notTheme, String orGEntityName, String peREntityName, String loCEntityName, String miSCEntityName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax, Object iptcTags, Object notIptcTags, Object iabTags, Object notIabTags) throws ApiException {
-        okhttp3.Call localVarCall = getValidateBeforeCall(when, byParseDate, lang, notLang, countries, notCountries, sources, predefinedSources, notSources, notAuthorName, rankedOnly, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, orGEntityName, peREntityName, loCEntityName, miSCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, iabTags, notIabTags, null);
+    private ApiResponse<CSLHResponse> getWithHttpInfo(String when, Boolean byParseDate, Object lang, Object notLang, Object countries, Object notCountries, Object sources, Object predefinedSources, Object notSources, Object notAuthorName, String rankedOnly, Boolean isHeadline, Boolean isOpinion, Boolean isPaidContent, Object parentUrl, Object allLinks, Object allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, String clusteringVariable, Boolean clusteringEnabled, Double clusteringThreshold, Boolean includeNlpData, Boolean hasNlp, String theme, String notTheme, String orGEntityName, String peREntityName, String loCEntityName, String miSCEntityName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax, Object iptcTags, Object notIptcTags, Object iabTags, Object notIabTags) throws ApiException {
+        okhttp3.Call localVarCall = getValidateBeforeCall(when, byParseDate, lang, notLang, countries, notCountries, sources, predefinedSources, notSources, notAuthorName, rankedOnly, isHeadline, isOpinion, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, orGEntityName, peREntityName, loCEntityName, miSCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, iabTags, notIabTags, null);
         Type localVarReturnType = new TypeToken<CSLHResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call getAsync(String when, Boolean byParseDate, Object lang, Object notLang, Object countries, Object notCountries, Object sources, Object predefinedSources, Object notSources, Object notAuthorName, String rankedOnly, Boolean isHeadline, Boolean isPaidContent, Object parentUrl, Object allLinks, Object allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, String clusteringVariable, Boolean clusteringEnabled, Double clusteringThreshold, Boolean includeNlpData, Boolean hasNlp, String theme, String notTheme, String orGEntityName, String peREntityName, String loCEntityName, String miSCEntityName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax, Object iptcTags, Object notIptcTags, Object iabTags, Object notIabTags, final ApiCallback<CSLHResponse> _callback) throws ApiException {
+    private okhttp3.Call getAsync(String when, Boolean byParseDate, Object lang, Object notLang, Object countries, Object notCountries, Object sources, Object predefinedSources, Object notSources, Object notAuthorName, String rankedOnly, Boolean isHeadline, Boolean isOpinion, Boolean isPaidContent, Object parentUrl, Object allLinks, Object allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, String clusteringVariable, Boolean clusteringEnabled, Double clusteringThreshold, Boolean includeNlpData, Boolean hasNlp, String theme, String notTheme, String orGEntityName, String peREntityName, String loCEntityName, String miSCEntityName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax, Object iptcTags, Object notIptcTags, Object iabTags, Object notIabTags, final ApiCallback<CSLHResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getValidateBeforeCall(when, byParseDate, lang, notLang, countries, notCountries, sources, predefinedSources, notSources, notAuthorName, rankedOnly, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, orGEntityName, peREntityName, loCEntityName, miSCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, iabTags, notIabTags, _callback);
+        okhttp3.Call localVarCall = getValidateBeforeCall(when, byParseDate, lang, notLang, countries, notCountries, sources, predefinedSources, notSources, notAuthorName, rankedOnly, isHeadline, isOpinion, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, orGEntityName, peREntityName, loCEntityName, miSCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, iabTags, notIabTags, _callback);
         Type localVarReturnType = new TypeToken<CSLHResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -311,6 +315,7 @@ public class LatestHeadlinesApiGenerated {
         private Object notAuthorName;
         private String rankedOnly;
         private Boolean isHeadline;
+        private Boolean isOpinion;
         private Boolean isPaidContent;
         private Object parentUrl;
         private Object allLinks;
@@ -459,6 +464,16 @@ public class LatestHeadlinesApiGenerated {
          */
         public GetRequestBuilder isHeadline(Boolean isHeadline) {
             this.isHeadline = isHeadline;
+            return this;
+        }
+        
+        /**
+         * Set isOpinion
+         * @param isOpinion  (optional)
+         * @return GetRequestBuilder
+         */
+        public GetRequestBuilder isOpinion(Boolean isOpinion) {
+            this.isOpinion = isOpinion;
             return this;
         }
         
@@ -744,7 +759,7 @@ public class LatestHeadlinesApiGenerated {
          </table>
          */
         public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
-            return getCall(when, byParseDate, lang, notLang, countries, notCountries, sources, predefinedSources, notSources, notAuthorName, rankedOnly, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, orGEntityName, peREntityName, loCEntityName, miSCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, iabTags, notIabTags, _callback);
+            return getCall(when, byParseDate, lang, notLang, countries, notCountries, sources, predefinedSources, notSources, notAuthorName, rankedOnly, isHeadline, isOpinion, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, orGEntityName, peREntityName, loCEntityName, miSCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, iabTags, notIabTags, _callback);
         }
 
 
@@ -759,7 +774,7 @@ public class LatestHeadlinesApiGenerated {
          </table>
          */
         public CSLHResponse execute() throws ApiException {
-            ApiResponse<CSLHResponse> localVarResp = getWithHttpInfo(when, byParseDate, lang, notLang, countries, notCountries, sources, predefinedSources, notSources, notAuthorName, rankedOnly, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, orGEntityName, peREntityName, loCEntityName, miSCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, iabTags, notIabTags);
+            ApiResponse<CSLHResponse> localVarResp = getWithHttpInfo(when, byParseDate, lang, notLang, countries, notCountries, sources, predefinedSources, notSources, notAuthorName, rankedOnly, isHeadline, isOpinion, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, orGEntityName, peREntityName, loCEntityName, miSCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, iabTags, notIabTags);
             return localVarResp.getResponseBody();
         }
 
@@ -774,7 +789,7 @@ public class LatestHeadlinesApiGenerated {
          </table>
          */
         public ApiResponse<CSLHResponse> executeWithHttpInfo() throws ApiException {
-            return getWithHttpInfo(when, byParseDate, lang, notLang, countries, notCountries, sources, predefinedSources, notSources, notAuthorName, rankedOnly, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, orGEntityName, peREntityName, loCEntityName, miSCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, iabTags, notIabTags);
+            return getWithHttpInfo(when, byParseDate, lang, notLang, countries, notCountries, sources, predefinedSources, notSources, notAuthorName, rankedOnly, isHeadline, isOpinion, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, orGEntityName, peREntityName, loCEntityName, miSCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, iabTags, notIabTags);
         }
 
         /**
@@ -789,7 +804,7 @@ public class LatestHeadlinesApiGenerated {
          </table>
          */
         public okhttp3.Call executeAsync(final ApiCallback<CSLHResponse> _callback) throws ApiException {
-            return getAsync(when, byParseDate, lang, notLang, countries, notCountries, sources, predefinedSources, notSources, notAuthorName, rankedOnly, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, orGEntityName, peREntityName, loCEntityName, miSCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, iabTags, notIabTags, _callback);
+            return getAsync(when, byParseDate, lang, notLang, countries, notCountries, sources, predefinedSources, notSources, notAuthorName, rankedOnly, isHeadline, isOpinion, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, orGEntityName, peREntityName, loCEntityName, miSCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, iabTags, notIabTags, _callback);
         }
     }
 
@@ -890,6 +905,7 @@ public class LatestHeadlinesApiGenerated {
         private Object notAuthorName;
         private String rankedOnly;
         private Boolean isHeadline;
+        private Boolean isOpinion;
         private Boolean isPaidContent;
         private Object parentUrl;
         private Object allLinks;
@@ -1038,6 +1054,16 @@ public class LatestHeadlinesApiGenerated {
          */
         public PostRequestBuilder isHeadline(Boolean isHeadline) {
             this.isHeadline = isHeadline;
+            return this;
+        }
+        
+        /**
+         * Set isOpinion
+         * @param isOpinion  (optional)
+         * @return PostRequestBuilder
+         */
+        public PostRequestBuilder isOpinion(Boolean isOpinion) {
+            this.isOpinion = isOpinion;
             return this;
         }
         
@@ -1341,6 +1367,7 @@ public class LatestHeadlinesApiGenerated {
             latestHeadlinesRequest.notAuthorName(this.notAuthorName);
             latestHeadlinesRequest.rankedOnly(this.rankedOnly);
             latestHeadlinesRequest.isHeadline(this.isHeadline);
+            latestHeadlinesRequest.isOpinion(this.isOpinion);
             latestHeadlinesRequest.isPaidContent(this.isPaidContent);
             latestHeadlinesRequest.parentUrl(this.parentUrl);
             latestHeadlinesRequest.allLinks(this.allLinks);

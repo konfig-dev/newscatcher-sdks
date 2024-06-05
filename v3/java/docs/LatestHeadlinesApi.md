@@ -10,7 +10,7 @@ All URIs are relative to *https://v3-api.newscatcherapi.com*
 
 <a name="get"></a>
 # **get**
-> CSLHResponse get().when(when).byParseDate(byParseDate).lang(lang).notLang(notLang).countries(countries).notCountries(notCountries).sources(sources).predefinedSources(predefinedSources).notSources(notSources).notAuthorName(notAuthorName).rankedOnly(rankedOnly).isHeadline(isHeadline).isPaidContent(isPaidContent).parentUrl(parentUrl).allLinks(allLinks).allDomainLinks(allDomainLinks).wordCountMin(wordCountMin).wordCountMax(wordCountMax).page(page).pageSize(pageSize).clusteringVariable(clusteringVariable).clusteringEnabled(clusteringEnabled).clusteringThreshold(clusteringThreshold).includeNlpData(includeNlpData).hasNlp(hasNlp).theme(theme).notTheme(notTheme).orGEntityName(orGEntityName).peREntityName(peREntityName).loCEntityName(loCEntityName).miSCEntityName(miSCEntityName).titleSentimentMin(titleSentimentMin).titleSentimentMax(titleSentimentMax).contentSentimentMin(contentSentimentMin).contentSentimentMax(contentSentimentMax).iptcTags(iptcTags).notIptcTags(notIptcTags).iabTags(iabTags).notIabTags(notIabTags).execute();
+> CSLHResponse get().when(when).byParseDate(byParseDate).lang(lang).notLang(notLang).countries(countries).notCountries(notCountries).sources(sources).predefinedSources(predefinedSources).notSources(notSources).notAuthorName(notAuthorName).rankedOnly(rankedOnly).isHeadline(isHeadline).isOpinion(isOpinion).isPaidContent(isPaidContent).parentUrl(parentUrl).allLinks(allLinks).allDomainLinks(allDomainLinks).wordCountMin(wordCountMin).wordCountMax(wordCountMax).page(page).pageSize(pageSize).clusteringVariable(clusteringVariable).clusteringEnabled(clusteringEnabled).clusteringThreshold(clusteringThreshold).includeNlpData(includeNlpData).hasNlp(hasNlp).theme(theme).notTheme(notTheme).orGEntityName(orGEntityName).peREntityName(peREntityName).loCEntityName(loCEntityName).miSCEntityName(miSCEntityName).titleSentimentMin(titleSentimentMin).titleSentimentMax(titleSentimentMax).contentSentimentMin(contentSentimentMin).contentSentimentMax(contentSentimentMax).iptcTags(iptcTags).notIptcTags(notIptcTags).iabTags(iabTags).notIabTags(notIabTags).execute();
 
 [Get] Search For Latest Headlines Request
 
@@ -49,6 +49,7 @@ public class Example {
     Object notAuthorName = null;
     String rankedOnly = "rankedOnly_example";
     Boolean isHeadline = true;
+    Boolean isOpinion = true;
     Boolean isPaidContent = true;
     Object parentUrl = null;
     Object allLinks = null;
@@ -92,6 +93,7 @@ public class Example {
               .notAuthorName(notAuthorName)
               .rankedOnly(rankedOnly)
               .isHeadline(isHeadline)
+              .isOpinion(isOpinion)
               .isPaidContent(isPaidContent)
               .parentUrl(parentUrl)
               .allLinks(allLinks)
@@ -155,6 +157,7 @@ public class Example {
               .notAuthorName(notAuthorName)
               .rankedOnly(rankedOnly)
               .isHeadline(isHeadline)
+              .isOpinion(isOpinion)
               .isPaidContent(isPaidContent)
               .parentUrl(parentUrl)
               .allLinks(allLinks)
@@ -216,6 +219,7 @@ public class Example {
 | **notAuthorName** | [**Object**](.md)|  | [optional] |
 | **rankedOnly** | **String**|  | [optional] |
 | **isHeadline** | **Boolean**|  | [optional] |
+| **isOpinion** | **Boolean**|  | [optional] |
 | **isPaidContent** | **Boolean**|  | [optional] |
 | **parentUrl** | [**Object**](.md)|  | [optional] |
 | **allLinks** | [**Object**](.md)|  | [optional] |
@@ -303,6 +307,7 @@ public class Example {
     Object notAuthorName = null;
     String rankedOnly = "rankedOnly_example";
     Boolean isHeadline = true;
+    Boolean isOpinion = true;
     Boolean isPaidContent = true;
     Object parentUrl = null;
     Object allLinks = null;
@@ -346,6 +351,7 @@ public class Example {
               .notAuthorName(notAuthorName)
               .rankedOnly(rankedOnly)
               .isHeadline(isHeadline)
+              .isOpinion(isOpinion)
               .isPaidContent(isPaidContent)
               .parentUrl(parentUrl)
               .allLinks(allLinks)
@@ -409,6 +415,7 @@ public class Example {
               .notAuthorName(notAuthorName)
               .rankedOnly(rankedOnly)
               .isHeadline(isHeadline)
+              .isOpinion(isOpinion)
               .isPaidContent(isPaidContent)
               .parentUrl(parentUrl)
               .allLinks(allLinks)

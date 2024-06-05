@@ -20,6 +20,7 @@ Latest headlines request DTO.
 |**notAuthorName** | **Object** |  |  [optional] |
 |**rankedOnly** | **String** |  |  [optional] |
 |**isHeadline** | **Boolean** |  |  [optional] |
+|**isOpinion** | **Boolean** |  |  [optional] |
 |**isPaidContent** | **Boolean** |  |  [optional] |
 |**parentUrl** | **Object** |  |  [optional] |
 |**allLinks** | **Object** |  |  [optional] |

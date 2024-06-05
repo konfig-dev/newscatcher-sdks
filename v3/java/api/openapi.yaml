@@ -182,6 +182,14 @@ paths:
         style: form
       - explode: true
         in: query
+        name: is_opinion
+        required: false
+        schema:
+          title: Is Opinion
+          type: boolean
+        style: form
+      - explode: true
+        in: query
         name: is_paid_content
         required: false
         schema:
@@ -238,7 +246,7 @@ paths:
           title: Page
           type: integer
           x-konfig-original-example: 1
-          x-konfig-generated-schema: konfig-generated-schema-paths--api-search-get-parameters-25-schema
+          x-konfig-generated-schema: konfig-generated-schema-paths--api-search-get-parameters-26-schema
         style: form
       - explode: true
         in: query
@@ -251,7 +259,7 @@ paths:
           title: Page Size
           type: integer
           x-konfig-original-example: 100
-          x-konfig-generated-schema: konfig-generated-schema-paths--api-search-get-parameters-26-schema
+          x-konfig-generated-schema: konfig-generated-schema-paths--api-search-get-parameters-27-schema
         style: form
       - explode: true
         in: query
@@ -577,6 +585,14 @@ paths:
         style: form
       - explode: true
         in: query
+        name: is_opinion
+        required: false
+        schema:
+          title: Is Opinion
+          type: boolean
+        style: form
+      - explode: true
+        in: query
         name: is_paid_content
         required: false
         schema:
@@ -633,7 +649,7 @@ paths:
           title: Page
           type: integer
           x-konfig-original-example: 1
-          x-konfig-generated-schema: konfig-generated-schema-paths--api-latest_headlines-get-parameters-18-schema
+          x-konfig-generated-schema: konfig-generated-schema-paths--api-latest_headlines-get-parameters-19-schema
         style: form
       - explode: true
         in: query
@@ -646,7 +662,7 @@ paths:
           title: Page Size
           type: integer
           x-konfig-original-example: 100
-          x-konfig-generated-schema: konfig-generated-schema-paths--api-latest_headlines-get-parameters-19-schema
+          x-konfig-generated-schema: konfig-generated-schema-paths--api-latest_headlines-get-parameters-20-schema
         style: form
       - explode: true
         in: query
@@ -1005,6 +1021,14 @@ paths:
         style: form
       - explode: true
         in: query
+        name: is_opinion
+        required: false
+        schema:
+          title: Is Opinion
+          type: boolean
+        style: form
+      - explode: true
+        in: query
         name: is_paid_content
         required: false
         schema:
@@ -1061,7 +1085,7 @@ paths:
           title: Page
           type: integer
           x-konfig-original-example: 1
-          x-konfig-generated-schema: konfig-generated-schema-paths--api-authors-get-parameters-24-schema
+          x-konfig-generated-schema: konfig-generated-schema-paths--api-authors-get-parameters-25-schema
         style: form
       - explode: true
         in: query
@@ -1074,7 +1098,7 @@ paths:
           title: Page Size
           type: integer
           x-konfig-original-example: 100
-          x-konfig-generated-schema: konfig-generated-schema-paths--api-authors-get-parameters-25-schema
+          x-konfig-generated-schema: konfig-generated-schema-paths--api-authors-get-parameters-26-schema
         style: form
       - explode: true
         in: query
@@ -1528,6 +1552,14 @@ paths:
         style: form
       - explode: true
         in: query
+        name: is_opinion
+        required: false
+        schema:
+          title: Is Opinion
+          type: boolean
+        style: form
+      - explode: true
+        in: query
         name: is_paid_content
         required: false
         schema:
@@ -1584,7 +1616,7 @@ paths:
           title: Page
           type: integer
           x-konfig-original-example: 1
-          x-konfig-generated-schema: konfig-generated-schema-paths--api-search_similar-get-parameters-27-schema
+          x-konfig-generated-schema: konfig-generated-schema-paths--api-search_similar-get-parameters-28-schema
         style: form
       - explode: true
         in: query
@@ -1597,7 +1629,7 @@ paths:
           title: Page Size
           type: integer
           x-konfig-original-example: 100
-          x-konfig-generated-schema: konfig-generated-schema-paths--api-search_similar-get-parameters-28-schema
+          x-konfig-generated-schema: konfig-generated-schema-paths--api-search_similar-get-parameters-29-schema
         style: form
       - explode: true
         in: query
@@ -1978,6 +2010,7 @@ components:
         not_iab_tags: ""
         parent_url: ""
         published_date_precision: published_date_precision
+        is_opinion: true
         ranked_only: ranked_only
         include_nlp_data: true
         is_paid_content: true
@@ -2035,6 +2068,9 @@ components:
           type: integer
         is_headline:
           title: Is Headline
+          type: boolean
+        is_opinion:
+          title: Is Opinion
           type: boolean
         is_paid_content:
           title: Is Paid Content
@@ -2222,6 +2258,7 @@ components:
         not_iab_tags: ""
         parent_url: ""
         clustering_enabled: true
+        is_opinion: true
         ranked_only: ranked_only
         include_nlp_data: true
         is_paid_content: true
@@ -2263,6 +2300,9 @@ components:
           type: string
         is_headline:
           title: Is Headline
+          type: boolean
+        is_opinion:
+          title: Is Opinion
           type: boolean
         is_paid_content:
           title: Is Paid Content
@@ -2430,6 +2470,7 @@ components:
         similar_documents_number: 5
         parent_url: ""
         published_date_precision: published_date_precision
+        is_opinion: true
         ranked_only: ranked_only
         include_nlp_data: true
         is_paid_content: true
@@ -2514,6 +2555,9 @@ components:
         is_headline:
           title: Is Headline
           type: boolean
+        is_opinion:
+          title: Is Opinion
+          type: boolean
         is_paid_content:
           title: Is Paid Content
           type: boolean
@@ -2585,54 +2629,55 @@ components:
     SearchRequest:
       description: Search request DTO
       example:
-        has_nlp: true
-        sources: ""
-        to_: to_
-        clustering_variable: clustering_variable
         not_iptc_tags: ""
         ORG_entity_name: ORG_entity_name
-        sort_by: relevancy
         all_domain_links: ""
         clustering_threshold: 5.637376656633329
         word_count_max: 0
-        not_theme: not_theme
-        all_links: ""
         content_sentiment_max: 3.616076749251911
-        title_sentiment_max: 7.061401241503109
-        theme: theme
-        lang: ""
-        to_rank: 6
-        exclude_duplicates: true
         not_countries: ""
-        source_name: ""
         word_count_min: 0
         page_size: 100
-        search_in: title_content
         by_parse_date: false
-        content_sentiment_min: 9.301444243932576
-        LOC_entity_name: LOC_entity_name
-        MISC_entity_name: MISC_entity_name
-        not_sources: ""
         from_: from_
         iptc_tags: ""
         countries: ""
         iab_tags: ""
         predefined_sources: ""
         not_lang: ""
+        not_iab_tags: ""
+        parent_url: ""
+        clustering_enabled: true
+        is_opinion: true
+        ranked_only: ranked_only
+        is_paid_content: true
+        PER_entity_name: PER_entity_name
+        page: 1
+        has_nlp: true
+        sources: ""
+        to_: to_
+        clustering_variable: clustering_variable
+        sort_by: relevancy
+        not_theme: not_theme
+        all_links: ""
+        title_sentiment_max: 7.061401241503109
+        theme: theme
+        lang: ""
+        to_rank: 6
+        exclude_duplicates: true
+        source_name: ""
+        search_in: title_content
+        content_sentiment_min: 9.301444243932576
+        LOC_entity_name: LOC_entity_name
+        MISC_entity_name: MISC_entity_name
+        not_sources: ""
         not_author_name: ""
         from_rank: 0
         title_sentiment_min: 2.3021358869347655
         is_headline: true
         q: q
-        not_iab_tags: ""
-        parent_url: ""
-        clustering_enabled: true
         published_date_precision: published_date_precision
-        ranked_only: ranked_only
         include_nlp_data: true
-        is_paid_content: true
-        PER_entity_name: PER_entity_name
-        page: 1
       properties:
         q:
           title: Q
@@ -2692,6 +2737,9 @@ components:
           type: integer
         is_headline:
           title: Is Headline
+          type: boolean
+        is_opinion:
+          title: Is Opinion
           type: boolean
         is_paid_content:
           title: Is Paid Content
@@ -3469,11 +3517,11 @@ components:
       example: relevancy
       type: string
       x-do-not-generate: true
-    konfig-generated-schema-paths--api-search-get-parameters-25-schema:
+    konfig-generated-schema-paths--api-search-get-parameters-26-schema:
       example: 1
       type: number
       x-do-not-generate: true
-    konfig-generated-schema-paths--api-search-get-parameters-26-schema:
+    konfig-generated-schema-paths--api-search-get-parameters-27-schema:
       example: 100
       type: number
       x-do-not-generate: true
@@ -3485,11 +3533,11 @@ components:
       example: false
       type: boolean
       x-do-not-generate: true
-    konfig-generated-schema-paths--api-latest_headlines-get-parameters-18-schema:
+    konfig-generated-schema-paths--api-latest_headlines-get-parameters-19-schema:
       example: 1
       type: number
       x-do-not-generate: true
-    konfig-generated-schema-paths--api-latest_headlines-get-parameters-19-schema:
+    konfig-generated-schema-paths--api-latest_headlines-get-parameters-20-schema:
       example: 100
       type: number
       x-do-not-generate: true
@@ -3501,11 +3549,11 @@ components:
       example: relevancy
       type: string
       x-do-not-generate: true
-    konfig-generated-schema-paths--api-authors-get-parameters-24-schema:
+    konfig-generated-schema-paths--api-authors-get-parameters-25-schema:
       example: 1
       type: number
       x-do-not-generate: true
-    konfig-generated-schema-paths--api-authors-get-parameters-25-schema:
+    konfig-generated-schema-paths--api-authors-get-parameters-26-schema:
       example: 100
       type: number
       x-do-not-generate: true
@@ -3541,11 +3589,11 @@ components:
       example: relevancy
       type: string
       x-do-not-generate: true
-    konfig-generated-schema-paths--api-search_similar-get-parameters-27-schema:
+    konfig-generated-schema-paths--api-search_similar-get-parameters-28-schema:
       example: 1
       type: number
       x-do-not-generate: true
-    konfig-generated-schema-paths--api-search_similar-get-parameters-28-schema:
+    konfig-generated-schema-paths--api-search_similar-get-parameters-29-schema:
       example: 100
       type: number
       x-do-not-generate: true
@@ -3795,6 +3843,9 @@ components:
         is_headline:
           title: Is Headline
           type: boolean
+        is_opinion:
+          title: Is Opinion
+          type: boolean
         is_paid_content:
           title: Is Paid Content
           type: boolean
@@ -3819,7 +3870,7 @@ components:
           title: Page
           type: integer
           x-konfig-original-example: 1
-          x-konfig-generated-schema: konfig-generated-schema-paths--api-search-get-parameters-25-schema
+          x-konfig-generated-schema: konfig-generated-schema-paths--api-search-get-parameters-26-schema
         page_size:
           default: 100
           example: 100
@@ -3827,7 +3878,7 @@ components:
           title: Page Size
           type: integer
           x-konfig-original-example: 100
-          x-konfig-generated-schema: konfig-generated-schema-paths--api-search-get-parameters-26-schema
+          x-konfig-generated-schema: konfig-generated-schema-paths--api-search-get-parameters-27-schema
         clustering_variable:
           title: Clustering Variable
           type: string
@@ -3910,6 +3961,7 @@ components:
       - from_rank
       - to_rank
       - is_headline
+      - is_opinion
       - is_paid_content
       - parent_url
       - all_links
@@ -3999,6 +4051,9 @@ components:
           type: integer
         is_headline:
           title: Is Headline
+          type: boolean
+        is_opinion:
+          title: Is Opinion
           type: boolean
         is_paid_content:
           title: Is Paid Content
@@ -4134,6 +4189,9 @@ components:
         is_headline:
           title: Is Headline
           type: boolean
+        is_opinion:
+          title: Is Opinion
+          type: boolean
         is_paid_content:
           title: Is Paid Content
           type: boolean
@@ -4158,7 +4216,7 @@ components:
           title: Page
           type: integer
           x-konfig-original-example: 1
-          x-konfig-generated-schema: konfig-generated-schema-paths--api-latest_headlines-get-parameters-18-schema
+          x-konfig-generated-schema: konfig-generated-schema-paths--api-latest_headlines-get-parameters-19-schema
         page_size:
           default: 100
           example: 100
@@ -4166,7 +4224,7 @@ components:
           title: Page Size
           type: integer
           x-konfig-original-example: 100
-          x-konfig-generated-schema: konfig-generated-schema-paths--api-latest_headlines-get-parameters-19-schema
+          x-konfig-generated-schema: konfig-generated-schema-paths--api-latest_headlines-get-parameters-20-schema
         clustering_variable:
           title: Clustering Variable
           type: string
@@ -4235,6 +4293,7 @@ components:
       - not_author_name
       - ranked_only
       - is_headline
+      - is_opinion
       - is_paid_content
       - parent_url
       - all_links
@@ -4299,6 +4358,9 @@ components:
           type: string
         is_headline:
           title: Is Headline
+          type: boolean
+        is_opinion:
+          title: Is Opinion
           type: boolean
         is_paid_content:
           title: Is Paid Content
@@ -4444,6 +4506,9 @@ components:
         is_headline:
           title: Is Headline
           type: boolean
+        is_opinion:
+          title: Is Opinion
+          type: boolean
         is_paid_content:
           title: Is Paid Content
           type: boolean
@@ -4468,7 +4533,7 @@ components:
           title: Page
           type: integer
           x-konfig-original-example: 1
-          x-konfig-generated-schema: konfig-generated-schema-paths--api-authors-get-parameters-24-schema
+          x-konfig-generated-schema: konfig-generated-schema-paths--api-authors-get-parameters-25-schema
         page_size:
           default: 100
           example: 100
@@ -4476,7 +4541,7 @@ components:
           title: Page Size
           type: integer
           x-konfig-original-example: 100
-          x-konfig-generated-schema: konfig-generated-schema-paths--api-authors-get-parameters-25-schema
+          x-konfig-generated-schema: konfig-generated-schema-paths--api-authors-get-parameters-26-schema
         include_nlp_data:
           title: Include Nlp Data
           type: boolean
@@ -4535,6 +4600,7 @@ components:
       - from_rank
       - to_rank
       - is_headline
+      - is_opinion
       - is_paid_content
       - parent_url
       - all_links
@@ -4610,6 +4676,9 @@ components:
           type: integer
         is_headline:
           title: Is Headline
+          type: boolean
+        is_opinion:
+          title: Is Opinion
           type: boolean
         is_paid_content:
           title: Is Paid Content
@@ -4819,6 +4888,9 @@ components:
         is_headline:
           title: Is Headline
           type: boolean
+        is_opinion:
+          title: Is Opinion
+          type: boolean
         is_paid_content:
           title: Is Paid Content
           type: boolean
@@ -4843,7 +4915,7 @@ components:
           title: Page
           type: integer
           x-konfig-original-example: 1
-          x-konfig-generated-schema: konfig-generated-schema-paths--api-search_similar-get-parameters-27-schema
+          x-konfig-generated-schema: konfig-generated-schema-paths--api-search_similar-get-parameters-28-schema
         page_size:
           default: 100
           example: 100
@@ -4851,7 +4923,7 @@ components:
           title: Page Size
           type: integer
           x-konfig-original-example: 100
-          x-konfig-generated-schema: konfig-generated-schema-paths--api-search_similar-get-parameters-28-schema
+          x-konfig-generated-schema: konfig-generated-schema-paths--api-search_similar-get-parameters-29-schema
         include_nlp_data:
           title: Include Nlp Data
           type: boolean
@@ -4909,6 +4981,7 @@ components:
       - from_rank
       - to_rank
       - is_headline
+      - is_opinion
       - is_paid_content
       - parent_url
       - all_links
@@ -5008,6 +5081,9 @@ components:
           type: integer
         is_headline:
           title: Is Headline
+          type: boolean
+        is_opinion:
+          title: Is Opinion
           type: boolean
         is_paid_content:
           title: Is Paid Content
