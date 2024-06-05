@@ -142,6 +142,7 @@ class MoreLikeThisRequest(
             from_rank = schemas.IntSchema
             to_rank = schemas.IntSchema
             is_headline = schemas.BoolSchema
+            is_opinion = schemas.BoolSchema
             is_paid_content = schemas.BoolSchema
             parent_url = schemas.AnyTypeSchema
             all_links = schemas.AnyTypeSchema
@@ -203,6 +204,7 @@ class MoreLikeThisRequest(
                 "from_rank": from_rank,
                 "to_rank": to_rank,
                 "is_headline": is_headline,
+                "is_opinion": is_opinion,
                 "is_paid_content": is_paid_content,
                 "parent_url": parent_url,
                 "all_links": all_links,
@@ -290,6 +292,9 @@ class MoreLikeThisRequest(
     def __getitem__(self, name: typing_extensions.Literal["is_headline"]) -> MetaOapg.properties.is_headline: ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["is_opinion"]) -> MetaOapg.properties.is_opinion: ...
+    
+    @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["is_paid_content"]) -> MetaOapg.properties.is_paid_content: ...
     
     @typing.overload
@@ -349,7 +354,7 @@ class MoreLikeThisRequest(
     @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["q", "search_in", "include_similar_documents", "similar_documents_number", "similar_documents_fields", "predefined_sources", "sources", "not_sources", "lang", "not_lang", "countries", "not_countries", "from_", "to_", "by_parse_date", "published_date_precision", "sort_by", "ranked_only", "from_rank", "to_rank", "is_headline", "is_paid_content", "parent_url", "all_links", "all_domain_links", "word_count_min", "word_count_max", "page", "page_size", "include_nlp_data", "has_nlp", "theme", "not_theme", "ner_name", "title_sentiment_min", "title_sentiment_max", "content_sentiment_min", "content_sentiment_max", "iptc_tags", "not_iptc_tags", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["q", "search_in", "include_similar_documents", "similar_documents_number", "similar_documents_fields", "predefined_sources", "sources", "not_sources", "lang", "not_lang", "countries", "not_countries", "from_", "to_", "by_parse_date", "published_date_precision", "sort_by", "ranked_only", "from_rank", "to_rank", "is_headline", "is_opinion", "is_paid_content", "parent_url", "all_links", "all_domain_links", "word_count_min", "word_count_max", "page", "page_size", "include_nlp_data", "has_nlp", "theme", "not_theme", "ner_name", "title_sentiment_min", "title_sentiment_max", "content_sentiment_min", "content_sentiment_max", "iptc_tags", "not_iptc_tags", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
@@ -418,6 +423,9 @@ class MoreLikeThisRequest(
     def get_item_oapg(self, name: typing_extensions.Literal["is_headline"]) -> typing.Union[MetaOapg.properties.is_headline, schemas.Unset]: ...
     
     @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["is_opinion"]) -> typing.Union[MetaOapg.properties.is_opinion, schemas.Unset]: ...
+    
+    @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["is_paid_content"]) -> typing.Union[MetaOapg.properties.is_paid_content, schemas.Unset]: ...
     
     @typing.overload
@@ -477,7 +485,7 @@ class MoreLikeThisRequest(
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["q", "search_in", "include_similar_documents", "similar_documents_number", "similar_documents_fields", "predefined_sources", "sources", "not_sources", "lang", "not_lang", "countries", "not_countries", "from_", "to_", "by_parse_date", "published_date_precision", "sort_by", "ranked_only", "from_rank", "to_rank", "is_headline", "is_paid_content", "parent_url", "all_links", "all_domain_links", "word_count_min", "word_count_max", "page", "page_size", "include_nlp_data", "has_nlp", "theme", "not_theme", "ner_name", "title_sentiment_min", "title_sentiment_max", "content_sentiment_min", "content_sentiment_max", "iptc_tags", "not_iptc_tags", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["q", "search_in", "include_similar_documents", "similar_documents_number", "similar_documents_fields", "predefined_sources", "sources", "not_sources", "lang", "not_lang", "countries", "not_countries", "from_", "to_", "by_parse_date", "published_date_precision", "sort_by", "ranked_only", "from_rank", "to_rank", "is_headline", "is_opinion", "is_paid_content", "parent_url", "all_links", "all_domain_links", "word_count_min", "word_count_max", "page", "page_size", "include_nlp_data", "has_nlp", "theme", "not_theme", "ner_name", "title_sentiment_min", "title_sentiment_max", "content_sentiment_min", "content_sentiment_max", "iptc_tags", "not_iptc_tags", ], str]):
         return super().get_item_oapg(name)
     
 
@@ -505,6 +513,7 @@ class MoreLikeThisRequest(
         from_rank: typing.Union[MetaOapg.properties.from_rank, decimal.Decimal, int, schemas.Unset] = schemas.unset,
         to_rank: typing.Union[MetaOapg.properties.to_rank, decimal.Decimal, int, schemas.Unset] = schemas.unset,
         is_headline: typing.Union[MetaOapg.properties.is_headline, bool, schemas.Unset] = schemas.unset,
+        is_opinion: typing.Union[MetaOapg.properties.is_opinion, bool, schemas.Unset] = schemas.unset,
         is_paid_content: typing.Union[MetaOapg.properties.is_paid_content, bool, schemas.Unset] = schemas.unset,
         parent_url: typing.Union[MetaOapg.properties.parent_url, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, schemas.Unset] = schemas.unset,
         all_links: typing.Union[MetaOapg.properties.all_links, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, schemas.Unset] = schemas.unset,
@@ -551,6 +560,7 @@ class MoreLikeThisRequest(
             from_rank=from_rank,
             to_rank=to_rank,
             is_headline=is_headline,
+            is_opinion=is_opinion,
             is_paid_content=is_paid_content,
             parent_url=parent_url,
             all_links=all_links,

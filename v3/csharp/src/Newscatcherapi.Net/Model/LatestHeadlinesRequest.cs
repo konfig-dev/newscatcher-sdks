@@ -47,6 +47,7 @@ namespace Newscatcherapi.Net.Model
         /// <param name="notAuthorName">notAuthorName.</param>
         /// <param name="rankedOnly">rankedOnly.</param>
         /// <param name="isHeadline">isHeadline.</param>
+        /// <param name="isOpinion">isOpinion.</param>
         /// <param name="isPaidContent">isPaidContent.</param>
         /// <param name="parentUrl">parentUrl.</param>
         /// <param name="allLinks">allLinks.</param>
@@ -74,7 +75,7 @@ namespace Newscatcherapi.Net.Model
         /// <param name="notIptcTags">notIptcTags.</param>
         /// <param name="iabTags">iabTags.</param>
         /// <param name="notIabTags">notIabTags.</param>
-        public LatestHeadlinesRequest(string when = "7d", bool byParseDate = false, Object lang = default(Object), Object notLang = default(Object), Object countries = default(Object), Object notCountries = default(Object), Object sources = default(Object), Object predefinedSources = default(Object), Object notSources = default(Object), Object notAuthorName = default(Object), string rankedOnly = default(string), bool isHeadline = default(bool), bool isPaidContent = default(bool), Object parentUrl = default(Object), Object allLinks = default(Object), Object allDomainLinks = default(Object), int wordCountMin = default(int), int wordCountMax = default(int), int page = 1, int pageSize = 100, string clusteringVariable = default(string), bool clusteringEnabled = default(bool), double clusteringThreshold = default(double), bool includeNlpData = default(bool), bool hasNlp = default(bool), string theme = default(string), string notTheme = default(string), string oRGEntityName = default(string), string pEREntityName = default(string), string lOCEntityName = default(string), string mISCEntityName = default(string), double titleSentimentMin = default(double), double titleSentimentMax = default(double), double contentSentimentMin = default(double), double contentSentimentMax = default(double), Object iptcTags = default(Object), Object notIptcTags = default(Object), Object iabTags = default(Object), Object notIabTags = default(Object))
+        public LatestHeadlinesRequest(string when = "7d", bool byParseDate = false, Object lang = default(Object), Object notLang = default(Object), Object countries = default(Object), Object notCountries = default(Object), Object sources = default(Object), Object predefinedSources = default(Object), Object notSources = default(Object), Object notAuthorName = default(Object), string rankedOnly = default(string), bool isHeadline = default(bool), bool isOpinion = default(bool), bool isPaidContent = default(bool), Object parentUrl = default(Object), Object allLinks = default(Object), Object allDomainLinks = default(Object), int wordCountMin = default(int), int wordCountMax = default(int), int page = 1, int pageSize = 100, string clusteringVariable = default(string), bool clusteringEnabled = default(bool), double clusteringThreshold = default(double), bool includeNlpData = default(bool), bool hasNlp = default(bool), string theme = default(string), string notTheme = default(string), string oRGEntityName = default(string), string pEREntityName = default(string), string lOCEntityName = default(string), string mISCEntityName = default(string), double titleSentimentMin = default(double), double titleSentimentMax = default(double), double contentSentimentMin = default(double), double contentSentimentMax = default(double), Object iptcTags = default(Object), Object notIptcTags = default(Object), Object iabTags = default(Object), Object notIabTags = default(Object))
         {
             // use default value if no "when" provided
             this.When = when ?? "7d";
@@ -89,6 +90,7 @@ namespace Newscatcherapi.Net.Model
             this.NotAuthorName = notAuthorName;
             this.RankedOnly = rankedOnly;
             this.IsHeadline = isHeadline;
+            this.IsOpinion = isOpinion;
             this.IsPaidContent = isPaidContent;
             this.ParentUrl = parentUrl;
             this.AllLinks = allLinks;
@@ -189,6 +191,12 @@ namespace Newscatcherapi.Net.Model
         /// </summary>
         [DataMember(Name = "is_headline", EmitDefaultValue = true)]
         public bool IsHeadline { get; set; }
+
+        /// <summary>
+        /// Gets or Sets IsOpinion
+        /// </summary>
+        [DataMember(Name = "is_opinion", EmitDefaultValue = true)]
+        public bool IsOpinion { get; set; }
 
         /// <summary>
         /// Gets or Sets IsPaidContent
@@ -372,6 +380,7 @@ namespace Newscatcherapi.Net.Model
             sb.Append("  NotAuthorName: ").Append(NotAuthorName).Append("\n");
             sb.Append("  RankedOnly: ").Append(RankedOnly).Append("\n");
             sb.Append("  IsHeadline: ").Append(IsHeadline).Append("\n");
+            sb.Append("  IsOpinion: ").Append(IsOpinion).Append("\n");
             sb.Append("  IsPaidContent: ").Append(IsPaidContent).Append("\n");
             sb.Append("  ParentUrl: ").Append(ParentUrl).Append("\n");
             sb.Append("  AllLinks: ").Append(AllLinks).Append("\n");
@@ -491,6 +500,10 @@ namespace Newscatcherapi.Net.Model
                 (
                     this.IsHeadline == input.IsHeadline ||
                     this.IsHeadline.Equals(input.IsHeadline)
+                ) && 
+                (
+                    this.IsOpinion == input.IsOpinion ||
+                    this.IsOpinion.Equals(input.IsOpinion)
                 ) && 
                 (
                     this.IsPaidContent == input.IsPaidContent ||
@@ -667,6 +680,7 @@ namespace Newscatcherapi.Net.Model
                     hashCode = (hashCode * 59) + this.RankedOnly.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.IsHeadline.GetHashCode();
+                hashCode = (hashCode * 59) + this.IsOpinion.GetHashCode();
                 hashCode = (hashCode * 59) + this.IsPaidContent.GetHashCode();
                 if (this.ParentUrl != null)
                 {

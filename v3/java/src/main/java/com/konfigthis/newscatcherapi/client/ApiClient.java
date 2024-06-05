@@ -9,7 +9,6 @@
  * Do not edit the class manually.
  */
 
-
 package com.konfigthis.newscatcherapi.client;
 
 import okhttp3.*;
@@ -155,7 +154,7 @@ public class ApiClient extends ApiClientCustom {
         json = new JSON();
 
         // Set default User-Agent.
-        setUserAgent("Konfig/6.0.5/java");
+        setUserAgent("Konfig/6.0.6/java");
 
         authentications = new HashMap<String, Authentication>();
     }
@@ -407,14 +406,6 @@ public class ApiClient extends ApiClientCustom {
         throw new RuntimeException("No HTTP basic authentication configured!");
     }
 
-    /**
-     * Helper method to set access token for the first OAuth2 authentication.
-     *
-     * @param accessToken Access token
-     */
-    public void setAccessToken(String accessToken) {
-        throw new RuntimeException("No OAuth2 authentication configured!");
-    }
 
     /**
      * Set the User-Agent header's value (by adding to the default header map).

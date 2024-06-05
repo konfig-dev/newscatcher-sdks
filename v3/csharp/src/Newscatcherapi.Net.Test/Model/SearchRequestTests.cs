@@ -210,6 +210,14 @@ namespace Newscatcherapi.Net.Test.Model
             // TODO unit test for the property 'IsHeadline'
         }
         /// <summary>
+        /// Test the property 'IsOpinion'
+        /// </summary>
+        [Fact]
+        public void IsOpinionTest()
+        {
+            // TODO unit test for the property 'IsOpinion'
+        }
+        /// <summary>
         /// Test the property 'IsPaidContent'
         /// </summary>
         [Fact]

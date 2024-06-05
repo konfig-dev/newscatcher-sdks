@@ -64,6 +64,7 @@ public class LatestHeadlinesApiTest {
         Object notAuthorName = null;
         String rankedOnly = null;
         Boolean isHeadline = null;
+        Boolean isOpinion = null;
         Boolean isPaidContent = null;
         Object parentUrl = null;
         Object allLinks = null;
@@ -104,6 +105,7 @@ public class LatestHeadlinesApiTest {
                 .notAuthorName(notAuthorName)
                 .rankedOnly(rankedOnly)
                 .isHeadline(isHeadline)
+                .isOpinion(isOpinion)
                 .isPaidContent(isPaidContent)
                 .parentUrl(parentUrl)
                 .allLinks(allLinks)
@@ -156,6 +158,7 @@ public class LatestHeadlinesApiTest {
         Object notAuthorName = null;
         String rankedOnly = null;
         Boolean isHeadline = null;
+        Boolean isOpinion = null;
         Boolean isPaidContent = null;
         Object parentUrl = null;
         Object allLinks = null;
@@ -196,6 +199,7 @@ public class LatestHeadlinesApiTest {
                 .notAuthorName(notAuthorName)
                 .rankedOnly(rankedOnly)
                 .isHeadline(isHeadline)
+                .isOpinion(isOpinion)
                 .isPaidContent(isPaidContent)
                 .parentUrl(parentUrl)
                 .allLinks(allLinks)

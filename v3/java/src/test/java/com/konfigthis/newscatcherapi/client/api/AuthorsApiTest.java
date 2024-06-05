@@ -70,6 +70,7 @@ public class AuthorsApiTest {
         Integer fromRank = null;
         Integer toRank = null;
         Boolean isHeadline = null;
+        Boolean isOpinion = null;
         Boolean isPaidContent = null;
         Object parentUrl = null;
         Object allLinks = null;
@@ -109,6 +110,7 @@ public class AuthorsApiTest {
                 .fromRank(fromRank)
                 .toRank(toRank)
                 .isHeadline(isHeadline)
+                .isOpinion(isOpinion)
                 .isPaidContent(isPaidContent)
                 .parentUrl(parentUrl)
                 .allLinks(allLinks)
@@ -161,6 +163,7 @@ public class AuthorsApiTest {
         Integer fromRank = null;
         Integer toRank = null;
         Boolean isHeadline = null;
+        Boolean isOpinion = null;
         Boolean isPaidContent = null;
         Object parentUrl = null;
         Object allLinks = null;
@@ -200,6 +203,7 @@ public class AuthorsApiTest {
                 .fromRank(fromRank)
                 .toRank(toRank)
                 .isHeadline(isHeadline)
+                .isOpinion(isOpinion)
                 .isPaidContent(isPaidContent)
                 .parentUrl(parentUrl)
                 .allLinks(allLinks)

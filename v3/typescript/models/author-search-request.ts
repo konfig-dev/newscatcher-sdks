@@ -132,6 +132,12 @@ export interface AuthorSearchRequest {
      * @type {boolean}
      * @memberof AuthorSearchRequest
      */
+    'is_opinion'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof AuthorSearchRequest
+     */
     'is_paid_content'?: boolean;
     /**
      * 

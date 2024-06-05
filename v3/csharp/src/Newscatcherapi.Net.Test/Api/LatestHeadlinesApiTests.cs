@@ -70,6 +70,7 @@ namespace Newscatcherapi.Net.Test.Api
             );
             var rankedOnly = "rankedOnly_example";
             var isHeadline = true;
+            var isOpinion = true;
             var isPaidContent = true;
             var parentUrl = new Object(
             );
@@ -108,7 +109,7 @@ namespace Newscatcherapi.Net.Test.Api
             try
             {
                 // [Get] Search For Latest Headlines Request
-                LatestHeadlinesGetResponse result = client.LatestHeadlines.Get(when, byParseDate, lang, notLang, countries, notCountries, sources, predefinedSources, notSources, notAuthorName, rankedOnly, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, oRGEntityName, pEREntityName, lOCEntityName, mISCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, iabTags, notIabTags);
+                LatestHeadlinesGetResponse result = client.LatestHeadlines.Get(when, byParseDate, lang, notLang, countries, notCountries, sources, predefinedSources, notSources, notAuthorName, rankedOnly, isHeadline, isOpinion, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, oRGEntityName, pEREntityName, lOCEntityName, mISCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, iabTags, notIabTags);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -143,6 +144,7 @@ namespace Newscatcherapi.Net.Test.Api
             var notAuthorName = "notAuthorName_example";
             var rankedOnly = "rankedOnly_example";
             var isHeadline = false;
+            var isOpinion = false;
             var isPaidContent = false;
             var parentUrl = "parentUrl_example";
             var allLinks = "allLinks_example";
@@ -184,6 +186,7 @@ namespace Newscatcherapi.Net.Test.Api
                 notAuthorName,
                 rankedOnly,
                 isHeadline,
+                isOpinion,
                 isPaidContent,
                 parentUrl,
                 allLinks,

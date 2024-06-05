@@ -2,7 +2,7 @@
 
 <img src='https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg' width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a>
 
-[![npm](https://img.shields.io/badge/npm-v6.0.7-blue)](https://www.npmjs.com/package/newscatcherapi-typescript-sdk/v/6.0.7)
+[![npm](https://img.shields.io/badge/npm-v6.0.8-blue)](https://www.npmjs.com/package/newscatcherapi-typescript-sdk/v/6.0.8)
 
 ## Table of Contents<a id="table-of-contents"></a>
 
@@ -140,6 +140,8 @@ const getResponse = await newscatcher.authors.get({
 
 ##### isHeadline: `boolean`<a id="isheadline-boolean"></a>
 
+##### isOpinion: `boolean`<a id="isopinion-boolean"></a>
+
 ##### isPaidContent: `boolean`<a id="ispaidcontent-boolean"></a>
 
 ##### parentUrl: `any`<a id="parenturl-any"></a>
@@ -249,6 +251,8 @@ const postResponse = await newscatcher.authors.post({
 
 ##### is_headline: `boolean`<a id="is_headline-boolean"></a>
 
+##### is_opinion: `boolean`<a id="is_opinion-boolean"></a>
+
 ##### is_paid_content: `boolean`<a id="is_paid_content-boolean"></a>
 
 ##### parent_url: `any`<a id="parent_url-any"></a>
@@ -344,6 +348,8 @@ const getResponse = await newscatcher.latestHeadlines.get({
 ##### rankedOnly: `string`<a id="rankedonly-string"></a>
 
 ##### isHeadline: `boolean`<a id="isheadline-boolean"></a>
+
+##### isOpinion: `boolean`<a id="isopinion-boolean"></a>
 
 ##### isPaidContent: `boolean`<a id="ispaidcontent-boolean"></a>
 
@@ -452,6 +458,8 @@ const postResponse = await newscatcher.latestHeadlines.post({
 ##### ranked_only: `string`<a id="ranked_only-string"></a>
 
 ##### is_headline: `boolean`<a id="is_headline-boolean"></a>
+
+##### is_opinion: `boolean`<a id="is_opinion-boolean"></a>
 
 ##### is_paid_content: `boolean`<a id="is_paid_content-boolean"></a>
 
@@ -576,6 +584,8 @@ const getResponse = await newscatcher.search.get({
 ##### toRank: `number`<a id="torank-number"></a>
 
 ##### isHeadline: `boolean`<a id="isheadline-boolean"></a>
+
+##### isOpinion: `boolean`<a id="isopinion-boolean"></a>
 
 ##### isPaidContent: `boolean`<a id="ispaidcontent-boolean"></a>
 
@@ -704,6 +714,8 @@ const postResponse = await newscatcher.search.post({
 ##### to_rank: `number`<a id="to_rank-number"></a>
 
 ##### is_headline: `boolean`<a id="is_headline-boolean"></a>
+
+##### is_opinion: `boolean`<a id="is_opinion-boolean"></a>
 
 ##### is_paid_content: `boolean`<a id="is_paid_content-boolean"></a>
 
@@ -912,6 +924,8 @@ const getResponse = await newscatcher.searchSimilar.get({
 
 ##### isHeadline: `boolean`<a id="isheadline-boolean"></a>
 
+##### isOpinion: `boolean`<a id="isopinion-boolean"></a>
+
 ##### isPaidContent: `boolean`<a id="ispaidcontent-boolean"></a>
 
 ##### parentUrl: `any`<a id="parenturl-any"></a>
@@ -1026,6 +1040,8 @@ const postResponse = await newscatcher.searchSimilar.post({
 ##### to_rank: `number`<a id="to_rank-number"></a>
 
 ##### is_headline: `boolean`<a id="is_headline-boolean"></a>
+
+##### is_opinion: `boolean`<a id="is_opinion-boolean"></a>
 
 ##### is_paid_content: `boolean`<a id="is_paid_content-boolean"></a>
 

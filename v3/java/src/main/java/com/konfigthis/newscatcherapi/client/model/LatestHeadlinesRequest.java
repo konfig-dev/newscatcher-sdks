@@ -99,6 +99,10 @@ public class LatestHeadlinesRequest {
   @SerializedName(SERIALIZED_NAME_IS_HEADLINE)
   private Boolean isHeadline;
 
+  public static final String SERIALIZED_NAME_IS_OPINION = "is_opinion";
+  @SerializedName(SERIALIZED_NAME_IS_OPINION)
+  private Boolean isOpinion;
+
   public static final String SERIALIZED_NAME_IS_PAID_CONTENT = "is_paid_content";
   @SerializedName(SERIALIZED_NAME_IS_PAID_CONTENT)
   private Boolean isPaidContent;
@@ -555,6 +559,35 @@ public class LatestHeadlinesRequest {
     
     
     this.isHeadline = isHeadline;
+  }
+
+
+  public LatestHeadlinesRequest isOpinion(Boolean isOpinion) {
+    
+    
+    
+    
+    this.isOpinion = isOpinion;
+    return this;
+  }
+
+   /**
+   * Get isOpinion
+   * @return isOpinion
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Boolean getIsOpinion() {
+    return isOpinion;
+  }
+
+
+  public void setIsOpinion(Boolean isOpinion) {
+    
+    
+    
+    this.isOpinion = isOpinion;
   }
 
 
@@ -1472,6 +1505,7 @@ public class LatestHeadlinesRequest {
         Objects.equals(this.notAuthorName, latestHeadlinesRequest.notAuthorName) &&
         Objects.equals(this.rankedOnly, latestHeadlinesRequest.rankedOnly) &&
         Objects.equals(this.isHeadline, latestHeadlinesRequest.isHeadline) &&
+        Objects.equals(this.isOpinion, latestHeadlinesRequest.isOpinion) &&
         Objects.equals(this.isPaidContent, latestHeadlinesRequest.isPaidContent) &&
         Objects.equals(this.parentUrl, latestHeadlinesRequest.parentUrl) &&
         Objects.equals(this.allLinks, latestHeadlinesRequest.allLinks) &&
@@ -1508,7 +1542,7 @@ public class LatestHeadlinesRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(when, byParseDate, lang, notLang, countries, notCountries, sources, predefinedSources, notSources, notAuthorName, rankedOnly, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, orGEntityName, peREntityName, loCEntityName, miSCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, iabTags, notIabTags, additionalProperties);
+    return Objects.hash(when, byParseDate, lang, notLang, countries, notCountries, sources, predefinedSources, notSources, notAuthorName, rankedOnly, isHeadline, isOpinion, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, orGEntityName, peREntityName, loCEntityName, miSCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, iabTags, notIabTags, additionalProperties);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -1534,6 +1568,7 @@ public class LatestHeadlinesRequest {
     sb.append("    notAuthorName: ").append(toIndentedString(notAuthorName)).append("\n");
     sb.append("    rankedOnly: ").append(toIndentedString(rankedOnly)).append("\n");
     sb.append("    isHeadline: ").append(toIndentedString(isHeadline)).append("\n");
+    sb.append("    isOpinion: ").append(toIndentedString(isOpinion)).append("\n");
     sb.append("    isPaidContent: ").append(toIndentedString(isPaidContent)).append("\n");
     sb.append("    parentUrl: ").append(toIndentedString(parentUrl)).append("\n");
     sb.append("    allLinks: ").append(toIndentedString(allLinks)).append("\n");
@@ -1596,6 +1631,7 @@ public class LatestHeadlinesRequest {
     openapiFields.add("not_author_name");
     openapiFields.add("ranked_only");
     openapiFields.add("is_headline");
+    openapiFields.add("is_opinion");
     openapiFields.add("is_paid_content");
     openapiFields.add("parent_url");
     openapiFields.add("all_links");

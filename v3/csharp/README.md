@@ -1,6 +1,6 @@
 # Newscatcherapi.Net - C#
 
-[![NuGet](https://img.shields.io/badge/NuGet-6.0.5-blue.svg)](https://www.nuget.org/packages/Newscatcherapi.Net/6.0.5)
+[![NuGet](https://img.shields.io/badge/NuGet-6.0.6-blue.svg)](https://www.nuget.org/packages/Newscatcherapi.Net/6.0.6)
 
 <img src='https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg' width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a>
 
@@ -82,6 +82,7 @@ namespace Example
             var fromRank = 56;
             var toRank = 56;
             var isHeadline = true;
+            var isOpinion = true;
             var isPaidContent = true;
             var parentUrl = new Object(
             );
@@ -114,7 +115,7 @@ namespace Example
             try
             {
                 // [Get] Search By Author Request
-                AuthorsGetResponse result = client.Authors.Get(authorName, notAuthorName, sources, predefinedSources, notSources, lang, notLang, countries, notCountries, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, notTheme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, iabTags, notIabTags);
+                AuthorsGetResponse result = client.Authors.Get(authorName, notAuthorName, sources, predefinedSources, notSources, lang, notLang, countries, notCountries, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isOpinion, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, notTheme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, iabTags, notIabTags);
                 Console.WriteLine(result);
             }
             catch (ApiException e)

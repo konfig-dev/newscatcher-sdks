@@ -73,6 +73,7 @@ public class SearchSimilarApiTest {
         Integer fromRank = null;
         Integer toRank = null;
         Boolean isHeadline = null;
+        Boolean isOpinion = null;
         Boolean isPaidContent = null;
         Object parentUrl = null;
         Object allLinks = null;
@@ -113,6 +114,7 @@ public class SearchSimilarApiTest {
                 .fromRank(fromRank)
                 .toRank(toRank)
                 .isHeadline(isHeadline)
+                .isOpinion(isOpinion)
                 .isPaidContent(isPaidContent)
                 .parentUrl(parentUrl)
                 .allLinks(allLinks)
@@ -166,6 +168,7 @@ public class SearchSimilarApiTest {
         Integer fromRank = null;
         Integer toRank = null;
         Boolean isHeadline = null;
+        Boolean isOpinion = null;
         Boolean isPaidContent = null;
         Object parentUrl = null;
         Object allLinks = null;
@@ -206,6 +209,7 @@ public class SearchSimilarApiTest {
                 .fromRank(fromRank)
                 .toRank(toRank)
                 .isHeadline(isHeadline)
+                .isOpinion(isOpinion)
                 .isPaidContent(isPaidContent)
                 .parentUrl(parentUrl)
                 .allLinks(allLinks)

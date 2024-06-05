@@ -239,6 +239,15 @@
           {
             "required": false,
             "schema": {
+              "title": "Is Opinion",
+              "type": "boolean"
+            },
+            "name": "is_opinion",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
               "title": "Is Paid Content",
               "type": "boolean"
             },
@@ -683,6 +692,15 @@
               "type": "boolean"
             },
             "name": "is_headline",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Is Opinion",
+              "type": "boolean"
+            },
+            "name": "is_opinion",
             "in": "query"
           },
           {
@@ -1186,6 +1204,15 @@
               "type": "boolean"
             },
             "name": "is_headline",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Is Opinion",
+              "type": "boolean"
+            },
+            "name": "is_opinion",
             "in": "query"
           },
           {
@@ -1798,6 +1825,15 @@
           {
             "required": false,
             "schema": {
+              "title": "Is Opinion",
+              "type": "boolean"
+            },
+            "name": "is_opinion",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
               "title": "Is Paid Content",
               "type": "boolean"
             },
@@ -2390,6 +2426,10 @@
             "title": "Is Headline",
             "type": "boolean"
           },
+          "is_opinion": {
+            "title": "Is Opinion",
+            "type": "boolean"
+          },
           "is_paid_content": {
             "title": "Is Paid Content",
             "type": "boolean"
@@ -2612,6 +2652,10 @@
           },
           "is_headline": {
             "title": "Is Headline",
+            "type": "boolean"
+          },
+          "is_opinion": {
+            "title": "Is Opinion",
             "type": "boolean"
           },
           "is_paid_content": {
@@ -2878,6 +2922,10 @@
             "title": "Is Headline",
             "type": "boolean"
           },
+          "is_opinion": {
+            "title": "Is Opinion",
+            "type": "boolean"
+          },
           "is_paid_content": {
             "title": "Is Paid Content",
             "type": "boolean"
@@ -3050,6 +3098,10 @@
           },
           "is_headline": {
             "title": "Is Headline",
+            "type": "boolean"
+          },
+          "is_opinion": {
+            "title": "Is Opinion",
             "type": "boolean"
           },
           "is_paid_content": {

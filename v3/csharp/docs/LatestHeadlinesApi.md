@@ -52,6 +52,7 @@ namespace Example
             );
             var rankedOnly = "rankedOnly_example";
             var isHeadline = true;
+            var isOpinion = true;
             var isPaidContent = true;
             var parentUrl = new Object(
             );
@@ -90,7 +91,7 @@ namespace Example
             try
             {
                 // [Get] Search For Latest Headlines Request
-                LatestHeadlinesGetResponse result = client.LatestHeadlines.Get(when, byParseDate, lang, notLang, countries, notCountries, sources, predefinedSources, notSources, notAuthorName, rankedOnly, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, oRGEntityName, pEREntityName, lOCEntityName, mISCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, iabTags, notIabTags);
+                LatestHeadlinesGetResponse result = client.LatestHeadlines.Get(when, byParseDate, lang, notLang, countries, notCountries, sources, predefinedSources, notSources, notAuthorName, rankedOnly, isHeadline, isOpinion, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, oRGEntityName, pEREntityName, lOCEntityName, mISCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, iabTags, notIabTags);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -117,7 +118,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // [Get] Search For Latest Headlines Request
-    ApiResponse<LatestHeadlinesGetResponse> response = apiInstance.GetWithHttpInfo(when, byParseDate, lang, notLang, countries, notCountries, sources, predefinedSources, notSources, notAuthorName, rankedOnly, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, oRGEntityName, pEREntityName, lOCEntityName, mISCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, iabTags, notIabTags);
+    ApiResponse<LatestHeadlinesGetResponse> response = apiInstance.GetWithHttpInfo(when, byParseDate, lang, notLang, countries, notCountries, sources, predefinedSources, notSources, notAuthorName, rankedOnly, isHeadline, isOpinion, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, oRGEntityName, pEREntityName, lOCEntityName, mISCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, iabTags, notIabTags);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -146,6 +147,7 @@ catch (ApiException e)
 | **notAuthorName** | [**Object**](Object.md) |  | [optional]  |
 | **rankedOnly** | **string** |  | [optional]  |
 | **isHeadline** | **bool?** |  | [optional]  |
+| **isOpinion** | **bool?** |  | [optional]  |
 | **isPaidContent** | **bool?** |  | [optional]  |
 | **parentUrl** | [**Object**](Object.md) |  | [optional]  |
 | **allLinks** | [**Object**](Object.md) |  | [optional]  |
@@ -224,6 +226,7 @@ namespace Example
             var notAuthorName = "notAuthorName_example";
             var rankedOnly = "rankedOnly_example";
             var isHeadline = false;
+            var isOpinion = false;
             var isPaidContent = false;
             var parentUrl = "parentUrl_example";
             var allLinks = "allLinks_example";
@@ -265,6 +268,7 @@ namespace Example
                 notAuthorName,
                 rankedOnly,
                 isHeadline,
+                isOpinion,
                 isPaidContent,
                 parentUrl,
                 allLinks,

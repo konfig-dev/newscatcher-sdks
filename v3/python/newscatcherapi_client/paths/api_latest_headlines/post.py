@@ -129,6 +129,7 @@ class BaseApi(api_client.Api):
         not_author_name: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         ranked_only: typing.Optional[str] = None,
         is_headline: typing.Optional[bool] = None,
+        is_opinion: typing.Optional[bool] = None,
         is_paid_content: typing.Optional[bool] = None,
         parent_url: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         all_links: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
@@ -183,6 +184,8 @@ class BaseApi(api_client.Api):
             _body["ranked_only"] = ranked_only
         if is_headline is not None:
             _body["is_headline"] = is_headline
+        if is_opinion is not None:
+            _body["is_opinion"] = is_opinion
         if is_paid_content is not None:
             _body["is_paid_content"] = is_paid_content
         if parent_url is not None:
@@ -456,6 +459,7 @@ class PostRaw(BaseApi):
         not_author_name: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         ranked_only: typing.Optional[str] = None,
         is_headline: typing.Optional[bool] = None,
+        is_opinion: typing.Optional[bool] = None,
         is_paid_content: typing.Optional[bool] = None,
         parent_url: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         all_links: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
@@ -502,6 +506,7 @@ class PostRaw(BaseApi):
             not_author_name=not_author_name,
             ranked_only=ranked_only,
             is_headline=is_headline,
+            is_opinion=is_opinion,
             is_paid_content=is_paid_content,
             parent_url=parent_url,
             all_links=all_links,
@@ -549,6 +554,7 @@ class PostRaw(BaseApi):
         not_author_name: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         ranked_only: typing.Optional[str] = None,
         is_headline: typing.Optional[bool] = None,
+        is_opinion: typing.Optional[bool] = None,
         is_paid_content: typing.Optional[bool] = None,
         parent_url: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         all_links: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
@@ -593,6 +599,7 @@ class PostRaw(BaseApi):
             not_author_name=not_author_name,
             ranked_only=ranked_only,
             is_headline=is_headline,
+            is_opinion=is_opinion,
             is_paid_content=is_paid_content,
             parent_url=parent_url,
             all_links=all_links,
@@ -641,6 +648,7 @@ class Post(BaseApi):
         not_author_name: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         ranked_only: typing.Optional[str] = None,
         is_headline: typing.Optional[bool] = None,
+        is_opinion: typing.Optional[bool] = None,
         is_paid_content: typing.Optional[bool] = None,
         parent_url: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         all_links: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
@@ -684,6 +692,7 @@ class Post(BaseApi):
             not_author_name=not_author_name,
             ranked_only=ranked_only,
             is_headline=is_headline,
+            is_opinion=is_opinion,
             is_paid_content=is_paid_content,
             parent_url=parent_url,
             all_links=all_links,
@@ -732,6 +741,7 @@ class Post(BaseApi):
         not_author_name: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         ranked_only: typing.Optional[str] = None,
         is_headline: typing.Optional[bool] = None,
+        is_opinion: typing.Optional[bool] = None,
         is_paid_content: typing.Optional[bool] = None,
         parent_url: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         all_links: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
@@ -774,6 +784,7 @@ class Post(BaseApi):
             not_author_name=not_author_name,
             ranked_only=ranked_only,
             is_headline=is_headline,
+            is_opinion=is_opinion,
             is_paid_content=is_paid_content,
             parent_url=parent_url,
             all_links=all_links,
@@ -824,6 +835,7 @@ class ApiForpost(BaseApi):
         not_author_name: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         ranked_only: typing.Optional[str] = None,
         is_headline: typing.Optional[bool] = None,
+        is_opinion: typing.Optional[bool] = None,
         is_paid_content: typing.Optional[bool] = None,
         parent_url: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         all_links: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
@@ -870,6 +882,7 @@ class ApiForpost(BaseApi):
             not_author_name=not_author_name,
             ranked_only=ranked_only,
             is_headline=is_headline,
+            is_opinion=is_opinion,
             is_paid_content=is_paid_content,
             parent_url=parent_url,
             all_links=all_links,
@@ -917,6 +930,7 @@ class ApiForpost(BaseApi):
         not_author_name: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         ranked_only: typing.Optional[str] = None,
         is_headline: typing.Optional[bool] = None,
+        is_opinion: typing.Optional[bool] = None,
         is_paid_content: typing.Optional[bool] = None,
         parent_url: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         all_links: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
@@ -961,6 +975,7 @@ class ApiForpost(BaseApi):
             not_author_name=not_author_name,
             ranked_only=ranked_only,
             is_headline=is_headline,
+            is_opinion=is_opinion,
             is_paid_content=is_paid_content,
             parent_url=parent_url,
             all_links=all_links,

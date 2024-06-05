@@ -94,6 +94,12 @@ export interface LatestHeadlinesRequest {
      * @type {boolean}
      * @memberof LatestHeadlinesRequest
      */
+    'is_opinion'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof LatestHeadlinesRequest
+     */
     'is_paid_content'?: boolean;
     /**
      * 

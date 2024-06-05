@@ -56,6 +56,8 @@ class SearchRequest(BaseModel):
 
     is_headline: typing.Optional[bool] = Field(None, alias='is_headline')
 
+    is_opinion: typing.Optional[bool] = Field(None, alias='is_opinion')
+
     is_paid_content: typing.Optional[bool] = Field(None, alias='is_paid_content')
 
     parent_url: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = Field(None, alias='parent_url')

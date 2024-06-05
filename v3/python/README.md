@@ -3,7 +3,7 @@
 <img src='https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg' width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a>
 
 
-[![PyPI](https://img.shields.io/badge/PyPI-v6.0.6-blue)](https://pypi.org/project/newscatcherapi-python-sdk/6.0.6)
+[![PyPI](https://img.shields.io/badge/PyPI-v6.0.7-blue)](https://pypi.org/project/newscatcherapi-python-sdk/6.0.7)
 [![README.md](https://img.shields.io/badge/README-Click%20Here-green)](https://github.com/konfig-dev/newscatcher-sdks/tree/main/v3/python#readme)
 
 ## Table of Contents<a id="table-of-contents"></a>
@@ -40,7 +40,7 @@ Python >=3.7
 ## Installation<a id="installation"></a>
 
 ```sh
-pip install newscatcherapi-python-sdk==6.0.6
+pip install newscatcherapi-python-sdk==6.0.7
 ```
 
 ## Getting Started<a id="getting-started"></a>
@@ -74,6 +74,7 @@ try:
         from_rank=1,
         to_rank=1,
         is_headline=True,
+        is_opinion=True,
         is_paid_content=True,
         parent_url=None,
         all_links=None,
@@ -144,6 +145,7 @@ async def main():
             from_rank=1,
             to_rank=1,
             is_headline=True,
+            is_opinion=True,
             is_paid_content=True,
             parent_url=None,
             all_links=None,
@@ -214,6 +216,7 @@ try:
         from_rank=1,
         to_rank=1,
         is_headline=True,
+        is_opinion=True,
         is_paid_content=True,
         parent_url=None,
         all_links=None,
@@ -279,6 +282,7 @@ get_response = newscatcher.authors.get(
     from_rank=1,
     to_rank=1,
     is_headline=True,
+    is_opinion=True,
     is_paid_content=True,
     parent_url=None,
     all_links=None,
@@ -342,6 +346,8 @@ get_response = newscatcher.authors.get(
 ##### to_rank: `int`<a id="to_rank-int"></a>
 
 ##### is_headline: `bool`<a id="is_headline-bool"></a>
+
+##### is_opinion: `bool`<a id="is_opinion-bool"></a>
 
 ##### is_paid_content: `bool`<a id="is_paid_content-bool"></a>
 
@@ -423,6 +429,7 @@ post_response = newscatcher.authors.post(
     from_rank=1,
     to_rank=1,
     is_headline=True,
+    is_opinion=True,
     is_paid_content=True,
     parent_url=None,
     all_links=None,
@@ -486,6 +493,8 @@ post_response = newscatcher.authors.post(
 ##### to_rank: `int`<a id="to_rank-int"></a>
 
 ##### is_headline: `bool`<a id="is_headline-bool"></a>
+
+##### is_opinion: `bool`<a id="is_opinion-bool"></a>
 
 ##### is_paid_content: `bool`<a id="is_paid_content-bool"></a>
 
@@ -564,6 +573,7 @@ get_response = newscatcher.latest_headlines.get(
     not_author_name=None,
     ranked_only="string_example",
     is_headline=True,
+    is_opinion=True,
     is_paid_content=True,
     parent_url=None,
     all_links=None,
@@ -619,6 +629,8 @@ get_response = newscatcher.latest_headlines.get(
 ##### ranked_only: `str`<a id="ranked_only-str"></a>
 
 ##### is_headline: `bool`<a id="is_headline-bool"></a>
+
+##### is_opinion: `bool`<a id="is_opinion-bool"></a>
 
 ##### is_paid_content: `bool`<a id="is_paid_content-bool"></a>
 
@@ -706,6 +718,7 @@ post_response = newscatcher.latest_headlines.post(
     not_author_name=None,
     ranked_only="string_example",
     is_headline=True,
+    is_opinion=True,
     is_paid_content=True,
     parent_url=None,
     all_links=None,
@@ -761,6 +774,8 @@ post_response = newscatcher.latest_headlines.post(
 ##### ranked_only: `str`<a id="ranked_only-str"></a>
 
 ##### is_headline: `bool`<a id="is_headline-bool"></a>
+
+##### is_opinion: `bool`<a id="is_opinion-bool"></a>
 
 ##### is_paid_content: `bool`<a id="is_paid_content-bool"></a>
 
@@ -858,6 +873,7 @@ get_response = newscatcher.search.get(
     from_rank=1,
     to_rank=1,
     is_headline=True,
+    is_opinion=True,
     is_paid_content=True,
     parent_url=None,
     all_links=None,
@@ -931,6 +947,8 @@ get_response = newscatcher.search.get(
 ##### to_rank: `int`<a id="to_rank-int"></a>
 
 ##### is_headline: `bool`<a id="is_headline-bool"></a>
+
+##### is_opinion: `bool`<a id="is_opinion-bool"></a>
 
 ##### is_paid_content: `bool`<a id="is_paid_content-bool"></a>
 
@@ -1029,6 +1047,7 @@ post_response = newscatcher.search.post(
     from_rank=1,
     to_rank=1,
     is_headline=True,
+    is_opinion=True,
     is_paid_content=True,
     parent_url=None,
     all_links=None,
@@ -1102,6 +1121,8 @@ post_response = newscatcher.search.post(
 ##### to_rank: `int`<a id="to_rank-int"></a>
 
 ##### is_headline: `bool`<a id="is_headline-bool"></a>
+
+##### is_opinion: `bool`<a id="is_opinion-bool"></a>
 
 ##### is_paid_content: `bool`<a id="is_paid_content-bool"></a>
 
@@ -1282,6 +1303,7 @@ get_response = newscatcher.search_similar.get(
     from_rank=1,
     to_rank=1,
     is_headline=True,
+    is_opinion=True,
     is_paid_content=True,
     parent_url=None,
     all_links=None,
@@ -1349,6 +1371,8 @@ get_response = newscatcher.search_similar.get(
 ##### to_rank: `int`<a id="to_rank-int"></a>
 
 ##### is_headline: `bool`<a id="is_headline-bool"></a>
+
+##### is_opinion: `bool`<a id="is_opinion-bool"></a>
 
 ##### is_paid_content: `bool`<a id="is_paid_content-bool"></a>
 
@@ -1429,6 +1453,7 @@ post_response = newscatcher.search_similar.post(
     from_rank=1,
     to_rank=1,
     is_headline=True,
+    is_opinion=True,
     is_paid_content=True,
     parent_url=None,
     all_links=None,
@@ -1496,6 +1521,8 @@ post_response = newscatcher.search_similar.post(
 ##### to_rank: `int`<a id="to_rank-int"></a>
 
 ##### is_headline: `bool`<a id="is_headline-bool"></a>
+
+##### is_opinion: `bool`<a id="is_opinion-bool"></a>
 
 ##### is_paid_content: `bool`<a id="is_paid_content-bool"></a>
 

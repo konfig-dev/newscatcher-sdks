@@ -27,6 +27,7 @@ Search request DTO
 |**fromRank** | **Integer** |  |  [optional] |
 |**toRank** | **Integer** |  |  [optional] |
 |**isHeadline** | **Boolean** |  |  [optional] |
+|**isOpinion** | **Boolean** |  |  [optional] |
 |**isPaidContent** | **Boolean** |  |  [optional] |
 |**parentUrl** | **Object** |  |  [optional] |
 |**allLinks** | **Object** |  |  [optional] |

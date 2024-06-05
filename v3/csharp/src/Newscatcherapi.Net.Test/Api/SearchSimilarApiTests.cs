@@ -78,6 +78,7 @@ namespace Newscatcherapi.Net.Test.Api
             var fromRank = 56;
             var toRank = 56;
             var isHeadline = true;
+            var isOpinion = true;
             var isPaidContent = true;
             var parentUrl = new Object(
             );
@@ -106,7 +107,7 @@ namespace Newscatcherapi.Net.Test.Api
             try
             {
                 // [Get] Search For Similar Articles Request
-                SearchSimilarGetResponse result = client.SearchSimilar.Get(q, searchIn, includeSimilarDocuments, similarDocumentsNumber, similarDocumentsFields, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, from, to, byParseDate, publishedDatePrecision, sortBy, rankedOnly, fromRank, toRank, isHeadline, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, notTheme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags);
+                SearchSimilarGetResponse result = client.SearchSimilar.Get(q, searchIn, includeSimilarDocuments, similarDocumentsNumber, similarDocumentsFields, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, from, to, byParseDate, publishedDatePrecision, sortBy, rankedOnly, fromRank, toRank, isHeadline, isOpinion, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, notTheme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -150,6 +151,7 @@ namespace Newscatcherapi.Net.Test.Api
             var fromRank = default(int);
             var toRank = default(int);
             var isHeadline = false;
+            var isOpinion = false;
             var isPaidContent = false;
             var parentUrl = "parentUrl_example";
             var allLinks = "allLinks_example";
@@ -192,6 +194,7 @@ namespace Newscatcherapi.Net.Test.Api
                 fromRank,
                 toRank,
                 isHeadline,
+                isOpinion,
                 isPaidContent,
                 parentUrl,
                 allLinks,

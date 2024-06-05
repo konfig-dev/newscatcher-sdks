@@ -10,7 +10,7 @@ All URIs are relative to *https://v3-api.newscatcherapi.com*
 
 <a name="get"></a>
 # **get**
-> FSearchResponse get(authorName).notAuthorName(notAuthorName).sources(sources).predefinedSources(predefinedSources).notSources(notSources).lang(lang).notLang(notLang).countries(countries).notCountries(notCountries).from(from).to(to).publishedDatePrecision(publishedDatePrecision).byParseDate(byParseDate).sortBy(sortBy).rankedOnly(rankedOnly).fromRank(fromRank).toRank(toRank).isHeadline(isHeadline).isPaidContent(isPaidContent).parentUrl(parentUrl).allLinks(allLinks).allDomainLinks(allDomainLinks).wordCountMin(wordCountMin).wordCountMax(wordCountMax).page(page).pageSize(pageSize).includeNlpData(includeNlpData).hasNlp(hasNlp).theme(theme).notTheme(notTheme).nerName(nerName).titleSentimentMin(titleSentimentMin).titleSentimentMax(titleSentimentMax).contentSentimentMin(contentSentimentMin).contentSentimentMax(contentSentimentMax).iptcTags(iptcTags).notIptcTags(notIptcTags).iabTags(iabTags).notIabTags(notIabTags).execute();
+> FSearchResponse get(authorName).notAuthorName(notAuthorName).sources(sources).predefinedSources(predefinedSources).notSources(notSources).lang(lang).notLang(notLang).countries(countries).notCountries(notCountries).from(from).to(to).publishedDatePrecision(publishedDatePrecision).byParseDate(byParseDate).sortBy(sortBy).rankedOnly(rankedOnly).fromRank(fromRank).toRank(toRank).isHeadline(isHeadline).isOpinion(isOpinion).isPaidContent(isPaidContent).parentUrl(parentUrl).allLinks(allLinks).allDomainLinks(allDomainLinks).wordCountMin(wordCountMin).wordCountMax(wordCountMax).page(page).pageSize(pageSize).includeNlpData(includeNlpData).hasNlp(hasNlp).theme(theme).notTheme(notTheme).nerName(nerName).titleSentimentMin(titleSentimentMin).titleSentimentMax(titleSentimentMax).contentSentimentMin(contentSentimentMin).contentSentimentMax(contentSentimentMax).iptcTags(iptcTags).notIptcTags(notIptcTags).iabTags(iabTags).notIabTags(notIabTags).execute();
 
 [Get] Search By Author Request
 
@@ -55,6 +55,7 @@ public class Example {
     Integer fromRank = 56;
     Integer toRank = 56;
     Boolean isHeadline = true;
+    Boolean isOpinion = true;
     Boolean isPaidContent = true;
     Object parentUrl = null;
     Object allLinks = null;
@@ -97,6 +98,7 @@ public class Example {
               .fromRank(fromRank)
               .toRank(toRank)
               .isHeadline(isHeadline)
+              .isOpinion(isOpinion)
               .isPaidContent(isPaidContent)
               .parentUrl(parentUrl)
               .allLinks(allLinks)
@@ -157,6 +159,7 @@ public class Example {
               .fromRank(fromRank)
               .toRank(toRank)
               .isHeadline(isHeadline)
+              .isOpinion(isOpinion)
               .isPaidContent(isPaidContent)
               .parentUrl(parentUrl)
               .allLinks(allLinks)
@@ -218,6 +221,7 @@ public class Example {
 | **fromRank** | **Integer**|  | [optional] |
 | **toRank** | **Integer**|  | [optional] |
 | **isHeadline** | **Boolean**|  | [optional] |
+| **isOpinion** | **Boolean**|  | [optional] |
 | **isPaidContent** | **Boolean**|  | [optional] |
 | **parentUrl** | [**Object**](.md)|  | [optional] |
 | **allLinks** | [**Object**](.md)|  | [optional] |
@@ -305,6 +309,7 @@ public class Example {
     Integer fromRank = 56;
     Integer toRank = 56;
     Boolean isHeadline = true;
+    Boolean isOpinion = true;
     Boolean isPaidContent = true;
     Object parentUrl = null;
     Object allLinks = null;
@@ -347,6 +352,7 @@ public class Example {
               .fromRank(fromRank)
               .toRank(toRank)
               .isHeadline(isHeadline)
+              .isOpinion(isOpinion)
               .isPaidContent(isPaidContent)
               .parentUrl(parentUrl)
               .allLinks(allLinks)
@@ -407,6 +413,7 @@ public class Example {
               .fromRank(fromRank)
               .toRank(toRank)
               .isHeadline(isHeadline)
+              .isOpinion(isOpinion)
               .isPaidContent(isPaidContent)
               .parentUrl(parentUrl)
               .allLinks(allLinks)
