@@ -302,449 +302,449 @@ public class LatestHeadlinesApiGenerated {
         return localVarCall;
     }
 
-    public class GetRequestBuilder {
-        private String when;
-        private Boolean byParseDate;
-        private Object lang;
-        private Object notLang;
-        private Object countries;
-        private Object notCountries;
-        private Object sources;
-        private Object predefinedSources;
-        private Object notSources;
-        private Object notAuthorName;
-        private String rankedOnly;
-        private Boolean isHeadline;
-        private Boolean isOpinion;
-        private Boolean isPaidContent;
-        private Object parentUrl;
-        private Object allLinks;
-        private Object allDomainLinks;
-        private Integer wordCountMin;
-        private Integer wordCountMax;
-        private Integer page;
-        private Integer pageSize;
-        private String clusteringVariable;
-        private Boolean clusteringEnabled;
-        private Double clusteringThreshold;
-        private Boolean includeNlpData;
-        private Boolean hasNlp;
-        private String theme;
-        private String notTheme;
-        private String orGEntityName;
-        private String peREntityName;
-        private String loCEntityName;
-        private String miSCEntityName;
-        private Double titleSentimentMin;
-        private Double titleSentimentMax;
-        private Double contentSentimentMin;
-        private Double contentSentimentMax;
-        private Object iptcTags;
-        private Object notIptcTags;
-        private Object iabTags;
-        private Object notIabTags;
+    public abstract class GetRequestBuilderGenerated {
+        String when;
+        Boolean byParseDate;
+        Object lang;
+        Object notLang;
+        Object countries;
+        Object notCountries;
+        Object sources;
+        Object predefinedSources;
+        Object notSources;
+        Object notAuthorName;
+        String rankedOnly;
+        Boolean isHeadline;
+        Boolean isOpinion;
+        Boolean isPaidContent;
+        Object parentUrl;
+        Object allLinks;
+        Object allDomainLinks;
+        Integer wordCountMin;
+        Integer wordCountMax;
+        Integer page;
+        Integer pageSize;
+        String clusteringVariable;
+        Boolean clusteringEnabled;
+        Double clusteringThreshold;
+        Boolean includeNlpData;
+        Boolean hasNlp;
+        String theme;
+        String notTheme;
+        String orGEntityName;
+        String peREntityName;
+        String loCEntityName;
+        String miSCEntityName;
+        Double titleSentimentMin;
+        Double titleSentimentMax;
+        Double contentSentimentMin;
+        Double contentSentimentMax;
+        Object iptcTags;
+        Object notIptcTags;
+        Object iabTags;
+        Object notIabTags;
 
-        private GetRequestBuilder() {
+        public GetRequestBuilderGenerated() {
         }
 
         /**
          * Set when
          * @param when  (optional, default to 7d)
-         * @return GetRequestBuilder
+         * @return LatestHeadlinesApi.GetRequestBuilder
          */
-        public GetRequestBuilder when(String when) {
+        public LatestHeadlinesApi.GetRequestBuilder when(String when) {
             this.when = when;
-            return this;
+            return (LatestHeadlinesApi.GetRequestBuilder) this;
         }
         
         /**
          * Set byParseDate
          * @param byParseDate  (optional, default to false)
-         * @return GetRequestBuilder
+         * @return LatestHeadlinesApi.GetRequestBuilder
          */
-        public GetRequestBuilder byParseDate(Boolean byParseDate) {
+        public LatestHeadlinesApi.GetRequestBuilder byParseDate(Boolean byParseDate) {
             this.byParseDate = byParseDate;
-            return this;
+            return (LatestHeadlinesApi.GetRequestBuilder) this;
         }
         
         /**
          * Set lang
          * @param lang  (optional)
-         * @return GetRequestBuilder
+         * @return LatestHeadlinesApi.GetRequestBuilder
          */
-        public GetRequestBuilder lang(Object lang) {
+        public LatestHeadlinesApi.GetRequestBuilder lang(Object lang) {
             this.lang = lang;
-            return this;
+            return (LatestHeadlinesApi.GetRequestBuilder) this;
         }
         
         /**
          * Set notLang
          * @param notLang  (optional)
-         * @return GetRequestBuilder
+         * @return LatestHeadlinesApi.GetRequestBuilder
          */
-        public GetRequestBuilder notLang(Object notLang) {
+        public LatestHeadlinesApi.GetRequestBuilder notLang(Object notLang) {
             this.notLang = notLang;
-            return this;
+            return (LatestHeadlinesApi.GetRequestBuilder) this;
         }
         
         /**
          * Set countries
          * @param countries  (optional)
-         * @return GetRequestBuilder
+         * @return LatestHeadlinesApi.GetRequestBuilder
          */
-        public GetRequestBuilder countries(Object countries) {
+        public LatestHeadlinesApi.GetRequestBuilder countries(Object countries) {
             this.countries = countries;
-            return this;
+            return (LatestHeadlinesApi.GetRequestBuilder) this;
         }
         
         /**
          * Set notCountries
          * @param notCountries  (optional)
-         * @return GetRequestBuilder
+         * @return LatestHeadlinesApi.GetRequestBuilder
          */
-        public GetRequestBuilder notCountries(Object notCountries) {
+        public LatestHeadlinesApi.GetRequestBuilder notCountries(Object notCountries) {
             this.notCountries = notCountries;
-            return this;
+            return (LatestHeadlinesApi.GetRequestBuilder) this;
         }
         
         /**
          * Set sources
          * @param sources  (optional)
-         * @return GetRequestBuilder
+         * @return LatestHeadlinesApi.GetRequestBuilder
          */
-        public GetRequestBuilder sources(Object sources) {
+        public LatestHeadlinesApi.GetRequestBuilder sources(Object sources) {
             this.sources = sources;
-            return this;
+            return (LatestHeadlinesApi.GetRequestBuilder) this;
         }
         
         /**
          * Set predefinedSources
          * @param predefinedSources  (optional)
-         * @return GetRequestBuilder
+         * @return LatestHeadlinesApi.GetRequestBuilder
          */
-        public GetRequestBuilder predefinedSources(Object predefinedSources) {
+        public LatestHeadlinesApi.GetRequestBuilder predefinedSources(Object predefinedSources) {
             this.predefinedSources = predefinedSources;
-            return this;
+            return (LatestHeadlinesApi.GetRequestBuilder) this;
         }
         
         /**
          * Set notSources
          * @param notSources  (optional)
-         * @return GetRequestBuilder
+         * @return LatestHeadlinesApi.GetRequestBuilder
          */
-        public GetRequestBuilder notSources(Object notSources) {
+        public LatestHeadlinesApi.GetRequestBuilder notSources(Object notSources) {
             this.notSources = notSources;
-            return this;
+            return (LatestHeadlinesApi.GetRequestBuilder) this;
         }
         
         /**
          * Set notAuthorName
          * @param notAuthorName  (optional)
-         * @return GetRequestBuilder
+         * @return LatestHeadlinesApi.GetRequestBuilder
          */
-        public GetRequestBuilder notAuthorName(Object notAuthorName) {
+        public LatestHeadlinesApi.GetRequestBuilder notAuthorName(Object notAuthorName) {
             this.notAuthorName = notAuthorName;
-            return this;
+            return (LatestHeadlinesApi.GetRequestBuilder) this;
         }
         
         /**
          * Set rankedOnly
          * @param rankedOnly  (optional)
-         * @return GetRequestBuilder
+         * @return LatestHeadlinesApi.GetRequestBuilder
          */
-        public GetRequestBuilder rankedOnly(String rankedOnly) {
+        public LatestHeadlinesApi.GetRequestBuilder rankedOnly(String rankedOnly) {
             this.rankedOnly = rankedOnly;
-            return this;
+            return (LatestHeadlinesApi.GetRequestBuilder) this;
         }
         
         /**
          * Set isHeadline
          * @param isHeadline  (optional)
-         * @return GetRequestBuilder
+         * @return LatestHeadlinesApi.GetRequestBuilder
          */
-        public GetRequestBuilder isHeadline(Boolean isHeadline) {
+        public LatestHeadlinesApi.GetRequestBuilder isHeadline(Boolean isHeadline) {
             this.isHeadline = isHeadline;
-            return this;
+            return (LatestHeadlinesApi.GetRequestBuilder) this;
         }
         
         /**
          * Set isOpinion
          * @param isOpinion  (optional)
-         * @return GetRequestBuilder
+         * @return LatestHeadlinesApi.GetRequestBuilder
          */
-        public GetRequestBuilder isOpinion(Boolean isOpinion) {
+        public LatestHeadlinesApi.GetRequestBuilder isOpinion(Boolean isOpinion) {
             this.isOpinion = isOpinion;
-            return this;
+            return (LatestHeadlinesApi.GetRequestBuilder) this;
         }
         
         /**
          * Set isPaidContent
          * @param isPaidContent  (optional)
-         * @return GetRequestBuilder
+         * @return LatestHeadlinesApi.GetRequestBuilder
          */
-        public GetRequestBuilder isPaidContent(Boolean isPaidContent) {
+        public LatestHeadlinesApi.GetRequestBuilder isPaidContent(Boolean isPaidContent) {
             this.isPaidContent = isPaidContent;
-            return this;
+            return (LatestHeadlinesApi.GetRequestBuilder) this;
         }
         
         /**
          * Set parentUrl
          * @param parentUrl  (optional)
-         * @return GetRequestBuilder
+         * @return LatestHeadlinesApi.GetRequestBuilder
          */
-        public GetRequestBuilder parentUrl(Object parentUrl) {
+        public LatestHeadlinesApi.GetRequestBuilder parentUrl(Object parentUrl) {
             this.parentUrl = parentUrl;
-            return this;
+            return (LatestHeadlinesApi.GetRequestBuilder) this;
         }
         
         /**
          * Set allLinks
          * @param allLinks  (optional)
-         * @return GetRequestBuilder
+         * @return LatestHeadlinesApi.GetRequestBuilder
          */
-        public GetRequestBuilder allLinks(Object allLinks) {
+        public LatestHeadlinesApi.GetRequestBuilder allLinks(Object allLinks) {
             this.allLinks = allLinks;
-            return this;
+            return (LatestHeadlinesApi.GetRequestBuilder) this;
         }
         
         /**
          * Set allDomainLinks
          * @param allDomainLinks  (optional)
-         * @return GetRequestBuilder
+         * @return LatestHeadlinesApi.GetRequestBuilder
          */
-        public GetRequestBuilder allDomainLinks(Object allDomainLinks) {
+        public LatestHeadlinesApi.GetRequestBuilder allDomainLinks(Object allDomainLinks) {
             this.allDomainLinks = allDomainLinks;
-            return this;
+            return (LatestHeadlinesApi.GetRequestBuilder) this;
         }
         
         /**
          * Set wordCountMin
          * @param wordCountMin  (optional)
-         * @return GetRequestBuilder
+         * @return LatestHeadlinesApi.GetRequestBuilder
          */
-        public GetRequestBuilder wordCountMin(Integer wordCountMin) {
+        public LatestHeadlinesApi.GetRequestBuilder wordCountMin(Integer wordCountMin) {
             this.wordCountMin = wordCountMin;
-            return this;
+            return (LatestHeadlinesApi.GetRequestBuilder) this;
         }
         
         /**
          * Set wordCountMax
          * @param wordCountMax  (optional)
-         * @return GetRequestBuilder
+         * @return LatestHeadlinesApi.GetRequestBuilder
          */
-        public GetRequestBuilder wordCountMax(Integer wordCountMax) {
+        public LatestHeadlinesApi.GetRequestBuilder wordCountMax(Integer wordCountMax) {
             this.wordCountMax = wordCountMax;
-            return this;
+            return (LatestHeadlinesApi.GetRequestBuilder) this;
         }
         
         /**
          * Set page
          * @param page  (optional, default to 1)
-         * @return GetRequestBuilder
+         * @return LatestHeadlinesApi.GetRequestBuilder
          */
-        public GetRequestBuilder page(Integer page) {
+        public LatestHeadlinesApi.GetRequestBuilder page(Integer page) {
             this.page = page;
-            return this;
+            return (LatestHeadlinesApi.GetRequestBuilder) this;
         }
         
         /**
          * Set pageSize
          * @param pageSize  (optional, default to 100)
-         * @return GetRequestBuilder
+         * @return LatestHeadlinesApi.GetRequestBuilder
          */
-        public GetRequestBuilder pageSize(Integer pageSize) {
+        public LatestHeadlinesApi.GetRequestBuilder pageSize(Integer pageSize) {
             this.pageSize = pageSize;
-            return this;
+            return (LatestHeadlinesApi.GetRequestBuilder) this;
         }
         
         /**
          * Set clusteringVariable
          * @param clusteringVariable  (optional)
-         * @return GetRequestBuilder
+         * @return LatestHeadlinesApi.GetRequestBuilder
          */
-        public GetRequestBuilder clusteringVariable(String clusteringVariable) {
+        public LatestHeadlinesApi.GetRequestBuilder clusteringVariable(String clusteringVariable) {
             this.clusteringVariable = clusteringVariable;
-            return this;
+            return (LatestHeadlinesApi.GetRequestBuilder) this;
         }
         
         /**
          * Set clusteringEnabled
          * @param clusteringEnabled  (optional)
-         * @return GetRequestBuilder
+         * @return LatestHeadlinesApi.GetRequestBuilder
          */
-        public GetRequestBuilder clusteringEnabled(Boolean clusteringEnabled) {
+        public LatestHeadlinesApi.GetRequestBuilder clusteringEnabled(Boolean clusteringEnabled) {
             this.clusteringEnabled = clusteringEnabled;
-            return this;
+            return (LatestHeadlinesApi.GetRequestBuilder) this;
         }
         
         /**
          * Set clusteringThreshold
          * @param clusteringThreshold  (optional)
-         * @return GetRequestBuilder
+         * @return LatestHeadlinesApi.GetRequestBuilder
          */
-        public GetRequestBuilder clusteringThreshold(Double clusteringThreshold) {
+        public LatestHeadlinesApi.GetRequestBuilder clusteringThreshold(Double clusteringThreshold) {
             this.clusteringThreshold = clusteringThreshold;
-            return this;
+            return (LatestHeadlinesApi.GetRequestBuilder) this;
         }
         
         /**
          * Set includeNlpData
          * @param includeNlpData  (optional)
-         * @return GetRequestBuilder
+         * @return LatestHeadlinesApi.GetRequestBuilder
          */
-        public GetRequestBuilder includeNlpData(Boolean includeNlpData) {
+        public LatestHeadlinesApi.GetRequestBuilder includeNlpData(Boolean includeNlpData) {
             this.includeNlpData = includeNlpData;
-            return this;
+            return (LatestHeadlinesApi.GetRequestBuilder) this;
         }
         
         /**
          * Set hasNlp
          * @param hasNlp  (optional)
-         * @return GetRequestBuilder
+         * @return LatestHeadlinesApi.GetRequestBuilder
          */
-        public GetRequestBuilder hasNlp(Boolean hasNlp) {
+        public LatestHeadlinesApi.GetRequestBuilder hasNlp(Boolean hasNlp) {
             this.hasNlp = hasNlp;
-            return this;
+            return (LatestHeadlinesApi.GetRequestBuilder) this;
         }
         
         /**
          * Set theme
          * @param theme  (optional)
-         * @return GetRequestBuilder
+         * @return LatestHeadlinesApi.GetRequestBuilder
          */
-        public GetRequestBuilder theme(String theme) {
+        public LatestHeadlinesApi.GetRequestBuilder theme(String theme) {
             this.theme = theme;
-            return this;
+            return (LatestHeadlinesApi.GetRequestBuilder) this;
         }
         
         /**
          * Set notTheme
          * @param notTheme  (optional)
-         * @return GetRequestBuilder
+         * @return LatestHeadlinesApi.GetRequestBuilder
          */
-        public GetRequestBuilder notTheme(String notTheme) {
+        public LatestHeadlinesApi.GetRequestBuilder notTheme(String notTheme) {
             this.notTheme = notTheme;
-            return this;
+            return (LatestHeadlinesApi.GetRequestBuilder) this;
         }
         
         /**
          * Set orGEntityName
          * @param orGEntityName  (optional)
-         * @return GetRequestBuilder
+         * @return LatestHeadlinesApi.GetRequestBuilder
          */
-        public GetRequestBuilder orGEntityName(String orGEntityName) {
+        public LatestHeadlinesApi.GetRequestBuilder orGEntityName(String orGEntityName) {
             this.orGEntityName = orGEntityName;
-            return this;
+            return (LatestHeadlinesApi.GetRequestBuilder) this;
         }
         
         /**
          * Set peREntityName
          * @param peREntityName  (optional)
-         * @return GetRequestBuilder
+         * @return LatestHeadlinesApi.GetRequestBuilder
          */
-        public GetRequestBuilder peREntityName(String peREntityName) {
+        public LatestHeadlinesApi.GetRequestBuilder peREntityName(String peREntityName) {
             this.peREntityName = peREntityName;
-            return this;
+            return (LatestHeadlinesApi.GetRequestBuilder) this;
         }
         
         /**
          * Set loCEntityName
          * @param loCEntityName  (optional)
-         * @return GetRequestBuilder
+         * @return LatestHeadlinesApi.GetRequestBuilder
          */
-        public GetRequestBuilder loCEntityName(String loCEntityName) {
+        public LatestHeadlinesApi.GetRequestBuilder loCEntityName(String loCEntityName) {
             this.loCEntityName = loCEntityName;
-            return this;
+            return (LatestHeadlinesApi.GetRequestBuilder) this;
         }
         
         /**
          * Set miSCEntityName
          * @param miSCEntityName  (optional)
-         * @return GetRequestBuilder
+         * @return LatestHeadlinesApi.GetRequestBuilder
          */
-        public GetRequestBuilder miSCEntityName(String miSCEntityName) {
+        public LatestHeadlinesApi.GetRequestBuilder miSCEntityName(String miSCEntityName) {
             this.miSCEntityName = miSCEntityName;
-            return this;
+            return (LatestHeadlinesApi.GetRequestBuilder) this;
         }
         
         /**
          * Set titleSentimentMin
          * @param titleSentimentMin  (optional)
-         * @return GetRequestBuilder
+         * @return LatestHeadlinesApi.GetRequestBuilder
          */
-        public GetRequestBuilder titleSentimentMin(Double titleSentimentMin) {
+        public LatestHeadlinesApi.GetRequestBuilder titleSentimentMin(Double titleSentimentMin) {
             this.titleSentimentMin = titleSentimentMin;
-            return this;
+            return (LatestHeadlinesApi.GetRequestBuilder) this;
         }
         
         /**
          * Set titleSentimentMax
          * @param titleSentimentMax  (optional)
-         * @return GetRequestBuilder
+         * @return LatestHeadlinesApi.GetRequestBuilder
          */
-        public GetRequestBuilder titleSentimentMax(Double titleSentimentMax) {
+        public LatestHeadlinesApi.GetRequestBuilder titleSentimentMax(Double titleSentimentMax) {
             this.titleSentimentMax = titleSentimentMax;
-            return this;
+            return (LatestHeadlinesApi.GetRequestBuilder) this;
         }
         
         /**
          * Set contentSentimentMin
          * @param contentSentimentMin  (optional)
-         * @return GetRequestBuilder
+         * @return LatestHeadlinesApi.GetRequestBuilder
          */
-        public GetRequestBuilder contentSentimentMin(Double contentSentimentMin) {
+        public LatestHeadlinesApi.GetRequestBuilder contentSentimentMin(Double contentSentimentMin) {
             this.contentSentimentMin = contentSentimentMin;
-            return this;
+            return (LatestHeadlinesApi.GetRequestBuilder) this;
         }
         
         /**
          * Set contentSentimentMax
          * @param contentSentimentMax  (optional)
-         * @return GetRequestBuilder
+         * @return LatestHeadlinesApi.GetRequestBuilder
          */
-        public GetRequestBuilder contentSentimentMax(Double contentSentimentMax) {
+        public LatestHeadlinesApi.GetRequestBuilder contentSentimentMax(Double contentSentimentMax) {
             this.contentSentimentMax = contentSentimentMax;
-            return this;
+            return (LatestHeadlinesApi.GetRequestBuilder) this;
         }
         
         /**
          * Set iptcTags
          * @param iptcTags  (optional)
-         * @return GetRequestBuilder
+         * @return LatestHeadlinesApi.GetRequestBuilder
          */
-        public GetRequestBuilder iptcTags(Object iptcTags) {
+        public LatestHeadlinesApi.GetRequestBuilder iptcTags(Object iptcTags) {
             this.iptcTags = iptcTags;
-            return this;
+            return (LatestHeadlinesApi.GetRequestBuilder) this;
         }
         
         /**
          * Set notIptcTags
          * @param notIptcTags  (optional)
-         * @return GetRequestBuilder
+         * @return LatestHeadlinesApi.GetRequestBuilder
          */
-        public GetRequestBuilder notIptcTags(Object notIptcTags) {
+        public LatestHeadlinesApi.GetRequestBuilder notIptcTags(Object notIptcTags) {
             this.notIptcTags = notIptcTags;
-            return this;
+            return (LatestHeadlinesApi.GetRequestBuilder) this;
         }
         
         /**
          * Set iabTags
          * @param iabTags  (optional)
-         * @return GetRequestBuilder
+         * @return LatestHeadlinesApi.GetRequestBuilder
          */
-        public GetRequestBuilder iabTags(Object iabTags) {
+        public LatestHeadlinesApi.GetRequestBuilder iabTags(Object iabTags) {
             this.iabTags = iabTags;
-            return this;
+            return (LatestHeadlinesApi.GetRequestBuilder) this;
         }
         
         /**
          * Set notIabTags
          * @param notIabTags  (optional)
-         * @return GetRequestBuilder
+         * @return LatestHeadlinesApi.GetRequestBuilder
          */
-        public GetRequestBuilder notIabTags(Object notIabTags) {
+        public LatestHeadlinesApi.GetRequestBuilder notIabTags(Object notIabTags) {
             this.notIabTags = notIabTags;
-            return this;
+            return (LatestHeadlinesApi.GetRequestBuilder) this;
         }
         
         /**
@@ -818,8 +818,8 @@ public class LatestHeadlinesApiGenerated {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public GetRequestBuilder get() throws IllegalArgumentException {
-        return new GetRequestBuilder();
+    public LatestHeadlinesApi.GetRequestBuilder get() throws IllegalArgumentException {
+        return ((LatestHeadlinesApi) this).new GetRequestBuilder();
     }
     private okhttp3.Call postCall(LatestHeadlinesRequest latestHeadlinesRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
@@ -892,449 +892,449 @@ public class LatestHeadlinesApiGenerated {
         return localVarCall;
     }
 
-    public class PostRequestBuilder {
-        private String when;
-        private Boolean byParseDate;
-        private Object lang;
-        private Object notLang;
-        private Object countries;
-        private Object notCountries;
-        private Object sources;
-        private Object predefinedSources;
-        private Object notSources;
-        private Object notAuthorName;
-        private String rankedOnly;
-        private Boolean isHeadline;
-        private Boolean isOpinion;
-        private Boolean isPaidContent;
-        private Object parentUrl;
-        private Object allLinks;
-        private Object allDomainLinks;
-        private Integer wordCountMin;
-        private Integer wordCountMax;
-        private Integer page;
-        private Integer pageSize;
-        private String clusteringVariable;
-        private Boolean clusteringEnabled;
-        private Double clusteringThreshold;
-        private Boolean includeNlpData;
-        private Boolean hasNlp;
-        private String theme;
-        private String notTheme;
-        private String orGEntityName;
-        private String peREntityName;
-        private String loCEntityName;
-        private String miSCEntityName;
-        private Double titleSentimentMin;
-        private Double titleSentimentMax;
-        private Double contentSentimentMin;
-        private Double contentSentimentMax;
-        private Object iptcTags;
-        private Object notIptcTags;
-        private Object iabTags;
-        private Object notIabTags;
+    public abstract class PostRequestBuilderGenerated {
+        String when;
+        Boolean byParseDate;
+        Object lang;
+        Object notLang;
+        Object countries;
+        Object notCountries;
+        Object sources;
+        Object predefinedSources;
+        Object notSources;
+        Object notAuthorName;
+        String rankedOnly;
+        Boolean isHeadline;
+        Boolean isOpinion;
+        Boolean isPaidContent;
+        Object parentUrl;
+        Object allLinks;
+        Object allDomainLinks;
+        Integer wordCountMin;
+        Integer wordCountMax;
+        Integer page;
+        Integer pageSize;
+        String clusteringVariable;
+        Boolean clusteringEnabled;
+        Double clusteringThreshold;
+        Boolean includeNlpData;
+        Boolean hasNlp;
+        String theme;
+        String notTheme;
+        String orGEntityName;
+        String peREntityName;
+        String loCEntityName;
+        String miSCEntityName;
+        Double titleSentimentMin;
+        Double titleSentimentMax;
+        Double contentSentimentMin;
+        Double contentSentimentMax;
+        Object iptcTags;
+        Object notIptcTags;
+        Object iabTags;
+        Object notIabTags;
 
-        private PostRequestBuilder() {
+        public PostRequestBuilderGenerated() {
         }
 
         /**
          * Set when
          * @param when  (optional, default to 7d)
-         * @return PostRequestBuilder
+         * @return LatestHeadlinesApi.PostRequestBuilder
          */
-        public PostRequestBuilder when(String when) {
+        public LatestHeadlinesApi.PostRequestBuilder when(String when) {
             this.when = when;
-            return this;
+            return (LatestHeadlinesApi.PostRequestBuilder) this;
         }
         
         /**
          * Set byParseDate
          * @param byParseDate  (optional, default to false)
-         * @return PostRequestBuilder
+         * @return LatestHeadlinesApi.PostRequestBuilder
          */
-        public PostRequestBuilder byParseDate(Boolean byParseDate) {
+        public LatestHeadlinesApi.PostRequestBuilder byParseDate(Boolean byParseDate) {
             this.byParseDate = byParseDate;
-            return this;
+            return (LatestHeadlinesApi.PostRequestBuilder) this;
         }
         
         /**
          * Set lang
          * @param lang  (optional)
-         * @return PostRequestBuilder
+         * @return LatestHeadlinesApi.PostRequestBuilder
          */
-        public PostRequestBuilder lang(Object lang) {
+        public LatestHeadlinesApi.PostRequestBuilder lang(Object lang) {
             this.lang = lang;
-            return this;
+            return (LatestHeadlinesApi.PostRequestBuilder) this;
         }
         
         /**
          * Set notLang
          * @param notLang  (optional)
-         * @return PostRequestBuilder
+         * @return LatestHeadlinesApi.PostRequestBuilder
          */
-        public PostRequestBuilder notLang(Object notLang) {
+        public LatestHeadlinesApi.PostRequestBuilder notLang(Object notLang) {
             this.notLang = notLang;
-            return this;
+            return (LatestHeadlinesApi.PostRequestBuilder) this;
         }
         
         /**
          * Set countries
          * @param countries  (optional)
-         * @return PostRequestBuilder
+         * @return LatestHeadlinesApi.PostRequestBuilder
          */
-        public PostRequestBuilder countries(Object countries) {
+        public LatestHeadlinesApi.PostRequestBuilder countries(Object countries) {
             this.countries = countries;
-            return this;
+            return (LatestHeadlinesApi.PostRequestBuilder) this;
         }
         
         /**
          * Set notCountries
          * @param notCountries  (optional)
-         * @return PostRequestBuilder
+         * @return LatestHeadlinesApi.PostRequestBuilder
          */
-        public PostRequestBuilder notCountries(Object notCountries) {
+        public LatestHeadlinesApi.PostRequestBuilder notCountries(Object notCountries) {
             this.notCountries = notCountries;
-            return this;
+            return (LatestHeadlinesApi.PostRequestBuilder) this;
         }
         
         /**
          * Set sources
          * @param sources  (optional)
-         * @return PostRequestBuilder
+         * @return LatestHeadlinesApi.PostRequestBuilder
          */
-        public PostRequestBuilder sources(Object sources) {
+        public LatestHeadlinesApi.PostRequestBuilder sources(Object sources) {
             this.sources = sources;
-            return this;
+            return (LatestHeadlinesApi.PostRequestBuilder) this;
         }
         
         /**
          * Set predefinedSources
          * @param predefinedSources  (optional)
-         * @return PostRequestBuilder
+         * @return LatestHeadlinesApi.PostRequestBuilder
          */
-        public PostRequestBuilder predefinedSources(Object predefinedSources) {
+        public LatestHeadlinesApi.PostRequestBuilder predefinedSources(Object predefinedSources) {
             this.predefinedSources = predefinedSources;
-            return this;
+            return (LatestHeadlinesApi.PostRequestBuilder) this;
         }
         
         /**
          * Set notSources
          * @param notSources  (optional)
-         * @return PostRequestBuilder
+         * @return LatestHeadlinesApi.PostRequestBuilder
          */
-        public PostRequestBuilder notSources(Object notSources) {
+        public LatestHeadlinesApi.PostRequestBuilder notSources(Object notSources) {
             this.notSources = notSources;
-            return this;
+            return (LatestHeadlinesApi.PostRequestBuilder) this;
         }
         
         /**
          * Set notAuthorName
          * @param notAuthorName  (optional)
-         * @return PostRequestBuilder
+         * @return LatestHeadlinesApi.PostRequestBuilder
          */
-        public PostRequestBuilder notAuthorName(Object notAuthorName) {
+        public LatestHeadlinesApi.PostRequestBuilder notAuthorName(Object notAuthorName) {
             this.notAuthorName = notAuthorName;
-            return this;
+            return (LatestHeadlinesApi.PostRequestBuilder) this;
         }
         
         /**
          * Set rankedOnly
          * @param rankedOnly  (optional)
-         * @return PostRequestBuilder
+         * @return LatestHeadlinesApi.PostRequestBuilder
          */
-        public PostRequestBuilder rankedOnly(String rankedOnly) {
+        public LatestHeadlinesApi.PostRequestBuilder rankedOnly(String rankedOnly) {
             this.rankedOnly = rankedOnly;
-            return this;
+            return (LatestHeadlinesApi.PostRequestBuilder) this;
         }
         
         /**
          * Set isHeadline
          * @param isHeadline  (optional)
-         * @return PostRequestBuilder
+         * @return LatestHeadlinesApi.PostRequestBuilder
          */
-        public PostRequestBuilder isHeadline(Boolean isHeadline) {
+        public LatestHeadlinesApi.PostRequestBuilder isHeadline(Boolean isHeadline) {
             this.isHeadline = isHeadline;
-            return this;
+            return (LatestHeadlinesApi.PostRequestBuilder) this;
         }
         
         /**
          * Set isOpinion
          * @param isOpinion  (optional)
-         * @return PostRequestBuilder
+         * @return LatestHeadlinesApi.PostRequestBuilder
          */
-        public PostRequestBuilder isOpinion(Boolean isOpinion) {
+        public LatestHeadlinesApi.PostRequestBuilder isOpinion(Boolean isOpinion) {
             this.isOpinion = isOpinion;
-            return this;
+            return (LatestHeadlinesApi.PostRequestBuilder) this;
         }
         
         /**
          * Set isPaidContent
          * @param isPaidContent  (optional)
-         * @return PostRequestBuilder
+         * @return LatestHeadlinesApi.PostRequestBuilder
          */
-        public PostRequestBuilder isPaidContent(Boolean isPaidContent) {
+        public LatestHeadlinesApi.PostRequestBuilder isPaidContent(Boolean isPaidContent) {
             this.isPaidContent = isPaidContent;
-            return this;
+            return (LatestHeadlinesApi.PostRequestBuilder) this;
         }
         
         /**
          * Set parentUrl
          * @param parentUrl  (optional)
-         * @return PostRequestBuilder
+         * @return LatestHeadlinesApi.PostRequestBuilder
          */
-        public PostRequestBuilder parentUrl(Object parentUrl) {
+        public LatestHeadlinesApi.PostRequestBuilder parentUrl(Object parentUrl) {
             this.parentUrl = parentUrl;
-            return this;
+            return (LatestHeadlinesApi.PostRequestBuilder) this;
         }
         
         /**
          * Set allLinks
          * @param allLinks  (optional)
-         * @return PostRequestBuilder
+         * @return LatestHeadlinesApi.PostRequestBuilder
          */
-        public PostRequestBuilder allLinks(Object allLinks) {
+        public LatestHeadlinesApi.PostRequestBuilder allLinks(Object allLinks) {
             this.allLinks = allLinks;
-            return this;
+            return (LatestHeadlinesApi.PostRequestBuilder) this;
         }
         
         /**
          * Set allDomainLinks
          * @param allDomainLinks  (optional)
-         * @return PostRequestBuilder
+         * @return LatestHeadlinesApi.PostRequestBuilder
          */
-        public PostRequestBuilder allDomainLinks(Object allDomainLinks) {
+        public LatestHeadlinesApi.PostRequestBuilder allDomainLinks(Object allDomainLinks) {
             this.allDomainLinks = allDomainLinks;
-            return this;
+            return (LatestHeadlinesApi.PostRequestBuilder) this;
         }
         
         /**
          * Set wordCountMin
          * @param wordCountMin  (optional)
-         * @return PostRequestBuilder
+         * @return LatestHeadlinesApi.PostRequestBuilder
          */
-        public PostRequestBuilder wordCountMin(Integer wordCountMin) {
+        public LatestHeadlinesApi.PostRequestBuilder wordCountMin(Integer wordCountMin) {
             this.wordCountMin = wordCountMin;
-            return this;
+            return (LatestHeadlinesApi.PostRequestBuilder) this;
         }
         
         /**
          * Set wordCountMax
          * @param wordCountMax  (optional)
-         * @return PostRequestBuilder
+         * @return LatestHeadlinesApi.PostRequestBuilder
          */
-        public PostRequestBuilder wordCountMax(Integer wordCountMax) {
+        public LatestHeadlinesApi.PostRequestBuilder wordCountMax(Integer wordCountMax) {
             this.wordCountMax = wordCountMax;
-            return this;
+            return (LatestHeadlinesApi.PostRequestBuilder) this;
         }
         
         /**
          * Set page
          * @param page  (optional, default to 1)
-         * @return PostRequestBuilder
+         * @return LatestHeadlinesApi.PostRequestBuilder
          */
-        public PostRequestBuilder page(Integer page) {
+        public LatestHeadlinesApi.PostRequestBuilder page(Integer page) {
             this.page = page;
-            return this;
+            return (LatestHeadlinesApi.PostRequestBuilder) this;
         }
         
         /**
          * Set pageSize
          * @param pageSize  (optional, default to 100)
-         * @return PostRequestBuilder
+         * @return LatestHeadlinesApi.PostRequestBuilder
          */
-        public PostRequestBuilder pageSize(Integer pageSize) {
+        public LatestHeadlinesApi.PostRequestBuilder pageSize(Integer pageSize) {
             this.pageSize = pageSize;
-            return this;
+            return (LatestHeadlinesApi.PostRequestBuilder) this;
         }
         
         /**
          * Set clusteringVariable
          * @param clusteringVariable  (optional)
-         * @return PostRequestBuilder
+         * @return LatestHeadlinesApi.PostRequestBuilder
          */
-        public PostRequestBuilder clusteringVariable(String clusteringVariable) {
+        public LatestHeadlinesApi.PostRequestBuilder clusteringVariable(String clusteringVariable) {
             this.clusteringVariable = clusteringVariable;
-            return this;
+            return (LatestHeadlinesApi.PostRequestBuilder) this;
         }
         
         /**
          * Set clusteringEnabled
          * @param clusteringEnabled  (optional)
-         * @return PostRequestBuilder
+         * @return LatestHeadlinesApi.PostRequestBuilder
          */
-        public PostRequestBuilder clusteringEnabled(Boolean clusteringEnabled) {
+        public LatestHeadlinesApi.PostRequestBuilder clusteringEnabled(Boolean clusteringEnabled) {
             this.clusteringEnabled = clusteringEnabled;
-            return this;
+            return (LatestHeadlinesApi.PostRequestBuilder) this;
         }
         
         /**
          * Set clusteringThreshold
          * @param clusteringThreshold  (optional)
-         * @return PostRequestBuilder
+         * @return LatestHeadlinesApi.PostRequestBuilder
          */
-        public PostRequestBuilder clusteringThreshold(Double clusteringThreshold) {
+        public LatestHeadlinesApi.PostRequestBuilder clusteringThreshold(Double clusteringThreshold) {
             this.clusteringThreshold = clusteringThreshold;
-            return this;
+            return (LatestHeadlinesApi.PostRequestBuilder) this;
         }
         
         /**
          * Set includeNlpData
          * @param includeNlpData  (optional)
-         * @return PostRequestBuilder
+         * @return LatestHeadlinesApi.PostRequestBuilder
          */
-        public PostRequestBuilder includeNlpData(Boolean includeNlpData) {
+        public LatestHeadlinesApi.PostRequestBuilder includeNlpData(Boolean includeNlpData) {
             this.includeNlpData = includeNlpData;
-            return this;
+            return (LatestHeadlinesApi.PostRequestBuilder) this;
         }
         
         /**
          * Set hasNlp
          * @param hasNlp  (optional)
-         * @return PostRequestBuilder
+         * @return LatestHeadlinesApi.PostRequestBuilder
          */
-        public PostRequestBuilder hasNlp(Boolean hasNlp) {
+        public LatestHeadlinesApi.PostRequestBuilder hasNlp(Boolean hasNlp) {
             this.hasNlp = hasNlp;
-            return this;
+            return (LatestHeadlinesApi.PostRequestBuilder) this;
         }
         
         /**
          * Set theme
          * @param theme  (optional)
-         * @return PostRequestBuilder
+         * @return LatestHeadlinesApi.PostRequestBuilder
          */
-        public PostRequestBuilder theme(String theme) {
+        public LatestHeadlinesApi.PostRequestBuilder theme(String theme) {
             this.theme = theme;
-            return this;
+            return (LatestHeadlinesApi.PostRequestBuilder) this;
         }
         
         /**
          * Set notTheme
          * @param notTheme  (optional)
-         * @return PostRequestBuilder
+         * @return LatestHeadlinesApi.PostRequestBuilder
          */
-        public PostRequestBuilder notTheme(String notTheme) {
+        public LatestHeadlinesApi.PostRequestBuilder notTheme(String notTheme) {
             this.notTheme = notTheme;
-            return this;
+            return (LatestHeadlinesApi.PostRequestBuilder) this;
         }
         
         /**
          * Set orGEntityName
          * @param orGEntityName  (optional)
-         * @return PostRequestBuilder
+         * @return LatestHeadlinesApi.PostRequestBuilder
          */
-        public PostRequestBuilder orGEntityName(String orGEntityName) {
+        public LatestHeadlinesApi.PostRequestBuilder orGEntityName(String orGEntityName) {
             this.orGEntityName = orGEntityName;
-            return this;
+            return (LatestHeadlinesApi.PostRequestBuilder) this;
         }
         
         /**
          * Set peREntityName
          * @param peREntityName  (optional)
-         * @return PostRequestBuilder
+         * @return LatestHeadlinesApi.PostRequestBuilder
          */
-        public PostRequestBuilder peREntityName(String peREntityName) {
+        public LatestHeadlinesApi.PostRequestBuilder peREntityName(String peREntityName) {
             this.peREntityName = peREntityName;
-            return this;
+            return (LatestHeadlinesApi.PostRequestBuilder) this;
         }
         
         /**
          * Set loCEntityName
          * @param loCEntityName  (optional)
-         * @return PostRequestBuilder
+         * @return LatestHeadlinesApi.PostRequestBuilder
          */
-        public PostRequestBuilder loCEntityName(String loCEntityName) {
+        public LatestHeadlinesApi.PostRequestBuilder loCEntityName(String loCEntityName) {
             this.loCEntityName = loCEntityName;
-            return this;
+            return (LatestHeadlinesApi.PostRequestBuilder) this;
         }
         
         /**
          * Set miSCEntityName
          * @param miSCEntityName  (optional)
-         * @return PostRequestBuilder
+         * @return LatestHeadlinesApi.PostRequestBuilder
          */
-        public PostRequestBuilder miSCEntityName(String miSCEntityName) {
+        public LatestHeadlinesApi.PostRequestBuilder miSCEntityName(String miSCEntityName) {
             this.miSCEntityName = miSCEntityName;
-            return this;
+            return (LatestHeadlinesApi.PostRequestBuilder) this;
         }
         
         /**
          * Set titleSentimentMin
          * @param titleSentimentMin  (optional)
-         * @return PostRequestBuilder
+         * @return LatestHeadlinesApi.PostRequestBuilder
          */
-        public PostRequestBuilder titleSentimentMin(Double titleSentimentMin) {
+        public LatestHeadlinesApi.PostRequestBuilder titleSentimentMin(Double titleSentimentMin) {
             this.titleSentimentMin = titleSentimentMin;
-            return this;
+            return (LatestHeadlinesApi.PostRequestBuilder) this;
         }
         
         /**
          * Set titleSentimentMax
          * @param titleSentimentMax  (optional)
-         * @return PostRequestBuilder
+         * @return LatestHeadlinesApi.PostRequestBuilder
          */
-        public PostRequestBuilder titleSentimentMax(Double titleSentimentMax) {
+        public LatestHeadlinesApi.PostRequestBuilder titleSentimentMax(Double titleSentimentMax) {
             this.titleSentimentMax = titleSentimentMax;
-            return this;
+            return (LatestHeadlinesApi.PostRequestBuilder) this;
         }
         
         /**
          * Set contentSentimentMin
          * @param contentSentimentMin  (optional)
-         * @return PostRequestBuilder
+         * @return LatestHeadlinesApi.PostRequestBuilder
          */
-        public PostRequestBuilder contentSentimentMin(Double contentSentimentMin) {
+        public LatestHeadlinesApi.PostRequestBuilder contentSentimentMin(Double contentSentimentMin) {
             this.contentSentimentMin = contentSentimentMin;
-            return this;
+            return (LatestHeadlinesApi.PostRequestBuilder) this;
         }
         
         /**
          * Set contentSentimentMax
          * @param contentSentimentMax  (optional)
-         * @return PostRequestBuilder
+         * @return LatestHeadlinesApi.PostRequestBuilder
          */
-        public PostRequestBuilder contentSentimentMax(Double contentSentimentMax) {
+        public LatestHeadlinesApi.PostRequestBuilder contentSentimentMax(Double contentSentimentMax) {
             this.contentSentimentMax = contentSentimentMax;
-            return this;
+            return (LatestHeadlinesApi.PostRequestBuilder) this;
         }
         
         /**
          * Set iptcTags
          * @param iptcTags  (optional)
-         * @return PostRequestBuilder
+         * @return LatestHeadlinesApi.PostRequestBuilder
          */
-        public PostRequestBuilder iptcTags(Object iptcTags) {
+        public LatestHeadlinesApi.PostRequestBuilder iptcTags(Object iptcTags) {
             this.iptcTags = iptcTags;
-            return this;
+            return (LatestHeadlinesApi.PostRequestBuilder) this;
         }
         
         /**
          * Set notIptcTags
          * @param notIptcTags  (optional)
-         * @return PostRequestBuilder
+         * @return LatestHeadlinesApi.PostRequestBuilder
          */
-        public PostRequestBuilder notIptcTags(Object notIptcTags) {
+        public LatestHeadlinesApi.PostRequestBuilder notIptcTags(Object notIptcTags) {
             this.notIptcTags = notIptcTags;
-            return this;
+            return (LatestHeadlinesApi.PostRequestBuilder) this;
         }
         
         /**
          * Set iabTags
          * @param iabTags  (optional)
-         * @return PostRequestBuilder
+         * @return LatestHeadlinesApi.PostRequestBuilder
          */
-        public PostRequestBuilder iabTags(Object iabTags) {
+        public LatestHeadlinesApi.PostRequestBuilder iabTags(Object iabTags) {
             this.iabTags = iabTags;
-            return this;
+            return (LatestHeadlinesApi.PostRequestBuilder) this;
         }
         
         /**
          * Set notIabTags
          * @param notIabTags  (optional)
-         * @return PostRequestBuilder
+         * @return LatestHeadlinesApi.PostRequestBuilder
          */
-        public PostRequestBuilder notIabTags(Object notIabTags) {
+        public LatestHeadlinesApi.PostRequestBuilder notIabTags(Object notIabTags) {
             this.notIabTags = notIabTags;
-            return this;
+            return (LatestHeadlinesApi.PostRequestBuilder) this;
         }
         
         /**
@@ -1457,7 +1457,7 @@ public class LatestHeadlinesApiGenerated {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public PostRequestBuilder post() throws IllegalArgumentException {
-        return new PostRequestBuilder();
+    public LatestHeadlinesApi.PostRequestBuilder post() throws IllegalArgumentException {
+        return ((LatestHeadlinesApi) this).new PostRequestBuilder();
     }
 }

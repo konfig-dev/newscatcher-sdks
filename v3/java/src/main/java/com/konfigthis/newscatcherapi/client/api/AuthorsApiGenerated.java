@@ -307,440 +307,440 @@ public class AuthorsApiGenerated {
         return localVarCall;
     }
 
-    public class GetRequestBuilder {
-        private final String authorName;
-        private String notAuthorName;
-        private Object sources;
-        private Object predefinedSources;
-        private Object notSources;
-        private Object lang;
-        private Object notLang;
-        private Object countries;
-        private Object notCountries;
-        private String from;
-        private String to;
-        private String publishedDatePrecision;
-        private Boolean byParseDate;
-        private String sortBy;
-        private String rankedOnly;
-        private Integer fromRank;
-        private Integer toRank;
-        private Boolean isHeadline;
-        private Boolean isOpinion;
-        private Boolean isPaidContent;
-        private Object parentUrl;
-        private Object allLinks;
-        private Object allDomainLinks;
-        private Integer wordCountMin;
-        private Integer wordCountMax;
-        private Integer page;
-        private Integer pageSize;
-        private Boolean includeNlpData;
-        private Boolean hasNlp;
-        private String theme;
-        private String notTheme;
-        private String nerName;
-        private Double titleSentimentMin;
-        private Double titleSentimentMax;
-        private Double contentSentimentMin;
-        private Double contentSentimentMax;
-        private Object iptcTags;
-        private Object notIptcTags;
-        private Object iabTags;
-        private Object notIabTags;
+    public abstract class GetRequestBuilderGenerated {
+        final String authorName;
+        String notAuthorName;
+        Object sources;
+        Object predefinedSources;
+        Object notSources;
+        Object lang;
+        Object notLang;
+        Object countries;
+        Object notCountries;
+        String from;
+        String to;
+        String publishedDatePrecision;
+        Boolean byParseDate;
+        String sortBy;
+        String rankedOnly;
+        Integer fromRank;
+        Integer toRank;
+        Boolean isHeadline;
+        Boolean isOpinion;
+        Boolean isPaidContent;
+        Object parentUrl;
+        Object allLinks;
+        Object allDomainLinks;
+        Integer wordCountMin;
+        Integer wordCountMax;
+        Integer page;
+        Integer pageSize;
+        Boolean includeNlpData;
+        Boolean hasNlp;
+        String theme;
+        String notTheme;
+        String nerName;
+        Double titleSentimentMin;
+        Double titleSentimentMax;
+        Double contentSentimentMin;
+        Double contentSentimentMax;
+        Object iptcTags;
+        Object notIptcTags;
+        Object iabTags;
+        Object notIabTags;
 
-        private GetRequestBuilder(String authorName) {
+        public GetRequestBuilderGenerated(String authorName) {
             this.authorName = authorName;
         }
 
         /**
          * Set notAuthorName
          * @param notAuthorName  (optional)
-         * @return GetRequestBuilder
+         * @return AuthorsApi.GetRequestBuilder
          */
-        public GetRequestBuilder notAuthorName(String notAuthorName) {
+        public AuthorsApi.GetRequestBuilder notAuthorName(String notAuthorName) {
             this.notAuthorName = notAuthorName;
-            return this;
+            return (AuthorsApi.GetRequestBuilder) this;
         }
         
         /**
          * Set sources
          * @param sources  (optional)
-         * @return GetRequestBuilder
+         * @return AuthorsApi.GetRequestBuilder
          */
-        public GetRequestBuilder sources(Object sources) {
+        public AuthorsApi.GetRequestBuilder sources(Object sources) {
             this.sources = sources;
-            return this;
+            return (AuthorsApi.GetRequestBuilder) this;
         }
         
         /**
          * Set predefinedSources
          * @param predefinedSources  (optional)
-         * @return GetRequestBuilder
+         * @return AuthorsApi.GetRequestBuilder
          */
-        public GetRequestBuilder predefinedSources(Object predefinedSources) {
+        public AuthorsApi.GetRequestBuilder predefinedSources(Object predefinedSources) {
             this.predefinedSources = predefinedSources;
-            return this;
+            return (AuthorsApi.GetRequestBuilder) this;
         }
         
         /**
          * Set notSources
          * @param notSources  (optional)
-         * @return GetRequestBuilder
+         * @return AuthorsApi.GetRequestBuilder
          */
-        public GetRequestBuilder notSources(Object notSources) {
+        public AuthorsApi.GetRequestBuilder notSources(Object notSources) {
             this.notSources = notSources;
-            return this;
+            return (AuthorsApi.GetRequestBuilder) this;
         }
         
         /**
          * Set lang
          * @param lang  (optional)
-         * @return GetRequestBuilder
+         * @return AuthorsApi.GetRequestBuilder
          */
-        public GetRequestBuilder lang(Object lang) {
+        public AuthorsApi.GetRequestBuilder lang(Object lang) {
             this.lang = lang;
-            return this;
+            return (AuthorsApi.GetRequestBuilder) this;
         }
         
         /**
          * Set notLang
          * @param notLang  (optional)
-         * @return GetRequestBuilder
+         * @return AuthorsApi.GetRequestBuilder
          */
-        public GetRequestBuilder notLang(Object notLang) {
+        public AuthorsApi.GetRequestBuilder notLang(Object notLang) {
             this.notLang = notLang;
-            return this;
+            return (AuthorsApi.GetRequestBuilder) this;
         }
         
         /**
          * Set countries
          * @param countries  (optional)
-         * @return GetRequestBuilder
+         * @return AuthorsApi.GetRequestBuilder
          */
-        public GetRequestBuilder countries(Object countries) {
+        public AuthorsApi.GetRequestBuilder countries(Object countries) {
             this.countries = countries;
-            return this;
+            return (AuthorsApi.GetRequestBuilder) this;
         }
         
         /**
          * Set notCountries
          * @param notCountries  (optional)
-         * @return GetRequestBuilder
+         * @return AuthorsApi.GetRequestBuilder
          */
-        public GetRequestBuilder notCountries(Object notCountries) {
+        public AuthorsApi.GetRequestBuilder notCountries(Object notCountries) {
             this.notCountries = notCountries;
-            return this;
+            return (AuthorsApi.GetRequestBuilder) this;
         }
         
         /**
          * Set from
          * @param from  (optional)
-         * @return GetRequestBuilder
+         * @return AuthorsApi.GetRequestBuilder
          */
-        public GetRequestBuilder from(String from) {
+        public AuthorsApi.GetRequestBuilder from(String from) {
             this.from = from;
-            return this;
+            return (AuthorsApi.GetRequestBuilder) this;
         }
         
         /**
          * Set to
          * @param to  (optional)
-         * @return GetRequestBuilder
+         * @return AuthorsApi.GetRequestBuilder
          */
-        public GetRequestBuilder to(String to) {
+        public AuthorsApi.GetRequestBuilder to(String to) {
             this.to = to;
-            return this;
+            return (AuthorsApi.GetRequestBuilder) this;
         }
         
         /**
          * Set publishedDatePrecision
          * @param publishedDatePrecision  (optional)
-         * @return GetRequestBuilder
+         * @return AuthorsApi.GetRequestBuilder
          */
-        public GetRequestBuilder publishedDatePrecision(String publishedDatePrecision) {
+        public AuthorsApi.GetRequestBuilder publishedDatePrecision(String publishedDatePrecision) {
             this.publishedDatePrecision = publishedDatePrecision;
-            return this;
+            return (AuthorsApi.GetRequestBuilder) this;
         }
         
         /**
          * Set byParseDate
          * @param byParseDate  (optional, default to false)
-         * @return GetRequestBuilder
+         * @return AuthorsApi.GetRequestBuilder
          */
-        public GetRequestBuilder byParseDate(Boolean byParseDate) {
+        public AuthorsApi.GetRequestBuilder byParseDate(Boolean byParseDate) {
             this.byParseDate = byParseDate;
-            return this;
+            return (AuthorsApi.GetRequestBuilder) this;
         }
         
         /**
          * Set sortBy
          * @param sortBy  (optional, default to relevancy)
-         * @return GetRequestBuilder
+         * @return AuthorsApi.GetRequestBuilder
          */
-        public GetRequestBuilder sortBy(String sortBy) {
+        public AuthorsApi.GetRequestBuilder sortBy(String sortBy) {
             this.sortBy = sortBy;
-            return this;
+            return (AuthorsApi.GetRequestBuilder) this;
         }
         
         /**
          * Set rankedOnly
          * @param rankedOnly  (optional)
-         * @return GetRequestBuilder
+         * @return AuthorsApi.GetRequestBuilder
          */
-        public GetRequestBuilder rankedOnly(String rankedOnly) {
+        public AuthorsApi.GetRequestBuilder rankedOnly(String rankedOnly) {
             this.rankedOnly = rankedOnly;
-            return this;
+            return (AuthorsApi.GetRequestBuilder) this;
         }
         
         /**
          * Set fromRank
          * @param fromRank  (optional)
-         * @return GetRequestBuilder
+         * @return AuthorsApi.GetRequestBuilder
          */
-        public GetRequestBuilder fromRank(Integer fromRank) {
+        public AuthorsApi.GetRequestBuilder fromRank(Integer fromRank) {
             this.fromRank = fromRank;
-            return this;
+            return (AuthorsApi.GetRequestBuilder) this;
         }
         
         /**
          * Set toRank
          * @param toRank  (optional)
-         * @return GetRequestBuilder
+         * @return AuthorsApi.GetRequestBuilder
          */
-        public GetRequestBuilder toRank(Integer toRank) {
+        public AuthorsApi.GetRequestBuilder toRank(Integer toRank) {
             this.toRank = toRank;
-            return this;
+            return (AuthorsApi.GetRequestBuilder) this;
         }
         
         /**
          * Set isHeadline
          * @param isHeadline  (optional)
-         * @return GetRequestBuilder
+         * @return AuthorsApi.GetRequestBuilder
          */
-        public GetRequestBuilder isHeadline(Boolean isHeadline) {
+        public AuthorsApi.GetRequestBuilder isHeadline(Boolean isHeadline) {
             this.isHeadline = isHeadline;
-            return this;
+            return (AuthorsApi.GetRequestBuilder) this;
         }
         
         /**
          * Set isOpinion
          * @param isOpinion  (optional)
-         * @return GetRequestBuilder
+         * @return AuthorsApi.GetRequestBuilder
          */
-        public GetRequestBuilder isOpinion(Boolean isOpinion) {
+        public AuthorsApi.GetRequestBuilder isOpinion(Boolean isOpinion) {
             this.isOpinion = isOpinion;
-            return this;
+            return (AuthorsApi.GetRequestBuilder) this;
         }
         
         /**
          * Set isPaidContent
          * @param isPaidContent  (optional)
-         * @return GetRequestBuilder
+         * @return AuthorsApi.GetRequestBuilder
          */
-        public GetRequestBuilder isPaidContent(Boolean isPaidContent) {
+        public AuthorsApi.GetRequestBuilder isPaidContent(Boolean isPaidContent) {
             this.isPaidContent = isPaidContent;
-            return this;
+            return (AuthorsApi.GetRequestBuilder) this;
         }
         
         /**
          * Set parentUrl
          * @param parentUrl  (optional)
-         * @return GetRequestBuilder
+         * @return AuthorsApi.GetRequestBuilder
          */
-        public GetRequestBuilder parentUrl(Object parentUrl) {
+        public AuthorsApi.GetRequestBuilder parentUrl(Object parentUrl) {
             this.parentUrl = parentUrl;
-            return this;
+            return (AuthorsApi.GetRequestBuilder) this;
         }
         
         /**
          * Set allLinks
          * @param allLinks  (optional)
-         * @return GetRequestBuilder
+         * @return AuthorsApi.GetRequestBuilder
          */
-        public GetRequestBuilder allLinks(Object allLinks) {
+        public AuthorsApi.GetRequestBuilder allLinks(Object allLinks) {
             this.allLinks = allLinks;
-            return this;
+            return (AuthorsApi.GetRequestBuilder) this;
         }
         
         /**
          * Set allDomainLinks
          * @param allDomainLinks  (optional)
-         * @return GetRequestBuilder
+         * @return AuthorsApi.GetRequestBuilder
          */
-        public GetRequestBuilder allDomainLinks(Object allDomainLinks) {
+        public AuthorsApi.GetRequestBuilder allDomainLinks(Object allDomainLinks) {
             this.allDomainLinks = allDomainLinks;
-            return this;
+            return (AuthorsApi.GetRequestBuilder) this;
         }
         
         /**
          * Set wordCountMin
          * @param wordCountMin  (optional)
-         * @return GetRequestBuilder
+         * @return AuthorsApi.GetRequestBuilder
          */
-        public GetRequestBuilder wordCountMin(Integer wordCountMin) {
+        public AuthorsApi.GetRequestBuilder wordCountMin(Integer wordCountMin) {
             this.wordCountMin = wordCountMin;
-            return this;
+            return (AuthorsApi.GetRequestBuilder) this;
         }
         
         /**
          * Set wordCountMax
          * @param wordCountMax  (optional)
-         * @return GetRequestBuilder
+         * @return AuthorsApi.GetRequestBuilder
          */
-        public GetRequestBuilder wordCountMax(Integer wordCountMax) {
+        public AuthorsApi.GetRequestBuilder wordCountMax(Integer wordCountMax) {
             this.wordCountMax = wordCountMax;
-            return this;
+            return (AuthorsApi.GetRequestBuilder) this;
         }
         
         /**
          * Set page
          * @param page  (optional, default to 1)
-         * @return GetRequestBuilder
+         * @return AuthorsApi.GetRequestBuilder
          */
-        public GetRequestBuilder page(Integer page) {
+        public AuthorsApi.GetRequestBuilder page(Integer page) {
             this.page = page;
-            return this;
+            return (AuthorsApi.GetRequestBuilder) this;
         }
         
         /**
          * Set pageSize
          * @param pageSize  (optional, default to 100)
-         * @return GetRequestBuilder
+         * @return AuthorsApi.GetRequestBuilder
          */
-        public GetRequestBuilder pageSize(Integer pageSize) {
+        public AuthorsApi.GetRequestBuilder pageSize(Integer pageSize) {
             this.pageSize = pageSize;
-            return this;
+            return (AuthorsApi.GetRequestBuilder) this;
         }
         
         /**
          * Set includeNlpData
          * @param includeNlpData  (optional)
-         * @return GetRequestBuilder
+         * @return AuthorsApi.GetRequestBuilder
          */
-        public GetRequestBuilder includeNlpData(Boolean includeNlpData) {
+        public AuthorsApi.GetRequestBuilder includeNlpData(Boolean includeNlpData) {
             this.includeNlpData = includeNlpData;
-            return this;
+            return (AuthorsApi.GetRequestBuilder) this;
         }
         
         /**
          * Set hasNlp
          * @param hasNlp  (optional)
-         * @return GetRequestBuilder
+         * @return AuthorsApi.GetRequestBuilder
          */
-        public GetRequestBuilder hasNlp(Boolean hasNlp) {
+        public AuthorsApi.GetRequestBuilder hasNlp(Boolean hasNlp) {
             this.hasNlp = hasNlp;
-            return this;
+            return (AuthorsApi.GetRequestBuilder) this;
         }
         
         /**
          * Set theme
          * @param theme  (optional)
-         * @return GetRequestBuilder
+         * @return AuthorsApi.GetRequestBuilder
          */
-        public GetRequestBuilder theme(String theme) {
+        public AuthorsApi.GetRequestBuilder theme(String theme) {
             this.theme = theme;
-            return this;
+            return (AuthorsApi.GetRequestBuilder) this;
         }
         
         /**
          * Set notTheme
          * @param notTheme  (optional)
-         * @return GetRequestBuilder
+         * @return AuthorsApi.GetRequestBuilder
          */
-        public GetRequestBuilder notTheme(String notTheme) {
+        public AuthorsApi.GetRequestBuilder notTheme(String notTheme) {
             this.notTheme = notTheme;
-            return this;
+            return (AuthorsApi.GetRequestBuilder) this;
         }
         
         /**
          * Set nerName
          * @param nerName  (optional)
-         * @return GetRequestBuilder
+         * @return AuthorsApi.GetRequestBuilder
          */
-        public GetRequestBuilder nerName(String nerName) {
+        public AuthorsApi.GetRequestBuilder nerName(String nerName) {
             this.nerName = nerName;
-            return this;
+            return (AuthorsApi.GetRequestBuilder) this;
         }
         
         /**
          * Set titleSentimentMin
          * @param titleSentimentMin  (optional)
-         * @return GetRequestBuilder
+         * @return AuthorsApi.GetRequestBuilder
          */
-        public GetRequestBuilder titleSentimentMin(Double titleSentimentMin) {
+        public AuthorsApi.GetRequestBuilder titleSentimentMin(Double titleSentimentMin) {
             this.titleSentimentMin = titleSentimentMin;
-            return this;
+            return (AuthorsApi.GetRequestBuilder) this;
         }
         
         /**
          * Set titleSentimentMax
          * @param titleSentimentMax  (optional)
-         * @return GetRequestBuilder
+         * @return AuthorsApi.GetRequestBuilder
          */
-        public GetRequestBuilder titleSentimentMax(Double titleSentimentMax) {
+        public AuthorsApi.GetRequestBuilder titleSentimentMax(Double titleSentimentMax) {
             this.titleSentimentMax = titleSentimentMax;
-            return this;
+            return (AuthorsApi.GetRequestBuilder) this;
         }
         
         /**
          * Set contentSentimentMin
          * @param contentSentimentMin  (optional)
-         * @return GetRequestBuilder
+         * @return AuthorsApi.GetRequestBuilder
          */
-        public GetRequestBuilder contentSentimentMin(Double contentSentimentMin) {
+        public AuthorsApi.GetRequestBuilder contentSentimentMin(Double contentSentimentMin) {
             this.contentSentimentMin = contentSentimentMin;
-            return this;
+            return (AuthorsApi.GetRequestBuilder) this;
         }
         
         /**
          * Set contentSentimentMax
          * @param contentSentimentMax  (optional)
-         * @return GetRequestBuilder
+         * @return AuthorsApi.GetRequestBuilder
          */
-        public GetRequestBuilder contentSentimentMax(Double contentSentimentMax) {
+        public AuthorsApi.GetRequestBuilder contentSentimentMax(Double contentSentimentMax) {
             this.contentSentimentMax = contentSentimentMax;
-            return this;
+            return (AuthorsApi.GetRequestBuilder) this;
         }
         
         /**
          * Set iptcTags
          * @param iptcTags  (optional)
-         * @return GetRequestBuilder
+         * @return AuthorsApi.GetRequestBuilder
          */
-        public GetRequestBuilder iptcTags(Object iptcTags) {
+        public AuthorsApi.GetRequestBuilder iptcTags(Object iptcTags) {
             this.iptcTags = iptcTags;
-            return this;
+            return (AuthorsApi.GetRequestBuilder) this;
         }
         
         /**
          * Set notIptcTags
          * @param notIptcTags  (optional)
-         * @return GetRequestBuilder
+         * @return AuthorsApi.GetRequestBuilder
          */
-        public GetRequestBuilder notIptcTags(Object notIptcTags) {
+        public AuthorsApi.GetRequestBuilder notIptcTags(Object notIptcTags) {
             this.notIptcTags = notIptcTags;
-            return this;
+            return (AuthorsApi.GetRequestBuilder) this;
         }
         
         /**
          * Set iabTags
          * @param iabTags  (optional)
-         * @return GetRequestBuilder
+         * @return AuthorsApi.GetRequestBuilder
          */
-        public GetRequestBuilder iabTags(Object iabTags) {
+        public AuthorsApi.GetRequestBuilder iabTags(Object iabTags) {
             this.iabTags = iabTags;
-            return this;
+            return (AuthorsApi.GetRequestBuilder) this;
         }
         
         /**
          * Set notIabTags
          * @param notIabTags  (optional)
-         * @return GetRequestBuilder
+         * @return AuthorsApi.GetRequestBuilder
          */
-        public GetRequestBuilder notIabTags(Object notIabTags) {
+        public AuthorsApi.GetRequestBuilder notIabTags(Object notIabTags) {
             this.notIabTags = notIabTags;
-            return this;
+            return (AuthorsApi.GetRequestBuilder) this;
         }
         
         /**
@@ -815,11 +815,11 @@ public class AuthorsApiGenerated {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public GetRequestBuilder get(String authorName) throws IllegalArgumentException {
+    public AuthorsApi.GetRequestBuilder get(String authorName) throws IllegalArgumentException {
         if (authorName == null) throw new IllegalArgumentException("\"authorName\" is required but got null");
             
 
-        return new GetRequestBuilder(authorName);
+        return ((AuthorsApi) this).new GetRequestBuilder(authorName);
     }
     private okhttp3.Call postCall(AuthorSearchRequest authorSearchRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
@@ -892,440 +892,440 @@ public class AuthorsApiGenerated {
         return localVarCall;
     }
 
-    public class PostRequestBuilder {
-        private final String authorName;
-        private String notAuthorName;
-        private Object sources;
-        private Object predefinedSources;
-        private Object notSources;
-        private Object lang;
-        private Object notLang;
-        private Object countries;
-        private Object notCountries;
-        private String from;
-        private String to;
-        private String publishedDatePrecision;
-        private Boolean byParseDate;
-        private String sortBy;
-        private String rankedOnly;
-        private Integer fromRank;
-        private Integer toRank;
-        private Boolean isHeadline;
-        private Boolean isOpinion;
-        private Boolean isPaidContent;
-        private Object parentUrl;
-        private Object allLinks;
-        private Object allDomainLinks;
-        private Integer wordCountMin;
-        private Integer wordCountMax;
-        private Integer page;
-        private Integer pageSize;
-        private Boolean includeNlpData;
-        private Boolean hasNlp;
-        private String theme;
-        private String notTheme;
-        private String nerName;
-        private Double titleSentimentMin;
-        private Double titleSentimentMax;
-        private Double contentSentimentMin;
-        private Double contentSentimentMax;
-        private Object iptcTags;
-        private Object notIptcTags;
-        private Object iabTags;
-        private Object notIabTags;
+    public abstract class PostRequestBuilderGenerated {
+        final String authorName;
+        String notAuthorName;
+        Object sources;
+        Object predefinedSources;
+        Object notSources;
+        Object lang;
+        Object notLang;
+        Object countries;
+        Object notCountries;
+        String from;
+        String to;
+        String publishedDatePrecision;
+        Boolean byParseDate;
+        String sortBy;
+        String rankedOnly;
+        Integer fromRank;
+        Integer toRank;
+        Boolean isHeadline;
+        Boolean isOpinion;
+        Boolean isPaidContent;
+        Object parentUrl;
+        Object allLinks;
+        Object allDomainLinks;
+        Integer wordCountMin;
+        Integer wordCountMax;
+        Integer page;
+        Integer pageSize;
+        Boolean includeNlpData;
+        Boolean hasNlp;
+        String theme;
+        String notTheme;
+        String nerName;
+        Double titleSentimentMin;
+        Double titleSentimentMax;
+        Double contentSentimentMin;
+        Double contentSentimentMax;
+        Object iptcTags;
+        Object notIptcTags;
+        Object iabTags;
+        Object notIabTags;
 
-        private PostRequestBuilder(String authorName) {
+        public PostRequestBuilderGenerated(String authorName) {
             this.authorName = authorName;
         }
 
         /**
          * Set notAuthorName
          * @param notAuthorName  (optional)
-         * @return PostRequestBuilder
+         * @return AuthorsApi.PostRequestBuilder
          */
-        public PostRequestBuilder notAuthorName(String notAuthorName) {
+        public AuthorsApi.PostRequestBuilder notAuthorName(String notAuthorName) {
             this.notAuthorName = notAuthorName;
-            return this;
+            return (AuthorsApi.PostRequestBuilder) this;
         }
         
         /**
          * Set sources
          * @param sources  (optional)
-         * @return PostRequestBuilder
+         * @return AuthorsApi.PostRequestBuilder
          */
-        public PostRequestBuilder sources(Object sources) {
+        public AuthorsApi.PostRequestBuilder sources(Object sources) {
             this.sources = sources;
-            return this;
+            return (AuthorsApi.PostRequestBuilder) this;
         }
         
         /**
          * Set predefinedSources
          * @param predefinedSources  (optional)
-         * @return PostRequestBuilder
+         * @return AuthorsApi.PostRequestBuilder
          */
-        public PostRequestBuilder predefinedSources(Object predefinedSources) {
+        public AuthorsApi.PostRequestBuilder predefinedSources(Object predefinedSources) {
             this.predefinedSources = predefinedSources;
-            return this;
+            return (AuthorsApi.PostRequestBuilder) this;
         }
         
         /**
          * Set notSources
          * @param notSources  (optional)
-         * @return PostRequestBuilder
+         * @return AuthorsApi.PostRequestBuilder
          */
-        public PostRequestBuilder notSources(Object notSources) {
+        public AuthorsApi.PostRequestBuilder notSources(Object notSources) {
             this.notSources = notSources;
-            return this;
+            return (AuthorsApi.PostRequestBuilder) this;
         }
         
         /**
          * Set lang
          * @param lang  (optional)
-         * @return PostRequestBuilder
+         * @return AuthorsApi.PostRequestBuilder
          */
-        public PostRequestBuilder lang(Object lang) {
+        public AuthorsApi.PostRequestBuilder lang(Object lang) {
             this.lang = lang;
-            return this;
+            return (AuthorsApi.PostRequestBuilder) this;
         }
         
         /**
          * Set notLang
          * @param notLang  (optional)
-         * @return PostRequestBuilder
+         * @return AuthorsApi.PostRequestBuilder
          */
-        public PostRequestBuilder notLang(Object notLang) {
+        public AuthorsApi.PostRequestBuilder notLang(Object notLang) {
             this.notLang = notLang;
-            return this;
+            return (AuthorsApi.PostRequestBuilder) this;
         }
         
         /**
          * Set countries
          * @param countries  (optional)
-         * @return PostRequestBuilder
+         * @return AuthorsApi.PostRequestBuilder
          */
-        public PostRequestBuilder countries(Object countries) {
+        public AuthorsApi.PostRequestBuilder countries(Object countries) {
             this.countries = countries;
-            return this;
+            return (AuthorsApi.PostRequestBuilder) this;
         }
         
         /**
          * Set notCountries
          * @param notCountries  (optional)
-         * @return PostRequestBuilder
+         * @return AuthorsApi.PostRequestBuilder
          */
-        public PostRequestBuilder notCountries(Object notCountries) {
+        public AuthorsApi.PostRequestBuilder notCountries(Object notCountries) {
             this.notCountries = notCountries;
-            return this;
+            return (AuthorsApi.PostRequestBuilder) this;
         }
         
         /**
          * Set from
          * @param from  (optional)
-         * @return PostRequestBuilder
+         * @return AuthorsApi.PostRequestBuilder
          */
-        public PostRequestBuilder from(String from) {
+        public AuthorsApi.PostRequestBuilder from(String from) {
             this.from = from;
-            return this;
+            return (AuthorsApi.PostRequestBuilder) this;
         }
         
         /**
          * Set to
          * @param to  (optional)
-         * @return PostRequestBuilder
+         * @return AuthorsApi.PostRequestBuilder
          */
-        public PostRequestBuilder to(String to) {
+        public AuthorsApi.PostRequestBuilder to(String to) {
             this.to = to;
-            return this;
+            return (AuthorsApi.PostRequestBuilder) this;
         }
         
         /**
          * Set publishedDatePrecision
          * @param publishedDatePrecision  (optional)
-         * @return PostRequestBuilder
+         * @return AuthorsApi.PostRequestBuilder
          */
-        public PostRequestBuilder publishedDatePrecision(String publishedDatePrecision) {
+        public AuthorsApi.PostRequestBuilder publishedDatePrecision(String publishedDatePrecision) {
             this.publishedDatePrecision = publishedDatePrecision;
-            return this;
+            return (AuthorsApi.PostRequestBuilder) this;
         }
         
         /**
          * Set byParseDate
          * @param byParseDate  (optional, default to false)
-         * @return PostRequestBuilder
+         * @return AuthorsApi.PostRequestBuilder
          */
-        public PostRequestBuilder byParseDate(Boolean byParseDate) {
+        public AuthorsApi.PostRequestBuilder byParseDate(Boolean byParseDate) {
             this.byParseDate = byParseDate;
-            return this;
+            return (AuthorsApi.PostRequestBuilder) this;
         }
         
         /**
          * Set sortBy
          * @param sortBy  (optional, default to relevancy)
-         * @return PostRequestBuilder
+         * @return AuthorsApi.PostRequestBuilder
          */
-        public PostRequestBuilder sortBy(String sortBy) {
+        public AuthorsApi.PostRequestBuilder sortBy(String sortBy) {
             this.sortBy = sortBy;
-            return this;
+            return (AuthorsApi.PostRequestBuilder) this;
         }
         
         /**
          * Set rankedOnly
          * @param rankedOnly  (optional)
-         * @return PostRequestBuilder
+         * @return AuthorsApi.PostRequestBuilder
          */
-        public PostRequestBuilder rankedOnly(String rankedOnly) {
+        public AuthorsApi.PostRequestBuilder rankedOnly(String rankedOnly) {
             this.rankedOnly = rankedOnly;
-            return this;
+            return (AuthorsApi.PostRequestBuilder) this;
         }
         
         /**
          * Set fromRank
          * @param fromRank  (optional)
-         * @return PostRequestBuilder
+         * @return AuthorsApi.PostRequestBuilder
          */
-        public PostRequestBuilder fromRank(Integer fromRank) {
+        public AuthorsApi.PostRequestBuilder fromRank(Integer fromRank) {
             this.fromRank = fromRank;
-            return this;
+            return (AuthorsApi.PostRequestBuilder) this;
         }
         
         /**
          * Set toRank
          * @param toRank  (optional)
-         * @return PostRequestBuilder
+         * @return AuthorsApi.PostRequestBuilder
          */
-        public PostRequestBuilder toRank(Integer toRank) {
+        public AuthorsApi.PostRequestBuilder toRank(Integer toRank) {
             this.toRank = toRank;
-            return this;
+            return (AuthorsApi.PostRequestBuilder) this;
         }
         
         /**
          * Set isHeadline
          * @param isHeadline  (optional)
-         * @return PostRequestBuilder
+         * @return AuthorsApi.PostRequestBuilder
          */
-        public PostRequestBuilder isHeadline(Boolean isHeadline) {
+        public AuthorsApi.PostRequestBuilder isHeadline(Boolean isHeadline) {
             this.isHeadline = isHeadline;
-            return this;
+            return (AuthorsApi.PostRequestBuilder) this;
         }
         
         /**
          * Set isOpinion
          * @param isOpinion  (optional)
-         * @return PostRequestBuilder
+         * @return AuthorsApi.PostRequestBuilder
          */
-        public PostRequestBuilder isOpinion(Boolean isOpinion) {
+        public AuthorsApi.PostRequestBuilder isOpinion(Boolean isOpinion) {
             this.isOpinion = isOpinion;
-            return this;
+            return (AuthorsApi.PostRequestBuilder) this;
         }
         
         /**
          * Set isPaidContent
          * @param isPaidContent  (optional)
-         * @return PostRequestBuilder
+         * @return AuthorsApi.PostRequestBuilder
          */
-        public PostRequestBuilder isPaidContent(Boolean isPaidContent) {
+        public AuthorsApi.PostRequestBuilder isPaidContent(Boolean isPaidContent) {
             this.isPaidContent = isPaidContent;
-            return this;
+            return (AuthorsApi.PostRequestBuilder) this;
         }
         
         /**
          * Set parentUrl
          * @param parentUrl  (optional)
-         * @return PostRequestBuilder
+         * @return AuthorsApi.PostRequestBuilder
          */
-        public PostRequestBuilder parentUrl(Object parentUrl) {
+        public AuthorsApi.PostRequestBuilder parentUrl(Object parentUrl) {
             this.parentUrl = parentUrl;
-            return this;
+            return (AuthorsApi.PostRequestBuilder) this;
         }
         
         /**
          * Set allLinks
          * @param allLinks  (optional)
-         * @return PostRequestBuilder
+         * @return AuthorsApi.PostRequestBuilder
          */
-        public PostRequestBuilder allLinks(Object allLinks) {
+        public AuthorsApi.PostRequestBuilder allLinks(Object allLinks) {
             this.allLinks = allLinks;
-            return this;
+            return (AuthorsApi.PostRequestBuilder) this;
         }
         
         /**
          * Set allDomainLinks
          * @param allDomainLinks  (optional)
-         * @return PostRequestBuilder
+         * @return AuthorsApi.PostRequestBuilder
          */
-        public PostRequestBuilder allDomainLinks(Object allDomainLinks) {
+        public AuthorsApi.PostRequestBuilder allDomainLinks(Object allDomainLinks) {
             this.allDomainLinks = allDomainLinks;
-            return this;
+            return (AuthorsApi.PostRequestBuilder) this;
         }
         
         /**
          * Set wordCountMin
          * @param wordCountMin  (optional)
-         * @return PostRequestBuilder
+         * @return AuthorsApi.PostRequestBuilder
          */
-        public PostRequestBuilder wordCountMin(Integer wordCountMin) {
+        public AuthorsApi.PostRequestBuilder wordCountMin(Integer wordCountMin) {
             this.wordCountMin = wordCountMin;
-            return this;
+            return (AuthorsApi.PostRequestBuilder) this;
         }
         
         /**
          * Set wordCountMax
          * @param wordCountMax  (optional)
-         * @return PostRequestBuilder
+         * @return AuthorsApi.PostRequestBuilder
          */
-        public PostRequestBuilder wordCountMax(Integer wordCountMax) {
+        public AuthorsApi.PostRequestBuilder wordCountMax(Integer wordCountMax) {
             this.wordCountMax = wordCountMax;
-            return this;
+            return (AuthorsApi.PostRequestBuilder) this;
         }
         
         /**
          * Set page
          * @param page  (optional, default to 1)
-         * @return PostRequestBuilder
+         * @return AuthorsApi.PostRequestBuilder
          */
-        public PostRequestBuilder page(Integer page) {
+        public AuthorsApi.PostRequestBuilder page(Integer page) {
             this.page = page;
-            return this;
+            return (AuthorsApi.PostRequestBuilder) this;
         }
         
         /**
          * Set pageSize
          * @param pageSize  (optional, default to 100)
-         * @return PostRequestBuilder
+         * @return AuthorsApi.PostRequestBuilder
          */
-        public PostRequestBuilder pageSize(Integer pageSize) {
+        public AuthorsApi.PostRequestBuilder pageSize(Integer pageSize) {
             this.pageSize = pageSize;
-            return this;
+            return (AuthorsApi.PostRequestBuilder) this;
         }
         
         /**
          * Set includeNlpData
          * @param includeNlpData  (optional)
-         * @return PostRequestBuilder
+         * @return AuthorsApi.PostRequestBuilder
          */
-        public PostRequestBuilder includeNlpData(Boolean includeNlpData) {
+        public AuthorsApi.PostRequestBuilder includeNlpData(Boolean includeNlpData) {
             this.includeNlpData = includeNlpData;
-            return this;
+            return (AuthorsApi.PostRequestBuilder) this;
         }
         
         /**
          * Set hasNlp
          * @param hasNlp  (optional)
-         * @return PostRequestBuilder
+         * @return AuthorsApi.PostRequestBuilder
          */
-        public PostRequestBuilder hasNlp(Boolean hasNlp) {
+        public AuthorsApi.PostRequestBuilder hasNlp(Boolean hasNlp) {
             this.hasNlp = hasNlp;
-            return this;
+            return (AuthorsApi.PostRequestBuilder) this;
         }
         
         /**
          * Set theme
          * @param theme  (optional)
-         * @return PostRequestBuilder
+         * @return AuthorsApi.PostRequestBuilder
          */
-        public PostRequestBuilder theme(String theme) {
+        public AuthorsApi.PostRequestBuilder theme(String theme) {
             this.theme = theme;
-            return this;
+            return (AuthorsApi.PostRequestBuilder) this;
         }
         
         /**
          * Set notTheme
          * @param notTheme  (optional)
-         * @return PostRequestBuilder
+         * @return AuthorsApi.PostRequestBuilder
          */
-        public PostRequestBuilder notTheme(String notTheme) {
+        public AuthorsApi.PostRequestBuilder notTheme(String notTheme) {
             this.notTheme = notTheme;
-            return this;
+            return (AuthorsApi.PostRequestBuilder) this;
         }
         
         /**
          * Set nerName
          * @param nerName  (optional)
-         * @return PostRequestBuilder
+         * @return AuthorsApi.PostRequestBuilder
          */
-        public PostRequestBuilder nerName(String nerName) {
+        public AuthorsApi.PostRequestBuilder nerName(String nerName) {
             this.nerName = nerName;
-            return this;
+            return (AuthorsApi.PostRequestBuilder) this;
         }
         
         /**
          * Set titleSentimentMin
          * @param titleSentimentMin  (optional)
-         * @return PostRequestBuilder
+         * @return AuthorsApi.PostRequestBuilder
          */
-        public PostRequestBuilder titleSentimentMin(Double titleSentimentMin) {
+        public AuthorsApi.PostRequestBuilder titleSentimentMin(Double titleSentimentMin) {
             this.titleSentimentMin = titleSentimentMin;
-            return this;
+            return (AuthorsApi.PostRequestBuilder) this;
         }
         
         /**
          * Set titleSentimentMax
          * @param titleSentimentMax  (optional)
-         * @return PostRequestBuilder
+         * @return AuthorsApi.PostRequestBuilder
          */
-        public PostRequestBuilder titleSentimentMax(Double titleSentimentMax) {
+        public AuthorsApi.PostRequestBuilder titleSentimentMax(Double titleSentimentMax) {
             this.titleSentimentMax = titleSentimentMax;
-            return this;
+            return (AuthorsApi.PostRequestBuilder) this;
         }
         
         /**
          * Set contentSentimentMin
          * @param contentSentimentMin  (optional)
-         * @return PostRequestBuilder
+         * @return AuthorsApi.PostRequestBuilder
          */
-        public PostRequestBuilder contentSentimentMin(Double contentSentimentMin) {
+        public AuthorsApi.PostRequestBuilder contentSentimentMin(Double contentSentimentMin) {
             this.contentSentimentMin = contentSentimentMin;
-            return this;
+            return (AuthorsApi.PostRequestBuilder) this;
         }
         
         /**
          * Set contentSentimentMax
          * @param contentSentimentMax  (optional)
-         * @return PostRequestBuilder
+         * @return AuthorsApi.PostRequestBuilder
          */
-        public PostRequestBuilder contentSentimentMax(Double contentSentimentMax) {
+        public AuthorsApi.PostRequestBuilder contentSentimentMax(Double contentSentimentMax) {
             this.contentSentimentMax = contentSentimentMax;
-            return this;
+            return (AuthorsApi.PostRequestBuilder) this;
         }
         
         /**
          * Set iptcTags
          * @param iptcTags  (optional)
-         * @return PostRequestBuilder
+         * @return AuthorsApi.PostRequestBuilder
          */
-        public PostRequestBuilder iptcTags(Object iptcTags) {
+        public AuthorsApi.PostRequestBuilder iptcTags(Object iptcTags) {
             this.iptcTags = iptcTags;
-            return this;
+            return (AuthorsApi.PostRequestBuilder) this;
         }
         
         /**
          * Set notIptcTags
          * @param notIptcTags  (optional)
-         * @return PostRequestBuilder
+         * @return AuthorsApi.PostRequestBuilder
          */
-        public PostRequestBuilder notIptcTags(Object notIptcTags) {
+        public AuthorsApi.PostRequestBuilder notIptcTags(Object notIptcTags) {
             this.notIptcTags = notIptcTags;
-            return this;
+            return (AuthorsApi.PostRequestBuilder) this;
         }
         
         /**
          * Set iabTags
          * @param iabTags  (optional)
-         * @return PostRequestBuilder
+         * @return AuthorsApi.PostRequestBuilder
          */
-        public PostRequestBuilder iabTags(Object iabTags) {
+        public AuthorsApi.PostRequestBuilder iabTags(Object iabTags) {
             this.iabTags = iabTags;
-            return this;
+            return (AuthorsApi.PostRequestBuilder) this;
         }
         
         /**
          * Set notIabTags
          * @param notIabTags  (optional)
-         * @return PostRequestBuilder
+         * @return AuthorsApi.PostRequestBuilder
          */
-        public PostRequestBuilder notIabTags(Object notIabTags) {
+        public AuthorsApi.PostRequestBuilder notIabTags(Object notIabTags) {
             this.notIabTags = notIabTags;
-            return this;
+            return (AuthorsApi.PostRequestBuilder) this;
         }
         
         /**
@@ -1448,10 +1448,10 @@ public class AuthorsApiGenerated {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public PostRequestBuilder post(String authorName) throws IllegalArgumentException {
+    public AuthorsApi.PostRequestBuilder post(String authorName) throws IllegalArgumentException {
         if (authorName == null) throw new IllegalArgumentException("\"authorName\" is required but got null");
             
 
-        return new PostRequestBuilder(authorName);
+        return ((AuthorsApi) this).new PostRequestBuilder(authorName);
     }
 }

@@ -157,53 +157,53 @@ public class SearchLinkApiGenerated {
         return localVarCall;
     }
 
-    public class GetRequestBuilder {
-        private Object ids;
-        private Object links;
-        private Integer page;
-        private Integer pageSize;
+    public abstract class GetRequestBuilderGenerated {
+        Object ids;
+        Object links;
+        Integer page;
+        Integer pageSize;
 
-        private GetRequestBuilder() {
+        public GetRequestBuilderGenerated() {
         }
 
         /**
          * Set ids
          * @param ids  (optional)
-         * @return GetRequestBuilder
+         * @return SearchLinkApi.GetRequestBuilder
          */
-        public GetRequestBuilder ids(Object ids) {
+        public SearchLinkApi.GetRequestBuilder ids(Object ids) {
             this.ids = ids;
-            return this;
+            return (SearchLinkApi.GetRequestBuilder) this;
         }
         
         /**
          * Set links
          * @param links  (optional)
-         * @return GetRequestBuilder
+         * @return SearchLinkApi.GetRequestBuilder
          */
-        public GetRequestBuilder links(Object links) {
+        public SearchLinkApi.GetRequestBuilder links(Object links) {
             this.links = links;
-            return this;
+            return (SearchLinkApi.GetRequestBuilder) this;
         }
         
         /**
          * Set page
          * @param page  (optional, default to 1)
-         * @return GetRequestBuilder
+         * @return SearchLinkApi.GetRequestBuilder
          */
-        public GetRequestBuilder page(Integer page) {
+        public SearchLinkApi.GetRequestBuilder page(Integer page) {
             this.page = page;
-            return this;
+            return (SearchLinkApi.GetRequestBuilder) this;
         }
         
         /**
          * Set pageSize
          * @param pageSize  (optional, default to 100)
-         * @return GetRequestBuilder
+         * @return SearchLinkApi.GetRequestBuilder
          */
-        public GetRequestBuilder pageSize(Integer pageSize) {
+        public SearchLinkApi.GetRequestBuilder pageSize(Integer pageSize) {
             this.pageSize = pageSize;
-            return this;
+            return (SearchLinkApi.GetRequestBuilder) this;
         }
         
         /**
@@ -277,8 +277,8 @@ public class SearchLinkApiGenerated {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public GetRequestBuilder get() throws IllegalArgumentException {
-        return new GetRequestBuilder();
+    public SearchLinkApi.GetRequestBuilder get() throws IllegalArgumentException {
+        return ((SearchLinkApi) this).new GetRequestBuilder();
     }
     private okhttp3.Call postCall(SearchURLRequest searchURLRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
@@ -351,53 +351,53 @@ public class SearchLinkApiGenerated {
         return localVarCall;
     }
 
-    public class PostRequestBuilder {
-        private Object ids;
-        private Object links;
-        private Integer page;
-        private Integer pageSize;
+    public abstract class PostRequestBuilderGenerated {
+        Object ids;
+        Object links;
+        Integer page;
+        Integer pageSize;
 
-        private PostRequestBuilder() {
+        public PostRequestBuilderGenerated() {
         }
 
         /**
          * Set ids
          * @param ids  (optional)
-         * @return PostRequestBuilder
+         * @return SearchLinkApi.PostRequestBuilder
          */
-        public PostRequestBuilder ids(Object ids) {
+        public SearchLinkApi.PostRequestBuilder ids(Object ids) {
             this.ids = ids;
-            return this;
+            return (SearchLinkApi.PostRequestBuilder) this;
         }
         
         /**
          * Set links
          * @param links  (optional)
-         * @return PostRequestBuilder
+         * @return SearchLinkApi.PostRequestBuilder
          */
-        public PostRequestBuilder links(Object links) {
+        public SearchLinkApi.PostRequestBuilder links(Object links) {
             this.links = links;
-            return this;
+            return (SearchLinkApi.PostRequestBuilder) this;
         }
         
         /**
          * Set page
          * @param page  (optional, default to 1)
-         * @return PostRequestBuilder
+         * @return SearchLinkApi.PostRequestBuilder
          */
-        public PostRequestBuilder page(Integer page) {
+        public SearchLinkApi.PostRequestBuilder page(Integer page) {
             this.page = page;
-            return this;
+            return (SearchLinkApi.PostRequestBuilder) this;
         }
         
         /**
          * Set pageSize
          * @param pageSize  (optional, default to 100)
-         * @return PostRequestBuilder
+         * @return SearchLinkApi.PostRequestBuilder
          */
-        public PostRequestBuilder pageSize(Integer pageSize) {
+        public SearchLinkApi.PostRequestBuilder pageSize(Integer pageSize) {
             this.pageSize = pageSize;
-            return this;
+            return (SearchLinkApi.PostRequestBuilder) this;
         }
         
         /**
@@ -484,7 +484,7 @@ public class SearchLinkApiGenerated {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public PostRequestBuilder post() throws IllegalArgumentException {
-        return new PostRequestBuilder();
+    public SearchLinkApi.PostRequestBuilder post() throws IllegalArgumentException {
+        return ((SearchLinkApi) this).new PostRequestBuilder();
     }
 }

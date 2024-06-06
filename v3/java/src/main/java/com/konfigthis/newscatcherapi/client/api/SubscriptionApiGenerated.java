@@ -140,9 +140,9 @@ public class SubscriptionApiGenerated {
         return localVarCall;
     }
 
-    public class GetRequestBuilder {
+    public abstract class GetRequestBuilderGenerated {
 
-        private GetRequestBuilder() {
+        public GetRequestBuilderGenerated() {
         }
 
         /**
@@ -216,8 +216,8 @@ public class SubscriptionApiGenerated {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public GetRequestBuilder get() throws IllegalArgumentException {
-        return new GetRequestBuilder();
+    public SubscriptionApi.GetRequestBuilder get() throws IllegalArgumentException {
+        return ((SubscriptionApi) this).new GetRequestBuilder();
     }
     private okhttp3.Call postCall(final ApiCallback _callback) throws ApiException {
         String basePath = null;
@@ -284,9 +284,9 @@ public class SubscriptionApiGenerated {
         return localVarCall;
     }
 
-    public class PostRequestBuilder {
+    public abstract class PostRequestBuilderGenerated {
 
-        private PostRequestBuilder() {
+        public PostRequestBuilderGenerated() {
         }
 
         /**
@@ -360,7 +360,7 @@ public class SubscriptionApiGenerated {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public PostRequestBuilder post() throws IllegalArgumentException {
-        return new PostRequestBuilder();
+    public SubscriptionApi.PostRequestBuilder post() throws IllegalArgumentException {
+        return ((SubscriptionApi) this).new PostRequestBuilder();
     }
 }
