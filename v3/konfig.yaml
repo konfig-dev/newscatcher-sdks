@@ -22,7 +22,7 @@ fixConfig:
         href='https://newscatcherapi.com'>https://newscatcherapi.com</a>
 generators:
   java:
-    version: 6.0.6
+    version: 6.0.7
     groupId: com.konfigthis.newscatcherapi
     artifactId: newscatcherapi-java-sdk
     outputDirectory: java
@@ -31,7 +31,7 @@ generators:
       userId: konfig-dev
       repoId: newscatcher-sdks/tree/main/v3/java
   python:
-    version: 6.0.7
+    version: 6.0.8
     packageName: newscatcherapi_client
     projectName: newscatcherapi-python-sdk
     useAiohttp3_8: true
@@ -42,7 +42,7 @@ generators:
       userId: konfig-dev
       repoId: newscatcher-sdks/tree/main/v3/python
   typescript:
-    version: 6.0.8
+    version: 6.0.9
     npmName: newscatcherapi-typescript-sdk
     clientName: Newscatcher
     useAxios0_27_2: true
@@ -59,7 +59,7 @@ generators:
         - total_pages
         - page_size
   csharp:
-    version: 6.0.6
+    version: 6.0.7
     packageName: Newscatcherapi.Net
     outputDirectory: csharp
     logoPath: ../logo.png
@@ -68,7 +68,7 @@ generators:
       userId: konfig-dev
       repoId: newscatcher-sdks/tree/main/v3/csharp
   go:
-    version: 6.0.7
+    version: 6.0.8
     packageName: newscatcherapi
     outputDirectory: go/v6
     git:

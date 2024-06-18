@@ -3,7 +3,7 @@
 <img src='https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg' width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a>
 
 
-[![PyPI](https://img.shields.io/badge/PyPI-v6.0.7-blue)](https://pypi.org/project/newscatcherapi-python-sdk/6.0.7)
+[![PyPI](https://img.shields.io/badge/PyPI-v6.0.8-blue)](https://pypi.org/project/newscatcherapi-python-sdk/6.0.8)
 [![README.md](https://img.shields.io/badge/README-Click%20Here-green)](https://github.com/konfig-dev/newscatcher-sdks/tree/main/v3/python#readme)
 
 ## Table of Contents<a id="table-of-contents"></a>
@@ -40,7 +40,7 @@ Python >=3.7
 ## Installation<a id="installation"></a>
 
 ```sh
-pip install newscatcherapi-python-sdk==6.0.7
+pip install newscatcherapi-python-sdk==6.0.8
 ```
 
 ## Getting Started<a id="getting-started"></a>
