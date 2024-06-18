@@ -343,539 +343,539 @@ public class SearchApiGenerated {
         return localVarCall;
     }
 
-    public class GetRequestBuilder {
-        private final String q;
-        private String searchIn;
-        private Object predefinedSources;
-        private Object sources;
-        private Object notSources;
-        private Object lang;
-        private Object notLang;
-        private Object countries;
-        private Object notCountries;
-        private Object notAuthorName;
-        private String from;
-        private String to;
-        private String publishedDatePrecision;
-        private Boolean byParseDate;
-        private String sortBy;
-        private String rankedOnly;
-        private Integer fromRank;
-        private Integer toRank;
-        private Boolean isHeadline;
-        private Boolean isOpinion;
-        private Boolean isPaidContent;
-        private Object parentUrl;
-        private Object allLinks;
-        private Object allDomainLinks;
-        private Integer wordCountMin;
-        private Integer wordCountMax;
-        private Integer page;
-        private Integer pageSize;
-        private String clusteringVariable;
-        private Boolean clusteringEnabled;
-        private Double clusteringThreshold;
-        private Boolean includeNlpData;
-        private Boolean hasNlp;
-        private String theme;
-        private String notTheme;
-        private String orGEntityName;
-        private String peREntityName;
-        private String loCEntityName;
-        private String miSCEntityName;
-        private Double titleSentimentMin;
-        private Double titleSentimentMax;
-        private Double contentSentimentMin;
-        private Double contentSentimentMax;
-        private Object iptcTags;
-        private Object notIptcTags;
-        private Object sourceName;
-        private Object iabTags;
-        private Object notIabTags;
-        private Boolean excludeDuplicates;
+    public abstract class GetRequestBuilderGenerated {
+        final String q;
+        String searchIn;
+        Object predefinedSources;
+        Object sources;
+        Object notSources;
+        Object lang;
+        Object notLang;
+        Object countries;
+        Object notCountries;
+        Object notAuthorName;
+        String from;
+        String to;
+        String publishedDatePrecision;
+        Boolean byParseDate;
+        String sortBy;
+        String rankedOnly;
+        Integer fromRank;
+        Integer toRank;
+        Boolean isHeadline;
+        Boolean isOpinion;
+        Boolean isPaidContent;
+        Object parentUrl;
+        Object allLinks;
+        Object allDomainLinks;
+        Integer wordCountMin;
+        Integer wordCountMax;
+        Integer page;
+        Integer pageSize;
+        String clusteringVariable;
+        Boolean clusteringEnabled;
+        Double clusteringThreshold;
+        Boolean includeNlpData;
+        Boolean hasNlp;
+        String theme;
+        String notTheme;
+        String orGEntityName;
+        String peREntityName;
+        String loCEntityName;
+        String miSCEntityName;
+        Double titleSentimentMin;
+        Double titleSentimentMax;
+        Double contentSentimentMin;
+        Double contentSentimentMax;
+        Object iptcTags;
+        Object notIptcTags;
+        Object sourceName;
+        Object iabTags;
+        Object notIabTags;
+        Boolean excludeDuplicates;
 
-        private GetRequestBuilder(String q) {
+        public GetRequestBuilderGenerated(String q) {
             this.q = q;
         }
 
         /**
          * Set searchIn
          * @param searchIn  (optional, default to title_content)
-         * @return GetRequestBuilder
+         * @return SearchApi.GetRequestBuilder
          */
-        public GetRequestBuilder searchIn(String searchIn) {
+        public SearchApi.GetRequestBuilder searchIn(String searchIn) {
             this.searchIn = searchIn;
-            return this;
+            return (SearchApi.GetRequestBuilder) this;
         }
         
         /**
          * Set predefinedSources
          * @param predefinedSources  (optional)
-         * @return GetRequestBuilder
+         * @return SearchApi.GetRequestBuilder
          */
-        public GetRequestBuilder predefinedSources(Object predefinedSources) {
+        public SearchApi.GetRequestBuilder predefinedSources(Object predefinedSources) {
             this.predefinedSources = predefinedSources;
-            return this;
+            return (SearchApi.GetRequestBuilder) this;
         }
         
         /**
          * Set sources
          * @param sources  (optional)
-         * @return GetRequestBuilder
+         * @return SearchApi.GetRequestBuilder
          */
-        public GetRequestBuilder sources(Object sources) {
+        public SearchApi.GetRequestBuilder sources(Object sources) {
             this.sources = sources;
-            return this;
+            return (SearchApi.GetRequestBuilder) this;
         }
         
         /**
          * Set notSources
          * @param notSources  (optional)
-         * @return GetRequestBuilder
+         * @return SearchApi.GetRequestBuilder
          */
-        public GetRequestBuilder notSources(Object notSources) {
+        public SearchApi.GetRequestBuilder notSources(Object notSources) {
             this.notSources = notSources;
-            return this;
+            return (SearchApi.GetRequestBuilder) this;
         }
         
         /**
          * Set lang
          * @param lang  (optional)
-         * @return GetRequestBuilder
+         * @return SearchApi.GetRequestBuilder
          */
-        public GetRequestBuilder lang(Object lang) {
+        public SearchApi.GetRequestBuilder lang(Object lang) {
             this.lang = lang;
-            return this;
+            return (SearchApi.GetRequestBuilder) this;
         }
         
         /**
          * Set notLang
          * @param notLang  (optional)
-         * @return GetRequestBuilder
+         * @return SearchApi.GetRequestBuilder
          */
-        public GetRequestBuilder notLang(Object notLang) {
+        public SearchApi.GetRequestBuilder notLang(Object notLang) {
             this.notLang = notLang;
-            return this;
+            return (SearchApi.GetRequestBuilder) this;
         }
         
         /**
          * Set countries
          * @param countries  (optional)
-         * @return GetRequestBuilder
+         * @return SearchApi.GetRequestBuilder
          */
-        public GetRequestBuilder countries(Object countries) {
+        public SearchApi.GetRequestBuilder countries(Object countries) {
             this.countries = countries;
-            return this;
+            return (SearchApi.GetRequestBuilder) this;
         }
         
         /**
          * Set notCountries
          * @param notCountries  (optional)
-         * @return GetRequestBuilder
+         * @return SearchApi.GetRequestBuilder
          */
-        public GetRequestBuilder notCountries(Object notCountries) {
+        public SearchApi.GetRequestBuilder notCountries(Object notCountries) {
             this.notCountries = notCountries;
-            return this;
+            return (SearchApi.GetRequestBuilder) this;
         }
         
         /**
          * Set notAuthorName
          * @param notAuthorName  (optional)
-         * @return GetRequestBuilder
+         * @return SearchApi.GetRequestBuilder
          */
-        public GetRequestBuilder notAuthorName(Object notAuthorName) {
+        public SearchApi.GetRequestBuilder notAuthorName(Object notAuthorName) {
             this.notAuthorName = notAuthorName;
-            return this;
+            return (SearchApi.GetRequestBuilder) this;
         }
         
         /**
          * Set from
          * @param from  (optional)
-         * @return GetRequestBuilder
+         * @return SearchApi.GetRequestBuilder
          */
-        public GetRequestBuilder from(String from) {
+        public SearchApi.GetRequestBuilder from(String from) {
             this.from = from;
-            return this;
+            return (SearchApi.GetRequestBuilder) this;
         }
         
         /**
          * Set to
          * @param to  (optional)
-         * @return GetRequestBuilder
+         * @return SearchApi.GetRequestBuilder
          */
-        public GetRequestBuilder to(String to) {
+        public SearchApi.GetRequestBuilder to(String to) {
             this.to = to;
-            return this;
+            return (SearchApi.GetRequestBuilder) this;
         }
         
         /**
          * Set publishedDatePrecision
          * @param publishedDatePrecision  (optional)
-         * @return GetRequestBuilder
+         * @return SearchApi.GetRequestBuilder
          */
-        public GetRequestBuilder publishedDatePrecision(String publishedDatePrecision) {
+        public SearchApi.GetRequestBuilder publishedDatePrecision(String publishedDatePrecision) {
             this.publishedDatePrecision = publishedDatePrecision;
-            return this;
+            return (SearchApi.GetRequestBuilder) this;
         }
         
         /**
          * Set byParseDate
          * @param byParseDate  (optional, default to false)
-         * @return GetRequestBuilder
+         * @return SearchApi.GetRequestBuilder
          */
-        public GetRequestBuilder byParseDate(Boolean byParseDate) {
+        public SearchApi.GetRequestBuilder byParseDate(Boolean byParseDate) {
             this.byParseDate = byParseDate;
-            return this;
+            return (SearchApi.GetRequestBuilder) this;
         }
         
         /**
          * Set sortBy
          * @param sortBy  (optional, default to relevancy)
-         * @return GetRequestBuilder
+         * @return SearchApi.GetRequestBuilder
          */
-        public GetRequestBuilder sortBy(String sortBy) {
+        public SearchApi.GetRequestBuilder sortBy(String sortBy) {
             this.sortBy = sortBy;
-            return this;
+            return (SearchApi.GetRequestBuilder) this;
         }
         
         /**
          * Set rankedOnly
          * @param rankedOnly  (optional)
-         * @return GetRequestBuilder
+         * @return SearchApi.GetRequestBuilder
          */
-        public GetRequestBuilder rankedOnly(String rankedOnly) {
+        public SearchApi.GetRequestBuilder rankedOnly(String rankedOnly) {
             this.rankedOnly = rankedOnly;
-            return this;
+            return (SearchApi.GetRequestBuilder) this;
         }
         
         /**
          * Set fromRank
          * @param fromRank  (optional)
-         * @return GetRequestBuilder
+         * @return SearchApi.GetRequestBuilder
          */
-        public GetRequestBuilder fromRank(Integer fromRank) {
+        public SearchApi.GetRequestBuilder fromRank(Integer fromRank) {
             this.fromRank = fromRank;
-            return this;
+            return (SearchApi.GetRequestBuilder) this;
         }
         
         /**
          * Set toRank
          * @param toRank  (optional)
-         * @return GetRequestBuilder
+         * @return SearchApi.GetRequestBuilder
          */
-        public GetRequestBuilder toRank(Integer toRank) {
+        public SearchApi.GetRequestBuilder toRank(Integer toRank) {
             this.toRank = toRank;
-            return this;
+            return (SearchApi.GetRequestBuilder) this;
         }
         
         /**
          * Set isHeadline
          * @param isHeadline  (optional)
-         * @return GetRequestBuilder
+         * @return SearchApi.GetRequestBuilder
          */
-        public GetRequestBuilder isHeadline(Boolean isHeadline) {
+        public SearchApi.GetRequestBuilder isHeadline(Boolean isHeadline) {
             this.isHeadline = isHeadline;
-            return this;
+            return (SearchApi.GetRequestBuilder) this;
         }
         
         /**
          * Set isOpinion
          * @param isOpinion  (optional)
-         * @return GetRequestBuilder
+         * @return SearchApi.GetRequestBuilder
          */
-        public GetRequestBuilder isOpinion(Boolean isOpinion) {
+        public SearchApi.GetRequestBuilder isOpinion(Boolean isOpinion) {
             this.isOpinion = isOpinion;
-            return this;
+            return (SearchApi.GetRequestBuilder) this;
         }
         
         /**
          * Set isPaidContent
          * @param isPaidContent  (optional)
-         * @return GetRequestBuilder
+         * @return SearchApi.GetRequestBuilder
          */
-        public GetRequestBuilder isPaidContent(Boolean isPaidContent) {
+        public SearchApi.GetRequestBuilder isPaidContent(Boolean isPaidContent) {
             this.isPaidContent = isPaidContent;
-            return this;
+            return (SearchApi.GetRequestBuilder) this;
         }
         
         /**
          * Set parentUrl
          * @param parentUrl  (optional)
-         * @return GetRequestBuilder
+         * @return SearchApi.GetRequestBuilder
          */
-        public GetRequestBuilder parentUrl(Object parentUrl) {
+        public SearchApi.GetRequestBuilder parentUrl(Object parentUrl) {
             this.parentUrl = parentUrl;
-            return this;
+            return (SearchApi.GetRequestBuilder) this;
         }
         
         /**
          * Set allLinks
          * @param allLinks  (optional)
-         * @return GetRequestBuilder
+         * @return SearchApi.GetRequestBuilder
          */
-        public GetRequestBuilder allLinks(Object allLinks) {
+        public SearchApi.GetRequestBuilder allLinks(Object allLinks) {
             this.allLinks = allLinks;
-            return this;
+            return (SearchApi.GetRequestBuilder) this;
         }
         
         /**
          * Set allDomainLinks
          * @param allDomainLinks  (optional)
-         * @return GetRequestBuilder
+         * @return SearchApi.GetRequestBuilder
          */
-        public GetRequestBuilder allDomainLinks(Object allDomainLinks) {
+        public SearchApi.GetRequestBuilder allDomainLinks(Object allDomainLinks) {
             this.allDomainLinks = allDomainLinks;
-            return this;
+            return (SearchApi.GetRequestBuilder) this;
         }
         
         /**
          * Set wordCountMin
          * @param wordCountMin  (optional)
-         * @return GetRequestBuilder
+         * @return SearchApi.GetRequestBuilder
          */
-        public GetRequestBuilder wordCountMin(Integer wordCountMin) {
+        public SearchApi.GetRequestBuilder wordCountMin(Integer wordCountMin) {
             this.wordCountMin = wordCountMin;
-            return this;
+            return (SearchApi.GetRequestBuilder) this;
         }
         
         /**
          * Set wordCountMax
          * @param wordCountMax  (optional)
-         * @return GetRequestBuilder
+         * @return SearchApi.GetRequestBuilder
          */
-        public GetRequestBuilder wordCountMax(Integer wordCountMax) {
+        public SearchApi.GetRequestBuilder wordCountMax(Integer wordCountMax) {
             this.wordCountMax = wordCountMax;
-            return this;
+            return (SearchApi.GetRequestBuilder) this;
         }
         
         /**
          * Set page
          * @param page  (optional, default to 1)
-         * @return GetRequestBuilder
+         * @return SearchApi.GetRequestBuilder
          */
-        public GetRequestBuilder page(Integer page) {
+        public SearchApi.GetRequestBuilder page(Integer page) {
             this.page = page;
-            return this;
+            return (SearchApi.GetRequestBuilder) this;
         }
         
         /**
          * Set pageSize
          * @param pageSize  (optional, default to 100)
-         * @return GetRequestBuilder
+         * @return SearchApi.GetRequestBuilder
          */
-        public GetRequestBuilder pageSize(Integer pageSize) {
+        public SearchApi.GetRequestBuilder pageSize(Integer pageSize) {
             this.pageSize = pageSize;
-            return this;
+            return (SearchApi.GetRequestBuilder) this;
         }
         
         /**
          * Set clusteringVariable
          * @param clusteringVariable  (optional)
-         * @return GetRequestBuilder
+         * @return SearchApi.GetRequestBuilder
          */
-        public GetRequestBuilder clusteringVariable(String clusteringVariable) {
+        public SearchApi.GetRequestBuilder clusteringVariable(String clusteringVariable) {
             this.clusteringVariable = clusteringVariable;
-            return this;
+            return (SearchApi.GetRequestBuilder) this;
         }
         
         /**
          * Set clusteringEnabled
          * @param clusteringEnabled  (optional)
-         * @return GetRequestBuilder
+         * @return SearchApi.GetRequestBuilder
          */
-        public GetRequestBuilder clusteringEnabled(Boolean clusteringEnabled) {
+        public SearchApi.GetRequestBuilder clusteringEnabled(Boolean clusteringEnabled) {
             this.clusteringEnabled = clusteringEnabled;
-            return this;
+            return (SearchApi.GetRequestBuilder) this;
         }
         
         /**
          * Set clusteringThreshold
          * @param clusteringThreshold  (optional)
-         * @return GetRequestBuilder
+         * @return SearchApi.GetRequestBuilder
          */
-        public GetRequestBuilder clusteringThreshold(Double clusteringThreshold) {
+        public SearchApi.GetRequestBuilder clusteringThreshold(Double clusteringThreshold) {
             this.clusteringThreshold = clusteringThreshold;
-            return this;
+            return (SearchApi.GetRequestBuilder) this;
         }
         
         /**
          * Set includeNlpData
          * @param includeNlpData  (optional)
-         * @return GetRequestBuilder
+         * @return SearchApi.GetRequestBuilder
          */
-        public GetRequestBuilder includeNlpData(Boolean includeNlpData) {
+        public SearchApi.GetRequestBuilder includeNlpData(Boolean includeNlpData) {
             this.includeNlpData = includeNlpData;
-            return this;
+            return (SearchApi.GetRequestBuilder) this;
         }
         
         /**
          * Set hasNlp
          * @param hasNlp  (optional)
-         * @return GetRequestBuilder
+         * @return SearchApi.GetRequestBuilder
          */
-        public GetRequestBuilder hasNlp(Boolean hasNlp) {
+        public SearchApi.GetRequestBuilder hasNlp(Boolean hasNlp) {
             this.hasNlp = hasNlp;
-            return this;
+            return (SearchApi.GetRequestBuilder) this;
         }
         
         /**
          * Set theme
          * @param theme  (optional)
-         * @return GetRequestBuilder
+         * @return SearchApi.GetRequestBuilder
          */
-        public GetRequestBuilder theme(String theme) {
+        public SearchApi.GetRequestBuilder theme(String theme) {
             this.theme = theme;
-            return this;
+            return (SearchApi.GetRequestBuilder) this;
         }
         
         /**
          * Set notTheme
          * @param notTheme  (optional)
-         * @return GetRequestBuilder
+         * @return SearchApi.GetRequestBuilder
          */
-        public GetRequestBuilder notTheme(String notTheme) {
+        public SearchApi.GetRequestBuilder notTheme(String notTheme) {
             this.notTheme = notTheme;
-            return this;
+            return (SearchApi.GetRequestBuilder) this;
         }
         
         /**
          * Set orGEntityName
          * @param orGEntityName  (optional)
-         * @return GetRequestBuilder
+         * @return SearchApi.GetRequestBuilder
          */
-        public GetRequestBuilder orGEntityName(String orGEntityName) {
+        public SearchApi.GetRequestBuilder orGEntityName(String orGEntityName) {
             this.orGEntityName = orGEntityName;
-            return this;
+            return (SearchApi.GetRequestBuilder) this;
         }
         
         /**
          * Set peREntityName
          * @param peREntityName  (optional)
-         * @return GetRequestBuilder
+         * @return SearchApi.GetRequestBuilder
          */
-        public GetRequestBuilder peREntityName(String peREntityName) {
+        public SearchApi.GetRequestBuilder peREntityName(String peREntityName) {
             this.peREntityName = peREntityName;
-            return this;
+            return (SearchApi.GetRequestBuilder) this;
         }
         
         /**
          * Set loCEntityName
          * @param loCEntityName  (optional)
-         * @return GetRequestBuilder
+         * @return SearchApi.GetRequestBuilder
          */
-        public GetRequestBuilder loCEntityName(String loCEntityName) {
+        public SearchApi.GetRequestBuilder loCEntityName(String loCEntityName) {
             this.loCEntityName = loCEntityName;
-            return this;
+            return (SearchApi.GetRequestBuilder) this;
         }
         
         /**
          * Set miSCEntityName
          * @param miSCEntityName  (optional)
-         * @return GetRequestBuilder
+         * @return SearchApi.GetRequestBuilder
          */
-        public GetRequestBuilder miSCEntityName(String miSCEntityName) {
+        public SearchApi.GetRequestBuilder miSCEntityName(String miSCEntityName) {
             this.miSCEntityName = miSCEntityName;
-            return this;
+            return (SearchApi.GetRequestBuilder) this;
         }
         
         /**
          * Set titleSentimentMin
          * @param titleSentimentMin  (optional)
-         * @return GetRequestBuilder
+         * @return SearchApi.GetRequestBuilder
          */
-        public GetRequestBuilder titleSentimentMin(Double titleSentimentMin) {
+        public SearchApi.GetRequestBuilder titleSentimentMin(Double titleSentimentMin) {
             this.titleSentimentMin = titleSentimentMin;
-            return this;
+            return (SearchApi.GetRequestBuilder) this;
         }
         
         /**
          * Set titleSentimentMax
          * @param titleSentimentMax  (optional)
-         * @return GetRequestBuilder
+         * @return SearchApi.GetRequestBuilder
          */
-        public GetRequestBuilder titleSentimentMax(Double titleSentimentMax) {
+        public SearchApi.GetRequestBuilder titleSentimentMax(Double titleSentimentMax) {
             this.titleSentimentMax = titleSentimentMax;
-            return this;
+            return (SearchApi.GetRequestBuilder) this;
         }
         
         /**
          * Set contentSentimentMin
          * @param contentSentimentMin  (optional)
-         * @return GetRequestBuilder
+         * @return SearchApi.GetRequestBuilder
          */
-        public GetRequestBuilder contentSentimentMin(Double contentSentimentMin) {
+        public SearchApi.GetRequestBuilder contentSentimentMin(Double contentSentimentMin) {
             this.contentSentimentMin = contentSentimentMin;
-            return this;
+            return (SearchApi.GetRequestBuilder) this;
         }
         
         /**
          * Set contentSentimentMax
          * @param contentSentimentMax  (optional)
-         * @return GetRequestBuilder
+         * @return SearchApi.GetRequestBuilder
          */
-        public GetRequestBuilder contentSentimentMax(Double contentSentimentMax) {
+        public SearchApi.GetRequestBuilder contentSentimentMax(Double contentSentimentMax) {
             this.contentSentimentMax = contentSentimentMax;
-            return this;
+            return (SearchApi.GetRequestBuilder) this;
         }
         
         /**
          * Set iptcTags
          * @param iptcTags  (optional)
-         * @return GetRequestBuilder
+         * @return SearchApi.GetRequestBuilder
          */
-        public GetRequestBuilder iptcTags(Object iptcTags) {
+        public SearchApi.GetRequestBuilder iptcTags(Object iptcTags) {
             this.iptcTags = iptcTags;
-            return this;
+            return (SearchApi.GetRequestBuilder) this;
         }
         
         /**
          * Set notIptcTags
          * @param notIptcTags  (optional)
-         * @return GetRequestBuilder
+         * @return SearchApi.GetRequestBuilder
          */
-        public GetRequestBuilder notIptcTags(Object notIptcTags) {
+        public SearchApi.GetRequestBuilder notIptcTags(Object notIptcTags) {
             this.notIptcTags = notIptcTags;
-            return this;
+            return (SearchApi.GetRequestBuilder) this;
         }
         
         /**
          * Set sourceName
          * @param sourceName  (optional)
-         * @return GetRequestBuilder
+         * @return SearchApi.GetRequestBuilder
          */
-        public GetRequestBuilder sourceName(Object sourceName) {
+        public SearchApi.GetRequestBuilder sourceName(Object sourceName) {
             this.sourceName = sourceName;
-            return this;
+            return (SearchApi.GetRequestBuilder) this;
         }
         
         /**
          * Set iabTags
          * @param iabTags  (optional)
-         * @return GetRequestBuilder
+         * @return SearchApi.GetRequestBuilder
          */
-        public GetRequestBuilder iabTags(Object iabTags) {
+        public SearchApi.GetRequestBuilder iabTags(Object iabTags) {
             this.iabTags = iabTags;
-            return this;
+            return (SearchApi.GetRequestBuilder) this;
         }
         
         /**
          * Set notIabTags
          * @param notIabTags  (optional)
-         * @return GetRequestBuilder
+         * @return SearchApi.GetRequestBuilder
          */
-        public GetRequestBuilder notIabTags(Object notIabTags) {
+        public SearchApi.GetRequestBuilder notIabTags(Object notIabTags) {
             this.notIabTags = notIabTags;
-            return this;
+            return (SearchApi.GetRequestBuilder) this;
         }
         
         /**
          * Set excludeDuplicates
          * @param excludeDuplicates  (optional)
-         * @return GetRequestBuilder
+         * @return SearchApi.GetRequestBuilder
          */
-        public GetRequestBuilder excludeDuplicates(Boolean excludeDuplicates) {
+        public SearchApi.GetRequestBuilder excludeDuplicates(Boolean excludeDuplicates) {
             this.excludeDuplicates = excludeDuplicates;
-            return this;
+            return (SearchApi.GetRequestBuilder) this;
         }
         
         /**
@@ -950,11 +950,11 @@ public class SearchApiGenerated {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public GetRequestBuilder get(String q) throws IllegalArgumentException {
+    public SearchApi.GetRequestBuilder get(String q) throws IllegalArgumentException {
         if (q == null) throw new IllegalArgumentException("\"q\" is required but got null");
             
 
-        return new GetRequestBuilder(q);
+        return ((SearchApi) this).new GetRequestBuilder(q);
     }
     private okhttp3.Call postCall(SearchRequest searchRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
@@ -1027,539 +1027,539 @@ public class SearchApiGenerated {
         return localVarCall;
     }
 
-    public class PostRequestBuilder {
-        private final String q;
-        private String searchIn;
-        private Object predefinedSources;
-        private Object sources;
-        private Object notSources;
-        private Object lang;
-        private Object notLang;
-        private Object countries;
-        private Object notCountries;
-        private Object notAuthorName;
-        private String from;
-        private String to;
-        private String publishedDatePrecision;
-        private Boolean byParseDate;
-        private String sortBy;
-        private String rankedOnly;
-        private Integer fromRank;
-        private Integer toRank;
-        private Boolean isHeadline;
-        private Boolean isOpinion;
-        private Boolean isPaidContent;
-        private Object parentUrl;
-        private Object allLinks;
-        private Object allDomainLinks;
-        private Integer wordCountMin;
-        private Integer wordCountMax;
-        private Integer page;
-        private Integer pageSize;
-        private String clusteringVariable;
-        private Boolean clusteringEnabled;
-        private Double clusteringThreshold;
-        private Boolean includeNlpData;
-        private Boolean hasNlp;
-        private String theme;
-        private String notTheme;
-        private String orGEntityName;
-        private String peREntityName;
-        private String loCEntityName;
-        private String miSCEntityName;
-        private Double titleSentimentMin;
-        private Double titleSentimentMax;
-        private Double contentSentimentMin;
-        private Double contentSentimentMax;
-        private Object iptcTags;
-        private Object notIptcTags;
-        private Object sourceName;
-        private Object iabTags;
-        private Object notIabTags;
-        private Boolean excludeDuplicates;
+    public abstract class PostRequestBuilderGenerated {
+        final String q;
+        String searchIn;
+        Object predefinedSources;
+        Object sources;
+        Object notSources;
+        Object lang;
+        Object notLang;
+        Object countries;
+        Object notCountries;
+        Object notAuthorName;
+        String from;
+        String to;
+        String publishedDatePrecision;
+        Boolean byParseDate;
+        String sortBy;
+        String rankedOnly;
+        Integer fromRank;
+        Integer toRank;
+        Boolean isHeadline;
+        Boolean isOpinion;
+        Boolean isPaidContent;
+        Object parentUrl;
+        Object allLinks;
+        Object allDomainLinks;
+        Integer wordCountMin;
+        Integer wordCountMax;
+        Integer page;
+        Integer pageSize;
+        String clusteringVariable;
+        Boolean clusteringEnabled;
+        Double clusteringThreshold;
+        Boolean includeNlpData;
+        Boolean hasNlp;
+        String theme;
+        String notTheme;
+        String orGEntityName;
+        String peREntityName;
+        String loCEntityName;
+        String miSCEntityName;
+        Double titleSentimentMin;
+        Double titleSentimentMax;
+        Double contentSentimentMin;
+        Double contentSentimentMax;
+        Object iptcTags;
+        Object notIptcTags;
+        Object sourceName;
+        Object iabTags;
+        Object notIabTags;
+        Boolean excludeDuplicates;
 
-        private PostRequestBuilder(String q) {
+        public PostRequestBuilderGenerated(String q) {
             this.q = q;
         }
 
         /**
          * Set searchIn
          * @param searchIn  (optional, default to title_content)
-         * @return PostRequestBuilder
+         * @return SearchApi.PostRequestBuilder
          */
-        public PostRequestBuilder searchIn(String searchIn) {
+        public SearchApi.PostRequestBuilder searchIn(String searchIn) {
             this.searchIn = searchIn;
-            return this;
+            return (SearchApi.PostRequestBuilder) this;
         }
         
         /**
          * Set predefinedSources
          * @param predefinedSources  (optional)
-         * @return PostRequestBuilder
+         * @return SearchApi.PostRequestBuilder
          */
-        public PostRequestBuilder predefinedSources(Object predefinedSources) {
+        public SearchApi.PostRequestBuilder predefinedSources(Object predefinedSources) {
             this.predefinedSources = predefinedSources;
-            return this;
+            return (SearchApi.PostRequestBuilder) this;
         }
         
         /**
          * Set sources
          * @param sources  (optional)
-         * @return PostRequestBuilder
+         * @return SearchApi.PostRequestBuilder
          */
-        public PostRequestBuilder sources(Object sources) {
+        public SearchApi.PostRequestBuilder sources(Object sources) {
             this.sources = sources;
-            return this;
+            return (SearchApi.PostRequestBuilder) this;
         }
         
         /**
          * Set notSources
          * @param notSources  (optional)
-         * @return PostRequestBuilder
+         * @return SearchApi.PostRequestBuilder
          */
-        public PostRequestBuilder notSources(Object notSources) {
+        public SearchApi.PostRequestBuilder notSources(Object notSources) {
             this.notSources = notSources;
-            return this;
+            return (SearchApi.PostRequestBuilder) this;
         }
         
         /**
          * Set lang
          * @param lang  (optional)
-         * @return PostRequestBuilder
+         * @return SearchApi.PostRequestBuilder
          */
-        public PostRequestBuilder lang(Object lang) {
+        public SearchApi.PostRequestBuilder lang(Object lang) {
             this.lang = lang;
-            return this;
+            return (SearchApi.PostRequestBuilder) this;
         }
         
         /**
          * Set notLang
          * @param notLang  (optional)
-         * @return PostRequestBuilder
+         * @return SearchApi.PostRequestBuilder
          */
-        public PostRequestBuilder notLang(Object notLang) {
+        public SearchApi.PostRequestBuilder notLang(Object notLang) {
             this.notLang = notLang;
-            return this;
+            return (SearchApi.PostRequestBuilder) this;
         }
         
         /**
          * Set countries
          * @param countries  (optional)
-         * @return PostRequestBuilder
+         * @return SearchApi.PostRequestBuilder
          */
-        public PostRequestBuilder countries(Object countries) {
+        public SearchApi.PostRequestBuilder countries(Object countries) {
             this.countries = countries;
-            return this;
+            return (SearchApi.PostRequestBuilder) this;
         }
         
         /**
          * Set notCountries
          * @param notCountries  (optional)
-         * @return PostRequestBuilder
+         * @return SearchApi.PostRequestBuilder
          */
-        public PostRequestBuilder notCountries(Object notCountries) {
+        public SearchApi.PostRequestBuilder notCountries(Object notCountries) {
             this.notCountries = notCountries;
-            return this;
+            return (SearchApi.PostRequestBuilder) this;
         }
         
         /**
          * Set notAuthorName
          * @param notAuthorName  (optional)
-         * @return PostRequestBuilder
+         * @return SearchApi.PostRequestBuilder
          */
-        public PostRequestBuilder notAuthorName(Object notAuthorName) {
+        public SearchApi.PostRequestBuilder notAuthorName(Object notAuthorName) {
             this.notAuthorName = notAuthorName;
-            return this;
+            return (SearchApi.PostRequestBuilder) this;
         }
         
         /**
          * Set from
          * @param from  (optional)
-         * @return PostRequestBuilder
+         * @return SearchApi.PostRequestBuilder
          */
-        public PostRequestBuilder from(String from) {
+        public SearchApi.PostRequestBuilder from(String from) {
             this.from = from;
-            return this;
+            return (SearchApi.PostRequestBuilder) this;
         }
         
         /**
          * Set to
          * @param to  (optional)
-         * @return PostRequestBuilder
+         * @return SearchApi.PostRequestBuilder
          */
-        public PostRequestBuilder to(String to) {
+        public SearchApi.PostRequestBuilder to(String to) {
             this.to = to;
-            return this;
+            return (SearchApi.PostRequestBuilder) this;
         }
         
         /**
          * Set publishedDatePrecision
          * @param publishedDatePrecision  (optional)
-         * @return PostRequestBuilder
+         * @return SearchApi.PostRequestBuilder
          */
-        public PostRequestBuilder publishedDatePrecision(String publishedDatePrecision) {
+        public SearchApi.PostRequestBuilder publishedDatePrecision(String publishedDatePrecision) {
             this.publishedDatePrecision = publishedDatePrecision;
-            return this;
+            return (SearchApi.PostRequestBuilder) this;
         }
         
         /**
          * Set byParseDate
          * @param byParseDate  (optional, default to false)
-         * @return PostRequestBuilder
+         * @return SearchApi.PostRequestBuilder
          */
-        public PostRequestBuilder byParseDate(Boolean byParseDate) {
+        public SearchApi.PostRequestBuilder byParseDate(Boolean byParseDate) {
             this.byParseDate = byParseDate;
-            return this;
+            return (SearchApi.PostRequestBuilder) this;
         }
         
         /**
          * Set sortBy
          * @param sortBy  (optional, default to relevancy)
-         * @return PostRequestBuilder
+         * @return SearchApi.PostRequestBuilder
          */
-        public PostRequestBuilder sortBy(String sortBy) {
+        public SearchApi.PostRequestBuilder sortBy(String sortBy) {
             this.sortBy = sortBy;
-            return this;
+            return (SearchApi.PostRequestBuilder) this;
         }
         
         /**
          * Set rankedOnly
          * @param rankedOnly  (optional)
-         * @return PostRequestBuilder
+         * @return SearchApi.PostRequestBuilder
          */
-        public PostRequestBuilder rankedOnly(String rankedOnly) {
+        public SearchApi.PostRequestBuilder rankedOnly(String rankedOnly) {
             this.rankedOnly = rankedOnly;
-            return this;
+            return (SearchApi.PostRequestBuilder) this;
         }
         
         /**
          * Set fromRank
          * @param fromRank  (optional)
-         * @return PostRequestBuilder
+         * @return SearchApi.PostRequestBuilder
          */
-        public PostRequestBuilder fromRank(Integer fromRank) {
+        public SearchApi.PostRequestBuilder fromRank(Integer fromRank) {
             this.fromRank = fromRank;
-            return this;
+            return (SearchApi.PostRequestBuilder) this;
         }
         
         /**
          * Set toRank
          * @param toRank  (optional)
-         * @return PostRequestBuilder
+         * @return SearchApi.PostRequestBuilder
          */
-        public PostRequestBuilder toRank(Integer toRank) {
+        public SearchApi.PostRequestBuilder toRank(Integer toRank) {
             this.toRank = toRank;
-            return this;
+            return (SearchApi.PostRequestBuilder) this;
         }
         
         /**
          * Set isHeadline
          * @param isHeadline  (optional)
-         * @return PostRequestBuilder
+         * @return SearchApi.PostRequestBuilder
          */
-        public PostRequestBuilder isHeadline(Boolean isHeadline) {
+        public SearchApi.PostRequestBuilder isHeadline(Boolean isHeadline) {
             this.isHeadline = isHeadline;
-            return this;
+            return (SearchApi.PostRequestBuilder) this;
         }
         
         /**
          * Set isOpinion
          * @param isOpinion  (optional)
-         * @return PostRequestBuilder
+         * @return SearchApi.PostRequestBuilder
          */
-        public PostRequestBuilder isOpinion(Boolean isOpinion) {
+        public SearchApi.PostRequestBuilder isOpinion(Boolean isOpinion) {
             this.isOpinion = isOpinion;
-            return this;
+            return (SearchApi.PostRequestBuilder) this;
         }
         
         /**
          * Set isPaidContent
          * @param isPaidContent  (optional)
-         * @return PostRequestBuilder
+         * @return SearchApi.PostRequestBuilder
          */
-        public PostRequestBuilder isPaidContent(Boolean isPaidContent) {
+        public SearchApi.PostRequestBuilder isPaidContent(Boolean isPaidContent) {
             this.isPaidContent = isPaidContent;
-            return this;
+            return (SearchApi.PostRequestBuilder) this;
         }
         
         /**
          * Set parentUrl
          * @param parentUrl  (optional)
-         * @return PostRequestBuilder
+         * @return SearchApi.PostRequestBuilder
          */
-        public PostRequestBuilder parentUrl(Object parentUrl) {
+        public SearchApi.PostRequestBuilder parentUrl(Object parentUrl) {
             this.parentUrl = parentUrl;
-            return this;
+            return (SearchApi.PostRequestBuilder) this;
         }
         
         /**
          * Set allLinks
          * @param allLinks  (optional)
-         * @return PostRequestBuilder
+         * @return SearchApi.PostRequestBuilder
          */
-        public PostRequestBuilder allLinks(Object allLinks) {
+        public SearchApi.PostRequestBuilder allLinks(Object allLinks) {
             this.allLinks = allLinks;
-            return this;
+            return (SearchApi.PostRequestBuilder) this;
         }
         
         /**
          * Set allDomainLinks
          * @param allDomainLinks  (optional)
-         * @return PostRequestBuilder
+         * @return SearchApi.PostRequestBuilder
          */
-        public PostRequestBuilder allDomainLinks(Object allDomainLinks) {
+        public SearchApi.PostRequestBuilder allDomainLinks(Object allDomainLinks) {
             this.allDomainLinks = allDomainLinks;
-            return this;
+            return (SearchApi.PostRequestBuilder) this;
         }
         
         /**
          * Set wordCountMin
          * @param wordCountMin  (optional)
-         * @return PostRequestBuilder
+         * @return SearchApi.PostRequestBuilder
          */
-        public PostRequestBuilder wordCountMin(Integer wordCountMin) {
+        public SearchApi.PostRequestBuilder wordCountMin(Integer wordCountMin) {
             this.wordCountMin = wordCountMin;
-            return this;
+            return (SearchApi.PostRequestBuilder) this;
         }
         
         /**
          * Set wordCountMax
          * @param wordCountMax  (optional)
-         * @return PostRequestBuilder
+         * @return SearchApi.PostRequestBuilder
          */
-        public PostRequestBuilder wordCountMax(Integer wordCountMax) {
+        public SearchApi.PostRequestBuilder wordCountMax(Integer wordCountMax) {
             this.wordCountMax = wordCountMax;
-            return this;
+            return (SearchApi.PostRequestBuilder) this;
         }
         
         /**
          * Set page
          * @param page  (optional, default to 1)
-         * @return PostRequestBuilder
+         * @return SearchApi.PostRequestBuilder
          */
-        public PostRequestBuilder page(Integer page) {
+        public SearchApi.PostRequestBuilder page(Integer page) {
             this.page = page;
-            return this;
+            return (SearchApi.PostRequestBuilder) this;
         }
         
         /**
          * Set pageSize
          * @param pageSize  (optional, default to 100)
-         * @return PostRequestBuilder
+         * @return SearchApi.PostRequestBuilder
          */
-        public PostRequestBuilder pageSize(Integer pageSize) {
+        public SearchApi.PostRequestBuilder pageSize(Integer pageSize) {
             this.pageSize = pageSize;
-            return this;
+            return (SearchApi.PostRequestBuilder) this;
         }
         
         /**
          * Set clusteringVariable
          * @param clusteringVariable  (optional)
-         * @return PostRequestBuilder
+         * @return SearchApi.PostRequestBuilder
          */
-        public PostRequestBuilder clusteringVariable(String clusteringVariable) {
+        public SearchApi.PostRequestBuilder clusteringVariable(String clusteringVariable) {
             this.clusteringVariable = clusteringVariable;
-            return this;
+            return (SearchApi.PostRequestBuilder) this;
         }
         
         /**
          * Set clusteringEnabled
          * @param clusteringEnabled  (optional)
-         * @return PostRequestBuilder
+         * @return SearchApi.PostRequestBuilder
          */
-        public PostRequestBuilder clusteringEnabled(Boolean clusteringEnabled) {
+        public SearchApi.PostRequestBuilder clusteringEnabled(Boolean clusteringEnabled) {
             this.clusteringEnabled = clusteringEnabled;
-            return this;
+            return (SearchApi.PostRequestBuilder) this;
         }
         
         /**
          * Set clusteringThreshold
          * @param clusteringThreshold  (optional)
-         * @return PostRequestBuilder
+         * @return SearchApi.PostRequestBuilder
          */
-        public PostRequestBuilder clusteringThreshold(Double clusteringThreshold) {
+        public SearchApi.PostRequestBuilder clusteringThreshold(Double clusteringThreshold) {
             this.clusteringThreshold = clusteringThreshold;
-            return this;
+            return (SearchApi.PostRequestBuilder) this;
         }
         
         /**
          * Set includeNlpData
          * @param includeNlpData  (optional)
-         * @return PostRequestBuilder
+         * @return SearchApi.PostRequestBuilder
          */
-        public PostRequestBuilder includeNlpData(Boolean includeNlpData) {
+        public SearchApi.PostRequestBuilder includeNlpData(Boolean includeNlpData) {
             this.includeNlpData = includeNlpData;
-            return this;
+            return (SearchApi.PostRequestBuilder) this;
         }
         
         /**
          * Set hasNlp
          * @param hasNlp  (optional)
-         * @return PostRequestBuilder
+         * @return SearchApi.PostRequestBuilder
          */
-        public PostRequestBuilder hasNlp(Boolean hasNlp) {
+        public SearchApi.PostRequestBuilder hasNlp(Boolean hasNlp) {
             this.hasNlp = hasNlp;
-            return this;
+            return (SearchApi.PostRequestBuilder) this;
         }
         
         /**
          * Set theme
          * @param theme  (optional)
-         * @return PostRequestBuilder
+         * @return SearchApi.PostRequestBuilder
          */
-        public PostRequestBuilder theme(String theme) {
+        public SearchApi.PostRequestBuilder theme(String theme) {
             this.theme = theme;
-            return this;
+            return (SearchApi.PostRequestBuilder) this;
         }
         
         /**
          * Set notTheme
          * @param notTheme  (optional)
-         * @return PostRequestBuilder
+         * @return SearchApi.PostRequestBuilder
          */
-        public PostRequestBuilder notTheme(String notTheme) {
+        public SearchApi.PostRequestBuilder notTheme(String notTheme) {
             this.notTheme = notTheme;
-            return this;
+            return (SearchApi.PostRequestBuilder) this;
         }
         
         /**
          * Set orGEntityName
          * @param orGEntityName  (optional)
-         * @return PostRequestBuilder
+         * @return SearchApi.PostRequestBuilder
          */
-        public PostRequestBuilder orGEntityName(String orGEntityName) {
+        public SearchApi.PostRequestBuilder orGEntityName(String orGEntityName) {
             this.orGEntityName = orGEntityName;
-            return this;
+            return (SearchApi.PostRequestBuilder) this;
         }
         
         /**
          * Set peREntityName
          * @param peREntityName  (optional)
-         * @return PostRequestBuilder
+         * @return SearchApi.PostRequestBuilder
          */
-        public PostRequestBuilder peREntityName(String peREntityName) {
+        public SearchApi.PostRequestBuilder peREntityName(String peREntityName) {
             this.peREntityName = peREntityName;
-            return this;
+            return (SearchApi.PostRequestBuilder) this;
         }
         
         /**
          * Set loCEntityName
          * @param loCEntityName  (optional)
-         * @return PostRequestBuilder
+         * @return SearchApi.PostRequestBuilder
          */
-        public PostRequestBuilder loCEntityName(String loCEntityName) {
+        public SearchApi.PostRequestBuilder loCEntityName(String loCEntityName) {
             this.loCEntityName = loCEntityName;
-            return this;
+            return (SearchApi.PostRequestBuilder) this;
         }
         
         /**
          * Set miSCEntityName
          * @param miSCEntityName  (optional)
-         * @return PostRequestBuilder
+         * @return SearchApi.PostRequestBuilder
          */
-        public PostRequestBuilder miSCEntityName(String miSCEntityName) {
+        public SearchApi.PostRequestBuilder miSCEntityName(String miSCEntityName) {
             this.miSCEntityName = miSCEntityName;
-            return this;
+            return (SearchApi.PostRequestBuilder) this;
         }
         
         /**
          * Set titleSentimentMin
          * @param titleSentimentMin  (optional)
-         * @return PostRequestBuilder
+         * @return SearchApi.PostRequestBuilder
          */
-        public PostRequestBuilder titleSentimentMin(Double titleSentimentMin) {
+        public SearchApi.PostRequestBuilder titleSentimentMin(Double titleSentimentMin) {
             this.titleSentimentMin = titleSentimentMin;
-            return this;
+            return (SearchApi.PostRequestBuilder) this;
         }
         
         /**
          * Set titleSentimentMax
          * @param titleSentimentMax  (optional)
-         * @return PostRequestBuilder
+         * @return SearchApi.PostRequestBuilder
          */
-        public PostRequestBuilder titleSentimentMax(Double titleSentimentMax) {
+        public SearchApi.PostRequestBuilder titleSentimentMax(Double titleSentimentMax) {
             this.titleSentimentMax = titleSentimentMax;
-            return this;
+            return (SearchApi.PostRequestBuilder) this;
         }
         
         /**
          * Set contentSentimentMin
          * @param contentSentimentMin  (optional)
-         * @return PostRequestBuilder
+         * @return SearchApi.PostRequestBuilder
          */
-        public PostRequestBuilder contentSentimentMin(Double contentSentimentMin) {
+        public SearchApi.PostRequestBuilder contentSentimentMin(Double contentSentimentMin) {
             this.contentSentimentMin = contentSentimentMin;
-            return this;
+            return (SearchApi.PostRequestBuilder) this;
         }
         
         /**
          * Set contentSentimentMax
          * @param contentSentimentMax  (optional)
-         * @return PostRequestBuilder
+         * @return SearchApi.PostRequestBuilder
          */
-        public PostRequestBuilder contentSentimentMax(Double contentSentimentMax) {
+        public SearchApi.PostRequestBuilder contentSentimentMax(Double contentSentimentMax) {
             this.contentSentimentMax = contentSentimentMax;
-            return this;
+            return (SearchApi.PostRequestBuilder) this;
         }
         
         /**
          * Set iptcTags
          * @param iptcTags  (optional)
-         * @return PostRequestBuilder
+         * @return SearchApi.PostRequestBuilder
          */
-        public PostRequestBuilder iptcTags(Object iptcTags) {
+        public SearchApi.PostRequestBuilder iptcTags(Object iptcTags) {
             this.iptcTags = iptcTags;
-            return this;
+            return (SearchApi.PostRequestBuilder) this;
         }
         
         /**
          * Set notIptcTags
          * @param notIptcTags  (optional)
-         * @return PostRequestBuilder
+         * @return SearchApi.PostRequestBuilder
          */
-        public PostRequestBuilder notIptcTags(Object notIptcTags) {
+        public SearchApi.PostRequestBuilder notIptcTags(Object notIptcTags) {
             this.notIptcTags = notIptcTags;
-            return this;
+            return (SearchApi.PostRequestBuilder) this;
         }
         
         /**
          * Set sourceName
          * @param sourceName  (optional)
-         * @return PostRequestBuilder
+         * @return SearchApi.PostRequestBuilder
          */
-        public PostRequestBuilder sourceName(Object sourceName) {
+        public SearchApi.PostRequestBuilder sourceName(Object sourceName) {
             this.sourceName = sourceName;
-            return this;
+            return (SearchApi.PostRequestBuilder) this;
         }
         
         /**
          * Set iabTags
          * @param iabTags  (optional)
-         * @return PostRequestBuilder
+         * @return SearchApi.PostRequestBuilder
          */
-        public PostRequestBuilder iabTags(Object iabTags) {
+        public SearchApi.PostRequestBuilder iabTags(Object iabTags) {
             this.iabTags = iabTags;
-            return this;
+            return (SearchApi.PostRequestBuilder) this;
         }
         
         /**
          * Set notIabTags
          * @param notIabTags  (optional)
-         * @return PostRequestBuilder
+         * @return SearchApi.PostRequestBuilder
          */
-        public PostRequestBuilder notIabTags(Object notIabTags) {
+        public SearchApi.PostRequestBuilder notIabTags(Object notIabTags) {
             this.notIabTags = notIabTags;
-            return this;
+            return (SearchApi.PostRequestBuilder) this;
         }
         
         /**
          * Set excludeDuplicates
          * @param excludeDuplicates  (optional)
-         * @return PostRequestBuilder
+         * @return SearchApi.PostRequestBuilder
          */
-        public PostRequestBuilder excludeDuplicates(Boolean excludeDuplicates) {
+        public SearchApi.PostRequestBuilder excludeDuplicates(Boolean excludeDuplicates) {
             this.excludeDuplicates = excludeDuplicates;
-            return this;
+            return (SearchApi.PostRequestBuilder) this;
         }
         
         /**
@@ -1691,10 +1691,10 @@ public class SearchApiGenerated {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public PostRequestBuilder post(String q) throws IllegalArgumentException {
+    public SearchApi.PostRequestBuilder post(String q) throws IllegalArgumentException {
         if (q == null) throw new IllegalArgumentException("\"q\" is required but got null");
             
 
-        return new PostRequestBuilder(q);
+        return ((SearchApi) this).new PostRequestBuilder(q);
     }
 }

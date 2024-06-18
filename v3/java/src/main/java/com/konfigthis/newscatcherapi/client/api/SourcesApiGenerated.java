@@ -173,97 +173,97 @@ public class SourcesApiGenerated {
         return localVarCall;
     }
 
-    public class GetRequestBuilder {
-        private String lang;
-        private String countries;
-        private String predefinedSources;
-        private Boolean includeAdditionalInfo;
-        private Integer fromRank;
-        private Integer toRank;
-        private Object sourceName;
-        private String sourceUrl;
+    public abstract class GetRequestBuilderGenerated {
+        String lang;
+        String countries;
+        String predefinedSources;
+        Boolean includeAdditionalInfo;
+        Integer fromRank;
+        Integer toRank;
+        Object sourceName;
+        String sourceUrl;
 
-        private GetRequestBuilder() {
+        public GetRequestBuilderGenerated() {
         }
 
         /**
          * Set lang
          * @param lang  (optional)
-         * @return GetRequestBuilder
+         * @return SourcesApi.GetRequestBuilder
          */
-        public GetRequestBuilder lang(String lang) {
+        public SourcesApi.GetRequestBuilder lang(String lang) {
             this.lang = lang;
-            return this;
+            return (SourcesApi.GetRequestBuilder) this;
         }
         
         /**
          * Set countries
          * @param countries  (optional)
-         * @return GetRequestBuilder
+         * @return SourcesApi.GetRequestBuilder
          */
-        public GetRequestBuilder countries(String countries) {
+        public SourcesApi.GetRequestBuilder countries(String countries) {
             this.countries = countries;
-            return this;
+            return (SourcesApi.GetRequestBuilder) this;
         }
         
         /**
          * Set predefinedSources
          * @param predefinedSources  (optional)
-         * @return GetRequestBuilder
+         * @return SourcesApi.GetRequestBuilder
          */
-        public GetRequestBuilder predefinedSources(String predefinedSources) {
+        public SourcesApi.GetRequestBuilder predefinedSources(String predefinedSources) {
             this.predefinedSources = predefinedSources;
-            return this;
+            return (SourcesApi.GetRequestBuilder) this;
         }
         
         /**
          * Set includeAdditionalInfo
          * @param includeAdditionalInfo  (optional)
-         * @return GetRequestBuilder
+         * @return SourcesApi.GetRequestBuilder
          */
-        public GetRequestBuilder includeAdditionalInfo(Boolean includeAdditionalInfo) {
+        public SourcesApi.GetRequestBuilder includeAdditionalInfo(Boolean includeAdditionalInfo) {
             this.includeAdditionalInfo = includeAdditionalInfo;
-            return this;
+            return (SourcesApi.GetRequestBuilder) this;
         }
         
         /**
          * Set fromRank
          * @param fromRank  (optional)
-         * @return GetRequestBuilder
+         * @return SourcesApi.GetRequestBuilder
          */
-        public GetRequestBuilder fromRank(Integer fromRank) {
+        public SourcesApi.GetRequestBuilder fromRank(Integer fromRank) {
             this.fromRank = fromRank;
-            return this;
+            return (SourcesApi.GetRequestBuilder) this;
         }
         
         /**
          * Set toRank
          * @param toRank  (optional)
-         * @return GetRequestBuilder
+         * @return SourcesApi.GetRequestBuilder
          */
-        public GetRequestBuilder toRank(Integer toRank) {
+        public SourcesApi.GetRequestBuilder toRank(Integer toRank) {
             this.toRank = toRank;
-            return this;
+            return (SourcesApi.GetRequestBuilder) this;
         }
         
         /**
          * Set sourceName
          * @param sourceName  (optional)
-         * @return GetRequestBuilder
+         * @return SourcesApi.GetRequestBuilder
          */
-        public GetRequestBuilder sourceName(Object sourceName) {
+        public SourcesApi.GetRequestBuilder sourceName(Object sourceName) {
             this.sourceName = sourceName;
-            return this;
+            return (SourcesApi.GetRequestBuilder) this;
         }
         
         /**
          * Set sourceUrl
          * @param sourceUrl  (optional)
-         * @return GetRequestBuilder
+         * @return SourcesApi.GetRequestBuilder
          */
-        public GetRequestBuilder sourceUrl(String sourceUrl) {
+        public SourcesApi.GetRequestBuilder sourceUrl(String sourceUrl) {
             this.sourceUrl = sourceUrl;
-            return this;
+            return (SourcesApi.GetRequestBuilder) this;
         }
         
         /**
@@ -337,8 +337,8 @@ public class SourcesApiGenerated {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public GetRequestBuilder get() throws IllegalArgumentException {
-        return new GetRequestBuilder();
+    public SourcesApi.GetRequestBuilder get() throws IllegalArgumentException {
+        return ((SourcesApi) this).new GetRequestBuilder();
     }
     private okhttp3.Call postCall(SourcesRequest sourcesRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
@@ -411,97 +411,97 @@ public class SourcesApiGenerated {
         return localVarCall;
     }
 
-    public class PostRequestBuilder {
-        private String lang;
-        private String countries;
-        private String predefinedSources;
-        private Boolean includeAdditionalInfo;
-        private Integer fromRank;
-        private Integer toRank;
-        private Object sourceName;
-        private String sourceUrl;
+    public abstract class PostRequestBuilderGenerated {
+        String lang;
+        String countries;
+        String predefinedSources;
+        Boolean includeAdditionalInfo;
+        Integer fromRank;
+        Integer toRank;
+        Object sourceName;
+        String sourceUrl;
 
-        private PostRequestBuilder() {
+        public PostRequestBuilderGenerated() {
         }
 
         /**
          * Set lang
          * @param lang  (optional)
-         * @return PostRequestBuilder
+         * @return SourcesApi.PostRequestBuilder
          */
-        public PostRequestBuilder lang(String lang) {
+        public SourcesApi.PostRequestBuilder lang(String lang) {
             this.lang = lang;
-            return this;
+            return (SourcesApi.PostRequestBuilder) this;
         }
         
         /**
          * Set countries
          * @param countries  (optional)
-         * @return PostRequestBuilder
+         * @return SourcesApi.PostRequestBuilder
          */
-        public PostRequestBuilder countries(String countries) {
+        public SourcesApi.PostRequestBuilder countries(String countries) {
             this.countries = countries;
-            return this;
+            return (SourcesApi.PostRequestBuilder) this;
         }
         
         /**
          * Set predefinedSources
          * @param predefinedSources  (optional)
-         * @return PostRequestBuilder
+         * @return SourcesApi.PostRequestBuilder
          */
-        public PostRequestBuilder predefinedSources(String predefinedSources) {
+        public SourcesApi.PostRequestBuilder predefinedSources(String predefinedSources) {
             this.predefinedSources = predefinedSources;
-            return this;
+            return (SourcesApi.PostRequestBuilder) this;
         }
         
         /**
          * Set includeAdditionalInfo
          * @param includeAdditionalInfo  (optional)
-         * @return PostRequestBuilder
+         * @return SourcesApi.PostRequestBuilder
          */
-        public PostRequestBuilder includeAdditionalInfo(Boolean includeAdditionalInfo) {
+        public SourcesApi.PostRequestBuilder includeAdditionalInfo(Boolean includeAdditionalInfo) {
             this.includeAdditionalInfo = includeAdditionalInfo;
-            return this;
+            return (SourcesApi.PostRequestBuilder) this;
         }
         
         /**
          * Set fromRank
          * @param fromRank  (optional)
-         * @return PostRequestBuilder
+         * @return SourcesApi.PostRequestBuilder
          */
-        public PostRequestBuilder fromRank(Integer fromRank) {
+        public SourcesApi.PostRequestBuilder fromRank(Integer fromRank) {
             this.fromRank = fromRank;
-            return this;
+            return (SourcesApi.PostRequestBuilder) this;
         }
         
         /**
          * Set toRank
          * @param toRank  (optional)
-         * @return PostRequestBuilder
+         * @return SourcesApi.PostRequestBuilder
          */
-        public PostRequestBuilder toRank(Integer toRank) {
+        public SourcesApi.PostRequestBuilder toRank(Integer toRank) {
             this.toRank = toRank;
-            return this;
+            return (SourcesApi.PostRequestBuilder) this;
         }
         
         /**
          * Set sourceName
          * @param sourceName  (optional)
-         * @return PostRequestBuilder
+         * @return SourcesApi.PostRequestBuilder
          */
-        public PostRequestBuilder sourceName(Object sourceName) {
+        public SourcesApi.PostRequestBuilder sourceName(Object sourceName) {
             this.sourceName = sourceName;
-            return this;
+            return (SourcesApi.PostRequestBuilder) this;
         }
         
         /**
          * Set sourceUrl
          * @param sourceUrl  (optional)
-         * @return PostRequestBuilder
+         * @return SourcesApi.PostRequestBuilder
          */
-        public PostRequestBuilder sourceUrl(String sourceUrl) {
+        public SourcesApi.PostRequestBuilder sourceUrl(String sourceUrl) {
             this.sourceUrl = sourceUrl;
-            return this;
+            return (SourcesApi.PostRequestBuilder) this;
         }
         
         /**
@@ -592,7 +592,7 @@ public class SourcesApiGenerated {
         <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
      </table>
      */
-    public PostRequestBuilder post() throws IllegalArgumentException {
-        return new PostRequestBuilder();
+    public SourcesApi.PostRequestBuilder post() throws IllegalArgumentException {
+        return ((SourcesApi) this).new PostRequestBuilder();
     }
 }
