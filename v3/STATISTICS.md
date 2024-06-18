@@ -6,5 +6,5 @@
 | python | 56649 |
 | typescript | 16564 |
 | csharp | 33344 |
-| go | 47239 |
-| **Total** | 209593 |
+| go | 47493 |
+| **Total** | 209847 |
