@@ -24,6 +24,10 @@ class OptionalSearchURLRequest(TypedDict, total=False):
 
     links: typing.Union[bool, date, datetime, dict, float, int, list, str, None]
 
+    from_: typing.Union[str, datetime]
+
+    to_: typing.Union[str, datetime]
+
     page: int
 
     page_size: int

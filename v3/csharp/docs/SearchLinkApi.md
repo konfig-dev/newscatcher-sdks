@@ -36,13 +36,15 @@ namespace Example
             );
             var links = new Object(
             );
+            var from = new From1(DateTime.Now);
+            var to = new To1(DateTime.Now);
             var page = 1;
             var pageSize = 100;
             
             try
             {
                 // [Get] Search For Articles By Id Or Link
-                DtoResponsesSearchResponseSearchResponse result = client.SearchLink.Get(ids, links, page, pageSize);
+                DtoResponsesSearchResponseSearchResponse result = client.SearchLink.Get(ids, links, from, to, page, pageSize);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -69,7 +71,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // [Get] Search For Articles By Id Or Link
-    ApiResponse<DtoResponsesSearchResponseSearchResponse> response = apiInstance.GetWithHttpInfo(ids, links, page, pageSize);
+    ApiResponse<DtoResponsesSearchResponseSearchResponse> response = apiInstance.GetWithHttpInfo(ids, links, from, to, page, pageSize);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -88,6 +90,8 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **ids** | [**Object**](Object.md) |  | [optional]  |
 | **links** | [**Object**](Object.md) |  | [optional]  |
+| **from** | [**From1**](From1.md) |  | [optional]  |
+| **to** | [**To1**](To1.md) |  | [optional]  |
 | **page** | **int?** |  | [optional] [default to 1] |
 | **pageSize** | **int?** |  | [optional] [default to 100] |
 
@@ -131,12 +135,16 @@ namespace Example
 
             var ids = "ids_example";
             var links = "links_example";
+            var from = new From1(DateTime.Now);
+            var to = new To1(DateTime.Now);
             var page = 1;
             var pageSize = 100;
             
             var searchURLRequest = new SearchURLRequest(
                 ids,
                 links,
+                from,
+                to,
                 page,
                 pageSize
             );

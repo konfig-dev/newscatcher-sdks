@@ -56,6 +56,22 @@ public class SearchURLRequestTest {
     }
 
     /**
+     * Test the property 'from'
+     */
+    @Test
+    public void fromTest() {
+        // TODO: test from
+    }
+
+    /**
+     * Test the property 'to'
+     */
+    @Test
+    public void toTest() {
+        // TODO: test to
+    }
+
+    /**
      * Test the property 'page'
      */
     @Test

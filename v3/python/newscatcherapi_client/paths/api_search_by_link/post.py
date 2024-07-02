@@ -119,6 +119,8 @@ class BaseApi(api_client.Api):
         self,
         ids: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         links: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        from_: typing.Optional[typing.Union[str, datetime]] = None,
+        to_: typing.Optional[typing.Union[str, datetime]] = None,
         page: typing.Optional[int] = None,
         page_size: typing.Optional[int] = None,
     ) -> api_client.MappedArgs:
@@ -128,6 +130,10 @@ class BaseApi(api_client.Api):
             _body["ids"] = ids
         if links is not None:
             _body["links"] = links
+        if from_ is not None:
+            _body["from_"] = from_
+        if to_ is not None:
+            _body["to_"] = to_
         if page is not None:
             _body["page"] = page
         if page_size is not None:
@@ -341,6 +347,8 @@ class PostRaw(BaseApi):
         self,
         ids: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         links: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        from_: typing.Optional[typing.Union[str, datetime]] = None,
+        to_: typing.Optional[typing.Union[str, datetime]] = None,
         page: typing.Optional[int] = None,
         page_size: typing.Optional[int] = None,
         **kwargs,
@@ -352,6 +360,8 @@ class PostRaw(BaseApi):
         args = self._post_mapped_args(
             ids=ids,
             links=links,
+            from_=from_,
+            to_=to_,
             page=page,
             page_size=page_size,
         )
@@ -364,6 +374,8 @@ class PostRaw(BaseApi):
         self,
         ids: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         links: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        from_: typing.Optional[typing.Union[str, datetime]] = None,
+        to_: typing.Optional[typing.Union[str, datetime]] = None,
         page: typing.Optional[int] = None,
         page_size: typing.Optional[int] = None,
     ) -> typing.Union[
@@ -373,6 +385,8 @@ class PostRaw(BaseApi):
         args = self._post_mapped_args(
             ids=ids,
             links=links,
+            from_=from_,
+            to_=to_,
             page=page,
             page_size=page_size,
         )
@@ -386,6 +400,8 @@ class Post(BaseApi):
         self,
         ids: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         links: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        from_: typing.Optional[typing.Union[str, datetime]] = None,
+        to_: typing.Optional[typing.Union[str, datetime]] = None,
         page: typing.Optional[int] = None,
         page_size: typing.Optional[int] = None,
         validate: bool = False,
@@ -394,6 +410,8 @@ class Post(BaseApi):
         raw_response = await self.raw.apost(
             ids=ids,
             links=links,
+            from_=from_,
+            to_=to_,
             page=page,
             page_size=page_size,
             **kwargs,
@@ -407,6 +425,8 @@ class Post(BaseApi):
         self,
         ids: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         links: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        from_: typing.Optional[typing.Union[str, datetime]] = None,
+        to_: typing.Optional[typing.Union[str, datetime]] = None,
         page: typing.Optional[int] = None,
         page_size: typing.Optional[int] = None,
         validate: bool = False,
@@ -414,6 +434,8 @@ class Post(BaseApi):
         raw_response = self.raw.post(
             ids=ids,
             links=links,
+            from_=from_,
+            to_=to_,
             page=page,
             page_size=page_size,
         )
@@ -429,6 +451,8 @@ class ApiForpost(BaseApi):
         self,
         ids: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         links: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        from_: typing.Optional[typing.Union[str, datetime]] = None,
+        to_: typing.Optional[typing.Union[str, datetime]] = None,
         page: typing.Optional[int] = None,
         page_size: typing.Optional[int] = None,
         **kwargs,
@@ -440,6 +464,8 @@ class ApiForpost(BaseApi):
         args = self._post_mapped_args(
             ids=ids,
             links=links,
+            from_=from_,
+            to_=to_,
             page=page,
             page_size=page_size,
         )
@@ -452,6 +478,8 @@ class ApiForpost(BaseApi):
         self,
         ids: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         links: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        from_: typing.Optional[typing.Union[str, datetime]] = None,
+        to_: typing.Optional[typing.Union[str, datetime]] = None,
         page: typing.Optional[int] = None,
         page_size: typing.Optional[int] = None,
     ) -> typing.Union[
@@ -461,6 +489,8 @@ class ApiForpost(BaseApi):
         args = self._post_mapped_args(
             ids=ids,
             links=links,
+            from_=from_,
+            to_=to_,
             page=page,
             page_size=page_size,
         )

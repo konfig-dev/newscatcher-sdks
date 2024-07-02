@@ -806,6 +806,12 @@ operation_parameter_map = {
                 'name': 'links'
             },
             {
+                'name': 'from_'
+            },
+            {
+                'name': 'to_'
+            },
+            {
                 'name': 'page'
             },
             {
@@ -820,6 +826,12 @@ operation_parameter_map = {
             },
             {
                 'name': 'links'
+            },
+            {
+                'name': 'from_'
+            },
+            {
+                'name': 'to_'
             },
             {
                 'name': 'page'

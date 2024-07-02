@@ -7,6 +7,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Ids** | **Object** |  | [optional] 
 **Links** | **Object** |  | [optional] 
+**From** | [**From1**](From1.md) |  | [optional] 
+**To** | [**To1**](To1.md) |  | [optional] 
 **Page** | **int** |  | [optional] [default to 1]
 **PageSize** | **int** |  | [optional] [default to 100]
 

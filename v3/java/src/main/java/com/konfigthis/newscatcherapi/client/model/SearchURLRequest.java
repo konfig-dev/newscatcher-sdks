@@ -59,6 +59,14 @@ public class SearchURLRequest {
   @SerializedName(SERIALIZED_NAME_LINKS)
   private Object links = null;
 
+  public static final String SERIALIZED_NAME_FROM = "from_";
+  @SerializedName(SERIALIZED_NAME_FROM)
+  private String from;
+
+  public static final String SERIALIZED_NAME_TO = "to_";
+  @SerializedName(SERIALIZED_NAME_TO)
+  private String to;
+
   public static final String SERIALIZED_NAME_PAGE = "page";
   @SerializedName(SERIALIZED_NAME_PAGE)
   private Integer page = 1;
@@ -125,6 +133,64 @@ public class SearchURLRequest {
     
     
     this.links = links;
+  }
+
+
+  public SearchURLRequest from(String from) {
+    
+    
+    
+    
+    this.from = from;
+    return this;
+  }
+
+   /**
+   * Get from
+   * @return from
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getFrom() {
+    return from;
+  }
+
+
+  public void setFrom(String from) {
+    
+    
+    
+    this.from = from;
+  }
+
+
+  public SearchURLRequest to(String to) {
+    
+    
+    
+    
+    this.to = to;
+    return this;
+  }
+
+   /**
+   * Get to
+   * @return to
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getTo() {
+    return to;
+  }
+
+
+  public void setTo(String to) {
+    
+    
+    
+    this.to = to;
   }
 
 
@@ -252,6 +318,8 @@ public class SearchURLRequest {
     SearchURLRequest searchURLRequest = (SearchURLRequest) o;
     return Objects.equals(this.ids, searchURLRequest.ids) &&
         Objects.equals(this.links, searchURLRequest.links) &&
+        Objects.equals(this.from, searchURLRequest.from) &&
+        Objects.equals(this.to, searchURLRequest.to) &&
         Objects.equals(this.page, searchURLRequest.page) &&
         Objects.equals(this.pageSize, searchURLRequest.pageSize)&&
         Objects.equals(this.additionalProperties, searchURLRequest.additionalProperties);
@@ -263,7 +331,7 @@ public class SearchURLRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(ids, links, page, pageSize, additionalProperties);
+    return Objects.hash(ids, links, from, to, page, pageSize, additionalProperties);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -279,6 +347,8 @@ public class SearchURLRequest {
     sb.append("class SearchURLRequest {\n");
     sb.append("    ids: ").append(toIndentedString(ids)).append("\n");
     sb.append("    links: ").append(toIndentedString(links)).append("\n");
+    sb.append("    from: ").append(toIndentedString(from)).append("\n");
+    sb.append("    to: ").append(toIndentedString(to)).append("\n");
     sb.append("    page: ").append(toIndentedString(page)).append("\n");
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
@@ -306,6 +376,8 @@ public class SearchURLRequest {
     openapiFields = new HashSet<String>();
     openapiFields.add("ids");
     openapiFields.add("links");
+    openapiFields.add("from_");
+    openapiFields.add("to_");
     openapiFields.add("page");
     openapiFields.add("page_size");
 
@@ -324,6 +396,12 @@ public class SearchURLRequest {
         if (!SearchURLRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in SearchURLRequest is not found in the empty JSON string", SearchURLRequest.openapiRequiredFields.toString()));
         }
+      }
+      if ((jsonObj.get("from_") != null && !jsonObj.get("from_").isJsonNull()) && !jsonObj.get("from_").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `from_` to be a primitive type in the JSON string but got `%s`", jsonObj.get("from_").toString()));
+      }
+      if ((jsonObj.get("to_") != null && !jsonObj.get("to_").isJsonNull()) && !jsonObj.get("to_").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `to_` to be a primitive type in the JSON string but got `%s`", jsonObj.get("to_").toString()));
       }
   }
 

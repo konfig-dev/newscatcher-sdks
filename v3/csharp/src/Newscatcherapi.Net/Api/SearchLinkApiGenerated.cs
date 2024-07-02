@@ -36,11 +36,13 @@ namespace Newscatcherapi.Net.Api
         /// <exception cref="Newscatcherapi.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ids"> (optional)</param>
         /// <param name="links"> (optional)</param>
+        /// <param name="from"> (optional)</param>
+        /// <param name="to"> (optional)</param>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="pageSize"> (optional, default to 100)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DtoResponsesSearchResponseSearchResponse</returns>
-        DtoResponsesSearchResponseSearchResponse Get(Object ids = default(Object), Object links = default(Object), int? page = default(int?), int? pageSize = default(int?), int operationIndex = 0);
+        DtoResponsesSearchResponseSearchResponse Get(Object ids = default(Object), Object links = default(Object), From1 from = default(From1), To1 to = default(To1), int? page = default(int?), int? pageSize = default(int?), int operationIndex = 0);
 
         /// <summary>
         /// [Get] Search For Articles By Id Or Link
@@ -51,11 +53,13 @@ namespace Newscatcherapi.Net.Api
         /// <exception cref="Newscatcherapi.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ids"> (optional)</param>
         /// <param name="links"> (optional)</param>
+        /// <param name="from"> (optional)</param>
+        /// <param name="to"> (optional)</param>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="pageSize"> (optional, default to 100)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DtoResponsesSearchResponseSearchResponse</returns>
-        ApiResponse<DtoResponsesSearchResponseSearchResponse> GetWithHttpInfo(Object ids = default(Object), Object links = default(Object), int? page = default(int?), int? pageSize = default(int?), int operationIndex = 0);
+        ApiResponse<DtoResponsesSearchResponseSearchResponse> GetWithHttpInfo(Object ids = default(Object), Object links = default(Object), From1 from = default(From1), To1 to = default(To1), int? page = default(int?), int? pageSize = default(int?), int operationIndex = 0);
         /// <summary>
         /// [Post] Search For Articles Request
         /// </summary>
@@ -97,12 +101,14 @@ namespace Newscatcherapi.Net.Api
         /// <exception cref="Newscatcherapi.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ids"> (optional)</param>
         /// <param name="links"> (optional)</param>
+        /// <param name="from"> (optional)</param>
+        /// <param name="to"> (optional)</param>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="pageSize"> (optional, default to 100)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DtoResponsesSearchResponseSearchResponse</returns>
-        System.Threading.Tasks.Task<DtoResponsesSearchResponseSearchResponse> GetAsync(Object ids = default(Object), Object links = default(Object), int? page = default(int?), int? pageSize = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DtoResponsesSearchResponseSearchResponse> GetAsync(Object ids = default(Object), Object links = default(Object), From1 from = default(From1), To1 to = default(To1), int? page = default(int?), int? pageSize = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// [Get] Search For Articles By Id Or Link
@@ -113,12 +119,14 @@ namespace Newscatcherapi.Net.Api
         /// <exception cref="Newscatcherapi.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ids"> (optional)</param>
         /// <param name="links"> (optional)</param>
+        /// <param name="from"> (optional)</param>
+        /// <param name="to"> (optional)</param>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="pageSize"> (optional, default to 100)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DtoResponsesSearchResponseSearchResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DtoResponsesSearchResponseSearchResponse>> GetWithHttpInfoAsync(Object ids = default(Object), Object links = default(Object), int? page = default(int?), int? pageSize = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DtoResponsesSearchResponseSearchResponse>> GetWithHttpInfoAsync(Object ids = default(Object), Object links = default(Object), From1 from = default(From1), To1 to = default(To1), int? page = default(int?), int? pageSize = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// [Post] Search For Articles Request
         /// </summary>
@@ -270,13 +278,15 @@ namespace Newscatcherapi.Net.Api
         /// <exception cref="Newscatcherapi.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ids"> (optional)</param>
         /// <param name="links"> (optional)</param>
+        /// <param name="from"> (optional)</param>
+        /// <param name="to"> (optional)</param>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="pageSize"> (optional, default to 100)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DtoResponsesSearchResponseSearchResponse</returns>
-        public DtoResponsesSearchResponseSearchResponse Get(Object ids = default(Object), Object links = default(Object), int? page = default(int?), int? pageSize = default(int?), int operationIndex = 0)
+        public DtoResponsesSearchResponseSearchResponse Get(Object ids = default(Object), Object links = default(Object), From1 from = default(From1), To1 to = default(To1), int? page = default(int?), int? pageSize = default(int?), int operationIndex = 0)
         {
-            Newscatcherapi.Net.Client.ApiResponse<DtoResponsesSearchResponseSearchResponse> localVarResponse = GetWithHttpInfo(ids, links, page, pageSize);
+            Newscatcherapi.Net.Client.ApiResponse<DtoResponsesSearchResponseSearchResponse> localVarResponse = GetWithHttpInfo(ids, links, from, to, page, pageSize);
             return localVarResponse.Data;
         }
 
@@ -286,11 +296,13 @@ namespace Newscatcherapi.Net.Api
         /// <exception cref="Newscatcherapi.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ids"> (optional)</param>
         /// <param name="links"> (optional)</param>
+        /// <param name="from"> (optional)</param>
+        /// <param name="to"> (optional)</param>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="pageSize"> (optional, default to 100)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DtoResponsesSearchResponseSearchResponse</returns>
-        public Newscatcherapi.Net.Client.ApiResponse<DtoResponsesSearchResponseSearchResponse> GetWithHttpInfo(Object ids = default(Object), Object links = default(Object), int? page = default(int?), int? pageSize = default(int?), int operationIndex = 0)
+        public Newscatcherapi.Net.Client.ApiResponse<DtoResponsesSearchResponseSearchResponse> GetWithHttpInfo(Object ids = default(Object), Object links = default(Object), From1 from = default(From1), To1 to = default(To1), int? page = default(int?), int? pageSize = default(int?), int operationIndex = 0)
         {
             Newscatcherapi.Net.Client.RequestOptions localVarRequestOptions = new Newscatcherapi.Net.Client.RequestOptions();
 
@@ -321,6 +333,14 @@ namespace Newscatcherapi.Net.Api
             if (links != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Newscatcherapi.Net.Client.ClientUtils.ParameterToMultiMap("", "links", links, ""));
+            }
+            if (from != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Newscatcherapi.Net.Client.ClientUtils.ParameterToMultiMap("", "from_", from, ""));
+            }
+            if (to != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Newscatcherapi.Net.Client.ClientUtils.ParameterToMultiMap("", "to_", to, ""));
             }
             if (page != null)
             {
@@ -360,14 +380,16 @@ namespace Newscatcherapi.Net.Api
         /// <exception cref="Newscatcherapi.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ids"> (optional)</param>
         /// <param name="links"> (optional)</param>
+        /// <param name="from"> (optional)</param>
+        /// <param name="to"> (optional)</param>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="pageSize"> (optional, default to 100)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DtoResponsesSearchResponseSearchResponse</returns>
-        public async System.Threading.Tasks.Task<DtoResponsesSearchResponseSearchResponse> GetAsync(Object ids = default(Object), Object links = default(Object), int? page = default(int?), int? pageSize = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DtoResponsesSearchResponseSearchResponse> GetAsync(Object ids = default(Object), Object links = default(Object), From1 from = default(From1), To1 to = default(To1), int? page = default(int?), int? pageSize = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Newscatcherapi.Net.Client.ApiResponse<DtoResponsesSearchResponseSearchResponse> localVarResponse = await GetWithHttpInfoAsync(ids, links, page, pageSize, operationIndex, cancellationToken).ConfigureAwait(false);
+            Newscatcherapi.Net.Client.ApiResponse<DtoResponsesSearchResponseSearchResponse> localVarResponse = await GetWithHttpInfoAsync(ids, links, from, to, page, pageSize, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -377,12 +399,14 @@ namespace Newscatcherapi.Net.Api
         /// <exception cref="Newscatcherapi.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ids"> (optional)</param>
         /// <param name="links"> (optional)</param>
+        /// <param name="from"> (optional)</param>
+        /// <param name="to"> (optional)</param>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="pageSize"> (optional, default to 100)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DtoResponsesSearchResponseSearchResponse)</returns>
-        public virtual async System.Threading.Tasks.Task<Newscatcherapi.Net.Client.ApiResponse<DtoResponsesSearchResponseSearchResponse>> GetWithHttpInfoAsync(Object ids = default(Object), Object links = default(Object), int? page = default(int?), int? pageSize = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public virtual async System.Threading.Tasks.Task<Newscatcherapi.Net.Client.ApiResponse<DtoResponsesSearchResponseSearchResponse>> GetWithHttpInfoAsync(Object ids = default(Object), Object links = default(Object), From1 from = default(From1), To1 to = default(To1), int? page = default(int?), int? pageSize = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Newscatcherapi.Net.Client.RequestOptions localVarRequestOptions = new Newscatcherapi.Net.Client.RequestOptions();
@@ -414,6 +438,14 @@ namespace Newscatcherapi.Net.Api
             if (links != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Newscatcherapi.Net.Client.ClientUtils.ParameterToMultiMap("", "links", links, ""));
+            }
+            if (from != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Newscatcherapi.Net.Client.ClientUtils.ParameterToMultiMap("", "from_", from, ""));
+            }
+            if (to != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Newscatcherapi.Net.Client.ClientUtils.ParameterToMultiMap("", "to_", to, ""));
             }
             if (page != null)
             {

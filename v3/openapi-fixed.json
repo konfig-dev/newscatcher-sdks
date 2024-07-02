@@ -1510,6 +1510,42 @@
           {
             "required": false,
             "schema": {
+              "title": "From ",
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string",
+                  "format": "date-time"
+                }
+              ],
+              "default": "1 month ago"
+            },
+            "name": "from_",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "To ",
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string",
+                  "format": "date-time"
+                }
+              ],
+              "default": "now"
+            },
+            "name": "to_",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
               "title": "Page",
               "minimum": 0,
               "type": "integer",
@@ -3230,6 +3266,32 @@
           },
           "links": {
             "title": "Links"
+          },
+          "from_": {
+            "title": "From ",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "string",
+                "format": "date-time"
+              }
+            ],
+            "default": "1 month ago"
+          },
+          "to_": {
+            "title": "To ",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "string",
+                "format": "date-time"
+              }
+            ],
+            "default": "now"
           },
           "page": {
             "title": "Page",

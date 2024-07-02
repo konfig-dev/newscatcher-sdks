@@ -74,6 +74,22 @@ namespace Newscatcherapi.Net.Test.Model
             // TODO unit test for the property 'Links'
         }
         /// <summary>
+        /// Test the property 'From'
+        /// </summary>
+        [Fact]
+        public void FromTest()
+        {
+            // TODO unit test for the property 'From'
+        }
+        /// <summary>
+        /// Test the property 'To'
+        /// </summary>
+        [Fact]
+        public void ToTest()
+        {
+            // TODO unit test for the property 'To'
+        }
+        /// <summary>
         /// Test the property 'Page'
         /// </summary>
         [Fact]
