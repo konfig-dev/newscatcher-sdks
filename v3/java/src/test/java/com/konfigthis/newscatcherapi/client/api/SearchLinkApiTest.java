@@ -53,11 +53,15 @@ public class SearchLinkApiTest {
     public void getTest() throws ApiException {
         Object ids = null;
         Object links = null;
+        String from = null;
+        String to = null;
         Integer page = null;
         Integer pageSize = null;
         DtoResponsesSearchResponseSearchResponse response = api.get()
                 .ids(ids)
                 .links(links)
+                .from(from)
+                .to(to)
                 .page(page)
                 .pageSize(pageSize)
                 .execute();
@@ -75,11 +79,15 @@ public class SearchLinkApiTest {
     public void postTest() throws ApiException {
         Object ids = null;
         Object links = null;
+        String from = null;
+        String to = null;
         Integer page = null;
         Integer pageSize = null;
         DtoResponsesSearchResponseSearchResponse response = api.post()
                 .ids(ids)
                 .links(links)
+                .from(from)
+                .to(to)
                 .page(page)
                 .pageSize(pageSize)
                 .execute();

@@ -21,9 +21,13 @@ import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } fr
 // @ts-ignore
 import { DtoResponsesSearchResponseSearchResponse } from '../models';
 // @ts-ignore
+import { From1 } from '../models';
+// @ts-ignore
 import { HTTPValidationError } from '../models';
 // @ts-ignore
 import { SearchURLRequest } from '../models';
+// @ts-ignore
+import { To1 } from '../models';
 import { paginate } from "../pagination/paginate";
 import type * as buffer from "buffer"
 import { requestBeforeHook } from '../requestBeforeHook';
@@ -38,12 +42,14 @@ export const SearchLinkApiAxiosParamCreator = function (configuration?: Configur
          * @summary [Get] Search For Articles By Id Or Link
          * @param {any} [ids] 
          * @param {any} [links] 
+         * @param {From1} [from] 
+         * @param {To1} [to] 
          * @param {number} [page] 
          * @param {number} [pageSize] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        get: async (ids?: any, links?: any, page?: number, pageSize?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        get: async (ids?: any, links?: any, from?: From1, to?: To1, page?: number, pageSize?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/search_by_link`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -64,6 +70,14 @@ export const SearchLinkApiAxiosParamCreator = function (configuration?: Configur
 
             if (links !== undefined) {
                 localVarQueryParameter['links'] = links;
+            }
+
+            if (from !== undefined) {
+                localVarQueryParameter['from_'] = from;
+            }
+
+            if (to !== undefined) {
+                localVarQueryParameter['to_'] = to;
             }
 
             if (page !== undefined) {
@@ -159,7 +173,7 @@ export const SearchLinkApiFp = function(configuration?: Configuration) {
          * @throws {RequiredError}
          */
         async get(requestParameters: SearchLinkApiGetRequest = {}, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DtoResponsesSearchResponseSearchResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.get(requestParameters.ids, requestParameters.links, requestParameters.page, requestParameters.pageSize, options);
+            const localVarAxiosArgs = await localVarAxiosParamCreator.get(requestParameters.ids, requestParameters.links, requestParameters.from, requestParameters.to, requestParameters.page, requestParameters.pageSize, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -173,6 +187,8 @@ export const SearchLinkApiFp = function(configuration?: Configuration) {
             const searchURLRequest: SearchURLRequest = {
                 ids: requestParameters.ids,
                 links: requestParameters.links,
+                from_: requestParameters.from_,
+                to_: requestParameters.to_,
                 page: requestParameters.page,
                 page_size: requestParameters.page_size
             };
@@ -232,6 +248,20 @@ export type SearchLinkApiGetRequest = {
     * @memberof SearchLinkApiGet
     */
     readonly links?: any
+    
+    /**
+    * 
+    * @type {From1}
+    * @memberof SearchLinkApiGet
+    */
+    readonly from?: From1
+    
+    /**
+    * 
+    * @type {To1}
+    * @memberof SearchLinkApiGet
+    */
+    readonly to?: To1
     
     /**
     * 

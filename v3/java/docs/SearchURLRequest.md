@@ -10,6 +10,8 @@ Search URL Request DTO.
 |------------ | ------------- | ------------- | -------------|
 |**ids** | **Object** |  |  [optional] |
 |**links** | **Object** |  |  [optional] |
+|**from** | **String** |  |  [optional] |
+|**to** | **String** |  |  [optional] |
 |**page** | **Integer** |  |  [optional] |
 |**pageSize** | **Integer** |  |  [optional] |
 

@@ -10,7 +10,7 @@ All URIs are relative to *https://v3-api.newscatcherapi.com*
 
 <a name="get"></a>
 # **get**
-> DtoResponsesSearchResponseSearchResponse get().ids(ids).links(links).page(page).pageSize(pageSize).execute();
+> DtoResponsesSearchResponseSearchResponse get().ids(ids).links(links).from(from).to(to).page(page).pageSize(pageSize).execute();
 
 [Get] Search For Articles By Id Or Link
 
@@ -39,6 +39,8 @@ public class Example {
     Newscatcher client = new Newscatcher(configuration);
     Object ids = null;
     Object links = null;
+    String from = "from_example";
+    String to = "to_example";
     Integer page = 1;
     Integer pageSize = 100;
     try {
@@ -47,6 +49,8 @@ public class Example {
               .get()
               .ids(ids)
               .links(links)
+              .from(from)
+              .to(to)
               .page(page)
               .pageSize(pageSize)
               .execute();
@@ -75,6 +79,8 @@ public class Example {
               .get()
               .ids(ids)
               .links(links)
+              .from(from)
+              .to(to)
               .page(page)
               .pageSize(pageSize)
               .executeWithHttpInfo();
@@ -101,6 +107,8 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **ids** | [**Object**](.md)|  | [optional] |
 | **links** | [**Object**](.md)|  | [optional] |
+| **from** | **String**|  | [optional] |
+| **to** | **String**|  | [optional] |
 | **page** | **Integer**|  | [optional] [default to 1] |
 | **pageSize** | **Integer**|  | [optional] [default to 100] |
 
@@ -153,6 +161,8 @@ public class Example {
     Newscatcher client = new Newscatcher(configuration);
     Object ids = null;
     Object links = null;
+    String from = "from_example";
+    String to = "to_example";
     Integer page = 1;
     Integer pageSize = 100;
     try {
@@ -161,6 +171,8 @@ public class Example {
               .post()
               .ids(ids)
               .links(links)
+              .from(from)
+              .to(to)
               .page(page)
               .pageSize(pageSize)
               .execute();
@@ -189,6 +201,8 @@ public class Example {
               .post()
               .ids(ids)
               .links(links)
+              .from(from)
+              .to(to)
               .page(page)
               .pageSize(pageSize)
               .executeWithHttpInfo();

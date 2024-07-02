@@ -41,6 +41,84 @@ class SearchURLRequest(
             links = schemas.AnyTypeSchema
             
             
+            class from_(
+                schemas.ComposedSchema,
+            ):
+            
+            
+                class MetaOapg:
+                    items = schemas.StrSchema
+                    any_of_1 = schemas.DateTimeSchema
+                    
+                    @classmethod
+                    @functools.lru_cache()
+                    def any_of(cls):
+                        # we need this here to make our import statements work
+                        # we must store _composed_schemas in here so the code is only run
+                        # when we invoke this method. If we kept this at the class
+                        # level we would get an error because the class level
+                        # code would be run when this module is imported, and these composed
+                        # classes don't exist yet because their module has not finished
+                        # loading
+                        return [
+                            cls.items,
+                            cls.any_of_1,
+                        ]
+            
+            
+                def __new__(
+                    cls,
+                    *args: typing.Union[dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ],
+                    _configuration: typing.Optional[schemas.Configuration] = None,
+                    **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
+                ) -> 'from_':
+                    return super().__new__(
+                        cls,
+                        *args,
+                        _configuration=_configuration,
+                        **kwargs,
+                    )
+            
+            
+            class to_(
+                schemas.ComposedSchema,
+            ):
+            
+            
+                class MetaOapg:
+                    items = schemas.StrSchema
+                    any_of_1 = schemas.DateTimeSchema
+                    
+                    @classmethod
+                    @functools.lru_cache()
+                    def any_of(cls):
+                        # we need this here to make our import statements work
+                        # we must store _composed_schemas in here so the code is only run
+                        # when we invoke this method. If we kept this at the class
+                        # level we would get an error because the class level
+                        # code would be run when this module is imported, and these composed
+                        # classes don't exist yet because their module has not finished
+                        # loading
+                        return [
+                            cls.items,
+                            cls.any_of_1,
+                        ]
+            
+            
+                def __new__(
+                    cls,
+                    *args: typing.Union[dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ],
+                    _configuration: typing.Optional[schemas.Configuration] = None,
+                    **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
+                ) -> 'to_':
+                    return super().__new__(
+                        cls,
+                        *args,
+                        _configuration=_configuration,
+                        **kwargs,
+                    )
+            
+            
             class page(
                 schemas.IntSchema
             ):
@@ -54,6 +132,8 @@ class SearchURLRequest(
             __annotations__ = {
                 "ids": ids,
                 "links": links,
+                "from_": from_,
+                "to_": to_,
                 "page": page,
                 "page_size": page_size,
             }
@@ -65,6 +145,12 @@ class SearchURLRequest(
     def __getitem__(self, name: typing_extensions.Literal["links"]) -> MetaOapg.properties.links: ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["from_"]) -> MetaOapg.properties.from_: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["to_"]) -> MetaOapg.properties.to_: ...
+    
+    @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["page"]) -> MetaOapg.properties.page: ...
     
     @typing.overload
@@ -73,7 +159,7 @@ class SearchURLRequest(
     @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["ids", "links", "page", "page_size", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["ids", "links", "from_", "to_", "page", "page_size", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
@@ -85,6 +171,12 @@ class SearchURLRequest(
     def get_item_oapg(self, name: typing_extensions.Literal["links"]) -> typing.Union[MetaOapg.properties.links, schemas.Unset]: ...
     
     @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["from_"]) -> typing.Union[MetaOapg.properties.from_, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["to_"]) -> typing.Union[MetaOapg.properties.to_, schemas.Unset]: ...
+    
+    @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["page"]) -> typing.Union[MetaOapg.properties.page, schemas.Unset]: ...
     
     @typing.overload
@@ -93,7 +185,7 @@ class SearchURLRequest(
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["ids", "links", "page", "page_size", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["ids", "links", "from_", "to_", "page", "page_size", ], str]):
         return super().get_item_oapg(name)
     
 
@@ -102,6 +194,8 @@ class SearchURLRequest(
         *args: typing.Union[dict, frozendict.frozendict, ],
         ids: typing.Union[MetaOapg.properties.ids, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, schemas.Unset] = schemas.unset,
         links: typing.Union[MetaOapg.properties.links, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, schemas.Unset] = schemas.unset,
+        from_: typing.Union[MetaOapg.properties.from_, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, schemas.Unset] = schemas.unset,
+        to_: typing.Union[MetaOapg.properties.to_, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, schemas.Unset] = schemas.unset,
         page: typing.Union[MetaOapg.properties.page, decimal.Decimal, int, schemas.Unset] = schemas.unset,
         page_size: typing.Union[MetaOapg.properties.page_size, decimal.Decimal, int, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
@@ -112,6 +206,8 @@ class SearchURLRequest(
             *args,
             ids=ids,
             links=links,
+            from_=from_,
+            to_=to_,
             page=page,
             page_size=page_size,
             _configuration=_configuration,

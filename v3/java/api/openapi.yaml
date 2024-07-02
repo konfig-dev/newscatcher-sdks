@@ -1279,6 +1279,20 @@ paths:
         style: form
       - explode: true
         in: query
+        name: from_
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: to_
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
         name: page
         required: false
         schema:
@@ -1288,7 +1302,7 @@ paths:
           title: Page
           type: integer
           x-konfig-original-example: 1
-          x-konfig-generated-schema: konfig-generated-schema-paths--api-search_by_link-get-parameters-2-schema
+          x-konfig-generated-schema: konfig-generated-schema-paths--api-search_by_link-get-parameters-4-schema
         style: form
       - explode: true
         in: query
@@ -1301,7 +1315,7 @@ paths:
           title: Page Size
           type: integer
           x-konfig-original-example: 100
-          x-konfig-generated-schema: konfig-generated-schema-paths--api-search_by_link-get-parameters-3-schema
+          x-konfig-generated-schema: konfig-generated-schema-paths--api-search_by_link-get-parameters-5-schema
         style: form
       responses:
         "200":
@@ -2839,6 +2853,8 @@ components:
     SearchURLRequest:
       description: Search URL Request DTO.
       example:
+        to_: to_
+        from_: from_
         ids: ""
         links: ""
         page: 1
@@ -2848,6 +2864,10 @@ components:
           title: Ids
         links:
           title: Links
+        from_:
+          type: string
+        to_:
+          type: string
         page:
           default: 1
           example: 1
@@ -3557,11 +3577,11 @@ components:
       example: 100
       type: number
       x-do-not-generate: true
-    konfig-generated-schema-paths--api-search_by_link-get-parameters-2-schema:
+    konfig-generated-schema-paths--api-search_by_link-get-parameters-4-schema:
       example: 1
       type: number
       x-do-not-generate: true
-    konfig-generated-schema-paths--api-search_by_link-get-parameters-3-schema:
+    konfig-generated-schema-paths--api-search_by_link-get-parameters-5-schema:
       example: 100
       type: number
       x-do-not-generate: true
@@ -4759,6 +4779,10 @@ components:
           title: Ids
         links:
           title: Links
+        from_:
+          type: string
+        to_:
+          type: string
         page:
           default: 1
           example: 1
@@ -4766,7 +4790,7 @@ components:
           title: Page
           type: integer
           x-konfig-original-example: 1
-          x-konfig-generated-schema: konfig-generated-schema-paths--api-search_by_link-get-parameters-2-schema
+          x-konfig-generated-schema: konfig-generated-schema-paths--api-search_by_link-get-parameters-4-schema
         page_size:
           default: 100
           example: 100
@@ -4774,12 +4798,14 @@ components:
           title: Page Size
           type: integer
           x-konfig-original-example: 100
-          x-konfig-generated-schema: konfig-generated-schema-paths--api-search_by_link-get-parameters-3-schema
+          x-konfig-generated-schema: konfig-generated-schema-paths--api-search_by_link-get-parameters-5-schema
       type: object
       x-do-not-generate: true
       x-konfig-is-parameter:
       - ids
       - links
+      - from_
+      - to_
       - page
       - page_size
     konfig-generated-schema-single-parameter-schema-post--api-search_by_link:
@@ -4788,6 +4814,10 @@ components:
           title: Ids
         links:
           title: Links
+        from_:
+          type: string
+        to_:
+          type: string
         page:
           default: 1
           example: 1

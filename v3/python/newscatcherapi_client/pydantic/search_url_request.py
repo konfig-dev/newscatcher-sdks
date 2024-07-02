@@ -22,6 +22,10 @@ class SearchURLRequest(BaseModel):
 
     links: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = Field(None, alias='links')
 
+    from_: typing.Optional[typing.Union[str, datetime]] = Field(None, alias='from_')
+
+    to_: typing.Optional[typing.Union[str, datetime]] = Field(None, alias='to_')
+
     page: typing.Optional[int] = Field(None, alias='page')
 
     page_size: typing.Optional[int] = Field(None, alias='page_size')

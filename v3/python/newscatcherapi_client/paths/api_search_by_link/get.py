@@ -50,6 +50,84 @@ IdsSchema = schemas.AnyTypeSchema
 LinksSchema = schemas.AnyTypeSchema
 
 
+class ModelFromSchema(
+    schemas.ComposedSchema,
+):
+
+
+    class MetaOapg:
+        items = schemas.StrSchema
+        any_of_1 = schemas.DateTimeSchema
+        
+        @classmethod
+        @functools.lru_cache()
+        def any_of(cls):
+            # we need this here to make our import statements work
+            # we must store _composed_schemas in here so the code is only run
+            # when we invoke this method. If we kept this at the class
+            # level we would get an error because the class level
+            # code would be run when this module is imported, and these composed
+            # classes don't exist yet because their module has not finished
+            # loading
+            return [
+                cls.items,
+                cls.any_of_1,
+            ]
+
+
+    def __new__(
+        cls,
+        *args: typing.Union[dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ],
+        _configuration: typing.Optional[schemas.Configuration] = None,
+        **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
+    ) -> 'ModelFromSchema':
+        return super().__new__(
+            cls,
+            *args,
+            _configuration=_configuration,
+            **kwargs,
+        )
+
+
+class ToSchema(
+    schemas.ComposedSchema,
+):
+
+
+    class MetaOapg:
+        items = schemas.StrSchema
+        any_of_1 = schemas.DateTimeSchema
+        
+        @classmethod
+        @functools.lru_cache()
+        def any_of(cls):
+            # we need this here to make our import statements work
+            # we must store _composed_schemas in here so the code is only run
+            # when we invoke this method. If we kept this at the class
+            # level we would get an error because the class level
+            # code would be run when this module is imported, and these composed
+            # classes don't exist yet because their module has not finished
+            # loading
+            return [
+                cls.items,
+                cls.any_of_1,
+            ]
+
+
+    def __new__(
+        cls,
+        *args: typing.Union[dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ],
+        _configuration: typing.Optional[schemas.Configuration] = None,
+        **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
+    ) -> 'ToSchema':
+        return super().__new__(
+            cls,
+            *args,
+            _configuration=_configuration,
+            **kwargs,
+        )
+
+
 class PageSchema(
     schemas.IntSchema
 ):
@@ -76,6 +154,8 @@ RequestOptionalQueryParams = typing_extensions.TypedDict(
     {
         'ids': typing.Union[IdsSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ],
         'links': typing.Union[LinksSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ],
+        'from_': typing.Union[ModelFromSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ],
+        'to_': typing.Union[ToSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ],
         'page': typing.Union[PageSchema, decimal.Decimal, int, ],
         'page_size': typing.Union[PageSizeSchema, decimal.Decimal, int, ],
     },
@@ -97,6 +177,18 @@ request_query_links = api_client.QueryParameter(
     name="links",
     style=api_client.ParameterStyle.FORM,
     schema=LinksSchema,
+    explode=True,
+)
+request_query_from_ = api_client.QueryParameter(
+    name="from_",
+    style=api_client.ParameterStyle.FORM,
+    schema=ModelFromSchema,
+    explode=True,
+)
+request_query_to_ = api_client.QueryParameter(
+    name="to_",
+    style=api_client.ParameterStyle.FORM,
+    schema=ToSchema,
     explode=True,
 )
 request_query_page = api_client.QueryParameter(
@@ -171,6 +263,8 @@ class BaseApi(api_client.Api):
         self,
         ids: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         links: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        from_: typing.Optional[typing.Union[str, datetime]] = None,
+        to_: typing.Optional[typing.Union[str, datetime]] = None,
         page: typing.Optional[int] = None,
         page_size: typing.Optional[int] = None,
     ) -> api_client.MappedArgs:
@@ -180,6 +274,10 @@ class BaseApi(api_client.Api):
             _query_params["ids"] = ids
         if links is not None:
             _query_params["links"] = links
+        if from_ is not None:
+            _query_params["from_"] = from_
+        if to_ is not None:
+            _query_params["to_"] = to_
         if page is not None:
             _query_params["page"] = page
         if page_size is not None:
@@ -213,6 +311,8 @@ class BaseApi(api_client.Api):
         for parameter in (
             request_query_ids,
             request_query_links,
+            request_query_from_,
+            request_query_to_,
             request_query_page,
             request_query_page_size,
         ):
@@ -328,6 +428,8 @@ class BaseApi(api_client.Api):
         for parameter in (
             request_query_ids,
             request_query_links,
+            request_query_from_,
+            request_query_to_,
             request_query_page,
             request_query_page_size,
         ):
@@ -395,6 +497,8 @@ class GetRaw(BaseApi):
         self,
         ids: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         links: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        from_: typing.Optional[typing.Union[str, datetime]] = None,
+        to_: typing.Optional[typing.Union[str, datetime]] = None,
         page: typing.Optional[int] = None,
         page_size: typing.Optional[int] = None,
         **kwargs,
@@ -406,6 +510,8 @@ class GetRaw(BaseApi):
         args = self._get_mapped_args(
             ids=ids,
             links=links,
+            from_=from_,
+            to_=to_,
             page=page,
             page_size=page_size,
         )
@@ -418,6 +524,8 @@ class GetRaw(BaseApi):
         self,
         ids: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         links: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        from_: typing.Optional[typing.Union[str, datetime]] = None,
+        to_: typing.Optional[typing.Union[str, datetime]] = None,
         page: typing.Optional[int] = None,
         page_size: typing.Optional[int] = None,
     ) -> typing.Union[
@@ -427,6 +535,8 @@ class GetRaw(BaseApi):
         args = self._get_mapped_args(
             ids=ids,
             links=links,
+            from_=from_,
+            to_=to_,
             page=page,
             page_size=page_size,
         )
@@ -440,6 +550,8 @@ class Get(BaseApi):
         self,
         ids: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         links: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        from_: typing.Optional[typing.Union[str, datetime]] = None,
+        to_: typing.Optional[typing.Union[str, datetime]] = None,
         page: typing.Optional[int] = None,
         page_size: typing.Optional[int] = None,
         validate: bool = False,
@@ -448,6 +560,8 @@ class Get(BaseApi):
         raw_response = await self.raw.aget(
             ids=ids,
             links=links,
+            from_=from_,
+            to_=to_,
             page=page,
             page_size=page_size,
             **kwargs,
@@ -461,6 +575,8 @@ class Get(BaseApi):
         self,
         ids: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         links: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        from_: typing.Optional[typing.Union[str, datetime]] = None,
+        to_: typing.Optional[typing.Union[str, datetime]] = None,
         page: typing.Optional[int] = None,
         page_size: typing.Optional[int] = None,
         validate: bool = False,
@@ -468,6 +584,8 @@ class Get(BaseApi):
         raw_response = self.raw.get(
             ids=ids,
             links=links,
+            from_=from_,
+            to_=to_,
             page=page,
             page_size=page_size,
         )
@@ -483,6 +601,8 @@ class ApiForget(BaseApi):
         self,
         ids: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         links: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        from_: typing.Optional[typing.Union[str, datetime]] = None,
+        to_: typing.Optional[typing.Union[str, datetime]] = None,
         page: typing.Optional[int] = None,
         page_size: typing.Optional[int] = None,
         **kwargs,
@@ -494,6 +614,8 @@ class ApiForget(BaseApi):
         args = self._get_mapped_args(
             ids=ids,
             links=links,
+            from_=from_,
+            to_=to_,
             page=page,
             page_size=page_size,
         )
@@ -506,6 +628,8 @@ class ApiForget(BaseApi):
         self,
         ids: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         links: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        from_: typing.Optional[typing.Union[str, datetime]] = None,
+        to_: typing.Optional[typing.Union[str, datetime]] = None,
         page: typing.Optional[int] = None,
         page_size: typing.Optional[int] = None,
     ) -> typing.Union[
@@ -515,6 +639,8 @@ class ApiForget(BaseApi):
         args = self._get_mapped_args(
             ids=ids,
             links=links,
+            from_=from_,
+            to_=to_,
             page=page,
             page_size=page_size,
         )

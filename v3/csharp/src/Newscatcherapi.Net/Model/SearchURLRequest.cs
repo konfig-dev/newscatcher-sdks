@@ -37,12 +37,16 @@ namespace Newscatcherapi.Net.Model
         /// </summary>
         /// <param name="ids">ids.</param>
         /// <param name="links">links.</param>
+        /// <param name="from">from.</param>
+        /// <param name="to">to.</param>
         /// <param name="page">page (default to 1).</param>
         /// <param name="pageSize">pageSize (default to 100).</param>
-        public SearchURLRequest(Object ids = default(Object), Object links = default(Object), int page = 1, int pageSize = 100)
+        public SearchURLRequest(Object ids = default(Object), Object links = default(Object), From1 from = default(From1), To1 to = default(To1), int page = 1, int pageSize = 100)
         {
             this.Ids = ids;
             this.Links = links;
+            this.From = from;
+            this.To = to;
             this.Page = page;
             this.PageSize = pageSize;
         }
@@ -58,6 +62,18 @@ namespace Newscatcherapi.Net.Model
         /// </summary>
         [DataMember(Name = "links", EmitDefaultValue = true)]
         public Object Links { get; set; }
+
+        /// <summary>
+        /// Gets or Sets From
+        /// </summary>
+        [DataMember(Name = "from_", EmitDefaultValue = false)]
+        public From1 From { get; set; }
+
+        /// <summary>
+        /// Gets or Sets To
+        /// </summary>
+        [DataMember(Name = "to_", EmitDefaultValue = false)]
+        public To1 To { get; set; }
 
         /// <summary>
         /// Gets or Sets Page
@@ -81,6 +97,8 @@ namespace Newscatcherapi.Net.Model
             sb.Append("class SearchURLRequest {\n");
             sb.Append("  Ids: ").Append(Ids).Append("\n");
             sb.Append("  Links: ").Append(Links).Append("\n");
+            sb.Append("  From: ").Append(From).Append("\n");
+            sb.Append("  To: ").Append(To).Append("\n");
             sb.Append("  Page: ").Append(Page).Append("\n");
             sb.Append("  PageSize: ").Append(PageSize).Append("\n");
             sb.Append("}\n");
@@ -129,6 +147,16 @@ namespace Newscatcherapi.Net.Model
                     this.Links.Equals(input.Links))
                 ) && 
                 (
+                    this.From == input.From ||
+                    (this.From != null &&
+                    this.From.Equals(input.From))
+                ) && 
+                (
+                    this.To == input.To ||
+                    (this.To != null &&
+                    this.To.Equals(input.To))
+                ) && 
+                (
                     this.Page == input.Page ||
                     this.Page.Equals(input.Page)
                 ) && 
@@ -154,6 +182,14 @@ namespace Newscatcherapi.Net.Model
                 if (this.Links != null)
                 {
                     hashCode = (hashCode * 59) + this.Links.GetHashCode();
+                }
+                if (this.From != null)
+                {
+                    hashCode = (hashCode * 59) + this.From.GetHashCode();
+                }
+                if (this.To != null)
+                {
+                    hashCode = (hashCode * 59) + this.To.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Page.GetHashCode();
                 hashCode = (hashCode * 59) + this.PageSize.GetHashCode();

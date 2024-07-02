@@ -3,7 +3,7 @@
 <img src='https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg' width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a>
 
 
-[![PyPI](https://img.shields.io/badge/PyPI-v6.0.8-blue)](https://pypi.org/project/newscatcherapi-python-sdk/6.0.8)
+[![PyPI](https://img.shields.io/badge/PyPI-v6.0.9-blue)](https://pypi.org/project/newscatcherapi-python-sdk/6.0.9)
 [![README.md](https://img.shields.io/badge/README-Click%20Here-green)](https://github.com/konfig-dev/newscatcher-sdks/tree/main/v3/python#readme)
 
 ## Table of Contents<a id="table-of-contents"></a>
@@ -40,7 +40,7 @@ Python >=3.7
 ## Installation<a id="installation"></a>
 
 ```sh
-pip install newscatcherapi-python-sdk==6.0.8
+pip install newscatcherapi-python-sdk==6.0.9
 ```
 
 ## Getting Started<a id="getting-started"></a>
@@ -1207,6 +1207,8 @@ This endpoint allows you to search for articles. You can search for articles by 
 get_response = newscatcher.search_link.get(
     ids=None,
     links=None,
+    from_="string_example",
+    to_="string_example",
     page=1,
     page_size=100,
 )
@@ -1217,6 +1219,12 @@ get_response = newscatcher.search_link.get(
 ##### ids: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="ids-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
 
 ##### links: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="links-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
+
+##### from_: Union[`str`, `datetime`]<a id="from_-unionstr-datetime"></a>
+
+
+##### to_: Union[`str`, `datetime`]<a id="to_-unionstr-datetime"></a>
+
 
 ##### page: `int`<a id="page-int"></a>
 
@@ -1244,6 +1252,8 @@ This endpoint allows you to search for articles. You can search for articles by 
 post_response = newscatcher.search_link.post(
     ids=None,
     links=None,
+    from_="string_example",
+    to_="string_example",
     page=1,
     page_size=100,
 )
@@ -1254,6 +1264,12 @@ post_response = newscatcher.search_link.post(
 ##### ids: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="ids-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 
 ##### links: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="links-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
+
+##### from_: Union[`str`, `datetime`]<a id="from_-unionstr-datetime"></a>
+
+
+##### to_: Union[`str`, `datetime`]<a id="to_-unionstr-datetime"></a>
+
 
 ##### page: `int`<a id="page-int"></a>
 

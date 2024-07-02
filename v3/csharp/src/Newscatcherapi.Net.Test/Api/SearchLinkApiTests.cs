@@ -54,13 +54,15 @@ namespace Newscatcherapi.Net.Test.Api
             );
             var links = new Object(
             );
+            var from = new From1(DateTime.Now);
+            var to = new To1(DateTime.Now);
             var page = 1;
             var pageSize = 100;
             
             try
             {
                 // [Get] Search For Articles By Id Or Link
-                DtoResponsesSearchResponseSearchResponse result = client.SearchLink.Get(ids, links, page, pageSize);
+                DtoResponsesSearchResponseSearchResponse result = client.SearchLink.Get(ids, links, from, to, page, pageSize);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -85,12 +87,16 @@ namespace Newscatcherapi.Net.Test.Api
         {
             var ids = "ids_example";
             var links = "links_example";
+            var from = new From1(DateTime.Now);
+            var to = new To1(DateTime.Now);
             var page = 1;
             var pageSize = 100;
             
             var searchURLRequest = new SearchURLRequest(
                 ids,
                 links,
+                from,
+                to,
                 page,
                 pageSize
             );

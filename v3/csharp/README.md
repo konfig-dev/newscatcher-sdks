@@ -1,6 +1,6 @@
 # Newscatcherapi.Net - C#
 
-[![NuGet](https://img.shields.io/badge/NuGet-6.0.7-blue.svg)](https://www.nuget.org/packages/Newscatcherapi.Net/6.0.7)
+[![NuGet](https://img.shields.io/badge/NuGet-6.0.8-blue.svg)](https://www.nuget.org/packages/Newscatcherapi.Net/6.0.8)
 
 <img src='https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg' width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a>
 
@@ -176,6 +176,7 @@ Class | Method | HTTP request | Description
  - [DtoResponsesMoreLikeThisResponseSearchResponse](docs/DtoResponsesMoreLikeThisResponseSearchResponse.md)
  - [DtoResponsesSearchResponseSearchResponse](docs/DtoResponsesSearchResponseSearchResponse.md)
  - [From](docs/From.md)
+ - [From1](docs/From1.md)
  - [HTTPValidationError](docs/HTTPValidationError.md)
  - [JournalistsProperty](docs/JournalistsProperty.md)
  - [LatestHeadlinesGetResponse](docs/LatestHeadlinesGetResponse.md)
@@ -197,6 +198,7 @@ Class | Method | HTTP request | Description
  - [SourcesRequest](docs/SourcesRequest.md)
  - [SubscriptionResponse](docs/SubscriptionResponse.md)
  - [To](docs/To.md)
+ - [To1](docs/To1.md)
  - [ValidationError](docs/ValidationError.md)
 
 

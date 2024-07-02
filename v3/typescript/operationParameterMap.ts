@@ -812,6 +812,12 @@ export const operationParameterMap: Record<string, Entry> = {
                 name: 'links'
             },
             {
+                name: 'from_'
+            },
+            {
+                name: 'to_'
+            },
+            {
                 name: 'page'
             },
             {
@@ -826,6 +832,12 @@ export const operationParameterMap: Record<string, Entry> = {
             },
             {
                 name: 'links'
+            },
+            {
+                name: 'from_'
+            },
+            {
+                name: 'to_'
             },
             {
                 name: 'page'

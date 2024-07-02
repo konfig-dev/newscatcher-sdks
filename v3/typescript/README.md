@@ -2,7 +2,7 @@
 
 <img src='https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg' width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a>
 
-[![npm](https://img.shields.io/badge/npm-v6.0.9-blue)](https://www.npmjs.com/package/newscatcherapi-typescript-sdk/v/6.0.9)
+[![npm](https://img.shields.io/badge/npm-v6.0.10-blue)](https://www.npmjs.com/package/newscatcherapi-typescript-sdk/v/6.0.10)
 
 ## Table of Contents<a id="table-of-contents"></a>
 
@@ -807,6 +807,10 @@ const getResponse = await newscatcher.searchLink.get({
 
 ##### links: `any`<a id="links-any"></a>
 
+##### from: [`From1`](./models/from1.ts)<a id="from-from1modelsfrom1ts"></a>
+
+##### to: [`To1`](./models/to1.ts)<a id="to-to1modelsto1ts"></a>
+
 ##### page: `number`<a id="page-number"></a>
 
 ##### pageSize: `number`<a id="pagesize-number"></a>
@@ -842,6 +846,10 @@ const postResponse = await newscatcher.searchLink.post({
 ##### ids: `any`<a id="ids-any"></a>
 
 ##### links: `any`<a id="links-any"></a>
+
+##### from_: [`From1`](./models/from1.ts)<a id="from_-from1modelsfrom1ts"></a>
+
+##### to_: [`To1`](./models/to1.ts)<a id="to_-to1modelsto1ts"></a>
 
 ##### page: `number`<a id="page-number"></a>
 

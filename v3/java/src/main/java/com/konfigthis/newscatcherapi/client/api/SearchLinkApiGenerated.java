@@ -76,7 +76,7 @@ public class SearchLinkApiGenerated {
         this.localCustomBaseUrl = customBaseUrl;
     }
 
-    private okhttp3.Call getCall(Object ids, Object links, Integer page, Integer pageSize, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getCall(Object ids, Object links, String from, String to, Integer page, Integer pageSize, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -109,6 +109,14 @@ public class SearchLinkApiGenerated {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("links", links));
         }
 
+        if (from != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("from_", from));
+        }
+
+        if (to != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("to_", to));
+        }
+
         if (page != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("page", page));
         }
@@ -137,21 +145,21 @@ public class SearchLinkApiGenerated {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getValidateBeforeCall(Object ids, Object links, Integer page, Integer pageSize, final ApiCallback _callback) throws ApiException {
-        return getCall(ids, links, page, pageSize, _callback);
+    private okhttp3.Call getValidateBeforeCall(Object ids, Object links, String from, String to, Integer page, Integer pageSize, final ApiCallback _callback) throws ApiException {
+        return getCall(ids, links, from, to, page, pageSize, _callback);
 
     }
 
 
-    private ApiResponse<DtoResponsesSearchResponseSearchResponse> getWithHttpInfo(Object ids, Object links, Integer page, Integer pageSize) throws ApiException {
-        okhttp3.Call localVarCall = getValidateBeforeCall(ids, links, page, pageSize, null);
+    private ApiResponse<DtoResponsesSearchResponseSearchResponse> getWithHttpInfo(Object ids, Object links, String from, String to, Integer page, Integer pageSize) throws ApiException {
+        okhttp3.Call localVarCall = getValidateBeforeCall(ids, links, from, to, page, pageSize, null);
         Type localVarReturnType = new TypeToken<DtoResponsesSearchResponseSearchResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call getAsync(Object ids, Object links, Integer page, Integer pageSize, final ApiCallback<DtoResponsesSearchResponseSearchResponse> _callback) throws ApiException {
+    private okhttp3.Call getAsync(Object ids, Object links, String from, String to, Integer page, Integer pageSize, final ApiCallback<DtoResponsesSearchResponseSearchResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getValidateBeforeCall(ids, links, page, pageSize, _callback);
+        okhttp3.Call localVarCall = getValidateBeforeCall(ids, links, from, to, page, pageSize, _callback);
         Type localVarReturnType = new TypeToken<DtoResponsesSearchResponseSearchResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -160,6 +168,8 @@ public class SearchLinkApiGenerated {
     public abstract class GetRequestBuilderGenerated {
         Object ids;
         Object links;
+        String from;
+        String to;
         Integer page;
         Integer pageSize;
 
@@ -183,6 +193,26 @@ public class SearchLinkApiGenerated {
          */
         public SearchLinkApi.GetRequestBuilder links(Object links) {
             this.links = links;
+            return (SearchLinkApi.GetRequestBuilder) this;
+        }
+        
+        /**
+         * Set from
+         * @param from  (optional)
+         * @return SearchLinkApi.GetRequestBuilder
+         */
+        public SearchLinkApi.GetRequestBuilder from(String from) {
+            this.from = from;
+            return (SearchLinkApi.GetRequestBuilder) this;
+        }
+        
+        /**
+         * Set to
+         * @param to  (optional)
+         * @return SearchLinkApi.GetRequestBuilder
+         */
+        public SearchLinkApi.GetRequestBuilder to(String to) {
+            this.to = to;
             return (SearchLinkApi.GetRequestBuilder) this;
         }
         
@@ -218,7 +248,7 @@ public class SearchLinkApiGenerated {
          </table>
          */
         public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
-            return getCall(ids, links, page, pageSize, _callback);
+            return getCall(ids, links, from, to, page, pageSize, _callback);
         }
 
 
@@ -233,7 +263,7 @@ public class SearchLinkApiGenerated {
          </table>
          */
         public DtoResponsesSearchResponseSearchResponse execute() throws ApiException {
-            ApiResponse<DtoResponsesSearchResponseSearchResponse> localVarResp = getWithHttpInfo(ids, links, page, pageSize);
+            ApiResponse<DtoResponsesSearchResponseSearchResponse> localVarResp = getWithHttpInfo(ids, links, from, to, page, pageSize);
             return localVarResp.getResponseBody();
         }
 
@@ -248,7 +278,7 @@ public class SearchLinkApiGenerated {
          </table>
          */
         public ApiResponse<DtoResponsesSearchResponseSearchResponse> executeWithHttpInfo() throws ApiException {
-            return getWithHttpInfo(ids, links, page, pageSize);
+            return getWithHttpInfo(ids, links, from, to, page, pageSize);
         }
 
         /**
@@ -263,7 +293,7 @@ public class SearchLinkApiGenerated {
          </table>
          */
         public okhttp3.Call executeAsync(final ApiCallback<DtoResponsesSearchResponseSearchResponse> _callback) throws ApiException {
-            return getAsync(ids, links, page, pageSize, _callback);
+            return getAsync(ids, links, from, to, page, pageSize, _callback);
         }
     }
 
@@ -354,6 +384,8 @@ public class SearchLinkApiGenerated {
     public abstract class PostRequestBuilderGenerated {
         Object ids;
         Object links;
+        String from;
+        String to;
         Integer page;
         Integer pageSize;
 
@@ -377,6 +409,26 @@ public class SearchLinkApiGenerated {
          */
         public SearchLinkApi.PostRequestBuilder links(Object links) {
             this.links = links;
+            return (SearchLinkApi.PostRequestBuilder) this;
+        }
+        
+        /**
+         * Set from
+         * @param from  (optional)
+         * @return SearchLinkApi.PostRequestBuilder
+         */
+        public SearchLinkApi.PostRequestBuilder from(String from) {
+            this.from = from;
+            return (SearchLinkApi.PostRequestBuilder) this;
+        }
+        
+        /**
+         * Set to
+         * @param to  (optional)
+         * @return SearchLinkApi.PostRequestBuilder
+         */
+        public SearchLinkApi.PostRequestBuilder to(String to) {
+            this.to = to;
             return (SearchLinkApi.PostRequestBuilder) this;
         }
         
@@ -420,6 +472,8 @@ public class SearchLinkApiGenerated {
             SearchURLRequest searchURLRequest = new SearchURLRequest();
             searchURLRequest.ids(this.ids);
             searchURLRequest.links(this.links);
+            searchURLRequest.from(this.from);
+            searchURLRequest.to(this.to);
             searchURLRequest.page(this.page);
             searchURLRequest.pageSize(this.pageSize);
             return searchURLRequest;
