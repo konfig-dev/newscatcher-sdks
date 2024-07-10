@@ -22,7 +22,7 @@ Author search request DTO.
 |**publishedDatePrecision** | **String** |  |  [optional] |
 |**byParseDate** | **Boolean** |  |  [optional] |
 |**sortBy** | **String** |  |  [optional] |
-|**rankedOnly** | **String** |  |  [optional] |
+|**rankedOnly** | **Object** |  |  [optional] |
 |**fromRank** | **Integer** |  |  [optional] |
 |**toRank** | **Integer** |  |  [optional] |
 |**isHeadline** | **Boolean** |  |  [optional] |

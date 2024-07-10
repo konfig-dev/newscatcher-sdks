@@ -69,7 +69,7 @@ public class SearchSimilarApiTest {
         Boolean byParseDate = null;
         String publishedDatePrecision = null;
         String sortBy = null;
-        String rankedOnly = null;
+        Object rankedOnly = null;
         Integer fromRank = null;
         Integer toRank = null;
         Boolean isHeadline = null;
@@ -164,7 +164,7 @@ public class SearchSimilarApiTest {
         Boolean byParseDate = null;
         String publishedDatePrecision = null;
         String sortBy = null;
-        String rankedOnly = null;
+        Object rankedOnly = null;
         Integer fromRank = null;
         Integer toRank = null;
         Boolean isHeadline = null;

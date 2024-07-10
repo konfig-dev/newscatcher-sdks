@@ -68,7 +68,7 @@ namespace Newscatcherapi.Net.Test.Api
             );
             var notAuthorName = new Object(
             );
-            var rankedOnly = "rankedOnly_example";
+            var rankedOnly = new RankedOnly("example");
             var isHeadline = true;
             var isOpinion = true;
             var isPaidContent = true;
@@ -142,7 +142,7 @@ namespace Newscatcherapi.Net.Test.Api
             var predefinedSources = "predefinedSources_example";
             var notSources = "notSources_example";
             var notAuthorName = "notAuthorName_example";
-            var rankedOnly = "rankedOnly_example";
+            var rankedOnly = new RankedOnly("example");
             var isHeadline = false;
             var isOpinion = false;
             var isPaidContent = false;

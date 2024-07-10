@@ -80,7 +80,7 @@ namespace Newscatcherapi.Net.Model
         /// <param name="notIptcTags">notIptcTags.</param>
         /// <param name="iabTags">iabTags.</param>
         /// <param name="notIabTags">notIabTags.</param>
-        public AuthorSearchRequest(string authorName = default(string), string notAuthorName = default(string), Object sources = default(Object), Object predefinedSources = default(Object), Object notSources = default(Object), Object lang = default(Object), Object notLang = default(Object), Object countries = default(Object), Object notCountries = default(Object), From from = default(From), To to = default(To), string publishedDatePrecision = default(string), bool byParseDate = false, string sortBy = "relevancy", string rankedOnly = default(string), int fromRank = default(int), int toRank = default(int), bool isHeadline = default(bool), bool isOpinion = default(bool), bool isPaidContent = default(bool), Object parentUrl = default(Object), Object allLinks = default(Object), Object allDomainLinks = default(Object), int wordCountMin = default(int), int wordCountMax = default(int), int page = 1, int pageSize = 100, bool includeNlpData = default(bool), bool hasNlp = default(bool), string theme = default(string), string notTheme = default(string), string nerName = default(string), double titleSentimentMin = default(double), double titleSentimentMax = default(double), double contentSentimentMin = default(double), double contentSentimentMax = default(double), Object iptcTags = default(Object), Object notIptcTags = default(Object), Object iabTags = default(Object), Object notIabTags = default(Object))
+        public AuthorSearchRequest(string authorName = default(string), string notAuthorName = default(string), Object sources = default(Object), Object predefinedSources = default(Object), Object notSources = default(Object), Object lang = default(Object), Object notLang = default(Object), Object countries = default(Object), Object notCountries = default(Object), From from = default(From), To to = default(To), string publishedDatePrecision = default(string), bool byParseDate = false, string sortBy = "relevancy", RankedOnly rankedOnly = default(RankedOnly), int fromRank = default(int), int toRank = default(int), bool isHeadline = default(bool), bool isOpinion = default(bool), bool isPaidContent = default(bool), Object parentUrl = default(Object), Object allLinks = default(Object), Object allDomainLinks = default(Object), int wordCountMin = default(int), int wordCountMax = default(int), int page = 1, int pageSize = 100, bool includeNlpData = default(bool), bool hasNlp = default(bool), string theme = default(string), string notTheme = default(string), string nerName = default(string), double titleSentimentMin = default(double), double titleSentimentMax = default(double), double contentSentimentMin = default(double), double contentSentimentMax = default(double), Object iptcTags = default(Object), Object notIptcTags = default(Object), Object iabTags = default(Object), Object notIabTags = default(Object))
         {
             // to ensure "authorName" is required (not null)
             if (authorName == null)
@@ -218,7 +218,7 @@ namespace Newscatcherapi.Net.Model
         /// Gets or Sets RankedOnly
         /// </summary>
         [DataMember(Name = "ranked_only", EmitDefaultValue = false)]
-        public string RankedOnly { get; set; }
+        public RankedOnly RankedOnly { get; set; }
 
         /// <summary>
         /// Gets or Sets FromRank

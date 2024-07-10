@@ -26,6 +26,8 @@ import { LatestHeadlinesGetResponse } from '../models';
 import { LatestHeadlinesPostResponse } from '../models';
 // @ts-ignore
 import { LatestHeadlinesRequest } from '../models';
+// @ts-ignore
+import { RankedOnly } from '../models';
 import { paginate } from "../pagination/paginate";
 import type * as buffer from "buffer"
 import { requestBeforeHook } from '../requestBeforeHook';
@@ -48,7 +50,7 @@ export const LatestHeadlinesApiAxiosParamCreator = function (configuration?: Con
          * @param {any} [predefinedSources] 
          * @param {any} [notSources] 
          * @param {any} [notAuthorName] 
-         * @param {string} [rankedOnly] 
+         * @param {RankedOnly} [rankedOnly] 
          * @param {boolean} [isHeadline] 
          * @param {boolean} [isOpinion] 
          * @param {boolean} [isPaidContent] 
@@ -81,7 +83,7 @@ export const LatestHeadlinesApiAxiosParamCreator = function (configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        get: async (when?: string, byParseDate?: boolean, lang?: any, notLang?: any, countries?: any, notCountries?: any, sources?: any, predefinedSources?: any, notSources?: any, notAuthorName?: any, rankedOnly?: string, isHeadline?: boolean, isOpinion?: boolean, isPaidContent?: boolean, parentUrl?: any, allLinks?: any, allDomainLinks?: any, wordCountMin?: number, wordCountMax?: number, page?: number, pageSize?: number, clusteringVariable?: string, clusteringEnabled?: boolean, clusteringThreshold?: number, includeNlpData?: boolean, hasNlp?: boolean, theme?: string, notTheme?: string, orgEntityName?: string, perEntityName?: string, locEntityName?: string, miscEntityName?: string, titleSentimentMin?: number, titleSentimentMax?: number, contentSentimentMin?: number, contentSentimentMax?: number, iptcTags?: any, notIptcTags?: any, iabTags?: any, notIabTags?: any, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        get: async (when?: string, byParseDate?: boolean, lang?: any, notLang?: any, countries?: any, notCountries?: any, sources?: any, predefinedSources?: any, notSources?: any, notAuthorName?: any, rankedOnly?: RankedOnly, isHeadline?: boolean, isOpinion?: boolean, isPaidContent?: boolean, parentUrl?: any, allLinks?: any, allDomainLinks?: any, wordCountMin?: number, wordCountMax?: number, page?: number, pageSize?: number, clusteringVariable?: string, clusteringEnabled?: boolean, clusteringThreshold?: number, includeNlpData?: boolean, hasNlp?: boolean, theme?: string, notTheme?: string, orgEntityName?: string, perEntityName?: string, locEntityName?: string, miscEntityName?: string, titleSentimentMin?: number, titleSentimentMax?: number, contentSentimentMin?: number, contentSentimentMax?: number, iptcTags?: any, notIptcTags?: any, iabTags?: any, notIabTags?: any, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/latest_headlines`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -509,10 +511,10 @@ export type LatestHeadlinesApiGetRequest = {
     
     /**
     * 
-    * @type {string}
+    * @type {RankedOnly}
     * @memberof LatestHeadlinesApiGet
     */
-    readonly rankedOnly?: string
+    readonly rankedOnly?: RankedOnly
     
     /**
     * 

@@ -29,6 +29,8 @@ import { From } from '../models';
 // @ts-ignore
 import { HTTPValidationError } from '../models';
 // @ts-ignore
+import { RankedOnly } from '../models';
+// @ts-ignore
 import { To } from '../models';
 import { paginate } from "../pagination/paginate";
 import type * as buffer from "buffer"
@@ -56,7 +58,7 @@ export const AuthorsApiAxiosParamCreator = function (configuration?: Configurati
          * @param {string} [publishedDatePrecision] 
          * @param {boolean} [byParseDate] 
          * @param {string} [sortBy] 
-         * @param {string} [rankedOnly] 
+         * @param {RankedOnly} [rankedOnly] 
          * @param {number} [fromRank] 
          * @param {number} [toRank] 
          * @param {boolean} [isHeadline] 
@@ -85,7 +87,7 @@ export const AuthorsApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        get: async (authorName: string, notAuthorName?: string, sources?: any, predefinedSources?: any, notSources?: any, lang?: any, notLang?: any, countries?: any, notCountries?: any, from?: From, to?: To, publishedDatePrecision?: string, byParseDate?: boolean, sortBy?: string, rankedOnly?: string, fromRank?: number, toRank?: number, isHeadline?: boolean, isOpinion?: boolean, isPaidContent?: boolean, parentUrl?: any, allLinks?: any, allDomainLinks?: any, wordCountMin?: number, wordCountMax?: number, page?: number, pageSize?: number, includeNlpData?: boolean, hasNlp?: boolean, theme?: string, notTheme?: string, nerName?: string, titleSentimentMin?: number, titleSentimentMax?: number, contentSentimentMin?: number, contentSentimentMax?: number, iptcTags?: any, notIptcTags?: any, iabTags?: any, notIabTags?: any, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        get: async (authorName: string, notAuthorName?: string, sources?: any, predefinedSources?: any, notSources?: any, lang?: any, notLang?: any, countries?: any, notCountries?: any, from?: From, to?: To, publishedDatePrecision?: string, byParseDate?: boolean, sortBy?: string, rankedOnly?: RankedOnly, fromRank?: number, toRank?: number, isHeadline?: boolean, isOpinion?: boolean, isPaidContent?: boolean, parentUrl?: any, allLinks?: any, allDomainLinks?: any, wordCountMin?: number, wordCountMax?: number, page?: number, pageSize?: number, includeNlpData?: boolean, hasNlp?: boolean, theme?: string, notTheme?: string, nerName?: string, titleSentimentMin?: number, titleSentimentMax?: number, contentSentimentMin?: number, contentSentimentMax?: number, iptcTags?: any, notIptcTags?: any, iabTags?: any, notIabTags?: any, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'authorName' is not null or undefined
             assertParamExists('get', 'authorName', authorName)
             const localVarPath = `/api/authors`;
@@ -543,10 +545,10 @@ export type AuthorsApiGetRequest = {
     
     /**
     * 
-    * @type {string}
+    * @type {RankedOnly}
     * @memberof AuthorsApiGet
     */
-    readonly rankedOnly?: string
+    readonly rankedOnly?: RankedOnly
     
     /**
     * 

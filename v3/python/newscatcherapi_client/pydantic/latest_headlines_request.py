@@ -38,7 +38,7 @@ class LatestHeadlinesRequest(BaseModel):
 
     not_author_name: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = Field(None, alias='not_author_name')
 
-    ranked_only: typing.Optional[str] = Field(None, alias='ranked_only')
+    ranked_only: typing.Optional[typing.Union[str, bool]] = Field(None, alias='ranked_only')
 
     is_headline: typing.Optional[bool] = Field(None, alias='is_headline')
 

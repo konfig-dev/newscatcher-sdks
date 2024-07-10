@@ -204,7 +204,14 @@
             "required": false,
             "schema": {
               "title": "Ranked Only",
-              "type": "string"
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "boolean"
+                }
+              ]
             },
             "name": "ranked_only",
             "in": "query"
@@ -680,7 +687,14 @@
             "required": false,
             "schema": {
               "title": "Ranked Only",
-              "type": "string"
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "boolean"
+                }
+              ]
             },
             "name": "ranked_only",
             "in": "query"
@@ -1174,7 +1188,14 @@
             "required": false,
             "schema": {
               "title": "Ranked Only",
-              "type": "string"
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "boolean"
+                }
+              ]
             },
             "name": "ranked_only",
             "in": "query"
@@ -1826,7 +1847,14 @@
             "required": false,
             "schema": {
               "title": "Ranked Only",
-              "type": "string"
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "boolean"
+                }
+              ]
             },
             "name": "ranked_only",
             "in": "query"
@@ -2448,7 +2476,14 @@
           },
           "ranked_only": {
             "title": "Ranked Only",
-            "type": "string"
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "boolean"
+              }
+            ]
           },
           "from_rank": {
             "title": "From Rank",
@@ -2684,7 +2719,14 @@
           },
           "ranked_only": {
             "title": "Ranked Only",
-            "type": "string"
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "boolean"
+              }
+            ]
           },
           "is_headline": {
             "title": "Is Headline",
@@ -2944,7 +2986,14 @@
           },
           "ranked_only": {
             "title": "Ranked Only",
-            "type": "string"
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "boolean"
+              }
+            ]
           },
           "from_rank": {
             "title": "From Rank",
@@ -3122,7 +3171,14 @@
           },
           "ranked_only": {
             "title": "Ranked Only",
-            "type": "string"
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "boolean"
+              }
+            ]
           },
           "from_rank": {
             "title": "From Rank",

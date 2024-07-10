@@ -62,7 +62,7 @@ public class LatestHeadlinesApiTest {
         Object predefinedSources = null;
         Object notSources = null;
         Object notAuthorName = null;
-        String rankedOnly = null;
+        Object rankedOnly = null;
         Boolean isHeadline = null;
         Boolean isOpinion = null;
         Boolean isPaidContent = null;
@@ -156,7 +156,7 @@ public class LatestHeadlinesApiTest {
         Object predefinedSources = null;
         Object notSources = null;
         Object notAuthorName = null;
-        String rankedOnly = null;
+        Object rankedOnly = null;
         Boolean isHeadline = null;
         Boolean isOpinion = null;
         Boolean isPaidContent = null;

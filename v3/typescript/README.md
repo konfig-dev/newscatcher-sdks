@@ -2,7 +2,7 @@
 
 <img src='https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg' width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a>
 
-[![npm](https://img.shields.io/badge/npm-v6.0.10-blue)](https://www.npmjs.com/package/newscatcherapi-typescript-sdk/v/6.0.10)
+[![npm](https://img.shields.io/badge/npm-v6.0.11-blue)](https://www.npmjs.com/package/newscatcherapi-typescript-sdk/v/6.0.11)
 
 ## Table of Contents<a id="table-of-contents"></a>
 
@@ -132,7 +132,7 @@ const getResponse = await newscatcher.authors.get({
 
 ##### sortBy: `string`<a id="sortby-string"></a>
 
-##### rankedOnly: `string`<a id="rankedonly-string"></a>
+##### rankedOnly: [`RankedOnly`](./models/ranked-only.ts)<a id="rankedonly-rankedonlymodelsranked-onlyts"></a>
 
 ##### fromRank: `number`<a id="fromrank-number"></a>
 
@@ -243,7 +243,7 @@ const postResponse = await newscatcher.authors.post({
 
 ##### sort_by: `string`<a id="sort_by-string"></a>
 
-##### ranked_only: `string`<a id="ranked_only-string"></a>
+##### ranked_only: [`RankedOnly`](./models/ranked-only.ts)<a id="ranked_only-rankedonlymodelsranked-onlyts"></a>
 
 ##### from_rank: `number`<a id="from_rank-number"></a>
 
@@ -345,7 +345,7 @@ const getResponse = await newscatcher.latestHeadlines.get({
 
 ##### notAuthorName: `any`<a id="notauthorname-any"></a>
 
-##### rankedOnly: `string`<a id="rankedonly-string"></a>
+##### rankedOnly: [`RankedOnly`](./models/ranked-only.ts)<a id="rankedonly-rankedonlymodelsranked-onlyts"></a>
 
 ##### isHeadline: `boolean`<a id="isheadline-boolean"></a>
 
@@ -455,7 +455,7 @@ const postResponse = await newscatcher.latestHeadlines.post({
 
 ##### not_author_name: `any`<a id="not_author_name-any"></a>
 
-##### ranked_only: `string`<a id="ranked_only-string"></a>
+##### ranked_only: [`RankedOnly`](./models/ranked-only.ts)<a id="ranked_only-rankedonlymodelsranked-onlyts"></a>
 
 ##### is_headline: `boolean`<a id="is_headline-boolean"></a>
 
@@ -577,7 +577,7 @@ const getResponse = await newscatcher.search.get({
 
 ##### sortBy: `string`<a id="sortby-string"></a>
 
-##### rankedOnly: `string`<a id="rankedonly-string"></a>
+##### rankedOnly: [`RankedOnly`](./models/ranked-only.ts)<a id="rankedonly-rankedonlymodelsranked-onlyts"></a>
 
 ##### fromRank: `number`<a id="fromrank-number"></a>
 
@@ -707,7 +707,7 @@ const postResponse = await newscatcher.search.post({
 
 ##### sort_by: `string`<a id="sort_by-string"></a>
 
-##### ranked_only: `string`<a id="ranked_only-string"></a>
+##### ranked_only: [`RankedOnly`](./models/ranked-only.ts)<a id="ranked_only-rankedonlymodelsranked-onlyts"></a>
 
 ##### from_rank: `number`<a id="from_rank-number"></a>
 
@@ -924,7 +924,7 @@ const getResponse = await newscatcher.searchSimilar.get({
 
 ##### sortBy: `string`<a id="sortby-string"></a>
 
-##### rankedOnly: `string`<a id="rankedonly-string"></a>
+##### rankedOnly: [`RankedOnly`](./models/ranked-only.ts)<a id="rankedonly-rankedonlymodelsranked-onlyts"></a>
 
 ##### fromRank: `number`<a id="fromrank-number"></a>
 
@@ -1041,7 +1041,7 @@ const postResponse = await newscatcher.searchSimilar.post({
 
 ##### sort_by: `string`<a id="sort_by-string"></a>
 
-##### ranked_only: `string`<a id="ranked_only-string"></a>
+##### ranked_only: [`RankedOnly`](./models/ranked-only.ts)<a id="ranked_only-rankedonlymodelsranked-onlyts"></a>
 
 ##### from_rank: `number`<a id="from_rank-number"></a>
 

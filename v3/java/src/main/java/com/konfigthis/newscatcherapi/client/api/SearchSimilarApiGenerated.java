@@ -77,7 +77,7 @@ public class SearchSimilarApiGenerated {
         this.localCustomBaseUrl = customBaseUrl;
     }
 
-    private okhttp3.Call getCall(String q, String searchIn, Boolean includeSimilarDocuments, Integer similarDocumentsNumber, String similarDocumentsFields, Object predefinedSources, Object sources, Object notSources, Object lang, Object notLang, Object countries, Object notCountries, String from, String to, Boolean byParseDate, String publishedDatePrecision, String sortBy, String rankedOnly, Integer fromRank, Integer toRank, Boolean isHeadline, Boolean isOpinion, Boolean isPaidContent, Object parentUrl, Object allLinks, Object allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, Boolean includeNlpData, Boolean hasNlp, String theme, String notTheme, String nerName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax, Object iptcTags, Object notIptcTags, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getCall(String q, String searchIn, Boolean includeSimilarDocuments, Integer similarDocumentsNumber, String similarDocumentsFields, Object predefinedSources, Object sources, Object notSources, Object lang, Object notLang, Object countries, Object notCountries, String from, String to, Boolean byParseDate, String publishedDatePrecision, String sortBy, Object rankedOnly, Integer fromRank, Integer toRank, Boolean isHeadline, Boolean isOpinion, Boolean isPaidContent, Object parentUrl, Object allLinks, Object allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, Boolean includeNlpData, Boolean hasNlp, String theme, String notTheme, String nerName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax, Object iptcTags, Object notIptcTags, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -286,7 +286,7 @@ public class SearchSimilarApiGenerated {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getValidateBeforeCall(String q, String searchIn, Boolean includeSimilarDocuments, Integer similarDocumentsNumber, String similarDocumentsFields, Object predefinedSources, Object sources, Object notSources, Object lang, Object notLang, Object countries, Object notCountries, String from, String to, Boolean byParseDate, String publishedDatePrecision, String sortBy, String rankedOnly, Integer fromRank, Integer toRank, Boolean isHeadline, Boolean isOpinion, Boolean isPaidContent, Object parentUrl, Object allLinks, Object allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, Boolean includeNlpData, Boolean hasNlp, String theme, String notTheme, String nerName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax, Object iptcTags, Object notIptcTags, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getValidateBeforeCall(String q, String searchIn, Boolean includeSimilarDocuments, Integer similarDocumentsNumber, String similarDocumentsFields, Object predefinedSources, Object sources, Object notSources, Object lang, Object notLang, Object countries, Object notCountries, String from, String to, Boolean byParseDate, String publishedDatePrecision, String sortBy, Object rankedOnly, Integer fromRank, Integer toRank, Boolean isHeadline, Boolean isOpinion, Boolean isPaidContent, Object parentUrl, Object allLinks, Object allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, Boolean includeNlpData, Boolean hasNlp, String theme, String notTheme, String nerName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax, Object iptcTags, Object notIptcTags, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'q' is set
         if (q == null) {
             throw new ApiException("Missing the required parameter 'q' when calling get(Async)");
@@ -297,13 +297,13 @@ public class SearchSimilarApiGenerated {
     }
 
 
-    private ApiResponse<FSearchResponse2> getWithHttpInfo(String q, String searchIn, Boolean includeSimilarDocuments, Integer similarDocumentsNumber, String similarDocumentsFields, Object predefinedSources, Object sources, Object notSources, Object lang, Object notLang, Object countries, Object notCountries, String from, String to, Boolean byParseDate, String publishedDatePrecision, String sortBy, String rankedOnly, Integer fromRank, Integer toRank, Boolean isHeadline, Boolean isOpinion, Boolean isPaidContent, Object parentUrl, Object allLinks, Object allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, Boolean includeNlpData, Boolean hasNlp, String theme, String notTheme, String nerName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax, Object iptcTags, Object notIptcTags) throws ApiException {
+    private ApiResponse<FSearchResponse2> getWithHttpInfo(String q, String searchIn, Boolean includeSimilarDocuments, Integer similarDocumentsNumber, String similarDocumentsFields, Object predefinedSources, Object sources, Object notSources, Object lang, Object notLang, Object countries, Object notCountries, String from, String to, Boolean byParseDate, String publishedDatePrecision, String sortBy, Object rankedOnly, Integer fromRank, Integer toRank, Boolean isHeadline, Boolean isOpinion, Boolean isPaidContent, Object parentUrl, Object allLinks, Object allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, Boolean includeNlpData, Boolean hasNlp, String theme, String notTheme, String nerName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax, Object iptcTags, Object notIptcTags) throws ApiException {
         okhttp3.Call localVarCall = getValidateBeforeCall(q, searchIn, includeSimilarDocuments, similarDocumentsNumber, similarDocumentsFields, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, from, to, byParseDate, publishedDatePrecision, sortBy, rankedOnly, fromRank, toRank, isHeadline, isOpinion, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, notTheme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, null);
         Type localVarReturnType = new TypeToken<FSearchResponse2>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call getAsync(String q, String searchIn, Boolean includeSimilarDocuments, Integer similarDocumentsNumber, String similarDocumentsFields, Object predefinedSources, Object sources, Object notSources, Object lang, Object notLang, Object countries, Object notCountries, String from, String to, Boolean byParseDate, String publishedDatePrecision, String sortBy, String rankedOnly, Integer fromRank, Integer toRank, Boolean isHeadline, Boolean isOpinion, Boolean isPaidContent, Object parentUrl, Object allLinks, Object allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, Boolean includeNlpData, Boolean hasNlp, String theme, String notTheme, String nerName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax, Object iptcTags, Object notIptcTags, final ApiCallback<FSearchResponse2> _callback) throws ApiException {
+    private okhttp3.Call getAsync(String q, String searchIn, Boolean includeSimilarDocuments, Integer similarDocumentsNumber, String similarDocumentsFields, Object predefinedSources, Object sources, Object notSources, Object lang, Object notLang, Object countries, Object notCountries, String from, String to, Boolean byParseDate, String publishedDatePrecision, String sortBy, Object rankedOnly, Integer fromRank, Integer toRank, Boolean isHeadline, Boolean isOpinion, Boolean isPaidContent, Object parentUrl, Object allLinks, Object allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, Boolean includeNlpData, Boolean hasNlp, String theme, String notTheme, String nerName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax, Object iptcTags, Object notIptcTags, final ApiCallback<FSearchResponse2> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getValidateBeforeCall(q, searchIn, includeSimilarDocuments, similarDocumentsNumber, similarDocumentsFields, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, from, to, byParseDate, publishedDatePrecision, sortBy, rankedOnly, fromRank, toRank, isHeadline, isOpinion, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, notTheme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, _callback);
         Type localVarReturnType = new TypeToken<FSearchResponse2>(){}.getType();
@@ -329,7 +329,7 @@ public class SearchSimilarApiGenerated {
         Boolean byParseDate;
         String publishedDatePrecision;
         String sortBy;
-        String rankedOnly;
+        Object rankedOnly;
         Integer fromRank;
         Integer toRank;
         Boolean isHeadline;
@@ -523,7 +523,7 @@ public class SearchSimilarApiGenerated {
          * @param rankedOnly  (optional)
          * @return SearchSimilarApi.GetRequestBuilder
          */
-        public SearchSimilarApi.GetRequestBuilder rankedOnly(String rankedOnly) {
+        public SearchSimilarApi.GetRequestBuilder rankedOnly(Object rankedOnly) {
             this.rankedOnly = rankedOnly;
             return (SearchSimilarApi.GetRequestBuilder) this;
         }
@@ -925,7 +925,7 @@ public class SearchSimilarApiGenerated {
         Boolean byParseDate;
         String publishedDatePrecision;
         String sortBy;
-        String rankedOnly;
+        Object rankedOnly;
         Integer fromRank;
         Integer toRank;
         Boolean isHeadline;
@@ -1119,7 +1119,7 @@ public class SearchSimilarApiGenerated {
          * @param rankedOnly  (optional)
          * @return SearchSimilarApi.PostRequestBuilder
          */
-        public SearchSimilarApi.PostRequestBuilder rankedOnly(String rankedOnly) {
+        public SearchSimilarApi.PostRequestBuilder rankedOnly(Object rankedOnly) {
             this.rankedOnly = rankedOnly;
             return (SearchSimilarApi.PostRequestBuilder) this;
         }

@@ -40,7 +40,7 @@ class OptionalLatestHeadlinesRequest(TypedDict, total=False):
 
     not_author_name: typing.Union[bool, date, datetime, dict, float, int, list, str, None]
 
-    ranked_only: str
+    ranked_only: typing.Union[str, bool]
 
     is_headline: bool
 

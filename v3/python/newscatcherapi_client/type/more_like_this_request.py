@@ -53,7 +53,7 @@ class OptionalMoreLikeThisRequest(TypedDict, total=False):
 
     sort_by: str
 
-    ranked_only: str
+    ranked_only: typing.Union[str, bool]
 
     from_rank: int
 
