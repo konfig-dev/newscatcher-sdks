@@ -142,7 +142,45 @@ class ToSchema(
 ByParseDateSchema = schemas.BoolSchema
 PublishedDatePrecisionSchema = schemas.StrSchema
 SortBySchema = schemas.StrSchema
-RankedOnlySchema = schemas.StrSchema
+
+
+class RankedOnlySchema(
+    schemas.ComposedSchema,
+):
+
+
+    class MetaOapg:
+        items = schemas.StrSchema
+        any_of_1 = schemas.BoolSchema
+        
+        @classmethod
+        @functools.lru_cache()
+        def any_of(cls):
+            # we need this here to make our import statements work
+            # we must store _composed_schemas in here so the code is only run
+            # when we invoke this method. If we kept this at the class
+            # level we would get an error because the class level
+            # code would be run when this module is imported, and these composed
+            # classes don't exist yet because their module has not finished
+            # loading
+            return [
+                cls.items,
+                cls.any_of_1,
+            ]
+
+
+    def __new__(
+        cls,
+        *args: typing.Union[dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ],
+        _configuration: typing.Optional[schemas.Configuration] = None,
+        **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
+    ) -> 'RankedOnlySchema':
+        return super().__new__(
+            cls,
+            *args,
+            _configuration=_configuration,
+            **kwargs,
+        )
 FromRankSchema = schemas.IntSchema
 ToRankSchema = schemas.IntSchema
 IsHeadlineSchema = schemas.BoolSchema
@@ -211,7 +249,7 @@ RequestOptionalQueryParams = typing_extensions.TypedDict(
         'by_parse_date': typing.Union[ByParseDateSchema, bool, ],
         'published_date_precision': typing.Union[PublishedDatePrecisionSchema, str, ],
         'sort_by': typing.Union[SortBySchema, str, ],
-        'ranked_only': typing.Union[RankedOnlySchema, str, ],
+        'ranked_only': typing.Union[RankedOnlySchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ],
         'from_rank': typing.Union[FromRankSchema, decimal.Decimal, int, ],
         'to_rank': typing.Union[ToRankSchema, decimal.Decimal, int, ],
         'is_headline': typing.Union[IsHeadlineSchema, bool, ],
@@ -559,7 +597,7 @@ class BaseApi(api_client.Api):
         by_parse_date: typing.Optional[bool] = None,
         published_date_precision: typing.Optional[str] = None,
         sort_by: typing.Optional[str] = None,
-        ranked_only: typing.Optional[str] = None,
+        ranked_only: typing.Optional[typing.Union[str, bool]] = None,
         from_rank: typing.Optional[int] = None,
         to_rank: typing.Optional[int] = None,
         is_headline: typing.Optional[bool] = None,
@@ -968,7 +1006,7 @@ class GetRaw(BaseApi):
         by_parse_date: typing.Optional[bool] = None,
         published_date_precision: typing.Optional[str] = None,
         sort_by: typing.Optional[str] = None,
-        ranked_only: typing.Optional[str] = None,
+        ranked_only: typing.Optional[typing.Union[str, bool]] = None,
         from_rank: typing.Optional[int] = None,
         to_rank: typing.Optional[int] = None,
         is_headline: typing.Optional[bool] = None,
@@ -1065,7 +1103,7 @@ class GetRaw(BaseApi):
         by_parse_date: typing.Optional[bool] = None,
         published_date_precision: typing.Optional[str] = None,
         sort_by: typing.Optional[str] = None,
-        ranked_only: typing.Optional[str] = None,
+        ranked_only: typing.Optional[typing.Union[str, bool]] = None,
         from_rank: typing.Optional[int] = None,
         to_rank: typing.Optional[int] = None,
         is_headline: typing.Optional[bool] = None,
@@ -1161,7 +1199,7 @@ class Get(BaseApi):
         by_parse_date: typing.Optional[bool] = None,
         published_date_precision: typing.Optional[str] = None,
         sort_by: typing.Optional[str] = None,
-        ranked_only: typing.Optional[str] = None,
+        ranked_only: typing.Optional[typing.Union[str, bool]] = None,
         from_rank: typing.Optional[int] = None,
         to_rank: typing.Optional[int] = None,
         is_headline: typing.Optional[bool] = None,
@@ -1256,7 +1294,7 @@ class Get(BaseApi):
         by_parse_date: typing.Optional[bool] = None,
         published_date_precision: typing.Optional[str] = None,
         sort_by: typing.Optional[str] = None,
-        ranked_only: typing.Optional[str] = None,
+        ranked_only: typing.Optional[typing.Union[str, bool]] = None,
         from_rank: typing.Optional[int] = None,
         to_rank: typing.Optional[int] = None,
         is_headline: typing.Optional[bool] = None,
@@ -1352,7 +1390,7 @@ class ApiForget(BaseApi):
         by_parse_date: typing.Optional[bool] = None,
         published_date_precision: typing.Optional[str] = None,
         sort_by: typing.Optional[str] = None,
-        ranked_only: typing.Optional[str] = None,
+        ranked_only: typing.Optional[typing.Union[str, bool]] = None,
         from_rank: typing.Optional[int] = None,
         to_rank: typing.Optional[int] = None,
         is_headline: typing.Optional[bool] = None,
@@ -1449,7 +1487,7 @@ class ApiForget(BaseApi):
         by_parse_date: typing.Optional[bool] = None,
         published_date_precision: typing.Optional[str] = None,
         sort_by: typing.Optional[str] = None,
-        ranked_only: typing.Optional[str] = None,
+        ranked_only: typing.Optional[typing.Union[str, bool]] = None,
         from_rank: typing.Optional[int] = None,
         to_rank: typing.Optional[int] = None,
         is_headline: typing.Optional[bool] = None,

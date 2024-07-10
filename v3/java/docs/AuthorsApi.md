@@ -51,7 +51,7 @@ public class Example {
     String publishedDatePrecision = "publishedDatePrecision_example";
     Boolean byParseDate = false;
     String sortBy = "relevancy";
-    String rankedOnly = "rankedOnly_example";
+    Object rankedOnly = null;
     Integer fromRank = 56;
     Integer toRank = 56;
     Boolean isHeadline = true;
@@ -217,7 +217,7 @@ public class Example {
 | **publishedDatePrecision** | **String**|  | [optional] |
 | **byParseDate** | **Boolean**|  | [optional] [default to false] |
 | **sortBy** | **String**|  | [optional] [default to relevancy] |
-| **rankedOnly** | **String**|  | [optional] |
+| **rankedOnly** | [**Object**](.md)|  | [optional] |
 | **fromRank** | **Integer**|  | [optional] |
 | **toRank** | **Integer**|  | [optional] |
 | **isHeadline** | **Boolean**|  | [optional] |
@@ -305,7 +305,7 @@ public class Example {
     String publishedDatePrecision = "publishedDatePrecision_example";
     Boolean byParseDate = false;
     String sortBy = "relevancy";
-    String rankedOnly = "rankedOnly_example";
+    Object rankedOnly = null;
     Integer fromRank = 56;
     Integer toRank = 56;
     Boolean isHeadline = true;

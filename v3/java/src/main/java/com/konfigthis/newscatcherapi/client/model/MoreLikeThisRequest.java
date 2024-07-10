@@ -121,7 +121,7 @@ public class MoreLikeThisRequest {
 
   public static final String SERIALIZED_NAME_RANKED_ONLY = "ranked_only";
   @SerializedName(SERIALIZED_NAME_RANKED_ONLY)
-  private String rankedOnly;
+  private Object rankedOnly = null;
 
   public static final String SERIALIZED_NAME_FROM_RANK = "from_rank";
   @SerializedName(SERIALIZED_NAME_FROM_RANK)
@@ -716,7 +716,7 @@ public class MoreLikeThisRequest {
   }
 
 
-  public MoreLikeThisRequest rankedOnly(String rankedOnly) {
+  public MoreLikeThisRequest rankedOnly(Object rankedOnly) {
     
     
     
@@ -732,12 +732,12 @@ public class MoreLikeThisRequest {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public String getRankedOnly() {
+  public Object getRankedOnly() {
     return rankedOnly;
   }
 
 
-  public void setRankedOnly(String rankedOnly) {
+  public void setRankedOnly(Object rankedOnly) {
     
     
     
@@ -1736,9 +1736,6 @@ public class MoreLikeThisRequest {
       }
       if ((jsonObj.get("sort_by") != null && !jsonObj.get("sort_by").isJsonNull()) && !jsonObj.get("sort_by").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `sort_by` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sort_by").toString()));
-      }
-      if ((jsonObj.get("ranked_only") != null && !jsonObj.get("ranked_only").isJsonNull()) && !jsonObj.get("ranked_only").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `ranked_only` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ranked_only").toString()));
       }
       if ((jsonObj.get("theme") != null && !jsonObj.get("theme").isJsonNull()) && !jsonObj.get("theme").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `theme` to be a primitive type in the JSON string but got `%s`", jsonObj.get("theme").toString()));

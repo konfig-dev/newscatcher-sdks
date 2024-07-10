@@ -71,7 +71,7 @@ namespace Newscatcherapi.Net.Test.Api
             var publishedDatePrecision = "publishedDatePrecision_example";
             var byParseDate = false;
             var sortBy = "relevancy";
-            var rankedOnly = "rankedOnly_example";
+            var rankedOnly = new RankedOnly("example");
             var fromRank = 56;
             var toRank = 56;
             var isHeadline = true;
@@ -145,7 +145,7 @@ namespace Newscatcherapi.Net.Test.Api
             var publishedDatePrecision = "publishedDatePrecision_example";
             var byParseDate = false;
             var sortBy = "relevancy";
-            var rankedOnly = "rankedOnly_example";
+            var rankedOnly = new RankedOnly("example");
             var fromRank = default(int);
             var toRank = default(int);
             var isHeadline = false;

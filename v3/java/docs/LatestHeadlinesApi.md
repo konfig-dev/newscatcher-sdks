@@ -47,7 +47,7 @@ public class Example {
     Object predefinedSources = null;
     Object notSources = null;
     Object notAuthorName = null;
-    String rankedOnly = "rankedOnly_example";
+    Object rankedOnly = null;
     Boolean isHeadline = true;
     Boolean isOpinion = true;
     Boolean isPaidContent = true;
@@ -217,7 +217,7 @@ public class Example {
 | **predefinedSources** | [**Object**](.md)|  | [optional] |
 | **notSources** | [**Object**](.md)|  | [optional] |
 | **notAuthorName** | [**Object**](.md)|  | [optional] |
-| **rankedOnly** | **String**|  | [optional] |
+| **rankedOnly** | [**Object**](.md)|  | [optional] |
 | **isHeadline** | **Boolean**|  | [optional] |
 | **isOpinion** | **Boolean**|  | [optional] |
 | **isPaidContent** | **Boolean**|  | [optional] |
@@ -305,7 +305,7 @@ public class Example {
     Object predefinedSources = null;
     Object notSources = null;
     Object notAuthorName = null;
-    String rankedOnly = "rankedOnly_example";
+    Object rankedOnly = null;
     Boolean isHeadline = true;
     Boolean isOpinion = true;
     Boolean isPaidContent = true;

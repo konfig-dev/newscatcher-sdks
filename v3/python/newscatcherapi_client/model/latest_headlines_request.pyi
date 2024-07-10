@@ -47,7 +47,45 @@ class LatestHeadlinesRequest(
             predefined_sources = schemas.AnyTypeSchema
             not_sources = schemas.AnyTypeSchema
             not_author_name = schemas.AnyTypeSchema
-            ranked_only = schemas.StrSchema
+            
+            
+            class ranked_only(
+                schemas.ComposedSchema,
+            ):
+            
+            
+                class MetaOapg:
+                    items = schemas.StrSchema
+                    any_of_1 = schemas.BoolSchema
+                    
+                    @classmethod
+                    @functools.lru_cache()
+                    def any_of(cls):
+                        # we need this here to make our import statements work
+                        # we must store _composed_schemas in here so the code is only run
+                        # when we invoke this method. If we kept this at the class
+                        # level we would get an error because the class level
+                        # code would be run when this module is imported, and these composed
+                        # classes don't exist yet because their module has not finished
+                        # loading
+                        return [
+                            cls.items,
+                            cls.any_of_1,
+                        ]
+            
+            
+                def __new__(
+                    cls,
+                    *args: typing.Union[dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ],
+                    _configuration: typing.Optional[schemas.Configuration] = None,
+                    **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
+                ) -> 'ranked_only':
+                    return super().__new__(
+                        cls,
+                        *args,
+                        _configuration=_configuration,
+                        **kwargs,
+                    )
             is_headline = schemas.BoolSchema
             is_opinion = schemas.BoolSchema
             is_paid_content = schemas.BoolSchema
@@ -408,7 +446,7 @@ class LatestHeadlinesRequest(
         predefined_sources: typing.Union[MetaOapg.properties.predefined_sources, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, schemas.Unset] = schemas.unset,
         not_sources: typing.Union[MetaOapg.properties.not_sources, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, schemas.Unset] = schemas.unset,
         not_author_name: typing.Union[MetaOapg.properties.not_author_name, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, schemas.Unset] = schemas.unset,
-        ranked_only: typing.Union[MetaOapg.properties.ranked_only, str, schemas.Unset] = schemas.unset,
+        ranked_only: typing.Union[MetaOapg.properties.ranked_only, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, schemas.Unset] = schemas.unset,
         is_headline: typing.Union[MetaOapg.properties.is_headline, bool, schemas.Unset] = schemas.unset,
         is_opinion: typing.Union[MetaOapg.properties.is_opinion, bool, schemas.Unset] = schemas.unset,
         is_paid_content: typing.Union[MetaOapg.properties.is_paid_content, bool, schemas.Unset] = schemas.unset,

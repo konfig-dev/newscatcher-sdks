@@ -3,7 +3,7 @@
 <img src='https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg' width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a>
 
 
-[![PyPI](https://img.shields.io/badge/PyPI-v6.0.9-blue)](https://pypi.org/project/newscatcherapi-python-sdk/6.0.9)
+[![PyPI](https://img.shields.io/badge/PyPI-v6.0.10-blue)](https://pypi.org/project/newscatcherapi-python-sdk/6.0.10)
 [![README.md](https://img.shields.io/badge/README-Click%20Here-green)](https://github.com/konfig-dev/newscatcher-sdks/tree/main/v3/python#readme)
 
 ## Table of Contents<a id="table-of-contents"></a>
@@ -40,7 +40,7 @@ Python >=3.7
 ## Installation<a id="installation"></a>
 
 ```sh
-pip install newscatcherapi-python-sdk==6.0.9
+pip install newscatcherapi-python-sdk==6.0.10
 ```
 
 ## Getting Started<a id="getting-started"></a>
@@ -339,7 +339,8 @@ get_response = newscatcher.authors.get(
 
 ##### sort_by: `str`<a id="sort_by-str"></a>
 
-##### ranked_only: `str`<a id="ranked_only-str"></a>
+##### ranked_only: Union[`str`, `bool`]<a id="ranked_only-unionstr-bool"></a>
+
 
 ##### from_rank: `int`<a id="from_rank-int"></a>
 
@@ -486,7 +487,8 @@ post_response = newscatcher.authors.post(
 
 ##### sort_by: `str`<a id="sort_by-str"></a>
 
-##### ranked_only: `str`<a id="ranked_only-str"></a>
+##### ranked_only: Union[`str`, `bool`]<a id="ranked_only-unionstr-bool"></a>
+
 
 ##### from_rank: `int`<a id="from_rank-int"></a>
 
@@ -626,7 +628,8 @@ get_response = newscatcher.latest_headlines.get(
 
 ##### not_author_name: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="not_author_name-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
 
-##### ranked_only: `str`<a id="ranked_only-str"></a>
+##### ranked_only: Union[`str`, `bool`]<a id="ranked_only-unionstr-bool"></a>
+
 
 ##### is_headline: `bool`<a id="is_headline-bool"></a>
 
@@ -771,7 +774,8 @@ post_response = newscatcher.latest_headlines.post(
 
 ##### not_author_name: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="not_author_name-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 
-##### ranked_only: `str`<a id="ranked_only-str"></a>
+##### ranked_only: Union[`str`, `bool`]<a id="ranked_only-unionstr-bool"></a>
+
 
 ##### is_headline: `bool`<a id="is_headline-bool"></a>
 
@@ -940,7 +944,8 @@ get_response = newscatcher.search.get(
 
 ##### sort_by: `str`<a id="sort_by-str"></a>
 
-##### ranked_only: `str`<a id="ranked_only-str"></a>
+##### ranked_only: Union[`str`, `bool`]<a id="ranked_only-unionstr-bool"></a>
+
 
 ##### from_rank: `int`<a id="from_rank-int"></a>
 
@@ -1114,7 +1119,8 @@ post_response = newscatcher.search.post(
 
 ##### sort_by: `str`<a id="sort_by-str"></a>
 
-##### ranked_only: `str`<a id="ranked_only-str"></a>
+##### ranked_only: Union[`str`, `bool`]<a id="ranked_only-unionstr-bool"></a>
+
 
 ##### from_rank: `int`<a id="from_rank-int"></a>
 
@@ -1380,7 +1386,8 @@ get_response = newscatcher.search_similar.get(
 
 ##### sort_by: `str`<a id="sort_by-str"></a>
 
-##### ranked_only: `str`<a id="ranked_only-str"></a>
+##### ranked_only: Union[`str`, `bool`]<a id="ranked_only-unionstr-bool"></a>
+
 
 ##### from_rank: `int`<a id="from_rank-int"></a>
 
@@ -1530,7 +1537,8 @@ post_response = newscatcher.search_similar.post(
 
 ##### sort_by: `str`<a id="sort_by-str"></a>
 
-##### ranked_only: `str`<a id="ranked_only-str"></a>
+##### ranked_only: Union[`str`, `bool`]<a id="ranked_only-unionstr-bool"></a>
+
 
 ##### from_rank: `int`<a id="from_rank-int"></a>
 

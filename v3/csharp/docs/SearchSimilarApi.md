@@ -56,7 +56,7 @@ namespace Example
             var byParseDate = false;
             var publishedDatePrecision = "publishedDatePrecision_example";
             var sortBy = "relevancy";
-            var rankedOnly = "rankedOnly_example";
+            var rankedOnly = new RankedOnly("example");
             var fromRank = 56;
             var toRank = 56;
             var isHeadline = true;
@@ -150,7 +150,7 @@ catch (ApiException e)
 | **byParseDate** | **bool?** |  | [optional] [default to false] |
 | **publishedDatePrecision** | **string** |  | [optional]  |
 | **sortBy** | **string** |  | [optional] [default to &quot;relevancy&quot;] |
-| **rankedOnly** | **string** |  | [optional]  |
+| **rankedOnly** | [**RankedOnly**](RankedOnly.md) |  | [optional]  |
 | **fromRank** | **int?** |  | [optional]  |
 | **toRank** | **int?** |  | [optional]  |
 | **isHeadline** | **bool?** |  | [optional]  |
@@ -230,7 +230,7 @@ namespace Example
             var byParseDate = false;
             var publishedDatePrecision = "publishedDatePrecision_example";
             var sortBy = "relevancy";
-            var rankedOnly = "rankedOnly_example";
+            var rankedOnly = new RankedOnly("example");
             var fromRank = default(int);
             var toRank = default(int);
             var isHeadline = false;

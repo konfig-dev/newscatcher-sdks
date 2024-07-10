@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **ByParseDate** | **bool** |  | [optional] [default to false]
 **PublishedDatePrecision** | **string** |  | [optional] 
 **SortBy** | **string** |  | [optional] [default to "relevancy"]
-**RankedOnly** | **string** |  | [optional] 
+**RankedOnly** | [**RankedOnly**](RankedOnly.md) |  | [optional] 
 **FromRank** | **int** |  | [optional] 
 **ToRank** | **int** |  | [optional] 
 **IsHeadline** | **bool** |  | [optional] 

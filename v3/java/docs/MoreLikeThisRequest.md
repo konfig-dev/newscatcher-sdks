@@ -25,7 +25,7 @@ More like this request DTO.
 |**byParseDate** | **Boolean** |  |  [optional] |
 |**publishedDatePrecision** | **String** |  |  [optional] |
 |**sortBy** | **String** |  |  [optional] |
-|**rankedOnly** | **String** |  |  [optional] |
+|**rankedOnly** | **Object** |  |  [optional] |
 |**fromRank** | **Integer** |  |  [optional] |
 |**toRank** | **Integer** |  |  [optional] |
 |**isHeadline** | **Boolean** |  |  [optional] |

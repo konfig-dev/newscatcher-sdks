@@ -48,7 +48,7 @@ class SearchRequest(BaseModel):
 
     sort_by: typing.Optional[str] = Field(None, alias='sort_by')
 
-    ranked_only: typing.Optional[str] = Field(None, alias='ranked_only')
+    ranked_only: typing.Optional[typing.Union[str, bool]] = Field(None, alias='ranked_only')
 
     from_rank: typing.Optional[int] = Field(None, alias='from_rank')
 

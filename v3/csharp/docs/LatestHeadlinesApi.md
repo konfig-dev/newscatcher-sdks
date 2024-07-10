@@ -50,7 +50,7 @@ namespace Example
             );
             var notAuthorName = new Object(
             );
-            var rankedOnly = "rankedOnly_example";
+            var rankedOnly = new RankedOnly("example");
             var isHeadline = true;
             var isOpinion = true;
             var isPaidContent = true;
@@ -145,7 +145,7 @@ catch (ApiException e)
 | **predefinedSources** | [**Object**](Object.md) |  | [optional]  |
 | **notSources** | [**Object**](Object.md) |  | [optional]  |
 | **notAuthorName** | [**Object**](Object.md) |  | [optional]  |
-| **rankedOnly** | **string** |  | [optional]  |
+| **rankedOnly** | [**RankedOnly**](RankedOnly.md) |  | [optional]  |
 | **isHeadline** | **bool?** |  | [optional]  |
 | **isOpinion** | **bool?** |  | [optional]  |
 | **isPaidContent** | **bool?** |  | [optional]  |
@@ -224,7 +224,7 @@ namespace Example
             var predefinedSources = "predefinedSources_example";
             var notSources = "notSources_example";
             var notAuthorName = "notAuthorName_example";
-            var rankedOnly = "rankedOnly_example";
+            var rankedOnly = new RankedOnly("example");
             var isHeadline = false;
             var isOpinion = false;
             var isPaidContent = false;

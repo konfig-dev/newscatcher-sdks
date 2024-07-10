@@ -25,6 +25,8 @@ import { HTTPValidationError } from '../models';
 // @ts-ignore
 import { MoreLikeThisRequest } from '../models';
 // @ts-ignore
+import { RankedOnly } from '../models';
+// @ts-ignore
 import { SearchSimilarGetResponse } from '../models';
 // @ts-ignore
 import { SearchSimilarPostResponse } from '../models';
@@ -59,7 +61,7 @@ export const SearchSimilarApiAxiosParamCreator = function (configuration?: Confi
          * @param {boolean} [byParseDate] 
          * @param {string} [publishedDatePrecision] 
          * @param {string} [sortBy] 
-         * @param {string} [rankedOnly] 
+         * @param {RankedOnly} [rankedOnly] 
          * @param {number} [fromRank] 
          * @param {number} [toRank] 
          * @param {boolean} [isHeadline] 
@@ -86,7 +88,7 @@ export const SearchSimilarApiAxiosParamCreator = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        get: async (q: string, searchIn?: string, includeSimilarDocuments?: boolean, similarDocumentsNumber?: number, similarDocumentsFields?: string, predefinedSources?: any, sources?: any, notSources?: any, lang?: any, notLang?: any, countries?: any, notCountries?: any, from?: From, to?: To, byParseDate?: boolean, publishedDatePrecision?: string, sortBy?: string, rankedOnly?: string, fromRank?: number, toRank?: number, isHeadline?: boolean, isOpinion?: boolean, isPaidContent?: boolean, parentUrl?: any, allLinks?: any, allDomainLinks?: any, wordCountMin?: number, wordCountMax?: number, page?: number, pageSize?: number, includeNlpData?: boolean, hasNlp?: boolean, theme?: string, notTheme?: string, nerName?: string, titleSentimentMin?: number, titleSentimentMax?: number, contentSentimentMin?: number, contentSentimentMax?: number, iptcTags?: any, notIptcTags?: any, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        get: async (q: string, searchIn?: string, includeSimilarDocuments?: boolean, similarDocumentsNumber?: number, similarDocumentsFields?: string, predefinedSources?: any, sources?: any, notSources?: any, lang?: any, notLang?: any, countries?: any, notCountries?: any, from?: From, to?: To, byParseDate?: boolean, publishedDatePrecision?: string, sortBy?: string, rankedOnly?: RankedOnly, fromRank?: number, toRank?: number, isHeadline?: boolean, isOpinion?: boolean, isPaidContent?: boolean, parentUrl?: any, allLinks?: any, allDomainLinks?: any, wordCountMin?: number, wordCountMax?: number, page?: number, pageSize?: number, includeNlpData?: boolean, hasNlp?: boolean, theme?: string, notTheme?: string, nerName?: string, titleSentimentMin?: number, titleSentimentMax?: number, contentSentimentMin?: number, contentSentimentMax?: number, iptcTags?: any, notIptcTags?: any, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'q' is not null or undefined
             assertParamExists('get', 'q', q)
             const localVarPath = `/api/search_similar`;
@@ -570,10 +572,10 @@ export type SearchSimilarApiGetRequest = {
     
     /**
     * 
-    * @type {string}
+    * @type {RankedOnly}
     * @memberof SearchSimilarApiGet
     */
-    readonly rankedOnly?: string
+    readonly rankedOnly?: RankedOnly
     
     /**
     * 

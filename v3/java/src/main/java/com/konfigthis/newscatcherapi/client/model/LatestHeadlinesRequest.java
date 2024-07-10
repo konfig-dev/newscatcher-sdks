@@ -93,7 +93,7 @@ public class LatestHeadlinesRequest {
 
   public static final String SERIALIZED_NAME_RANKED_ONLY = "ranked_only";
   @SerializedName(SERIALIZED_NAME_RANKED_ONLY)
-  private String rankedOnly;
+  private Object rankedOnly = null;
 
   public static final String SERIALIZED_NAME_IS_HEADLINE = "is_headline";
   @SerializedName(SERIALIZED_NAME_IS_HEADLINE)
@@ -504,7 +504,7 @@ public class LatestHeadlinesRequest {
   }
 
 
-  public LatestHeadlinesRequest rankedOnly(String rankedOnly) {
+  public LatestHeadlinesRequest rankedOnly(Object rankedOnly) {
     
     
     
@@ -520,12 +520,12 @@ public class LatestHeadlinesRequest {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public String getRankedOnly() {
+  public Object getRankedOnly() {
     return rankedOnly;
   }
 
 
-  public void setRankedOnly(String rankedOnly) {
+  public void setRankedOnly(Object rankedOnly) {
     
     
     
@@ -1678,9 +1678,6 @@ public class LatestHeadlinesRequest {
       }
       if ((jsonObj.get("when") != null && !jsonObj.get("when").isJsonNull()) && !jsonObj.get("when").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `when` to be a primitive type in the JSON string but got `%s`", jsonObj.get("when").toString()));
-      }
-      if ((jsonObj.get("ranked_only") != null && !jsonObj.get("ranked_only").isJsonNull()) && !jsonObj.get("ranked_only").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `ranked_only` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ranked_only").toString()));
       }
       if ((jsonObj.get("clustering_variable") != null && !jsonObj.get("clustering_variable").isJsonNull()) && !jsonObj.get("clustering_variable").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `clustering_variable` to be a primitive type in the JSON string but got `%s`", jsonObj.get("clustering_variable").toString()));

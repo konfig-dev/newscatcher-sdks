@@ -18,7 +18,7 @@ Latest headlines request DTO.
 |**predefinedSources** | **Object** |  |  [optional] |
 |**notSources** | **Object** |  |  [optional] |
 |**notAuthorName** | **Object** |  |  [optional] |
-|**rankedOnly** | **String** |  |  [optional] |
+|**rankedOnly** | **Object** |  |  [optional] |
 |**isHeadline** | **Boolean** |  |  [optional] |
 |**isOpinion** | **Boolean** |  |  [optional] |
 |**isPaidContent** | **Boolean** |  |  [optional] |

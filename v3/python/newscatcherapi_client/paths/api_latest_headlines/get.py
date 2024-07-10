@@ -56,7 +56,45 @@ SourcesSchema = schemas.AnyTypeSchema
 PredefinedSourcesSchema = schemas.AnyTypeSchema
 NotSourcesSchema = schemas.AnyTypeSchema
 NotAuthorNameSchema = schemas.AnyTypeSchema
-RankedOnlySchema = schemas.StrSchema
+
+
+class RankedOnlySchema(
+    schemas.ComposedSchema,
+):
+
+
+    class MetaOapg:
+        items = schemas.StrSchema
+        any_of_1 = schemas.BoolSchema
+        
+        @classmethod
+        @functools.lru_cache()
+        def any_of(cls):
+            # we need this here to make our import statements work
+            # we must store _composed_schemas in here so the code is only run
+            # when we invoke this method. If we kept this at the class
+            # level we would get an error because the class level
+            # code would be run when this module is imported, and these composed
+            # classes don't exist yet because their module has not finished
+            # loading
+            return [
+                cls.items,
+                cls.any_of_1,
+            ]
+
+
+    def __new__(
+        cls,
+        *args: typing.Union[dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ],
+        _configuration: typing.Optional[schemas.Configuration] = None,
+        **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
+    ) -> 'RankedOnlySchema':
+        return super().__new__(
+            cls,
+            *args,
+            _configuration=_configuration,
+            **kwargs,
+        )
 IsHeadlineSchema = schemas.BoolSchema
 IsOpinionSchema = schemas.BoolSchema
 IsPaidContentSchema = schemas.BoolSchema
@@ -136,7 +174,7 @@ RequestOptionalQueryParams = typing_extensions.TypedDict(
         'predefined_sources': typing.Union[PredefinedSourcesSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ],
         'not_sources': typing.Union[NotSourcesSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ],
         'not_author_name': typing.Union[NotAuthorNameSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ],
-        'ranked_only': typing.Union[RankedOnlySchema, str, ],
+        'ranked_only': typing.Union[RankedOnlySchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ],
         'is_headline': typing.Union[IsHeadlineSchema, bool, ],
         'is_opinion': typing.Union[IsOpinionSchema, bool, ],
         'is_paid_content': typing.Union[IsPaidContentSchema, bool, ],
@@ -483,7 +521,7 @@ class BaseApi(api_client.Api):
         predefined_sources: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_sources: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_author_name: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
-        ranked_only: typing.Optional[str] = None,
+        ranked_only: typing.Optional[typing.Union[str, bool]] = None,
         is_headline: typing.Optional[bool] = None,
         is_opinion: typing.Optional[bool] = None,
         is_paid_content: typing.Optional[bool] = None,
@@ -887,7 +925,7 @@ class GetRaw(BaseApi):
         predefined_sources: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_sources: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_author_name: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
-        ranked_only: typing.Optional[str] = None,
+        ranked_only: typing.Optional[typing.Union[str, bool]] = None,
         is_headline: typing.Optional[bool] = None,
         is_opinion: typing.Optional[bool] = None,
         is_paid_content: typing.Optional[bool] = None,
@@ -982,7 +1020,7 @@ class GetRaw(BaseApi):
         predefined_sources: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_sources: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_author_name: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
-        ranked_only: typing.Optional[str] = None,
+        ranked_only: typing.Optional[typing.Union[str, bool]] = None,
         is_headline: typing.Optional[bool] = None,
         is_opinion: typing.Optional[bool] = None,
         is_paid_content: typing.Optional[bool] = None,
@@ -1076,7 +1114,7 @@ class Get(BaseApi):
         predefined_sources: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_sources: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_author_name: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
-        ranked_only: typing.Optional[str] = None,
+        ranked_only: typing.Optional[typing.Union[str, bool]] = None,
         is_headline: typing.Optional[bool] = None,
         is_opinion: typing.Optional[bool] = None,
         is_paid_content: typing.Optional[bool] = None,
@@ -1169,7 +1207,7 @@ class Get(BaseApi):
         predefined_sources: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_sources: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_author_name: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
-        ranked_only: typing.Optional[str] = None,
+        ranked_only: typing.Optional[typing.Union[str, bool]] = None,
         is_headline: typing.Optional[bool] = None,
         is_opinion: typing.Optional[bool] = None,
         is_paid_content: typing.Optional[bool] = None,
@@ -1263,7 +1301,7 @@ class ApiForget(BaseApi):
         predefined_sources: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_sources: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_author_name: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
-        ranked_only: typing.Optional[str] = None,
+        ranked_only: typing.Optional[typing.Union[str, bool]] = None,
         is_headline: typing.Optional[bool] = None,
         is_opinion: typing.Optional[bool] = None,
         is_paid_content: typing.Optional[bool] = None,
@@ -1358,7 +1396,7 @@ class ApiForget(BaseApi):
         predefined_sources: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_sources: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_author_name: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
-        ranked_only: typing.Optional[str] = None,
+        ranked_only: typing.Optional[typing.Union[str, bool]] = None,
         is_headline: typing.Optional[bool] = None,
         is_opinion: typing.Optional[bool] = None,
         is_paid_content: typing.Optional[bool] = None,

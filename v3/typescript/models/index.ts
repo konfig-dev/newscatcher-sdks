@@ -24,6 +24,7 @@ export * from './latest-headlines-request';
 export * from './latest-headlines-response';
 export * from './location-property-inner';
 export * from './more-like-this-request';
+export * from './ranked-only';
 export * from './search-get-response';
 export * from './search-post-response';
 export * from './search-request';

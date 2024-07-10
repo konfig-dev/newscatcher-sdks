@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **PredefinedSources** | **Object** |  | [optional] 
 **NotSources** | **Object** |  | [optional] 
 **NotAuthorName** | **Object** |  | [optional] 
-**RankedOnly** | **string** |  | [optional] 
+**RankedOnly** | [**RankedOnly**](RankedOnly.md) |  | [optional] 
 **IsHeadline** | **bool** |  | [optional] 
 **IsOpinion** | **bool** |  | [optional] 
 **IsPaidContent** | **bool** |  | [optional] 
