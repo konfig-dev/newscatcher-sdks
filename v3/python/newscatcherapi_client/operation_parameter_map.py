@@ -256,6 +256,9 @@ operation_parameter_map = {
                 'name': 'by_parse_date'
             },
             {
+                'name': 'sort_by'
+            },
+            {
                 'name': 'lang'
             },
             {
@@ -378,6 +381,9 @@ operation_parameter_map = {
             },
             {
                 'name': 'by_parse_date'
+            },
+            {
+                'name': 'sort_by'
             },
             {
                 'name': 'lang'

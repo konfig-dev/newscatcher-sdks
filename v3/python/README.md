@@ -3,7 +3,7 @@
 <img src='https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg' width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a>
 
 
-[![PyPI](https://img.shields.io/badge/PyPI-v6.0.10-blue)](https://pypi.org/project/newscatcherapi-python-sdk/6.0.10)
+[![PyPI](https://img.shields.io/badge/PyPI-v6.0.11-blue)](https://pypi.org/project/newscatcherapi-python-sdk/6.0.11)
 [![README.md](https://img.shields.io/badge/README-Click%20Here-green)](https://github.com/konfig-dev/newscatcher-sdks/tree/main/v3/python#readme)
 
 ## Table of Contents<a id="table-of-contents"></a>
@@ -40,7 +40,7 @@ Python >=3.7
 ## Installation<a id="installation"></a>
 
 ```sh
-pip install newscatcherapi-python-sdk==6.0.10
+pip install newscatcherapi-python-sdk==6.0.11
 ```
 
 ## Getting Started<a id="getting-started"></a>
@@ -565,6 +565,7 @@ This endpoint allows you to get latest headlines. You need to specify since when
 get_response = newscatcher.latest_headlines.get(
     when="7d",
     by_parse_date=False,
+    sort_by="relevancy",
     lang=None,
     not_lang=None,
     countries=None,
@@ -611,6 +612,8 @@ get_response = newscatcher.latest_headlines.get(
 ##### when: `str`<a id="when-str"></a>
 
 ##### by_parse_date: `bool`<a id="by_parse_date-bool"></a>
+
+##### sort_by: `str`<a id="sort_by-str"></a>
 
 ##### lang: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="lang-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
 
@@ -711,6 +714,7 @@ This endpoint allows you to get latest headlines. You need to specify since when
 post_response = newscatcher.latest_headlines.post(
     when="7d",
     by_parse_date=False,
+    sort_by="relevancy",
     lang=None,
     not_lang=None,
     countries=None,
@@ -757,6 +761,8 @@ post_response = newscatcher.latest_headlines.post(
 ##### when: `str`<a id="when-str"></a>
 
 ##### by_parse_date: `bool`<a id="by_parse_date-bool"></a>
+
+##### sort_by: `str`<a id="sort_by-str"></a>
 
 ##### lang: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="lang-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 

@@ -30,6 +30,8 @@
 |**media** | **String** |  |  [optional] |
 |**language** | **String** |  |  [optional] |
 |**content** | **String** |  |  [optional] |
+|**titleTranslatedEn** | **String** |  |  [optional] |
+|**contentTranslatedEn** | **String** |  |  [optional] |
 |**wordCount** | **Integer** |  |  [optional] |
 |**isOpinion** | **Boolean** |  |  [optional] |
 |**twitterAccount** | **String** |  |  [optional] |

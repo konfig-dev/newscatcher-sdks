@@ -242,6 +242,22 @@ namespace Newscatcherapi.Net.Test.Model
             // TODO unit test for the property 'Content'
         }
         /// <summary>
+        /// Test the property 'TitleTranslatedEn'
+        /// </summary>
+        [Fact]
+        public void TitleTranslatedEnTest()
+        {
+            // TODO unit test for the property 'TitleTranslatedEn'
+        }
+        /// <summary>
+        /// Test the property 'ContentTranslatedEn'
+        /// </summary>
+        [Fact]
+        public void ContentTranslatedEnTest()
+        {
+            // TODO unit test for the property 'ContentTranslatedEn'
+        }
+        /// <summary>
         /// Test the property 'WordCount'
         /// </summary>
         [Fact]

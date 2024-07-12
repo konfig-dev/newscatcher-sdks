@@ -119,6 +119,7 @@ class BaseApi(api_client.Api):
         self,
         when: typing.Optional[str] = None,
         by_parse_date: typing.Optional[bool] = None,
+        sort_by: typing.Optional[str] = None,
         lang: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_lang: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         countries: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
@@ -164,6 +165,8 @@ class BaseApi(api_client.Api):
             _body["when"] = when
         if by_parse_date is not None:
             _body["by_parse_date"] = by_parse_date
+        if sort_by is not None:
+            _body["sort_by"] = sort_by
         if lang is not None:
             _body["lang"] = lang
         if not_lang is not None:
@@ -449,6 +452,7 @@ class PostRaw(BaseApi):
         self,
         when: typing.Optional[str] = None,
         by_parse_date: typing.Optional[bool] = None,
+        sort_by: typing.Optional[str] = None,
         lang: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_lang: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         countries: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
@@ -496,6 +500,7 @@ class PostRaw(BaseApi):
         args = self._post_mapped_args(
             when=when,
             by_parse_date=by_parse_date,
+            sort_by=sort_by,
             lang=lang,
             not_lang=not_lang,
             countries=countries,
@@ -544,6 +549,7 @@ class PostRaw(BaseApi):
         self,
         when: typing.Optional[str] = None,
         by_parse_date: typing.Optional[bool] = None,
+        sort_by: typing.Optional[str] = None,
         lang: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_lang: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         countries: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
@@ -589,6 +595,7 @@ class PostRaw(BaseApi):
         args = self._post_mapped_args(
             when=when,
             by_parse_date=by_parse_date,
+            sort_by=sort_by,
             lang=lang,
             not_lang=not_lang,
             countries=countries,
@@ -638,6 +645,7 @@ class Post(BaseApi):
         self,
         when: typing.Optional[str] = None,
         by_parse_date: typing.Optional[bool] = None,
+        sort_by: typing.Optional[str] = None,
         lang: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_lang: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         countries: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
@@ -682,6 +690,7 @@ class Post(BaseApi):
         raw_response = await self.raw.apost(
             when=when,
             by_parse_date=by_parse_date,
+            sort_by=sort_by,
             lang=lang,
             not_lang=not_lang,
             countries=countries,
@@ -731,6 +740,7 @@ class Post(BaseApi):
         self,
         when: typing.Optional[str] = None,
         by_parse_date: typing.Optional[bool] = None,
+        sort_by: typing.Optional[str] = None,
         lang: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_lang: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         countries: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
@@ -774,6 +784,7 @@ class Post(BaseApi):
         raw_response = self.raw.post(
             when=when,
             by_parse_date=by_parse_date,
+            sort_by=sort_by,
             lang=lang,
             not_lang=not_lang,
             countries=countries,
@@ -825,6 +836,7 @@ class ApiForpost(BaseApi):
         self,
         when: typing.Optional[str] = None,
         by_parse_date: typing.Optional[bool] = None,
+        sort_by: typing.Optional[str] = None,
         lang: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_lang: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         countries: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
@@ -872,6 +884,7 @@ class ApiForpost(BaseApi):
         args = self._post_mapped_args(
             when=when,
             by_parse_date=by_parse_date,
+            sort_by=sort_by,
             lang=lang,
             not_lang=not_lang,
             countries=countries,
@@ -920,6 +933,7 @@ class ApiForpost(BaseApi):
         self,
         when: typing.Optional[str] = None,
         by_parse_date: typing.Optional[bool] = None,
+        sort_by: typing.Optional[str] = None,
         lang: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_lang: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         countries: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
@@ -965,6 +979,7 @@ class ApiForpost(BaseApi):
         args = self._post_mapped_args(
             when=when,
             by_parse_date=by_parse_date,
+            sort_by=sort_by,
             lang=lang,
             not_lang=not_lang,
             countries=countries,

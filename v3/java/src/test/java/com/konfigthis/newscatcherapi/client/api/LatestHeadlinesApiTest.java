@@ -54,6 +54,7 @@ public class LatestHeadlinesApiTest {
     public void getTest() throws ApiException {
         String when = null;
         Boolean byParseDate = null;
+        String sortBy = null;
         Object lang = null;
         Object notLang = null;
         Object countries = null;
@@ -95,6 +96,7 @@ public class LatestHeadlinesApiTest {
         CSLHResponse response = api.get()
                 .when(when)
                 .byParseDate(byParseDate)
+                .sortBy(sortBy)
                 .lang(lang)
                 .notLang(notLang)
                 .countries(countries)
@@ -148,6 +150,7 @@ public class LatestHeadlinesApiTest {
     public void postTest() throws ApiException {
         String when = null;
         Boolean byParseDate = null;
+        String sortBy = null;
         Object lang = null;
         Object notLang = null;
         Object countries = null;
@@ -189,6 +192,7 @@ public class LatestHeadlinesApiTest {
         CSLHResponse1 response = api.post()
                 .when(when)
                 .byParseDate(byParseDate)
+                .sortBy(sortBy)
                 .lang(lang)
                 .notLang(notLang)
                 .countries(countries)

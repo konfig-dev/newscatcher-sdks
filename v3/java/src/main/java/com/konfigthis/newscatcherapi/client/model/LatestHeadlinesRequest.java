@@ -59,6 +59,10 @@ public class LatestHeadlinesRequest {
   @SerializedName(SERIALIZED_NAME_BY_PARSE_DATE)
   private Boolean byParseDate = false;
 
+  public static final String SERIALIZED_NAME_SORT_BY = "sort_by";
+  @SerializedName(SERIALIZED_NAME_SORT_BY)
+  private String sortBy = "relevancy";
+
   public static final String SERIALIZED_NAME_LANG = "lang";
   @SerializedName(SERIALIZED_NAME_LANG)
   private Object lang = null;
@@ -269,6 +273,35 @@ public class LatestHeadlinesRequest {
     
     
     this.byParseDate = byParseDate;
+  }
+
+
+  public LatestHeadlinesRequest sortBy(String sortBy) {
+    
+    
+    
+    
+    this.sortBy = sortBy;
+    return this;
+  }
+
+   /**
+   * Get sortBy
+   * @return sortBy
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "relevancy", value = "")
+
+  public String getSortBy() {
+    return sortBy;
+  }
+
+
+  public void setSortBy(String sortBy) {
+    
+    
+    
+    this.sortBy = sortBy;
   }
 
 
@@ -1495,6 +1528,7 @@ public class LatestHeadlinesRequest {
     LatestHeadlinesRequest latestHeadlinesRequest = (LatestHeadlinesRequest) o;
     return Objects.equals(this.when, latestHeadlinesRequest.when) &&
         Objects.equals(this.byParseDate, latestHeadlinesRequest.byParseDate) &&
+        Objects.equals(this.sortBy, latestHeadlinesRequest.sortBy) &&
         Objects.equals(this.lang, latestHeadlinesRequest.lang) &&
         Objects.equals(this.notLang, latestHeadlinesRequest.notLang) &&
         Objects.equals(this.countries, latestHeadlinesRequest.countries) &&
@@ -1542,7 +1576,7 @@ public class LatestHeadlinesRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(when, byParseDate, lang, notLang, countries, notCountries, sources, predefinedSources, notSources, notAuthorName, rankedOnly, isHeadline, isOpinion, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, orGEntityName, peREntityName, loCEntityName, miSCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, iabTags, notIabTags, additionalProperties);
+    return Objects.hash(when, byParseDate, sortBy, lang, notLang, countries, notCountries, sources, predefinedSources, notSources, notAuthorName, rankedOnly, isHeadline, isOpinion, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, orGEntityName, peREntityName, loCEntityName, miSCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, iabTags, notIabTags, additionalProperties);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -1558,6 +1592,7 @@ public class LatestHeadlinesRequest {
     sb.append("class LatestHeadlinesRequest {\n");
     sb.append("    when: ").append(toIndentedString(when)).append("\n");
     sb.append("    byParseDate: ").append(toIndentedString(byParseDate)).append("\n");
+    sb.append("    sortBy: ").append(toIndentedString(sortBy)).append("\n");
     sb.append("    lang: ").append(toIndentedString(lang)).append("\n");
     sb.append("    notLang: ").append(toIndentedString(notLang)).append("\n");
     sb.append("    countries: ").append(toIndentedString(countries)).append("\n");
@@ -1621,6 +1656,7 @@ public class LatestHeadlinesRequest {
     openapiFields = new HashSet<String>();
     openapiFields.add("when");
     openapiFields.add("by_parse_date");
+    openapiFields.add("sort_by");
     openapiFields.add("lang");
     openapiFields.add("not_lang");
     openapiFields.add("countries");
@@ -1678,6 +1714,9 @@ public class LatestHeadlinesRequest {
       }
       if ((jsonObj.get("when") != null && !jsonObj.get("when").isJsonNull()) && !jsonObj.get("when").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `when` to be a primitive type in the JSON string but got `%s`", jsonObj.get("when").toString()));
+      }
+      if ((jsonObj.get("sort_by") != null && !jsonObj.get("sort_by").isJsonNull()) && !jsonObj.get("sort_by").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `sort_by` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sort_by").toString()));
       }
       if ((jsonObj.get("clustering_variable") != null && !jsonObj.get("clustering_variable").isJsonNull()) && !jsonObj.get("clustering_variable").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `clustering_variable` to be a primitive type in the JSON string but got `%s`", jsonObj.get("clustering_variable").toString()));

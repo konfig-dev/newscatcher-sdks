@@ -37,6 +37,7 @@ namespace Newscatcherapi.Net.Model
         /// </summary>
         /// <param name="when">when (default to &quot;7d&quot;).</param>
         /// <param name="byParseDate">byParseDate (default to false).</param>
+        /// <param name="sortBy">sortBy (default to &quot;relevancy&quot;).</param>
         /// <param name="lang">lang.</param>
         /// <param name="notLang">notLang.</param>
         /// <param name="countries">countries.</param>
@@ -75,11 +76,13 @@ namespace Newscatcherapi.Net.Model
         /// <param name="notIptcTags">notIptcTags.</param>
         /// <param name="iabTags">iabTags.</param>
         /// <param name="notIabTags">notIabTags.</param>
-        public LatestHeadlinesRequest(string when = "7d", bool byParseDate = false, Object lang = default(Object), Object notLang = default(Object), Object countries = default(Object), Object notCountries = default(Object), Object sources = default(Object), Object predefinedSources = default(Object), Object notSources = default(Object), Object notAuthorName = default(Object), RankedOnly rankedOnly = default(RankedOnly), bool isHeadline = default(bool), bool isOpinion = default(bool), bool isPaidContent = default(bool), Object parentUrl = default(Object), Object allLinks = default(Object), Object allDomainLinks = default(Object), int wordCountMin = default(int), int wordCountMax = default(int), int page = 1, int pageSize = 100, string clusteringVariable = default(string), bool clusteringEnabled = default(bool), double clusteringThreshold = default(double), bool includeNlpData = default(bool), bool hasNlp = default(bool), string theme = default(string), string notTheme = default(string), string oRGEntityName = default(string), string pEREntityName = default(string), string lOCEntityName = default(string), string mISCEntityName = default(string), double titleSentimentMin = default(double), double titleSentimentMax = default(double), double contentSentimentMin = default(double), double contentSentimentMax = default(double), Object iptcTags = default(Object), Object notIptcTags = default(Object), Object iabTags = default(Object), Object notIabTags = default(Object))
+        public LatestHeadlinesRequest(string when = "7d", bool byParseDate = false, string sortBy = "relevancy", Object lang = default(Object), Object notLang = default(Object), Object countries = default(Object), Object notCountries = default(Object), Object sources = default(Object), Object predefinedSources = default(Object), Object notSources = default(Object), Object notAuthorName = default(Object), RankedOnly rankedOnly = default(RankedOnly), bool isHeadline = default(bool), bool isOpinion = default(bool), bool isPaidContent = default(bool), Object parentUrl = default(Object), Object allLinks = default(Object), Object allDomainLinks = default(Object), int wordCountMin = default(int), int wordCountMax = default(int), int page = 1, int pageSize = 100, string clusteringVariable = default(string), bool clusteringEnabled = default(bool), double clusteringThreshold = default(double), bool includeNlpData = default(bool), bool hasNlp = default(bool), string theme = default(string), string notTheme = default(string), string oRGEntityName = default(string), string pEREntityName = default(string), string lOCEntityName = default(string), string mISCEntityName = default(string), double titleSentimentMin = default(double), double titleSentimentMax = default(double), double contentSentimentMin = default(double), double contentSentimentMax = default(double), Object iptcTags = default(Object), Object notIptcTags = default(Object), Object iabTags = default(Object), Object notIabTags = default(Object))
         {
             // use default value if no "when" provided
             this.When = when ?? "7d";
             this.ByParseDate = byParseDate;
+            // use default value if no "sortBy" provided
+            this.SortBy = sortBy ?? "relevancy";
             this.Lang = lang;
             this.NotLang = notLang;
             this.Countries = countries;
@@ -131,6 +134,12 @@ namespace Newscatcherapi.Net.Model
         /// </summary>
         [DataMember(Name = "by_parse_date", EmitDefaultValue = true)]
         public bool ByParseDate { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SortBy
+        /// </summary>
+        [DataMember(Name = "sort_by", EmitDefaultValue = false)]
+        public string SortBy { get; set; }
 
         /// <summary>
         /// Gets or Sets Lang
@@ -370,6 +379,7 @@ namespace Newscatcherapi.Net.Model
             sb.Append("class LatestHeadlinesRequest {\n");
             sb.Append("  When: ").Append(When).Append("\n");
             sb.Append("  ByParseDate: ").Append(ByParseDate).Append("\n");
+            sb.Append("  SortBy: ").Append(SortBy).Append("\n");
             sb.Append("  Lang: ").Append(Lang).Append("\n");
             sb.Append("  NotLang: ").Append(NotLang).Append("\n");
             sb.Append("  Countries: ").Append(Countries).Append("\n");
@@ -451,6 +461,11 @@ namespace Newscatcherapi.Net.Model
                 (
                     this.ByParseDate == input.ByParseDate ||
                     this.ByParseDate.Equals(input.ByParseDate)
+                ) && 
+                (
+                    this.SortBy == input.SortBy ||
+                    (this.SortBy != null &&
+                    this.SortBy.Equals(input.SortBy))
                 ) && 
                 (
                     this.Lang == input.Lang ||
@@ -643,6 +658,10 @@ namespace Newscatcherapi.Net.Model
                     hashCode = (hashCode * 59) + this.When.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.ByParseDate.GetHashCode();
+                if (this.SortBy != null)
+                {
+                    hashCode = (hashCode * 59) + this.SortBy.GetHashCode();
+                }
                 if (this.Lang != null)
                 {
                     hashCode = (hashCode * 59) + this.Lang.GetHashCode();

@@ -262,6 +262,9 @@ export const operationParameterMap: Record<string, Entry> = {
                 name: 'by_parse_date'
             },
             {
+                name: 'sort_by'
+            },
+            {
                 name: 'lang'
             },
             {
@@ -384,6 +387,9 @@ export const operationParameterMap: Record<string, Entry> = {
             },
             {
                 name: 'by_parse_date'
+            },
+            {
+                name: 'sort_by'
             },
             {
                 name: 'lang'

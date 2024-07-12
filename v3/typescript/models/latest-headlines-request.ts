@@ -32,6 +32,12 @@ export interface LatestHeadlinesRequest {
     'by_parse_date'?: boolean;
     /**
      * 
+     * @type {string}
+     * @memberof LatestHeadlinesRequest
+     */
+    'sort_by'?: string;
+    /**
+     * 
      * @type {any}
      * @memberof LatestHeadlinesRequest
      */

@@ -24,6 +24,8 @@ class OptionalLatestHeadlinesRequest(TypedDict, total=False):
 
     by_parse_date: bool
 
+    sort_by: str
+
     lang: typing.Union[bool, date, datetime, dict, float, int, list, str, None]
 
     not_lang: typing.Union[bool, date, datetime, dict, float, int, list, str, None]

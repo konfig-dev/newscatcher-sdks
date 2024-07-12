@@ -74,6 +74,14 @@ namespace Newscatcherapi.Net.Test.Model
             // TODO unit test for the property 'ByParseDate'
         }
         /// <summary>
+        /// Test the property 'SortBy'
+        /// </summary>
+        [Fact]
+        public void SortByTest()
+        {
+            // TODO unit test for the property 'SortBy'
+        }
+        /// <summary>
         /// Test the property 'Lang'
         /// </summary>
         [Fact]

@@ -145,6 +145,14 @@ public class ArticlesPropertyInner1 {
   @SerializedName(SERIALIZED_NAME_CONTENT)
   private String content;
 
+  public static final String SERIALIZED_NAME_TITLE_TRANSLATED_EN = "title_translated_en";
+  @SerializedName(SERIALIZED_NAME_TITLE_TRANSLATED_EN)
+  private String titleTranslatedEn;
+
+  public static final String SERIALIZED_NAME_CONTENT_TRANSLATED_EN = "content_translated_en";
+  @SerializedName(SERIALIZED_NAME_CONTENT_TRANSLATED_EN)
+  private String contentTranslatedEn;
+
   public static final String SERIALIZED_NAME_WORD_COUNT = "word_count";
   @SerializedName(SERIALIZED_NAME_WORD_COUNT)
   private Integer wordCount = 0;
@@ -851,6 +859,64 @@ public class ArticlesPropertyInner1 {
   }
 
 
+  public ArticlesPropertyInner1 titleTranslatedEn(String titleTranslatedEn) {
+    
+    
+    
+    
+    this.titleTranslatedEn = titleTranslatedEn;
+    return this;
+  }
+
+   /**
+   * Get titleTranslatedEn
+   * @return titleTranslatedEn
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getTitleTranslatedEn() {
+    return titleTranslatedEn;
+  }
+
+
+  public void setTitleTranslatedEn(String titleTranslatedEn) {
+    
+    
+    
+    this.titleTranslatedEn = titleTranslatedEn;
+  }
+
+
+  public ArticlesPropertyInner1 contentTranslatedEn(String contentTranslatedEn) {
+    
+    
+    
+    
+    this.contentTranslatedEn = contentTranslatedEn;
+    return this;
+  }
+
+   /**
+   * Get contentTranslatedEn
+   * @return contentTranslatedEn
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getContentTranslatedEn() {
+    return contentTranslatedEn;
+  }
+
+
+  public void setContentTranslatedEn(String contentTranslatedEn) {
+    
+    
+    
+    this.contentTranslatedEn = contentTranslatedEn;
+  }
+
+
   public ArticlesPropertyInner1 wordCount(Integer wordCount) {
     
     
@@ -1206,6 +1272,8 @@ public class ArticlesPropertyInner1 {
         Objects.equals(this.media, articlesPropertyInner1.media) &&
         Objects.equals(this.language, articlesPropertyInner1.language) &&
         Objects.equals(this.content, articlesPropertyInner1.content) &&
+        Objects.equals(this.titleTranslatedEn, articlesPropertyInner1.titleTranslatedEn) &&
+        Objects.equals(this.contentTranslatedEn, articlesPropertyInner1.contentTranslatedEn) &&
         Objects.equals(this.wordCount, articlesPropertyInner1.wordCount) &&
         Objects.equals(this.isOpinion, articlesPropertyInner1.isOpinion) &&
         Objects.equals(this.twitterAccount, articlesPropertyInner1.twitterAccount) &&
@@ -1224,7 +1292,7 @@ public class ArticlesPropertyInner1 {
 
   @Override
   public int hashCode() {
-    return Objects.hash(title, description, author, authors, journalists, publishedDate, publishedDatePrecision, updatedDate, updatedDatePrecision, parseDate, link, domainUrl, fullDomainUrl, nameSource, isHeadline, paidContent, extractionData, country, rights, rank, media, language, content, wordCount, isOpinion, twitterAccount, allLinks, allDomainLinks, nlp, id, score, similarDocuments, additionalProperties);
+    return Objects.hash(title, description, author, authors, journalists, publishedDate, publishedDatePrecision, updatedDate, updatedDatePrecision, parseDate, link, domainUrl, fullDomainUrl, nameSource, isHeadline, paidContent, extractionData, country, rights, rank, media, language, content, titleTranslatedEn, contentTranslatedEn, wordCount, isOpinion, twitterAccount, allLinks, allDomainLinks, nlp, id, score, similarDocuments, additionalProperties);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -1261,6 +1329,8 @@ public class ArticlesPropertyInner1 {
     sb.append("    media: ").append(toIndentedString(media)).append("\n");
     sb.append("    language: ").append(toIndentedString(language)).append("\n");
     sb.append("    content: ").append(toIndentedString(content)).append("\n");
+    sb.append("    titleTranslatedEn: ").append(toIndentedString(titleTranslatedEn)).append("\n");
+    sb.append("    contentTranslatedEn: ").append(toIndentedString(contentTranslatedEn)).append("\n");
     sb.append("    wordCount: ").append(toIndentedString(wordCount)).append("\n");
     sb.append("    isOpinion: ").append(toIndentedString(isOpinion)).append("\n");
     sb.append("    twitterAccount: ").append(toIndentedString(twitterAccount)).append("\n");
@@ -1316,6 +1386,8 @@ public class ArticlesPropertyInner1 {
     openapiFields.add("media");
     openapiFields.add("language");
     openapiFields.add("content");
+    openapiFields.add("title_translated_en");
+    openapiFields.add("content_translated_en");
     openapiFields.add("word_count");
     openapiFields.add("is_opinion");
     openapiFields.add("twitter_account");
@@ -1398,6 +1470,12 @@ public class ArticlesPropertyInner1 {
       }
       if ((jsonObj.get("content") != null && !jsonObj.get("content").isJsonNull()) && !jsonObj.get("content").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `content` to be a primitive type in the JSON string but got `%s`", jsonObj.get("content").toString()));
+      }
+      if ((jsonObj.get("title_translated_en") != null && !jsonObj.get("title_translated_en").isJsonNull()) && !jsonObj.get("title_translated_en").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `title_translated_en` to be a primitive type in the JSON string but got `%s`", jsonObj.get("title_translated_en").toString()));
+      }
+      if ((jsonObj.get("content_translated_en") != null && !jsonObj.get("content_translated_en").isJsonNull()) && !jsonObj.get("content_translated_en").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `content_translated_en` to be a primitive type in the JSON string but got `%s`", jsonObj.get("content_translated_en").toString()));
       }
       if ((jsonObj.get("twitter_account") != null && !jsonObj.get("twitter_account").isJsonNull()) && !jsonObj.get("twitter_account").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `twitter_account` to be a primitive type in the JSON string but got `%s`", jsonObj.get("twitter_account").toString()));

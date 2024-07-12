@@ -34,6 +34,7 @@ namespace Example
 
             var when = "7d";
             var byParseDate = false;
+            var sortBy = "relevancy";
             var lang = new Object(
             );
             var notLang = new Object(
@@ -91,7 +92,7 @@ namespace Example
             try
             {
                 // [Get] Search For Latest Headlines Request
-                LatestHeadlinesGetResponse result = client.LatestHeadlines.Get(when, byParseDate, lang, notLang, countries, notCountries, sources, predefinedSources, notSources, notAuthorName, rankedOnly, isHeadline, isOpinion, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, oRGEntityName, pEREntityName, lOCEntityName, mISCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, iabTags, notIabTags);
+                LatestHeadlinesGetResponse result = client.LatestHeadlines.Get(when, byParseDate, sortBy, lang, notLang, countries, notCountries, sources, predefinedSources, notSources, notAuthorName, rankedOnly, isHeadline, isOpinion, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, oRGEntityName, pEREntityName, lOCEntityName, mISCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, iabTags, notIabTags);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -118,7 +119,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // [Get] Search For Latest Headlines Request
-    ApiResponse<LatestHeadlinesGetResponse> response = apiInstance.GetWithHttpInfo(when, byParseDate, lang, notLang, countries, notCountries, sources, predefinedSources, notSources, notAuthorName, rankedOnly, isHeadline, isOpinion, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, oRGEntityName, pEREntityName, lOCEntityName, mISCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, iabTags, notIabTags);
+    ApiResponse<LatestHeadlinesGetResponse> response = apiInstance.GetWithHttpInfo(when, byParseDate, sortBy, lang, notLang, countries, notCountries, sources, predefinedSources, notSources, notAuthorName, rankedOnly, isHeadline, isOpinion, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, oRGEntityName, pEREntityName, lOCEntityName, mISCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, iabTags, notIabTags);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -137,6 +138,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **when** | **string** |  | [optional] [default to &quot;7d&quot;] |
 | **byParseDate** | **bool?** |  | [optional] [default to false] |
+| **sortBy** | **string** |  | [optional] [default to &quot;relevancy&quot;] |
 | **lang** | [**Object**](Object.md) |  | [optional]  |
 | **notLang** | [**Object**](Object.md) |  | [optional]  |
 | **countries** | [**Object**](Object.md) |  | [optional]  |
@@ -216,6 +218,7 @@ namespace Example
 
             var when = "7d";
             var byParseDate = false;
+            var sortBy = "relevancy";
             var lang = "lang_example";
             var notLang = "notLang_example";
             var countries = "countries_example";
@@ -258,6 +261,7 @@ namespace Example
             var latestHeadlinesRequest = new LatestHeadlinesRequest(
                 when,
                 byParseDate,
+                sortBy,
                 lang,
                 notLang,
                 countries,

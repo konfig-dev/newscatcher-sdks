@@ -193,6 +193,8 @@ class DtoResponsesAuthorSearchResponseArticleResult(
             rights = schemas.StrSchema
             media = schemas.StrSchema
             language = schemas.StrSchema
+            title_translated_en = schemas.StrSchema
+            content_translated_en = schemas.StrSchema
             word_count = schemas.IntSchema
             is_opinion = schemas.BoolSchema
             twitter_account = schemas.StrSchema
@@ -345,6 +347,8 @@ class DtoResponsesAuthorSearchResponseArticleResult(
                 "rights": rights,
                 "media": media,
                 "language": language,
+                "title_translated_en": title_translated_en,
+                "content_translated_en": content_translated_en,
                 "word_count": word_count,
                 "is_opinion": is_opinion,
                 "twitter_account": twitter_account,
@@ -439,6 +443,12 @@ class DtoResponsesAuthorSearchResponseArticleResult(
     def __getitem__(self, name: typing_extensions.Literal["language"]) -> MetaOapg.properties.language: ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["title_translated_en"]) -> MetaOapg.properties.title_translated_en: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["content_translated_en"]) -> MetaOapg.properties.content_translated_en: ...
+    
+    @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["word_count"]) -> MetaOapg.properties.word_count: ...
     
     @typing.overload
@@ -459,7 +469,7 @@ class DtoResponsesAuthorSearchResponseArticleResult(
     @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["title", "link", "domain_url", "full_domain_url", "extraction_data", "rank", "content", "id", "score", "description", "author", "authors", "journalists", "published_date", "published_date_precision", "updated_date", "updated_date_precision", "parse_date", "name_source", "is_headline", "paid_content", "country", "rights", "media", "language", "word_count", "is_opinion", "twitter_account", "all_links", "all_domain_links", "nlp", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["title", "link", "domain_url", "full_domain_url", "extraction_data", "rank", "content", "id", "score", "description", "author", "authors", "journalists", "published_date", "published_date_precision", "updated_date", "updated_date_precision", "parse_date", "name_source", "is_headline", "paid_content", "country", "rights", "media", "language", "title_translated_en", "content_translated_en", "word_count", "is_opinion", "twitter_account", "all_links", "all_domain_links", "nlp", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
@@ -540,6 +550,12 @@ class DtoResponsesAuthorSearchResponseArticleResult(
     def get_item_oapg(self, name: typing_extensions.Literal["language"]) -> typing.Union[MetaOapg.properties.language, schemas.Unset]: ...
     
     @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["title_translated_en"]) -> typing.Union[MetaOapg.properties.title_translated_en, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["content_translated_en"]) -> typing.Union[MetaOapg.properties.content_translated_en, schemas.Unset]: ...
+    
+    @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["word_count"]) -> typing.Union[MetaOapg.properties.word_count, schemas.Unset]: ...
     
     @typing.overload
@@ -560,7 +576,7 @@ class DtoResponsesAuthorSearchResponseArticleResult(
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["title", "link", "domain_url", "full_domain_url", "extraction_data", "rank", "content", "id", "score", "description", "author", "authors", "journalists", "published_date", "published_date_precision", "updated_date", "updated_date_precision", "parse_date", "name_source", "is_headline", "paid_content", "country", "rights", "media", "language", "word_count", "is_opinion", "twitter_account", "all_links", "all_domain_links", "nlp", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["title", "link", "domain_url", "full_domain_url", "extraction_data", "rank", "content", "id", "score", "description", "author", "authors", "journalists", "published_date", "published_date_precision", "updated_date", "updated_date_precision", "parse_date", "name_source", "is_headline", "paid_content", "country", "rights", "media", "language", "title_translated_en", "content_translated_en", "word_count", "is_opinion", "twitter_account", "all_links", "all_domain_links", "nlp", ], str]):
         return super().get_item_oapg(name)
     
 
@@ -592,6 +608,8 @@ class DtoResponsesAuthorSearchResponseArticleResult(
         rights: typing.Union[MetaOapg.properties.rights, str, schemas.Unset] = schemas.unset,
         media: typing.Union[MetaOapg.properties.media, str, schemas.Unset] = schemas.unset,
         language: typing.Union[MetaOapg.properties.language, str, schemas.Unset] = schemas.unset,
+        title_translated_en: typing.Union[MetaOapg.properties.title_translated_en, str, schemas.Unset] = schemas.unset,
+        content_translated_en: typing.Union[MetaOapg.properties.content_translated_en, str, schemas.Unset] = schemas.unset,
         word_count: typing.Union[MetaOapg.properties.word_count, decimal.Decimal, int, schemas.Unset] = schemas.unset,
         is_opinion: typing.Union[MetaOapg.properties.is_opinion, bool, schemas.Unset] = schemas.unset,
         twitter_account: typing.Union[MetaOapg.properties.twitter_account, str, schemas.Unset] = schemas.unset,
@@ -629,6 +647,8 @@ class DtoResponsesAuthorSearchResponseArticleResult(
             rights=rights,
             media=media,
             language=language,
+            title_translated_en=title_translated_en,
+            content_translated_en=content_translated_en,
             word_count=word_count,
             is_opinion=is_opinion,
             twitter_account=twitter_account,

@@ -69,6 +69,10 @@ class OptionalDtoResponsesAuthorSearchResponseArticleResult(TypedDict, total=Fal
 
     language: str
 
+    title_translated_en: str
+
+    content_translated_en: str
+
     word_count: int
 
     is_opinion: bool

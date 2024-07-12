@@ -161,6 +161,18 @@ export interface DtoResponsesAuthorSearchResponseArticleResult {
     'content': string;
     /**
      * 
+     * @type {string}
+     * @memberof DtoResponsesAuthorSearchResponseArticleResult
+     */
+    'title_translated_en'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DtoResponsesAuthorSearchResponseArticleResult
+     */
+    'content_translated_en'?: string;
+    /**
+     * 
      * @type {number}
      * @memberof DtoResponsesAuthorSearchResponseArticleResult
      */

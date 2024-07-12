@@ -227,6 +227,22 @@ public class DtoResponsesMoreLikeThisResponseArticleResultTest {
     }
 
     /**
+     * Test the property 'titleTranslatedEn'
+     */
+    @Test
+    public void titleTranslatedEnTest() {
+        // TODO: test titleTranslatedEn
+    }
+
+    /**
+     * Test the property 'contentTranslatedEn'
+     */
+    @Test
+    public void contentTranslatedEnTest() {
+        // TODO: test contentTranslatedEn
+    }
+
+    /**
      * Test the property 'wordCount'
      */
     @Test

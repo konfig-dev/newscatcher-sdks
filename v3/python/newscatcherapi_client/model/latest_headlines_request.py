@@ -39,6 +39,7 @@ class LatestHeadlinesRequest(
         class properties:
             when = schemas.StrSchema
             by_parse_date = schemas.BoolSchema
+            sort_by = schemas.StrSchema
             lang = schemas.AnyTypeSchema
             not_lang = schemas.AnyTypeSchema
             countries = schemas.AnyTypeSchema
@@ -150,6 +151,7 @@ class LatestHeadlinesRequest(
             __annotations__ = {
                 "when": when,
                 "by_parse_date": by_parse_date,
+                "sort_by": sort_by,
                 "lang": lang,
                 "not_lang": not_lang,
                 "countries": countries,
@@ -195,6 +197,9 @@ class LatestHeadlinesRequest(
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["by_parse_date"]) -> MetaOapg.properties.by_parse_date: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["sort_by"]) -> MetaOapg.properties.sort_by: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["lang"]) -> MetaOapg.properties.lang: ...
@@ -313,7 +318,7 @@ class LatestHeadlinesRequest(
     @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["when", "by_parse_date", "lang", "not_lang", "countries", "not_countries", "sources", "predefined_sources", "not_sources", "not_author_name", "ranked_only", "is_headline", "is_opinion", "is_paid_content", "parent_url", "all_links", "all_domain_links", "word_count_min", "word_count_max", "page", "page_size", "clustering_variable", "clustering_enabled", "clustering_threshold", "include_nlp_data", "has_nlp", "theme", "not_theme", "ORG_entity_name", "PER_entity_name", "LOC_entity_name", "MISC_entity_name", "title_sentiment_min", "title_sentiment_max", "content_sentiment_min", "content_sentiment_max", "iptc_tags", "not_iptc_tags", "iab_tags", "not_iab_tags", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["when", "by_parse_date", "sort_by", "lang", "not_lang", "countries", "not_countries", "sources", "predefined_sources", "not_sources", "not_author_name", "ranked_only", "is_headline", "is_opinion", "is_paid_content", "parent_url", "all_links", "all_domain_links", "word_count_min", "word_count_max", "page", "page_size", "clustering_variable", "clustering_enabled", "clustering_threshold", "include_nlp_data", "has_nlp", "theme", "not_theme", "ORG_entity_name", "PER_entity_name", "LOC_entity_name", "MISC_entity_name", "title_sentiment_min", "title_sentiment_max", "content_sentiment_min", "content_sentiment_max", "iptc_tags", "not_iptc_tags", "iab_tags", "not_iab_tags", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
@@ -323,6 +328,9 @@ class LatestHeadlinesRequest(
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["by_parse_date"]) -> typing.Union[MetaOapg.properties.by_parse_date, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["sort_by"]) -> typing.Union[MetaOapg.properties.sort_by, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["lang"]) -> typing.Union[MetaOapg.properties.lang, schemas.Unset]: ...
@@ -441,7 +449,7 @@ class LatestHeadlinesRequest(
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["when", "by_parse_date", "lang", "not_lang", "countries", "not_countries", "sources", "predefined_sources", "not_sources", "not_author_name", "ranked_only", "is_headline", "is_opinion", "is_paid_content", "parent_url", "all_links", "all_domain_links", "word_count_min", "word_count_max", "page", "page_size", "clustering_variable", "clustering_enabled", "clustering_threshold", "include_nlp_data", "has_nlp", "theme", "not_theme", "ORG_entity_name", "PER_entity_name", "LOC_entity_name", "MISC_entity_name", "title_sentiment_min", "title_sentiment_max", "content_sentiment_min", "content_sentiment_max", "iptc_tags", "not_iptc_tags", "iab_tags", "not_iab_tags", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["when", "by_parse_date", "sort_by", "lang", "not_lang", "countries", "not_countries", "sources", "predefined_sources", "not_sources", "not_author_name", "ranked_only", "is_headline", "is_opinion", "is_paid_content", "parent_url", "all_links", "all_domain_links", "word_count_min", "word_count_max", "page", "page_size", "clustering_variable", "clustering_enabled", "clustering_threshold", "include_nlp_data", "has_nlp", "theme", "not_theme", "ORG_entity_name", "PER_entity_name", "LOC_entity_name", "MISC_entity_name", "title_sentiment_min", "title_sentiment_max", "content_sentiment_min", "content_sentiment_max", "iptc_tags", "not_iptc_tags", "iab_tags", "not_iab_tags", ], str]):
         return super().get_item_oapg(name)
     
 
@@ -450,6 +458,7 @@ class LatestHeadlinesRequest(
         *args: typing.Union[dict, frozendict.frozendict, ],
         when: typing.Union[MetaOapg.properties.when, str, schemas.Unset] = schemas.unset,
         by_parse_date: typing.Union[MetaOapg.properties.by_parse_date, bool, schemas.Unset] = schemas.unset,
+        sort_by: typing.Union[MetaOapg.properties.sort_by, str, schemas.Unset] = schemas.unset,
         lang: typing.Union[MetaOapg.properties.lang, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, schemas.Unset] = schemas.unset,
         not_lang: typing.Union[MetaOapg.properties.not_lang, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, schemas.Unset] = schemas.unset,
         countries: typing.Union[MetaOapg.properties.countries, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, schemas.Unset] = schemas.unset,
@@ -496,6 +505,7 @@ class LatestHeadlinesRequest(
             *args,
             when=when,
             by_parse_date=by_parse_date,
+            sort_by=sort_by,
             lang=lang,
             not_lang=not_lang,
             countries=countries,

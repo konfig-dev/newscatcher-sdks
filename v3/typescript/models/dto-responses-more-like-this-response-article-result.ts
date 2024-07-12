@@ -162,6 +162,18 @@ export interface DtoResponsesMoreLikeThisResponseArticleResult {
     'content': string;
     /**
      * 
+     * @type {string}
+     * @memberof DtoResponsesMoreLikeThisResponseArticleResult
+     */
+    'title_translated_en'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DtoResponsesMoreLikeThisResponseArticleResult
+     */
+    'content_translated_en'?: string;
+    /**
+     * 
      * @type {number}
      * @memberof DtoResponsesMoreLikeThisResponseArticleResult
      */
