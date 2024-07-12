@@ -10,6 +10,7 @@ Latest headlines request DTO.
 |------------ | ------------- | ------------- | -------------|
 |**when** | **String** |  |  [optional] |
 |**byParseDate** | **Boolean** |  |  [optional] |
+|**sortBy** | **String** |  |  [optional] |
 |**lang** | **Object** |  |  [optional] |
 |**notLang** | **Object** |  |  [optional] |
 |**countries** | **Object** |  |  [optional] |

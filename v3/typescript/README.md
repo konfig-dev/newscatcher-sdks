@@ -2,7 +2,7 @@
 
 <img src='https://uploads-ssl.webflow.com/6429857b17973b636c2195c5/646c6f1eb774ff2f2997bec5_newscatcher_.svg' width='286' height='35' /> <br>  <br>Visit our website  <a href='https://newscatcherapi.com'>https://newscatcherapi.com</a>
 
-[![npm](https://img.shields.io/badge/npm-v6.0.11-blue)](https://www.npmjs.com/package/newscatcherapi-typescript-sdk/v/6.0.11)
+[![npm](https://img.shields.io/badge/npm-v6.0.12-blue)](https://www.npmjs.com/package/newscatcherapi-typescript-sdk/v/6.0.12)
 
 ## Table of Contents<a id="table-of-contents"></a>
 
@@ -318,6 +318,7 @@ This endpoint allows you to get latest headlines. You need to specify since when
 const getResponse = await newscatcher.latestHeadlines.get({
   when: "7d",
   byParseDate: false,
+  sortBy: "relevancy",
   page: 1,
   pageSize: 100,
 });
@@ -328,6 +329,8 @@ const getResponse = await newscatcher.latestHeadlines.get({
 ##### when: `string`<a id="when-string"></a>
 
 ##### byParseDate: `boolean`<a id="byparsedate-boolean"></a>
+
+##### sortBy: `string`<a id="sortby-string"></a>
 
 ##### lang: `any`<a id="lang-any"></a>
 
@@ -428,6 +431,7 @@ This endpoint allows you to get latest headlines. You need to specify since when
 const postResponse = await newscatcher.latestHeadlines.post({
   when: "7d",
   by_parse_date: false,
+  sort_by: "relevancy",
   page: 1,
   page_size: 100,
 });
@@ -438,6 +442,8 @@ const postResponse = await newscatcher.latestHeadlines.post({
 ##### when: `string`<a id="when-string"></a>
 
 ##### by_parse_date: `boolean`<a id="by_parse_date-boolean"></a>
+
+##### sort_by: `string`<a id="sort_by-string"></a>
 
 ##### lang: `any`<a id="lang-any"></a>
 

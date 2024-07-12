@@ -68,6 +68,10 @@ class DtoResponsesAuthorSearchResponseArticleResult(BaseModel):
 
     language: typing.Optional[str] = Field(None, alias='language')
 
+    title_translated_en: typing.Optional[str] = Field(None, alias='title_translated_en')
+
+    content_translated_en: typing.Optional[str] = Field(None, alias='content_translated_en')
+
     word_count: typing.Optional[int] = Field(None, alias='word_count')
 
     is_opinion: typing.Optional[bool] = Field(None, alias='is_opinion')

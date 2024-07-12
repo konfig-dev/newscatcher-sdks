@@ -48,6 +48,7 @@ from . import path
 # Query params
 WhenSchema = schemas.StrSchema
 ByParseDateSchema = schemas.BoolSchema
+SortBySchema = schemas.StrSchema
 LangSchema = schemas.AnyTypeSchema
 NotLangSchema = schemas.AnyTypeSchema
 CountriesSchema = schemas.AnyTypeSchema
@@ -166,6 +167,7 @@ RequestOptionalQueryParams = typing_extensions.TypedDict(
     {
         'when': typing.Union[WhenSchema, str, ],
         'by_parse_date': typing.Union[ByParseDateSchema, bool, ],
+        'sort_by': typing.Union[SortBySchema, str, ],
         'lang': typing.Union[LangSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ],
         'not_lang': typing.Union[NotLangSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ],
         'countries': typing.Union[CountriesSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ],
@@ -223,6 +225,12 @@ request_query_by_parse_date = api_client.QueryParameter(
     name="by_parse_date",
     style=api_client.ParameterStyle.FORM,
     schema=ByParseDateSchema,
+    explode=True,
+)
+request_query_sort_by = api_client.QueryParameter(
+    name="sort_by",
+    style=api_client.ParameterStyle.FORM,
+    schema=SortBySchema,
     explode=True,
 )
 request_query_lang = api_client.QueryParameter(
@@ -513,6 +521,7 @@ class BaseApi(api_client.Api):
         self,
         when: typing.Optional[str] = None,
         by_parse_date: typing.Optional[bool] = None,
+        sort_by: typing.Optional[str] = None,
         lang: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_lang: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         countries: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
@@ -558,6 +567,8 @@ class BaseApi(api_client.Api):
             _query_params["when"] = when
         if by_parse_date is not None:
             _query_params["by_parse_date"] = by_parse_date
+        if sort_by is not None:
+            _query_params["sort_by"] = sort_by
         if lang is not None:
             _query_params["lang"] = lang
         if not_lang is not None:
@@ -663,6 +674,7 @@ class BaseApi(api_client.Api):
         for parameter in (
             request_query_when,
             request_query_by_parse_date,
+            request_query_sort_by,
             request_query_lang,
             request_query_not_lang,
             request_query_countries,
@@ -814,6 +826,7 @@ class BaseApi(api_client.Api):
         for parameter in (
             request_query_when,
             request_query_by_parse_date,
+            request_query_sort_by,
             request_query_lang,
             request_query_not_lang,
             request_query_countries,
@@ -917,6 +930,7 @@ class GetRaw(BaseApi):
         self,
         when: typing.Optional[str] = None,
         by_parse_date: typing.Optional[bool] = None,
+        sort_by: typing.Optional[str] = None,
         lang: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_lang: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         countries: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
@@ -964,6 +978,7 @@ class GetRaw(BaseApi):
         args = self._get_mapped_args(
             when=when,
             by_parse_date=by_parse_date,
+            sort_by=sort_by,
             lang=lang,
             not_lang=not_lang,
             countries=countries,
@@ -1012,6 +1027,7 @@ class GetRaw(BaseApi):
         self,
         when: typing.Optional[str] = None,
         by_parse_date: typing.Optional[bool] = None,
+        sort_by: typing.Optional[str] = None,
         lang: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_lang: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         countries: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
@@ -1057,6 +1073,7 @@ class GetRaw(BaseApi):
         args = self._get_mapped_args(
             when=when,
             by_parse_date=by_parse_date,
+            sort_by=sort_by,
             lang=lang,
             not_lang=not_lang,
             countries=countries,
@@ -1106,6 +1123,7 @@ class Get(BaseApi):
         self,
         when: typing.Optional[str] = None,
         by_parse_date: typing.Optional[bool] = None,
+        sort_by: typing.Optional[str] = None,
         lang: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_lang: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         countries: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
@@ -1150,6 +1168,7 @@ class Get(BaseApi):
         raw_response = await self.raw.aget(
             when=when,
             by_parse_date=by_parse_date,
+            sort_by=sort_by,
             lang=lang,
             not_lang=not_lang,
             countries=countries,
@@ -1199,6 +1218,7 @@ class Get(BaseApi):
         self,
         when: typing.Optional[str] = None,
         by_parse_date: typing.Optional[bool] = None,
+        sort_by: typing.Optional[str] = None,
         lang: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_lang: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         countries: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
@@ -1242,6 +1262,7 @@ class Get(BaseApi):
         raw_response = self.raw.get(
             when=when,
             by_parse_date=by_parse_date,
+            sort_by=sort_by,
             lang=lang,
             not_lang=not_lang,
             countries=countries,
@@ -1293,6 +1314,7 @@ class ApiForget(BaseApi):
         self,
         when: typing.Optional[str] = None,
         by_parse_date: typing.Optional[bool] = None,
+        sort_by: typing.Optional[str] = None,
         lang: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_lang: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         countries: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
@@ -1340,6 +1362,7 @@ class ApiForget(BaseApi):
         args = self._get_mapped_args(
             when=when,
             by_parse_date=by_parse_date,
+            sort_by=sort_by,
             lang=lang,
             not_lang=not_lang,
             countries=countries,
@@ -1388,6 +1411,7 @@ class ApiForget(BaseApi):
         self,
         when: typing.Optional[str] = None,
         by_parse_date: typing.Optional[bool] = None,
+        sort_by: typing.Optional[str] = None,
         lang: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_lang: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         countries: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
@@ -1433,6 +1457,7 @@ class ApiForget(BaseApi):
         args = self._get_mapped_args(
             when=when,
             by_parse_date=by_parse_date,
+            sort_by=sort_by,
             lang=lang,
             not_lang=not_lang,
             countries=countries,

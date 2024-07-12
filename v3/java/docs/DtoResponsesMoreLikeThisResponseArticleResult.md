@@ -31,6 +31,8 @@ ArticleResult DTO class.
 |**media** | **String** |  |  [optional] |
 |**language** | **String** |  |  [optional] |
 |**content** | **String** |  |  |
+|**titleTranslatedEn** | **String** |  |  [optional] |
+|**contentTranslatedEn** | **String** |  |  [optional] |
 |**wordCount** | **Integer** |  |  [optional] |
 |**isOpinion** | **Boolean** |  |  [optional] |
 |**twitterAccount** | **String** |  |  [optional] |

@@ -52,6 +52,7 @@ namespace Newscatcherapi.Net.Test.Api
         {
             var when = "7d";
             var byParseDate = false;
+            var sortBy = "relevancy";
             var lang = new Object(
             );
             var notLang = new Object(
@@ -109,7 +110,7 @@ namespace Newscatcherapi.Net.Test.Api
             try
             {
                 // [Get] Search For Latest Headlines Request
-                LatestHeadlinesGetResponse result = client.LatestHeadlines.Get(when, byParseDate, lang, notLang, countries, notCountries, sources, predefinedSources, notSources, notAuthorName, rankedOnly, isHeadline, isOpinion, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, oRGEntityName, pEREntityName, lOCEntityName, mISCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, iabTags, notIabTags);
+                LatestHeadlinesGetResponse result = client.LatestHeadlines.Get(when, byParseDate, sortBy, lang, notLang, countries, notCountries, sources, predefinedSources, notSources, notAuthorName, rankedOnly, isHeadline, isOpinion, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, oRGEntityName, pEREntityName, lOCEntityName, mISCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, iabTags, notIabTags);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -134,6 +135,7 @@ namespace Newscatcherapi.Net.Test.Api
         {
             var when = "7d";
             var byParseDate = false;
+            var sortBy = "relevancy";
             var lang = "lang_example";
             var notLang = "notLang_example";
             var countries = "countries_example";
@@ -176,6 +178,7 @@ namespace Newscatcherapi.Net.Test.Api
             var latestHeadlinesRequest = new LatestHeadlinesRequest(
                 when,
                 byParseDate,
+                sortBy,
                 lang,
                 notLang,
                 countries,

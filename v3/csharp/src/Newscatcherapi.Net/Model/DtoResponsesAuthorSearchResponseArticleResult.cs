@@ -63,6 +63,8 @@ namespace Newscatcherapi.Net.Model
         /// <param name="media">media.</param>
         /// <param name="language">language.</param>
         /// <param name="content">content (required).</param>
+        /// <param name="titleTranslatedEn">titleTranslatedEn.</param>
+        /// <param name="contentTranslatedEn">contentTranslatedEn.</param>
         /// <param name="wordCount">wordCount (default to 0).</param>
         /// <param name="isOpinion">isOpinion.</param>
         /// <param name="twitterAccount">twitterAccount.</param>
@@ -71,7 +73,7 @@ namespace Newscatcherapi.Net.Model
         /// <param name="nlp">nlp.</param>
         /// <param name="id">id (required).</param>
         /// <param name="score">score (required).</param>
-        public DtoResponsesAuthorSearchResponseArticleResult(string title = default(string), string description = default(string), string author = default(string), AuthorsProperty authors = default(AuthorsProperty), JournalistsProperty journalists = default(JournalistsProperty), string publishedDate = default(string), string publishedDatePrecision = default(string), string updatedDate = default(string), string updatedDatePrecision = default(string), string parseDate = default(string), string link = default(string), string domainUrl = default(string), string fullDomainUrl = default(string), string nameSource = default(string), string isHeadline = default(string), bool paidContent = default(bool), string extractionData = default(string), string country = default(string), string rights = default(string), int rank = default(int), string media = default(string), string language = default(string), string content = default(string), int wordCount = 0, bool isOpinion = default(bool), string twitterAccount = default(string), AllLinksProperty allLinks = default(AllLinksProperty), AllDomainLinksProperty allDomainLinks = default(AllDomainLinksProperty), Object nlp = default(Object), string id = default(string), double score = default(double))
+        public DtoResponsesAuthorSearchResponseArticleResult(string title = default(string), string description = default(string), string author = default(string), AuthorsProperty authors = default(AuthorsProperty), JournalistsProperty journalists = default(JournalistsProperty), string publishedDate = default(string), string publishedDatePrecision = default(string), string updatedDate = default(string), string updatedDatePrecision = default(string), string parseDate = default(string), string link = default(string), string domainUrl = default(string), string fullDomainUrl = default(string), string nameSource = default(string), string isHeadline = default(string), bool paidContent = default(bool), string extractionData = default(string), string country = default(string), string rights = default(string), int rank = default(int), string media = default(string), string language = default(string), string content = default(string), string titleTranslatedEn = default(string), string contentTranslatedEn = default(string), int wordCount = 0, bool isOpinion = default(bool), string twitterAccount = default(string), AllLinksProperty allLinks = default(AllLinksProperty), AllDomainLinksProperty allDomainLinks = default(AllDomainLinksProperty), Object nlp = default(Object), string id = default(string), double score = default(double))
         {
             // to ensure "title" is required (not null)
             if (title == null)
@@ -133,6 +135,8 @@ namespace Newscatcherapi.Net.Model
             this.Rights = rights;
             this.Media = media;
             this.Language = language;
+            this.TitleTranslatedEn = titleTranslatedEn;
+            this.ContentTranslatedEn = contentTranslatedEn;
             this.WordCount = wordCount;
             this.IsOpinion = isOpinion;
             this.TwitterAccount = twitterAccount;
@@ -280,6 +284,18 @@ namespace Newscatcherapi.Net.Model
         public string Content { get; set; }
 
         /// <summary>
+        /// Gets or Sets TitleTranslatedEn
+        /// </summary>
+        [DataMember(Name = "title_translated_en", EmitDefaultValue = false)]
+        public string TitleTranslatedEn { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ContentTranslatedEn
+        /// </summary>
+        [DataMember(Name = "content_translated_en", EmitDefaultValue = false)]
+        public string ContentTranslatedEn { get; set; }
+
+        /// <summary>
         /// Gets or Sets WordCount
         /// </summary>
         [DataMember(Name = "word_count", EmitDefaultValue = false)]
@@ -358,6 +374,8 @@ namespace Newscatcherapi.Net.Model
             sb.Append("  Media: ").Append(Media).Append("\n");
             sb.Append("  Language: ").Append(Language).Append("\n");
             sb.Append("  Content: ").Append(Content).Append("\n");
+            sb.Append("  TitleTranslatedEn: ").Append(TitleTranslatedEn).Append("\n");
+            sb.Append("  ContentTranslatedEn: ").Append(ContentTranslatedEn).Append("\n");
             sb.Append("  WordCount: ").Append(WordCount).Append("\n");
             sb.Append("  IsOpinion: ").Append(IsOpinion).Append("\n");
             sb.Append("  TwitterAccount: ").Append(TwitterAccount).Append("\n");
@@ -515,6 +533,16 @@ namespace Newscatcherapi.Net.Model
                     this.Content.Equals(input.Content))
                 ) && 
                 (
+                    this.TitleTranslatedEn == input.TitleTranslatedEn ||
+                    (this.TitleTranslatedEn != null &&
+                    this.TitleTranslatedEn.Equals(input.TitleTranslatedEn))
+                ) && 
+                (
+                    this.ContentTranslatedEn == input.ContentTranslatedEn ||
+                    (this.ContentTranslatedEn != null &&
+                    this.ContentTranslatedEn.Equals(input.ContentTranslatedEn))
+                ) && 
+                (
                     this.WordCount == input.WordCount ||
                     this.WordCount.Equals(input.WordCount)
                 ) && 
@@ -647,6 +675,14 @@ namespace Newscatcherapi.Net.Model
                 if (this.Content != null)
                 {
                     hashCode = (hashCode * 59) + this.Content.GetHashCode();
+                }
+                if (this.TitleTranslatedEn != null)
+                {
+                    hashCode = (hashCode * 59) + this.TitleTranslatedEn.GetHashCode();
+                }
+                if (this.ContentTranslatedEn != null)
+                {
+                    hashCode = (hashCode * 59) + this.ContentTranslatedEn.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.WordCount.GetHashCode();
                 hashCode = (hashCode * 59) + this.IsOpinion.GetHashCode();

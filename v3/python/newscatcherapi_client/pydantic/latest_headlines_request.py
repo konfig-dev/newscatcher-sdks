@@ -22,6 +22,8 @@ class LatestHeadlinesRequest(BaseModel):
 
     by_parse_date: typing.Optional[bool] = Field(None, alias='by_parse_date')
 
+    sort_by: typing.Optional[str] = Field(None, alias='sort_by')
+
     lang: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = Field(None, alias='lang')
 
     not_lang: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = Field(None, alias='not_lang')

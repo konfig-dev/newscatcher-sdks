@@ -56,6 +56,14 @@ public class LatestHeadlinesRequestTest {
     }
 
     /**
+     * Test the property 'sortBy'
+     */
+    @Test
+    public void sortByTest() {
+        // TODO: test sortBy
+    }
+
+    /**
      * Test the property 'lang'
      */
     @Test

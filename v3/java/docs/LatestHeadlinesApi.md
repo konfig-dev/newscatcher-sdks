@@ -10,7 +10,7 @@ All URIs are relative to *https://v3-api.newscatcherapi.com*
 
 <a name="get"></a>
 # **get**
-> CSLHResponse get().when(when).byParseDate(byParseDate).lang(lang).notLang(notLang).countries(countries).notCountries(notCountries).sources(sources).predefinedSources(predefinedSources).notSources(notSources).notAuthorName(notAuthorName).rankedOnly(rankedOnly).isHeadline(isHeadline).isOpinion(isOpinion).isPaidContent(isPaidContent).parentUrl(parentUrl).allLinks(allLinks).allDomainLinks(allDomainLinks).wordCountMin(wordCountMin).wordCountMax(wordCountMax).page(page).pageSize(pageSize).clusteringVariable(clusteringVariable).clusteringEnabled(clusteringEnabled).clusteringThreshold(clusteringThreshold).includeNlpData(includeNlpData).hasNlp(hasNlp).theme(theme).notTheme(notTheme).orGEntityName(orGEntityName).peREntityName(peREntityName).loCEntityName(loCEntityName).miSCEntityName(miSCEntityName).titleSentimentMin(titleSentimentMin).titleSentimentMax(titleSentimentMax).contentSentimentMin(contentSentimentMin).contentSentimentMax(contentSentimentMax).iptcTags(iptcTags).notIptcTags(notIptcTags).iabTags(iabTags).notIabTags(notIabTags).execute();
+> CSLHResponse get().when(when).byParseDate(byParseDate).sortBy(sortBy).lang(lang).notLang(notLang).countries(countries).notCountries(notCountries).sources(sources).predefinedSources(predefinedSources).notSources(notSources).notAuthorName(notAuthorName).rankedOnly(rankedOnly).isHeadline(isHeadline).isOpinion(isOpinion).isPaidContent(isPaidContent).parentUrl(parentUrl).allLinks(allLinks).allDomainLinks(allDomainLinks).wordCountMin(wordCountMin).wordCountMax(wordCountMax).page(page).pageSize(pageSize).clusteringVariable(clusteringVariable).clusteringEnabled(clusteringEnabled).clusteringThreshold(clusteringThreshold).includeNlpData(includeNlpData).hasNlp(hasNlp).theme(theme).notTheme(notTheme).orGEntityName(orGEntityName).peREntityName(peREntityName).loCEntityName(loCEntityName).miSCEntityName(miSCEntityName).titleSentimentMin(titleSentimentMin).titleSentimentMax(titleSentimentMax).contentSentimentMin(contentSentimentMin).contentSentimentMax(contentSentimentMax).iptcTags(iptcTags).notIptcTags(notIptcTags).iabTags(iabTags).notIabTags(notIabTags).execute();
 
 [Get] Search For Latest Headlines Request
 
@@ -39,6 +39,7 @@ public class Example {
     Newscatcher client = new Newscatcher(configuration);
     String when = "7d";
     Boolean byParseDate = false;
+    String sortBy = "relevancy";
     Object lang = null;
     Object notLang = null;
     Object countries = null;
@@ -83,6 +84,7 @@ public class Example {
               .get()
               .when(when)
               .byParseDate(byParseDate)
+              .sortBy(sortBy)
               .lang(lang)
               .notLang(notLang)
               .countries(countries)
@@ -147,6 +149,7 @@ public class Example {
               .get()
               .when(when)
               .byParseDate(byParseDate)
+              .sortBy(sortBy)
               .lang(lang)
               .notLang(notLang)
               .countries(countries)
@@ -209,6 +212,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **when** | **String**|  | [optional] [default to 7d] |
 | **byParseDate** | **Boolean**|  | [optional] [default to false] |
+| **sortBy** | **String**|  | [optional] [default to relevancy] |
 | **lang** | [**Object**](.md)|  | [optional] |
 | **notLang** | [**Object**](.md)|  | [optional] |
 | **countries** | [**Object**](.md)|  | [optional] |
@@ -297,6 +301,7 @@ public class Example {
     Newscatcher client = new Newscatcher(configuration);
     String when = "7d";
     Boolean byParseDate = false;
+    String sortBy = "relevancy";
     Object lang = null;
     Object notLang = null;
     Object countries = null;
@@ -341,6 +346,7 @@ public class Example {
               .post()
               .when(when)
               .byParseDate(byParseDate)
+              .sortBy(sortBy)
               .lang(lang)
               .notLang(notLang)
               .countries(countries)
@@ -405,6 +411,7 @@ public class Example {
               .post()
               .when(when)
               .byParseDate(byParseDate)
+              .sortBy(sortBy)
               .lang(lang)
               .notLang(notLang)
               .countries(countries)

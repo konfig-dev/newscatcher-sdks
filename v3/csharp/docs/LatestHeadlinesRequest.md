@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **When** | **string** |  | [optional] [default to "7d"]
 **ByParseDate** | **bool** |  | [optional] [default to false]
+**SortBy** | **string** |  | [optional] [default to "relevancy"]
 **Lang** | **Object** |  | [optional] 
 **NotLang** | **Object** |  | [optional] 
 **Countries** | **Object** |  | [optional] 

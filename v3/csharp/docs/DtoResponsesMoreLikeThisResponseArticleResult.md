@@ -28,6 +28,8 @@ Name | Type | Description | Notes
 **Media** | **string** |  | [optional] 
 **Language** | **string** |  | [optional] 
 **Content** | **string** |  | 
+**TitleTranslatedEn** | **string** |  | [optional] 
+**ContentTranslatedEn** | **string** |  | [optional] 
 **WordCount** | **int** |  | [optional] [default to 0]
 **IsOpinion** | **bool** |  | [optional] 
 **TwitterAccount** | **string** |  | [optional] 
