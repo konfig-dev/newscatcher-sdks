@@ -610,6 +610,16 @@
           {
             "required": false,
             "schema": {
+              "title": "Sort By",
+              "type": "string",
+              "default": "relevancy"
+            },
+            "name": "sort_by",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
               "title": "Lang"
             },
             "name": "lang",
@@ -2770,6 +2780,11 @@
             "type": "boolean",
             "default": false
           },
+          "sort_by": {
+            "title": "Sort By",
+            "type": "string",
+            "default": "relevancy"
+          },
           "lang": {
             "title": "Lang"
           },
@@ -3762,6 +3777,14 @@
             "title": "Content",
             "type": "string"
           },
+          "title_translated_en": {
+            "title": "Title Translated En",
+            "type": "string"
+          },
+          "content_translated_en": {
+            "title": "Content Translated En",
+            "type": "string"
+          },
           "word_count": {
             "title": "Word Count",
             "type": "integer",
@@ -4040,6 +4063,14 @@
           },
           "content": {
             "title": "Content",
+            "type": "string"
+          },
+          "title_translated_en": {
+            "title": "Title Translated En",
+            "type": "string"
+          },
+          "content_translated_en": {
+            "title": "Content Translated En",
             "type": "string"
           },
           "word_count": {
