@@ -37,7 +37,7 @@ generators:
     useAiohttp3_8: true
     outputDirectory: python
     clientName: Newscatcher
-    pypiApiTokenEnvironmentVariable: NEWSCATCHER_PYPI_API_TOKEN
+    pypiApiTokenEnvironmentVariable: PYPI_TOKEN_1
     git:
       userId: konfig-dev
       repoId: newscatcher-sdks/tree/main/v3/python
