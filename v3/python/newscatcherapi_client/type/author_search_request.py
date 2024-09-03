@@ -81,8 +81,6 @@ class OptionalAuthorSearchRequest(TypedDict, total=False):
 
     not_theme: str
 
-    ner_name: str
-
     title_sentiment_min: typing.Union[int, float]
 
     title_sentiment_max: typing.Union[int, float]

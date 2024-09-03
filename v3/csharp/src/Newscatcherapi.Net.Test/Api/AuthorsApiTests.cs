@@ -91,7 +91,6 @@ namespace Newscatcherapi.Net.Test.Api
             var hasNlp = true;
             var theme = "theme_example";
             var notTheme = "notTheme_example";
-            var nerName = "nerName_example";
             var titleSentimentMin = 8.14D;
             var titleSentimentMax = 8.14D;
             var contentSentimentMin = 8.14D;
@@ -108,7 +107,7 @@ namespace Newscatcherapi.Net.Test.Api
             try
             {
                 // [Get] Search By Author Request
-                AuthorsGetResponse result = client.Authors.Get(authorName, notAuthorName, sources, predefinedSources, notSources, lang, notLang, countries, notCountries, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isOpinion, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, notTheme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, iabTags, notIabTags);
+                AuthorsGetResponse result = client.Authors.Get(authorName, notAuthorName, sources, predefinedSources, notSources, lang, notLang, countries, notCountries, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isOpinion, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, notTheme, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, iabTags, notIabTags);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -162,7 +161,6 @@ namespace Newscatcherapi.Net.Test.Api
             var hasNlp = false;
             var theme = "theme_example";
             var notTheme = "notTheme_example";
-            var nerName = "nerName_example";
             var titleSentimentMin = default(double);
             var titleSentimentMax = default(double);
             var contentSentimentMin = default(double);
@@ -204,7 +202,6 @@ namespace Newscatcherapi.Net.Test.Api
                 hasNlp,
                 theme,
                 notTheme,
-                nerName,
                 titleSentimentMin,
                 titleSentimentMax,
                 contentSentimentMin,

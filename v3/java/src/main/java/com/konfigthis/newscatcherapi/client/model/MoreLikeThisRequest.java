@@ -187,10 +187,6 @@ public class MoreLikeThisRequest {
   @SerializedName(SERIALIZED_NAME_NOT_THEME)
   private String notTheme;
 
-  public static final String SERIALIZED_NAME_NER_NAME = "ner_name";
-  @SerializedName(SERIALIZED_NAME_NER_NAME)
-  private String nerName;
-
   public static final String SERIALIZED_NAME_TITLE_SENTIMENT_MIN = "title_sentiment_min";
   @SerializedName(SERIALIZED_NAME_TITLE_SENTIMENT_MIN)
   private Double titleSentimentMin;
@@ -1229,35 +1225,6 @@ public class MoreLikeThisRequest {
   }
 
 
-  public MoreLikeThisRequest nerName(String nerName) {
-    
-    
-    
-    
-    this.nerName = nerName;
-    return this;
-  }
-
-   /**
-   * Get nerName
-   * @return nerName
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public String getNerName() {
-    return nerName;
-  }
-
-
-  public void setNerName(String nerName) {
-    
-    
-    
-    this.nerName = nerName;
-  }
-
-
   public MoreLikeThisRequest titleSentimentMin(Double titleSentimentMin) {
     
     
@@ -1556,7 +1523,6 @@ public class MoreLikeThisRequest {
         Objects.equals(this.hasNlp, moreLikeThisRequest.hasNlp) &&
         Objects.equals(this.theme, moreLikeThisRequest.theme) &&
         Objects.equals(this.notTheme, moreLikeThisRequest.notTheme) &&
-        Objects.equals(this.nerName, moreLikeThisRequest.nerName) &&
         Objects.equals(this.titleSentimentMin, moreLikeThisRequest.titleSentimentMin) &&
         Objects.equals(this.titleSentimentMax, moreLikeThisRequest.titleSentimentMax) &&
         Objects.equals(this.contentSentimentMin, moreLikeThisRequest.contentSentimentMin) &&
@@ -1572,7 +1538,7 @@ public class MoreLikeThisRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(q, searchIn, includeSimilarDocuments, similarDocumentsNumber, similarDocumentsFields, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, from, to, byParseDate, publishedDatePrecision, sortBy, rankedOnly, fromRank, toRank, isHeadline, isOpinion, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, notTheme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, additionalProperties);
+    return Objects.hash(q, searchIn, includeSimilarDocuments, similarDocumentsNumber, similarDocumentsFields, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, from, to, byParseDate, publishedDatePrecision, sortBy, rankedOnly, fromRank, toRank, isHeadline, isOpinion, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, notTheme, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, additionalProperties);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -1620,7 +1586,6 @@ public class MoreLikeThisRequest {
     sb.append("    hasNlp: ").append(toIndentedString(hasNlp)).append("\n");
     sb.append("    theme: ").append(toIndentedString(theme)).append("\n");
     sb.append("    notTheme: ").append(toIndentedString(notTheme)).append("\n");
-    sb.append("    nerName: ").append(toIndentedString(nerName)).append("\n");
     sb.append("    titleSentimentMin: ").append(toIndentedString(titleSentimentMin)).append("\n");
     sb.append("    titleSentimentMax: ").append(toIndentedString(titleSentimentMax)).append("\n");
     sb.append("    contentSentimentMin: ").append(toIndentedString(contentSentimentMin)).append("\n");
@@ -1684,7 +1649,6 @@ public class MoreLikeThisRequest {
     openapiFields.add("has_nlp");
     openapiFields.add("theme");
     openapiFields.add("not_theme");
-    openapiFields.add("ner_name");
     openapiFields.add("title_sentiment_min");
     openapiFields.add("title_sentiment_max");
     openapiFields.add("content_sentiment_min");
@@ -1743,9 +1707,6 @@ public class MoreLikeThisRequest {
       if ((jsonObj.get("not_theme") != null && !jsonObj.get("not_theme").isJsonNull()) && !jsonObj.get("not_theme").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `not_theme` to be a primitive type in the JSON string but got `%s`", jsonObj.get("not_theme").toString()));
       }
-      if ((jsonObj.get("ner_name") != null && !jsonObj.get("ner_name").isJsonNull()) && !jsonObj.get("ner_name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `ner_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ner_name").toString()));
-      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
@@ -1775,7 +1736,9 @@ public class MoreLikeThisRequest {
                    obj.addProperty(entry.getKey(), (Boolean) entry.getValue());
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
-                 else {
+                 else if (entry.getValue() == null) {
+                   obj.addProperty(entry.getKey(), (String) null);
+                 } else {
                    obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
                  }
                }

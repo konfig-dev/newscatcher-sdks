@@ -217,7 +217,6 @@ class AuthorSearchRequest(
             has_nlp = schemas.BoolSchema
             theme = schemas.StrSchema
             not_theme = schemas.StrSchema
-            ner_name = schemas.StrSchema
             title_sentiment_min = schemas.NumberSchema
             title_sentiment_max = schemas.NumberSchema
             content_sentiment_min = schemas.NumberSchema
@@ -258,7 +257,6 @@ class AuthorSearchRequest(
                 "has_nlp": has_nlp,
                 "theme": theme,
                 "not_theme": not_theme,
-                "ner_name": ner_name,
                 "title_sentiment_min": title_sentiment_min,
                 "title_sentiment_max": title_sentiment_max,
                 "content_sentiment_min": content_sentiment_min,
@@ -365,9 +363,6 @@ class AuthorSearchRequest(
     def __getitem__(self, name: typing_extensions.Literal["not_theme"]) -> MetaOapg.properties.not_theme: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["ner_name"]) -> MetaOapg.properties.ner_name: ...
-    
-    @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["title_sentiment_min"]) -> MetaOapg.properties.title_sentiment_min: ...
     
     @typing.overload
@@ -394,7 +389,7 @@ class AuthorSearchRequest(
     @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["author_name", "not_author_name", "sources", "predefined_sources", "not_sources", "lang", "not_lang", "countries", "not_countries", "from_", "to_", "published_date_precision", "by_parse_date", "sort_by", "ranked_only", "from_rank", "to_rank", "is_headline", "is_opinion", "is_paid_content", "parent_url", "all_links", "all_domain_links", "word_count_min", "word_count_max", "page", "page_size", "include_nlp_data", "has_nlp", "theme", "not_theme", "ner_name", "title_sentiment_min", "title_sentiment_max", "content_sentiment_min", "content_sentiment_max", "iptc_tags", "not_iptc_tags", "iab_tags", "not_iab_tags", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["author_name", "not_author_name", "sources", "predefined_sources", "not_sources", "lang", "not_lang", "countries", "not_countries", "from_", "to_", "published_date_precision", "by_parse_date", "sort_by", "ranked_only", "from_rank", "to_rank", "is_headline", "is_opinion", "is_paid_content", "parent_url", "all_links", "all_domain_links", "word_count_min", "word_count_max", "page", "page_size", "include_nlp_data", "has_nlp", "theme", "not_theme", "title_sentiment_min", "title_sentiment_max", "content_sentiment_min", "content_sentiment_max", "iptc_tags", "not_iptc_tags", "iab_tags", "not_iab_tags", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
@@ -493,9 +488,6 @@ class AuthorSearchRequest(
     def get_item_oapg(self, name: typing_extensions.Literal["not_theme"]) -> typing.Union[MetaOapg.properties.not_theme, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["ner_name"]) -> typing.Union[MetaOapg.properties.ner_name, schemas.Unset]: ...
-    
-    @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["title_sentiment_min"]) -> typing.Union[MetaOapg.properties.title_sentiment_min, schemas.Unset]: ...
     
     @typing.overload
@@ -522,7 +514,7 @@ class AuthorSearchRequest(
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["author_name", "not_author_name", "sources", "predefined_sources", "not_sources", "lang", "not_lang", "countries", "not_countries", "from_", "to_", "published_date_precision", "by_parse_date", "sort_by", "ranked_only", "from_rank", "to_rank", "is_headline", "is_opinion", "is_paid_content", "parent_url", "all_links", "all_domain_links", "word_count_min", "word_count_max", "page", "page_size", "include_nlp_data", "has_nlp", "theme", "not_theme", "ner_name", "title_sentiment_min", "title_sentiment_max", "content_sentiment_min", "content_sentiment_max", "iptc_tags", "not_iptc_tags", "iab_tags", "not_iab_tags", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["author_name", "not_author_name", "sources", "predefined_sources", "not_sources", "lang", "not_lang", "countries", "not_countries", "from_", "to_", "published_date_precision", "by_parse_date", "sort_by", "ranked_only", "from_rank", "to_rank", "is_headline", "is_opinion", "is_paid_content", "parent_url", "all_links", "all_domain_links", "word_count_min", "word_count_max", "page", "page_size", "include_nlp_data", "has_nlp", "theme", "not_theme", "title_sentiment_min", "title_sentiment_max", "content_sentiment_min", "content_sentiment_max", "iptc_tags", "not_iptc_tags", "iab_tags", "not_iab_tags", ], str]):
         return super().get_item_oapg(name)
     
 
@@ -560,7 +552,6 @@ class AuthorSearchRequest(
         has_nlp: typing.Union[MetaOapg.properties.has_nlp, bool, schemas.Unset] = schemas.unset,
         theme: typing.Union[MetaOapg.properties.theme, str, schemas.Unset] = schemas.unset,
         not_theme: typing.Union[MetaOapg.properties.not_theme, str, schemas.Unset] = schemas.unset,
-        ner_name: typing.Union[MetaOapg.properties.ner_name, str, schemas.Unset] = schemas.unset,
         title_sentiment_min: typing.Union[MetaOapg.properties.title_sentiment_min, decimal.Decimal, int, float, schemas.Unset] = schemas.unset,
         title_sentiment_max: typing.Union[MetaOapg.properties.title_sentiment_max, decimal.Decimal, int, float, schemas.Unset] = schemas.unset,
         content_sentiment_min: typing.Union[MetaOapg.properties.content_sentiment_min, decimal.Decimal, int, float, schemas.Unset] = schemas.unset,
@@ -606,7 +597,6 @@ class AuthorSearchRequest(
             has_nlp=has_nlp,
             theme=theme,
             not_theme=not_theme,
-            ner_name=ner_name,
             title_sentiment_min=title_sentiment_min,
             title_sentiment_max=title_sentiment_max,
             content_sentiment_min=content_sentiment_min,

@@ -166,8 +166,6 @@ const getResponse = await newscatcher.authors.get({
 
 ##### notTheme: `string`<a id="nottheme-string"></a>
 
-##### nerName: `string`<a id="nername-string"></a>
-
 ##### titleSentimentMin: `number`<a id="titlesentimentmin-number"></a>
 
 ##### titleSentimentMax: `number`<a id="titlesentimentmax-number"></a>
@@ -276,8 +274,6 @@ const postResponse = await newscatcher.authors.post({
 ##### theme: `string`<a id="theme-string"></a>
 
 ##### not_theme: `string`<a id="not_theme-string"></a>
-
-##### ner_name: `string`<a id="ner_name-string"></a>
 
 ##### title_sentiment_min: `number`<a id="title_sentiment_min-number"></a>
 
@@ -964,8 +960,6 @@ const getResponse = await newscatcher.searchSimilar.get({
 
 ##### notTheme: `string`<a id="nottheme-string"></a>
 
-##### nerName: `string`<a id="nername-string"></a>
-
 ##### titleSentimentMin: `number`<a id="titlesentimentmin-number"></a>
 
 ##### titleSentimentMax: `number`<a id="titlesentimentmax-number"></a>
@@ -1081,8 +1075,6 @@ const postResponse = await newscatcher.searchSimilar.post({
 
 ##### not_theme: `string`<a id="not_theme-string"></a>
 
-##### ner_name: `string`<a id="ner_name-string"></a>
-
 ##### title_sentiment_min: `number`<a id="title_sentiment_min-number"></a>
 
 ##### title_sentiment_max: `number`<a id="title_sentiment_max-number"></a>
@@ -1120,11 +1112,11 @@ const getResponse = await newscatcher.sources.get({});
 
 #### ⚙️ Parameters<a id="⚙️-parameters"></a>
 
-##### lang: `string`<a id="lang-string"></a>
+##### lang: `any`<a id="lang-any"></a>
 
-##### countries: `string`<a id="countries-string"></a>
+##### countries: `any`<a id="countries-any"></a>
 
-##### predefinedSources: `string`<a id="predefinedsources-string"></a>
+##### predefinedSources: `any`<a id="predefinedsources-any"></a>
 
 ##### includeAdditionalInfo: `boolean`<a id="includeadditionalinfo-boolean"></a>
 
@@ -1134,7 +1126,7 @@ const getResponse = await newscatcher.sources.get({});
 
 ##### sourceName: `any`<a id="sourcename-any"></a>
 
-##### sourceUrl: `string`<a id="sourceurl-string"></a>
+##### sourceUrl: `any`<a id="sourceurl-any"></a>
 
 #### 🔄 Return<a id="🔄-return"></a>
 
@@ -1161,11 +1153,11 @@ const postResponse = await newscatcher.sources.post({});
 
 #### ⚙️ Parameters<a id="⚙️-parameters"></a>
 
-##### lang: `string`<a id="lang-string"></a>
+##### lang: `any`<a id="lang-any"></a>
 
-##### countries: `string`<a id="countries-string"></a>
+##### countries: `any`<a id="countries-any"></a>
 
-##### predefined_sources: `string`<a id="predefined_sources-string"></a>
+##### predefined_sources: `any`<a id="predefined_sources-any"></a>
 
 ##### include_additional_info: `boolean`<a id="include_additional_info-boolean"></a>
 
@@ -1175,7 +1167,7 @@ const postResponse = await newscatcher.sources.post({});
 
 ##### source_name: `any`<a id="source_name-any"></a>
 
-##### source_url: `string`<a id="source_url-string"></a>
+##### source_url: `any`<a id="source_url-any"></a>
 
 #### 🔄 Return<a id="🔄-return"></a>
 

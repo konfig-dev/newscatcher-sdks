@@ -37,14 +37,14 @@ class SourcesRequest(
     class MetaOapg:
         
         class properties:
-            lang = schemas.StrSchema
-            countries = schemas.StrSchema
-            predefined_sources = schemas.StrSchema
+            lang = schemas.AnyTypeSchema
+            countries = schemas.AnyTypeSchema
+            predefined_sources = schemas.AnyTypeSchema
             include_additional_info = schemas.BoolSchema
             from_rank = schemas.IntSchema
             to_rank = schemas.IntSchema
             source_name = schemas.AnyTypeSchema
-            source_url = schemas.StrSchema
+            source_url = schemas.AnyTypeSchema
             __annotations__ = {
                 "lang": lang,
                 "countries": countries,
@@ -122,14 +122,14 @@ class SourcesRequest(
     def __new__(
         cls,
         *args: typing.Union[dict, frozendict.frozendict, ],
-        lang: typing.Union[MetaOapg.properties.lang, str, schemas.Unset] = schemas.unset,
-        countries: typing.Union[MetaOapg.properties.countries, str, schemas.Unset] = schemas.unset,
-        predefined_sources: typing.Union[MetaOapg.properties.predefined_sources, str, schemas.Unset] = schemas.unset,
+        lang: typing.Union[MetaOapg.properties.lang, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, schemas.Unset] = schemas.unset,
+        countries: typing.Union[MetaOapg.properties.countries, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, schemas.Unset] = schemas.unset,
+        predefined_sources: typing.Union[MetaOapg.properties.predefined_sources, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, schemas.Unset] = schemas.unset,
         include_additional_info: typing.Union[MetaOapg.properties.include_additional_info, bool, schemas.Unset] = schemas.unset,
         from_rank: typing.Union[MetaOapg.properties.from_rank, decimal.Decimal, int, schemas.Unset] = schemas.unset,
         to_rank: typing.Union[MetaOapg.properties.to_rank, decimal.Decimal, int, schemas.Unset] = schemas.unset,
         source_name: typing.Union[MetaOapg.properties.source_name, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, schemas.Unset] = schemas.unset,
-        source_url: typing.Union[MetaOapg.properties.source_url, str, schemas.Unset] = schemas.unset,
+        source_url: typing.Union[MetaOapg.properties.source_url, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'SourcesRequest':

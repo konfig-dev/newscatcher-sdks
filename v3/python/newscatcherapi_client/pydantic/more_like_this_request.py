@@ -86,8 +86,6 @@ class MoreLikeThisRequest(BaseModel):
 
     not_theme: typing.Optional[str] = Field(None, alias='not_theme')
 
-    ner_name: typing.Optional[str] = Field(None, alias='ner_name')
-
     title_sentiment_min: typing.Optional[typing.Union[int, float]] = Field(None, alias='title_sentiment_min')
 
     title_sentiment_max: typing.Optional[typing.Union[int, float]] = Field(None, alias='title_sentiment_max')

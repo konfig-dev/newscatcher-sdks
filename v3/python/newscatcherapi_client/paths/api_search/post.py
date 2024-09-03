@@ -640,6 +640,7 @@ class PostRaw(BaseApi):
         ApiResponseFor200,
         api_client.ApiResponseWithoutDeserialization,
     ]:
+        """ This endpoint allows you to search for articles. You can search for articles by keyword, language, country, source, and more. """
         args = self._post_mapped_args(
             q=q,
             search_in=search_in,
@@ -1088,6 +1089,7 @@ class ApiForpost(BaseApi):
         ApiResponseFor200,
         api_client.ApiResponseWithoutDeserialization,
     ]:
+        """ This endpoint allows you to search for articles. You can search for articles by keyword, language, country, source, and more. """
         args = self._post_mapped_args(
             q=q,
             search_in=search_in,

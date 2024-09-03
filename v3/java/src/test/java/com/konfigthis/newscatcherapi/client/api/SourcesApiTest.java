@@ -51,14 +51,14 @@ public class SourcesApiTest {
      */
     @Test
     public void getTest() throws ApiException {
-        String lang = null;
-        String countries = null;
-        String predefinedSources = null;
+        Object lang = null;
+        Object countries = null;
+        Object predefinedSources = null;
         Boolean includeAdditionalInfo = null;
         Integer fromRank = null;
         Integer toRank = null;
         Object sourceName = null;
-        String sourceUrl = null;
+        Object sourceUrl = null;
         SourceResponse response = api.get()
                 .lang(lang)
                 .countries(countries)
@@ -81,14 +81,14 @@ public class SourcesApiTest {
      */
     @Test
     public void postTest() throws ApiException {
-        String lang = null;
-        String countries = null;
-        String predefinedSources = null;
+        Object lang = null;
+        Object countries = null;
+        Object predefinedSources = null;
         Boolean includeAdditionalInfo = null;
         Integer fromRank = null;
         Integer toRank = null;
         Object sourceName = null;
-        String sourceUrl = null;
+        Object sourceUrl = null;
         SourceResponse response = api.post()
                 .lang(lang)
                 .countries(countries)

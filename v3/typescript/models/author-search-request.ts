@@ -208,12 +208,6 @@ export interface AuthorSearchRequest {
     'not_theme'?: string;
     /**
      * 
-     * @type {string}
-     * @memberof AuthorSearchRequest
-     */
-    'ner_name'?: string;
-    /**
-     * 
      * @type {number}
      * @memberof AuthorSearchRequest
      */

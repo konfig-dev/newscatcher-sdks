@@ -18,11 +18,11 @@ from pydantic import BaseModel, Field, RootModel, ConfigDict
 
 
 class SourcesRequest(BaseModel):
-    lang: typing.Optional[str] = Field(None, alias='lang')
+    lang: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = Field(None, alias='lang')
 
-    countries: typing.Optional[str] = Field(None, alias='countries')
+    countries: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = Field(None, alias='countries')
 
-    predefined_sources: typing.Optional[str] = Field(None, alias='predefined_sources')
+    predefined_sources: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = Field(None, alias='predefined_sources')
 
     include_additional_info: typing.Optional[bool] = Field(None, alias='include_additional_info')
 
@@ -32,7 +32,7 @@ class SourcesRequest(BaseModel):
 
     source_name: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = Field(None, alias='source_name')
 
-    source_url: typing.Optional[str] = Field(None, alias='source_url')
+    source_url: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = Field(None, alias='source_url')
 
     model_config = ConfigDict(
         protected_namespaces=(),

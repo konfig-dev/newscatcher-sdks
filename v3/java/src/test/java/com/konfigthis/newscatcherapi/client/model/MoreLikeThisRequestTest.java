@@ -312,14 +312,6 @@ public class MoreLikeThisRequestTest {
     }
 
     /**
-     * Test the property 'nerName'
-     */
-    @Test
-    public void nerNameTest() {
-        // TODO: test nerName
-    }
-
-    /**
      * Test the property 'titleSentimentMin'
      */
     @Test

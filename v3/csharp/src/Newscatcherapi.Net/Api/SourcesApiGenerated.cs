@@ -44,7 +44,7 @@ namespace Newscatcherapi.Net.Api
         /// <param name="sourceUrl"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SourceResponse</returns>
-        SourceResponse Get(string lang = default(string), string countries = default(string), string predefinedSources = default(string), bool? includeAdditionalInfo = default(bool?), int? fromRank = default(int?), int? toRank = default(int?), Object sourceName = default(Object), string sourceUrl = default(string), int operationIndex = 0);
+        SourceResponse Get(Object lang = default(Object), Object countries = default(Object), Object predefinedSources = default(Object), bool? includeAdditionalInfo = default(bool?), int? fromRank = default(int?), int? toRank = default(int?), Object sourceName = default(Object), Object sourceUrl = default(Object), int operationIndex = 0);
 
         /// <summary>
         /// [Get] Search For Sources Request
@@ -63,7 +63,7 @@ namespace Newscatcherapi.Net.Api
         /// <param name="sourceUrl"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SourceResponse</returns>
-        ApiResponse<SourceResponse> GetWithHttpInfo(string lang = default(string), string countries = default(string), string predefinedSources = default(string), bool? includeAdditionalInfo = default(bool?), int? fromRank = default(int?), int? toRank = default(int?), Object sourceName = default(Object), string sourceUrl = default(string), int operationIndex = 0);
+        ApiResponse<SourceResponse> GetWithHttpInfo(Object lang = default(Object), Object countries = default(Object), Object predefinedSources = default(Object), bool? includeAdditionalInfo = default(bool?), int? fromRank = default(int?), int? toRank = default(int?), Object sourceName = default(Object), Object sourceUrl = default(Object), int operationIndex = 0);
         /// <summary>
         /// [Post] Search For Sources Request
         /// </summary>
@@ -114,7 +114,7 @@ namespace Newscatcherapi.Net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SourceResponse</returns>
-        System.Threading.Tasks.Task<SourceResponse> GetAsync(string lang = default(string), string countries = default(string), string predefinedSources = default(string), bool? includeAdditionalInfo = default(bool?), int? fromRank = default(int?), int? toRank = default(int?), Object sourceName = default(Object), string sourceUrl = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SourceResponse> GetAsync(Object lang = default(Object), Object countries = default(Object), Object predefinedSources = default(Object), bool? includeAdditionalInfo = default(bool?), int? fromRank = default(int?), int? toRank = default(int?), Object sourceName = default(Object), Object sourceUrl = default(Object), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// [Get] Search For Sources Request
@@ -134,7 +134,7 @@ namespace Newscatcherapi.Net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SourceResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SourceResponse>> GetWithHttpInfoAsync(string lang = default(string), string countries = default(string), string predefinedSources = default(string), bool? includeAdditionalInfo = default(bool?), int? fromRank = default(int?), int? toRank = default(int?), Object sourceName = default(Object), string sourceUrl = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SourceResponse>> GetWithHttpInfoAsync(Object lang = default(Object), Object countries = default(Object), Object predefinedSources = default(Object), bool? includeAdditionalInfo = default(bool?), int? fromRank = default(int?), int? toRank = default(int?), Object sourceName = default(Object), Object sourceUrl = default(Object), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// [Post] Search For Sources Request
         /// </summary>
@@ -294,7 +294,7 @@ namespace Newscatcherapi.Net.Api
         /// <param name="sourceUrl"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SourceResponse</returns>
-        public SourceResponse Get(string lang = default(string), string countries = default(string), string predefinedSources = default(string), bool? includeAdditionalInfo = default(bool?), int? fromRank = default(int?), int? toRank = default(int?), Object sourceName = default(Object), string sourceUrl = default(string), int operationIndex = 0)
+        public SourceResponse Get(Object lang = default(Object), Object countries = default(Object), Object predefinedSources = default(Object), bool? includeAdditionalInfo = default(bool?), int? fromRank = default(int?), int? toRank = default(int?), Object sourceName = default(Object), Object sourceUrl = default(Object), int operationIndex = 0)
         {
             Newscatcherapi.Net.Client.ApiResponse<SourceResponse> localVarResponse = GetWithHttpInfo(lang, countries, predefinedSources, includeAdditionalInfo, fromRank, toRank, sourceName, sourceUrl);
             return localVarResponse.Data;
@@ -314,7 +314,7 @@ namespace Newscatcherapi.Net.Api
         /// <param name="sourceUrl"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SourceResponse</returns>
-        public Newscatcherapi.Net.Client.ApiResponse<SourceResponse> GetWithHttpInfo(string lang = default(string), string countries = default(string), string predefinedSources = default(string), bool? includeAdditionalInfo = default(bool?), int? fromRank = default(int?), int? toRank = default(int?), Object sourceName = default(Object), string sourceUrl = default(string), int operationIndex = 0)
+        public Newscatcherapi.Net.Client.ApiResponse<SourceResponse> GetWithHttpInfo(Object lang = default(Object), Object countries = default(Object), Object predefinedSources = default(Object), bool? includeAdditionalInfo = default(bool?), int? fromRank = default(int?), int? toRank = default(int?), Object sourceName = default(Object), Object sourceUrl = default(Object), int operationIndex = 0)
         {
             Newscatcherapi.Net.Client.RequestOptions localVarRequestOptions = new Newscatcherapi.Net.Client.RequestOptions();
 
@@ -409,7 +409,7 @@ namespace Newscatcherapi.Net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SourceResponse</returns>
-        public async System.Threading.Tasks.Task<SourceResponse> GetAsync(string lang = default(string), string countries = default(string), string predefinedSources = default(string), bool? includeAdditionalInfo = default(bool?), int? fromRank = default(int?), int? toRank = default(int?), Object sourceName = default(Object), string sourceUrl = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SourceResponse> GetAsync(Object lang = default(Object), Object countries = default(Object), Object predefinedSources = default(Object), bool? includeAdditionalInfo = default(bool?), int? fromRank = default(int?), int? toRank = default(int?), Object sourceName = default(Object), Object sourceUrl = default(Object), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Newscatcherapi.Net.Client.ApiResponse<SourceResponse> localVarResponse = await GetWithHttpInfoAsync(lang, countries, predefinedSources, includeAdditionalInfo, fromRank, toRank, sourceName, sourceUrl, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -430,7 +430,7 @@ namespace Newscatcherapi.Net.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SourceResponse)</returns>
-        public virtual async System.Threading.Tasks.Task<Newscatcherapi.Net.Client.ApiResponse<SourceResponse>> GetWithHttpInfoAsync(string lang = default(string), string countries = default(string), string predefinedSources = default(string), bool? includeAdditionalInfo = default(bool?), int? fromRank = default(int?), int? toRank = default(int?), Object sourceName = default(Object), string sourceUrl = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public virtual async System.Threading.Tasks.Task<Newscatcherapi.Net.Client.ApiResponse<SourceResponse>> GetWithHttpInfoAsync(Object lang = default(Object), Object countries = default(Object), Object predefinedSources = default(Object), bool? includeAdditionalInfo = default(bool?), int? fromRank = default(int?), int? toRank = default(int?), Object sourceName = default(Object), Object sourceUrl = default(Object), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Newscatcherapi.Net.Client.RequestOptions localVarRequestOptions = new Newscatcherapi.Net.Client.RequestOptions();

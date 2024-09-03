@@ -39,7 +39,6 @@ Name | Type | Description | Notes
 **HasNlp** | **bool** |  | [optional] 
 **Theme** | **string** |  | [optional] 
 **NotTheme** | **string** |  | [optional] 
-**NerName** | **string** |  | [optional] 
 **TitleSentimentMin** | **double** |  | [optional] 
 **TitleSentimentMax** | **double** |  | [optional] 
 **ContentSentimentMin** | **double** |  | [optional] 

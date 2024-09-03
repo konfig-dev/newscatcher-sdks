@@ -87,7 +87,6 @@ try:
         has_nlp=True,
         theme="string_example",
         not_theme="string_example",
-        ner_name="string_example",
         title_sentiment_min=3.14,
         title_sentiment_max=3.14,
         content_sentiment_min=3.14,
@@ -158,7 +157,6 @@ async def main():
             has_nlp=True,
             theme="string_example",
             not_theme="string_example",
-            ner_name="string_example",
             title_sentiment_min=3.14,
             title_sentiment_max=3.14,
             content_sentiment_min=3.14,
@@ -229,7 +227,6 @@ try:
         has_nlp=True,
         theme="string_example",
         not_theme="string_example",
-        ner_name="string_example",
         title_sentiment_min=3.14,
         title_sentiment_max=3.14,
         content_sentiment_min=3.14,
@@ -295,7 +292,6 @@ get_response = newscatcher.authors.get(
     has_nlp=True,
     theme="string_example",
     not_theme="string_example",
-    ner_name="string_example",
     title_sentiment_min=3.14,
     title_sentiment_max=3.14,
     content_sentiment_min=3.14,
@@ -374,8 +370,6 @@ get_response = newscatcher.authors.get(
 
 ##### not_theme: `str`<a id="not_theme-str"></a>
 
-##### ner_name: `str`<a id="ner_name-str"></a>
-
 ##### title_sentiment_min: `Union[int, float]`<a id="title_sentiment_min-unionint-float"></a>
 
 ##### title_sentiment_max: `Union[int, float]`<a id="title_sentiment_max-unionint-float"></a>
@@ -443,7 +437,6 @@ post_response = newscatcher.authors.post(
     has_nlp=True,
     theme="string_example",
     not_theme="string_example",
-    ner_name="string_example",
     title_sentiment_min=3.14,
     title_sentiment_max=3.14,
     content_sentiment_min=3.14,
@@ -521,8 +514,6 @@ post_response = newscatcher.authors.post(
 ##### theme: `str`<a id="theme-str"></a>
 
 ##### not_theme: `str`<a id="not_theme-str"></a>
-
-##### ner_name: `str`<a id="ner_name-str"></a>
 
 ##### title_sentiment_min: `Union[int, float]`<a id="title_sentiment_min-unionint-float"></a>
 
@@ -1344,7 +1335,6 @@ get_response = newscatcher.search_similar.get(
     has_nlp=True,
     theme="string_example",
     not_theme="string_example",
-    ner_name="string_example",
     title_sentiment_min=3.14,
     title_sentiment_max=3.14,
     content_sentiment_min=3.14,
@@ -1427,8 +1417,6 @@ get_response = newscatcher.search_similar.get(
 
 ##### not_theme: `str`<a id="not_theme-str"></a>
 
-##### ner_name: `str`<a id="ner_name-str"></a>
-
 ##### title_sentiment_min: `Union[int, float]`<a id="title_sentiment_min-unionint-float"></a>
 
 ##### title_sentiment_max: `Union[int, float]`<a id="title_sentiment_max-unionint-float"></a>
@@ -1495,7 +1483,6 @@ post_response = newscatcher.search_similar.post(
     has_nlp=True,
     theme="string_example",
     not_theme="string_example",
-    ner_name="string_example",
     title_sentiment_min=3.14,
     title_sentiment_max=3.14,
     content_sentiment_min=3.14,
@@ -1578,8 +1565,6 @@ post_response = newscatcher.search_similar.post(
 
 ##### not_theme: `str`<a id="not_theme-str"></a>
 
-##### ner_name: `str`<a id="ner_name-str"></a>
-
 ##### title_sentiment_min: `Union[int, float]`<a id="title_sentiment_min-unionint-float"></a>
 
 ##### title_sentiment_max: `Union[int, float]`<a id="title_sentiment_max-unionint-float"></a>
@@ -1615,24 +1600,24 @@ This endpoint allows you to get the list of sources that are available in the da
 
 ```python
 get_response = newscatcher.sources.get(
-    lang="string_example",
-    countries="string_example",
-    predefined_sources="string_example",
+    lang=None,
+    countries=None,
+    predefined_sources=None,
     include_additional_info=True,
     from_rank=1,
     to_rank=1,
     source_name=None,
-    source_url="string_example",
+    source_url=None,
 )
 ```
 
 #### ⚙️ Parameters<a id="⚙️-parameters"></a>
 
-##### lang: `str`<a id="lang-str"></a>
+##### lang: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="lang-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
 
-##### countries: `str`<a id="countries-str"></a>
+##### countries: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="countries-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
 
-##### predefined_sources: `str`<a id="predefined_sources-str"></a>
+##### predefined_sources: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="predefined_sources-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
 
 ##### include_additional_info: `bool`<a id="include_additional_info-bool"></a>
 
@@ -1642,7 +1627,7 @@ get_response = newscatcher.sources.get(
 
 ##### source_name: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="source_name-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
 
-##### source_url: `str`<a id="source_url-str"></a>
+##### source_url: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="source_url-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
 
 #### 🔄 Return<a id="🔄-return"></a>
 
@@ -1664,24 +1649,24 @@ This endpoint allows you to get the list of sources that are available in the da
 
 ```python
 post_response = newscatcher.sources.post(
-    lang="string_example",
-    countries="string_example",
-    predefined_sources="string_example",
+    lang=None,
+    countries=None,
+    predefined_sources=None,
     include_additional_info=True,
     from_rank=1,
     to_rank=1,
     source_name=None,
-    source_url="string_example",
+    source_url=None,
 )
 ```
 
 #### ⚙️ Parameters<a id="⚙️-parameters"></a>
 
-##### lang: `str`<a id="lang-str"></a>
+##### lang: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="lang-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 
-##### countries: `str`<a id="countries-str"></a>
+##### countries: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="countries-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 
-##### predefined_sources: `str`<a id="predefined_sources-str"></a>
+##### predefined_sources: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="predefined_sources-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 
 ##### include_additional_info: `bool`<a id="include_additional_info-bool"></a>
 
@@ -1691,7 +1676,7 @@ post_response = newscatcher.sources.post(
 
 ##### source_name: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="source_name-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 
-##### source_url: `str`<a id="source_url-str"></a>
+##### source_url: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="source_url-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 
 #### ⚙️ Request Body<a id="⚙️-request-body"></a>
 

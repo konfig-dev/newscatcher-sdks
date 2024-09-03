@@ -95,9 +95,6 @@ operation_parameter_map = {
                 'name': 'not_theme'
             },
             {
-                'name': 'ner_name'
-            },
-            {
                 'name': 'title_sentiment_min'
             },
             {
@@ -217,9 +214,6 @@ operation_parameter_map = {
             },
             {
                 'name': 'not_theme'
-            },
-            {
-                'name': 'ner_name'
             },
             {
                 'name': 'title_sentiment_min'
@@ -952,9 +946,6 @@ operation_parameter_map = {
                 'name': 'not_theme'
             },
             {
-                'name': 'ner_name'
-            },
-            {
                 'name': 'title_sentiment_min'
             },
             {
@@ -1077,9 +1068,6 @@ operation_parameter_map = {
             },
             {
                 'name': 'not_theme'
-            },
-            {
-                'name': 'ner_name'
             },
             {
                 'name': 'title_sentiment_min'

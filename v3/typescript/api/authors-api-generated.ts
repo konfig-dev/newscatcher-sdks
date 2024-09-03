@@ -75,7 +75,6 @@ export const AuthorsApiAxiosParamCreator = function (configuration?: Configurati
          * @param {boolean} [hasNlp] 
          * @param {string} [theme] 
          * @param {string} [notTheme] 
-         * @param {string} [nerName] 
          * @param {number} [titleSentimentMin] 
          * @param {number} [titleSentimentMax] 
          * @param {number} [contentSentimentMin] 
@@ -87,7 +86,7 @@ export const AuthorsApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        get: async (authorName: string, notAuthorName?: string, sources?: any, predefinedSources?: any, notSources?: any, lang?: any, notLang?: any, countries?: any, notCountries?: any, from?: From, to?: To, publishedDatePrecision?: string, byParseDate?: boolean, sortBy?: string, rankedOnly?: RankedOnly, fromRank?: number, toRank?: number, isHeadline?: boolean, isOpinion?: boolean, isPaidContent?: boolean, parentUrl?: any, allLinks?: any, allDomainLinks?: any, wordCountMin?: number, wordCountMax?: number, page?: number, pageSize?: number, includeNlpData?: boolean, hasNlp?: boolean, theme?: string, notTheme?: string, nerName?: string, titleSentimentMin?: number, titleSentimentMax?: number, contentSentimentMin?: number, contentSentimentMax?: number, iptcTags?: any, notIptcTags?: any, iabTags?: any, notIabTags?: any, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        get: async (authorName: string, notAuthorName?: string, sources?: any, predefinedSources?: any, notSources?: any, lang?: any, notLang?: any, countries?: any, notCountries?: any, from?: From, to?: To, publishedDatePrecision?: string, byParseDate?: boolean, sortBy?: string, rankedOnly?: RankedOnly, fromRank?: number, toRank?: number, isHeadline?: boolean, isOpinion?: boolean, isPaidContent?: boolean, parentUrl?: any, allLinks?: any, allDomainLinks?: any, wordCountMin?: number, wordCountMax?: number, page?: number, pageSize?: number, includeNlpData?: boolean, hasNlp?: boolean, theme?: string, notTheme?: string, titleSentimentMin?: number, titleSentimentMax?: number, contentSentimentMin?: number, contentSentimentMax?: number, iptcTags?: any, notIptcTags?: any, iabTags?: any, notIabTags?: any, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'authorName' is not null or undefined
             assertParamExists('get', 'authorName', authorName)
             const localVarPath = `/api/authors`;
@@ -228,10 +227,6 @@ export const AuthorsApiAxiosParamCreator = function (configuration?: Configurati
                 localVarQueryParameter['not_theme'] = notTheme;
             }
 
-            if (nerName !== undefined) {
-                localVarQueryParameter['ner_name'] = nerName;
-            }
-
             if (titleSentimentMin !== undefined) {
                 localVarQueryParameter['title_sentiment_min'] = titleSentimentMin;
             }
@@ -349,7 +344,7 @@ export const AuthorsApiFp = function(configuration?: Configuration) {
          * @throws {RequiredError}
          */
         async get(requestParameters: AuthorsApiGetRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AuthorsGetResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.get(requestParameters.authorName, requestParameters.notAuthorName, requestParameters.sources, requestParameters.predefinedSources, requestParameters.notSources, requestParameters.lang, requestParameters.notLang, requestParameters.countries, requestParameters.notCountries, requestParameters.from, requestParameters.to, requestParameters.publishedDatePrecision, requestParameters.byParseDate, requestParameters.sortBy, requestParameters.rankedOnly, requestParameters.fromRank, requestParameters.toRank, requestParameters.isHeadline, requestParameters.isOpinion, requestParameters.isPaidContent, requestParameters.parentUrl, requestParameters.allLinks, requestParameters.allDomainLinks, requestParameters.wordCountMin, requestParameters.wordCountMax, requestParameters.page, requestParameters.pageSize, requestParameters.includeNlpData, requestParameters.hasNlp, requestParameters.theme, requestParameters.notTheme, requestParameters.nerName, requestParameters.titleSentimentMin, requestParameters.titleSentimentMax, requestParameters.contentSentimentMin, requestParameters.contentSentimentMax, requestParameters.iptcTags, requestParameters.notIptcTags, requestParameters.iabTags, requestParameters.notIabTags, options);
+            const localVarAxiosArgs = await localVarAxiosParamCreator.get(requestParameters.authorName, requestParameters.notAuthorName, requestParameters.sources, requestParameters.predefinedSources, requestParameters.notSources, requestParameters.lang, requestParameters.notLang, requestParameters.countries, requestParameters.notCountries, requestParameters.from, requestParameters.to, requestParameters.publishedDatePrecision, requestParameters.byParseDate, requestParameters.sortBy, requestParameters.rankedOnly, requestParameters.fromRank, requestParameters.toRank, requestParameters.isHeadline, requestParameters.isOpinion, requestParameters.isPaidContent, requestParameters.parentUrl, requestParameters.allLinks, requestParameters.allDomainLinks, requestParameters.wordCountMin, requestParameters.wordCountMax, requestParameters.page, requestParameters.pageSize, requestParameters.includeNlpData, requestParameters.hasNlp, requestParameters.theme, requestParameters.notTheme, requestParameters.titleSentimentMin, requestParameters.titleSentimentMax, requestParameters.contentSentimentMin, requestParameters.contentSentimentMax, requestParameters.iptcTags, requestParameters.notIptcTags, requestParameters.iabTags, requestParameters.notIabTags, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -392,7 +387,6 @@ export const AuthorsApiFp = function(configuration?: Configuration) {
                 has_nlp: requestParameters.has_nlp,
                 theme: requestParameters.theme,
                 not_theme: requestParameters.not_theme,
-                ner_name: requestParameters.ner_name,
                 title_sentiment_min: requestParameters.title_sentiment_min,
                 title_sentiment_max: requestParameters.title_sentiment_max,
                 content_sentiment_min: requestParameters.content_sentiment_min,
@@ -661,13 +655,6 @@ export type AuthorsApiGetRequest = {
     * @memberof AuthorsApiGet
     */
     readonly notTheme?: string
-    
-    /**
-    * 
-    * @type {string}
-    * @memberof AuthorsApiGet
-    */
-    readonly nerName?: string
     
     /**
     * 

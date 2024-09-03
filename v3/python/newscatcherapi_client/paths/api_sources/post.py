@@ -117,14 +117,14 @@ class BaseApi(api_client.Api):
 
     def _post_mapped_args(
         self,
-        lang: typing.Optional[str] = None,
-        countries: typing.Optional[str] = None,
-        predefined_sources: typing.Optional[str] = None,
+        lang: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        countries: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        predefined_sources: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         include_additional_info: typing.Optional[bool] = None,
         from_rank: typing.Optional[int] = None,
         to_rank: typing.Optional[int] = None,
         source_name: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
-        source_url: typing.Optional[str] = None,
+        source_url: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
     ) -> api_client.MappedArgs:
         args: api_client.MappedArgs = api_client.MappedArgs()
         _body = {}
@@ -351,14 +351,14 @@ class PostRaw(BaseApi):
 
     async def apost(
         self,
-        lang: typing.Optional[str] = None,
-        countries: typing.Optional[str] = None,
-        predefined_sources: typing.Optional[str] = None,
+        lang: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        countries: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        predefined_sources: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         include_additional_info: typing.Optional[bool] = None,
         from_rank: typing.Optional[int] = None,
         to_rank: typing.Optional[int] = None,
         source_name: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
-        source_url: typing.Optional[str] = None,
+        source_url: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         **kwargs,
     ) -> typing.Union[
         ApiResponseFor200Async,
@@ -382,18 +382,19 @@ class PostRaw(BaseApi):
     
     def post(
         self,
-        lang: typing.Optional[str] = None,
-        countries: typing.Optional[str] = None,
-        predefined_sources: typing.Optional[str] = None,
+        lang: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        countries: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        predefined_sources: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         include_additional_info: typing.Optional[bool] = None,
         from_rank: typing.Optional[int] = None,
         to_rank: typing.Optional[int] = None,
         source_name: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
-        source_url: typing.Optional[str] = None,
+        source_url: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
     ) -> typing.Union[
         ApiResponseFor200,
         api_client.ApiResponseWithoutDeserialization,
     ]:
+        """ This endpoint allows you to get the list of sources that are available in the database. You can filter the sources by language and country. The maximum number of sources displayed is set according to your plan. You can find the list of plans and their features here: https://newscatcherapi.com/news-api#news-api-pricing """
         args = self._post_mapped_args(
             lang=lang,
             countries=countries,
@@ -412,14 +413,14 @@ class Post(BaseApi):
 
     async def apost(
         self,
-        lang: typing.Optional[str] = None,
-        countries: typing.Optional[str] = None,
-        predefined_sources: typing.Optional[str] = None,
+        lang: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        countries: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        predefined_sources: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         include_additional_info: typing.Optional[bool] = None,
         from_rank: typing.Optional[int] = None,
         to_rank: typing.Optional[int] = None,
         source_name: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
-        source_url: typing.Optional[str] = None,
+        source_url: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         validate: bool = False,
         **kwargs,
     ) -> SourceResponsePydantic:
@@ -441,14 +442,14 @@ class Post(BaseApi):
     
     def post(
         self,
-        lang: typing.Optional[str] = None,
-        countries: typing.Optional[str] = None,
-        predefined_sources: typing.Optional[str] = None,
+        lang: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        countries: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        predefined_sources: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         include_additional_info: typing.Optional[bool] = None,
         from_rank: typing.Optional[int] = None,
         to_rank: typing.Optional[int] = None,
         source_name: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
-        source_url: typing.Optional[str] = None,
+        source_url: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         validate: bool = False,
     ) -> SourceResponsePydantic:
         raw_response = self.raw.post(
@@ -471,14 +472,14 @@ class ApiForpost(BaseApi):
 
     async def apost(
         self,
-        lang: typing.Optional[str] = None,
-        countries: typing.Optional[str] = None,
-        predefined_sources: typing.Optional[str] = None,
+        lang: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        countries: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        predefined_sources: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         include_additional_info: typing.Optional[bool] = None,
         from_rank: typing.Optional[int] = None,
         to_rank: typing.Optional[int] = None,
         source_name: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
-        source_url: typing.Optional[str] = None,
+        source_url: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         **kwargs,
     ) -> typing.Union[
         ApiResponseFor200Async,
@@ -502,18 +503,19 @@ class ApiForpost(BaseApi):
     
     def post(
         self,
-        lang: typing.Optional[str] = None,
-        countries: typing.Optional[str] = None,
-        predefined_sources: typing.Optional[str] = None,
+        lang: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        countries: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        predefined_sources: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         include_additional_info: typing.Optional[bool] = None,
         from_rank: typing.Optional[int] = None,
         to_rank: typing.Optional[int] = None,
         source_name: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
-        source_url: typing.Optional[str] = None,
+        source_url: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
     ) -> typing.Union[
         ApiResponseFor200,
         api_client.ApiResponseWithoutDeserialization,
     ]:
+        """ This endpoint allows you to get the list of sources that are available in the database. You can filter the sources by language and country. The maximum number of sources displayed is set according to your plan. You can find the list of plans and their features here: https://newscatcherapi.com/news-api#news-api-pricing """
         args = self._post_mapped_args(
             lang=lang,
             countries=countries,

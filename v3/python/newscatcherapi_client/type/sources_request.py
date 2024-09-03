@@ -20,11 +20,11 @@ class RequiredSourcesRequest(TypedDict):
     pass
 
 class OptionalSourcesRequest(TypedDict, total=False):
-    lang: str
+    lang: typing.Union[bool, date, datetime, dict, float, int, list, str, None]
 
-    countries: str
+    countries: typing.Union[bool, date, datetime, dict, float, int, list, str, None]
 
-    predefined_sources: str
+    predefined_sources: typing.Union[bool, date, datetime, dict, float, int, list, str, None]
 
     include_additional_info: bool
 
@@ -34,7 +34,7 @@ class OptionalSourcesRequest(TypedDict, total=False):
 
     source_name: typing.Union[bool, date, datetime, dict, float, int, list, str, None]
 
-    source_url: str
+    source_url: typing.Union[bool, date, datetime, dict, float, int, list, str, None]
 
 class SourcesRequest(RequiredSourcesRequest, OptionalSourcesRequest):
     pass

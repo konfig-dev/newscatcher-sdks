@@ -76,7 +76,7 @@ public class SourcesApiGenerated {
         this.localCustomBaseUrl = customBaseUrl;
     }
 
-    private okhttp3.Call getCall(String lang, String countries, String predefinedSources, Boolean includeAdditionalInfo, Integer fromRank, Integer toRank, Object sourceName, String sourceUrl, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getCall(Object lang, Object countries, Object predefinedSources, Boolean includeAdditionalInfo, Integer fromRank, Integer toRank, Object sourceName, Object sourceUrl, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -153,19 +153,19 @@ public class SourcesApiGenerated {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getValidateBeforeCall(String lang, String countries, String predefinedSources, Boolean includeAdditionalInfo, Integer fromRank, Integer toRank, Object sourceName, String sourceUrl, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getValidateBeforeCall(Object lang, Object countries, Object predefinedSources, Boolean includeAdditionalInfo, Integer fromRank, Integer toRank, Object sourceName, Object sourceUrl, final ApiCallback _callback) throws ApiException {
         return getCall(lang, countries, predefinedSources, includeAdditionalInfo, fromRank, toRank, sourceName, sourceUrl, _callback);
 
     }
 
 
-    private ApiResponse<SourceResponse> getWithHttpInfo(String lang, String countries, String predefinedSources, Boolean includeAdditionalInfo, Integer fromRank, Integer toRank, Object sourceName, String sourceUrl) throws ApiException {
+    private ApiResponse<SourceResponse> getWithHttpInfo(Object lang, Object countries, Object predefinedSources, Boolean includeAdditionalInfo, Integer fromRank, Integer toRank, Object sourceName, Object sourceUrl) throws ApiException {
         okhttp3.Call localVarCall = getValidateBeforeCall(lang, countries, predefinedSources, includeAdditionalInfo, fromRank, toRank, sourceName, sourceUrl, null);
         Type localVarReturnType = new TypeToken<SourceResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call getAsync(String lang, String countries, String predefinedSources, Boolean includeAdditionalInfo, Integer fromRank, Integer toRank, Object sourceName, String sourceUrl, final ApiCallback<SourceResponse> _callback) throws ApiException {
+    private okhttp3.Call getAsync(Object lang, Object countries, Object predefinedSources, Boolean includeAdditionalInfo, Integer fromRank, Integer toRank, Object sourceName, Object sourceUrl, final ApiCallback<SourceResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getValidateBeforeCall(lang, countries, predefinedSources, includeAdditionalInfo, fromRank, toRank, sourceName, sourceUrl, _callback);
         Type localVarReturnType = new TypeToken<SourceResponse>(){}.getType();
@@ -174,14 +174,14 @@ public class SourcesApiGenerated {
     }
 
     public abstract class GetRequestBuilderGenerated {
-        String lang;
-        String countries;
-        String predefinedSources;
+        Object lang;
+        Object countries;
+        Object predefinedSources;
         Boolean includeAdditionalInfo;
         Integer fromRank;
         Integer toRank;
         Object sourceName;
-        String sourceUrl;
+        Object sourceUrl;
 
         public GetRequestBuilderGenerated() {
         }
@@ -191,7 +191,7 @@ public class SourcesApiGenerated {
          * @param lang  (optional)
          * @return SourcesApi.GetRequestBuilder
          */
-        public SourcesApi.GetRequestBuilder lang(String lang) {
+        public SourcesApi.GetRequestBuilder lang(Object lang) {
             this.lang = lang;
             return (SourcesApi.GetRequestBuilder) this;
         }
@@ -201,7 +201,7 @@ public class SourcesApiGenerated {
          * @param countries  (optional)
          * @return SourcesApi.GetRequestBuilder
          */
-        public SourcesApi.GetRequestBuilder countries(String countries) {
+        public SourcesApi.GetRequestBuilder countries(Object countries) {
             this.countries = countries;
             return (SourcesApi.GetRequestBuilder) this;
         }
@@ -211,7 +211,7 @@ public class SourcesApiGenerated {
          * @param predefinedSources  (optional)
          * @return SourcesApi.GetRequestBuilder
          */
-        public SourcesApi.GetRequestBuilder predefinedSources(String predefinedSources) {
+        public SourcesApi.GetRequestBuilder predefinedSources(Object predefinedSources) {
             this.predefinedSources = predefinedSources;
             return (SourcesApi.GetRequestBuilder) this;
         }
@@ -261,7 +261,7 @@ public class SourcesApiGenerated {
          * @param sourceUrl  (optional)
          * @return SourcesApi.GetRequestBuilder
          */
-        public SourcesApi.GetRequestBuilder sourceUrl(String sourceUrl) {
+        public SourcesApi.GetRequestBuilder sourceUrl(Object sourceUrl) {
             this.sourceUrl = sourceUrl;
             return (SourcesApi.GetRequestBuilder) this;
         }
@@ -412,14 +412,14 @@ public class SourcesApiGenerated {
     }
 
     public abstract class PostRequestBuilderGenerated {
-        String lang;
-        String countries;
-        String predefinedSources;
+        Object lang;
+        Object countries;
+        Object predefinedSources;
         Boolean includeAdditionalInfo;
         Integer fromRank;
         Integer toRank;
         Object sourceName;
-        String sourceUrl;
+        Object sourceUrl;
 
         public PostRequestBuilderGenerated() {
         }
@@ -429,7 +429,7 @@ public class SourcesApiGenerated {
          * @param lang  (optional)
          * @return SourcesApi.PostRequestBuilder
          */
-        public SourcesApi.PostRequestBuilder lang(String lang) {
+        public SourcesApi.PostRequestBuilder lang(Object lang) {
             this.lang = lang;
             return (SourcesApi.PostRequestBuilder) this;
         }
@@ -439,7 +439,7 @@ public class SourcesApiGenerated {
          * @param countries  (optional)
          * @return SourcesApi.PostRequestBuilder
          */
-        public SourcesApi.PostRequestBuilder countries(String countries) {
+        public SourcesApi.PostRequestBuilder countries(Object countries) {
             this.countries = countries;
             return (SourcesApi.PostRequestBuilder) this;
         }
@@ -449,7 +449,7 @@ public class SourcesApiGenerated {
          * @param predefinedSources  (optional)
          * @return SourcesApi.PostRequestBuilder
          */
-        public SourcesApi.PostRequestBuilder predefinedSources(String predefinedSources) {
+        public SourcesApi.PostRequestBuilder predefinedSources(Object predefinedSources) {
             this.predefinedSources = predefinedSources;
             return (SourcesApi.PostRequestBuilder) this;
         }
@@ -499,7 +499,7 @@ public class SourcesApiGenerated {
          * @param sourceUrl  (optional)
          * @return SourcesApi.PostRequestBuilder
          */
-        public SourcesApi.PostRequestBuilder sourceUrl(String sourceUrl) {
+        public SourcesApi.PostRequestBuilder sourceUrl(Object sourceUrl) {
             this.sourceUrl = sourceUrl;
             return (SourcesApi.PostRequestBuilder) this;
         }

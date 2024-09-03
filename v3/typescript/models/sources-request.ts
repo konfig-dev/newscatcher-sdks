@@ -19,22 +19,22 @@ import type * as buffer from "buffer"
 export interface SourcesRequest {
     /**
      * 
-     * @type {string}
+     * @type {any}
      * @memberof SourcesRequest
      */
-    'lang'?: string;
+    'lang'?: any;
     /**
      * 
-     * @type {string}
+     * @type {any}
      * @memberof SourcesRequest
      */
-    'countries'?: string;
+    'countries'?: any;
     /**
      * 
-     * @type {string}
+     * @type {any}
      * @memberof SourcesRequest
      */
-    'predefined_sources'?: string;
+    'predefined_sources'?: any;
     /**
      * 
      * @type {boolean}
@@ -61,9 +61,9 @@ export interface SourcesRequest {
     'source_name'?: any;
     /**
      * 
-     * @type {string}
+     * @type {any}
      * @memberof SourcesRequest
      */
-    'source_url'?: string;
+    'source_url'?: any;
 }
 

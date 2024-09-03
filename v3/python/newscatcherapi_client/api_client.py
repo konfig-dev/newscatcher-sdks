@@ -31,6 +31,8 @@ from urllib3._collections import HTTPHeaderDict
 from urllib.parse import urlparse, quote
 from urllib3.fields import RequestField as RequestFieldBase
 from urllib3.fields import guess_content_type
+from dateutil import parser
+from datetime import datetime as dt
 
 import frozendict
 
@@ -160,6 +162,9 @@ def construct_model_instance(model: typing.Type[T], data: typing.Any) -> T:
         return construct_model_instance(best_type, data)
     elif model is None or model is type(None):
         return data
+    # catch and convert datetime represented as string
+    elif isinstance(data, str) and model is dt:
+        return parser.parse(data)
     # if model is scalar value like str, number, etc. just return the value
     elif isinstance(data, (str, float, int, bytes, bool)):
         return data
@@ -173,6 +178,8 @@ def construct_model_instance(model: typing.Type[T], data: typing.Any) -> T:
     elif typing_extensions.get_origin(model) is dict:
         return data
     elif model is dict:
+        return data
+    elif model is Dictionary:
         return data
     elif model is object:
         return data

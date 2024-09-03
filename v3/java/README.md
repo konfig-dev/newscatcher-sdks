@@ -150,7 +150,6 @@ public class Example {
     Boolean hasNlp = true;
     String theme = "theme_example";
     String notTheme = "notTheme_example";
-    String nerName = "nerName_example";
     Double titleSentimentMin = 3.4D;
     Double titleSentimentMax = 3.4D;
     Double contentSentimentMin = 3.4D;
@@ -193,7 +192,6 @@ public class Example {
               .hasNlp(hasNlp)
               .theme(theme)
               .notTheme(notTheme)
-              .nerName(nerName)
               .titleSentimentMin(titleSentimentMin)
               .titleSentimentMax(titleSentimentMax)
               .contentSentimentMin(contentSentimentMin)
@@ -254,7 +252,6 @@ public class Example {
               .hasNlp(hasNlp)
               .theme(theme)
               .notTheme(notTheme)
-              .nerName(nerName)
               .titleSentimentMin(titleSentimentMin)
               .titleSentimentMax(titleSentimentMax)
               .contentSentimentMin(contentSentimentMin)

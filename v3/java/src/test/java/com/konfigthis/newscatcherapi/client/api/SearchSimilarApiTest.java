@@ -86,7 +86,6 @@ public class SearchSimilarApiTest {
         Boolean hasNlp = null;
         String theme = null;
         String notTheme = null;
-        String nerName = null;
         Double titleSentimentMin = null;
         Double titleSentimentMax = null;
         Double contentSentimentMin = null;
@@ -127,7 +126,6 @@ public class SearchSimilarApiTest {
                 .hasNlp(hasNlp)
                 .theme(theme)
                 .notTheme(notTheme)
-                .nerName(nerName)
                 .titleSentimentMin(titleSentimentMin)
                 .titleSentimentMax(titleSentimentMax)
                 .contentSentimentMin(contentSentimentMin)
@@ -181,7 +179,6 @@ public class SearchSimilarApiTest {
         Boolean hasNlp = null;
         String theme = null;
         String notTheme = null;
-        String nerName = null;
         Double titleSentimentMin = null;
         Double titleSentimentMax = null;
         Double contentSentimentMin = null;
@@ -222,7 +219,6 @@ public class SearchSimilarApiTest {
                 .hasNlp(hasNlp)
                 .theme(theme)
                 .notTheme(notTheme)
-                .nerName(nerName)
                 .titleSentimentMin(titleSentimentMin)
                 .titleSentimentMax(titleSentimentMax)
                 .contentSentimentMin(contentSentimentMin)
