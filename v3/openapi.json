@@ -1370,15 +1370,6 @@
           {
             "required": false,
             "schema": {
-              "title": "Ner Name",
-              "type": "string"
-            },
-            "name": "ner_name",
-            "in": "query"
-          },
-          {
-            "required": false,
-            "schema": {
               "title": "Title Sentiment Min",
               "type": "number"
             },
@@ -2057,15 +2048,6 @@
           {
             "required": false,
             "schema": {
-              "title": "Ner Name",
-              "type": "string"
-            },
-            "name": "ner_name",
-            "in": "query"
-          },
-          {
-            "required": false,
-            "schema": {
               "title": "Title Sentiment Min",
               "type": "number"
             },
@@ -2228,8 +2210,7 @@
           {
             "required": false,
             "schema": {
-              "title": "Lang",
-              "type": "string"
+              "title": "Lang"
             },
             "name": "lang",
             "in": "query"
@@ -2237,8 +2218,7 @@
           {
             "required": false,
             "schema": {
-              "title": "Countries",
-              "type": "string"
+              "title": "Countries"
             },
             "name": "countries",
             "in": "query"
@@ -2246,8 +2226,7 @@
           {
             "required": false,
             "schema": {
-              "title": "Predefined Sources",
-              "type": "string"
+              "title": "Predefined Sources"
             },
             "name": "predefined_sources",
             "in": "query"
@@ -2290,8 +2269,7 @@
           {
             "required": false,
             "schema": {
-              "title": "Source Url",
-              "type": "string"
+              "title": "Source Url"
             },
             "name": "source_url",
             "in": "query"
@@ -2637,10 +2615,6 @@
           },
           "not_theme": {
             "title": "Not Theme",
-            "type": "string"
-          },
-          "ner_name": {
-            "title": "Ner Name",
             "type": "string"
           },
           "title_sentiment_min": {
@@ -3154,10 +3128,6 @@
             "title": "Not Theme",
             "type": "string"
           },
-          "ner_name": {
-            "title": "Ner Name",
-            "type": "string"
-          },
           "title_sentiment_min": {
             "title": "Title Sentiment Min",
             "type": "number"
@@ -3549,16 +3519,13 @@
         "type": "object",
         "properties": {
           "lang": {
-            "title": "Lang",
-            "type": "string"
+            "title": "Lang"
           },
           "countries": {
-            "title": "Countries",
-            "type": "string"
+            "title": "Countries"
           },
           "predefined_sources": {
-            "title": "Predefined Sources",
-            "type": "string"
+            "title": "Predefined Sources"
           },
           "include_additional_info": {
             "title": "Include Additional Info",
@@ -3576,8 +3543,7 @@
             "title": "Source Name"
           },
           "source_url": {
-            "title": "Source Url",
-            "type": "string"
+            "title": "Source Url"
           }
         },
         "description": "Sources request DTO"
