@@ -192,7 +192,6 @@ describe("newscatcherapi-typescript-sdk", () => {
       authorName: "authorName_example",
       ...getCommonParams,
       ...getToFromParams,
-      nerName: "nerName_example",
       publishedDatePrecision: "published_date_precision_example",
       sortBy: "sort_by_example",
     });
@@ -208,7 +207,6 @@ describe("newscatcherapi-typescript-sdk", () => {
       author_name: "authorName_example",
       ...postCommonParams,
       ...postToFromParams,
-      ner_name: "nerName_example",
       published_date_precision: "published_date_precision_example",
       sort_by: "sort_by_example",
     });
@@ -230,7 +228,6 @@ describe("newscatcherapi-typescript-sdk", () => {
       includeSimilarDocuments: true,
       similarDocumentsNumber: 100,
       similarDocumentsFields: "similar_documents_fields_example",
-      nerName: "ner_name_example",
     });
     expect(result).not.toBeNull();
   });
@@ -250,7 +247,6 @@ describe("newscatcherapi-typescript-sdk", () => {
       include_similar_documents: true,
       similar_documents_number: 100,
       similar_documents_fields: "similar_documents_fields_example",
-      ner_name: "ner_name_example",
     });
     expect(result).not.toBeNull();
   });
