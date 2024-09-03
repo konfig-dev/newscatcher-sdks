@@ -175,10 +175,6 @@ public class AuthorSearchRequest {
   @SerializedName(SERIALIZED_NAME_NOT_THEME)
   private String notTheme;
 
-  public static final String SERIALIZED_NAME_NER_NAME = "ner_name";
-  @SerializedName(SERIALIZED_NAME_NER_NAME)
-  private String nerName;
-
   public static final String SERIALIZED_NAME_TITLE_SENTIMENT_MIN = "title_sentiment_min";
   @SerializedName(SERIALIZED_NAME_TITLE_SENTIMENT_MIN)
   private Double titleSentimentMin;
@@ -1133,35 +1129,6 @@ public class AuthorSearchRequest {
   }
 
 
-  public AuthorSearchRequest nerName(String nerName) {
-    
-    
-    
-    
-    this.nerName = nerName;
-    return this;
-  }
-
-   /**
-   * Get nerName
-   * @return nerName
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public String getNerName() {
-    return nerName;
-  }
-
-
-  public void setNerName(String nerName) {
-    
-    
-    
-    this.nerName = nerName;
-  }
-
-
   public AuthorSearchRequest titleSentimentMin(Double titleSentimentMin) {
     
     
@@ -1515,7 +1482,6 @@ public class AuthorSearchRequest {
         Objects.equals(this.hasNlp, authorSearchRequest.hasNlp) &&
         Objects.equals(this.theme, authorSearchRequest.theme) &&
         Objects.equals(this.notTheme, authorSearchRequest.notTheme) &&
-        Objects.equals(this.nerName, authorSearchRequest.nerName) &&
         Objects.equals(this.titleSentimentMin, authorSearchRequest.titleSentimentMin) &&
         Objects.equals(this.titleSentimentMax, authorSearchRequest.titleSentimentMax) &&
         Objects.equals(this.contentSentimentMin, authorSearchRequest.contentSentimentMin) &&
@@ -1533,7 +1499,7 @@ public class AuthorSearchRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(authorName, notAuthorName, sources, predefinedSources, notSources, lang, notLang, countries, notCountries, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isOpinion, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, notTheme, nerName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, iabTags, notIabTags, additionalProperties);
+    return Objects.hash(authorName, notAuthorName, sources, predefinedSources, notSources, lang, notLang, countries, notCountries, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isOpinion, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, includeNlpData, hasNlp, theme, notTheme, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, iabTags, notIabTags, additionalProperties);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -1578,7 +1544,6 @@ public class AuthorSearchRequest {
     sb.append("    hasNlp: ").append(toIndentedString(hasNlp)).append("\n");
     sb.append("    theme: ").append(toIndentedString(theme)).append("\n");
     sb.append("    notTheme: ").append(toIndentedString(notTheme)).append("\n");
-    sb.append("    nerName: ").append(toIndentedString(nerName)).append("\n");
     sb.append("    titleSentimentMin: ").append(toIndentedString(titleSentimentMin)).append("\n");
     sb.append("    titleSentimentMax: ").append(toIndentedString(titleSentimentMax)).append("\n");
     sb.append("    contentSentimentMin: ").append(toIndentedString(contentSentimentMin)).append("\n");
@@ -1641,7 +1606,6 @@ public class AuthorSearchRequest {
     openapiFields.add("has_nlp");
     openapiFields.add("theme");
     openapiFields.add("not_theme");
-    openapiFields.add("ner_name");
     openapiFields.add("title_sentiment_min");
     openapiFields.add("title_sentiment_max");
     openapiFields.add("content_sentiment_min");
@@ -1699,9 +1663,6 @@ public class AuthorSearchRequest {
       if ((jsonObj.get("not_theme") != null && !jsonObj.get("not_theme").isJsonNull()) && !jsonObj.get("not_theme").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `not_theme` to be a primitive type in the JSON string but got `%s`", jsonObj.get("not_theme").toString()));
       }
-      if ((jsonObj.get("ner_name") != null && !jsonObj.get("ner_name").isJsonNull()) && !jsonObj.get("ner_name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `ner_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ner_name").toString()));
-      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
@@ -1731,7 +1692,9 @@ public class AuthorSearchRequest {
                    obj.addProperty(entry.getKey(), (Boolean) entry.getValue());
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
-                 else {
+                 else if (entry.getValue() == null) {
+                   obj.addProperty(entry.getKey(), (String) null);
+                 } else {
                    obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
                  }
                }

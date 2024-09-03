@@ -101,9 +101,6 @@ export const operationParameterMap: Record<string, Entry> = {
                 name: 'not_theme'
             },
             {
-                name: 'ner_name'
-            },
-            {
                 name: 'title_sentiment_min'
             },
             {
@@ -223,9 +220,6 @@ export const operationParameterMap: Record<string, Entry> = {
             },
             {
                 name: 'not_theme'
-            },
-            {
-                name: 'ner_name'
             },
             {
                 name: 'title_sentiment_min'
@@ -958,9 +952,6 @@ export const operationParameterMap: Record<string, Entry> = {
                 name: 'not_theme'
             },
             {
-                name: 'ner_name'
-            },
-            {
                 name: 'title_sentiment_min'
             },
             {
@@ -1083,9 +1074,6 @@ export const operationParameterMap: Record<string, Entry> = {
             },
             {
                 name: 'not_theme'
-            },
-            {
-                name: 'ner_name'
             },
             {
                 name: 'title_sentiment_min'

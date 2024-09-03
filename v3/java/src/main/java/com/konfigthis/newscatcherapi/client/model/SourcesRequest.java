@@ -53,15 +53,15 @@ import com.konfigthis.newscatcherapi.client.JSON;
 public class SourcesRequest {
   public static final String SERIALIZED_NAME_LANG = "lang";
   @SerializedName(SERIALIZED_NAME_LANG)
-  private String lang;
+  private Object lang = null;
 
   public static final String SERIALIZED_NAME_COUNTRIES = "countries";
   @SerializedName(SERIALIZED_NAME_COUNTRIES)
-  private String countries;
+  private Object countries = null;
 
   public static final String SERIALIZED_NAME_PREDEFINED_SOURCES = "predefined_sources";
   @SerializedName(SERIALIZED_NAME_PREDEFINED_SOURCES)
-  private String predefinedSources;
+  private Object predefinedSources = null;
 
   public static final String SERIALIZED_NAME_INCLUDE_ADDITIONAL_INFO = "include_additional_info";
   @SerializedName(SERIALIZED_NAME_INCLUDE_ADDITIONAL_INFO)
@@ -81,12 +81,12 @@ public class SourcesRequest {
 
   public static final String SERIALIZED_NAME_SOURCE_URL = "source_url";
   @SerializedName(SERIALIZED_NAME_SOURCE_URL)
-  private String sourceUrl;
+  private Object sourceUrl = null;
 
   public SourcesRequest() {
   }
 
-  public SourcesRequest lang(String lang) {
+  public SourcesRequest lang(Object lang) {
     
     
     
@@ -102,12 +102,12 @@ public class SourcesRequest {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public String getLang() {
+  public Object getLang() {
     return lang;
   }
 
 
-  public void setLang(String lang) {
+  public void setLang(Object lang) {
     
     
     
@@ -115,7 +115,7 @@ public class SourcesRequest {
   }
 
 
-  public SourcesRequest countries(String countries) {
+  public SourcesRequest countries(Object countries) {
     
     
     
@@ -131,12 +131,12 @@ public class SourcesRequest {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public String getCountries() {
+  public Object getCountries() {
     return countries;
   }
 
 
-  public void setCountries(String countries) {
+  public void setCountries(Object countries) {
     
     
     
@@ -144,7 +144,7 @@ public class SourcesRequest {
   }
 
 
-  public SourcesRequest predefinedSources(String predefinedSources) {
+  public SourcesRequest predefinedSources(Object predefinedSources) {
     
     
     
@@ -160,12 +160,12 @@ public class SourcesRequest {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public String getPredefinedSources() {
+  public Object getPredefinedSources() {
     return predefinedSources;
   }
 
 
-  public void setPredefinedSources(String predefinedSources) {
+  public void setPredefinedSources(Object predefinedSources) {
     
     
     
@@ -289,7 +289,7 @@ public class SourcesRequest {
   }
 
 
-  public SourcesRequest sourceUrl(String sourceUrl) {
+  public SourcesRequest sourceUrl(Object sourceUrl) {
     
     
     
@@ -305,12 +305,12 @@ public class SourcesRequest {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public String getSourceUrl() {
+  public Object getSourceUrl() {
     return sourceUrl;
   }
 
 
-  public void setSourceUrl(String sourceUrl) {
+  public void setSourceUrl(Object sourceUrl) {
     
     
     
@@ -459,18 +459,6 @@ public class SourcesRequest {
           throw new IllegalArgumentException(String.format("The required field(s) %s in SourcesRequest is not found in the empty JSON string", SourcesRequest.openapiRequiredFields.toString()));
         }
       }
-      if ((jsonObj.get("lang") != null && !jsonObj.get("lang").isJsonNull()) && !jsonObj.get("lang").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `lang` to be a primitive type in the JSON string but got `%s`", jsonObj.get("lang").toString()));
-      }
-      if ((jsonObj.get("countries") != null && !jsonObj.get("countries").isJsonNull()) && !jsonObj.get("countries").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `countries` to be a primitive type in the JSON string but got `%s`", jsonObj.get("countries").toString()));
-      }
-      if ((jsonObj.get("predefined_sources") != null && !jsonObj.get("predefined_sources").isJsonNull()) && !jsonObj.get("predefined_sources").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `predefined_sources` to be a primitive type in the JSON string but got `%s`", jsonObj.get("predefined_sources").toString()));
-      }
-      if ((jsonObj.get("source_url") != null && !jsonObj.get("source_url").isJsonNull()) && !jsonObj.get("source_url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `source_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("source_url").toString()));
-      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
@@ -500,7 +488,9 @@ public class SourcesRequest {
                    obj.addProperty(entry.getKey(), (Boolean) entry.getValue());
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
-                 else {
+                 else if (entry.getValue() == null) {
+                   obj.addProperty(entry.getKey(), (String) null);
+                 } else {
                    obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
                  }
                }

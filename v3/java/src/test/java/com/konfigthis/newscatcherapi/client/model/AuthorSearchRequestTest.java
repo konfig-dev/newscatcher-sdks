@@ -288,14 +288,6 @@ public class AuthorSearchRequestTest {
     }
 
     /**
-     * Test the property 'nerName'
-     */
-    @Test
-    public void nerNameTest() {
-        // TODO: test nerName
-    }
-
-    /**
      * Test the property 'titleSentimentMin'
      */
     @Test

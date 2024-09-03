@@ -36,18 +36,18 @@ export const SourcesApiAxiosParamCreator = function (configuration?: Configurati
         /**
          * This endpoint allows you to get the list of sources that are available in the database. You can filter the sources by language and country. The maximum number of sources displayed is set according to your plan. You can find the list of plans and their features here: https://newscatcherapi.com/news-api#news-api-pricing
          * @summary [Get] Search For Sources Request
-         * @param {string} [lang] 
-         * @param {string} [countries] 
-         * @param {string} [predefinedSources] 
+         * @param {any} [lang] 
+         * @param {any} [countries] 
+         * @param {any} [predefinedSources] 
          * @param {boolean} [includeAdditionalInfo] 
          * @param {number} [fromRank] 
          * @param {number} [toRank] 
          * @param {any} [sourceName] 
-         * @param {string} [sourceUrl] 
+         * @param {any} [sourceUrl] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        get: async (lang?: string, countries?: string, predefinedSources?: string, includeAdditionalInfo?: boolean, fromRank?: number, toRank?: number, sourceName?: any, sourceUrl?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        get: async (lang?: any, countries?: any, predefinedSources?: any, includeAdditionalInfo?: boolean, fromRank?: number, toRank?: number, sourceName?: any, sourceUrl?: any, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/sources`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -245,24 +245,24 @@ export type SourcesApiGetRequest = {
     
     /**
     * 
-    * @type {string}
+    * @type {any}
     * @memberof SourcesApiGet
     */
-    readonly lang?: string
+    readonly lang?: any
     
     /**
     * 
-    * @type {string}
+    * @type {any}
     * @memberof SourcesApiGet
     */
-    readonly countries?: string
+    readonly countries?: any
     
     /**
     * 
-    * @type {string}
+    * @type {any}
     * @memberof SourcesApiGet
     */
-    readonly predefinedSources?: string
+    readonly predefinedSources?: any
     
     /**
     * 
@@ -294,10 +294,10 @@ export type SourcesApiGetRequest = {
     
     /**
     * 
-    * @type {string}
+    * @type {any}
     * @memberof SourcesApiGet
     */
-    readonly sourceUrl?: string
+    readonly sourceUrl?: any
     
 }
 

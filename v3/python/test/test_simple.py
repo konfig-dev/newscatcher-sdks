@@ -153,7 +153,6 @@ class TestSimple(unittest.TestCase):
             **self.to_from_params,
             published_date_precision="published_date_precision_example",
             sort_by="sort_by_example",
-            ner_name="ner_name_example",
             validate=True
         )
         self.assertIsNotNone(result)
@@ -167,7 +166,6 @@ class TestSimple(unittest.TestCase):
             **self.to_from_params,
             published_date_precision="published_date_precision_example",
             sort_by="sort_by_example",
-            ner_name="ner_name_example",
             validate=True
         )
         self.assertIsNotNone(result)
@@ -185,7 +183,6 @@ class TestSimple(unittest.TestCase):
             similar_documents_fields="similar_documents_fields_example",
             published_date_precision="published_date_precision_example",
             sort_by="sort_by_example",
-            ner_name="ner_name_example",
             validate=True
         )
         self.assertIsNotNone(result)
@@ -203,7 +200,6 @@ class TestSimple(unittest.TestCase):
             similar_documents_fields="similar_documents_fields_example",
             published_date_precision="published_date_precision_example",
             sort_by="sort_by_example",
-            ner_name="ner_name_example",
             validate=True
         )
         self.assertIsNotNone(result)

@@ -32,15 +32,19 @@ namespace Example
             // Configure API key authorization: apiKey
             client.SetApiKey("YOUR_API_KEY");
 
-            var lang = "lang_example";
-            var countries = "countries_example";
-            var predefinedSources = "predefinedSources_example";
+            var lang = new Object(
+            );
+            var countries = new Object(
+            );
+            var predefinedSources = new Object(
+            );
             var includeAdditionalInfo = true;
             var fromRank = 56;
             var toRank = 56;
             var sourceName = new Object(
             );
-            var sourceUrl = "sourceUrl_example";
+            var sourceUrl = new Object(
+            );
             
             try
             {
@@ -89,14 +93,14 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **lang** | **string** |  | [optional]  |
-| **countries** | **string** |  | [optional]  |
-| **predefinedSources** | **string** |  | [optional]  |
+| **lang** | [**Object**](Object.md) |  | [optional]  |
+| **countries** | [**Object**](Object.md) |  | [optional]  |
+| **predefinedSources** | [**Object**](Object.md) |  | [optional]  |
 | **includeAdditionalInfo** | **bool?** |  | [optional]  |
 | **fromRank** | **int?** |  | [optional]  |
 | **toRank** | **int?** |  | [optional]  |
 | **sourceName** | [**Object**](Object.md) |  | [optional]  |
-| **sourceUrl** | **string** |  | [optional]  |
+| **sourceUrl** | [**Object**](Object.md) |  | [optional]  |
 
 ### Return type
 

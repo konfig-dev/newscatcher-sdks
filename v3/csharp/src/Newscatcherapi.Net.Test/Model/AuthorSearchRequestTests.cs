@@ -306,14 +306,6 @@ namespace Newscatcherapi.Net.Test.Model
             // TODO unit test for the property 'NotTheme'
         }
         /// <summary>
-        /// Test the property 'NerName'
-        /// </summary>
-        [Fact]
-        public void NerNameTest()
-        {
-            // TODO unit test for the property 'NerName'
-        }
-        /// <summary>
         /// Test the property 'TitleSentimentMin'
         /// </summary>
         [Fact]

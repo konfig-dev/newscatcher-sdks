@@ -226,12 +226,6 @@ export interface MoreLikeThisRequest {
     'not_theme'?: string;
     /**
      * 
-     * @type {string}
-     * @memberof MoreLikeThisRequest
-     */
-    'ner_name'?: string;
-    /**
-     * 
      * @type {number}
      * @memberof MoreLikeThisRequest
      */

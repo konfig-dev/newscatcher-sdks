@@ -10,7 +10,7 @@ info:
   version: 3.2.16
   x-konfig-has-globally-required-security: true
 servers:
-- url: https://v3-api.newscatcherapi.com/
+- url: https://v3-api.newscatcherapi.com
 tags:
 - name: Search
 - name: LatestHeadlines
@@ -1140,14 +1140,6 @@ paths:
         style: form
       - explode: true
         in: query
-        name: ner_name
-        required: false
-        schema:
-          title: Ner Name
-          type: string
-        style: form
-      - explode: true
-        in: query
         name: title_sentiment_min
         required: false
         schema:
@@ -1683,14 +1675,6 @@ paths:
         style: form
       - explode: true
         in: query
-        name: ner_name
-        required: false
-        schema:
-          title: Ner Name
-          type: string
-        style: form
-      - explode: true
-        in: query
         name: title_sentiment_min
         required: false
         schema:
@@ -1806,7 +1790,6 @@ paths:
         required: false
         schema:
           title: Lang
-          type: string
         style: form
       - explode: true
         in: query
@@ -1814,7 +1797,6 @@ paths:
         required: false
         schema:
           title: Countries
-          type: string
         style: form
       - explode: true
         in: query
@@ -1822,7 +1804,6 @@ paths:
         required: false
         schema:
           title: Predefined Sources
-          type: string
         style: form
       - explode: true
         in: query
@@ -1861,7 +1842,6 @@ paths:
         required: false
         schema:
           title: Source Url
-          type: string
         style: form
       responses:
         "200":
@@ -2012,7 +1992,6 @@ components:
         word_count_min: 0
         page_size: 100
         by_parse_date: false
-        ner_name: ner_name
         content_sentiment_min: 7.061401241503109
         not_sources: ""
         from_: from_
@@ -2132,9 +2111,6 @@ components:
           type: string
         not_theme:
           title: Not Theme
-          type: string
-        ner_name:
-          title: Ner Name
           type: string
         title_sentiment_min:
           title: Title Sentiment Min
@@ -2476,7 +2452,6 @@ components:
         page_size: 100
         search_in: title_content
         by_parse_date: false
-        ner_name: ner_name
         content_sentiment_min: 7.061401241503109
         not_sources: ""
         from_: from_
@@ -2622,9 +2597,6 @@ components:
           type: string
         not_theme:
           title: Not Theme
-          type: string
-        ner_name:
-          title: Ner Name
           type: string
         title_sentiment_min:
           title: Title Sentiment Min
@@ -2960,23 +2932,20 @@ components:
       description: Sources request DTO
       example:
         include_additional_info: true
-        countries: countries
-        lang: lang
+        countries: ""
+        lang: ""
         to_rank: 6
-        predefined_sources: predefined_sources
+        predefined_sources: ""
         source_name: ""
-        source_url: source_url
+        source_url: ""
         from_rank: 0
       properties:
         lang:
           title: Lang
-          type: string
         countries:
           title: Countries
-          type: string
         predefined_sources:
           title: Predefined Sources
-          type: string
         include_additional_info:
           title: Include Additional Info
           type: boolean
@@ -2990,7 +2959,6 @@ components:
           title: Source Name
         source_url:
           title: Source Url
-          type: string
       title: SourcesRequest
       type: object
     SubscriptionResponse:
@@ -4603,9 +4571,6 @@ components:
         not_theme:
           title: Not Theme
           type: string
-        ner_name:
-          title: Ner Name
-          type: string
         title_sentiment_min:
           title: Title Sentiment Min
           type: number
@@ -4662,7 +4627,6 @@ components:
       - has_nlp
       - theme
       - not_theme
-      - ner_name
       - title_sentiment_min
       - title_sentiment_max
       - content_sentiment_min
@@ -4771,9 +4735,6 @@ components:
           type: string
         not_theme:
           title: Not Theme
-          type: string
-        ner_name:
-          title: Ner Name
           type: string
         title_sentiment_min:
           title: Title Sentiment Min
@@ -4991,9 +4952,6 @@ components:
         not_theme:
           title: Not Theme
           type: string
-        ner_name:
-          title: Ner Name
-          type: string
         title_sentiment_min:
           title: Title Sentiment Min
           type: number
@@ -5049,7 +5007,6 @@ components:
       - has_nlp
       - theme
       - not_theme
-      - ner_name
       - title_sentiment_min
       - title_sentiment_max
       - content_sentiment_min
@@ -5183,9 +5140,6 @@ components:
         not_theme:
           title: Not Theme
           type: string
-        ner_name:
-          title: Ner Name
-          type: string
         title_sentiment_min:
           title: Title Sentiment Min
           type: number
@@ -5211,13 +5165,10 @@ components:
       properties:
         lang:
           title: Lang
-          type: string
         countries:
           title: Countries
-          type: string
         predefined_sources:
           title: Predefined Sources
-          type: string
         include_additional_info:
           title: Include Additional Info
           type: boolean
@@ -5231,7 +5182,6 @@ components:
           title: Source Name
         source_url:
           title: Source Url
-          type: string
       type: object
       x-do-not-generate: true
       x-konfig-is-parameter:
@@ -5247,13 +5197,10 @@ components:
       properties:
         lang:
           title: Lang
-          type: string
         countries:
           title: Countries
-          type: string
         predefined_sources:
           title: Predefined Sources
-          type: string
         include_additional_info:
           title: Include Additional Info
           type: boolean
@@ -5267,7 +5214,6 @@ components:
           title: Source Name
         source_url:
           title: Source Url
-          type: string
       type: object
       x-do-not-generate: true
       x-konfig-is-parameter: []

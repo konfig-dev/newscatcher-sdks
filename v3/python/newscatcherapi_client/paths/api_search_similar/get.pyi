@@ -217,7 +217,6 @@ IncludeNlpDataSchema = schemas.BoolSchema
 HasNlpSchema = schemas.BoolSchema
 ThemeSchema = schemas.StrSchema
 NotThemeSchema = schemas.StrSchema
-NerNameSchema = schemas.StrSchema
 TitleSentimentMinSchema = schemas.NumberSchema
 TitleSentimentMaxSchema = schemas.NumberSchema
 ContentSentimentMinSchema = schemas.NumberSchema
@@ -266,7 +265,6 @@ RequestOptionalQueryParams = typing_extensions.TypedDict(
         'has_nlp': typing.Union[HasNlpSchema, bool, ],
         'theme': typing.Union[ThemeSchema, str, ],
         'not_theme': typing.Union[NotThemeSchema, str, ],
-        'ner_name': typing.Union[NerNameSchema, str, ],
         'title_sentiment_min': typing.Union[TitleSentimentMinSchema, decimal.Decimal, int, float, ],
         'title_sentiment_max': typing.Union[TitleSentimentMaxSchema, decimal.Decimal, int, float, ],
         'content_sentiment_min': typing.Union[ContentSentimentMinSchema, decimal.Decimal, int, float, ],
@@ -487,12 +485,6 @@ request_query_not_theme = api_client.QueryParameter(
     schema=NotThemeSchema,
     explode=True,
 )
-request_query_ner_name = api_client.QueryParameter(
-    name="ner_name",
-    style=api_client.ParameterStyle.FORM,
-    schema=NerNameSchema,
-    explode=True,
-)
 request_query_title_sentiment_min = api_client.QueryParameter(
     name="title_sentiment_min",
     style=api_client.ParameterStyle.FORM,
@@ -614,7 +606,6 @@ class BaseApi(api_client.Api):
         has_nlp: typing.Optional[bool] = None,
         theme: typing.Optional[str] = None,
         not_theme: typing.Optional[str] = None,
-        ner_name: typing.Optional[str] = None,
         title_sentiment_min: typing.Optional[typing.Union[int, float]] = None,
         title_sentiment_max: typing.Optional[typing.Union[int, float]] = None,
         content_sentiment_min: typing.Optional[typing.Union[int, float]] = None,
@@ -692,8 +683,6 @@ class BaseApi(api_client.Api):
             _query_params["theme"] = theme
         if not_theme is not None:
             _query_params["not_theme"] = not_theme
-        if ner_name is not None:
-            _query_params["ner_name"] = ner_name
         if title_sentiment_min is not None:
             _query_params["title_sentiment_min"] = title_sentiment_min
         if title_sentiment_max is not None:
@@ -767,7 +756,6 @@ class BaseApi(api_client.Api):
             request_query_has_nlp,
             request_query_theme,
             request_query_not_theme,
-            request_query_ner_name,
             request_query_title_sentiment_min,
             request_query_title_sentiment_max,
             request_query_content_sentiment_min,
@@ -919,7 +907,6 @@ class BaseApi(api_client.Api):
             request_query_has_nlp,
             request_query_theme,
             request_query_not_theme,
-            request_query_ner_name,
             request_query_title_sentiment_min,
             request_query_title_sentiment_max,
             request_query_content_sentiment_min,
@@ -1023,7 +1010,6 @@ class GetRaw(BaseApi):
         has_nlp: typing.Optional[bool] = None,
         theme: typing.Optional[str] = None,
         not_theme: typing.Optional[str] = None,
-        ner_name: typing.Optional[str] = None,
         title_sentiment_min: typing.Optional[typing.Union[int, float]] = None,
         title_sentiment_max: typing.Optional[typing.Union[int, float]] = None,
         content_sentiment_min: typing.Optional[typing.Union[int, float]] = None,
@@ -1071,7 +1057,6 @@ class GetRaw(BaseApi):
             has_nlp=has_nlp,
             theme=theme,
             not_theme=not_theme,
-            ner_name=ner_name,
             title_sentiment_min=title_sentiment_min,
             title_sentiment_max=title_sentiment_max,
             content_sentiment_min=content_sentiment_min,
@@ -1120,7 +1105,6 @@ class GetRaw(BaseApi):
         has_nlp: typing.Optional[bool] = None,
         theme: typing.Optional[str] = None,
         not_theme: typing.Optional[str] = None,
-        ner_name: typing.Optional[str] = None,
         title_sentiment_min: typing.Optional[typing.Union[int, float]] = None,
         title_sentiment_max: typing.Optional[typing.Union[int, float]] = None,
         content_sentiment_min: typing.Optional[typing.Union[int, float]] = None,
@@ -1131,6 +1115,7 @@ class GetRaw(BaseApi):
         ApiResponseFor200,
         api_client.ApiResponseWithoutDeserialization,
     ]:
+        """ This endpoint returns a list of articles that are similar to the query provided. You also have the option to get similar articles for the results of a search. """
         args = self._get_mapped_args(
             q=q,
             search_in=search_in,
@@ -1166,7 +1151,6 @@ class GetRaw(BaseApi):
             has_nlp=has_nlp,
             theme=theme,
             not_theme=not_theme,
-            ner_name=ner_name,
             title_sentiment_min=title_sentiment_min,
             title_sentiment_max=title_sentiment_max,
             content_sentiment_min=content_sentiment_min,
@@ -1216,7 +1200,6 @@ class Get(BaseApi):
         has_nlp: typing.Optional[bool] = None,
         theme: typing.Optional[str] = None,
         not_theme: typing.Optional[str] = None,
-        ner_name: typing.Optional[str] = None,
         title_sentiment_min: typing.Optional[typing.Union[int, float]] = None,
         title_sentiment_max: typing.Optional[typing.Union[int, float]] = None,
         content_sentiment_min: typing.Optional[typing.Union[int, float]] = None,
@@ -1261,7 +1244,6 @@ class Get(BaseApi):
             has_nlp=has_nlp,
             theme=theme,
             not_theme=not_theme,
-            ner_name=ner_name,
             title_sentiment_min=title_sentiment_min,
             title_sentiment_max=title_sentiment_max,
             content_sentiment_min=content_sentiment_min,
@@ -1311,7 +1293,6 @@ class Get(BaseApi):
         has_nlp: typing.Optional[bool] = None,
         theme: typing.Optional[str] = None,
         not_theme: typing.Optional[str] = None,
-        ner_name: typing.Optional[str] = None,
         title_sentiment_min: typing.Optional[typing.Union[int, float]] = None,
         title_sentiment_max: typing.Optional[typing.Union[int, float]] = None,
         content_sentiment_min: typing.Optional[typing.Union[int, float]] = None,
@@ -1355,7 +1336,6 @@ class Get(BaseApi):
             has_nlp=has_nlp,
             theme=theme,
             not_theme=not_theme,
-            ner_name=ner_name,
             title_sentiment_min=title_sentiment_min,
             title_sentiment_max=title_sentiment_max,
             content_sentiment_min=content_sentiment_min,
@@ -1407,7 +1387,6 @@ class ApiForget(BaseApi):
         has_nlp: typing.Optional[bool] = None,
         theme: typing.Optional[str] = None,
         not_theme: typing.Optional[str] = None,
-        ner_name: typing.Optional[str] = None,
         title_sentiment_min: typing.Optional[typing.Union[int, float]] = None,
         title_sentiment_max: typing.Optional[typing.Union[int, float]] = None,
         content_sentiment_min: typing.Optional[typing.Union[int, float]] = None,
@@ -1455,7 +1434,6 @@ class ApiForget(BaseApi):
             has_nlp=has_nlp,
             theme=theme,
             not_theme=not_theme,
-            ner_name=ner_name,
             title_sentiment_min=title_sentiment_min,
             title_sentiment_max=title_sentiment_max,
             content_sentiment_min=content_sentiment_min,
@@ -1504,7 +1482,6 @@ class ApiForget(BaseApi):
         has_nlp: typing.Optional[bool] = None,
         theme: typing.Optional[str] = None,
         not_theme: typing.Optional[str] = None,
-        ner_name: typing.Optional[str] = None,
         title_sentiment_min: typing.Optional[typing.Union[int, float]] = None,
         title_sentiment_max: typing.Optional[typing.Union[int, float]] = None,
         content_sentiment_min: typing.Optional[typing.Union[int, float]] = None,
@@ -1515,6 +1492,7 @@ class ApiForget(BaseApi):
         ApiResponseFor200,
         api_client.ApiResponseWithoutDeserialization,
     ]:
+        """ This endpoint returns a list of articles that are similar to the query provided. You also have the option to get similar articles for the results of a search. """
         args = self._get_mapped_args(
             q=q,
             search_in=search_in,
@@ -1550,7 +1528,6 @@ class ApiForget(BaseApi):
             has_nlp=has_nlp,
             theme=theme,
             not_theme=not_theme,
-            ner_name=ner_name,
             title_sentiment_min=title_sentiment_min,
             title_sentiment_max=title_sentiment_max,
             content_sentiment_min=content_sentiment_min,

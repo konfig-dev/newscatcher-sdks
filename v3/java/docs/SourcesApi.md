@@ -37,14 +37,14 @@ public class Example {
     
     configuration.apiKey  = "YOUR API KEY";
     Newscatcher client = new Newscatcher(configuration);
-    String lang = "lang_example";
-    String countries = "countries_example";
-    String predefinedSources = "predefinedSources_example";
+    Object lang = null;
+    Object countries = null;
+    Object predefinedSources = null;
     Boolean includeAdditionalInfo = true;
     Integer fromRank = 56;
     Integer toRank = 56;
     Object sourceName = null;
-    String sourceUrl = "sourceUrl_example";
+    Object sourceUrl = null;
     try {
       SourceResponse result = client
               .sources
@@ -105,14 +105,14 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **lang** | **String**|  | [optional] |
-| **countries** | **String**|  | [optional] |
-| **predefinedSources** | **String**|  | [optional] |
+| **lang** | [**Object**](.md)|  | [optional] |
+| **countries** | [**Object**](.md)|  | [optional] |
+| **predefinedSources** | [**Object**](.md)|  | [optional] |
 | **includeAdditionalInfo** | **Boolean**|  | [optional] |
 | **fromRank** | **Integer**|  | [optional] |
 | **toRank** | **Integer**|  | [optional] |
 | **sourceName** | [**Object**](.md)|  | [optional] |
-| **sourceUrl** | **String**|  | [optional] |
+| **sourceUrl** | [**Object**](.md)|  | [optional] |
 
 ### Return type
 
@@ -161,14 +161,14 @@ public class Example {
     
     configuration.apiKey  = "YOUR API KEY";
     Newscatcher client = new Newscatcher(configuration);
-    String lang = "lang_example";
-    String countries = "countries_example";
-    String predefinedSources = "predefinedSources_example";
+    Object lang = null;
+    Object countries = null;
+    Object predefinedSources = null;
     Boolean includeAdditionalInfo = true;
     Integer fromRank = 56;
     Integer toRank = 56;
     Object sourceName = null;
-    String sourceUrl = "sourceUrl_example";
+    Object sourceUrl = null;
     try {
       SourceResponse result = client
               .sources

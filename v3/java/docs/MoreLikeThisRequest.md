@@ -42,7 +42,6 @@ More like this request DTO.
 |**hasNlp** | **Boolean** |  |  [optional] |
 |**theme** | **String** |  |  [optional] |
 |**notTheme** | **String** |  |  [optional] |
-|**nerName** | **String** |  |  [optional] |
 |**titleSentimentMin** | **Double** |  |  [optional] |
 |**titleSentimentMax** | **Double** |  |  [optional] |
 |**contentSentimentMin** | **Double** |  |  [optional] |

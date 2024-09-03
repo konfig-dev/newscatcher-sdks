@@ -13,7 +13,7 @@ fixConfig:
   update:
     $:
       servers:
-        - url: https://v3-api.newscatcherapi.com/
+        - url: https://v3-api.newscatcherapi.com
     $.info:
       description: >-
         <img

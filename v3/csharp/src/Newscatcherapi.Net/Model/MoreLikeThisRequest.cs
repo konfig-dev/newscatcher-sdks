@@ -74,14 +74,13 @@ namespace Newscatcherapi.Net.Model
         /// <param name="hasNlp">hasNlp.</param>
         /// <param name="theme">theme.</param>
         /// <param name="notTheme">notTheme.</param>
-        /// <param name="nerName">nerName.</param>
         /// <param name="titleSentimentMin">titleSentimentMin.</param>
         /// <param name="titleSentimentMax">titleSentimentMax.</param>
         /// <param name="contentSentimentMin">contentSentimentMin.</param>
         /// <param name="contentSentimentMax">contentSentimentMax.</param>
         /// <param name="iptcTags">iptcTags.</param>
         /// <param name="notIptcTags">notIptcTags.</param>
-        public MoreLikeThisRequest(string q = default(string), string searchIn = "title_content", bool includeSimilarDocuments = false, int similarDocumentsNumber = 5, string similarDocumentsFields = "title,content", Object predefinedSources = default(Object), Object sources = default(Object), Object notSources = default(Object), Object lang = default(Object), Object notLang = default(Object), Object countries = default(Object), Object notCountries = default(Object), From from = default(From), To to = default(To), bool byParseDate = false, string publishedDatePrecision = default(string), string sortBy = "relevancy", RankedOnly rankedOnly = default(RankedOnly), int fromRank = default(int), int toRank = default(int), bool isHeadline = default(bool), bool isOpinion = default(bool), bool isPaidContent = default(bool), Object parentUrl = default(Object), Object allLinks = default(Object), Object allDomainLinks = default(Object), int wordCountMin = default(int), int wordCountMax = default(int), int page = 1, int pageSize = 100, bool includeNlpData = default(bool), bool hasNlp = default(bool), string theme = default(string), string notTheme = default(string), string nerName = default(string), double titleSentimentMin = default(double), double titleSentimentMax = default(double), double contentSentimentMin = default(double), double contentSentimentMax = default(double), Object iptcTags = default(Object), Object notIptcTags = default(Object))
+        public MoreLikeThisRequest(string q = default(string), string searchIn = "title_content", bool includeSimilarDocuments = false, int similarDocumentsNumber = 5, string similarDocumentsFields = "title,content", Object predefinedSources = default(Object), Object sources = default(Object), Object notSources = default(Object), Object lang = default(Object), Object notLang = default(Object), Object countries = default(Object), Object notCountries = default(Object), From from = default(From), To to = default(To), bool byParseDate = false, string publishedDatePrecision = default(string), string sortBy = "relevancy", RankedOnly rankedOnly = default(RankedOnly), int fromRank = default(int), int toRank = default(int), bool isHeadline = default(bool), bool isOpinion = default(bool), bool isPaidContent = default(bool), Object parentUrl = default(Object), Object allLinks = default(Object), Object allDomainLinks = default(Object), int wordCountMin = default(int), int wordCountMax = default(int), int page = 1, int pageSize = 100, bool includeNlpData = default(bool), bool hasNlp = default(bool), string theme = default(string), string notTheme = default(string), double titleSentimentMin = default(double), double titleSentimentMax = default(double), double contentSentimentMin = default(double), double contentSentimentMax = default(double), Object iptcTags = default(Object), Object notIptcTags = default(Object))
         {
             // to ensure "q" is required (not null)
             if (q == null)
@@ -125,7 +124,6 @@ namespace Newscatcherapi.Net.Model
             this.HasNlp = hasNlp;
             this.Theme = theme;
             this.NotTheme = notTheme;
-            this.NerName = nerName;
             this.TitleSentimentMin = titleSentimentMin;
             this.TitleSentimentMax = titleSentimentMax;
             this.ContentSentimentMin = contentSentimentMin;
@@ -339,12 +337,6 @@ namespace Newscatcherapi.Net.Model
         public string NotTheme { get; set; }
 
         /// <summary>
-        /// Gets or Sets NerName
-        /// </summary>
-        [DataMember(Name = "ner_name", EmitDefaultValue = false)]
-        public string NerName { get; set; }
-
-        /// <summary>
         /// Gets or Sets TitleSentimentMin
         /// </summary>
         [DataMember(Name = "title_sentiment_min", EmitDefaultValue = false)]
@@ -422,7 +414,6 @@ namespace Newscatcherapi.Net.Model
             sb.Append("  HasNlp: ").Append(HasNlp).Append("\n");
             sb.Append("  Theme: ").Append(Theme).Append("\n");
             sb.Append("  NotTheme: ").Append(NotTheme).Append("\n");
-            sb.Append("  NerName: ").Append(NerName).Append("\n");
             sb.Append("  TitleSentimentMin: ").Append(TitleSentimentMin).Append("\n");
             sb.Append("  TitleSentimentMax: ").Append(TitleSentimentMax).Append("\n");
             sb.Append("  ContentSentimentMin: ").Append(ContentSentimentMin).Append("\n");
@@ -621,11 +612,6 @@ namespace Newscatcherapi.Net.Model
                     this.NotTheme.Equals(input.NotTheme))
                 ) && 
                 (
-                    this.NerName == input.NerName ||
-                    (this.NerName != null &&
-                    this.NerName.Equals(input.NerName))
-                ) && 
-                (
                     this.TitleSentimentMin == input.TitleSentimentMin ||
                     this.TitleSentimentMin.Equals(input.TitleSentimentMin)
                 ) && 
@@ -755,10 +741,6 @@ namespace Newscatcherapi.Net.Model
                 if (this.NotTheme != null)
                 {
                     hashCode = (hashCode * 59) + this.NotTheme.GetHashCode();
-                }
-                if (this.NerName != null)
-                {
-                    hashCode = (hashCode * 59) + this.NerName.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.TitleSentimentMin.GetHashCode();
                 hashCode = (hashCode * 59) + this.TitleSentimentMax.GetHashCode();

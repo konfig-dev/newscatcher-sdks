@@ -43,7 +43,7 @@ namespace Newscatcherapi.Net.Model
         /// <param name="toRank">toRank.</param>
         /// <param name="sourceName">sourceName.</param>
         /// <param name="sourceUrl">sourceUrl.</param>
-        public SourcesRequest(string lang = default(string), string countries = default(string), string predefinedSources = default(string), bool includeAdditionalInfo = default(bool), int fromRank = default(int), int toRank = default(int), Object sourceName = default(Object), string sourceUrl = default(string))
+        public SourcesRequest(Object lang = default(Object), Object countries = default(Object), Object predefinedSources = default(Object), bool includeAdditionalInfo = default(bool), int fromRank = default(int), int toRank = default(int), Object sourceName = default(Object), Object sourceUrl = default(Object))
         {
             this.Lang = lang;
             this.Countries = countries;
@@ -58,20 +58,20 @@ namespace Newscatcherapi.Net.Model
         /// <summary>
         /// Gets or Sets Lang
         /// </summary>
-        [DataMember(Name = "lang", EmitDefaultValue = false)]
-        public string Lang { get; set; }
+        [DataMember(Name = "lang", EmitDefaultValue = true)]
+        public Object Lang { get; set; }
 
         /// <summary>
         /// Gets or Sets Countries
         /// </summary>
-        [DataMember(Name = "countries", EmitDefaultValue = false)]
-        public string Countries { get; set; }
+        [DataMember(Name = "countries", EmitDefaultValue = true)]
+        public Object Countries { get; set; }
 
         /// <summary>
         /// Gets or Sets PredefinedSources
         /// </summary>
-        [DataMember(Name = "predefined_sources", EmitDefaultValue = false)]
-        public string PredefinedSources { get; set; }
+        [DataMember(Name = "predefined_sources", EmitDefaultValue = true)]
+        public Object PredefinedSources { get; set; }
 
         /// <summary>
         /// Gets or Sets IncludeAdditionalInfo
@@ -100,8 +100,8 @@ namespace Newscatcherapi.Net.Model
         /// <summary>
         /// Gets or Sets SourceUrl
         /// </summary>
-        [DataMember(Name = "source_url", EmitDefaultValue = false)]
-        public string SourceUrl { get; set; }
+        [DataMember(Name = "source_url", EmitDefaultValue = true)]
+        public Object SourceUrl { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

@@ -8,14 +8,14 @@ Sources request DTO
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**lang** | **String** |  |  [optional] |
-|**countries** | **String** |  |  [optional] |
-|**predefinedSources** | **String** |  |  [optional] |
+|**lang** | **Object** |  |  [optional] |
+|**countries** | **Object** |  |  [optional] |
+|**predefinedSources** | **Object** |  |  [optional] |
 |**includeAdditionalInfo** | **Boolean** |  |  [optional] |
 |**fromRank** | **Integer** |  |  [optional] |
 |**toRank** | **Integer** |  |  [optional] |
 |**sourceName** | **Object** |  |  [optional] |
-|**sourceUrl** | **String** |  |  [optional] |
+|**sourceUrl** | **Object** |  |  [optional] |
 
 
 
