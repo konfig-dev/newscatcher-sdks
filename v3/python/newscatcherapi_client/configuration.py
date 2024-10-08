@@ -410,7 +410,7 @@ conf = newscatcherapi_client.Configuration(
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
                "Version of the API: 3.2.16\n"\
-               "SDK Package Version: 6.0.12".\
+               "SDK Package Version: 6.0.13".\
                format(env=sys.platform, pyversion=sys.version)
 
     def get_host_settings(self):
