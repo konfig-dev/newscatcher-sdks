@@ -650,6 +650,18 @@ export const operationParameterMap: Record<string, Entry> = {
             {
                 name: 'exclude_duplicates'
             },
+            {
+                name: 'additional_domain_info'
+            },
+            {
+                name: 'is_news_domain'
+            },
+            {
+                name: 'news_domain_type'
+            },
+            {
+                name: 'news_type'
+            },
         ]
     },
     '/api/search-POST': {
@@ -800,6 +812,18 @@ export const operationParameterMap: Record<string, Entry> = {
             },
             {
                 name: 'exclude_duplicates'
+            },
+            {
+                name: 'additional_domain_info'
+            },
+            {
+                name: 'is_news_domain'
+            },
+            {
+                name: 'news_domain_type'
+            },
+            {
+                name: 'news_type'
             },
         ]
     },
@@ -1121,6 +1145,15 @@ export const operationParameterMap: Record<string, Entry> = {
             {
                 name: 'source_url'
             },
+            {
+                name: 'is_news_domain'
+            },
+            {
+                name: 'news_domain_type'
+            },
+            {
+                name: 'news_type'
+            },
         ]
     },
     '/api/sources-POST': {
@@ -1148,6 +1181,15 @@ export const operationParameterMap: Record<string, Entry> = {
             },
             {
                 name: 'source_url'
+            },
+            {
+                name: 'is_news_domain'
+            },
+            {
+                name: 'news_domain_type'
+            },
+            {
+                name: 'news_type'
             },
         ]
     },

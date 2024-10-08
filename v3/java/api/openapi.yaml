@@ -422,6 +422,36 @@ paths:
           title: Exclude Duplicates
           type: boolean
         style: form
+      - explode: true
+        in: query
+        name: additional_domain_info
+        required: false
+        schema:
+          title: Additional Domain Info
+          type: boolean
+        style: form
+      - explode: true
+        in: query
+        name: is_news_domain
+        required: false
+        schema:
+          title: Is News Domain
+          type: boolean
+        style: form
+      - explode: true
+        in: query
+        name: news_domain_type
+        required: false
+        schema:
+          title: News Domain Type
+        style: form
+      - explode: true
+        in: query
+        name: news_type
+        required: false
+        schema:
+          title: News Type
+        style: form
       responses:
         "200":
           content:
@@ -1843,6 +1873,28 @@ paths:
         schema:
           title: Source Url
         style: form
+      - explode: true
+        in: query
+        name: is_news_domain
+        required: false
+        schema:
+          title: Is News Domain
+          type: boolean
+        style: form
+      - explode: true
+        in: query
+        name: news_domain_type
+        required: false
+        schema:
+          title: News Domain Type
+        style: form
+      - explode: true
+        in: query
+        name: news_type
+        required: false
+        schema:
+          title: News Type
+        style: form
       responses:
         "200":
           content:
@@ -1968,6 +2020,15 @@ components:
         rank:
           title: Rank
           type: integer
+        is_news_domain:
+          title: Is News Domain
+          type: boolean
+        news_domain_type:
+          title: News Domain Type
+          type: string
+        news_type:
+          title: News Type
+          type: string
       title: AdditionalSourceInfo
       type: object
     AuthorSearchRequest:
@@ -2645,12 +2706,15 @@ components:
         is_paid_content: true
         PER_entity_name: PER_entity_name
         page: 1
+        news_domain_type: ""
         has_nlp: true
+        is_news_domain: true
         sources: ""
         to_: to_
         clustering_variable: clustering_variable
         sort_by: relevancy
         not_theme: not_theme
+        news_type: ""
         all_links: ""
         title_sentiment_max: 7.061401241503109
         theme: theme
@@ -2667,6 +2731,7 @@ components:
         from_rank: 0
         title_sentiment_min: 2.3021358869347655
         is_headline: true
+        additional_domain_info: true
         q: q
         published_date_precision: published_date_precision
         include_nlp_data: true
@@ -2822,6 +2887,16 @@ components:
         exclude_duplicates:
           title: Exclude Duplicates
           type: boolean
+        additional_domain_info:
+          title: Additional Domain Info
+          type: boolean
+        is_news_domain:
+          title: Is News Domain
+          type: boolean
+        news_domain_type:
+          title: News Domain Type
+        news_type:
+          title: News Type
       required:
       - q
       title: SearchRequest
@@ -2932,12 +3007,15 @@ components:
       description: Sources request DTO
       example:
         include_additional_info: true
+        is_news_domain: true
+        news_type: ""
         countries: ""
         lang: ""
         to_rank: 6
         predefined_sources: ""
         source_name: ""
         source_url: ""
+        news_domain_type: ""
         from_rank: 0
       properties:
         lang:
@@ -2959,6 +3037,13 @@ components:
           title: Source Name
         source_url:
           title: Source Url
+        is_news_domain:
+          title: Is News Domain
+          type: boolean
+        news_domain_type:
+          title: News Domain Type
+        news_type:
+          title: News Type
       title: SourcesRequest
       type: object
     SubscriptionResponse:
@@ -3947,6 +4032,16 @@ components:
         exclude_duplicates:
           title: Exclude Duplicates
           type: boolean
+        additional_domain_info:
+          title: Additional Domain Info
+          type: boolean
+        is_news_domain:
+          title: Is News Domain
+          type: boolean
+        news_domain_type:
+          title: News Domain Type
+        news_type:
+          title: News Type
       required:
       - q
       type: object
@@ -4001,6 +4096,10 @@ components:
       - iab_tags
       - not_iab_tags
       - exclude_duplicates
+      - additional_domain_info
+      - is_news_domain
+      - news_domain_type
+      - news_type
     konfig-generated-schema-single-parameter-schema-post--api-search:
       properties:
         q:
@@ -4154,6 +4253,16 @@ components:
         exclude_duplicates:
           title: Exclude Duplicates
           type: boolean
+        additional_domain_info:
+          title: Additional Domain Info
+          type: boolean
+        is_news_domain:
+          title: Is News Domain
+          type: boolean
+        news_domain_type:
+          title: News Domain Type
+        news_type:
+          title: News Type
       required:
       - q
       type: object
@@ -5182,6 +5291,13 @@ components:
           title: Source Name
         source_url:
           title: Source Url
+        is_news_domain:
+          title: Is News Domain
+          type: boolean
+        news_domain_type:
+          title: News Domain Type
+        news_type:
+          title: News Type
       type: object
       x-do-not-generate: true
       x-konfig-is-parameter:
@@ -5193,6 +5309,9 @@ components:
       - to_rank
       - source_name
       - source_url
+      - is_news_domain
+      - news_domain_type
+      - news_type
     konfig-generated-schema-single-parameter-schema-post--api-sources:
       properties:
         lang:
@@ -5214,6 +5333,13 @@ components:
           title: Source Name
         source_url:
           title: Source Url
+        is_news_domain:
+          title: Is News Domain
+          type: boolean
+        news_domain_type:
+          title: News Domain Type
+        news_type:
+          title: News Type
       type: object
       x-do-not-generate: true
       x-konfig-is-parameter: []

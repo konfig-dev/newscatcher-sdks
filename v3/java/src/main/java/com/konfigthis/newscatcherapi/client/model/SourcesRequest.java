@@ -83,6 +83,18 @@ public class SourcesRequest {
   @SerializedName(SERIALIZED_NAME_SOURCE_URL)
   private Object sourceUrl = null;
 
+  public static final String SERIALIZED_NAME_IS_NEWS_DOMAIN = "is_news_domain";
+  @SerializedName(SERIALIZED_NAME_IS_NEWS_DOMAIN)
+  private Boolean isNewsDomain;
+
+  public static final String SERIALIZED_NAME_NEWS_DOMAIN_TYPE = "news_domain_type";
+  @SerializedName(SERIALIZED_NAME_NEWS_DOMAIN_TYPE)
+  private Object newsDomainType = null;
+
+  public static final String SERIALIZED_NAME_NEWS_TYPE = "news_type";
+  @SerializedName(SERIALIZED_NAME_NEWS_TYPE)
+  private Object newsType = null;
+
   public SourcesRequest() {
   }
 
@@ -317,6 +329,93 @@ public class SourcesRequest {
     this.sourceUrl = sourceUrl;
   }
 
+
+  public SourcesRequest isNewsDomain(Boolean isNewsDomain) {
+    
+    
+    
+    
+    this.isNewsDomain = isNewsDomain;
+    return this;
+  }
+
+   /**
+   * Get isNewsDomain
+   * @return isNewsDomain
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Boolean getIsNewsDomain() {
+    return isNewsDomain;
+  }
+
+
+  public void setIsNewsDomain(Boolean isNewsDomain) {
+    
+    
+    
+    this.isNewsDomain = isNewsDomain;
+  }
+
+
+  public SourcesRequest newsDomainType(Object newsDomainType) {
+    
+    
+    
+    
+    this.newsDomainType = newsDomainType;
+    return this;
+  }
+
+   /**
+   * Get newsDomainType
+   * @return newsDomainType
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Object getNewsDomainType() {
+    return newsDomainType;
+  }
+
+
+  public void setNewsDomainType(Object newsDomainType) {
+    
+    
+    
+    this.newsDomainType = newsDomainType;
+  }
+
+
+  public SourcesRequest newsType(Object newsType) {
+    
+    
+    
+    
+    this.newsType = newsType;
+    return this;
+  }
+
+   /**
+   * Get newsType
+   * @return newsType
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Object getNewsType() {
+    return newsType;
+  }
+
+
+  public void setNewsType(Object newsType) {
+    
+    
+    
+    this.newsType = newsType;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -379,7 +478,10 @@ public class SourcesRequest {
         Objects.equals(this.fromRank, sourcesRequest.fromRank) &&
         Objects.equals(this.toRank, sourcesRequest.toRank) &&
         Objects.equals(this.sourceName, sourcesRequest.sourceName) &&
-        Objects.equals(this.sourceUrl, sourcesRequest.sourceUrl)&&
+        Objects.equals(this.sourceUrl, sourcesRequest.sourceUrl) &&
+        Objects.equals(this.isNewsDomain, sourcesRequest.isNewsDomain) &&
+        Objects.equals(this.newsDomainType, sourcesRequest.newsDomainType) &&
+        Objects.equals(this.newsType, sourcesRequest.newsType)&&
         Objects.equals(this.additionalProperties, sourcesRequest.additionalProperties);
   }
 
@@ -389,7 +491,7 @@ public class SourcesRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(lang, countries, predefinedSources, includeAdditionalInfo, fromRank, toRank, sourceName, sourceUrl, additionalProperties);
+    return Objects.hash(lang, countries, predefinedSources, includeAdditionalInfo, fromRank, toRank, sourceName, sourceUrl, isNewsDomain, newsDomainType, newsType, additionalProperties);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -411,6 +513,9 @@ public class SourcesRequest {
     sb.append("    toRank: ").append(toIndentedString(toRank)).append("\n");
     sb.append("    sourceName: ").append(toIndentedString(sourceName)).append("\n");
     sb.append("    sourceUrl: ").append(toIndentedString(sourceUrl)).append("\n");
+    sb.append("    isNewsDomain: ").append(toIndentedString(isNewsDomain)).append("\n");
+    sb.append("    newsDomainType: ").append(toIndentedString(newsDomainType)).append("\n");
+    sb.append("    newsType: ").append(toIndentedString(newsType)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -442,6 +547,9 @@ public class SourcesRequest {
     openapiFields.add("to_rank");
     openapiFields.add("source_name");
     openapiFields.add("source_url");
+    openapiFields.add("is_news_domain");
+    openapiFields.add("news_domain_type");
+    openapiFields.add("news_type");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

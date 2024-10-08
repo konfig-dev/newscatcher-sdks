@@ -510,6 +510,40 @@
             },
             "name": "exclude_duplicates",
             "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Additional Domain Info",
+              "type": "boolean"
+            },
+            "name": "additional_domain_info",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Is News Domain",
+              "type": "boolean"
+            },
+            "name": "is_news_domain",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "News Domain Type"
+            },
+            "name": "news_domain_type",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "News Type"
+            },
+            "name": "news_type",
+            "in": "query"
           }
         ],
         "responses": {
@@ -2213,6 +2247,31 @@
             },
             "name": "source_url",
             "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Is News Domain",
+              "type": "boolean"
+            },
+            "name": "is_news_domain",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "News Domain Type"
+            },
+            "name": "news_domain_type",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "News Type"
+            },
+            "name": "news_type",
+            "in": "query"
           }
         ],
         "responses": {
@@ -2384,6 +2443,18 @@
           "rank": {
             "title": "Rank",
             "type": "integer"
+          },
+          "is_news_domain": {
+            "title": "Is News Domain",
+            "type": "boolean"
+          },
+          "news_domain_type": {
+            "title": "News Domain Type",
+            "type": "string"
+          },
+          "news_type": {
+            "title": "News Type",
+            "type": "string"
           }
         }
       },
@@ -3294,6 +3365,20 @@
           "exclude_duplicates": {
             "title": "Exclude Duplicates",
             "type": "boolean"
+          },
+          "additional_domain_info": {
+            "title": "Additional Domain Info",
+            "type": "boolean"
+          },
+          "is_news_domain": {
+            "title": "Is News Domain",
+            "type": "boolean"
+          },
+          "news_domain_type": {
+            "title": "News Domain Type"
+          },
+          "news_type": {
+            "title": "News Type"
           }
         }
       },
@@ -3467,6 +3552,16 @@
           },
           "source_url": {
             "title": "Source Url"
+          },
+          "is_news_domain": {
+            "title": "Is News Domain",
+            "type": "boolean"
+          },
+          "news_domain_type": {
+            "title": "News Domain Type"
+          },
+          "news_type": {
+            "title": "News Type"
           }
         }
       },

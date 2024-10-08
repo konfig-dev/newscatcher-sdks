@@ -44,10 +44,13 @@ export const SourcesApiAxiosParamCreator = function (configuration?: Configurati
          * @param {number} [toRank] 
          * @param {any} [sourceName] 
          * @param {any} [sourceUrl] 
+         * @param {boolean} [isNewsDomain] 
+         * @param {any} [newsDomainType] 
+         * @param {any} [newsType] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        get: async (lang?: any, countries?: any, predefinedSources?: any, includeAdditionalInfo?: boolean, fromRank?: number, toRank?: number, sourceName?: any, sourceUrl?: any, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        get: async (lang?: any, countries?: any, predefinedSources?: any, includeAdditionalInfo?: boolean, fromRank?: number, toRank?: number, sourceName?: any, sourceUrl?: any, isNewsDomain?: boolean, newsDomainType?: any, newsType?: any, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/sources`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -92,6 +95,18 @@ export const SourcesApiAxiosParamCreator = function (configuration?: Configurati
 
             if (sourceUrl !== undefined) {
                 localVarQueryParameter['source_url'] = sourceUrl;
+            }
+
+            if (isNewsDomain !== undefined) {
+                localVarQueryParameter['is_news_domain'] = isNewsDomain;
+            }
+
+            if (newsDomainType !== undefined) {
+                localVarQueryParameter['news_domain_type'] = newsDomainType;
+            }
+
+            if (newsType !== undefined) {
+                localVarQueryParameter['news_type'] = newsType;
             }
 
 
@@ -179,7 +194,7 @@ export const SourcesApiFp = function(configuration?: Configuration) {
          * @throws {RequiredError}
          */
         async get(requestParameters: SourcesApiGetRequest = {}, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SourceResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.get(requestParameters.lang, requestParameters.countries, requestParameters.predefinedSources, requestParameters.includeAdditionalInfo, requestParameters.fromRank, requestParameters.toRank, requestParameters.sourceName, requestParameters.sourceUrl, options);
+            const localVarAxiosArgs = await localVarAxiosParamCreator.get(requestParameters.lang, requestParameters.countries, requestParameters.predefinedSources, requestParameters.includeAdditionalInfo, requestParameters.fromRank, requestParameters.toRank, requestParameters.sourceName, requestParameters.sourceUrl, requestParameters.isNewsDomain, requestParameters.newsDomainType, requestParameters.newsType, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -198,7 +213,10 @@ export const SourcesApiFp = function(configuration?: Configuration) {
                 from_rank: requestParameters.from_rank,
                 to_rank: requestParameters.to_rank,
                 source_name: requestParameters.source_name,
-                source_url: requestParameters.source_url
+                source_url: requestParameters.source_url,
+                is_news_domain: requestParameters.is_news_domain,
+                news_domain_type: requestParameters.news_domain_type,
+                news_type: requestParameters.news_type
             };
             const localVarAxiosArgs = await localVarAxiosParamCreator.post(sourcesRequest, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
@@ -298,6 +316,27 @@ export type SourcesApiGetRequest = {
     * @memberof SourcesApiGet
     */
     readonly sourceUrl?: any
+    
+    /**
+    * 
+    * @type {boolean}
+    * @memberof SourcesApiGet
+    */
+    readonly isNewsDomain?: boolean
+    
+    /**
+    * 
+    * @type {any}
+    * @memberof SourcesApiGet
+    */
+    readonly newsDomainType?: any
+    
+    /**
+    * 
+    * @type {any}
+    * @memberof SourcesApiGet
+    */
+    readonly newsType?: any
     
 }
 

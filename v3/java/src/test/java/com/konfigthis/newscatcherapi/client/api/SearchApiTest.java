@@ -101,6 +101,10 @@ public class SearchApiTest {
         Object iabTags = null;
         Object notIabTags = null;
         Boolean excludeDuplicates = null;
+        Boolean additionalDomainInfo = null;
+        Boolean isNewsDomain = null;
+        Object newsDomainType = null;
+        Object newsType = null;
         CSearchResponse response = api.get(q)
                 .searchIn(searchIn)
                 .predefinedSources(predefinedSources)
@@ -150,6 +154,10 @@ public class SearchApiTest {
                 .iabTags(iabTags)
                 .notIabTags(notIabTags)
                 .excludeDuplicates(excludeDuplicates)
+                .additionalDomainInfo(additionalDomainInfo)
+                .isNewsDomain(isNewsDomain)
+                .newsDomainType(newsDomainType)
+                .newsType(newsType)
                 .execute();
         // TODO: test validations
     }
@@ -212,6 +220,10 @@ public class SearchApiTest {
         Object iabTags = null;
         Object notIabTags = null;
         Boolean excludeDuplicates = null;
+        Boolean additionalDomainInfo = null;
+        Boolean isNewsDomain = null;
+        Object newsDomainType = null;
+        Object newsType = null;
         CSearchResponse1 response = api.post(q)
                 .searchIn(searchIn)
                 .predefinedSources(predefinedSources)
@@ -261,6 +273,10 @@ public class SearchApiTest {
                 .iabTags(iabTags)
                 .notIabTags(notIabTags)
                 .excludeDuplicates(excludeDuplicates)
+                .additionalDomainInfo(additionalDomainInfo)
+                .isNewsDomain(isNewsDomain)
+                .newsDomainType(newsDomainType)
+                .newsType(newsType)
                 .execute();
         // TODO: test validations
     }

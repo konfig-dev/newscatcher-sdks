@@ -117,5 +117,13 @@ class OptionalSearchRequest(TypedDict, total=False):
 
     exclude_duplicates: bool
 
+    additional_domain_info: bool
+
+    is_news_domain: bool
+
+    news_domain_type: typing.Union[bool, date, datetime, dict, float, int, list, str, None]
+
+    news_type: typing.Union[bool, date, datetime, dict, float, int, list, str, None]
+
 class SearchRequest(RequiredSearchRequest, OptionalSearchRequest):
     pass

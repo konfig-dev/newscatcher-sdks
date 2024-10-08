@@ -65,5 +65,23 @@ export interface SourcesRequest {
      * @memberof SourcesRequest
      */
     'source_url'?: any;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof SourcesRequest
+     */
+    'is_news_domain'?: boolean;
+    /**
+     * 
+     * @type {any}
+     * @memberof SourcesRequest
+     */
+    'news_domain_type'?: any;
+    /**
+     * 
+     * @type {any}
+     * @memberof SourcesRequest
+     */
+    'news_type'?: any;
 }
 

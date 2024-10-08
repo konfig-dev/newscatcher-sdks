@@ -166,6 +166,10 @@ class BaseApi(api_client.Api):
         iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         exclude_duplicates: typing.Optional[bool] = None,
+        additional_domain_info: typing.Optional[bool] = None,
+        is_news_domain: typing.Optional[bool] = None,
+        news_domain_type: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        news_type: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
     ) -> api_client.MappedArgs:
         args: api_client.MappedArgs = api_client.MappedArgs()
         _body = {}
@@ -267,6 +271,14 @@ class BaseApi(api_client.Api):
             _body["not_iab_tags"] = not_iab_tags
         if exclude_duplicates is not None:
             _body["exclude_duplicates"] = exclude_duplicates
+        if additional_domain_info is not None:
+            _body["additional_domain_info"] = additional_domain_info
+        if is_news_domain is not None:
+            _body["is_news_domain"] = is_news_domain
+        if news_domain_type is not None:
+            _body["news_domain_type"] = news_domain_type
+        if news_type is not None:
+            _body["news_type"] = news_type
         args.body = _body
         return args
 
@@ -523,6 +535,10 @@ class PostRaw(BaseApi):
         iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         exclude_duplicates: typing.Optional[bool] = None,
+        additional_domain_info: typing.Optional[bool] = None,
+        is_news_domain: typing.Optional[bool] = None,
+        news_domain_type: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        news_type: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         **kwargs,
     ) -> typing.Union[
         ApiResponseFor200Async,
@@ -579,6 +595,10 @@ class PostRaw(BaseApi):
             iab_tags=iab_tags,
             not_iab_tags=not_iab_tags,
             exclude_duplicates=exclude_duplicates,
+            additional_domain_info=additional_domain_info,
+            is_news_domain=is_news_domain,
+            news_domain_type=news_domain_type,
+            news_type=news_type,
         )
         return await self._apost_oapg(
             body=args.body,
@@ -636,6 +656,10 @@ class PostRaw(BaseApi):
         iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         exclude_duplicates: typing.Optional[bool] = None,
+        additional_domain_info: typing.Optional[bool] = None,
+        is_news_domain: typing.Optional[bool] = None,
+        news_domain_type: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        news_type: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
     ) -> typing.Union[
         ApiResponseFor200,
         api_client.ApiResponseWithoutDeserialization,
@@ -691,6 +715,10 @@ class PostRaw(BaseApi):
             iab_tags=iab_tags,
             not_iab_tags=not_iab_tags,
             exclude_duplicates=exclude_duplicates,
+            additional_domain_info=additional_domain_info,
+            is_news_domain=is_news_domain,
+            news_domain_type=news_domain_type,
+            news_type=news_type,
         )
         return self._post_oapg(
             body=args.body,
@@ -749,6 +777,10 @@ class Post(BaseApi):
         iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         exclude_duplicates: typing.Optional[bool] = None,
+        additional_domain_info: typing.Optional[bool] = None,
+        is_news_domain: typing.Optional[bool] = None,
+        news_domain_type: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        news_type: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         validate: bool = False,
         **kwargs,
     ) -> SearchPostResponsePydantic:
@@ -802,6 +834,10 @@ class Post(BaseApi):
             iab_tags=iab_tags,
             not_iab_tags=not_iab_tags,
             exclude_duplicates=exclude_duplicates,
+            additional_domain_info=additional_domain_info,
+            is_news_domain=is_news_domain,
+            news_domain_type=news_domain_type,
+            news_type=news_type,
             **kwargs,
         )
         if validate:
@@ -860,6 +896,10 @@ class Post(BaseApi):
         iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         exclude_duplicates: typing.Optional[bool] = None,
+        additional_domain_info: typing.Optional[bool] = None,
+        is_news_domain: typing.Optional[bool] = None,
+        news_domain_type: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        news_type: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         validate: bool = False,
     ) -> SearchPostResponsePydantic:
         raw_response = self.raw.post(
@@ -912,6 +952,10 @@ class Post(BaseApi):
             iab_tags=iab_tags,
             not_iab_tags=not_iab_tags,
             exclude_duplicates=exclude_duplicates,
+            additional_domain_info=additional_domain_info,
+            is_news_domain=is_news_domain,
+            news_domain_type=news_domain_type,
+            news_type=news_type,
         )
         if validate:
             return RootModel[SearchPostResponsePydantic](raw_response.body).root
@@ -972,6 +1016,10 @@ class ApiForpost(BaseApi):
         iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         exclude_duplicates: typing.Optional[bool] = None,
+        additional_domain_info: typing.Optional[bool] = None,
+        is_news_domain: typing.Optional[bool] = None,
+        news_domain_type: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        news_type: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         **kwargs,
     ) -> typing.Union[
         ApiResponseFor200Async,
@@ -1028,6 +1076,10 @@ class ApiForpost(BaseApi):
             iab_tags=iab_tags,
             not_iab_tags=not_iab_tags,
             exclude_duplicates=exclude_duplicates,
+            additional_domain_info=additional_domain_info,
+            is_news_domain=is_news_domain,
+            news_domain_type=news_domain_type,
+            news_type=news_type,
         )
         return await self._apost_oapg(
             body=args.body,
@@ -1085,6 +1137,10 @@ class ApiForpost(BaseApi):
         iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         exclude_duplicates: typing.Optional[bool] = None,
+        additional_domain_info: typing.Optional[bool] = None,
+        is_news_domain: typing.Optional[bool] = None,
+        news_domain_type: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        news_type: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
     ) -> typing.Union[
         ApiResponseFor200,
         api_client.ApiResponseWithoutDeserialization,
@@ -1140,6 +1196,10 @@ class ApiForpost(BaseApi):
             iab_tags=iab_tags,
             not_iab_tags=not_iab_tags,
             exclude_duplicates=exclude_duplicates,
+            additional_domain_info=additional_domain_info,
+            is_news_domain=is_news_domain,
+            news_domain_type=news_domain_type,
+            news_type=news_type,
         )
         return self._post_oapg(
             body=args.body,

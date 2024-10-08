@@ -16,6 +16,9 @@ Sources request DTO
 |**toRank** | **Integer** |  |  [optional] |
 |**sourceName** | **Object** |  |  [optional] |
 |**sourceUrl** | **Object** |  |  [optional] |
+|**isNewsDomain** | **Boolean** |  |  [optional] |
+|**newsDomainType** | **Object** |  |  [optional] |
+|**newsType** | **Object** |  |  [optional] |
 
 
 

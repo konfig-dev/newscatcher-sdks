@@ -62,6 +62,18 @@ public class AdditionalSourceInfo {
   @SerializedName(SERIALIZED_NAME_RANK)
   private Integer rank;
 
+  public static final String SERIALIZED_NAME_IS_NEWS_DOMAIN = "is_news_domain";
+  @SerializedName(SERIALIZED_NAME_IS_NEWS_DOMAIN)
+  private Boolean isNewsDomain;
+
+  public static final String SERIALIZED_NAME_NEWS_DOMAIN_TYPE = "news_domain_type";
+  @SerializedName(SERIALIZED_NAME_NEWS_DOMAIN_TYPE)
+  private String newsDomainType;
+
+  public static final String SERIALIZED_NAME_NEWS_TYPE = "news_type";
+  @SerializedName(SERIALIZED_NAME_NEWS_TYPE)
+  private String newsType;
+
   public AdditionalSourceInfo() {
   }
 
@@ -151,6 +163,93 @@ public class AdditionalSourceInfo {
     this.rank = rank;
   }
 
+
+  public AdditionalSourceInfo isNewsDomain(Boolean isNewsDomain) {
+    
+    
+    
+    
+    this.isNewsDomain = isNewsDomain;
+    return this;
+  }
+
+   /**
+   * Get isNewsDomain
+   * @return isNewsDomain
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Boolean getIsNewsDomain() {
+    return isNewsDomain;
+  }
+
+
+  public void setIsNewsDomain(Boolean isNewsDomain) {
+    
+    
+    
+    this.isNewsDomain = isNewsDomain;
+  }
+
+
+  public AdditionalSourceInfo newsDomainType(String newsDomainType) {
+    
+    
+    
+    
+    this.newsDomainType = newsDomainType;
+    return this;
+  }
+
+   /**
+   * Get newsDomainType
+   * @return newsDomainType
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getNewsDomainType() {
+    return newsDomainType;
+  }
+
+
+  public void setNewsDomainType(String newsDomainType) {
+    
+    
+    
+    this.newsDomainType = newsDomainType;
+  }
+
+
+  public AdditionalSourceInfo newsType(String newsType) {
+    
+    
+    
+    
+    this.newsType = newsType;
+    return this;
+  }
+
+   /**
+   * Get newsType
+   * @return newsType
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getNewsType() {
+    return newsType;
+  }
+
+
+  public void setNewsType(String newsType) {
+    
+    
+    
+    this.newsType = newsType;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -208,13 +307,16 @@ public class AdditionalSourceInfo {
     AdditionalSourceInfo additionalSourceInfo = (AdditionalSourceInfo) o;
     return Objects.equals(this.nbArticlesFor7d, additionalSourceInfo.nbArticlesFor7d) &&
         Objects.equals(this.country, additionalSourceInfo.country) &&
-        Objects.equals(this.rank, additionalSourceInfo.rank)&&
+        Objects.equals(this.rank, additionalSourceInfo.rank) &&
+        Objects.equals(this.isNewsDomain, additionalSourceInfo.isNewsDomain) &&
+        Objects.equals(this.newsDomainType, additionalSourceInfo.newsDomainType) &&
+        Objects.equals(this.newsType, additionalSourceInfo.newsType)&&
         Objects.equals(this.additionalProperties, additionalSourceInfo.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(nbArticlesFor7d, country, rank, additionalProperties);
+    return Objects.hash(nbArticlesFor7d, country, rank, isNewsDomain, newsDomainType, newsType, additionalProperties);
   }
 
   @Override
@@ -224,6 +326,9 @@ public class AdditionalSourceInfo {
     sb.append("    nbArticlesFor7d: ").append(toIndentedString(nbArticlesFor7d)).append("\n");
     sb.append("    country: ").append(toIndentedString(country)).append("\n");
     sb.append("    rank: ").append(toIndentedString(rank)).append("\n");
+    sb.append("    isNewsDomain: ").append(toIndentedString(isNewsDomain)).append("\n");
+    sb.append("    newsDomainType: ").append(toIndentedString(newsDomainType)).append("\n");
+    sb.append("    newsType: ").append(toIndentedString(newsType)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -250,6 +355,9 @@ public class AdditionalSourceInfo {
     openapiFields.add("nb_articles_for_7d");
     openapiFields.add("country");
     openapiFields.add("rank");
+    openapiFields.add("is_news_domain");
+    openapiFields.add("news_domain_type");
+    openapiFields.add("news_type");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -269,6 +377,12 @@ public class AdditionalSourceInfo {
       }
       if ((jsonObj.get("country") != null && !jsonObj.get("country").isJsonNull()) && !jsonObj.get("country").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `country` to be a primitive type in the JSON string but got `%s`", jsonObj.get("country").toString()));
+      }
+      if ((jsonObj.get("news_domain_type") != null && !jsonObj.get("news_domain_type").isJsonNull()) && !jsonObj.get("news_domain_type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `news_domain_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("news_domain_type").toString()));
+      }
+      if ((jsonObj.get("news_type") != null && !jsonObj.get("news_type").isJsonNull()) && !jsonObj.get("news_type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `news_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("news_type").toString()));
       }
   }
 

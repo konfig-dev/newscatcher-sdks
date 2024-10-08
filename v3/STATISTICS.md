@@ -2,9 +2,9 @@
 
 | SDK Name | Lines of Code |
 | -------- | ------------- |
-| java | 56342 |
-| python | 57885 |
-| typescript | 16695 |
-| csharp | 34563 |
-| go | 48477 |
-| **Total** | 213962 |
+| java | 58683 |
+| python | 58770 |
+| typescript | 16929 |
+| csharp | 34986 |
+| go | 49358 |
+| **Total** | 218726 |

@@ -62,4 +62,28 @@ public class AdditionalSourceInfoTest {
         // TODO: test rank
     }
 
+    /**
+     * Test the property 'isNewsDomain'
+     */
+    @Test
+    public void isNewsDomainTest() {
+        // TODO: test isNewsDomain
+    }
+
+    /**
+     * Test the property 'newsDomainType'
+     */
+    @Test
+    public void newsDomainTypeTest() {
+        // TODO: test newsDomainType
+    }
+
+    /**
+     * Test the property 'newsType'
+     */
+    @Test
+    public void newsTypeTest() {
+        // TODO: test newsType
+    }
+
 }

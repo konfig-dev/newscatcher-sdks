@@ -10,7 +10,7 @@ All URIs are relative to *https://v3-api.newscatcherapi.com*
 
 <a name="get"></a>
 # **get**
-> SourceResponse get().lang(lang).countries(countries).predefinedSources(predefinedSources).includeAdditionalInfo(includeAdditionalInfo).fromRank(fromRank).toRank(toRank).sourceName(sourceName).sourceUrl(sourceUrl).execute();
+> SourceResponse get().lang(lang).countries(countries).predefinedSources(predefinedSources).includeAdditionalInfo(includeAdditionalInfo).fromRank(fromRank).toRank(toRank).sourceName(sourceName).sourceUrl(sourceUrl).isNewsDomain(isNewsDomain).newsDomainType(newsDomainType).newsType(newsType).execute();
 
 [Get] Search For Sources Request
 
@@ -45,6 +45,9 @@ public class Example {
     Integer toRank = 56;
     Object sourceName = null;
     Object sourceUrl = null;
+    Boolean isNewsDomain = true;
+    Object newsDomainType = null;
+    Object newsType = null;
     try {
       SourceResponse result = client
               .sources
@@ -57,6 +60,9 @@ public class Example {
               .toRank(toRank)
               .sourceName(sourceName)
               .sourceUrl(sourceUrl)
+              .isNewsDomain(isNewsDomain)
+              .newsDomainType(newsDomainType)
+              .newsType(newsType)
               .execute();
       System.out.println(result);
       System.out.println(result.getMessage());
@@ -83,6 +89,9 @@ public class Example {
               .toRank(toRank)
               .sourceName(sourceName)
               .sourceUrl(sourceUrl)
+              .isNewsDomain(isNewsDomain)
+              .newsDomainType(newsDomainType)
+              .newsType(newsType)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
       System.out.println(response.getResponseHeaders());
@@ -113,6 +122,9 @@ public class Example {
 | **toRank** | **Integer**|  | [optional] |
 | **sourceName** | [**Object**](.md)|  | [optional] |
 | **sourceUrl** | [**Object**](.md)|  | [optional] |
+| **isNewsDomain** | **Boolean**|  | [optional] |
+| **newsDomainType** | [**Object**](.md)|  | [optional] |
+| **newsType** | [**Object**](.md)|  | [optional] |
 
 ### Return type
 
@@ -169,6 +181,9 @@ public class Example {
     Integer toRank = 56;
     Object sourceName = null;
     Object sourceUrl = null;
+    Boolean isNewsDomain = true;
+    Object newsDomainType = null;
+    Object newsType = null;
     try {
       SourceResponse result = client
               .sources
@@ -181,6 +196,9 @@ public class Example {
               .toRank(toRank)
               .sourceName(sourceName)
               .sourceUrl(sourceUrl)
+              .isNewsDomain(isNewsDomain)
+              .newsDomainType(newsDomainType)
+              .newsType(newsType)
               .execute();
       System.out.println(result);
       System.out.println(result.getMessage());
@@ -207,6 +225,9 @@ public class Example {
               .toRank(toRank)
               .sourceName(sourceName)
               .sourceUrl(sourceUrl)
+              .isNewsDomain(isNewsDomain)
+              .newsDomainType(newsDomainType)
+              .newsType(newsType)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
       System.out.println(response.getResponseHeaders());

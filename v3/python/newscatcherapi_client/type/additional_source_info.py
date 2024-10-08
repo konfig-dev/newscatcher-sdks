@@ -26,5 +26,11 @@ class OptionalAdditionalSourceInfo(TypedDict, total=False):
 
     rank: int
 
+    is_news_domain: bool
+
+    news_domain_type: str
+
+    news_type: str
+
 class AdditionalSourceInfo(RequiredAdditionalSourceInfo, OptionalAdditionalSourceInfo):
     pass

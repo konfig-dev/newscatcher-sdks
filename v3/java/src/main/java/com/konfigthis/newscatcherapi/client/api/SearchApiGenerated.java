@@ -77,7 +77,7 @@ public class SearchApiGenerated {
         this.localCustomBaseUrl = customBaseUrl;
     }
 
-    private okhttp3.Call getCall(String q, String searchIn, Object predefinedSources, Object sources, Object notSources, Object lang, Object notLang, Object countries, Object notCountries, Object notAuthorName, String from, String to, String publishedDatePrecision, Boolean byParseDate, String sortBy, Object rankedOnly, Integer fromRank, Integer toRank, Boolean isHeadline, Boolean isOpinion, Boolean isPaidContent, Object parentUrl, Object allLinks, Object allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, String clusteringVariable, Boolean clusteringEnabled, Double clusteringThreshold, Boolean includeNlpData, Boolean hasNlp, String theme, String notTheme, String orGEntityName, String peREntityName, String loCEntityName, String miSCEntityName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax, Object iptcTags, Object notIptcTags, Object sourceName, Object iabTags, Object notIabTags, Boolean excludeDuplicates, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getCall(String q, String searchIn, Object predefinedSources, Object sources, Object notSources, Object lang, Object notLang, Object countries, Object notCountries, Object notAuthorName, String from, String to, String publishedDatePrecision, Boolean byParseDate, String sortBy, Object rankedOnly, Integer fromRank, Integer toRank, Boolean isHeadline, Boolean isOpinion, Boolean isPaidContent, Object parentUrl, Object allLinks, Object allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, String clusteringVariable, Boolean clusteringEnabled, Double clusteringThreshold, Boolean includeNlpData, Boolean hasNlp, String theme, String notTheme, String orGEntityName, String peREntityName, String loCEntityName, String miSCEntityName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax, Object iptcTags, Object notIptcTags, Object sourceName, Object iabTags, Object notIabTags, Boolean excludeDuplicates, Boolean additionalDomainInfo, Boolean isNewsDomain, Object newsDomainType, Object newsType, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -298,6 +298,22 @@ public class SearchApiGenerated {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("exclude_duplicates", excludeDuplicates));
         }
 
+        if (additionalDomainInfo != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("additional_domain_info", additionalDomainInfo));
+        }
+
+        if (isNewsDomain != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("is_news_domain", isNewsDomain));
+        }
+
+        if (newsDomainType != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("news_domain_type", newsDomainType));
+        }
+
+        if (newsType != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("news_type", newsType));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -318,26 +334,26 @@ public class SearchApiGenerated {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getValidateBeforeCall(String q, String searchIn, Object predefinedSources, Object sources, Object notSources, Object lang, Object notLang, Object countries, Object notCountries, Object notAuthorName, String from, String to, String publishedDatePrecision, Boolean byParseDate, String sortBy, Object rankedOnly, Integer fromRank, Integer toRank, Boolean isHeadline, Boolean isOpinion, Boolean isPaidContent, Object parentUrl, Object allLinks, Object allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, String clusteringVariable, Boolean clusteringEnabled, Double clusteringThreshold, Boolean includeNlpData, Boolean hasNlp, String theme, String notTheme, String orGEntityName, String peREntityName, String loCEntityName, String miSCEntityName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax, Object iptcTags, Object notIptcTags, Object sourceName, Object iabTags, Object notIabTags, Boolean excludeDuplicates, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getValidateBeforeCall(String q, String searchIn, Object predefinedSources, Object sources, Object notSources, Object lang, Object notLang, Object countries, Object notCountries, Object notAuthorName, String from, String to, String publishedDatePrecision, Boolean byParseDate, String sortBy, Object rankedOnly, Integer fromRank, Integer toRank, Boolean isHeadline, Boolean isOpinion, Boolean isPaidContent, Object parentUrl, Object allLinks, Object allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, String clusteringVariable, Boolean clusteringEnabled, Double clusteringThreshold, Boolean includeNlpData, Boolean hasNlp, String theme, String notTheme, String orGEntityName, String peREntityName, String loCEntityName, String miSCEntityName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax, Object iptcTags, Object notIptcTags, Object sourceName, Object iabTags, Object notIabTags, Boolean excludeDuplicates, Boolean additionalDomainInfo, Boolean isNewsDomain, Object newsDomainType, Object newsType, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'q' is set
         if (q == null) {
             throw new ApiException("Missing the required parameter 'q' when calling get(Async)");
         }
 
-        return getCall(q, searchIn, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, notAuthorName, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isOpinion, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, orGEntityName, peREntityName, loCEntityName, miSCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, sourceName, iabTags, notIabTags, excludeDuplicates, _callback);
+        return getCall(q, searchIn, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, notAuthorName, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isOpinion, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, orGEntityName, peREntityName, loCEntityName, miSCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, sourceName, iabTags, notIabTags, excludeDuplicates, additionalDomainInfo, isNewsDomain, newsDomainType, newsType, _callback);
 
     }
 
 
-    private ApiResponse<CSearchResponse> getWithHttpInfo(String q, String searchIn, Object predefinedSources, Object sources, Object notSources, Object lang, Object notLang, Object countries, Object notCountries, Object notAuthorName, String from, String to, String publishedDatePrecision, Boolean byParseDate, String sortBy, Object rankedOnly, Integer fromRank, Integer toRank, Boolean isHeadline, Boolean isOpinion, Boolean isPaidContent, Object parentUrl, Object allLinks, Object allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, String clusteringVariable, Boolean clusteringEnabled, Double clusteringThreshold, Boolean includeNlpData, Boolean hasNlp, String theme, String notTheme, String orGEntityName, String peREntityName, String loCEntityName, String miSCEntityName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax, Object iptcTags, Object notIptcTags, Object sourceName, Object iabTags, Object notIabTags, Boolean excludeDuplicates) throws ApiException {
-        okhttp3.Call localVarCall = getValidateBeforeCall(q, searchIn, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, notAuthorName, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isOpinion, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, orGEntityName, peREntityName, loCEntityName, miSCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, sourceName, iabTags, notIabTags, excludeDuplicates, null);
+    private ApiResponse<CSearchResponse> getWithHttpInfo(String q, String searchIn, Object predefinedSources, Object sources, Object notSources, Object lang, Object notLang, Object countries, Object notCountries, Object notAuthorName, String from, String to, String publishedDatePrecision, Boolean byParseDate, String sortBy, Object rankedOnly, Integer fromRank, Integer toRank, Boolean isHeadline, Boolean isOpinion, Boolean isPaidContent, Object parentUrl, Object allLinks, Object allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, String clusteringVariable, Boolean clusteringEnabled, Double clusteringThreshold, Boolean includeNlpData, Boolean hasNlp, String theme, String notTheme, String orGEntityName, String peREntityName, String loCEntityName, String miSCEntityName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax, Object iptcTags, Object notIptcTags, Object sourceName, Object iabTags, Object notIabTags, Boolean excludeDuplicates, Boolean additionalDomainInfo, Boolean isNewsDomain, Object newsDomainType, Object newsType) throws ApiException {
+        okhttp3.Call localVarCall = getValidateBeforeCall(q, searchIn, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, notAuthorName, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isOpinion, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, orGEntityName, peREntityName, loCEntityName, miSCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, sourceName, iabTags, notIabTags, excludeDuplicates, additionalDomainInfo, isNewsDomain, newsDomainType, newsType, null);
         Type localVarReturnType = new TypeToken<CSearchResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call getAsync(String q, String searchIn, Object predefinedSources, Object sources, Object notSources, Object lang, Object notLang, Object countries, Object notCountries, Object notAuthorName, String from, String to, String publishedDatePrecision, Boolean byParseDate, String sortBy, Object rankedOnly, Integer fromRank, Integer toRank, Boolean isHeadline, Boolean isOpinion, Boolean isPaidContent, Object parentUrl, Object allLinks, Object allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, String clusteringVariable, Boolean clusteringEnabled, Double clusteringThreshold, Boolean includeNlpData, Boolean hasNlp, String theme, String notTheme, String orGEntityName, String peREntityName, String loCEntityName, String miSCEntityName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax, Object iptcTags, Object notIptcTags, Object sourceName, Object iabTags, Object notIabTags, Boolean excludeDuplicates, final ApiCallback<CSearchResponse> _callback) throws ApiException {
+    private okhttp3.Call getAsync(String q, String searchIn, Object predefinedSources, Object sources, Object notSources, Object lang, Object notLang, Object countries, Object notCountries, Object notAuthorName, String from, String to, String publishedDatePrecision, Boolean byParseDate, String sortBy, Object rankedOnly, Integer fromRank, Integer toRank, Boolean isHeadline, Boolean isOpinion, Boolean isPaidContent, Object parentUrl, Object allLinks, Object allDomainLinks, Integer wordCountMin, Integer wordCountMax, Integer page, Integer pageSize, String clusteringVariable, Boolean clusteringEnabled, Double clusteringThreshold, Boolean includeNlpData, Boolean hasNlp, String theme, String notTheme, String orGEntityName, String peREntityName, String loCEntityName, String miSCEntityName, Double titleSentimentMin, Double titleSentimentMax, Double contentSentimentMin, Double contentSentimentMax, Object iptcTags, Object notIptcTags, Object sourceName, Object iabTags, Object notIabTags, Boolean excludeDuplicates, Boolean additionalDomainInfo, Boolean isNewsDomain, Object newsDomainType, Object newsType, final ApiCallback<CSearchResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getValidateBeforeCall(q, searchIn, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, notAuthorName, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isOpinion, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, orGEntityName, peREntityName, loCEntityName, miSCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, sourceName, iabTags, notIabTags, excludeDuplicates, _callback);
+        okhttp3.Call localVarCall = getValidateBeforeCall(q, searchIn, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, notAuthorName, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isOpinion, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, orGEntityName, peREntityName, loCEntityName, miSCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, sourceName, iabTags, notIabTags, excludeDuplicates, additionalDomainInfo, isNewsDomain, newsDomainType, newsType, _callback);
         Type localVarReturnType = new TypeToken<CSearchResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -393,6 +409,10 @@ public class SearchApiGenerated {
         Object iabTags;
         Object notIabTags;
         Boolean excludeDuplicates;
+        Boolean additionalDomainInfo;
+        Boolean isNewsDomain;
+        Object newsDomainType;
+        Object newsType;
 
         public GetRequestBuilderGenerated(String q) {
             this.q = q;
@@ -879,6 +899,46 @@ public class SearchApiGenerated {
         }
         
         /**
+         * Set additionalDomainInfo
+         * @param additionalDomainInfo  (optional)
+         * @return SearchApi.GetRequestBuilder
+         */
+        public SearchApi.GetRequestBuilder additionalDomainInfo(Boolean additionalDomainInfo) {
+            this.additionalDomainInfo = additionalDomainInfo;
+            return (SearchApi.GetRequestBuilder) this;
+        }
+        
+        /**
+         * Set isNewsDomain
+         * @param isNewsDomain  (optional)
+         * @return SearchApi.GetRequestBuilder
+         */
+        public SearchApi.GetRequestBuilder isNewsDomain(Boolean isNewsDomain) {
+            this.isNewsDomain = isNewsDomain;
+            return (SearchApi.GetRequestBuilder) this;
+        }
+        
+        /**
+         * Set newsDomainType
+         * @param newsDomainType  (optional)
+         * @return SearchApi.GetRequestBuilder
+         */
+        public SearchApi.GetRequestBuilder newsDomainType(Object newsDomainType) {
+            this.newsDomainType = newsDomainType;
+            return (SearchApi.GetRequestBuilder) this;
+        }
+        
+        /**
+         * Set newsType
+         * @param newsType  (optional)
+         * @return SearchApi.GetRequestBuilder
+         */
+        public SearchApi.GetRequestBuilder newsType(Object newsType) {
+            this.newsType = newsType;
+            return (SearchApi.GetRequestBuilder) this;
+        }
+        
+        /**
          * Build call for get
          * @param _callback ApiCallback API callback
          * @return Call to execute
@@ -890,7 +950,7 @@ public class SearchApiGenerated {
          </table>
          */
         public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
-            return getCall(q, searchIn, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, notAuthorName, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isOpinion, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, orGEntityName, peREntityName, loCEntityName, miSCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, sourceName, iabTags, notIabTags, excludeDuplicates, _callback);
+            return getCall(q, searchIn, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, notAuthorName, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isOpinion, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, orGEntityName, peREntityName, loCEntityName, miSCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, sourceName, iabTags, notIabTags, excludeDuplicates, additionalDomainInfo, isNewsDomain, newsDomainType, newsType, _callback);
         }
 
 
@@ -905,7 +965,7 @@ public class SearchApiGenerated {
          </table>
          */
         public CSearchResponse execute() throws ApiException {
-            ApiResponse<CSearchResponse> localVarResp = getWithHttpInfo(q, searchIn, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, notAuthorName, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isOpinion, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, orGEntityName, peREntityName, loCEntityName, miSCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, sourceName, iabTags, notIabTags, excludeDuplicates);
+            ApiResponse<CSearchResponse> localVarResp = getWithHttpInfo(q, searchIn, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, notAuthorName, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isOpinion, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, orGEntityName, peREntityName, loCEntityName, miSCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, sourceName, iabTags, notIabTags, excludeDuplicates, additionalDomainInfo, isNewsDomain, newsDomainType, newsType);
             return localVarResp.getResponseBody();
         }
 
@@ -920,7 +980,7 @@ public class SearchApiGenerated {
          </table>
          */
         public ApiResponse<CSearchResponse> executeWithHttpInfo() throws ApiException {
-            return getWithHttpInfo(q, searchIn, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, notAuthorName, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isOpinion, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, orGEntityName, peREntityName, loCEntityName, miSCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, sourceName, iabTags, notIabTags, excludeDuplicates);
+            return getWithHttpInfo(q, searchIn, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, notAuthorName, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isOpinion, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, orGEntityName, peREntityName, loCEntityName, miSCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, sourceName, iabTags, notIabTags, excludeDuplicates, additionalDomainInfo, isNewsDomain, newsDomainType, newsType);
         }
 
         /**
@@ -935,7 +995,7 @@ public class SearchApiGenerated {
          </table>
          */
         public okhttp3.Call executeAsync(final ApiCallback<CSearchResponse> _callback) throws ApiException {
-            return getAsync(q, searchIn, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, notAuthorName, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isOpinion, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, orGEntityName, peREntityName, loCEntityName, miSCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, sourceName, iabTags, notIabTags, excludeDuplicates, _callback);
+            return getAsync(q, searchIn, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, notAuthorName, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isOpinion, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, orGEntityName, peREntityName, loCEntityName, miSCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, sourceName, iabTags, notIabTags, excludeDuplicates, additionalDomainInfo, isNewsDomain, newsDomainType, newsType, _callback);
         }
     }
 
@@ -1077,6 +1137,10 @@ public class SearchApiGenerated {
         Object iabTags;
         Object notIabTags;
         Boolean excludeDuplicates;
+        Boolean additionalDomainInfo;
+        Boolean isNewsDomain;
+        Object newsDomainType;
+        Object newsType;
 
         public PostRequestBuilderGenerated(String q) {
             this.q = q;
@@ -1563,6 +1627,46 @@ public class SearchApiGenerated {
         }
         
         /**
+         * Set additionalDomainInfo
+         * @param additionalDomainInfo  (optional)
+         * @return SearchApi.PostRequestBuilder
+         */
+        public SearchApi.PostRequestBuilder additionalDomainInfo(Boolean additionalDomainInfo) {
+            this.additionalDomainInfo = additionalDomainInfo;
+            return (SearchApi.PostRequestBuilder) this;
+        }
+        
+        /**
+         * Set isNewsDomain
+         * @param isNewsDomain  (optional)
+         * @return SearchApi.PostRequestBuilder
+         */
+        public SearchApi.PostRequestBuilder isNewsDomain(Boolean isNewsDomain) {
+            this.isNewsDomain = isNewsDomain;
+            return (SearchApi.PostRequestBuilder) this;
+        }
+        
+        /**
+         * Set newsDomainType
+         * @param newsDomainType  (optional)
+         * @return SearchApi.PostRequestBuilder
+         */
+        public SearchApi.PostRequestBuilder newsDomainType(Object newsDomainType) {
+            this.newsDomainType = newsDomainType;
+            return (SearchApi.PostRequestBuilder) this;
+        }
+        
+        /**
+         * Set newsType
+         * @param newsType  (optional)
+         * @return SearchApi.PostRequestBuilder
+         */
+        public SearchApi.PostRequestBuilder newsType(Object newsType) {
+            this.newsType = newsType;
+            return (SearchApi.PostRequestBuilder) this;
+        }
+        
+        /**
          * Build call for post
          * @param _callback ApiCallback API callback
          * @return Call to execute
@@ -1629,6 +1733,10 @@ public class SearchApiGenerated {
             searchRequest.iabTags(this.iabTags);
             searchRequest.notIabTags(this.notIabTags);
             searchRequest.excludeDuplicates(this.excludeDuplicates);
+            searchRequest.additionalDomainInfo(this.additionalDomainInfo);
+            searchRequest.isNewsDomain(this.isNewsDomain);
+            searchRequest.newsDomainType(this.newsDomainType);
+            searchRequest.newsType(this.newsType);
             return searchRequest;
         }
 

@@ -76,7 +76,7 @@ public class SourcesApiGenerated {
         this.localCustomBaseUrl = customBaseUrl;
     }
 
-    private okhttp3.Call getCall(Object lang, Object countries, Object predefinedSources, Boolean includeAdditionalInfo, Integer fromRank, Integer toRank, Object sourceName, Object sourceUrl, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getCall(Object lang, Object countries, Object predefinedSources, Boolean includeAdditionalInfo, Integer fromRank, Integer toRank, Object sourceName, Object sourceUrl, Boolean isNewsDomain, Object newsDomainType, Object newsType, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -133,6 +133,18 @@ public class SourcesApiGenerated {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("source_url", sourceUrl));
         }
 
+        if (isNewsDomain != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("is_news_domain", isNewsDomain));
+        }
+
+        if (newsDomainType != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("news_domain_type", newsDomainType));
+        }
+
+        if (newsType != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("news_type", newsType));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -153,21 +165,21 @@ public class SourcesApiGenerated {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getValidateBeforeCall(Object lang, Object countries, Object predefinedSources, Boolean includeAdditionalInfo, Integer fromRank, Integer toRank, Object sourceName, Object sourceUrl, final ApiCallback _callback) throws ApiException {
-        return getCall(lang, countries, predefinedSources, includeAdditionalInfo, fromRank, toRank, sourceName, sourceUrl, _callback);
+    private okhttp3.Call getValidateBeforeCall(Object lang, Object countries, Object predefinedSources, Boolean includeAdditionalInfo, Integer fromRank, Integer toRank, Object sourceName, Object sourceUrl, Boolean isNewsDomain, Object newsDomainType, Object newsType, final ApiCallback _callback) throws ApiException {
+        return getCall(lang, countries, predefinedSources, includeAdditionalInfo, fromRank, toRank, sourceName, sourceUrl, isNewsDomain, newsDomainType, newsType, _callback);
 
     }
 
 
-    private ApiResponse<SourceResponse> getWithHttpInfo(Object lang, Object countries, Object predefinedSources, Boolean includeAdditionalInfo, Integer fromRank, Integer toRank, Object sourceName, Object sourceUrl) throws ApiException {
-        okhttp3.Call localVarCall = getValidateBeforeCall(lang, countries, predefinedSources, includeAdditionalInfo, fromRank, toRank, sourceName, sourceUrl, null);
+    private ApiResponse<SourceResponse> getWithHttpInfo(Object lang, Object countries, Object predefinedSources, Boolean includeAdditionalInfo, Integer fromRank, Integer toRank, Object sourceName, Object sourceUrl, Boolean isNewsDomain, Object newsDomainType, Object newsType) throws ApiException {
+        okhttp3.Call localVarCall = getValidateBeforeCall(lang, countries, predefinedSources, includeAdditionalInfo, fromRank, toRank, sourceName, sourceUrl, isNewsDomain, newsDomainType, newsType, null);
         Type localVarReturnType = new TypeToken<SourceResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call getAsync(Object lang, Object countries, Object predefinedSources, Boolean includeAdditionalInfo, Integer fromRank, Integer toRank, Object sourceName, Object sourceUrl, final ApiCallback<SourceResponse> _callback) throws ApiException {
+    private okhttp3.Call getAsync(Object lang, Object countries, Object predefinedSources, Boolean includeAdditionalInfo, Integer fromRank, Integer toRank, Object sourceName, Object sourceUrl, Boolean isNewsDomain, Object newsDomainType, Object newsType, final ApiCallback<SourceResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getValidateBeforeCall(lang, countries, predefinedSources, includeAdditionalInfo, fromRank, toRank, sourceName, sourceUrl, _callback);
+        okhttp3.Call localVarCall = getValidateBeforeCall(lang, countries, predefinedSources, includeAdditionalInfo, fromRank, toRank, sourceName, sourceUrl, isNewsDomain, newsDomainType, newsType, _callback);
         Type localVarReturnType = new TypeToken<SourceResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -182,6 +194,9 @@ public class SourcesApiGenerated {
         Integer toRank;
         Object sourceName;
         Object sourceUrl;
+        Boolean isNewsDomain;
+        Object newsDomainType;
+        Object newsType;
 
         public GetRequestBuilderGenerated() {
         }
@@ -267,6 +282,36 @@ public class SourcesApiGenerated {
         }
         
         /**
+         * Set isNewsDomain
+         * @param isNewsDomain  (optional)
+         * @return SourcesApi.GetRequestBuilder
+         */
+        public SourcesApi.GetRequestBuilder isNewsDomain(Boolean isNewsDomain) {
+            this.isNewsDomain = isNewsDomain;
+            return (SourcesApi.GetRequestBuilder) this;
+        }
+        
+        /**
+         * Set newsDomainType
+         * @param newsDomainType  (optional)
+         * @return SourcesApi.GetRequestBuilder
+         */
+        public SourcesApi.GetRequestBuilder newsDomainType(Object newsDomainType) {
+            this.newsDomainType = newsDomainType;
+            return (SourcesApi.GetRequestBuilder) this;
+        }
+        
+        /**
+         * Set newsType
+         * @param newsType  (optional)
+         * @return SourcesApi.GetRequestBuilder
+         */
+        public SourcesApi.GetRequestBuilder newsType(Object newsType) {
+            this.newsType = newsType;
+            return (SourcesApi.GetRequestBuilder) this;
+        }
+        
+        /**
          * Build call for get
          * @param _callback ApiCallback API callback
          * @return Call to execute
@@ -278,7 +323,7 @@ public class SourcesApiGenerated {
          </table>
          */
         public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
-            return getCall(lang, countries, predefinedSources, includeAdditionalInfo, fromRank, toRank, sourceName, sourceUrl, _callback);
+            return getCall(lang, countries, predefinedSources, includeAdditionalInfo, fromRank, toRank, sourceName, sourceUrl, isNewsDomain, newsDomainType, newsType, _callback);
         }
 
 
@@ -293,7 +338,7 @@ public class SourcesApiGenerated {
          </table>
          */
         public SourceResponse execute() throws ApiException {
-            ApiResponse<SourceResponse> localVarResp = getWithHttpInfo(lang, countries, predefinedSources, includeAdditionalInfo, fromRank, toRank, sourceName, sourceUrl);
+            ApiResponse<SourceResponse> localVarResp = getWithHttpInfo(lang, countries, predefinedSources, includeAdditionalInfo, fromRank, toRank, sourceName, sourceUrl, isNewsDomain, newsDomainType, newsType);
             return localVarResp.getResponseBody();
         }
 
@@ -308,7 +353,7 @@ public class SourcesApiGenerated {
          </table>
          */
         public ApiResponse<SourceResponse> executeWithHttpInfo() throws ApiException {
-            return getWithHttpInfo(lang, countries, predefinedSources, includeAdditionalInfo, fromRank, toRank, sourceName, sourceUrl);
+            return getWithHttpInfo(lang, countries, predefinedSources, includeAdditionalInfo, fromRank, toRank, sourceName, sourceUrl, isNewsDomain, newsDomainType, newsType);
         }
 
         /**
@@ -323,7 +368,7 @@ public class SourcesApiGenerated {
          </table>
          */
         public okhttp3.Call executeAsync(final ApiCallback<SourceResponse> _callback) throws ApiException {
-            return getAsync(lang, countries, predefinedSources, includeAdditionalInfo, fromRank, toRank, sourceName, sourceUrl, _callback);
+            return getAsync(lang, countries, predefinedSources, includeAdditionalInfo, fromRank, toRank, sourceName, sourceUrl, isNewsDomain, newsDomainType, newsType, _callback);
         }
     }
 
@@ -420,6 +465,9 @@ public class SourcesApiGenerated {
         Integer toRank;
         Object sourceName;
         Object sourceUrl;
+        Boolean isNewsDomain;
+        Object newsDomainType;
+        Object newsType;
 
         public PostRequestBuilderGenerated() {
         }
@@ -505,6 +553,36 @@ public class SourcesApiGenerated {
         }
         
         /**
+         * Set isNewsDomain
+         * @param isNewsDomain  (optional)
+         * @return SourcesApi.PostRequestBuilder
+         */
+        public SourcesApi.PostRequestBuilder isNewsDomain(Boolean isNewsDomain) {
+            this.isNewsDomain = isNewsDomain;
+            return (SourcesApi.PostRequestBuilder) this;
+        }
+        
+        /**
+         * Set newsDomainType
+         * @param newsDomainType  (optional)
+         * @return SourcesApi.PostRequestBuilder
+         */
+        public SourcesApi.PostRequestBuilder newsDomainType(Object newsDomainType) {
+            this.newsDomainType = newsDomainType;
+            return (SourcesApi.PostRequestBuilder) this;
+        }
+        
+        /**
+         * Set newsType
+         * @param newsType  (optional)
+         * @return SourcesApi.PostRequestBuilder
+         */
+        public SourcesApi.PostRequestBuilder newsType(Object newsType) {
+            this.newsType = newsType;
+            return (SourcesApi.PostRequestBuilder) this;
+        }
+        
+        /**
          * Build call for post
          * @param _callback ApiCallback API callback
          * @return Call to execute
@@ -530,6 +608,9 @@ public class SourcesApiGenerated {
             sourcesRequest.toRank(this.toRank);
             sourcesRequest.sourceName(this.sourceName);
             sourcesRequest.sourceUrl(this.sourceUrl);
+            sourcesRequest.isNewsDomain(this.isNewsDomain);
+            sourcesRequest.newsDomainType(this.newsDomainType);
+            sourcesRequest.newsType(this.newsType);
             return sourcesRequest;
         }
 

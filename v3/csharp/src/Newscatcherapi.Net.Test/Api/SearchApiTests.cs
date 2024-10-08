@@ -115,11 +115,17 @@ namespace Newscatcherapi.Net.Test.Api
             var notIabTags = new Object(
             );
             var excludeDuplicates = true;
+            var additionalDomainInfo = true;
+            var isNewsDomain = true;
+            var newsDomainType = new Object(
+            );
+            var newsType = new Object(
+            );
             
             try
             {
                 // [Get] Search For Articles Request
-                SearchGetResponse result = client.Search.Get(q, searchIn, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, notAuthorName, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isOpinion, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, oRGEntityName, pEREntityName, lOCEntityName, mISCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, sourceName, iabTags, notIabTags, excludeDuplicates);
+                SearchGetResponse result = client.Search.Get(q, searchIn, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, notAuthorName, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isOpinion, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, oRGEntityName, pEREntityName, lOCEntityName, mISCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, sourceName, iabTags, notIabTags, excludeDuplicates, additionalDomainInfo, isNewsDomain, newsDomainType, newsType);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -191,6 +197,10 @@ namespace Newscatcherapi.Net.Test.Api
             var iabTags = "iabTags_example";
             var notIabTags = "notIabTags_example";
             var excludeDuplicates = false;
+            var additionalDomainInfo = false;
+            var isNewsDomain = false;
+            var newsDomainType = "newsDomainType_example";
+            var newsType = "newsType_example";
             
             var searchRequest = new SearchRequest(
                 q,
@@ -241,7 +251,11 @@ namespace Newscatcherapi.Net.Test.Api
                 sourceName,
                 iabTags,
                 notIabTags,
-                excludeDuplicates
+                excludeDuplicates,
+                additionalDomainInfo,
+                isNewsDomain,
+                newsDomainType,
+                newsType
             );
             
             try

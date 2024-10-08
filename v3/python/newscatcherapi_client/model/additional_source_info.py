@@ -40,10 +40,16 @@ class AdditionalSourceInfo(
             nb_articles_for_7d = schemas.IntSchema
             country = schemas.StrSchema
             rank = schemas.IntSchema
+            is_news_domain = schemas.BoolSchema
+            news_domain_type = schemas.StrSchema
+            news_type = schemas.StrSchema
             __annotations__ = {
                 "nb_articles_for_7d": nb_articles_for_7d,
                 "country": country,
                 "rank": rank,
+                "is_news_domain": is_news_domain,
+                "news_domain_type": news_domain_type,
+                "news_type": news_type,
             }
     
     @typing.overload
@@ -56,9 +62,18 @@ class AdditionalSourceInfo(
     def __getitem__(self, name: typing_extensions.Literal["rank"]) -> MetaOapg.properties.rank: ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["is_news_domain"]) -> MetaOapg.properties.is_news_domain: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["news_domain_type"]) -> MetaOapg.properties.news_domain_type: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["news_type"]) -> MetaOapg.properties.news_type: ...
+    
+    @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["nb_articles_for_7d", "country", "rank", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["nb_articles_for_7d", "country", "rank", "is_news_domain", "news_domain_type", "news_type", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
@@ -73,9 +88,18 @@ class AdditionalSourceInfo(
     def get_item_oapg(self, name: typing_extensions.Literal["rank"]) -> typing.Union[MetaOapg.properties.rank, schemas.Unset]: ...
     
     @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["is_news_domain"]) -> typing.Union[MetaOapg.properties.is_news_domain, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["news_domain_type"]) -> typing.Union[MetaOapg.properties.news_domain_type, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["news_type"]) -> typing.Union[MetaOapg.properties.news_type, schemas.Unset]: ...
+    
+    @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["nb_articles_for_7d", "country", "rank", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["nb_articles_for_7d", "country", "rank", "is_news_domain", "news_domain_type", "news_type", ], str]):
         return super().get_item_oapg(name)
     
 
@@ -85,6 +109,9 @@ class AdditionalSourceInfo(
         nb_articles_for_7d: typing.Union[MetaOapg.properties.nb_articles_for_7d, decimal.Decimal, int, schemas.Unset] = schemas.unset,
         country: typing.Union[MetaOapg.properties.country, str, schemas.Unset] = schemas.unset,
         rank: typing.Union[MetaOapg.properties.rank, decimal.Decimal, int, schemas.Unset] = schemas.unset,
+        is_news_domain: typing.Union[MetaOapg.properties.is_news_domain, bool, schemas.Unset] = schemas.unset,
+        news_domain_type: typing.Union[MetaOapg.properties.news_domain_type, str, schemas.Unset] = schemas.unset,
+        news_type: typing.Union[MetaOapg.properties.news_type, str, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'AdditionalSourceInfo':
@@ -94,6 +121,9 @@ class AdditionalSourceInfo(
             nb_articles_for_7d=nb_articles_for_7d,
             country=country,
             rank=rank,
+            is_news_domain=is_news_domain,
+            news_domain_type=news_domain_type,
+            news_type=news_type,
             _configuration=_configuration,
             **kwargs,
         )

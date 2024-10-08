@@ -43,7 +43,10 @@ namespace Newscatcherapi.Net.Model
         /// <param name="toRank">toRank.</param>
         /// <param name="sourceName">sourceName.</param>
         /// <param name="sourceUrl">sourceUrl.</param>
-        public SourcesRequest(Object lang = default(Object), Object countries = default(Object), Object predefinedSources = default(Object), bool includeAdditionalInfo = default(bool), int fromRank = default(int), int toRank = default(int), Object sourceName = default(Object), Object sourceUrl = default(Object))
+        /// <param name="isNewsDomain">isNewsDomain.</param>
+        /// <param name="newsDomainType">newsDomainType.</param>
+        /// <param name="newsType">newsType.</param>
+        public SourcesRequest(Object lang = default(Object), Object countries = default(Object), Object predefinedSources = default(Object), bool includeAdditionalInfo = default(bool), int fromRank = default(int), int toRank = default(int), Object sourceName = default(Object), Object sourceUrl = default(Object), bool isNewsDomain = default(bool), Object newsDomainType = default(Object), Object newsType = default(Object))
         {
             this.Lang = lang;
             this.Countries = countries;
@@ -53,6 +56,9 @@ namespace Newscatcherapi.Net.Model
             this.ToRank = toRank;
             this.SourceName = sourceName;
             this.SourceUrl = sourceUrl;
+            this.IsNewsDomain = isNewsDomain;
+            this.NewsDomainType = newsDomainType;
+            this.NewsType = newsType;
         }
 
         /// <summary>
@@ -104,6 +110,24 @@ namespace Newscatcherapi.Net.Model
         public Object SourceUrl { get; set; }
 
         /// <summary>
+        /// Gets or Sets IsNewsDomain
+        /// </summary>
+        [DataMember(Name = "is_news_domain", EmitDefaultValue = true)]
+        public bool IsNewsDomain { get; set; }
+
+        /// <summary>
+        /// Gets or Sets NewsDomainType
+        /// </summary>
+        [DataMember(Name = "news_domain_type", EmitDefaultValue = true)]
+        public Object NewsDomainType { get; set; }
+
+        /// <summary>
+        /// Gets or Sets NewsType
+        /// </summary>
+        [DataMember(Name = "news_type", EmitDefaultValue = true)]
+        public Object NewsType { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -119,6 +143,9 @@ namespace Newscatcherapi.Net.Model
             sb.Append("  ToRank: ").Append(ToRank).Append("\n");
             sb.Append("  SourceName: ").Append(SourceName).Append("\n");
             sb.Append("  SourceUrl: ").Append(SourceUrl).Append("\n");
+            sb.Append("  IsNewsDomain: ").Append(IsNewsDomain).Append("\n");
+            sb.Append("  NewsDomainType: ").Append(NewsDomainType).Append("\n");
+            sb.Append("  NewsType: ").Append(NewsType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -190,6 +217,20 @@ namespace Newscatcherapi.Net.Model
                     this.SourceUrl == input.SourceUrl ||
                     (this.SourceUrl != null &&
                     this.SourceUrl.Equals(input.SourceUrl))
+                ) && 
+                (
+                    this.IsNewsDomain == input.IsNewsDomain ||
+                    this.IsNewsDomain.Equals(input.IsNewsDomain)
+                ) && 
+                (
+                    this.NewsDomainType == input.NewsDomainType ||
+                    (this.NewsDomainType != null &&
+                    this.NewsDomainType.Equals(input.NewsDomainType))
+                ) && 
+                (
+                    this.NewsType == input.NewsType ||
+                    (this.NewsType != null &&
+                    this.NewsType.Equals(input.NewsType))
                 );
         }
 
@@ -224,6 +265,15 @@ namespace Newscatcherapi.Net.Model
                 if (this.SourceUrl != null)
                 {
                     hashCode = (hashCode * 59) + this.SourceUrl.GetHashCode();
+                }
+                hashCode = (hashCode * 59) + this.IsNewsDomain.GetHashCode();
+                if (this.NewsDomainType != null)
+                {
+                    hashCode = (hashCode * 59) + this.NewsDomainType.GetHashCode();
+                }
+                if (this.NewsType != null)
+                {
+                    hashCode = (hashCode * 59) + this.NewsType.GetHashCode();
                 }
                 return hashCode;
             }
