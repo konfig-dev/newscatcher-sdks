@@ -36,5 +36,11 @@ class OptionalSourcesRequest(TypedDict, total=False):
 
     source_url: typing.Union[bool, date, datetime, dict, float, int, list, str, None]
 
+    is_news_domain: bool
+
+    news_domain_type: typing.Union[bool, date, datetime, dict, float, int, list, str, None]
+
+    news_type: typing.Union[bool, date, datetime, dict, float, int, list, str, None]
+
 class SourcesRequest(RequiredSourcesRequest, OptionalSourcesRequest):
     pass

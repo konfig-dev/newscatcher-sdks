@@ -45,6 +45,9 @@ class SourcesRequest(
             to_rank = schemas.IntSchema
             source_name = schemas.AnyTypeSchema
             source_url = schemas.AnyTypeSchema
+            is_news_domain = schemas.BoolSchema
+            news_domain_type = schemas.AnyTypeSchema
+            news_type = schemas.AnyTypeSchema
             __annotations__ = {
                 "lang": lang,
                 "countries": countries,
@@ -54,6 +57,9 @@ class SourcesRequest(
                 "to_rank": to_rank,
                 "source_name": source_name,
                 "source_url": source_url,
+                "is_news_domain": is_news_domain,
+                "news_domain_type": news_domain_type,
+                "news_type": news_type,
             }
     
     @typing.overload
@@ -81,9 +87,18 @@ class SourcesRequest(
     def __getitem__(self, name: typing_extensions.Literal["source_url"]) -> MetaOapg.properties.source_url: ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["is_news_domain"]) -> MetaOapg.properties.is_news_domain: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["news_domain_type"]) -> MetaOapg.properties.news_domain_type: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["news_type"]) -> MetaOapg.properties.news_type: ...
+    
+    @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["lang", "countries", "predefined_sources", "include_additional_info", "from_rank", "to_rank", "source_name", "source_url", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["lang", "countries", "predefined_sources", "include_additional_info", "from_rank", "to_rank", "source_name", "source_url", "is_news_domain", "news_domain_type", "news_type", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
@@ -113,9 +128,18 @@ class SourcesRequest(
     def get_item_oapg(self, name: typing_extensions.Literal["source_url"]) -> typing.Union[MetaOapg.properties.source_url, schemas.Unset]: ...
     
     @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["is_news_domain"]) -> typing.Union[MetaOapg.properties.is_news_domain, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["news_domain_type"]) -> typing.Union[MetaOapg.properties.news_domain_type, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["news_type"]) -> typing.Union[MetaOapg.properties.news_type, schemas.Unset]: ...
+    
+    @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["lang", "countries", "predefined_sources", "include_additional_info", "from_rank", "to_rank", "source_name", "source_url", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["lang", "countries", "predefined_sources", "include_additional_info", "from_rank", "to_rank", "source_name", "source_url", "is_news_domain", "news_domain_type", "news_type", ], str]):
         return super().get_item_oapg(name)
     
 
@@ -130,6 +154,9 @@ class SourcesRequest(
         to_rank: typing.Union[MetaOapg.properties.to_rank, decimal.Decimal, int, schemas.Unset] = schemas.unset,
         source_name: typing.Union[MetaOapg.properties.source_name, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, schemas.Unset] = schemas.unset,
         source_url: typing.Union[MetaOapg.properties.source_url, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, schemas.Unset] = schemas.unset,
+        is_news_domain: typing.Union[MetaOapg.properties.is_news_domain, bool, schemas.Unset] = schemas.unset,
+        news_domain_type: typing.Union[MetaOapg.properties.news_domain_type, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, schemas.Unset] = schemas.unset,
+        news_type: typing.Union[MetaOapg.properties.news_type, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'SourcesRequest':
@@ -144,6 +171,9 @@ class SourcesRequest(
             to_rank=to_rank,
             source_name=source_name,
             source_url=source_url,
+            is_news_domain=is_news_domain,
+            news_domain_type=news_domain_type,
+            news_type=news_type,
             _configuration=_configuration,
             **kwargs,
         )

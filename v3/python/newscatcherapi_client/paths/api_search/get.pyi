@@ -227,6 +227,10 @@ SourceNameSchema = schemas.AnyTypeSchema
 IabTagsSchema = schemas.AnyTypeSchema
 NotIabTagsSchema = schemas.AnyTypeSchema
 ExcludeDuplicatesSchema = schemas.BoolSchema
+AdditionalDomainInfoSchema = schemas.BoolSchema
+IsNewsDomainSchema = schemas.BoolSchema
+NewsDomainTypeSchema = schemas.AnyTypeSchema
+NewsTypeSchema = schemas.AnyTypeSchema
 RequestRequiredQueryParams = typing_extensions.TypedDict(
     'RequestRequiredQueryParams',
     {
@@ -284,6 +288,10 @@ RequestOptionalQueryParams = typing_extensions.TypedDict(
         'iab_tags': typing.Union[IabTagsSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ],
         'not_iab_tags': typing.Union[NotIabTagsSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ],
         'exclude_duplicates': typing.Union[ExcludeDuplicatesSchema, bool, ],
+        'additional_domain_info': typing.Union[AdditionalDomainInfoSchema, bool, ],
+        'is_news_domain': typing.Union[IsNewsDomainSchema, bool, ],
+        'news_domain_type': typing.Union[NewsDomainTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ],
+        'news_type': typing.Union[NewsTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ],
     },
     total=False
 )
@@ -588,6 +596,30 @@ request_query_exclude_duplicates = api_client.QueryParameter(
     schema=ExcludeDuplicatesSchema,
     explode=True,
 )
+request_query_additional_domain_info = api_client.QueryParameter(
+    name="additional_domain_info",
+    style=api_client.ParameterStyle.FORM,
+    schema=AdditionalDomainInfoSchema,
+    explode=True,
+)
+request_query_is_news_domain = api_client.QueryParameter(
+    name="is_news_domain",
+    style=api_client.ParameterStyle.FORM,
+    schema=IsNewsDomainSchema,
+    explode=True,
+)
+request_query_news_domain_type = api_client.QueryParameter(
+    name="news_domain_type",
+    style=api_client.ParameterStyle.FORM,
+    schema=NewsDomainTypeSchema,
+    explode=True,
+)
+request_query_news_type = api_client.QueryParameter(
+    name="news_type",
+    style=api_client.ParameterStyle.FORM,
+    schema=NewsTypeSchema,
+    explode=True,
+)
 SchemaFor200ResponseBodyApplicationJson = SearchGetResponseSchema
 
 
@@ -688,6 +720,10 @@ class BaseApi(api_client.Api):
         iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         exclude_duplicates: typing.Optional[bool] = None,
+        additional_domain_info: typing.Optional[bool] = None,
+        is_news_domain: typing.Optional[bool] = None,
+        news_domain_type: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        news_type: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
     ) -> api_client.MappedArgs:
         args: api_client.MappedArgs = api_client.MappedArgs()
         _query_params = {}
@@ -789,6 +825,14 @@ class BaseApi(api_client.Api):
             _query_params["not_iab_tags"] = not_iab_tags
         if exclude_duplicates is not None:
             _query_params["exclude_duplicates"] = exclude_duplicates
+        if additional_domain_info is not None:
+            _query_params["additional_domain_info"] = additional_domain_info
+        if is_news_domain is not None:
+            _query_params["is_news_domain"] = is_news_domain
+        if news_domain_type is not None:
+            _query_params["news_domain_type"] = news_domain_type
+        if news_type is not None:
+            _query_params["news_type"] = news_type
         args.query = _query_params
         return args
 
@@ -865,6 +909,10 @@ class BaseApi(api_client.Api):
             request_query_iab_tags,
             request_query_not_iab_tags,
             request_query_exclude_duplicates,
+            request_query_additional_domain_info,
+            request_query_is_news_domain,
+            request_query_news_domain_type,
+            request_query_news_type,
         ):
             parameter_data = query_params.get(parameter.name, schemas.unset)
             if parameter_data is schemas.unset:
@@ -1025,6 +1073,10 @@ class BaseApi(api_client.Api):
             request_query_iab_tags,
             request_query_not_iab_tags,
             request_query_exclude_duplicates,
+            request_query_additional_domain_info,
+            request_query_is_news_domain,
+            request_query_news_domain_type,
+            request_query_news_type,
         ):
             parameter_data = query_params.get(parameter.name, schemas.unset)
             if parameter_data is schemas.unset:
@@ -1137,6 +1189,10 @@ class GetRaw(BaseApi):
         iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         exclude_duplicates: typing.Optional[bool] = None,
+        additional_domain_info: typing.Optional[bool] = None,
+        is_news_domain: typing.Optional[bool] = None,
+        news_domain_type: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        news_type: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         **kwargs,
     ) -> typing.Union[
         ApiResponseFor200Async,
@@ -1193,6 +1249,10 @@ class GetRaw(BaseApi):
             iab_tags=iab_tags,
             not_iab_tags=not_iab_tags,
             exclude_duplicates=exclude_duplicates,
+            additional_domain_info=additional_domain_info,
+            is_news_domain=is_news_domain,
+            news_domain_type=news_domain_type,
+            news_type=news_type,
         )
         return await self._aget_oapg(
             query_params=args.query,
@@ -1250,6 +1310,10 @@ class GetRaw(BaseApi):
         iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         exclude_duplicates: typing.Optional[bool] = None,
+        additional_domain_info: typing.Optional[bool] = None,
+        is_news_domain: typing.Optional[bool] = None,
+        news_domain_type: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        news_type: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
     ) -> typing.Union[
         ApiResponseFor200,
         api_client.ApiResponseWithoutDeserialization,
@@ -1305,6 +1369,10 @@ class GetRaw(BaseApi):
             iab_tags=iab_tags,
             not_iab_tags=not_iab_tags,
             exclude_duplicates=exclude_duplicates,
+            additional_domain_info=additional_domain_info,
+            is_news_domain=is_news_domain,
+            news_domain_type=news_domain_type,
+            news_type=news_type,
         )
         return self._get_oapg(
             query_params=args.query,
@@ -1363,6 +1431,10 @@ class Get(BaseApi):
         iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         exclude_duplicates: typing.Optional[bool] = None,
+        additional_domain_info: typing.Optional[bool] = None,
+        is_news_domain: typing.Optional[bool] = None,
+        news_domain_type: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        news_type: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         validate: bool = False,
         **kwargs,
     ) -> SearchGetResponsePydantic:
@@ -1416,6 +1488,10 @@ class Get(BaseApi):
             iab_tags=iab_tags,
             not_iab_tags=not_iab_tags,
             exclude_duplicates=exclude_duplicates,
+            additional_domain_info=additional_domain_info,
+            is_news_domain=is_news_domain,
+            news_domain_type=news_domain_type,
+            news_type=news_type,
             **kwargs,
         )
         if validate:
@@ -1474,6 +1550,10 @@ class Get(BaseApi):
         iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         exclude_duplicates: typing.Optional[bool] = None,
+        additional_domain_info: typing.Optional[bool] = None,
+        is_news_domain: typing.Optional[bool] = None,
+        news_domain_type: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        news_type: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         validate: bool = False,
     ) -> SearchGetResponsePydantic:
         raw_response = self.raw.get(
@@ -1526,6 +1606,10 @@ class Get(BaseApi):
             iab_tags=iab_tags,
             not_iab_tags=not_iab_tags,
             exclude_duplicates=exclude_duplicates,
+            additional_domain_info=additional_domain_info,
+            is_news_domain=is_news_domain,
+            news_domain_type=news_domain_type,
+            news_type=news_type,
         )
         if validate:
             return RootModel[SearchGetResponsePydantic](raw_response.body).root
@@ -1586,6 +1670,10 @@ class ApiForget(BaseApi):
         iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         exclude_duplicates: typing.Optional[bool] = None,
+        additional_domain_info: typing.Optional[bool] = None,
+        is_news_domain: typing.Optional[bool] = None,
+        news_domain_type: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        news_type: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         **kwargs,
     ) -> typing.Union[
         ApiResponseFor200Async,
@@ -1642,6 +1730,10 @@ class ApiForget(BaseApi):
             iab_tags=iab_tags,
             not_iab_tags=not_iab_tags,
             exclude_duplicates=exclude_duplicates,
+            additional_domain_info=additional_domain_info,
+            is_news_domain=is_news_domain,
+            news_domain_type=news_domain_type,
+            news_type=news_type,
         )
         return await self._aget_oapg(
             query_params=args.query,
@@ -1699,6 +1791,10 @@ class ApiForget(BaseApi):
         iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         not_iab_tags: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         exclude_duplicates: typing.Optional[bool] = None,
+        additional_domain_info: typing.Optional[bool] = None,
+        is_news_domain: typing.Optional[bool] = None,
+        news_domain_type: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        news_type: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
     ) -> typing.Union[
         ApiResponseFor200,
         api_client.ApiResponseWithoutDeserialization,
@@ -1754,6 +1850,10 @@ class ApiForget(BaseApi):
             iab_tags=iab_tags,
             not_iab_tags=not_iab_tags,
             exclude_duplicates=exclude_duplicates,
+            additional_domain_info=additional_domain_info,
+            is_news_domain=is_news_domain,
+            news_domain_type=news_domain_type,
+            news_type=news_type,
         )
         return self._get_oapg(
             query_params=args.query,

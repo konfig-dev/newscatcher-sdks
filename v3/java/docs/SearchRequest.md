@@ -57,6 +57,10 @@ Search request DTO
 |**iabTags** | **Object** |  |  [optional] |
 |**notIabTags** | **Object** |  |  [optional] |
 |**excludeDuplicates** | **Boolean** |  |  [optional] |
+|**additionalDomainInfo** | **Boolean** |  |  [optional] |
+|**isNewsDomain** | **Boolean** |  |  [optional] |
+|**newsDomainType** | **Object** |  |  [optional] |
+|**newsType** | **Object** |  |  [optional] |
 
 
 

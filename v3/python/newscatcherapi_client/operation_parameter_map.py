@@ -644,6 +644,18 @@ operation_parameter_map = {
             {
                 'name': 'exclude_duplicates'
             },
+            {
+                'name': 'additional_domain_info'
+            },
+            {
+                'name': 'is_news_domain'
+            },
+            {
+                'name': 'news_domain_type'
+            },
+            {
+                'name': 'news_type'
+            },
         ]
     },
     '/api/search-POST': {
@@ -794,6 +806,18 @@ operation_parameter_map = {
             },
             {
                 'name': 'exclude_duplicates'
+            },
+            {
+                'name': 'additional_domain_info'
+            },
+            {
+                'name': 'is_news_domain'
+            },
+            {
+                'name': 'news_domain_type'
+            },
+            {
+                'name': 'news_type'
             },
         ]
     },
@@ -1115,6 +1139,15 @@ operation_parameter_map = {
             {
                 'name': 'source_url'
             },
+            {
+                'name': 'is_news_domain'
+            },
+            {
+                'name': 'news_domain_type'
+            },
+            {
+                'name': 'news_type'
+            },
         ]
     },
     '/api/sources-POST': {
@@ -1142,6 +1175,15 @@ operation_parameter_map = {
             },
             {
                 'name': 'source_url'
+            },
+            {
+                'name': 'is_news_domain'
+            },
+            {
+                'name': 'news_domain_type'
+            },
+            {
+                'name': 'news_type'
             },
         ]
     },

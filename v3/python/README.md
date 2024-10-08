@@ -904,6 +904,10 @@ get_response = newscatcher.search.get(
     iab_tags=None,
     not_iab_tags=None,
     exclude_duplicates=True,
+    additional_domain_info=True,
+    is_news_domain=True,
+    news_domain_type=None,
+    news_type=None,
 )
 ```
 
@@ -1010,6 +1014,14 @@ get_response = newscatcher.search.get(
 
 ##### exclude_duplicates: `bool`<a id="exclude_duplicates-bool"></a>
 
+##### additional_domain_info: `bool`<a id="additional_domain_info-bool"></a>
+
+##### is_news_domain: `bool`<a id="is_news_domain-bool"></a>
+
+##### news_domain_type: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="news_domain_type-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
+
+##### news_type: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="news_type-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
+
 #### 🔄 Return<a id="🔄-return"></a>
 
 [`SearchGetResponse`](./newscatcherapi_client/pydantic/search_get_response.py)
@@ -1079,6 +1091,10 @@ post_response = newscatcher.search.post(
     iab_tags=None,
     not_iab_tags=None,
     exclude_duplicates=True,
+    additional_domain_info=True,
+    is_news_domain=True,
+    news_domain_type=None,
+    news_type=None,
 )
 ```
 
@@ -1184,6 +1200,14 @@ post_response = newscatcher.search.post(
 ##### not_iab_tags: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="not_iab_tags-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 
 ##### exclude_duplicates: `bool`<a id="exclude_duplicates-bool"></a>
+
+##### additional_domain_info: `bool`<a id="additional_domain_info-bool"></a>
+
+##### is_news_domain: `bool`<a id="is_news_domain-bool"></a>
+
+##### news_domain_type: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="news_domain_type-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
+
+##### news_type: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="news_type-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 
 #### ⚙️ Request Body<a id="⚙️-request-body"></a>
 
@@ -1608,6 +1632,9 @@ get_response = newscatcher.sources.get(
     to_rank=1,
     source_name=None,
     source_url=None,
+    is_news_domain=True,
+    news_domain_type=None,
+    news_type=None,
 )
 ```
 
@@ -1628,6 +1655,12 @@ get_response = newscatcher.sources.get(
 ##### source_name: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="source_name-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
 
 ##### source_url: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="source_url-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
+
+##### is_news_domain: `bool`<a id="is_news_domain-bool"></a>
+
+##### news_domain_type: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="news_domain_type-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
+
+##### news_type: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/.py)<a id="news_type-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypepy"></a>
 
 #### 🔄 Return<a id="🔄-return"></a>
 
@@ -1657,6 +1690,9 @@ post_response = newscatcher.sources.post(
     to_rank=1,
     source_name=None,
     source_url=None,
+    is_news_domain=True,
+    news_domain_type=None,
+    news_type=None,
 )
 ```
 
@@ -1677,6 +1713,12 @@ post_response = newscatcher.sources.post(
 ##### source_name: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="source_name-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 
 ##### source_url: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="source_url-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
+
+##### is_news_domain: `bool`<a id="is_news_domain-bool"></a>
+
+##### news_domain_type: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="news_domain_type-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
+
+##### news_type: [`Union[bool, date, datetime, dict, float, int, list, str, None]`](./newscatcherapi_client/type/typing_union_bool_date_datetime_dict_float_int_list_str_none.py)<a id="news_type-unionbool-date-datetime-dict-float-int-list-str-nonenewscatcherapi_clienttypetyping_union_bool_date_datetime_dict_float_int_list_str_nonepy"></a>
 
 #### ⚙️ Request Body<a id="⚙️-request-body"></a>
 

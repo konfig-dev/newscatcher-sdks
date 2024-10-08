@@ -81,6 +81,30 @@ namespace Newscatcherapi.Net.Test.Model
         {
             // TODO unit test for the property 'Rank'
         }
+        /// <summary>
+        /// Test the property 'IsNewsDomain'
+        /// </summary>
+        [Fact]
+        public void IsNewsDomainTest()
+        {
+            // TODO unit test for the property 'IsNewsDomain'
+        }
+        /// <summary>
+        /// Test the property 'NewsDomainType'
+        /// </summary>
+        [Fact]
+        public void NewsDomainTypeTest()
+        {
+            // TODO unit test for the property 'NewsDomainType'
+        }
+        /// <summary>
+        /// Test the property 'NewsType'
+        /// </summary>
+        [Fact]
+        public void NewsTypeTest()
+        {
+            // TODO unit test for the property 'NewsType'
+        }
 
     }
 

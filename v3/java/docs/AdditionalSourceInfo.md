@@ -11,6 +11,9 @@ AdditionalSourceInfo DTO class.
 |**nbArticlesFor7d** | **Integer** |  |  [optional] |
 |**country** | **String** |  |  [optional] |
 |**rank** | **Integer** |  |  [optional] |
+|**isNewsDomain** | **Boolean** |  |  [optional] |
+|**newsDomainType** | **String** |  |  [optional] |
+|**newsType** | **String** |  |  [optional] |
 
 
 

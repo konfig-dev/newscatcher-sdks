@@ -314,5 +314,29 @@ export interface SearchRequest {
      * @memberof SearchRequest
      */
     'exclude_duplicates'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof SearchRequest
+     */
+    'additional_domain_info'?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof SearchRequest
+     */
+    'is_news_domain'?: boolean;
+    /**
+     * 
+     * @type {any}
+     * @memberof SearchRequest
+     */
+    'news_domain_type'?: any;
+    /**
+     * 
+     * @type {any}
+     * @memberof SearchRequest
+     */
+    'news_type'?: any;
 }
 

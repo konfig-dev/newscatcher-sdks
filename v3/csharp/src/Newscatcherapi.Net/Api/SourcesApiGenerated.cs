@@ -42,9 +42,12 @@ namespace Newscatcherapi.Net.Api
         /// <param name="toRank"> (optional)</param>
         /// <param name="sourceName"> (optional)</param>
         /// <param name="sourceUrl"> (optional)</param>
+        /// <param name="isNewsDomain"> (optional)</param>
+        /// <param name="newsDomainType"> (optional)</param>
+        /// <param name="newsType"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SourceResponse</returns>
-        SourceResponse Get(Object lang = default(Object), Object countries = default(Object), Object predefinedSources = default(Object), bool? includeAdditionalInfo = default(bool?), int? fromRank = default(int?), int? toRank = default(int?), Object sourceName = default(Object), Object sourceUrl = default(Object), int operationIndex = 0);
+        SourceResponse Get(Object lang = default(Object), Object countries = default(Object), Object predefinedSources = default(Object), bool? includeAdditionalInfo = default(bool?), int? fromRank = default(int?), int? toRank = default(int?), Object sourceName = default(Object), Object sourceUrl = default(Object), bool? isNewsDomain = default(bool?), Object newsDomainType = default(Object), Object newsType = default(Object), int operationIndex = 0);
 
         /// <summary>
         /// [Get] Search For Sources Request
@@ -61,9 +64,12 @@ namespace Newscatcherapi.Net.Api
         /// <param name="toRank"> (optional)</param>
         /// <param name="sourceName"> (optional)</param>
         /// <param name="sourceUrl"> (optional)</param>
+        /// <param name="isNewsDomain"> (optional)</param>
+        /// <param name="newsDomainType"> (optional)</param>
+        /// <param name="newsType"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SourceResponse</returns>
-        ApiResponse<SourceResponse> GetWithHttpInfo(Object lang = default(Object), Object countries = default(Object), Object predefinedSources = default(Object), bool? includeAdditionalInfo = default(bool?), int? fromRank = default(int?), int? toRank = default(int?), Object sourceName = default(Object), Object sourceUrl = default(Object), int operationIndex = 0);
+        ApiResponse<SourceResponse> GetWithHttpInfo(Object lang = default(Object), Object countries = default(Object), Object predefinedSources = default(Object), bool? includeAdditionalInfo = default(bool?), int? fromRank = default(int?), int? toRank = default(int?), Object sourceName = default(Object), Object sourceUrl = default(Object), bool? isNewsDomain = default(bool?), Object newsDomainType = default(Object), Object newsType = default(Object), int operationIndex = 0);
         /// <summary>
         /// [Post] Search For Sources Request
         /// </summary>
@@ -111,10 +117,13 @@ namespace Newscatcherapi.Net.Api
         /// <param name="toRank"> (optional)</param>
         /// <param name="sourceName"> (optional)</param>
         /// <param name="sourceUrl"> (optional)</param>
+        /// <param name="isNewsDomain"> (optional)</param>
+        /// <param name="newsDomainType"> (optional)</param>
+        /// <param name="newsType"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SourceResponse</returns>
-        System.Threading.Tasks.Task<SourceResponse> GetAsync(Object lang = default(Object), Object countries = default(Object), Object predefinedSources = default(Object), bool? includeAdditionalInfo = default(bool?), int? fromRank = default(int?), int? toRank = default(int?), Object sourceName = default(Object), Object sourceUrl = default(Object), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SourceResponse> GetAsync(Object lang = default(Object), Object countries = default(Object), Object predefinedSources = default(Object), bool? includeAdditionalInfo = default(bool?), int? fromRank = default(int?), int? toRank = default(int?), Object sourceName = default(Object), Object sourceUrl = default(Object), bool? isNewsDomain = default(bool?), Object newsDomainType = default(Object), Object newsType = default(Object), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// [Get] Search For Sources Request
@@ -131,10 +140,13 @@ namespace Newscatcherapi.Net.Api
         /// <param name="toRank"> (optional)</param>
         /// <param name="sourceName"> (optional)</param>
         /// <param name="sourceUrl"> (optional)</param>
+        /// <param name="isNewsDomain"> (optional)</param>
+        /// <param name="newsDomainType"> (optional)</param>
+        /// <param name="newsType"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SourceResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SourceResponse>> GetWithHttpInfoAsync(Object lang = default(Object), Object countries = default(Object), Object predefinedSources = default(Object), bool? includeAdditionalInfo = default(bool?), int? fromRank = default(int?), int? toRank = default(int?), Object sourceName = default(Object), Object sourceUrl = default(Object), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SourceResponse>> GetWithHttpInfoAsync(Object lang = default(Object), Object countries = default(Object), Object predefinedSources = default(Object), bool? includeAdditionalInfo = default(bool?), int? fromRank = default(int?), int? toRank = default(int?), Object sourceName = default(Object), Object sourceUrl = default(Object), bool? isNewsDomain = default(bool?), Object newsDomainType = default(Object), Object newsType = default(Object), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// [Post] Search For Sources Request
         /// </summary>
@@ -292,11 +304,14 @@ namespace Newscatcherapi.Net.Api
         /// <param name="toRank"> (optional)</param>
         /// <param name="sourceName"> (optional)</param>
         /// <param name="sourceUrl"> (optional)</param>
+        /// <param name="isNewsDomain"> (optional)</param>
+        /// <param name="newsDomainType"> (optional)</param>
+        /// <param name="newsType"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SourceResponse</returns>
-        public SourceResponse Get(Object lang = default(Object), Object countries = default(Object), Object predefinedSources = default(Object), bool? includeAdditionalInfo = default(bool?), int? fromRank = default(int?), int? toRank = default(int?), Object sourceName = default(Object), Object sourceUrl = default(Object), int operationIndex = 0)
+        public SourceResponse Get(Object lang = default(Object), Object countries = default(Object), Object predefinedSources = default(Object), bool? includeAdditionalInfo = default(bool?), int? fromRank = default(int?), int? toRank = default(int?), Object sourceName = default(Object), Object sourceUrl = default(Object), bool? isNewsDomain = default(bool?), Object newsDomainType = default(Object), Object newsType = default(Object), int operationIndex = 0)
         {
-            Newscatcherapi.Net.Client.ApiResponse<SourceResponse> localVarResponse = GetWithHttpInfo(lang, countries, predefinedSources, includeAdditionalInfo, fromRank, toRank, sourceName, sourceUrl);
+            Newscatcherapi.Net.Client.ApiResponse<SourceResponse> localVarResponse = GetWithHttpInfo(lang, countries, predefinedSources, includeAdditionalInfo, fromRank, toRank, sourceName, sourceUrl, isNewsDomain, newsDomainType, newsType);
             return localVarResponse.Data;
         }
 
@@ -312,9 +327,12 @@ namespace Newscatcherapi.Net.Api
         /// <param name="toRank"> (optional)</param>
         /// <param name="sourceName"> (optional)</param>
         /// <param name="sourceUrl"> (optional)</param>
+        /// <param name="isNewsDomain"> (optional)</param>
+        /// <param name="newsDomainType"> (optional)</param>
+        /// <param name="newsType"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SourceResponse</returns>
-        public Newscatcherapi.Net.Client.ApiResponse<SourceResponse> GetWithHttpInfo(Object lang = default(Object), Object countries = default(Object), Object predefinedSources = default(Object), bool? includeAdditionalInfo = default(bool?), int? fromRank = default(int?), int? toRank = default(int?), Object sourceName = default(Object), Object sourceUrl = default(Object), int operationIndex = 0)
+        public Newscatcherapi.Net.Client.ApiResponse<SourceResponse> GetWithHttpInfo(Object lang = default(Object), Object countries = default(Object), Object predefinedSources = default(Object), bool? includeAdditionalInfo = default(bool?), int? fromRank = default(int?), int? toRank = default(int?), Object sourceName = default(Object), Object sourceUrl = default(Object), bool? isNewsDomain = default(bool?), Object newsDomainType = default(Object), Object newsType = default(Object), int operationIndex = 0)
         {
             Newscatcherapi.Net.Client.RequestOptions localVarRequestOptions = new Newscatcherapi.Net.Client.RequestOptions();
 
@@ -369,6 +387,18 @@ namespace Newscatcherapi.Net.Api
             if (sourceUrl != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Newscatcherapi.Net.Client.ClientUtils.ParameterToMultiMap("", "source_url", sourceUrl, ""));
+            }
+            if (isNewsDomain != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Newscatcherapi.Net.Client.ClientUtils.ParameterToMultiMap("", "is_news_domain", isNewsDomain, ""));
+            }
+            if (newsDomainType != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Newscatcherapi.Net.Client.ClientUtils.ParameterToMultiMap("", "news_domain_type", newsDomainType, ""));
+            }
+            if (newsType != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Newscatcherapi.Net.Client.ClientUtils.ParameterToMultiMap("", "news_type", newsType, ""));
             }
 
             localVarRequestOptions.Operation = "SourcesApi.Get";
@@ -406,12 +436,15 @@ namespace Newscatcherapi.Net.Api
         /// <param name="toRank"> (optional)</param>
         /// <param name="sourceName"> (optional)</param>
         /// <param name="sourceUrl"> (optional)</param>
+        /// <param name="isNewsDomain"> (optional)</param>
+        /// <param name="newsDomainType"> (optional)</param>
+        /// <param name="newsType"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SourceResponse</returns>
-        public async System.Threading.Tasks.Task<SourceResponse> GetAsync(Object lang = default(Object), Object countries = default(Object), Object predefinedSources = default(Object), bool? includeAdditionalInfo = default(bool?), int? fromRank = default(int?), int? toRank = default(int?), Object sourceName = default(Object), Object sourceUrl = default(Object), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SourceResponse> GetAsync(Object lang = default(Object), Object countries = default(Object), Object predefinedSources = default(Object), bool? includeAdditionalInfo = default(bool?), int? fromRank = default(int?), int? toRank = default(int?), Object sourceName = default(Object), Object sourceUrl = default(Object), bool? isNewsDomain = default(bool?), Object newsDomainType = default(Object), Object newsType = default(Object), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Newscatcherapi.Net.Client.ApiResponse<SourceResponse> localVarResponse = await GetWithHttpInfoAsync(lang, countries, predefinedSources, includeAdditionalInfo, fromRank, toRank, sourceName, sourceUrl, operationIndex, cancellationToken).ConfigureAwait(false);
+            Newscatcherapi.Net.Client.ApiResponse<SourceResponse> localVarResponse = await GetWithHttpInfoAsync(lang, countries, predefinedSources, includeAdditionalInfo, fromRank, toRank, sourceName, sourceUrl, isNewsDomain, newsDomainType, newsType, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -427,10 +460,13 @@ namespace Newscatcherapi.Net.Api
         /// <param name="toRank"> (optional)</param>
         /// <param name="sourceName"> (optional)</param>
         /// <param name="sourceUrl"> (optional)</param>
+        /// <param name="isNewsDomain"> (optional)</param>
+        /// <param name="newsDomainType"> (optional)</param>
+        /// <param name="newsType"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SourceResponse)</returns>
-        public virtual async System.Threading.Tasks.Task<Newscatcherapi.Net.Client.ApiResponse<SourceResponse>> GetWithHttpInfoAsync(Object lang = default(Object), Object countries = default(Object), Object predefinedSources = default(Object), bool? includeAdditionalInfo = default(bool?), int? fromRank = default(int?), int? toRank = default(int?), Object sourceName = default(Object), Object sourceUrl = default(Object), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public virtual async System.Threading.Tasks.Task<Newscatcherapi.Net.Client.ApiResponse<SourceResponse>> GetWithHttpInfoAsync(Object lang = default(Object), Object countries = default(Object), Object predefinedSources = default(Object), bool? includeAdditionalInfo = default(bool?), int? fromRank = default(int?), int? toRank = default(int?), Object sourceName = default(Object), Object sourceUrl = default(Object), bool? isNewsDomain = default(bool?), Object newsDomainType = default(Object), Object newsType = default(Object), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Newscatcherapi.Net.Client.RequestOptions localVarRequestOptions = new Newscatcherapi.Net.Client.RequestOptions();
@@ -486,6 +522,18 @@ namespace Newscatcherapi.Net.Api
             if (sourceUrl != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Newscatcherapi.Net.Client.ClientUtils.ParameterToMultiMap("", "source_url", sourceUrl, ""));
+            }
+            if (isNewsDomain != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Newscatcherapi.Net.Client.ClientUtils.ParameterToMultiMap("", "is_news_domain", isNewsDomain, ""));
+            }
+            if (newsDomainType != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Newscatcherapi.Net.Client.ClientUtils.ParameterToMultiMap("", "news_domain_type", newsDomainType, ""));
+            }
+            if (newsType != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Newscatcherapi.Net.Client.ClientUtils.ParameterToMultiMap("", "news_type", newsType, ""));
             }
 
             localVarRequestOptions.Operation = "SourcesApi.Get";

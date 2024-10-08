@@ -24,6 +24,12 @@ class AdditionalSourceInfo(BaseModel):
 
     rank: typing.Optional[int] = Field(None, alias='rank')
 
+    is_news_domain: typing.Optional[bool] = Field(None, alias='is_news_domain')
+
+    news_domain_type: typing.Optional[str] = Field(None, alias='news_domain_type')
+
+    news_type: typing.Optional[str] = Field(None, alias='news_type')
+
     model_config = ConfigDict(
         protected_namespaces=(),
         arbitrary_types_allowed=True

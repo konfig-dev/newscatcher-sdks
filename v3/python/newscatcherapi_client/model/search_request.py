@@ -235,6 +235,10 @@ class SearchRequest(
             iab_tags = schemas.AnyTypeSchema
             not_iab_tags = schemas.AnyTypeSchema
             exclude_duplicates = schemas.BoolSchema
+            additional_domain_info = schemas.BoolSchema
+            is_news_domain = schemas.BoolSchema
+            news_domain_type = schemas.AnyTypeSchema
+            news_type = schemas.AnyTypeSchema
             __annotations__ = {
                 "q": q,
                 "search_in": search_in,
@@ -285,6 +289,10 @@ class SearchRequest(
                 "iab_tags": iab_tags,
                 "not_iab_tags": not_iab_tags,
                 "exclude_duplicates": exclude_duplicates,
+                "additional_domain_info": additional_domain_info,
+                "is_news_domain": is_news_domain,
+                "news_domain_type": news_domain_type,
+                "news_type": news_type,
             }
     
     q: MetaOapg.properties.q
@@ -437,9 +445,21 @@ class SearchRequest(
     def __getitem__(self, name: typing_extensions.Literal["exclude_duplicates"]) -> MetaOapg.properties.exclude_duplicates: ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["additional_domain_info"]) -> MetaOapg.properties.additional_domain_info: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["is_news_domain"]) -> MetaOapg.properties.is_news_domain: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["news_domain_type"]) -> MetaOapg.properties.news_domain_type: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["news_type"]) -> MetaOapg.properties.news_type: ...
+    
+    @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["q", "search_in", "predefined_sources", "sources", "not_sources", "lang", "not_lang", "countries", "not_countries", "not_author_name", "from_", "to_", "published_date_precision", "by_parse_date", "sort_by", "ranked_only", "from_rank", "to_rank", "is_headline", "is_opinion", "is_paid_content", "parent_url", "all_links", "all_domain_links", "word_count_min", "word_count_max", "page", "page_size", "clustering_variable", "clustering_enabled", "clustering_threshold", "include_nlp_data", "has_nlp", "theme", "not_theme", "ORG_entity_name", "PER_entity_name", "LOC_entity_name", "MISC_entity_name", "title_sentiment_min", "title_sentiment_max", "content_sentiment_min", "content_sentiment_max", "iptc_tags", "not_iptc_tags", "source_name", "iab_tags", "not_iab_tags", "exclude_duplicates", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["q", "search_in", "predefined_sources", "sources", "not_sources", "lang", "not_lang", "countries", "not_countries", "not_author_name", "from_", "to_", "published_date_precision", "by_parse_date", "sort_by", "ranked_only", "from_rank", "to_rank", "is_headline", "is_opinion", "is_paid_content", "parent_url", "all_links", "all_domain_links", "word_count_min", "word_count_max", "page", "page_size", "clustering_variable", "clustering_enabled", "clustering_threshold", "include_nlp_data", "has_nlp", "theme", "not_theme", "ORG_entity_name", "PER_entity_name", "LOC_entity_name", "MISC_entity_name", "title_sentiment_min", "title_sentiment_max", "content_sentiment_min", "content_sentiment_max", "iptc_tags", "not_iptc_tags", "source_name", "iab_tags", "not_iab_tags", "exclude_duplicates", "additional_domain_info", "is_news_domain", "news_domain_type", "news_type", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
@@ -592,9 +612,21 @@ class SearchRequest(
     def get_item_oapg(self, name: typing_extensions.Literal["exclude_duplicates"]) -> typing.Union[MetaOapg.properties.exclude_duplicates, schemas.Unset]: ...
     
     @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["additional_domain_info"]) -> typing.Union[MetaOapg.properties.additional_domain_info, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["is_news_domain"]) -> typing.Union[MetaOapg.properties.is_news_domain, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["news_domain_type"]) -> typing.Union[MetaOapg.properties.news_domain_type, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["news_type"]) -> typing.Union[MetaOapg.properties.news_type, schemas.Unset]: ...
+    
+    @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["q", "search_in", "predefined_sources", "sources", "not_sources", "lang", "not_lang", "countries", "not_countries", "not_author_name", "from_", "to_", "published_date_precision", "by_parse_date", "sort_by", "ranked_only", "from_rank", "to_rank", "is_headline", "is_opinion", "is_paid_content", "parent_url", "all_links", "all_domain_links", "word_count_min", "word_count_max", "page", "page_size", "clustering_variable", "clustering_enabled", "clustering_threshold", "include_nlp_data", "has_nlp", "theme", "not_theme", "ORG_entity_name", "PER_entity_name", "LOC_entity_name", "MISC_entity_name", "title_sentiment_min", "title_sentiment_max", "content_sentiment_min", "content_sentiment_max", "iptc_tags", "not_iptc_tags", "source_name", "iab_tags", "not_iab_tags", "exclude_duplicates", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["q", "search_in", "predefined_sources", "sources", "not_sources", "lang", "not_lang", "countries", "not_countries", "not_author_name", "from_", "to_", "published_date_precision", "by_parse_date", "sort_by", "ranked_only", "from_rank", "to_rank", "is_headline", "is_opinion", "is_paid_content", "parent_url", "all_links", "all_domain_links", "word_count_min", "word_count_max", "page", "page_size", "clustering_variable", "clustering_enabled", "clustering_threshold", "include_nlp_data", "has_nlp", "theme", "not_theme", "ORG_entity_name", "PER_entity_name", "LOC_entity_name", "MISC_entity_name", "title_sentiment_min", "title_sentiment_max", "content_sentiment_min", "content_sentiment_max", "iptc_tags", "not_iptc_tags", "source_name", "iab_tags", "not_iab_tags", "exclude_duplicates", "additional_domain_info", "is_news_domain", "news_domain_type", "news_type", ], str]):
         return super().get_item_oapg(name)
     
 
@@ -650,6 +682,10 @@ class SearchRequest(
         iab_tags: typing.Union[MetaOapg.properties.iab_tags, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, schemas.Unset] = schemas.unset,
         not_iab_tags: typing.Union[MetaOapg.properties.not_iab_tags, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, schemas.Unset] = schemas.unset,
         exclude_duplicates: typing.Union[MetaOapg.properties.exclude_duplicates, bool, schemas.Unset] = schemas.unset,
+        additional_domain_info: typing.Union[MetaOapg.properties.additional_domain_info, bool, schemas.Unset] = schemas.unset,
+        is_news_domain: typing.Union[MetaOapg.properties.is_news_domain, bool, schemas.Unset] = schemas.unset,
+        news_domain_type: typing.Union[MetaOapg.properties.news_domain_type, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, schemas.Unset] = schemas.unset,
+        news_type: typing.Union[MetaOapg.properties.news_type, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'SearchRequest':
@@ -705,6 +741,10 @@ class SearchRequest(
             iab_tags=iab_tags,
             not_iab_tags=not_iab_tags,
             exclude_duplicates=exclude_duplicates,
+            additional_domain_info=additional_domain_info,
+            is_news_domain=is_news_domain,
+            news_domain_type=news_domain_type,
+            news_type=news_type,
             _configuration=_configuration,
             **kwargs,
         )

@@ -116,6 +116,14 @@ class SearchRequest(BaseModel):
 
     exclude_duplicates: typing.Optional[bool] = Field(None, alias='exclude_duplicates')
 
+    additional_domain_info: typing.Optional[bool] = Field(None, alias='additional_domain_info')
+
+    is_news_domain: typing.Optional[bool] = Field(None, alias='is_news_domain')
+
+    news_domain_type: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = Field(None, alias='news_domain_type')
+
+    news_type: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = Field(None, alias='news_type')
+
     model_config = ConfigDict(
         protected_namespaces=(),
         arbitrary_types_allowed=True

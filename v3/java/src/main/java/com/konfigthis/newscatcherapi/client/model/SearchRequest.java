@@ -247,6 +247,22 @@ public class SearchRequest {
   @SerializedName(SERIALIZED_NAME_EXCLUDE_DUPLICATES)
   private Boolean excludeDuplicates;
 
+  public static final String SERIALIZED_NAME_ADDITIONAL_DOMAIN_INFO = "additional_domain_info";
+  @SerializedName(SERIALIZED_NAME_ADDITIONAL_DOMAIN_INFO)
+  private Boolean additionalDomainInfo;
+
+  public static final String SERIALIZED_NAME_IS_NEWS_DOMAIN = "is_news_domain";
+  @SerializedName(SERIALIZED_NAME_IS_NEWS_DOMAIN)
+  private Boolean isNewsDomain;
+
+  public static final String SERIALIZED_NAME_NEWS_DOMAIN_TYPE = "news_domain_type";
+  @SerializedName(SERIALIZED_NAME_NEWS_DOMAIN_TYPE)
+  private Object newsDomainType = null;
+
+  public static final String SERIALIZED_NAME_NEWS_TYPE = "news_type";
+  @SerializedName(SERIALIZED_NAME_NEWS_TYPE)
+  private Object newsType = null;
+
   public SearchRequest() {
   }
 
@@ -1735,6 +1751,122 @@ public class SearchRequest {
     this.excludeDuplicates = excludeDuplicates;
   }
 
+
+  public SearchRequest additionalDomainInfo(Boolean additionalDomainInfo) {
+    
+    
+    
+    
+    this.additionalDomainInfo = additionalDomainInfo;
+    return this;
+  }
+
+   /**
+   * Get additionalDomainInfo
+   * @return additionalDomainInfo
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Boolean getAdditionalDomainInfo() {
+    return additionalDomainInfo;
+  }
+
+
+  public void setAdditionalDomainInfo(Boolean additionalDomainInfo) {
+    
+    
+    
+    this.additionalDomainInfo = additionalDomainInfo;
+  }
+
+
+  public SearchRequest isNewsDomain(Boolean isNewsDomain) {
+    
+    
+    
+    
+    this.isNewsDomain = isNewsDomain;
+    return this;
+  }
+
+   /**
+   * Get isNewsDomain
+   * @return isNewsDomain
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Boolean getIsNewsDomain() {
+    return isNewsDomain;
+  }
+
+
+  public void setIsNewsDomain(Boolean isNewsDomain) {
+    
+    
+    
+    this.isNewsDomain = isNewsDomain;
+  }
+
+
+  public SearchRequest newsDomainType(Object newsDomainType) {
+    
+    
+    
+    
+    this.newsDomainType = newsDomainType;
+    return this;
+  }
+
+   /**
+   * Get newsDomainType
+   * @return newsDomainType
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Object getNewsDomainType() {
+    return newsDomainType;
+  }
+
+
+  public void setNewsDomainType(Object newsDomainType) {
+    
+    
+    
+    this.newsDomainType = newsDomainType;
+  }
+
+
+  public SearchRequest newsType(Object newsType) {
+    
+    
+    
+    
+    this.newsType = newsType;
+    return this;
+  }
+
+   /**
+   * Get newsType
+   * @return newsType
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Object getNewsType() {
+    return newsType;
+  }
+
+
+  public void setNewsType(Object newsType) {
+    
+    
+    
+    this.newsType = newsType;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -1838,7 +1970,11 @@ public class SearchRequest {
         Objects.equals(this.sourceName, searchRequest.sourceName) &&
         Objects.equals(this.iabTags, searchRequest.iabTags) &&
         Objects.equals(this.notIabTags, searchRequest.notIabTags) &&
-        Objects.equals(this.excludeDuplicates, searchRequest.excludeDuplicates)&&
+        Objects.equals(this.excludeDuplicates, searchRequest.excludeDuplicates) &&
+        Objects.equals(this.additionalDomainInfo, searchRequest.additionalDomainInfo) &&
+        Objects.equals(this.isNewsDomain, searchRequest.isNewsDomain) &&
+        Objects.equals(this.newsDomainType, searchRequest.newsDomainType) &&
+        Objects.equals(this.newsType, searchRequest.newsType)&&
         Objects.equals(this.additionalProperties, searchRequest.additionalProperties);
   }
 
@@ -1848,7 +1984,7 @@ public class SearchRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(q, searchIn, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, notAuthorName, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isOpinion, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, orGEntityName, peREntityName, loCEntityName, miSCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, sourceName, iabTags, notIabTags, excludeDuplicates, additionalProperties);
+    return Objects.hash(q, searchIn, predefinedSources, sources, notSources, lang, notLang, countries, notCountries, notAuthorName, from, to, publishedDatePrecision, byParseDate, sortBy, rankedOnly, fromRank, toRank, isHeadline, isOpinion, isPaidContent, parentUrl, allLinks, allDomainLinks, wordCountMin, wordCountMax, page, pageSize, clusteringVariable, clusteringEnabled, clusteringThreshold, includeNlpData, hasNlp, theme, notTheme, orGEntityName, peREntityName, loCEntityName, miSCEntityName, titleSentimentMin, titleSentimentMax, contentSentimentMin, contentSentimentMax, iptcTags, notIptcTags, sourceName, iabTags, notIabTags, excludeDuplicates, additionalDomainInfo, isNewsDomain, newsDomainType, newsType, additionalProperties);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -1911,6 +2047,10 @@ public class SearchRequest {
     sb.append("    iabTags: ").append(toIndentedString(iabTags)).append("\n");
     sb.append("    notIabTags: ").append(toIndentedString(notIabTags)).append("\n");
     sb.append("    excludeDuplicates: ").append(toIndentedString(excludeDuplicates)).append("\n");
+    sb.append("    additionalDomainInfo: ").append(toIndentedString(additionalDomainInfo)).append("\n");
+    sb.append("    isNewsDomain: ").append(toIndentedString(isNewsDomain)).append("\n");
+    sb.append("    newsDomainType: ").append(toIndentedString(newsDomainType)).append("\n");
+    sb.append("    newsType: ").append(toIndentedString(newsType)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -1983,6 +2123,10 @@ public class SearchRequest {
     openapiFields.add("iab_tags");
     openapiFields.add("not_iab_tags");
     openapiFields.add("exclude_duplicates");
+    openapiFields.add("additional_domain_info");
+    openapiFields.add("is_news_domain");
+    openapiFields.add("news_domain_type");
+    openapiFields.add("news_type");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

@@ -38,11 +38,17 @@ namespace Newscatcherapi.Net.Model
         /// <param name="nbArticlesFor7d">nbArticlesFor7d.</param>
         /// <param name="country">country.</param>
         /// <param name="rank">rank.</param>
-        public AdditionalSourceInfo(int nbArticlesFor7d = default(int), string country = default(string), int rank = default(int))
+        /// <param name="isNewsDomain">isNewsDomain.</param>
+        /// <param name="newsDomainType">newsDomainType.</param>
+        /// <param name="newsType">newsType.</param>
+        public AdditionalSourceInfo(int nbArticlesFor7d = default(int), string country = default(string), int rank = default(int), bool isNewsDomain = default(bool), string newsDomainType = default(string), string newsType = default(string))
         {
             this.NbArticlesFor7d = nbArticlesFor7d;
             this.Country = country;
             this.Rank = rank;
+            this.IsNewsDomain = isNewsDomain;
+            this.NewsDomainType = newsDomainType;
+            this.NewsType = newsType;
         }
 
         /// <summary>
@@ -64,6 +70,24 @@ namespace Newscatcherapi.Net.Model
         public int Rank { get; set; }
 
         /// <summary>
+        /// Gets or Sets IsNewsDomain
+        /// </summary>
+        [DataMember(Name = "is_news_domain", EmitDefaultValue = true)]
+        public bool IsNewsDomain { get; set; }
+
+        /// <summary>
+        /// Gets or Sets NewsDomainType
+        /// </summary>
+        [DataMember(Name = "news_domain_type", EmitDefaultValue = false)]
+        public string NewsDomainType { get; set; }
+
+        /// <summary>
+        /// Gets or Sets NewsType
+        /// </summary>
+        [DataMember(Name = "news_type", EmitDefaultValue = false)]
+        public string NewsType { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -74,6 +98,9 @@ namespace Newscatcherapi.Net.Model
             sb.Append("  NbArticlesFor7d: ").Append(NbArticlesFor7d).Append("\n");
             sb.Append("  Country: ").Append(Country).Append("\n");
             sb.Append("  Rank: ").Append(Rank).Append("\n");
+            sb.Append("  IsNewsDomain: ").Append(IsNewsDomain).Append("\n");
+            sb.Append("  NewsDomainType: ").Append(NewsDomainType).Append("\n");
+            sb.Append("  NewsType: ").Append(NewsType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -121,6 +148,20 @@ namespace Newscatcherapi.Net.Model
                 (
                     this.Rank == input.Rank ||
                     this.Rank.Equals(input.Rank)
+                ) && 
+                (
+                    this.IsNewsDomain == input.IsNewsDomain ||
+                    this.IsNewsDomain.Equals(input.IsNewsDomain)
+                ) && 
+                (
+                    this.NewsDomainType == input.NewsDomainType ||
+                    (this.NewsDomainType != null &&
+                    this.NewsDomainType.Equals(input.NewsDomainType))
+                ) && 
+                (
+                    this.NewsType == input.NewsType ||
+                    (this.NewsType != null &&
+                    this.NewsType.Equals(input.NewsType))
                 );
         }
 
@@ -139,6 +180,15 @@ namespace Newscatcherapi.Net.Model
                     hashCode = (hashCode * 59) + this.Country.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Rank.GetHashCode();
+                hashCode = (hashCode * 59) + this.IsNewsDomain.GetHashCode();
+                if (this.NewsDomainType != null)
+                {
+                    hashCode = (hashCode * 59) + this.NewsDomainType.GetHashCode();
+                }
+                if (this.NewsType != null)
+                {
+                    hashCode = (hashCode * 59) + this.NewsType.GetHashCode();
+                }
                 return hashCode;
             }
         }

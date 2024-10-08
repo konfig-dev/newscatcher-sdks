@@ -431,4 +431,36 @@ public class SearchRequestTest {
         // TODO: test excludeDuplicates
     }
 
+    /**
+     * Test the property 'additionalDomainInfo'
+     */
+    @Test
+    public void additionalDomainInfoTest() {
+        // TODO: test additionalDomainInfo
+    }
+
+    /**
+     * Test the property 'isNewsDomain'
+     */
+    @Test
+    public void isNewsDomainTest() {
+        // TODO: test isNewsDomain
+    }
+
+    /**
+     * Test the property 'newsDomainType'
+     */
+    @Test
+    public void newsDomainTypeTest() {
+        // TODO: test newsDomainType
+    }
+
+    /**
+     * Test the property 'newsType'
+     */
+    @Test
+    public void newsTypeTest() {
+        // TODO: test newsType
+    }
+
 }

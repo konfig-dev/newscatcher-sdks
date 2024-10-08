@@ -93,10 +93,14 @@ export const SearchApiAxiosParamCreator = function (configuration?: Configuratio
          * @param {any} [iabTags] 
          * @param {any} [notIabTags] 
          * @param {boolean} [excludeDuplicates] 
+         * @param {boolean} [additionalDomainInfo] 
+         * @param {boolean} [isNewsDomain] 
+         * @param {any} [newsDomainType] 
+         * @param {any} [newsType] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        get: async (q: string, searchIn?: string, predefinedSources?: any, sources?: any, notSources?: any, lang?: any, notLang?: any, countries?: any, notCountries?: any, notAuthorName?: any, from?: From, to?: To, publishedDatePrecision?: string, byParseDate?: boolean, sortBy?: string, rankedOnly?: RankedOnly, fromRank?: number, toRank?: number, isHeadline?: boolean, isOpinion?: boolean, isPaidContent?: boolean, parentUrl?: any, allLinks?: any, allDomainLinks?: any, wordCountMin?: number, wordCountMax?: number, page?: number, pageSize?: number, clusteringVariable?: string, clusteringEnabled?: boolean, clusteringThreshold?: number, includeNlpData?: boolean, hasNlp?: boolean, theme?: string, notTheme?: string, orgEntityName?: string, perEntityName?: string, locEntityName?: string, miscEntityName?: string, titleSentimentMin?: number, titleSentimentMax?: number, contentSentimentMin?: number, contentSentimentMax?: number, iptcTags?: any, notIptcTags?: any, sourceName?: any, iabTags?: any, notIabTags?: any, excludeDuplicates?: boolean, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        get: async (q: string, searchIn?: string, predefinedSources?: any, sources?: any, notSources?: any, lang?: any, notLang?: any, countries?: any, notCountries?: any, notAuthorName?: any, from?: From, to?: To, publishedDatePrecision?: string, byParseDate?: boolean, sortBy?: string, rankedOnly?: RankedOnly, fromRank?: number, toRank?: number, isHeadline?: boolean, isOpinion?: boolean, isPaidContent?: boolean, parentUrl?: any, allLinks?: any, allDomainLinks?: any, wordCountMin?: number, wordCountMax?: number, page?: number, pageSize?: number, clusteringVariable?: string, clusteringEnabled?: boolean, clusteringThreshold?: number, includeNlpData?: boolean, hasNlp?: boolean, theme?: string, notTheme?: string, orgEntityName?: string, perEntityName?: string, locEntityName?: string, miscEntityName?: string, titleSentimentMin?: number, titleSentimentMax?: number, contentSentimentMin?: number, contentSentimentMax?: number, iptcTags?: any, notIptcTags?: any, sourceName?: any, iabTags?: any, notIabTags?: any, excludeDuplicates?: boolean, additionalDomainInfo?: boolean, isNewsDomain?: boolean, newsDomainType?: any, newsType?: any, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'q' is not null or undefined
             assertParamExists('get', 'q', q)
             const localVarPath = `/api/search`;
@@ -309,6 +313,22 @@ export const SearchApiAxiosParamCreator = function (configuration?: Configuratio
                 localVarQueryParameter['exclude_duplicates'] = excludeDuplicates;
             }
 
+            if (additionalDomainInfo !== undefined) {
+                localVarQueryParameter['additional_domain_info'] = additionalDomainInfo;
+            }
+
+            if (isNewsDomain !== undefined) {
+                localVarQueryParameter['is_news_domain'] = isNewsDomain;
+            }
+
+            if (newsDomainType !== undefined) {
+                localVarQueryParameter['news_domain_type'] = newsDomainType;
+            }
+
+            if (newsType !== undefined) {
+                localVarQueryParameter['news_type'] = newsType;
+            }
+
 
     
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -394,7 +414,7 @@ export const SearchApiFp = function(configuration?: Configuration) {
          * @throws {RequiredError}
          */
         async get(requestParameters: SearchApiGetRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SearchGetResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.get(requestParameters.q, requestParameters.searchIn, requestParameters.predefinedSources, requestParameters.sources, requestParameters.notSources, requestParameters.lang, requestParameters.notLang, requestParameters.countries, requestParameters.notCountries, requestParameters.notAuthorName, requestParameters.from, requestParameters.to, requestParameters.publishedDatePrecision, requestParameters.byParseDate, requestParameters.sortBy, requestParameters.rankedOnly, requestParameters.fromRank, requestParameters.toRank, requestParameters.isHeadline, requestParameters.isOpinion, requestParameters.isPaidContent, requestParameters.parentUrl, requestParameters.allLinks, requestParameters.allDomainLinks, requestParameters.wordCountMin, requestParameters.wordCountMax, requestParameters.page, requestParameters.pageSize, requestParameters.clusteringVariable, requestParameters.clusteringEnabled, requestParameters.clusteringThreshold, requestParameters.includeNlpData, requestParameters.hasNlp, requestParameters.theme, requestParameters.notTheme, requestParameters.orgEntityName, requestParameters.perEntityName, requestParameters.locEntityName, requestParameters.miscEntityName, requestParameters.titleSentimentMin, requestParameters.titleSentimentMax, requestParameters.contentSentimentMin, requestParameters.contentSentimentMax, requestParameters.iptcTags, requestParameters.notIptcTags, requestParameters.sourceName, requestParameters.iabTags, requestParameters.notIabTags, requestParameters.excludeDuplicates, options);
+            const localVarAxiosArgs = await localVarAxiosParamCreator.get(requestParameters.q, requestParameters.searchIn, requestParameters.predefinedSources, requestParameters.sources, requestParameters.notSources, requestParameters.lang, requestParameters.notLang, requestParameters.countries, requestParameters.notCountries, requestParameters.notAuthorName, requestParameters.from, requestParameters.to, requestParameters.publishedDatePrecision, requestParameters.byParseDate, requestParameters.sortBy, requestParameters.rankedOnly, requestParameters.fromRank, requestParameters.toRank, requestParameters.isHeadline, requestParameters.isOpinion, requestParameters.isPaidContent, requestParameters.parentUrl, requestParameters.allLinks, requestParameters.allDomainLinks, requestParameters.wordCountMin, requestParameters.wordCountMax, requestParameters.page, requestParameters.pageSize, requestParameters.clusteringVariable, requestParameters.clusteringEnabled, requestParameters.clusteringThreshold, requestParameters.includeNlpData, requestParameters.hasNlp, requestParameters.theme, requestParameters.notTheme, requestParameters.orgEntityName, requestParameters.perEntityName, requestParameters.locEntityName, requestParameters.miscEntityName, requestParameters.titleSentimentMin, requestParameters.titleSentimentMax, requestParameters.contentSentimentMin, requestParameters.contentSentimentMax, requestParameters.iptcTags, requestParameters.notIptcTags, requestParameters.sourceName, requestParameters.iabTags, requestParameters.notIabTags, requestParameters.excludeDuplicates, requestParameters.additionalDomainInfo, requestParameters.isNewsDomain, requestParameters.newsDomainType, requestParameters.newsType, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -454,7 +474,11 @@ export const SearchApiFp = function(configuration?: Configuration) {
                 source_name: requestParameters.source_name,
                 iab_tags: requestParameters.iab_tags,
                 not_iab_tags: requestParameters.not_iab_tags,
-                exclude_duplicates: requestParameters.exclude_duplicates
+                exclude_duplicates: requestParameters.exclude_duplicates,
+                additional_domain_info: requestParameters.additional_domain_info,
+                is_news_domain: requestParameters.is_news_domain,
+                news_domain_type: requestParameters.news_domain_type,
+                news_type: requestParameters.news_type
             };
             const localVarAxiosArgs = await localVarAxiosParamCreator.post(searchRequest, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
@@ -841,6 +865,34 @@ export type SearchApiGetRequest = {
     * @memberof SearchApiGet
     */
     readonly excludeDuplicates?: boolean
+    
+    /**
+    * 
+    * @type {boolean}
+    * @memberof SearchApiGet
+    */
+    readonly additionalDomainInfo?: boolean
+    
+    /**
+    * 
+    * @type {boolean}
+    * @memberof SearchApiGet
+    */
+    readonly isNewsDomain?: boolean
+    
+    /**
+    * 
+    * @type {any}
+    * @memberof SearchApiGet
+    */
+    readonly newsDomainType?: any
+    
+    /**
+    * 
+    * @type {any}
+    * @memberof SearchApiGet
+    */
+    readonly newsType?: any
     
 }
 

@@ -10,7 +10,7 @@ All URIs are relative to *https://v3-api.newscatcherapi.com*
 
 <a name="get"></a>
 # **get**
-> CSearchResponse get(q).searchIn(searchIn).predefinedSources(predefinedSources).sources(sources).notSources(notSources).lang(lang).notLang(notLang).countries(countries).notCountries(notCountries).notAuthorName(notAuthorName).from(from).to(to).publishedDatePrecision(publishedDatePrecision).byParseDate(byParseDate).sortBy(sortBy).rankedOnly(rankedOnly).fromRank(fromRank).toRank(toRank).isHeadline(isHeadline).isOpinion(isOpinion).isPaidContent(isPaidContent).parentUrl(parentUrl).allLinks(allLinks).allDomainLinks(allDomainLinks).wordCountMin(wordCountMin).wordCountMax(wordCountMax).page(page).pageSize(pageSize).clusteringVariable(clusteringVariable).clusteringEnabled(clusteringEnabled).clusteringThreshold(clusteringThreshold).includeNlpData(includeNlpData).hasNlp(hasNlp).theme(theme).notTheme(notTheme).orGEntityName(orGEntityName).peREntityName(peREntityName).loCEntityName(loCEntityName).miSCEntityName(miSCEntityName).titleSentimentMin(titleSentimentMin).titleSentimentMax(titleSentimentMax).contentSentimentMin(contentSentimentMin).contentSentimentMax(contentSentimentMax).iptcTags(iptcTags).notIptcTags(notIptcTags).sourceName(sourceName).iabTags(iabTags).notIabTags(notIabTags).excludeDuplicates(excludeDuplicates).execute();
+> CSearchResponse get(q).searchIn(searchIn).predefinedSources(predefinedSources).sources(sources).notSources(notSources).lang(lang).notLang(notLang).countries(countries).notCountries(notCountries).notAuthorName(notAuthorName).from(from).to(to).publishedDatePrecision(publishedDatePrecision).byParseDate(byParseDate).sortBy(sortBy).rankedOnly(rankedOnly).fromRank(fromRank).toRank(toRank).isHeadline(isHeadline).isOpinion(isOpinion).isPaidContent(isPaidContent).parentUrl(parentUrl).allLinks(allLinks).allDomainLinks(allDomainLinks).wordCountMin(wordCountMin).wordCountMax(wordCountMax).page(page).pageSize(pageSize).clusteringVariable(clusteringVariable).clusteringEnabled(clusteringEnabled).clusteringThreshold(clusteringThreshold).includeNlpData(includeNlpData).hasNlp(hasNlp).theme(theme).notTheme(notTheme).orGEntityName(orGEntityName).peREntityName(peREntityName).loCEntityName(loCEntityName).miSCEntityName(miSCEntityName).titleSentimentMin(titleSentimentMin).titleSentimentMax(titleSentimentMax).contentSentimentMin(contentSentimentMin).contentSentimentMax(contentSentimentMax).iptcTags(iptcTags).notIptcTags(notIptcTags).sourceName(sourceName).iabTags(iabTags).notIabTags(notIabTags).excludeDuplicates(excludeDuplicates).additionalDomainInfo(additionalDomainInfo).isNewsDomain(isNewsDomain).newsDomainType(newsDomainType).newsType(newsType).execute();
 
 [Get] Search For Articles Request
 
@@ -86,6 +86,10 @@ public class Example {
     Object iabTags = null;
     Object notIabTags = null;
     Boolean excludeDuplicates = true;
+    Boolean additionalDomainInfo = true;
+    Boolean isNewsDomain = true;
+    Object newsDomainType = null;
+    Object newsType = null;
     try {
       CSearchResponse result = client
               .search
@@ -138,6 +142,10 @@ public class Example {
               .iabTags(iabTags)
               .notIabTags(notIabTags)
               .excludeDuplicates(excludeDuplicates)
+              .additionalDomainInfo(additionalDomainInfo)
+              .isNewsDomain(isNewsDomain)
+              .newsDomainType(newsDomainType)
+              .newsType(newsType)
               .execute();
       System.out.println(result);
       System.out.println(result.getStatus());
@@ -210,6 +218,10 @@ public class Example {
               .iabTags(iabTags)
               .notIabTags(notIabTags)
               .excludeDuplicates(excludeDuplicates)
+              .additionalDomainInfo(additionalDomainInfo)
+              .isNewsDomain(isNewsDomain)
+              .newsDomainType(newsDomainType)
+              .newsType(newsType)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
       System.out.println(response.getResponseHeaders());
@@ -281,6 +293,10 @@ public class Example {
 | **iabTags** | [**Object**](.md)|  | [optional] |
 | **notIabTags** | [**Object**](.md)|  | [optional] |
 | **excludeDuplicates** | **Boolean**|  | [optional] |
+| **additionalDomainInfo** | **Boolean**|  | [optional] |
+| **isNewsDomain** | **Boolean**|  | [optional] |
+| **newsDomainType** | [**Object**](.md)|  | [optional] |
+| **newsType** | [**Object**](.md)|  | [optional] |
 
 ### Return type
 
@@ -378,6 +394,10 @@ public class Example {
     Object iabTags = null;
     Object notIabTags = null;
     Boolean excludeDuplicates = true;
+    Boolean additionalDomainInfo = true;
+    Boolean isNewsDomain = true;
+    Object newsDomainType = null;
+    Object newsType = null;
     try {
       CSearchResponse1 result = client
               .search
@@ -430,6 +450,10 @@ public class Example {
               .iabTags(iabTags)
               .notIabTags(notIabTags)
               .excludeDuplicates(excludeDuplicates)
+              .additionalDomainInfo(additionalDomainInfo)
+              .isNewsDomain(isNewsDomain)
+              .newsDomainType(newsDomainType)
+              .newsType(newsType)
               .execute();
       System.out.println(result);
       System.out.println(result.getStatus());
@@ -502,6 +526,10 @@ public class Example {
               .iabTags(iabTags)
               .notIabTags(notIabTags)
               .excludeDuplicates(excludeDuplicates)
+              .additionalDomainInfo(additionalDomainInfo)
+              .isNewsDomain(isNewsDomain)
+              .newsDomainType(newsDomainType)
+              .newsType(newsType)
               .executeWithHttpInfo();
       System.out.println(response.getResponseBody());
       System.out.println(response.getResponseHeaders());

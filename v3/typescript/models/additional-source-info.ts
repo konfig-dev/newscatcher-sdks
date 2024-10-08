@@ -35,5 +35,23 @@ export interface AdditionalSourceInfo {
      * @memberof AdditionalSourceInfo
      */
     'rank'?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof AdditionalSourceInfo
+     */
+    'is_news_domain'?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof AdditionalSourceInfo
+     */
+    'news_domain_type'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof AdditionalSourceInfo
+     */
+    'news_type'?: string;
 }
 

@@ -63,11 +63,16 @@ namespace Newscatcherapi.Net.Test.Api
             );
             var sourceUrl = new Object(
             );
+            var isNewsDomain = true;
+            var newsDomainType = new Object(
+            );
+            var newsType = new Object(
+            );
             
             try
             {
                 // [Get] Search For Sources Request
-                SourceResponse result = client.Sources.Get(lang, countries, predefinedSources, includeAdditionalInfo, fromRank, toRank, sourceName, sourceUrl);
+                SourceResponse result = client.Sources.Get(lang, countries, predefinedSources, includeAdditionalInfo, fromRank, toRank, sourceName, sourceUrl, isNewsDomain, newsDomainType, newsType);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -98,6 +103,9 @@ namespace Newscatcherapi.Net.Test.Api
             var toRank = default(int);
             var sourceName = "sourceName_example";
             var sourceUrl = "sourceUrl_example";
+            var isNewsDomain = false;
+            var newsDomainType = "newsDomainType_example";
+            var newsType = "newsType_example";
             
             var sourcesRequest = new SourcesRequest(
                 lang,
@@ -107,7 +115,10 @@ namespace Newscatcherapi.Net.Test.Api
                 fromRank,
                 toRank,
                 sourceName,
-                sourceUrl
+                sourceUrl,
+                isNewsDomain,
+                newsDomainType,
+                newsType
             );
             
             try

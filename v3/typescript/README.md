@@ -647,6 +647,14 @@ const getResponse = await newscatcher.search.get({
 
 ##### excludeDuplicates: `boolean`<a id="excludeduplicates-boolean"></a>
 
+##### additionalDomainInfo: `boolean`<a id="additionaldomaininfo-boolean"></a>
+
+##### isNewsDomain: `boolean`<a id="isnewsdomain-boolean"></a>
+
+##### newsDomainType: `any`<a id="newsdomaintype-any"></a>
+
+##### newsType: `any`<a id="newstype-any"></a>
+
 #### 🔄 Return<a id="🔄-return"></a>
 
 [SearchGetResponse](./models/search-get-response.ts)
@@ -776,6 +784,14 @@ const postResponse = await newscatcher.search.post({
 ##### not_iab_tags: `any`<a id="not_iab_tags-any"></a>
 
 ##### exclude_duplicates: `boolean`<a id="exclude_duplicates-boolean"></a>
+
+##### additional_domain_info: `boolean`<a id="additional_domain_info-boolean"></a>
+
+##### is_news_domain: `boolean`<a id="is_news_domain-boolean"></a>
+
+##### news_domain_type: `any`<a id="news_domain_type-any"></a>
+
+##### news_type: `any`<a id="news_type-any"></a>
 
 #### 🔄 Return<a id="🔄-return"></a>
 
@@ -1128,6 +1144,12 @@ const getResponse = await newscatcher.sources.get({});
 
 ##### sourceUrl: `any`<a id="sourceurl-any"></a>
 
+##### isNewsDomain: `boolean`<a id="isnewsdomain-boolean"></a>
+
+##### newsDomainType: `any`<a id="newsdomaintype-any"></a>
+
+##### newsType: `any`<a id="newstype-any"></a>
+
 #### 🔄 Return<a id="🔄-return"></a>
 
 [SourceResponse](./models/source-response.ts)
@@ -1168,6 +1190,12 @@ const postResponse = await newscatcher.sources.post({});
 ##### source_name: `any`<a id="source_name-any"></a>
 
 ##### source_url: `any`<a id="source_url-any"></a>
+
+##### is_news_domain: `boolean`<a id="is_news_domain-boolean"></a>
+
+##### news_domain_type: `any`<a id="news_domain_type-any"></a>
+
+##### news_type: `any`<a id="news_type-any"></a>
 
 #### 🔄 Return<a id="🔄-return"></a>
 

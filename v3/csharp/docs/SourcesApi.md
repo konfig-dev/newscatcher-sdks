@@ -45,11 +45,16 @@ namespace Example
             );
             var sourceUrl = new Object(
             );
+            var isNewsDomain = true;
+            var newsDomainType = new Object(
+            );
+            var newsType = new Object(
+            );
             
             try
             {
                 // [Get] Search For Sources Request
-                SourceResponse result = client.Sources.Get(lang, countries, predefinedSources, includeAdditionalInfo, fromRank, toRank, sourceName, sourceUrl);
+                SourceResponse result = client.Sources.Get(lang, countries, predefinedSources, includeAdditionalInfo, fromRank, toRank, sourceName, sourceUrl, isNewsDomain, newsDomainType, newsType);
                 Console.WriteLine(result);
             }
             catch (ApiException e)
@@ -76,7 +81,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // [Get] Search For Sources Request
-    ApiResponse<SourceResponse> response = apiInstance.GetWithHttpInfo(lang, countries, predefinedSources, includeAdditionalInfo, fromRank, toRank, sourceName, sourceUrl);
+    ApiResponse<SourceResponse> response = apiInstance.GetWithHttpInfo(lang, countries, predefinedSources, includeAdditionalInfo, fromRank, toRank, sourceName, sourceUrl, isNewsDomain, newsDomainType, newsType);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -101,6 +106,9 @@ catch (ApiException e)
 | **toRank** | **int?** |  | [optional]  |
 | **sourceName** | [**Object**](Object.md) |  | [optional]  |
 | **sourceUrl** | [**Object**](Object.md) |  | [optional]  |
+| **isNewsDomain** | **bool?** |  | [optional]  |
+| **newsDomainType** | [**Object**](Object.md) |  | [optional]  |
+| **newsType** | [**Object**](Object.md) |  | [optional]  |
 
 ### Return type
 
@@ -148,6 +156,9 @@ namespace Example
             var toRank = default(int);
             var sourceName = "sourceName_example";
             var sourceUrl = "sourceUrl_example";
+            var isNewsDomain = false;
+            var newsDomainType = "newsDomainType_example";
+            var newsType = "newsType_example";
             
             var sourcesRequest = new SourcesRequest(
                 lang,
@@ -157,7 +168,10 @@ namespace Example
                 fromRank,
                 toRank,
                 sourceName,
-                sourceUrl
+                sourceUrl,
+                isNewsDomain,
+                newsDomainType,
+                newsType
             );
             
             try

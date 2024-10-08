@@ -125,6 +125,9 @@ class BaseApi(api_client.Api):
         to_rank: typing.Optional[int] = None,
         source_name: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         source_url: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        is_news_domain: typing.Optional[bool] = None,
+        news_domain_type: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        news_type: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
     ) -> api_client.MappedArgs:
         args: api_client.MappedArgs = api_client.MappedArgs()
         _body = {}
@@ -144,6 +147,12 @@ class BaseApi(api_client.Api):
             _body["source_name"] = source_name
         if source_url is not None:
             _body["source_url"] = source_url
+        if is_news_domain is not None:
+            _body["is_news_domain"] = is_news_domain
+        if news_domain_type is not None:
+            _body["news_domain_type"] = news_domain_type
+        if news_type is not None:
+            _body["news_type"] = news_type
         args.body = _body
         return args
 
@@ -359,6 +368,9 @@ class PostRaw(BaseApi):
         to_rank: typing.Optional[int] = None,
         source_name: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         source_url: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        is_news_domain: typing.Optional[bool] = None,
+        news_domain_type: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        news_type: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         **kwargs,
     ) -> typing.Union[
         ApiResponseFor200Async,
@@ -374,6 +386,9 @@ class PostRaw(BaseApi):
             to_rank=to_rank,
             source_name=source_name,
             source_url=source_url,
+            is_news_domain=is_news_domain,
+            news_domain_type=news_domain_type,
+            news_type=news_type,
         )
         return await self._apost_oapg(
             body=args.body,
@@ -390,6 +405,9 @@ class PostRaw(BaseApi):
         to_rank: typing.Optional[int] = None,
         source_name: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         source_url: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        is_news_domain: typing.Optional[bool] = None,
+        news_domain_type: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        news_type: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
     ) -> typing.Union[
         ApiResponseFor200,
         api_client.ApiResponseWithoutDeserialization,
@@ -404,6 +422,9 @@ class PostRaw(BaseApi):
             to_rank=to_rank,
             source_name=source_name,
             source_url=source_url,
+            is_news_domain=is_news_domain,
+            news_domain_type=news_domain_type,
+            news_type=news_type,
         )
         return self._post_oapg(
             body=args.body,
@@ -421,6 +442,9 @@ class Post(BaseApi):
         to_rank: typing.Optional[int] = None,
         source_name: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         source_url: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        is_news_domain: typing.Optional[bool] = None,
+        news_domain_type: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        news_type: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         validate: bool = False,
         **kwargs,
     ) -> SourceResponsePydantic:
@@ -433,6 +457,9 @@ class Post(BaseApi):
             to_rank=to_rank,
             source_name=source_name,
             source_url=source_url,
+            is_news_domain=is_news_domain,
+            news_domain_type=news_domain_type,
+            news_type=news_type,
             **kwargs,
         )
         if validate:
@@ -450,6 +477,9 @@ class Post(BaseApi):
         to_rank: typing.Optional[int] = None,
         source_name: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         source_url: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        is_news_domain: typing.Optional[bool] = None,
+        news_domain_type: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        news_type: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         validate: bool = False,
     ) -> SourceResponsePydantic:
         raw_response = self.raw.post(
@@ -461,6 +491,9 @@ class Post(BaseApi):
             to_rank=to_rank,
             source_name=source_name,
             source_url=source_url,
+            is_news_domain=is_news_domain,
+            news_domain_type=news_domain_type,
+            news_type=news_type,
         )
         if validate:
             return SourceResponsePydantic(**raw_response.body)
@@ -480,6 +513,9 @@ class ApiForpost(BaseApi):
         to_rank: typing.Optional[int] = None,
         source_name: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         source_url: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        is_news_domain: typing.Optional[bool] = None,
+        news_domain_type: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        news_type: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         **kwargs,
     ) -> typing.Union[
         ApiResponseFor200Async,
@@ -495,6 +531,9 @@ class ApiForpost(BaseApi):
             to_rank=to_rank,
             source_name=source_name,
             source_url=source_url,
+            is_news_domain=is_news_domain,
+            news_domain_type=news_domain_type,
+            news_type=news_type,
         )
         return await self._apost_oapg(
             body=args.body,
@@ -511,6 +550,9 @@ class ApiForpost(BaseApi):
         to_rank: typing.Optional[int] = None,
         source_name: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
         source_url: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        is_news_domain: typing.Optional[bool] = None,
+        news_domain_type: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
+        news_type: typing.Optional[typing.Union[bool, date, datetime, dict, float, int, list, str, None]] = None,
     ) -> typing.Union[
         ApiResponseFor200,
         api_client.ApiResponseWithoutDeserialization,
@@ -525,6 +567,9 @@ class ApiForpost(BaseApi):
             to_rank=to_rank,
             source_name=source_name,
             source_url=source_url,
+            is_news_domain=is_news_domain,
+            news_domain_type=news_domain_type,
+            news_type=news_type,
         )
         return self._post_oapg(
             body=args.body,

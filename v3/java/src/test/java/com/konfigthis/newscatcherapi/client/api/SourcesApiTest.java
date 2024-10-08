@@ -59,6 +59,9 @@ public class SourcesApiTest {
         Integer toRank = null;
         Object sourceName = null;
         Object sourceUrl = null;
+        Boolean isNewsDomain = null;
+        Object newsDomainType = null;
+        Object newsType = null;
         SourceResponse response = api.get()
                 .lang(lang)
                 .countries(countries)
@@ -68,6 +71,9 @@ public class SourcesApiTest {
                 .toRank(toRank)
                 .sourceName(sourceName)
                 .sourceUrl(sourceUrl)
+                .isNewsDomain(isNewsDomain)
+                .newsDomainType(newsDomainType)
+                .newsType(newsType)
                 .execute();
         // TODO: test validations
     }
@@ -89,6 +95,9 @@ public class SourcesApiTest {
         Integer toRank = null;
         Object sourceName = null;
         Object sourceUrl = null;
+        Boolean isNewsDomain = null;
+        Object newsDomainType = null;
+        Object newsType = null;
         SourceResponse response = api.post()
                 .lang(lang)
                 .countries(countries)
@@ -98,6 +107,9 @@ public class SourcesApiTest {
                 .toRank(toRank)
                 .sourceName(sourceName)
                 .sourceUrl(sourceUrl)
+                .isNewsDomain(isNewsDomain)
+                .newsDomainType(newsDomainType)
+                .newsType(newsType)
                 .execute();
         // TODO: test validations
     }
