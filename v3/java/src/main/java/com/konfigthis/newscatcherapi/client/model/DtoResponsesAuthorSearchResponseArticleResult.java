@@ -183,6 +183,10 @@ public class DtoResponsesAuthorSearchResponseArticleResult {
   @SerializedName(SERIALIZED_NAME_SCORE)
   private Double score;
 
+  public static final String SERIALIZED_NAME_CUSTOM_TAGS = "custom_tags";
+  @SerializedName(SERIALIZED_NAME_CUSTOM_TAGS)
+  private Object customTags;
+
   public DtoResponsesAuthorSearchResponseArticleResult() {
   }
 
@@ -1151,6 +1155,35 @@ public class DtoResponsesAuthorSearchResponseArticleResult {
     this.score = score;
   }
 
+
+  public DtoResponsesAuthorSearchResponseArticleResult customTags(Object customTags) {
+    
+    
+    
+    
+    this.customTags = customTags;
+    return this;
+  }
+
+   /**
+   * Get customTags
+   * @return customTags
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Object getCustomTags() {
+    return customTags;
+  }
+
+
+  public void setCustomTags(Object customTags) {
+    
+    
+    
+    this.customTags = customTags;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -1238,7 +1271,8 @@ public class DtoResponsesAuthorSearchResponseArticleResult {
         Objects.equals(this.allDomainLinks, dtoResponsesAuthorSearchResponseArticleResult.allDomainLinks) &&
         Objects.equals(this.nlp, dtoResponsesAuthorSearchResponseArticleResult.nlp) &&
         Objects.equals(this.id, dtoResponsesAuthorSearchResponseArticleResult.id) &&
-        Objects.equals(this.score, dtoResponsesAuthorSearchResponseArticleResult.score)&&
+        Objects.equals(this.score, dtoResponsesAuthorSearchResponseArticleResult.score) &&
+        Objects.equals(this.customTags, dtoResponsesAuthorSearchResponseArticleResult.customTags)&&
         Objects.equals(this.additionalProperties, dtoResponsesAuthorSearchResponseArticleResult.additionalProperties);
   }
 
@@ -1248,7 +1282,7 @@ public class DtoResponsesAuthorSearchResponseArticleResult {
 
   @Override
   public int hashCode() {
-    return Objects.hash(title, description, author, authors, journalists, publishedDate, publishedDatePrecision, updatedDate, updatedDatePrecision, parseDate, link, domainUrl, fullDomainUrl, nameSource, isHeadline, paidContent, extractionData, country, rights, rank, media, language, content, titleTranslatedEn, contentTranslatedEn, wordCount, isOpinion, twitterAccount, allLinks, allDomainLinks, nlp, id, score, additionalProperties);
+    return Objects.hash(title, description, author, authors, journalists, publishedDate, publishedDatePrecision, updatedDate, updatedDatePrecision, parseDate, link, domainUrl, fullDomainUrl, nameSource, isHeadline, paidContent, extractionData, country, rights, rank, media, language, content, titleTranslatedEn, contentTranslatedEn, wordCount, isOpinion, twitterAccount, allLinks, allDomainLinks, nlp, id, score, customTags, additionalProperties);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -1295,6 +1329,7 @@ public class DtoResponsesAuthorSearchResponseArticleResult {
     sb.append("    nlp: ").append(toIndentedString(nlp)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    score: ").append(toIndentedString(score)).append("\n");
+    sb.append("    customTags: ").append(toIndentedString(customTags)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -1351,6 +1386,7 @@ public class DtoResponsesAuthorSearchResponseArticleResult {
     openapiFields.add("nlp");
     openapiFields.add("id");
     openapiFields.add("score");
+    openapiFields.add("custom_tags");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

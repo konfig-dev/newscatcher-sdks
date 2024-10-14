@@ -41,6 +41,7 @@ Article result data model
 |**nlp** | **Object** |  |  [optional] |
 |**id** | **String** |  |  |
 |**score** | **Double** |  |  |
+|**customTags** | **Object** |  |  [optional] |
 
 
 

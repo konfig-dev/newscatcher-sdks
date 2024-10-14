@@ -42,6 +42,7 @@ ArticleResult DTO class.
 |**id** | **String** |  |  |
 |**score** | **Double** |  |  |
 |**similarDocuments** | [**List&lt;SimilarDocument1&gt;**](SimilarDocument1.md) |  |  [optional] |
+|**customTags** | **Object** |  |  [optional] |
 
 
 

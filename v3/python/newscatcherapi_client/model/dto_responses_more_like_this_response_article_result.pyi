@@ -347,6 +347,7 @@ class DtoResponsesMoreLikeThisResponseArticleResult(
             
                 def __getitem__(self, i: int) -> 'SimilarDocument':
                     return super().__getitem__(i)
+            custom_tags = schemas.DictSchema
             __annotations__ = {
                 "title": title,
                 "link": link,
@@ -382,6 +383,7 @@ class DtoResponsesMoreLikeThisResponseArticleResult(
                 "all_domain_links": all_domain_links,
                 "nlp": nlp,
                 "similar_documents": similar_documents,
+                "custom_tags": custom_tags,
             }
     
     score: MetaOapg.properties.score
@@ -497,9 +499,12 @@ class DtoResponsesMoreLikeThisResponseArticleResult(
     def __getitem__(self, name: typing_extensions.Literal["similar_documents"]) -> MetaOapg.properties.similar_documents: ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["custom_tags"]) -> MetaOapg.properties.custom_tags: ...
+    
+    @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["title", "link", "domain_url", "full_domain_url", "extraction_data", "rank", "content", "id", "score", "description", "author", "authors", "journalists", "published_date", "published_date_precision", "updated_date", "updated_date_precision", "parse_date", "name_source", "is_headline", "paid_content", "country", "rights", "media", "language", "title_translated_en", "content_translated_en", "word_count", "is_opinion", "twitter_account", "all_links", "all_domain_links", "nlp", "similar_documents", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["title", "link", "domain_url", "full_domain_url", "extraction_data", "rank", "content", "id", "score", "description", "author", "authors", "journalists", "published_date", "published_date_precision", "updated_date", "updated_date_precision", "parse_date", "name_source", "is_headline", "paid_content", "country", "rights", "media", "language", "title_translated_en", "content_translated_en", "word_count", "is_opinion", "twitter_account", "all_links", "all_domain_links", "nlp", "similar_documents", "custom_tags", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
@@ -607,9 +612,12 @@ class DtoResponsesMoreLikeThisResponseArticleResult(
     def get_item_oapg(self, name: typing_extensions.Literal["similar_documents"]) -> typing.Union[MetaOapg.properties.similar_documents, schemas.Unset]: ...
     
     @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["custom_tags"]) -> typing.Union[MetaOapg.properties.custom_tags, schemas.Unset]: ...
+    
+    @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["title", "link", "domain_url", "full_domain_url", "extraction_data", "rank", "content", "id", "score", "description", "author", "authors", "journalists", "published_date", "published_date_precision", "updated_date", "updated_date_precision", "parse_date", "name_source", "is_headline", "paid_content", "country", "rights", "media", "language", "title_translated_en", "content_translated_en", "word_count", "is_opinion", "twitter_account", "all_links", "all_domain_links", "nlp", "similar_documents", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["title", "link", "domain_url", "full_domain_url", "extraction_data", "rank", "content", "id", "score", "description", "author", "authors", "journalists", "published_date", "published_date_precision", "updated_date", "updated_date_precision", "parse_date", "name_source", "is_headline", "paid_content", "country", "rights", "media", "language", "title_translated_en", "content_translated_en", "word_count", "is_opinion", "twitter_account", "all_links", "all_domain_links", "nlp", "similar_documents", "custom_tags", ], str]):
         return super().get_item_oapg(name)
     
 
@@ -650,6 +658,7 @@ class DtoResponsesMoreLikeThisResponseArticleResult(
         all_domain_links: typing.Union[MetaOapg.properties.all_domain_links, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, schemas.Unset] = schemas.unset,
         nlp: typing.Union[MetaOapg.properties.nlp, dict, frozendict.frozendict, schemas.Unset] = schemas.unset,
         similar_documents: typing.Union[MetaOapg.properties.similar_documents, list, tuple, schemas.Unset] = schemas.unset,
+        custom_tags: typing.Union[MetaOapg.properties.custom_tags, dict, frozendict.frozendict, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'DtoResponsesMoreLikeThisResponseArticleResult':
@@ -690,6 +699,7 @@ class DtoResponsesMoreLikeThisResponseArticleResult(
             all_domain_links=all_domain_links,
             nlp=nlp,
             similar_documents=similar_documents,
+            custom_tags=custom_tags,
             _configuration=_configuration,
             **kwargs,
         )

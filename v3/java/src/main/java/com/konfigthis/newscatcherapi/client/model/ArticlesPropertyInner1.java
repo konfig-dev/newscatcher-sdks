@@ -189,6 +189,10 @@ public class ArticlesPropertyInner1 {
   @SerializedName(SERIALIZED_NAME_SIMILAR_DOCUMENTS)
   private List<SimilarDocument1> similarDocuments = null;
 
+  public static final String SERIALIZED_NAME_CUSTOM_TAGS = "custom_tags";
+  @SerializedName(SERIALIZED_NAME_CUSTOM_TAGS)
+  private Object customTags;
+
   public ArticlesPropertyInner1() {
   }
 
@@ -1194,6 +1198,35 @@ public class ArticlesPropertyInner1 {
     this.similarDocuments = similarDocuments;
   }
 
+
+  public ArticlesPropertyInner1 customTags(Object customTags) {
+    
+    
+    
+    
+    this.customTags = customTags;
+    return this;
+  }
+
+   /**
+   * Get customTags
+   * @return customTags
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Object getCustomTags() {
+    return customTags;
+  }
+
+
+  public void setCustomTags(Object customTags) {
+    
+    
+    
+    this.customTags = customTags;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -1282,7 +1315,8 @@ public class ArticlesPropertyInner1 {
         Objects.equals(this.nlp, articlesPropertyInner1.nlp) &&
         Objects.equals(this.id, articlesPropertyInner1.id) &&
         Objects.equals(this.score, articlesPropertyInner1.score) &&
-        Objects.equals(this.similarDocuments, articlesPropertyInner1.similarDocuments)&&
+        Objects.equals(this.similarDocuments, articlesPropertyInner1.similarDocuments) &&
+        Objects.equals(this.customTags, articlesPropertyInner1.customTags)&&
         Objects.equals(this.additionalProperties, articlesPropertyInner1.additionalProperties);
   }
 
@@ -1292,7 +1326,7 @@ public class ArticlesPropertyInner1 {
 
   @Override
   public int hashCode() {
-    return Objects.hash(title, description, author, authors, journalists, publishedDate, publishedDatePrecision, updatedDate, updatedDatePrecision, parseDate, link, domainUrl, fullDomainUrl, nameSource, isHeadline, paidContent, extractionData, country, rights, rank, media, language, content, titleTranslatedEn, contentTranslatedEn, wordCount, isOpinion, twitterAccount, allLinks, allDomainLinks, nlp, id, score, similarDocuments, additionalProperties);
+    return Objects.hash(title, description, author, authors, journalists, publishedDate, publishedDatePrecision, updatedDate, updatedDatePrecision, parseDate, link, domainUrl, fullDomainUrl, nameSource, isHeadline, paidContent, extractionData, country, rights, rank, media, language, content, titleTranslatedEn, contentTranslatedEn, wordCount, isOpinion, twitterAccount, allLinks, allDomainLinks, nlp, id, score, similarDocuments, customTags, additionalProperties);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -1340,6 +1374,7 @@ public class ArticlesPropertyInner1 {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    score: ").append(toIndentedString(score)).append("\n");
     sb.append("    similarDocuments: ").append(toIndentedString(similarDocuments)).append("\n");
+    sb.append("    customTags: ").append(toIndentedString(customTags)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -1397,6 +1432,7 @@ public class ArticlesPropertyInner1 {
     openapiFields.add("id");
     openapiFields.add("score");
     openapiFields.add("similar_documents");
+    openapiFields.add("custom_tags");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

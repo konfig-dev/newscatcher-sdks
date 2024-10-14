@@ -88,5 +88,7 @@ class OptionalDtoResponsesMoreLikeThisResponseArticleResult(TypedDict, total=Fal
 
     similar_documents: typing.List[SimilarDocument]
 
+    custom_tags: typing.Dict[str, typing.Union[bool, date, datetime, dict, float, int, list, str, None]]
+
 class DtoResponsesMoreLikeThisResponseArticleResult(RequiredDtoResponsesMoreLikeThisResponseArticleResult, OptionalDtoResponsesMoreLikeThisResponseArticleResult):
     pass

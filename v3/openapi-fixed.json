@@ -3827,6 +3827,10 @@
           "score": {
             "title": "Score",
             "type": "number"
+          },
+          "custom_tags": {
+            "title": "Custom Tags",
+            "type": "object"
           }
         }
       },
@@ -4128,6 +4132,10 @@
             },
             "default": [
             ]
+          },
+          "custom_tags": {
+            "title": "Custom Tags",
+            "type": "object"
           }
         }
       },

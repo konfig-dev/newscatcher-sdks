@@ -40,6 +40,7 @@
 |**nlp** | **Object** |  |  [optional] |
 |**id** | **String** |  |  [optional] |
 |**score** | **Double** |  |  [optional] |
+|**customTags** | **Object** |  |  [optional] |
 
 
 

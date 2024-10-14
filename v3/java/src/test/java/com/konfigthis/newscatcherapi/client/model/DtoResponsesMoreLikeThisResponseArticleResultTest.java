@@ -314,4 +314,12 @@ public class DtoResponsesMoreLikeThisResponseArticleResultTest {
         // TODO: test similarDocuments
     }
 
+    /**
+     * Test the property 'customTags'
+     */
+    @Test
+    public void customTagsTest() {
+        // TODO: test customTags
+    }
+
 }

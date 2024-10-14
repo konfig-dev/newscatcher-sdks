@@ -226,5 +226,11 @@ export interface DtoResponsesMoreLikeThisResponseArticleResult {
      * @memberof DtoResponsesMoreLikeThisResponseArticleResult
      */
     'similar_documents'?: Array<SimilarDocument>;
+    /**
+     * 
+     * @type {object}
+     * @memberof DtoResponsesMoreLikeThisResponseArticleResult
+     */
+    'custom_tags'?: object;
 }
 

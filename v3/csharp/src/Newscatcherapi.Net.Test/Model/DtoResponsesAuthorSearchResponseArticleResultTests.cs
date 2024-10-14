@@ -321,6 +321,14 @@ namespace Newscatcherapi.Net.Test.Model
         {
             // TODO unit test for the property 'Score'
         }
+        /// <summary>
+        /// Test the property 'CustomTags'
+        /// </summary>
+        [Fact]
+        public void CustomTagsTest()
+        {
+            // TODO unit test for the property 'CustomTags'
+        }
 
     }
 

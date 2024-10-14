@@ -73,7 +73,8 @@ namespace Newscatcherapi.Net.Model
         /// <param name="nlp">nlp.</param>
         /// <param name="id">id (required).</param>
         /// <param name="score">score (required).</param>
-        public DtoResponsesAuthorSearchResponseArticleResult(string title = default(string), string description = default(string), string author = default(string), AuthorsProperty authors = default(AuthorsProperty), JournalistsProperty journalists = default(JournalistsProperty), string publishedDate = default(string), string publishedDatePrecision = default(string), string updatedDate = default(string), string updatedDatePrecision = default(string), string parseDate = default(string), string link = default(string), string domainUrl = default(string), string fullDomainUrl = default(string), string nameSource = default(string), string isHeadline = default(string), bool paidContent = default(bool), string extractionData = default(string), string country = default(string), string rights = default(string), int rank = default(int), string media = default(string), string language = default(string), string content = default(string), string titleTranslatedEn = default(string), string contentTranslatedEn = default(string), int wordCount = 0, bool isOpinion = default(bool), string twitterAccount = default(string), AllLinksProperty allLinks = default(AllLinksProperty), AllDomainLinksProperty allDomainLinks = default(AllDomainLinksProperty), Object nlp = default(Object), string id = default(string), double score = default(double))
+        /// <param name="customTags">customTags.</param>
+        public DtoResponsesAuthorSearchResponseArticleResult(string title = default(string), string description = default(string), string author = default(string), AuthorsProperty authors = default(AuthorsProperty), JournalistsProperty journalists = default(JournalistsProperty), string publishedDate = default(string), string publishedDatePrecision = default(string), string updatedDate = default(string), string updatedDatePrecision = default(string), string parseDate = default(string), string link = default(string), string domainUrl = default(string), string fullDomainUrl = default(string), string nameSource = default(string), string isHeadline = default(string), bool paidContent = default(bool), string extractionData = default(string), string country = default(string), string rights = default(string), int rank = default(int), string media = default(string), string language = default(string), string content = default(string), string titleTranslatedEn = default(string), string contentTranslatedEn = default(string), int wordCount = 0, bool isOpinion = default(bool), string twitterAccount = default(string), AllLinksProperty allLinks = default(AllLinksProperty), AllDomainLinksProperty allDomainLinks = default(AllDomainLinksProperty), Object nlp = default(Object), string id = default(string), double score = default(double), Object customTags = default(Object))
         {
             // to ensure "title" is required (not null)
             if (title == null)
@@ -143,6 +144,7 @@ namespace Newscatcherapi.Net.Model
             this.AllLinks = allLinks;
             this.AllDomainLinks = allDomainLinks;
             this.Nlp = nlp;
+            this.CustomTags = customTags;
         }
 
         /// <summary>
@@ -344,6 +346,12 @@ namespace Newscatcherapi.Net.Model
         public double Score { get; set; }
 
         /// <summary>
+        /// Gets or Sets CustomTags
+        /// </summary>
+        [DataMember(Name = "custom_tags", EmitDefaultValue = false)]
+        public Object CustomTags { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -384,6 +392,7 @@ namespace Newscatcherapi.Net.Model
             sb.Append("  Nlp: ").Append(Nlp).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Score: ").Append(Score).Append("\n");
+            sb.Append("  CustomTags: ").Append(CustomTags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -578,6 +587,11 @@ namespace Newscatcherapi.Net.Model
                 (
                     this.Score == input.Score ||
                     this.Score.Equals(input.Score)
+                ) && 
+                (
+                    this.CustomTags == input.CustomTags ||
+                    (this.CustomTags != null &&
+                    this.CustomTags.Equals(input.CustomTags))
                 );
         }
 
@@ -707,6 +721,10 @@ namespace Newscatcherapi.Net.Model
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Score.GetHashCode();
+                if (this.CustomTags != null)
+                {
+                    hashCode = (hashCode * 59) + this.CustomTags.GetHashCode();
+                }
                 return hashCode;
             }
         }
