@@ -3901,6 +3901,10 @@
           "score": {
             "title": "Score",
             "type": "number"
+          },
+          "custom_tags": {
+            "title": "Custom Tags",
+            "type": "object"
           }
         },
         "description": "Article result data model"
@@ -4197,6 +4201,10 @@
               "$ref": "#/components/schemas/SimilarDocument"
             },
             "default": []
+          },
+          "custom_tags": {
+            "title": "Custom Tags",
+            "type": "object"
           }
         },
         "description": "ArticleResult DTO class."
