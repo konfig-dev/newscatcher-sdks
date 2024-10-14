@@ -219,5 +219,11 @@ export interface DtoResponsesAuthorSearchResponseArticleResult {
      * @memberof DtoResponsesAuthorSearchResponseArticleResult
      */
     'score': number;
+    /**
+     * 
+     * @type {object}
+     * @memberof DtoResponsesAuthorSearchResponseArticleResult
+     */
+    'custom_tags'?: object;
 }
 

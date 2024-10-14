@@ -190,6 +190,10 @@ public class DtoResponsesMoreLikeThisResponseArticleResult {
   @SerializedName(SERIALIZED_NAME_SIMILAR_DOCUMENTS)
   private List<SimilarDocument1> similarDocuments = null;
 
+  public static final String SERIALIZED_NAME_CUSTOM_TAGS = "custom_tags";
+  @SerializedName(SERIALIZED_NAME_CUSTOM_TAGS)
+  private Object customTags;
+
   public DtoResponsesMoreLikeThisResponseArticleResult() {
   }
 
@@ -1195,6 +1199,35 @@ public class DtoResponsesMoreLikeThisResponseArticleResult {
     this.similarDocuments = similarDocuments;
   }
 
+
+  public DtoResponsesMoreLikeThisResponseArticleResult customTags(Object customTags) {
+    
+    
+    
+    
+    this.customTags = customTags;
+    return this;
+  }
+
+   /**
+   * Get customTags
+   * @return customTags
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Object getCustomTags() {
+    return customTags;
+  }
+
+
+  public void setCustomTags(Object customTags) {
+    
+    
+    
+    this.customTags = customTags;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -1283,7 +1316,8 @@ public class DtoResponsesMoreLikeThisResponseArticleResult {
         Objects.equals(this.nlp, dtoResponsesMoreLikeThisResponseArticleResult.nlp) &&
         Objects.equals(this.id, dtoResponsesMoreLikeThisResponseArticleResult.id) &&
         Objects.equals(this.score, dtoResponsesMoreLikeThisResponseArticleResult.score) &&
-        Objects.equals(this.similarDocuments, dtoResponsesMoreLikeThisResponseArticleResult.similarDocuments)&&
+        Objects.equals(this.similarDocuments, dtoResponsesMoreLikeThisResponseArticleResult.similarDocuments) &&
+        Objects.equals(this.customTags, dtoResponsesMoreLikeThisResponseArticleResult.customTags)&&
         Objects.equals(this.additionalProperties, dtoResponsesMoreLikeThisResponseArticleResult.additionalProperties);
   }
 
@@ -1293,7 +1327,7 @@ public class DtoResponsesMoreLikeThisResponseArticleResult {
 
   @Override
   public int hashCode() {
-    return Objects.hash(title, description, author, authors, journalists, publishedDate, publishedDatePrecision, updatedDate, updatedDatePrecision, parseDate, link, domainUrl, fullDomainUrl, nameSource, isHeadline, paidContent, extractionData, country, rights, rank, media, language, content, titleTranslatedEn, contentTranslatedEn, wordCount, isOpinion, twitterAccount, allLinks, allDomainLinks, nlp, id, score, similarDocuments, additionalProperties);
+    return Objects.hash(title, description, author, authors, journalists, publishedDate, publishedDatePrecision, updatedDate, updatedDatePrecision, parseDate, link, domainUrl, fullDomainUrl, nameSource, isHeadline, paidContent, extractionData, country, rights, rank, media, language, content, titleTranslatedEn, contentTranslatedEn, wordCount, isOpinion, twitterAccount, allLinks, allDomainLinks, nlp, id, score, similarDocuments, customTags, additionalProperties);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -1341,6 +1375,7 @@ public class DtoResponsesMoreLikeThisResponseArticleResult {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    score: ").append(toIndentedString(score)).append("\n");
     sb.append("    similarDocuments: ").append(toIndentedString(similarDocuments)).append("\n");
+    sb.append("    customTags: ").append(toIndentedString(customTags)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -1398,6 +1433,7 @@ public class DtoResponsesMoreLikeThisResponseArticleResult {
     openapiFields.add("id");
     openapiFields.add("score");
     openapiFields.add("similar_documents");
+    openapiFields.add("custom_tags");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

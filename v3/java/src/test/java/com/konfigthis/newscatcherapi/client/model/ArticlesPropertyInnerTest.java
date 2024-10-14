@@ -303,4 +303,12 @@ public class ArticlesPropertyInnerTest {
         // TODO: test score
     }
 
+    /**
+     * Test the property 'customTags'
+     */
+    @Test
+    public void customTagsTest() {
+        // TODO: test customTags
+    }
+
 }

@@ -3199,6 +3199,9 @@ components:
         score:
           title: Score
           type: number
+        custom_tags:
+          title: Custom Tags
+          type: object
       required:
       - content
       - domain_url
@@ -3409,6 +3412,9 @@ components:
           type: array
           x-konfig-original-example: []
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__more_like_this_response__ArticleResult-properties-similar_documents
+        custom_tags:
+          title: Custom Tags
+          type: object
       required:
       - content
       - domain_url
@@ -5660,6 +5666,7 @@ components:
           updated_date_precision: updated_date_precision
           full_domain_url: full_domain_url
           author: author
+          custom_tags: "{}"
           is_headline: is_headline
           nlp: {}
           published_date_precision: published_date_precision
@@ -5693,6 +5700,7 @@ components:
           updated_date_precision: updated_date_precision
           full_domain_url: full_domain_url
           author: author
+          custom_tags: "{}"
           is_headline: is_headline
           nlp: {}
           published_date_precision: published_date_precision
@@ -5768,6 +5776,7 @@ components:
           updated_date_precision: updated_date_precision
           full_domain_url: full_domain_url
           author: author
+          custom_tags: "{}"
           is_headline: is_headline
           nlp: {}
           published_date_precision: published_date_precision
@@ -5801,6 +5810,7 @@ components:
           updated_date_precision: updated_date_precision
           full_domain_url: full_domain_url
           author: author
+          custom_tags: "{}"
           is_headline: is_headline
           nlp: {}
           published_date_precision: published_date_precision
@@ -5877,6 +5887,7 @@ components:
           updated_date_precision: updated_date_precision
           full_domain_url: full_domain_url
           author: author
+          custom_tags: "{}"
           is_headline: is_headline
           nlp: {}
           published_date_precision: published_date_precision
@@ -5911,6 +5922,7 @@ components:
           updated_date_precision: updated_date_precision
           full_domain_url: full_domain_url
           author: author
+          custom_tags: "{}"
           is_headline: is_headline
           nlp: {}
           published_date_precision: published_date_precision
@@ -5987,6 +5999,7 @@ components:
           updated_date_precision: updated_date_precision
           full_domain_url: full_domain_url
           author: author
+          custom_tags: "{}"
           is_headline: is_headline
           nlp: {}
           published_date_precision: published_date_precision
@@ -6021,6 +6034,7 @@ components:
           updated_date_precision: updated_date_precision
           full_domain_url: full_domain_url
           author: author
+          custom_tags: "{}"
           is_headline: is_headline
           nlp: {}
           published_date_precision: published_date_precision
@@ -6116,6 +6130,7 @@ components:
         updated_date_precision: updated_date_precision
         full_domain_url: full_domain_url
         author: author
+        custom_tags: "{}"
         is_headline: is_headline
         nlp: {}
         published_date_precision: published_date_precision
@@ -6223,6 +6238,9 @@ components:
         score:
           title: Score
           type: number
+        custom_tags:
+          title: Custom Tags
+          type: object
       type: object
     SimilarDocument_1:
       description: SimilarDocument DTO class.
@@ -6274,6 +6292,7 @@ components:
         updated_date_precision: updated_date_precision
         full_domain_url: full_domain_url
         author: author
+        custom_tags: "{}"
         is_headline: is_headline
         nlp: {}
         published_date_precision: published_date_precision
@@ -6390,6 +6409,9 @@ components:
           type: array
           x-konfig-original-example: []
           x-konfig-generated-schema: konfig-generated-schema-components-schemas-dto__responses__more_like_this_response__ArticleResult-properties-similar_documents
+        custom_tags:
+          title: Custom Tags
+          type: object
       type: object
   securitySchemes:
     apiKey:

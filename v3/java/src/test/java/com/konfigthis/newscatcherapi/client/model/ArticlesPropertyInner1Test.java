@@ -314,4 +314,12 @@ public class ArticlesPropertyInner1Test {
         // TODO: test similarDocuments
     }
 
+    /**
+     * Test the property 'customTags'
+     */
+    @Test
+    public void customTagsTest() {
+        // TODO: test customTags
+    }
+
 }

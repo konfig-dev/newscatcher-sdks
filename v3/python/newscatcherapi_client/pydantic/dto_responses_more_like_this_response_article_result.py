@@ -87,6 +87,8 @@ class DtoResponsesMoreLikeThisResponseArticleResult(BaseModel):
 
     similar_documents: typing.Optional[typing.List[SimilarDocument]] = Field(None, alias='similar_documents')
 
+    custom_tags: typing.Optional[typing.Dict[str, typing.Union[bool, date, datetime, dict, float, int, list, str, None]]] = Field(None, alias='custom_tags')
+
     model_config = ConfigDict(
         protected_namespaces=(),
         arbitrary_types_allowed=True

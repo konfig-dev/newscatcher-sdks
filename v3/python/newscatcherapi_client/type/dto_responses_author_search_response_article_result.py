@@ -85,5 +85,7 @@ class OptionalDtoResponsesAuthorSearchResponseArticleResult(TypedDict, total=Fal
 
     nlp: typing.Dict[str, typing.Union[bool, date, datetime, dict, float, int, list, str, None]]
 
+    custom_tags: typing.Dict[str, typing.Union[bool, date, datetime, dict, float, int, list, str, None]]
+
 class DtoResponsesAuthorSearchResponseArticleResult(RequiredDtoResponsesAuthorSearchResponseArticleResult, OptionalDtoResponsesAuthorSearchResponseArticleResult):
     pass
